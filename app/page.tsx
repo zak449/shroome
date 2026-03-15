@@ -125,86 +125,76 @@ function EmailForm({ dark = false }: { dark?: boolean }) {
   );
 }
 
-// ── Sachet SVG — Cymbiotika-inspired slim sachet ──────────────────
+// ── Sachet SVG — flat rectangular pouch ──────────────────────────
 function Sachet({ scale = 1 }: { scale?: number }) {
-  const w = Math.round(150 * scale), h = Math.round(420 * scale);
+  const w = Math.round(160 * scale), h = Math.round(400 * scale);
   return (
-    <div className="sachet-float" style={{ filter: "drop-shadow(0 36px 80px rgba(27,31,59,0.32))" }}>
-      <svg width={w} height={h} viewBox="0 0 150 420" fill="none">
+    <div className="sachet-float" style={{ filter: "drop-shadow(0 28px 56px rgba(27,31,59,0.28))" }}>
+      <svg width={w} height={h} viewBox="0 0 160 400" fill="none">
         <defs>
-          {/* Main body — horizontal sheen */}
-          <linearGradient id="sBg" x1="0" y1="0" x2="1" y2="0" gradientUnits="objectBoundingBox">
-            <stop offset="0%"   stopColor="#DED5C5"/>
-            <stop offset="9%"   stopColor="#F5EDE3"/>
-            <stop offset="91%"  stopColor="#F5EDE3"/>
-            <stop offset="100%" stopColor="#D6CCB9"/>
-          </linearGradient>
-          {/* Left seal — gradient fades inward */}
-          <linearGradient id="sSL" x1="0" y1="0" x2="1" y2="0" gradientUnits="objectBoundingBox">
-            <stop offset="0%"   stopColor="rgba(90,107,62,0.45)"/>
-            <stop offset="100%" stopColor="rgba(90,107,62,0.10)"/>
-          </linearGradient>
-          {/* Right seal — mirror */}
-          <linearGradient id="sSR" x1="1" y1="0" x2="0" y2="0" gradientUnits="objectBoundingBox">
-            <stop offset="0%"   stopColor="rgba(90,107,62,0.45)"/>
-            <stop offset="100%" stopColor="rgba(90,107,62,0.10)"/>
+          {/* Flat vertical gradient — no cylindrical effect */}
+          <linearGradient id="sBg" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
+            <stop offset="0%"   stopColor="#F2EBE0"/>
+            <stop offset="100%" stopColor="#E8E0D2"/>
           </linearGradient>
         </defs>
 
-        {/* ── Body ── */}
-        <rect x="0" y="0" width="150" height="420" rx="7" fill="url(#sBg)"/>
+        {/* ── Outer body — flat rectangle ── */}
+        <rect x="0" y="0" width="160" height="400" rx="2" fill="url(#sBg)"/>
 
-        {/* ── Left seal strip ── */}
-        <rect x="0" y="0" width="14" height="420" rx="7" fill="url(#sSL)"/>
-        <line x1="5"  y1="52" x2="5"  y2="368" stroke="rgba(90,107,62,0.25)" strokeWidth="0.8"/>
-        <line x1="9"  y1="52" x2="9"  y2="368" stroke="rgba(90,107,62,0.10)" strokeWidth="0.5"/>
+        {/* ── Left crimp seal — vertical lines only ── */}
+        <rect x="0" y="0" width="13" height="400" rx="1" fill="rgba(90,107,62,0.12)"/>
+        <line x1="5"  y1="0" x2="5"  y2="400" stroke="rgba(90,107,62,0.22)" strokeWidth="1"/>
+        <line x1="9"  y1="0" x2="9"  y2="400" stroke="rgba(90,107,62,0.12)" strokeWidth="0.6"/>
+        <line x1="12" y1="0" x2="12" y2="400" stroke="rgba(90,107,62,0.28)" strokeWidth="0.8"/>
 
-        {/* ── Right seal strip ── */}
-        <rect x="136" y="0" width="14" height="420" rx="7" fill="url(#sSR)"/>
-        <line x1="141" y1="52" x2="141" y2="368" stroke="rgba(90,107,62,0.25)" strokeWidth="0.8"/>
-        <line x1="145" y1="52" x2="145" y2="368" stroke="rgba(90,107,62,0.10)" strokeWidth="0.5"/>
+        {/* ── Right crimp seal ── */}
+        <rect x="147" y="0" width="13" height="400" rx="1" fill="rgba(90,107,62,0.12)"/>
+        <line x1="148" y1="0" x2="148" y2="400" stroke="rgba(90,107,62,0.28)" strokeWidth="0.8"/>
+        <line x1="151" y1="0" x2="151" y2="400" stroke="rgba(90,107,62,0.12)" strokeWidth="0.6"/>
+        <line x1="155" y1="0" x2="155" y2="400" stroke="rgba(90,107,62,0.22)" strokeWidth="1"/>
 
-        {/* ── Top seal ── */}
-        <rect x="14" y="0" width="122" height="52" fill="rgba(90,107,62,0.07)"/>
-        <line x1="14" y1="52" x2="136" y2="52" stroke="rgba(90,107,62,0.42)" strokeWidth="0.9"/>
-        {/* Tear perforations */}
-        {[25,37,49,61,73,85,97,109,121].map((x,i) => (
-          <circle key={i} cx={x} cy={26} r="2.3" fill="rgba(90,107,62,0.5)"/>
+        {/* ── Top seal strip ── */}
+        <rect x="13" y="0" width="134" height="46" fill="rgba(90,107,62,0.06)"/>
+        <line x1="13" y1="46" x2="147" y2="46" stroke="rgba(90,107,62,0.4)" strokeWidth="1"/>
+        {/* Perforations */}
+        {[22,33,44,55,66,77,88,99,110,121,132,143].map((x,i) => (
+          <circle key={i} cx={x} cy={23} r="1.8" fill="rgba(90,107,62,0.45)"/>
         ))}
         {/* Tear notch — right */}
-        <path d="M 136 15 L 150 26 L 136 37" fill="rgba(90,107,62,0.28)"/>
+        <path d="M 147 13 L 160 23 L 147 33" fill="rgba(90,107,62,0.22)"/>
 
-        {/* ── Bottom seal ── */}
-        <rect x="14" y="368" width="122" height="52" fill="rgba(90,107,62,0.07)"/>
-        <line x1="14" y1="368" x2="136" y2="368" stroke="rgba(90,107,62,0.42)" strokeWidth="0.9"/>
+        {/* ── Bottom seal strip ── */}
+        <rect x="13" y="354" width="134" height="46" fill="rgba(90,107,62,0.06)"/>
+        <line x1="13" y1="354" x2="147" y2="354" stroke="rgba(90,107,62,0.4)" strokeWidth="1"/>
 
-        {/* ── Inner label border ── */}
-        <rect x="21" y="64" width="108" height="290" fill="none" stroke="rgba(90,107,62,0.13)" strokeWidth="0.75"/>
+        {/* ── Inner label inset border ── */}
+        <rect x="20" y="58" width="120" height="282" fill="rgba(255,255,255,0.18)" stroke="rgba(90,107,62,0.14)" strokeWidth="0.75"/>
 
-        {/* ── Logo mark ── */}
-        <image href="/logo-mark.svg" x="51" y="88" width="48" height="48" opacity="0.88"/>
+        {/* ── Logo ── */}
+        <image href="/logo-mark.svg" x="56" y="78" width="48" height="48" opacity="0.85"/>
 
         {/* ── Brand name ── */}
-        <text x="75" y="162" textAnchor="middle" fontFamily="Instrument Serif, serif" fontStyle="italic" fontSize="17" fill="#1B1F3B" letterSpacing="1">shroomé</text>
-        <text x="75" y="176" textAnchor="middle" fontFamily="Syne, sans-serif" fontWeight="600" fontSize="5.2" fill="#809463" opacity="0.75" letterSpacing="3.2">POUR · SWIRL · GLOW</text>
+        <text x="80" y="152" textAnchor="middle" fontFamily="Instrument Serif, serif" fontStyle="italic" fontSize="18" fill="#1B1F3B" letterSpacing="1">shroomé</text>
+        <text x="80" y="166" textAnchor="middle" fontFamily="Syne, sans-serif" fontWeight="600" fontSize="5.2" fill="#809463" opacity="0.7" letterSpacing="3.2">POUR · SWIRL · GLOW</text>
 
         {/* ── Divider ── */}
-        <line x1="40" y1="190" x2="110" y2="190" stroke="#809463" strokeWidth="0.6" opacity="0.3"/>
+        <line x1="44" y1="180" x2="116" y2="180" stroke="#809463" strokeWidth="0.6" opacity="0.3"/>
 
         {/* ── Dose tag ── */}
-        <rect x="51" y="200" width="48" height="17" fill="none" stroke="#809463" strokeWidth="0.75" opacity="0.6"/>
-        <text x="75" y="212" textAnchor="middle" fontFamily="Syne, sans-serif" fontWeight="700" fontSize="6" fill="#809463" letterSpacing="1.5">3g DOSE</text>
+        <rect x="55" y="190" width="50" height="18" fill="none" stroke="#809463" strokeWidth="0.8" opacity="0.55"/>
+        <text x="80" y="203" textAnchor="middle" fontFamily="Syne, sans-serif" fontWeight="700" fontSize="6.5" fill="#809463" letterSpacing="1.5">3g DOSE</text>
 
         {/* ── Lower divider ── */}
-        <line x1="40" y1="235" x2="110" y2="235" stroke="#809463" strokeWidth="0.4" opacity="0.2"/>
+        <line x1="44" y1="222" x2="116" y2="222" stroke="#809463" strokeWidth="0.4" opacity="0.18"/>
 
         {/* ── Ingredients ── */}
-        <text x="75" y="293" textAnchor="middle" fontFamily="Syne, sans-serif" fontWeight="500" fontSize="4.6" fill="#1B1F3B" opacity="0.35" letterSpacing="2">ORGANIC CEREMONIAL MATCHA</text>
-        <text x="75" y="305" textAnchor="middle" fontFamily="Syne, sans-serif" fontWeight="500" fontSize="4.6" fill="#1B1F3B" opacity="0.35" letterSpacing="2">ORGANIC MUSHROOM EXTRACTS</text>
-        <text x="75" y="317" textAnchor="middle" fontFamily="Syne, sans-serif" fontWeight="500" fontSize="4.6" fill="#1B1F3B" opacity="0.35" letterSpacing="2">GRASS-FED COLLAGEN</text>
+        <text x="80" y="278" textAnchor="middle" fontFamily="Syne, sans-serif" fontWeight="500" fontSize="4.8" fill="#1B1F3B" opacity="0.32" letterSpacing="2">ORGANIC CEREMONIAL MATCHA</text>
+        <text x="80" y="290" textAnchor="middle" fontFamily="Syne, sans-serif" fontWeight="500" fontSize="4.8" fill="#1B1F3B" opacity="0.32" letterSpacing="2">ORGANIC MUSHROOM EXTRACTS</text>
+        <text x="80" y="302" textAnchor="middle" fontFamily="Syne, sans-serif" fontWeight="500" fontSize="4.8" fill="#1B1F3B" opacity="0.32" letterSpacing="2">GRASS-FED COLLAGEN</text>
 
         {/* ── URL ── */}
-        <text x="75" y="346" textAnchor="middle" fontFamily="Syne, sans-serif" fontWeight="600" fontSize="4.8" fill="#1B1F3B" opacity="0.2" letterSpacing="1">drinkshroome.com</text>
+        <text x="80" y="328" textAnchor="middle" fontFamily="Syne, sans-serif" fontWeight="600" fontSize="5" fill="#1B1F3B" opacity="0.18" letterSpacing="1">drinkshroome.com</text>
       </svg>
     </div>
   );
@@ -298,7 +288,8 @@ export default function Home() {
 
         @media (max-width:700px) {
           .hero-grid { grid-template-columns:1fr !important; }
-          .hero-sachet { order:-1; }
+          .hero-sachet { order:-1; min-height:60vw; padding:24px 0 16px; }
+          .hero-stat-card { display:none !important; }
           .hide-mob { display:none !important; }
           .hero-blob-1 { width:95vw; height:95vw; top:-8%; right:-20%; }
           .hero-blob-2 { display:none; }
@@ -344,7 +335,7 @@ export default function Home() {
         </nav>
 
         {/* ── Hero ───────────────────────────────────────────── */}
-        <section style={{ background: C.pink, minHeight: "92vh", display: "grid", gridTemplateColumns: "1fr 1fr", position: "relative", overflow: "hidden" }} className="hero-grid">
+        <section style={{ background: C.pink, minHeight: "92vh", display: "grid", gridTemplateColumns: "1fr 1fr", position: "relative", overflowX: "clip" as any }} className="hero-grid">
           <div className="hero-blob-1" />
           <div className="hero-blob-2" />
           <div className="hero-blob-3" />
@@ -402,12 +393,12 @@ export default function Home() {
             </div>
             <Sachet scale={1.2} />
             {/* stat cards */}
-            <div style={{ position: "absolute", bottom: "20%", left: 16, background: C.cream, padding: "14px 20px", border: `2px solid ${C.navy}` }}>
+            <div className="hero-stat-card" style={{ position: "absolute", bottom: "20%", left: 16, background: C.cream, padding: "14px 20px", border: `2px solid ${C.navy}` }}>
               <p style={{ fontFamily: FB, fontWeight: 600, fontSize: "0.68rem", letterSpacing: "0.18em", textTransform: "uppercase" as const, color: C.muted, marginBottom: 3 }}>Per serving</p>
               <p style={{ fontFamily: FD, fontSize: "2rem", color: C.sageDark, lineHeight: 1 }}>$3</p>
               <p style={{ fontFamily: FB, fontWeight: 500, fontSize: "0.82rem", color: C.muted, marginTop: 3 }}>vs. $9 at your café</p>
             </div>
-            <div style={{ position: "absolute", top: "16%", right: 16, background: C.navy, padding: "14px 20px" }}>
+            <div className="hero-stat-card" style={{ position: "absolute", top: "16%", right: 16, background: C.navy, padding: "14px 20px" }}>
               <p style={{ fontFamily: FB, fontWeight: 600, fontSize: "0.68rem", letterSpacing: "0.18em", textTransform: "uppercase" as const, color: C.lime, marginBottom: 3 }}>Steps</p>
               <p style={{ fontFamily: FD, fontSize: "2rem", color: C.cream, lineHeight: 1 }}>3</p>
               <p style={{ fontFamily: FB, fontWeight: 500, fontSize: "0.82rem", color: "rgba(253,244,238,0.65)", marginTop: 3 }}>Pour. Swirl. Glow.</p>
@@ -456,9 +447,9 @@ export default function Home() {
         </section>
 
         {/* ── Invented. Not Improved. ─────────────────────────── */}
-        <section style={{ background: C.lavender, padding: "96px 5%", position: "relative", overflow: "hidden", borderTop: `2px solid ${C.navy}` }}>
-          {/* corner blob */}
-          <div style={{ position: "absolute", width: "38vw", height: "38vw", maxWidth: 500, maxHeight: 500, top: "-18%", right: "2%", background: C.pink, borderRadius: "58% 42% 55% 45% / 50% 48% 52% 50%", pointerEvents: "none", opacity: 0.45 }}/>
+        <section style={{ background: C.lavender, padding: "96px 5%", position: "relative", borderTop: `2px solid ${C.navy}` }}>
+          {/* corner blob — stays within bounds so no overflow:hidden needed */}
+          <div style={{ position: "absolute", width: "38vw", height: "38vw", maxWidth: 480, maxHeight: 480, top: "-10%", right: "0%", background: C.pink, borderRadius: "58% 42% 55% 45% / 50% 48% 52% 50%", pointerEvents: "none", opacity: 0.45 }}/>
           <div style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 440px), 1fr))", gap: "56px 80px", alignItems: "start", position: "relative", zIndex: 1 }}>
             {/* left */}
             <div>
