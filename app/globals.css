@@ -1,19 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;500;600&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Syne:wght@400;500;600;700;800&family=Syne+Mono&display=swap');
 
 @import "tailwindcss";
 
 @theme {
-  --color-dark: #090E0A;
-  --color-dark-2: #0E1810;
-  --color-dark-3: #142016;
-  --color-matcha: #8ED66E;
-  --color-matcha-light: #B8EDAA;
-  --color-cream: #F2EDDF;
-  --color-cream-muted: #C8C2B0;
-  --color-earth: #9A7D5C;
-  --font-serif: 'Playfair Display', Georgia, serif;
-  --font-sans: 'Inter', system-ui, sans-serif;
-  --font-mono: 'DM Mono', monospace;
+  --color-dark: #1B3A24;
+  --color-dark-2: #2D5A35;
+  --color-dark-3: #4A8A52;
+  --color-matcha: #C8FF3A;
+  --color-matcha-light: #E0FF80;
+  --color-cream: #FDF4EE;
+  --color-cream-muted: #C8C2B8;
+  --color-earth: #C87842;
+  --font-serif: 'Instrument Serif', Georgia, serif;
+  --font-sans: 'Syne', system-ui, sans-serif;
+  --font-mono: 'Syne Mono', monospace;
 }
 
 * {
@@ -25,20 +25,13 @@ html {
 }
 
 body {
-  background-color: #090E0A;
-  color: #F2EDDF;
-  font-family: 'Inter', system-ui, sans-serif;
+  background-color: #FDF4EE;
+  color: #1B3A24;
+  font-family: 'Syne', system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
   overflow-x: hidden;
-}
-
-.font-serif {
-  font-family: 'Playfair Display', Georgia, serif;
-}
-
-.font-mono-dm {
-  font-family: 'DM Mono', monospace;
 }
 
 /* ── Marquee ticker ── */
@@ -78,10 +71,10 @@ body {
 }
 
 .btn-matcha {
-  background: linear-gradient(105deg, #8ED66E 0%, #C4EBA0 45%, #8ED66E 60%, #8ED66E 100%);
+  background: linear-gradient(105deg, #C8FF3A 0%, #E0FF80 45%, #C8FF3A 60%, #C8FF3A 100%);
   background-size: 200% auto;
   animation: shimmer 3.5s linear infinite;
-  color: #090E0A;
+  color: #1B3A24;
   font-weight: 600;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -90,7 +83,7 @@ body {
 
 .btn-matcha:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 32px rgba(142, 214, 110, 0.35);
+  box-shadow: 0 8px 32px rgba(200, 255, 58, 0.35);
 }
 
 .btn-matcha:active {
@@ -99,61 +92,61 @@ body {
 
 /* ── Ghost button ── */
 .btn-ghost {
-  border: 1px solid rgba(242, 237, 223, 0.3);
-  color: #F2EDDF;
+  border: 1px solid rgba(27, 58, 36, 0.3);
+  color: #1B3A24;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  font-size: 0.75rem;
+  font-size: 0.82rem;
   transition: border-color 0.2s ease, background 0.2s ease;
 }
 .btn-ghost:hover {
-  border-color: #8ED66E;
-  background: rgba(142, 214, 110, 0.08);
-  color: #8ED66E;
+  border-color: #C8FF3A;
+  background: rgba(200, 255, 58, 0.08);
+  color: #C8FF3A;
 }
 
 /* ── Input ── */
 .waitlist-input {
   background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(242, 237, 223, 0.18);
-  color: #F2EDDF;
+  border: 1px solid rgba(253, 244, 238, 0.22);
+  color: #FDF4EE;
   transition: border-color 0.2s ease, background 0.2s ease;
 }
 
 .waitlist-input::placeholder {
-  color: rgba(242, 237, 223, 0.38);
+  color: rgba(253, 244, 238, 0.4);
 }
 
 .waitlist-input:focus {
   outline: none;
-  border-color: #8ED66E;
-  background: rgba(142, 214, 110, 0.05);
-  box-shadow: 0 0 0 3px rgba(142, 214, 110, 0.12);
+  border-color: #C8FF3A;
+  background: rgba(200, 255, 58, 0.05);
+  box-shadow: 0 0 0 3px rgba(200, 255, 58, 0.12);
 }
 
 /* ── Divider line ── */
 .divider {
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(242,237,223,0.12), transparent);
+  background: linear-gradient(90deg, transparent, rgba(27,58,36,0.12), transparent);
 }
 
 /* ── Card hover ── */
 .feature-card {
-  border: 1px solid rgba(242, 237, 223, 0.08);
-  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(27, 58, 36, 0.08);
+  background: rgba(255,255,255,0.5);
   transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease;
 }
 .feature-card:hover {
-  border-color: rgba(142, 214, 110, 0.25);
-  background: rgba(142, 214, 110, 0.04);
+  border-color: rgba(200, 255, 58, 0.25);
+  background: rgba(200, 255, 58, 0.04);
   transform: translateY(-4px);
 }
 
 /* ── Step number ── */
 .step-num {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: 'Instrument Serif', Georgia, serif;
   font-style: italic;
-  color: #8ED66E;
+  color: #C8FF3A;
   font-size: 3.5rem;
   line-height: 1;
   opacity: 0.6;
@@ -164,12 +157,12 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 4px 12px;
+  padding: 5px 14px;
   border-radius: 999px;
-  border: 1px solid rgba(142, 214, 110, 0.3);
-  background: rgba(142, 214, 110, 0.08);
-  color: #8ED66E;
-  font-size: 0.7rem;
+  border: 1px solid rgba(200, 255, 58, 0.3);
+  background: rgba(200, 255, 58, 0.08);
+  color: #C8FF3A;
+  font-size: 0.75rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   font-weight: 500;
@@ -191,8 +184,8 @@ body {
 
 /* ── Scrollbar ── */
 ::-webkit-scrollbar { width: 3px; }
-::-webkit-scrollbar-track { background: #090E0A; }
-::-webkit-scrollbar-thumb { background: #1A3320; border-radius: 2px; }
+::-webkit-scrollbar-track { background: #1B3A24; }
+::-webkit-scrollbar-thumb { background: #4A8A52; border-radius: 2px; }
 
 /* ── Sachet visual ── */
 @keyframes float {
@@ -205,5 +198,5 @@ body {
 
 /* ── Green glow ── */
 .glow-green {
-  box-shadow: 0 0 80px rgba(142, 214, 110, 0.15), 0 0 160px rgba(142, 214, 110, 0.06);
+  box-shadow: 0 0 80px rgba(200, 255, 58, 0.15), 0 0 160px rgba(200, 255, 58, 0.06);
 }
