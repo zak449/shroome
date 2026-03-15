@@ -27,7 +27,7 @@ const STACK = [
     num: "02",
     emoji: "🧠",
     badge: "200mg organic · beta glucans 1,3/1,6",
-    title: "Organic Lion's Mane + Chaga",
+    title: "Organic Mushrooms",
     body: "200mg of certified organic mushroom beta glucans (1,3/1,6) — the active compounds that actually do the thing. Clinically studied for focus, creativity, and immune support. You'll feel the difference by week two.",
     bg: C.lightMatcha,
   },
@@ -136,7 +136,7 @@ function SachetVisual({ scale = 1 }: { scale?: number }) {
             <text x="186" y="165" fontSize="5" fill="#E8C4B0" opacity="0.3">◎</text>
             <rect x="16" y="290" width="228" height="64" fill="url(#sB)" clipPath="url(#sC)" />
             <text x="130" y="313" textAnchor="middle" fontFamily="DM Mono, monospace" fontSize="6" fill="#F5F0E8" opacity="0.55" letterSpacing="2.5">CEREMONIAL MATCHA</text>
-            <text x="130" y="327" textAnchor="middle" fontFamily="DM Mono, monospace" fontSize="6" fill="#F5F0E8" opacity="0.55" letterSpacing="2.5">LION&apos;S MANE · CHAGA</text>
+            <text x="130" y="327" textAnchor="middle" fontFamily="DM Mono, monospace" fontSize="6" fill="#F5F0E8" opacity="0.55" letterSpacing="2.5">ORGANIC MUSHROOMS</text>
             <text x="130" y="341" textAnchor="middle" fontFamily="DM Mono, monospace" fontSize="6" fill="#F5F0E8" opacity="0.55" letterSpacing="2.5">GRASS-FED COLLAGEN</text>
             <line x1="36" y1="352" x2="224" y2="352" stroke="#E8C4B0" strokeWidth="0.75" opacity="0.35" />
             <rect x="108" y="260" width="44" height="18" rx="9" fill="rgba(232,196,176,0.14)" stroke="#E8C4B0" strokeWidth="0.75" opacity="0.85" />
@@ -389,7 +389,7 @@ export default function Home() {
         }}>
           <div className="marquee-track">
             {[...Array(2)].map((_, pass) =>
-              ["POUR", "SWIRL", "GLOW", "CEREMONIAL MATCHA", "ORGANIC LION'S MANE", "ORGANIC CHAGA", "GRASS-FED COLLAGEN", "200MG BETA GLUCANS", "3G DOSE", "60 SECONDS", "FIRST HARVEST", "SHADE GROWN"].map((item, i) => (
+              ["POUR", "SWIRL", "GLOW", "CEREMONIAL MATCHA", "ORGANIC MUSHROOMS", "GRASS-FED COLLAGEN", "200MG BETA GLUCANS", "3G DOSE", "60 SECONDS", "FIRST HARVEST", "SHADE GROWN"].map((item, i) => (
                 <span key={pass * 100 + i} style={{
                   fontFamily: "DM Mono, monospace", fontSize: "0.65rem",
                   letterSpacing: "0.2em", textTransform: "uppercase" as const,
