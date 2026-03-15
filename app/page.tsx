@@ -77,7 +77,7 @@ const COMPARE = [
   { brand: "MatchaKo",   us: false, checks: [false, true,  false, false, true ] },
   { brand: "Café latte", us: false, checks: [false, true,  false, false, false] },
 ];
-const COMPARE_HEADS = ["Ready-to-Pour", "Ceremonial", "Collagen", "Mushrooms", "$3 or less"];
+const COMPARE_HEADS = ["Liquid", "Ceremonial", "Collagen", "Mushrooms", "≤$3"];
 
 const STEPS = [
   { num: "01", title: "Tear",  body: "Tear open. 3g of liquid ceremonial matcha concentrate lands in your cup. Zero measuring. Zero clumping.", bg: C.pink,     ink: C.navy },
@@ -125,31 +125,86 @@ function EmailForm({ dark = false }: { dark?: boolean }) {
   );
 }
 
-// ── Sachet SVG ────────────────────────────────────────────────────
+// ── Sachet SVG — Cymbiotika-inspired slim sachet ──────────────────
 function Sachet({ scale = 1 }: { scale?: number }) {
-  const w = Math.round(220 * scale), h = Math.round(320 * scale);
+  const w = Math.round(150 * scale), h = Math.round(420 * scale);
   return (
-    <div className="sachet-float" style={{ filter: "drop-shadow(0 32px 64px rgba(27,31,59,0.35))" }}>
-      <svg width={w} height={h} viewBox="0 0 220 320" fill="none">
+    <div className="sachet-float" style={{ filter: "drop-shadow(0 36px 80px rgba(27,31,59,0.32))" }}>
+      <svg width={w} height={h} viewBox="0 0 150 420" fill="none">
         <defs>
-          <linearGradient id="sG2" x1="0" y1="0" x2="220" y2="320" gradientUnits="userSpaceOnUse">
-            <stop offset="0%" stopColor="#F8F2EA"/><stop offset="60%" stopColor="#EDE4D6"/><stop offset="100%" stopColor="#E2D6C4"/>
+          {/* Main body — horizontal sheen */}
+          <linearGradient id="sBg" x1="0" y1="0" x2="1" y2="0" gradientUnits="objectBoundingBox">
+            <stop offset="0%"   stopColor="#DED5C5"/>
+            <stop offset="9%"   stopColor="#F5EDE3"/>
+            <stop offset="91%"  stopColor="#F5EDE3"/>
+            <stop offset="100%" stopColor="#D6CCB9"/>
+          </linearGradient>
+          {/* Left seal — gradient fades inward */}
+          <linearGradient id="sSL" x1="0" y1="0" x2="1" y2="0" gradientUnits="objectBoundingBox">
+            <stop offset="0%"   stopColor="rgba(90,107,62,0.45)"/>
+            <stop offset="100%" stopColor="rgba(90,107,62,0.10)"/>
+          </linearGradient>
+          {/* Right seal — mirror */}
+          <linearGradient id="sSR" x1="1" y1="0" x2="0" y2="0" gradientUnits="objectBoundingBox">
+            <stop offset="0%"   stopColor="rgba(90,107,62,0.45)"/>
+            <stop offset="100%" stopColor="rgba(90,107,62,0.10)"/>
           </linearGradient>
         </defs>
-        <rect x="12" y="12" width="196" height="296" fill="url(#sG2)" rx="2"/>
-        <rect x="18" y="18" width="184" height="284" fill="none" stroke="rgba(90,107,62,0.18)" strokeWidth="1"/>
-        {[62, 110, 158].map((x, i) => <circle key={i} cx={x} cy="21" r="2.5" fill={C.sage} opacity="0.5"/>)}
-        <line x1="26" y1="48" x2="194" y2="48" stroke={C.sage} strokeWidth="0.75" opacity="0.3"/>
-        <text x="110" y="82" textAnchor="middle" fontFamily="Instrument Serif, serif" fontStyle="italic" fontSize="21" fill={C.navy} letterSpacing="1.5">shroomé</text>
-        <text x="110" y="97" textAnchor="middle" fontFamily="Syne, sans-serif" fontWeight="600" fontSize="6" fill={C.sage} opacity="0.75" letterSpacing="4">POUR · SWIRL · GLOW</text>
-        <circle cx="110" cy="182" r="55" fill="none" stroke="rgba(128,148,99,0.15)" strokeWidth="1"/>
-        <image href="/logo-mark.svg" x="76" y="148" width="68" height="68" opacity="0.2"/>
-        <line x1="26" y1="256" x2="194" y2="256" stroke={C.sage} strokeWidth="0.5" opacity="0.25"/>
-        <text x="110" y="272" textAnchor="middle" fontFamily="Syne, sans-serif" fontWeight="500" fontSize="5.5" fill={C.navy} opacity="0.4" letterSpacing="2.5">ORGANIC CEREMONIAL MATCHA</text>
-        <text x="110" y="283" textAnchor="middle" fontFamily="Syne, sans-serif" fontWeight="500" fontSize="5.5" fill={C.navy} opacity="0.4" letterSpacing="2.5">ORGANIC MUSHROOM EXTRACTS</text>
-        <text x="110" y="294" textAnchor="middle" fontFamily="Syne, sans-serif" fontWeight="500" fontSize="5.5" fill={C.navy} opacity="0.4" letterSpacing="2.5">GRASS-FED COLLAGEN</text>
-        <rect x="88" y="228" width="44" height="16" fill="none" stroke={C.sage} strokeWidth="0.75" opacity="0.6"/>
-        <text x="110" y="240" textAnchor="middle" fontFamily="Syne, sans-serif" fontWeight="700" fontSize="6.5" fill={C.sage} letterSpacing="1.5">3g DOSE</text>
+
+        {/* ── Body ── */}
+        <rect x="0" y="0" width="150" height="420" rx="7" fill="url(#sBg)"/>
+
+        {/* ── Left seal strip ── */}
+        <rect x="0" y="0" width="14" height="420" rx="7" fill="url(#sSL)"/>
+        <line x1="5"  y1="52" x2="5"  y2="368" stroke="rgba(90,107,62,0.25)" strokeWidth="0.8"/>
+        <line x1="9"  y1="52" x2="9"  y2="368" stroke="rgba(90,107,62,0.10)" strokeWidth="0.5"/>
+
+        {/* ── Right seal strip ── */}
+        <rect x="136" y="0" width="14" height="420" rx="7" fill="url(#sSR)"/>
+        <line x1="141" y1="52" x2="141" y2="368" stroke="rgba(90,107,62,0.25)" strokeWidth="0.8"/>
+        <line x1="145" y1="52" x2="145" y2="368" stroke="rgba(90,107,62,0.10)" strokeWidth="0.5"/>
+
+        {/* ── Top seal ── */}
+        <rect x="14" y="0" width="122" height="52" fill="rgba(90,107,62,0.07)"/>
+        <line x1="14" y1="52" x2="136" y2="52" stroke="rgba(90,107,62,0.42)" strokeWidth="0.9"/>
+        {/* Tear perforations */}
+        {[25,37,49,61,73,85,97,109,121].map((x,i) => (
+          <circle key={i} cx={x} cy={26} r="2.3" fill="rgba(90,107,62,0.5)"/>
+        ))}
+        {/* Tear notch — right */}
+        <path d="M 136 15 L 150 26 L 136 37" fill="rgba(90,107,62,0.28)"/>
+
+        {/* ── Bottom seal ── */}
+        <rect x="14" y="368" width="122" height="52" fill="rgba(90,107,62,0.07)"/>
+        <line x1="14" y1="368" x2="136" y2="368" stroke="rgba(90,107,62,0.42)" strokeWidth="0.9"/>
+
+        {/* ── Inner label border ── */}
+        <rect x="21" y="64" width="108" height="290" fill="none" stroke="rgba(90,107,62,0.13)" strokeWidth="0.75"/>
+
+        {/* ── Logo mark ── */}
+        <image href="/logo-mark.svg" x="51" y="88" width="48" height="48" opacity="0.88"/>
+
+        {/* ── Brand name ── */}
+        <text x="75" y="162" textAnchor="middle" fontFamily="Instrument Serif, serif" fontStyle="italic" fontSize="17" fill="#1B1F3B" letterSpacing="1">shroomé</text>
+        <text x="75" y="176" textAnchor="middle" fontFamily="Syne, sans-serif" fontWeight="600" fontSize="5.2" fill="#809463" opacity="0.75" letterSpacing="3.2">POUR · SWIRL · GLOW</text>
+
+        {/* ── Divider ── */}
+        <line x1="40" y1="190" x2="110" y2="190" stroke="#809463" strokeWidth="0.6" opacity="0.3"/>
+
+        {/* ── Dose tag ── */}
+        <rect x="51" y="200" width="48" height="17" fill="none" stroke="#809463" strokeWidth="0.75" opacity="0.6"/>
+        <text x="75" y="212" textAnchor="middle" fontFamily="Syne, sans-serif" fontWeight="700" fontSize="6" fill="#809463" letterSpacing="1.5">3g DOSE</text>
+
+        {/* ── Lower divider ── */}
+        <line x1="40" y1="235" x2="110" y2="235" stroke="#809463" strokeWidth="0.4" opacity="0.2"/>
+
+        {/* ── Ingredients ── */}
+        <text x="75" y="293" textAnchor="middle" fontFamily="Syne, sans-serif" fontWeight="500" fontSize="4.6" fill="#1B1F3B" opacity="0.35" letterSpacing="2">ORGANIC CEREMONIAL MATCHA</text>
+        <text x="75" y="305" textAnchor="middle" fontFamily="Syne, sans-serif" fontWeight="500" fontSize="4.6" fill="#1B1F3B" opacity="0.35" letterSpacing="2">ORGANIC MUSHROOM EXTRACTS</text>
+        <text x="75" y="317" textAnchor="middle" fontFamily="Syne, sans-serif" fontWeight="500" fontSize="4.6" fill="#1B1F3B" opacity="0.35" letterSpacing="2">GRASS-FED COLLAGEN</text>
+
+        {/* ── URL ── */}
+        <text x="75" y="346" textAnchor="middle" fontFamily="Syne, sans-serif" fontWeight="600" fontSize="4.8" fill="#1B1F3B" opacity="0.2" letterSpacing="1">drinkshroome.com</text>
       </svg>
     </div>
   );
@@ -194,7 +249,7 @@ export default function Home() {
           position:absolute; width:62vw; height:62vw;
           max-width:760px; max-height:760px;
           top:-20%; right:-16%;
-          background:#FFB7D1;
+          background:#D4B8E0;
           border-radius:60% 40% 55% 45% / 50% 46% 54% 50%;
           animation:morphBlob1 14s ease-in-out infinite;
           pointer-events:none; z-index:0;
@@ -279,6 +334,7 @@ export default function Home() {
             ))}
           </div>
           <button
+            onClick={() => document.getElementById("waitlist")?.scrollIntoView({ behavior: "smooth" })}
             style={{ background: C.navy, color: C.cream, border: "none", padding: "12px 26px", fontFamily: FB, fontWeight: 800, fontSize: "0.78rem", letterSpacing: "0.12em", textTransform: "uppercase" as const, cursor: "pointer" }}
             onMouseEnter={e => { e.currentTarget.style.background = C.lime; e.currentTarget.style.color = C.navy; }}
             onMouseLeave={e => { e.currentTarget.style.background = C.navy; e.currentTarget.style.color = C.cream; }}
@@ -288,7 +344,7 @@ export default function Home() {
         </nav>
 
         {/* ── Hero ───────────────────────────────────────────── */}
-        <section style={{ background: C.cream, minHeight: "92vh", display: "grid", gridTemplateColumns: "1fr 1fr", position: "relative", overflow: "hidden" }} className="hero-grid">
+        <section style={{ background: C.pink, minHeight: "92vh", display: "grid", gridTemplateColumns: "1fr 1fr", position: "relative", overflow: "hidden" }} className="hero-grid">
           <div className="hero-blob-1" />
           <div className="hero-blob-2" />
           <div className="hero-blob-3" />
@@ -400,17 +456,17 @@ export default function Home() {
         </section>
 
         {/* ── Invented. Not Improved. ─────────────────────────── */}
-        <section style={{ background: C.navy, padding: "96px 5%", position: "relative", overflow: "hidden" }}>
-          {/* corner blob decoration */}
-          <div style={{ position: "absolute", width: "38vw", height: "38vw", maxWidth: 500, maxHeight: 500, top: "-18%", right: "2%", background: C.pink, borderRadius: "58% 42% 55% 45% / 50% 48% 52% 50%", pointerEvents: "none", opacity: 0.12 }}/>
+        <section style={{ background: C.lavender, padding: "96px 5%", position: "relative", overflow: "hidden", borderTop: `2px solid ${C.navy}` }}>
+          {/* corner blob */}
+          <div style={{ position: "absolute", width: "38vw", height: "38vw", maxWidth: 500, maxHeight: 500, top: "-18%", right: "2%", background: C.pink, borderRadius: "58% 42% 55% 45% / 50% 48% 52% 50%", pointerEvents: "none", opacity: 0.45 }}/>
           <div style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 440px), 1fr))", gap: "56px 80px", alignItems: "start", position: "relative", zIndex: 1 }}>
             {/* left */}
             <div>
-              <p style={{ fontFamily: FB, fontWeight: 700, fontSize: "0.85rem", letterSpacing: "0.3em", textTransform: "uppercase" as const, color: C.lime, marginBottom: 20 }}>A New Category</p>
-              <h2 style={{ fontFamily: FD, fontSize: "clamp(2.5rem, 5vw, 5rem)", lineHeight: 0.95, letterSpacing: "-0.03em", color: C.cream, marginBottom: 24 }}>
+              <p style={{ fontFamily: FB, fontWeight: 700, fontSize: "0.85rem", letterSpacing: "0.3em", textTransform: "uppercase" as const, color: C.sageDark, marginBottom: 20 }}>A New Category</p>
+              <h2 style={{ fontFamily: FD, fontSize: "clamp(2.5rem, 5vw, 5rem)", lineHeight: 0.95, letterSpacing: "-0.03em", color: C.navy, marginBottom: 24 }}>
                 Invented.<br /><em style={{ color: C.coral }}>Not improved.</em>
               </h2>
-              <p style={{ fontFamily: FB, fontWeight: 500, fontSize: "1rem", lineHeight: 1.8, color: "rgba(253,244,238,0.62)", marginBottom: 28, maxWidth: 400 }}>
+              <p style={{ fontFamily: FB, fontWeight: 500, fontSize: "1rem", lineHeight: 1.8, color: "rgba(27,31,59,0.68)", marginBottom: 28, maxWidth: 400 }}>
                 Matcha powders clump. Collagen sinks. Mushroom blends taste like dirt. We didn&apos;t try to fix any of that. We made a liquid concentrate that dissolves all three perfectly, every single time.
               </p>
               <div style={{ borderLeft: `4px solid ${C.coral}`, paddingLeft: 22, marginBottom: 32 }}>
@@ -420,32 +476,37 @@ export default function Home() {
               </div>
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 2 }}>
                 {[["3g", "Matcha per serve"], ["2g", "Collagen peptides"], ["200mg", "Beta glucans"], ["~75mg", "Natural caffeine"]].map(([n, l]) => (
-                  <div key={l} style={{ background: "rgba(255,255,255,0.05)", padding: "20px 22px", border: "1px solid rgba(255,255,255,0.08)" }}>
+                  <div key={l} style={{ background: C.navy, padding: "20px 22px" }}>
                     <div style={{ fontFamily: FD, fontSize: "2.2rem", color: C.lime, lineHeight: 1, marginBottom: 4 }}>{n}</div>
-                    <div style={{ fontFamily: FB, fontWeight: 600, fontSize: "0.72rem", letterSpacing: "0.12em", textTransform: "uppercase" as const, color: "rgba(253,244,238,0.42)" }}>{l}</div>
+                    <div style={{ fontFamily: FB, fontWeight: 600, fontSize: "0.72rem", letterSpacing: "0.12em", textTransform: "uppercase" as const, color: "rgba(253,244,238,0.5)" }}>{l}</div>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* right — comparison table */}
-            <div>
-              <div style={{ display: "grid", gridTemplateColumns: "2fr repeat(5, 1fr)", gap: 0, marginBottom: 14 }}>
-                <div/>
-                {COMPARE_HEADS.map(h => (
-                  <div key={h} style={{ fontFamily: FB, fontWeight: 700, fontSize: "0.75rem", letterSpacing: "0.05em", textTransform: "uppercase" as const, color: "rgba(253,244,238,0.8)", textAlign: "center", padding: "0 2px", lineHeight: 1.3 }}>{h}</div>
-                ))}
-              </div>
-              {COMPARE.map((row) => (
-                <div key={row.brand} style={{ display: "grid", gridTemplateColumns: "2fr repeat(5, 1fr)", gap: 0, padding: "14px 0", borderTop: `1px solid rgba(253,244,238,${row.us ? "0.15" : "0.06"})`, background: row.us ? "rgba(200,255,58,0.06)" : "transparent", alignItems: "center" }}>
-                  <div style={{ fontFamily: FD, fontSize: row.us ? "1.2rem" : "1rem", color: row.us ? C.lime : "rgba(253,244,238,0.65)", fontStyle: row.us ? "italic" : "normal" }}>{row.brand}</div>
-                  {row.checks.map((c, i) => (
-                    <div key={i} style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
-                      <span style={{ width: 26, height: 26, borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.8rem", fontWeight: 700 }} className={c ? "chk-y" : "chk-n"}>{c ? "✓" : "✕"}</span>
+            {/* right — comparison table, dark box */}
+            <div style={{ background: C.navy, padding: "28px 22px", border: `2px solid ${C.navy}` }}>
+              {/* mobile scroll wrapper */}
+              <div style={{ overflowX: "auto", WebkitOverflowScrolling: "touch" as any }}>
+                <div style={{ minWidth: 340 }}>
+                  <div style={{ display: "grid", gridTemplateColumns: "2fr repeat(5, 1fr)", gap: 0, marginBottom: 14 }}>
+                    <div/>
+                    {COMPARE_HEADS.map(h => (
+                      <div key={h} style={{ fontFamily: FB, fontWeight: 700, fontSize: "0.7rem", letterSpacing: "0.04em", textTransform: "uppercase" as const, color: "rgba(253,244,238,0.75)", textAlign: "center", padding: "0 3px", lineHeight: 1.25 }}>{h}</div>
+                    ))}
+                  </div>
+                  {COMPARE.map((row) => (
+                    <div key={row.brand} style={{ display: "grid", gridTemplateColumns: "2fr repeat(5, 1fr)", gap: 0, padding: "13px 0", borderTop: `1px solid rgba(253,244,238,${row.us ? "0.15" : "0.07"})`, background: row.us ? "rgba(200,255,58,0.08)" : "transparent", alignItems: "center" }}>
+                      <div style={{ fontFamily: FD, fontSize: row.us ? "1.15rem" : "0.95rem", color: row.us ? C.lime : "rgba(253,244,238,0.6)", fontStyle: row.us ? "italic" : "normal" }}>{row.brand}</div>
+                      {row.checks.map((c, i) => (
+                        <div key={i} style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+                          <span style={{ width: 26, height: 26, borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.8rem", fontWeight: 700 }} className={c ? "chk-y" : "chk-n"}>{c ? "✓" : "✕"}</span>
+                        </div>
+                      ))}
                     </div>
                   ))}
                 </div>
-              ))}
+              </div>
             </div>
           </div>
         </section>
@@ -493,7 +554,7 @@ export default function Home() {
         </section>
 
         {/* ── Final CTA ──────────────────────────────────────── */}
-        <section style={{ background: C.pink, padding: "96px 5%", position: "relative", overflow: "hidden", borderTop: `2px solid ${C.navy}` }}>
+        <section id="waitlist" style={{ background: C.pink, padding: "96px 5%", position: "relative", overflow: "hidden", borderTop: `2px solid ${C.navy}` }}>
           {/* corner blobs */}
           <div style={{ position: "absolute", width: "35vw", height: "35vw", maxWidth: 460, maxHeight: 460, bottom: "-20%", left: "-8%", background: C.coral, borderRadius: "55% 45% 60% 40% / 48% 56% 44% 52%", pointerEvents: "none", opacity: 0.3 }}/>
           <div style={{ position: "absolute", width: "24vw", height: "24vw", maxWidth: 320, maxHeight: 320, top: "-14%", right: "8%", background: C.lime, borderRadius: "48% 52% 58% 42% / 52% 44% 56% 48%", pointerEvents: "none", opacity: 0.5 }}/>
