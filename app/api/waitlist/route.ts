@@ -13,7 +13,7 @@ export async function POST(req: NextRequest) {
 
     // 1. Send confirmation to the subscriber
     await resend.emails.send({
-      from: "Shroomé <hello@shroome.com>",
+      from: "Shroomé <noreply@communityattire.com>",
       to: [email],
       subject: "You're on the list 🍵 — Your 40% off is locked in",
       html: `
@@ -120,8 +120,8 @@ export async function POST(req: NextRequest) {
 
     // 2. Notify admin of new signup
     await resend.emails.send({
-      from: "Shroomé Waitlist <hello@shroome.com>",
-      to: ["hello@shroome.com"],
+      from: "Shroomé Waitlist <noreply@communityattire.com>",
+      to: ["info@communityattire.com"],
       subject: `🍵 New waitlist signup: ${email}`,
       html: `<p>New waitlist signup from <strong>${email}</strong></p><p>Time: ${new Date().toISOString()}</p>`,
     });
