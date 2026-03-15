@@ -26,9 +26,9 @@ const STACK = [
   {
     num: "02",
     emoji: "🧠",
-    badge: "500mg dual extract",
-    title: "Lion's Mane + Chaga",
-    body: "Clinically-studied functional mushrooms for focus, creativity, and immune support. Dual-extract for full bioavailability. You'll feel the difference by week two.",
+    badge: "200mg organic · beta glucans 1,3/1,6",
+    title: "Organic Lion's Mane + Chaga",
+    body: "200mg of certified organic mushroom beta glucans (1,3/1,6) — the active compounds that actually do the thing. Clinically studied for focus, creativity, and immune support. You'll feel the difference by week two.",
     bg: C.lightMatcha,
   },
   {
@@ -389,7 +389,7 @@ export default function Home() {
         }}>
           <div className="marquee-track">
             {[...Array(2)].map((_, pass) =>
-              ["POUR", "SWIRL", "GLOW", "CEREMONIAL MATCHA", "LION'S MANE", "CHAGA", "GRASS-FED COLLAGEN", "3G DOSE", "60 SECONDS", "FIRST HARVEST", "SHADE GROWN", "FUNCTIONAL MUSHROOMS"].map((item, i) => (
+              ["POUR", "SWIRL", "GLOW", "CEREMONIAL MATCHA", "ORGANIC LION'S MANE", "ORGANIC CHAGA", "GRASS-FED COLLAGEN", "200MG BETA GLUCANS", "3G DOSE", "60 SECONDS", "FIRST HARVEST", "SHADE GROWN"].map((item, i) => (
                 <span key={pass * 100 + i} style={{
                   fontFamily: "DM Mono, monospace", fontSize: "0.65rem",
                   letterSpacing: "0.2em", textTransform: "uppercase" as const,
