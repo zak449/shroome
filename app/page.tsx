@@ -82,7 +82,7 @@ const STEPS = [
     num: "03",
     emoji: "✨",
     title: "Glow",
-    body: "Clean energy, focus locked in, collagen working while you drink. You literally just made a better latte than your café. For $2.",
+    body: "Clean energy, focus locked in, collagen working while you drink. You literally just made a better latte than your café. For $3.",
   },
 ];
 
@@ -490,7 +490,7 @@ export default function Home() {
               {[
                 { stat: "3g",  label: "Perfect dose. Every time." },
                 { stat: "60s", label: "Tear. Pour. You're done." },
-                { stat: "$2",  label: "vs. $9 at your café." },
+                { stat: "$3",  label: "vs. $9 at your café." },
               ].map((tile) => (
                 <div key={tile.stat} style={{
                   background: "rgba(245,240,232,0.07)",
@@ -621,7 +621,7 @@ export default function Home() {
               lineHeight: 1.48, color: C.forestFloor,
               letterSpacing: "-0.01em", marginBottom: 24,
             }}>
-              &ldquo;Ceremonial matcha. Lion&apos;s Mane. Grass-fed collagen.
+              &ldquo;Ceremonial matcha. Mushroom extracts. Grass-fed collagen.
               You were already buying all three — now they&apos;re in{" "}
               <strong style={{ fontStyle: "normal", fontWeight: 700 }}>one sachet</strong>
               .&rdquo;
