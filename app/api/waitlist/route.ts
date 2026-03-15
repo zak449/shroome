@@ -11,7 +11,26 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Invalid email" }, { status: 400 });
     }
 
-    // 1. Send confirmation to the subscriber
+    // ─── 1. Append to Google Sheets via Apps Script webhook ───────────────
+    const sheetsWebhookUrl = process.env.GOOGLE_SHEETS_WEBHOOK_URL;
+    if (sheetsWebhookUrl) {
+      try {
+        await fetch(sheetsWebhookUrl, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            email,
+            timestamp: new Date().toISOString(),
+            source: "drinkshroome.com",
+          }),
+        });
+      } catch (sheetErr) {
+        // Non-fatal — log but don't block the signup
+        console.error("Sheets webhook error:", sheetErr);
+      }
+    }
+
+    // ─── 2. Send confirmation to the subscriber ────────────────────────────
     await resend.emails.send({
       from: "Shroomé <noreply@communityattire.com>",
       to: [email],
@@ -104,7 +123,7 @@ export async function POST(req: NextRequest) {
                         © 2026 Shroomé · Ceremonial matcha, functional mushrooms, no nonsense.
                       </p>
                       <p style="margin:0;font-size:12px;color:rgba(242,237,223,0.2);">
-                        You signed up at shroome.com. We'll never spam you.
+                        You signed up at drinkshroome.com. We'll never spam you.
                       </p>
                     </td>
                   </tr>
@@ -118,12 +137,12 @@ export async function POST(req: NextRequest) {
       `,
     });
 
-    // 2. Notify admin of new signup
+    // ─── 3. Notify admin of new signup ─────────────────────────────────────
     await resend.emails.send({
       from: "Shroomé Waitlist <noreply@communityattire.com>",
-      to: ["info@communityattire.com"],
+      to: ["zak@communityattire.com"],
       subject: `🍵 New waitlist signup: ${email}`,
-      html: `<p>New waitlist signup from <strong>${email}</strong></p><p>Time: ${new Date().toISOString()}</p>`,
+      html: `<p style="font-family:Arial,sans-serif;">New waitlist signup from <strong>${email}</strong></p><p style="font-family:Arial,sans-serif;color:#666;">Time: ${new Date().toISOString()}</p>`,
     });
 
     return NextResponse.json({ success: true });
