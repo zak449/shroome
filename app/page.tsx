@@ -168,7 +168,7 @@ function Sachet({ flavor = "vanilla" as "vanilla" | "strawberry", scale = 1, hei
       ? { display: "block", height: height, width: "auto", maxWidth: "100%", objectFit: "contain" }
       : { display: "block", maxWidth: "100%", objectFit: "contain" };
     return (
-      <div className="sachet-float" style={{ filter: "drop-shadow(0 40px 80px rgba(0,0,0,0.55)) drop-shadow(0 8px 24px rgba(0,0,0,0.30))" }}>
+      <div className="sachet-float" style={{ filter: "drop-shadow(0 32px 64px rgba(0,0,0,0.45))" }}>
         <img
           src={pngSrc}
           alt={`shroomé ${flavor} sachet`}
@@ -482,15 +482,12 @@ export default function Home() {
         </section>
 
         {/* ── Ghia-style dark product moment ─────────────────────── */}
-        <section style={{ background: "#060608", padding: "88px 5% 104px", position: "relative", overflowX: "hidden" as any, borderTop: `2px solid ${C.navy}` }}>
-          {/* Star-burst light rays — conic gradient from behind sachets */}
-          <div style={{ position: "absolute", top: "-10%", left: "50%", transform: "translateX(-50%)", width: "140%", height: "130%", background: "conic-gradient(from 0deg at 50% 38%, transparent 0deg, rgba(255,240,200,0.055) 3deg, transparent 6deg, transparent 12deg, rgba(255,240,200,0.04) 15deg, transparent 18deg, transparent 24deg, rgba(255,240,200,0.06) 27deg, transparent 30deg, transparent 40deg, rgba(255,240,200,0.04) 43deg, transparent 46deg, transparent 60deg, rgba(255,240,200,0.045) 63deg, transparent 66deg, transparent 90deg, rgba(255,240,200,0.035) 93deg, transparent 96deg, transparent 120deg, rgba(255,240,200,0.05) 123deg, transparent 126deg, transparent 150deg, rgba(255,240,200,0.04) 153deg, transparent 156deg, transparent 180deg, rgba(255,240,200,0.055) 183deg, transparent 186deg, transparent 210deg, rgba(255,240,200,0.035) 213deg, transparent 216deg, transparent 240deg, rgba(255,240,200,0.05) 243deg, transparent 246deg, transparent 270deg, rgba(255,240,200,0.04) 273deg, transparent 276deg, transparent 300deg, rgba(255,240,200,0.06) 303deg, transparent 306deg, transparent 330deg, rgba(255,240,200,0.045) 333deg, transparent 336deg, transparent 360deg)", pointerEvents: "none", zIndex: 0 }}/>
-          {/* Central bright halo */}
-          <div style={{ position: "absolute", top: "8%", left: "50%", transform: "translateX(-50%)", width: "60%", height: "60%", background: "radial-gradient(ellipse at 50% 30%, rgba(255,245,220,0.18) 0%, rgba(220,190,130,0.09) 25%, rgba(200,160,100,0.03) 50%, transparent 70%)", pointerEvents: "none", zIndex: 0 }}/>
-          {/* Vanilla sachet warm glow */}
-          <div style={{ position: "absolute", top: "15%", left: "25%", width: "30vw", height: "70%", background: "radial-gradient(ellipse at 50% 40%, rgba(232,208,148,0.18) 0%, transparent 65%)", pointerEvents: "none", zIndex: 0 }}/>
-          {/* Strawberry sachet rose glow */}
-          <div style={{ position: "absolute", top: "15%", right: "18%", width: "30vw", height: "70%", background: "radial-gradient(ellipse at 50% 40%, rgba(225,170,170,0.16) 0%, transparent 65%)", pointerEvents: "none", zIndex: 0 }}/>
+        <section style={{ background: "#08090E", padding: "80px 5% 96px", position: "relative", overflowX: "hidden" as any, borderTop: `2px solid ${C.navy}` }}>
+          {/* light rays from center */}
+          <div style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, background: "radial-gradient(ellipse 70% 90% at 50% 30%, rgba(255,220,150,0.13) 0%, rgba(200,150,80,0.04) 45%, transparent 70%)", pointerEvents: "none" }}/>
+          {/* side glow accents */}
+          <div style={{ position: "absolute", top: "5%", left: "-8%", width: "35vw", height: "35vw", maxWidth: 380, maxHeight: 380, borderRadius: "50%", background: "radial-gradient(circle, rgba(255,184,194,0.12) 0%, transparent 70%)", pointerEvents: "none" }}/>
+          <div style={{ position: "absolute", top: "5%", right: "-8%", width: "35vw", height: "35vw", maxWidth: 380, maxHeight: 380, borderRadius: "50%", background: "radial-gradient(circle, rgba(245,240,232,0.10) 0%, transparent 70%)", pointerEvents: "none" }}/>
 
           <div style={{ maxWidth: 1100, margin: "0 auto", display: "flex", flexDirection: "column", alignItems: "center", gap: 48 }}>
             {/* headline */}
@@ -505,7 +502,7 @@ export default function Home() {
             <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "center", gap: "clamp(16px, 4vw, 56px)", position: "relative", zIndex: 2 }}>
               {/* Vanilla */}
               <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 20 }}>
-                <div style={{ transform: "rotate(-6deg)", filter: "drop-shadow(0 40px 80px rgba(232,208,148,0.55)) drop-shadow(0 0 40px rgba(255,240,200,0.25))" }}>
+                <div style={{ transform: "rotate(-6deg)", filter: "drop-shadow(0 32px 72px rgba(245,240,232,0.22))" }}>
                   <Sachet flavor="vanilla" height={420} />
                 </div>
                 <div style={{ textAlign: "center" }}>
@@ -519,7 +516,7 @@ export default function Home() {
 
               {/* Strawberry */}
               <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 20 }}>
-                <div style={{ transform: "rotate(6deg)", filter: "drop-shadow(0 40px 80px rgba(225,160,160,0.55)) drop-shadow(0 0 40px rgba(255,200,200,0.25))" }}>
+                <div style={{ transform: "rotate(6deg)", filter: "drop-shadow(0 32px 72px rgba(255,184,194,0.22))" }}>
                   <Sachet flavor="strawberry" height={420} />
                 </div>
                 <div style={{ textAlign: "center" }}>
