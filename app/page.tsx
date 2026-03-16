@@ -80,15 +80,15 @@ const COMPARE = [
 const COMPARE_HEADS = ["Liquid", "Ceremonial", "Collagen", "Mushrooms", "≤$3"];
 
 const STEPS = [
-  { num: "01", title: "Tear",  body: "Tear open. 3g of liquid ceremonial matcha concentrate lands in your cup. Zero measuring. Zero clumping.", bg: C.pink,     ink: C.navy },
-  { num: "02", title: "Pour",  body: "Pour over oat milk, almond, coconut — whatever you've got. Hot or iced. Watch the green swirl through white.", bg: C.teal,     ink: C.navy },
-  { num: "03", title: "Glow",  body: "Clean energy, focus locked in, collagen working while you drink. You literally just out-matched your café. For $3.", bg: C.lime,     ink: C.navy },
+  { num: "01", title: "Tear",  body: "Tear the tip. 3g of liquid ceremonial matcha hits the cup. No scoop. No clump. No mess.", bg: C.pink,     ink: C.navy },
+  { num: "02", title: "Pour",  body: "Drop it into oat milk, almond, coconut — whatever. Hot or iced. The green swirls through and it looks insane.", bg: C.teal,     ink: C.navy },
+  { num: "03", title: "Hit",   body: "75mg clean caffeine + lion's mane + collagen kicks in with zero crash, zero jitters. This is what energy is supposed to feel like.", bg: C.lime,     ink: C.navy },
 ];
 
 const TESTIMONIALS = [
-  { quote: "no but fr i cancelled my daily café order the first week. just did the math.", name: "Sofia M.", loc: "NYC", bg: C.blush },
-  { quote: "lion's mane + matcha is actually cheating for focus. brain feels different. not normal anymore.", name: "Kira J.", loc: "LA", bg: "#E8F0DB" },
-  { quote: "my skin has been doing THINGS since i started the collagen every morning. obsessed.", name: "Priya S.", loc: "Austin", bg: C.lavender },
+  { quote: "literally replaced my $7 matcha latte. same energy, way less broke.", name: "Sofia M.", loc: "NYC", bg: C.blush },
+  { quote: "lion's mane + matcha is cheating for focus. i get more done before 10am now it's unreal.", name: "Kira J.", loc: "LA", bg: "#E8F0DB" },
+  { quote: "no crash. no jitters. just locked in from the first sip. i'm not going back.", name: "Priya S.", loc: "Austin", bg: C.lavender },
 ];
 
 // ── Email form ────────────────────────────────────────────────────
@@ -125,76 +125,136 @@ function EmailForm({ dark = false }: { dark?: boolean }) {
   );
 }
 
-// ── Sachet SVG — flat rectangular pouch ──────────────────────────
-function Sachet({ scale = 1 }: { scale?: number }) {
-  const w = Math.round(160 * scale), h = Math.round(400 * scale);
+// ── Sachet — uses real product PNG if available, falls back to SVG ─
+// Drop sachet-vanilla.png + sachet-strawberry.png into /public/ to activate
+// Flat flexible mylar pouch — simple rectangle, heat-seal border, dashed tear line
+// viewBox 0 0 160 320
+const SACHET_PATH = `M 12,6 L 148,6 Q 154,6 154,12 L 154,308 Q 154,314 148,314 L 12,314 Q 6,314 6,308 L 6,12 Q 6,6 12,6 Z`;
+const SACHET_CAP_PATH = `M 14,8 L 146,8 L 146,72 L 14,72 Z`;
+
+const FLAVORS = {
+  vanilla: {
+    bg:       "#F5F0E8",
+    bgEdge:   "#E2DBD0",
+    nameColor:"#2C5530",
+    sub:      "#8B4A2A",
+    subLabel: "vanilla",
+    textMid:  "#2C5530",
+    capTint:  "rgba(255,255,255,0.14)",
+    perf:     "rgba(44,85,48,0.32)",
+  },
+  strawberry: {
+    bg:       "#FFB8C2",
+    bgEdge:   "#F09AAA",
+    nameColor:"#1A3020",
+    sub:      "#9B1A1A",
+    subLabel: "strawberry",
+    textMid:  "#1A3020",
+    capTint:  "rgba(255,255,255,0.18)",
+    perf:     "rgba(26,48,32,0.28)",
+  },
+} as const;
+
+function Sachet({ flavor = "vanilla" as "vanilla" | "strawberry", scale = 1 }: { flavor?: "vanilla"|"strawberry"; scale?: number }) {
+  // ↓ Drop your product renders into /public/ to instantly activate:
+  //   sachet-vanilla.png  |  sachet-strawberry.png
+  const [imgFailed, setImgFailed] = useState(false);
+  const pngSrc = `/sachet-${flavor}.png`;
+  const w = Math.round(260 * scale);
+  const cfg = FLAVORS[flavor];
+
+  if (!imgFailed) {
+    return (
+      <div className="sachet-float" style={{ filter: "drop-shadow(0 32px 64px rgba(0,0,0,0.45))" }}>
+        <img
+          src={pngSrc}
+          alt={`shroomé ${flavor} sachet`}
+          width={w}
+          style={{ display: "block", maxWidth: "100%", objectFit: "contain" }}
+          onError={() => setImgFailed(true)}
+        />
+      </div>
+    );
+  }
+
+  // Fallback: full SVG sachet render with actual logo + brand colors
+  const ph = Math.round(260 * scale);
+  const uid = flavor;
+  // flat 160×320 pouch coordinate space
+  const cx = 80; // horizontal center
+  const logoSz = 50;
+  const logoX = cx - logoSz / 2;
+  const logoY = 98;
+  const nameY  = logoY + logoSz + 22;
+  const divY   = nameY + 16;
+  const flavY  = divY + 14;
+  const statsY = 285;
   return (
-    <div className="sachet-float" style={{ filter: "drop-shadow(0 28px 56px rgba(27,31,59,0.28))" }}>
-      <svg width={w} height={h} viewBox="0 0 160 400" fill="none">
+    <div className="sachet-float" style={{ filter: "drop-shadow(0 24px 56px rgba(0,0,0,0.4))", width: ph, flexShrink: 0 }}>
+      <svg viewBox="0 0 160 320" width={ph} style={{ display: "block", overflow: "visible" }}>
         <defs>
-          {/* Flat vertical gradient — no cylindrical effect */}
-          <linearGradient id="sBg" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
-            <stop offset="0%"   stopColor="#F2EBE0"/>
-            <stop offset="100%" stopColor="#E8E0D2"/>
+          {/* Flat foil gradient — subtle horizontal light sweep */}
+          <linearGradient id={`bg-${uid}`} x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%"   stopColor={cfg.bgEdge} />
+            <stop offset="10%"  stopColor={cfg.bg} />
+            <stop offset="38%"  stopColor="#fff" stopOpacity="0.2" />
+            <stop offset="50%"  stopColor={cfg.bg} />
+            <stop offset="90%"  stopColor={cfg.bg} />
+            <stop offset="100%" stopColor={cfg.bgEdge} />
           </linearGradient>
+          {/* Slightly darker header tint */}
+          <linearGradient id={`hdr-${uid}`} x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%"   stopColor={cfg.bgEdge} stopOpacity="0.9" />
+            <stop offset="50%"  stopColor={cfg.bg} />
+            <stop offset="100%" stopColor={cfg.bgEdge} stopOpacity="0.9" />
+          </linearGradient>
+          <clipPath id={`clip-${uid}`}>
+            <path d={SACHET_PATH} />
+          </clipPath>
         </defs>
 
-        {/* ── Outer body — flat rectangle ── */}
-        <rect x="0" y="0" width="160" height="400" rx="2" fill="url(#sBg)"/>
+        {/* ── Pouch body ── */}
+        <path d={SACHET_PATH} fill={`url(#bg-${uid})`} />
 
-        {/* ── Left crimp seal — vertical lines only ── */}
-        <rect x="0" y="0" width="13" height="400" rx="1" fill="rgba(90,107,62,0.12)"/>
-        <line x1="5"  y1="0" x2="5"  y2="400" stroke="rgba(90,107,62,0.22)" strokeWidth="1"/>
-        <line x1="9"  y1="0" x2="9"  y2="400" stroke="rgba(90,107,62,0.12)" strokeWidth="0.6"/>
-        <line x1="12" y1="0" x2="12" y2="400" stroke="rgba(90,107,62,0.28)" strokeWidth="0.8"/>
+        {/* ── Heat-seal border frame — inset rectangle ── */}
+        <rect x="14" y="10" width="132" height="300" rx="2"
+          fill="none" stroke={cfg.bgEdge} strokeWidth="3.5" />
 
-        {/* ── Right crimp seal ── */}
-        <rect x="147" y="0" width="13" height="400" rx="1" fill="rgba(90,107,62,0.12)"/>
-        <line x1="148" y1="0" x2="148" y2="400" stroke="rgba(90,107,62,0.28)" strokeWidth="0.8"/>
-        <line x1="151" y1="0" x2="151" y2="400" stroke="rgba(90,107,62,0.12)" strokeWidth="0.6"/>
-        <line x1="155" y1="0" x2="155" y2="400" stroke="rgba(90,107,62,0.22)" strokeWidth="1"/>
 
-        {/* ── Top seal strip ── */}
-        <rect x="13" y="0" width="134" height="46" fill="rgba(90,107,62,0.06)"/>
-        <line x1="13" y1="46" x2="147" y2="46" stroke="rgba(90,107,62,0.4)" strokeWidth="1"/>
-        {/* Perforations */}
-        {[22,33,44,55,66,77,88,99,110,121,132,143].map((x,i) => (
-          <circle key={i} cx={x} cy={23} r="1.8" fill="rgba(90,107,62,0.45)"/>
-        ))}
-        {/* Tear notch — right */}
-        <path d="M 147 13 L 160 23 L 147 33" fill="rgba(90,107,62,0.22)"/>
 
-        {/* ── Bottom seal strip ── */}
-        <rect x="13" y="354" width="134" height="46" fill="rgba(90,107,62,0.06)"/>
-        <line x1="13" y1="354" x2="147" y2="354" stroke="rgba(90,107,62,0.4)" strokeWidth="1"/>
+        {/* ── Soft sheen diagonal ── */}
+        <path d="M 48,76 L 38,316" stroke="white" strokeWidth="22" strokeOpacity="0.11"
+          clipPath={`url(#clip-${uid})`} strokeLinecap="round" />
 
-        {/* ── Inner label inset border ── */}
-        <rect x="20" y="58" width="120" height="282" fill="rgba(255,255,255,0.18)" stroke="rgba(90,107,62,0.14)" strokeWidth="0.75"/>
-
-        {/* ── Logo ── */}
-        <image href="/logo-mark.svg" x="56" y="78" width="48" height="48" opacity="0.85"/>
+        {/* ── Actual logo mark ── */}
+        <image href="/logo-mark.svg" x={logoX} y={logoY} width={logoSz} height={logoSz} />
 
         {/* ── Brand name ── */}
-        <text x="80" y="152" textAnchor="middle" fontFamily="Instrument Serif, serif" fontStyle="italic" fontSize="18" fill="#1B1F3B" letterSpacing="1">shroomé</text>
-        <text x="80" y="166" textAnchor="middle" fontFamily="Syne, sans-serif" fontWeight="600" fontSize="5.2" fill="#809463" opacity="0.7" letterSpacing="3.2">POUR · SWIRL · GLOW</text>
+        <text x={cx} y={nameY}
+          fill={cfg.nameColor} fontSize="22"
+          fontFamily="'Instrument Serif', Georgia, serif"
+          fontStyle="italic" textAnchor="middle">shroomé</text>
 
-        {/* ── Divider ── */}
-        <line x1="44" y1="180" x2="116" y2="180" stroke="#809463" strokeWidth="0.6" opacity="0.3"/>
+        {/* ── Rule ── */}
+        <line x1={cx - 28} y1={divY - 3} x2={cx + 28} y2={divY - 3}
+          stroke={cfg.nameColor} strokeWidth="0.5" strokeOpacity="0.2" />
 
-        {/* ── Dose tag ── */}
-        <rect x="55" y="190" width="50" height="18" fill="none" stroke="#809463" strokeWidth="0.8" opacity="0.55"/>
-        <text x="80" y="203" textAnchor="middle" fontFamily="Syne, sans-serif" fontWeight="700" fontSize="6.5" fill="#809463" letterSpacing="1.5">3g DOSE</text>
+        {/* ── Flavor ── */}
+        <text x={cx} y={flavY}
+          fill={cfg.sub} fontSize="11"
+          fontFamily="'Instrument Serif', Georgia, serif"
+          fontStyle="italic" textAnchor="middle">{cfg.subLabel}</text>
 
-        {/* ── Lower divider ── */}
-        <line x1="44" y1="222" x2="116" y2="222" stroke="#809463" strokeWidth="0.4" opacity="0.18"/>
+        {/* ── Stats ── */}
+        <text x={cx} y={statsY}
+          fill={cfg.nameColor} fontSize="5.8"
+          fontFamily="'Syne', system-ui, sans-serif"
+          letterSpacing="0.7" textAnchor="middle" opacity="0.38">
+          75MG CAFFEINE · LION'S MANE · COLLAGEN
+        </text>
 
-        {/* ── Ingredients ── */}
-        <text x="80" y="278" textAnchor="middle" fontFamily="Syne, sans-serif" fontWeight="500" fontSize="4.8" fill="#1B1F3B" opacity="0.32" letterSpacing="2">ORGANIC CEREMONIAL MATCHA</text>
-        <text x="80" y="290" textAnchor="middle" fontFamily="Syne, sans-serif" fontWeight="500" fontSize="4.8" fill="#1B1F3B" opacity="0.32" letterSpacing="2">ORGANIC MUSHROOM EXTRACTS</text>
-        <text x="80" y="302" textAnchor="middle" fontFamily="Syne, sans-serif" fontWeight="500" fontSize="4.8" fill="#1B1F3B" opacity="0.32" letterSpacing="2">GRASS-FED COLLAGEN</text>
-
-        {/* ── URL ── */}
-        <text x="80" y="328" textAnchor="middle" fontFamily="Syne, sans-serif" fontWeight="600" fontSize="5" fill="#1B1F3B" opacity="0.18" letterSpacing="1">drinkshroome.com</text>
+        {/* ── Outer seam outline ── */}
+        <path d={SACHET_PATH} fill="none" stroke={cfg.bgEdge} strokeWidth="2" />
       </svg>
     </div>
   );
@@ -296,13 +356,13 @@ export default function Home() {
         }
       `}</style>
 
-      <div style={{ fontFamily: FB, background: C.cream, color: C.ink, overflowX: "hidden" }}>
+      <div style={{ fontFamily: FB, background: C.cream, color: C.ink, overflowX: "clip" as any }}>
 
         {/* ── Announcement bar ───────────────────────────────── */}
         <div style={{ background: C.navy, color: C.cream, overflow: "hidden", padding: "10px 0" }}>
           <div className="marquee-track">
             {[...Array(2)].map((_, p) =>
-              ["THE WORLD'S FIRST READY-TO-POUR MATCHA LATTE", "POUR · SWIRL · GLOW", "3G MATCHA · MUSHROOMS · COLLAGEN", "FIRST 500 GET 40% OFF", "FREE SHIPPING"].map((t, i) => (
+              ["THE WORLD'S FIRST READY-TO-POUR MATCHA LATTE", "ENERGY WITHOUT THE CRASH", "3G MATCHA · MUSHROOMS · COLLAGEN", "FIRST 500 GET 40% OFF", "FREE SHIPPING"].map((t, i) => (
                 <span key={p * 100 + i} style={{ fontFamily: FB, fontWeight: 600, fontSize: "0.75rem", letterSpacing: "0.2em", padding: "0 32px", color: C.cream, opacity: 0.85 }}>
                   {t}<span style={{ marginLeft: 32, color: C.lime, opacity: 0.9 }}>✦</span>
                 </span>
@@ -352,18 +412,18 @@ export default function Home() {
             </div>
 
             <h1 className="fade-up-2" style={{ fontFamily: FD, fontSize: "clamp(54px, 6.5vw, 96px)", fontWeight: 400, lineHeight: 0.92, letterSpacing: "-0.03em", color: C.navy, marginBottom: 28 }}>
-              Not a powder.<br />
-              A pour.<br />
-              <em style={{ fontStyle: "italic", color: C.coral }}>First.</em>
+              Café energy.<br />
+              Home address.<br />
+              <em style={{ fontStyle: "italic", color: C.coral }}>No crash.</em>
             </h1>
 
             <p className="fade-up-3" style={{ fontFamily: FB, fontWeight: 500, fontSize: "1.1rem", lineHeight: 1.75, color: C.muted, maxWidth: 400, marginBottom: 10 }}>
-              The world&apos;s first liquid ceremonial matcha latte concentrate.
+              The world&apos;s first ready-to-pour ceremonial matcha latte.
               3g matcha. 2g collagen. Real mushrooms.{" "}
-              <strong style={{ color: C.navy, fontWeight: 700 }}>Nothing to mix. Nothing to measure.</strong>
+              <strong style={{ color: C.navy, fontWeight: 700 }}>Tear it open. Pour it in. Done.</strong>
             </p>
             <p className="fade-up-3" style={{ fontFamily: FB, fontWeight: 700, fontSize: "1rem", letterSpacing: "0.08em", textTransform: "uppercase" as const, color: C.sageDark, marginBottom: 36 }}>
-              Tear. Pour. Done.
+              75mg caffeine · Zero jitters · Actually tastes good.
             </p>
 
             <div className="fade-up-4" style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 40 }}>
@@ -385,23 +445,89 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Right — sachet */}
-          <div className="hero-sachet fade-up-2" style={{ display: "flex", alignItems: "center", justifyContent: "center", position: "relative", zIndex: 2 }}>
-            {/* large ghost logo behind sachet */}
-            <div style={{ position: "absolute", bottom: "-5%", right: "-4%", pointerEvents: "none", userSelect: "none" as const, opacity: 0.04 }}>
-              <LogoImg size={300} />
+          {/* Right — both sachets */}
+          <div className="hero-sachet fade-up-2" style={{ display: "flex", alignItems: "center", justifyContent: "center", position: "relative", zIndex: 2, overflow: "visible" }}>
+            {/* ghost logo */}
+            <div style={{ position: "absolute", bottom: "-5%", right: "-4%", pointerEvents: "none", userSelect: "none" as const, opacity: 0.035 }}>
+              <LogoImg size={280} />
             </div>
-            <Sachet scale={1.2} />
+            {/* Vanilla — back, angled left */}
+            <div style={{ position: "absolute", transform: "rotate(-9deg) translateX(-28%)", transformOrigin: "bottom center", zIndex: 1, opacity: 0.88 }}>
+              <Sachet flavor="vanilla" scale={1.1} />
+            </div>
+            {/* Strawberry — front, slight tilt */}
+            <div style={{ transform: "rotate(4deg)", transformOrigin: "bottom center", zIndex: 2 }}>
+              <Sachet flavor="strawberry" scale={1.1} />
+            </div>
             {/* stat cards */}
-            <div className="hero-stat-card" style={{ position: "absolute", bottom: "20%", left: 16, background: C.cream, padding: "14px 20px", border: `2px solid ${C.navy}` }}>
+            <div className="hero-stat-card" style={{ position: "absolute", bottom: "22%", left: 0, background: C.cream, padding: "14px 20px", border: `2px solid ${C.navy}`, zIndex: 3 }}>
               <p style={{ fontFamily: FB, fontWeight: 600, fontSize: "0.68rem", letterSpacing: "0.18em", textTransform: "uppercase" as const, color: C.muted, marginBottom: 3 }}>Per serving</p>
               <p style={{ fontFamily: FD, fontSize: "2rem", color: C.sageDark, lineHeight: 1 }}>$3</p>
               <p style={{ fontFamily: FB, fontWeight: 500, fontSize: "0.82rem", color: C.muted, marginTop: 3 }}>vs. $9 at your café</p>
             </div>
-            <div className="hero-stat-card" style={{ position: "absolute", top: "16%", right: 16, background: C.navy, padding: "14px 20px" }}>
-              <p style={{ fontFamily: FB, fontWeight: 600, fontSize: "0.68rem", letterSpacing: "0.18em", textTransform: "uppercase" as const, color: C.lime, marginBottom: 3 }}>Steps</p>
-              <p style={{ fontFamily: FD, fontSize: "2rem", color: C.cream, lineHeight: 1 }}>3</p>
-              <p style={{ fontFamily: FB, fontWeight: 500, fontSize: "0.82rem", color: "rgba(253,244,238,0.65)", marginTop: 3 }}>Pour. Swirl. Glow.</p>
+            <div className="hero-stat-card" style={{ position: "absolute", top: "18%", right: 0, background: C.navy, padding: "14px 20px", zIndex: 3 }}>
+              <p style={{ fontFamily: FB, fontWeight: 600, fontSize: "0.68rem", letterSpacing: "0.18em", textTransform: "uppercase" as const, color: C.lime, marginBottom: 3 }}>Flavors</p>
+              <p style={{ fontFamily: FD, fontSize: "1.1rem", color: C.cream, lineHeight: 1.3 }}>Vanilla<br/>Strawberry</p>
+            </div>
+          </div>
+        </section>
+
+        {/* ── Ghia-style dark product moment ─────────────────────── */}
+        <section style={{ background: "#08090E", padding: "80px 5% 96px", position: "relative", overflow: "hidden", borderTop: `2px solid ${C.navy}` }}>
+          {/* light rays from center */}
+          <div style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, background: "radial-gradient(ellipse 70% 90% at 50% 30%, rgba(255,220,150,0.13) 0%, rgba(200,150,80,0.04) 45%, transparent 70%)", pointerEvents: "none" }}/>
+          {/* side glow accents */}
+          <div style={{ position: "absolute", top: "5%", left: "-8%", width: "35vw", height: "35vw", maxWidth: 380, maxHeight: 380, borderRadius: "50%", background: "radial-gradient(circle, rgba(255,184,194,0.12) 0%, transparent 70%)", pointerEvents: "none" }}/>
+          <div style={{ position: "absolute", top: "5%", right: "-8%", width: "35vw", height: "35vw", maxWidth: 380, maxHeight: 380, borderRadius: "50%", background: "radial-gradient(circle, rgba(245,240,232,0.10) 0%, transparent 70%)", pointerEvents: "none" }}/>
+
+          <div style={{ maxWidth: 1100, margin: "0 auto", display: "flex", flexDirection: "column", alignItems: "center", gap: 48 }}>
+            {/* headline */}
+            <div style={{ textAlign: "center", position: "relative", zIndex: 2 }}>
+              <p style={{ fontFamily: FB, fontWeight: 700, fontSize: "0.78rem", letterSpacing: "0.3em", textTransform: "uppercase" as const, color: C.lime, marginBottom: 16, opacity: 0.85 }}>2 Flavors · 1 Ritual</p>
+              <h2 style={{ fontFamily: FD, fontSize: "clamp(2.8rem, 5vw, 5rem)", fontWeight: 400, lineHeight: 0.93, letterSpacing: "-0.03em", color: C.cream }}>
+                Pick your flavor.<br /><em style={{ color: C.pink }}>Both hit different.</em>
+              </h2>
+            </div>
+
+            {/* sachets side by side */}
+            <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "center", gap: "clamp(16px, 4vw, 56px)", position: "relative", zIndex: 2 }}>
+              {/* Vanilla */}
+              <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 20 }}>
+                <div style={{ transform: "rotate(-6deg)", filter: "drop-shadow(0 32px 72px rgba(245,240,232,0.22))" }}>
+                  <Sachet flavor="vanilla" scale={1.1} />
+                </div>
+                <div style={{ textAlign: "center" }}>
+                  <p style={{ fontFamily: FD, fontSize: "1.4rem", fontStyle: "italic", color: C.cream, marginBottom: 4 }}>Vanilla</p>
+                  <p style={{ fontFamily: FB, fontWeight: 500, fontSize: "0.78rem", color: "rgba(253,244,238,0.45)", letterSpacing: "0.1em" }}>Warm · Floral · Grounding</p>
+                </div>
+              </div>
+
+              {/* center divider line */}
+              <div style={{ width: 1, height: 80, background: "rgba(253,244,238,0.12)", alignSelf: "center" }} className="hide-mob"/>
+
+              {/* Strawberry */}
+              <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 20 }}>
+                <div style={{ transform: "rotate(6deg)", filter: "drop-shadow(0 32px 72px rgba(255,184,194,0.22))" }}>
+                  <Sachet flavor="strawberry" scale={1.1} />
+                </div>
+                <div style={{ textAlign: "center" }}>
+                  <p style={{ fontFamily: FD, fontSize: "1.4rem", fontStyle: "italic", color: C.cream, marginBottom: 4 }}>Strawberry</p>
+                  <p style={{ fontFamily: FB, fontWeight: 500, fontSize: "0.78rem", color: "rgba(253,244,238,0.45)", letterSpacing: "0.1em" }}>Bright · Fruity · Fresh</p>
+                </div>
+              </div>
+            </div>
+
+            {/* CTA */}
+            <div style={{ position: "relative", zIndex: 2, display: "flex", flexDirection: "column", alignItems: "center", gap: 12 }}>
+              <button
+                onClick={() => document.getElementById("waitlist")?.scrollIntoView({ behavior: "smooth" })}
+                style={{ background: C.lime, color: C.navy, border: "none", padding: "18px 48px", fontFamily: FB, fontWeight: 800, fontSize: "0.88rem", letterSpacing: "0.1em", textTransform: "uppercase" as const, cursor: "pointer" }}
+                onMouseEnter={e => { e.currentTarget.style.background = "#fff"; }}
+                onMouseLeave={e => { e.currentTarget.style.background = C.lime; }}
+              >
+                Claim 40% Off at Launch →
+              </button>
+              <p style={{ fontFamily: FB, fontWeight: 500, fontSize: "0.78rem", color: "rgba(253,244,238,0.38)", letterSpacing: "0.04em" }}>First 500 spots only · Free shipping</p>
             </div>
           </div>
         </section>
@@ -410,7 +536,7 @@ export default function Home() {
         <div style={{ background: C.coral, padding: "12px 0", overflow: "hidden", borderTop: `2px solid ${C.navy}`, borderBottom: `2px solid ${C.navy}` }}>
           <div className="marquee-track">
             {[...Array(2)].map((_, p) =>
-              ["INVENTED NOT IMPROVED", "POUR", "SWIRL", "GLOW", "FIRST-EVER READY-TO-POUR", "12 SERVINGS", "$3 / SERVING", "CEREMONIAL GRADE", "FREE SHIPPING"].map((t, i) => (
+              ["ENERGY WITHOUT THE CRASH", "TEAR", "POUR", "HIT", "FIRST-EVER READY-TO-POUR", "12 SERVINGS", "$3 / SERVING", "CEREMONIAL GRADE", "FREE SHIPPING"].map((t, i) => (
                 <span key={p * 100 + i} style={{ fontFamily: FB, fontWeight: 800, fontSize: "0.85rem", letterSpacing: "0.1em", textTransform: "uppercase" as const, color: C.cream, padding: "0 28px" }}>
                   {t}<span style={{ marginLeft: 28, color: "rgba(253,244,238,0.5)" }}>·</span>
                 </span>
@@ -458,7 +584,7 @@ export default function Home() {
                 Invented.<br /><em style={{ color: C.coral }}>Not improved.</em>
               </h2>
               <p style={{ fontFamily: FB, fontWeight: 500, fontSize: "1rem", lineHeight: 1.8, color: "rgba(27,31,59,0.68)", marginBottom: 28, maxWidth: 400 }}>
-                Matcha powders clump. Collagen sinks. Mushroom blends taste like dirt. We didn&apos;t try to fix any of that. We made a liquid concentrate that dissolves all three perfectly, every single time.
+                Matcha powders clump. Collagen sinks. Mushroom blends taste like dirt. We didn&apos;t try to fix any of that. We made a liquid sachet that dissolves all three perfectly, every single time.
               </p>
               <div style={{ borderLeft: `4px solid ${C.coral}`, paddingLeft: 22, marginBottom: 32 }}>
                 <p style={{ fontFamily: FD, fontStyle: "italic", fontSize: "1.2rem", color: C.coral, lineHeight: 1.45 }}>
@@ -506,9 +632,9 @@ export default function Home() {
         <section style={{ background: C.cream, padding: "96px 5%", borderTop: `2px solid ${C.navy}` }}>
           <div style={{ maxWidth: 1200, margin: "0 auto" }}>
             <div style={{ textAlign: "center", marginBottom: 56 }}>
-              <p style={{ fontFamily: FB, fontWeight: 700, fontSize: "0.85rem", letterSpacing: "0.3em", textTransform: "uppercase" as const, color: C.sage, marginBottom: 14 }}>It&apos;s literally 3 steps</p>
+              <p style={{ fontFamily: FB, fontWeight: 700, fontSize: "0.85rem", letterSpacing: "0.3em", textTransform: "uppercase" as const, color: C.sage, marginBottom: 14 }}>30 seconds. That&apos;s it.</p>
               <h2 style={{ fontFamily: FD, fontSize: "clamp(2.2rem, 4vw, 3.5rem)", lineHeight: 1.05, letterSpacing: "-0.025em", color: C.navy }}>
-                Pour. Swirl. <em style={{ color: C.teal }}>Glow.</em>
+                Tear. Pour. <em style={{ color: C.teal }}>Hit.</em>
               </h2>
             </div>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 280px), 1fr))", gap: 0, border: `2px solid ${C.navy}` }}>
@@ -526,7 +652,7 @@ export default function Home() {
         {/* ── Testimonials ───────────────────────────────────── */}
         <section style={{ background: C.fog, padding: "88px 5%", borderTop: `2px solid ${C.navy}` }}>
           <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-            <p style={{ fontFamily: FB, fontWeight: 700, fontSize: "0.85rem", letterSpacing: "0.3em", textTransform: "uppercase" as const, color: C.sage, marginBottom: 48, textAlign: "center" }}>Early testers are obsessed 🙌</p>
+            <p style={{ fontFamily: FB, fontWeight: 700, fontSize: "0.85rem", letterSpacing: "0.3em", textTransform: "uppercase" as const, color: C.sage, marginBottom: 48, textAlign: "center" }}>Real people. Real energy. 🔋</p>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 300px), 1fr))", gap: 0, border: `2px solid ${C.navy}` }}>
               {TESTIMONIALS.map((t, idx) => (
                 <div key={t.name} style={{ background: t.bg, padding: "44px 38px", borderRight: idx < 2 ? `2px solid ${C.navy}` : "none" }}>
@@ -558,7 +684,7 @@ export default function Home() {
               First 500 get <em style={{ color: C.coral }}>40% off.</em>
             </h2>
             <p style={{ fontFamily: FB, fontWeight: 500, fontSize: "1.05rem", lineHeight: 1.65, color: "rgba(27,31,59,0.65)", maxWidth: 380, margin: "0 auto 40px" }}>
-              Drop your email. Your code lands in your inbox the moment we go live.
+              Drop your email. Your code hits your inbox the second we launch.
             </p>
             <div style={{ display: "flex", justifyContent: "center" }}>
               <EmailForm dark={false} />
@@ -578,7 +704,7 @@ export default function Home() {
               <LogoImg size={26} invert />
               <span style={{ fontFamily: FD, fontStyle: "italic", fontSize: "1.5rem", color: C.cream }}>shroomé</span>
             </div>
-            <div style={{ fontFamily: FB, fontWeight: 500, fontSize: "0.72rem", letterSpacing: "0.12em", color: "rgba(253,244,238,0.32)", textAlign: "center", textTransform: "uppercase" as const }}>The world&apos;s first ready-to-pour matcha latte concentrate. © 2026</div>
+            <div style={{ fontFamily: FB, fontWeight: 500, fontSize: "0.72rem", letterSpacing: "0.12em", color: "rgba(253,244,238,0.32)", textAlign: "center", textTransform: "uppercase" as const }}>The world&apos;s first ready-to-pour matcha latte. © 2026</div>
             <div style={{ fontFamily: FB, fontWeight: 500, fontSize: "0.8rem", color: "rgba(253,244,238,0.45)", textAlign: "right" }}>hello@drinkshroome.com</div>
           </div>
         </footer>
