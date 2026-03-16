@@ -9,15 +9,7 @@ export const metadata: Metadata = {
     title: "Shroomé — Café Energy. Home Address.",
     description: "3g ceremonial matcha + functional mushrooms in one sachet. The café came home. Join the pre-launch list for 30% off.",
     type: "website",
-    url: "https://shroome.com",
-    images: [
-      {
-        url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Shroomé — Ceremonial Matcha Latte",
-      },
-    ],
+    url: "https://drinkshroome.com",
   },
   twitter: {
     card: "summary_large_image",
