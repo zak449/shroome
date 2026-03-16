@@ -210,7 +210,7 @@ export async function POST(req: NextRequest) {
                         We are so excited to share Shroomé with you.
                       </h1>
                       <p style="margin:0;font-size:16px;color:rgba(253,244,238,0.7);line-height:1.7;">
-                        We hope once we launch, you'll enjoy the latte and the savings. Your <strong style="color:#C8FF3A;">40% off</strong> is locked in — we'll send your code the moment we go live.
+                        We hope once we launch, you'll enjoy the latte and the savings. Your <strong style="color:#C8FF3A;">30% off</strong> code is locked in — we'll send it the moment we go live. Add your phone number on site for an extra 10% off code!
                       </p>
                     </td>
                   </tr>
@@ -226,7 +226,7 @@ export async function POST(req: NextRequest) {
                               Your pre-launch perk
                             </p>
                             <p style="margin:0;font-size:18px;color:#FDF4EE;font-weight:600;">
-                              40% off your first Shroomé order
+                              30% off your first Shroomé order
                             </p>
                             <p style="margin:8px 0 0;font-size:13px;color:rgba(253,244,238,0.5);">
                               Delivered to this inbox on launch day. First 500 only.

@@ -241,7 +241,7 @@ export default function Home() {
               cursor: "pointer",
             }}
           >
-            Get 40% off →
+            Get 30% off →
           </button>
         </div>
       </nav>
@@ -342,7 +342,7 @@ export default function Home() {
               }}
             >
               <span style={{ display: "inline-block", width: 8, height: 8, borderRadius: "50%", background: "#C8FF3A", marginRight: 10, verticalAlign: "middle" }} />
-              Pre-launch · First 500 get 40% off
+              Pre-launch · First 500 get 30% off
             </p>
 
             <h1
@@ -427,7 +427,7 @@ export default function Home() {
               <div style={{ flex: "1 1 260px" }}>
                 {step === "done" ? (
                   <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 700, fontSize: "1rem", color: "#2D4A2D" }}>
-                    ✓ You&apos;re on the list — 40% off locked in.
+                    ✓ You&apos;re on the list — 30% off locked in. Add your phone for an extra 10%!
                   </p>
                 ) : step === "captcha" ? (
                   <div>
@@ -444,7 +444,7 @@ export default function Home() {
                 ) : step === "phone" ? (
                   <>
                     <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 600, fontSize: "0.82rem", color: "#2D4A2D", marginBottom: 12 }}>
-                      ✓ Got it! Want texts when we launch?
+                      ✓ 30% off locked in! Add your number for an extra 10% off code.
                     </p>
                     <input
                       type="tel"
@@ -534,10 +534,10 @@ export default function Home() {
                         cursor: loading ? "wait" : "pointer",
                       }}
                     >
-                      {loading ? "…" : "Claim 40% off →"}
+                      {loading ? "…" : "Claim 30% off →"}
                     </button>
                     <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.72rem", color: "rgba(27,31,59,0.45)", marginTop: 10 }}>
-                      No spam. 40% off code drops at launch.
+                      No spam. 30% off code drops at launch. Add your phone for an extra 10%.
                     </p>
                   </>
                 )}
@@ -934,10 +934,10 @@ export default function Home() {
             Pre-launch list
           </p>
           <h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontStyle: "italic", fontSize: "clamp(1.8rem, 4vw, 2.8rem)", lineHeight: 1.1, marginBottom: 14, color: "#1B1F3B" }}>
-            Be first. Get 40% off.
+            Be first. Get 30% off.
           </h2>
           <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.88rem", color: "rgba(27,31,59,0.5)", lineHeight: 1.6, marginBottom: 36 }}>
-            First 500 get 40% off their first order — code delivered to your inbox on launch day.
+            First 500 get 30% off their first order — add your phone for an extra 10% off code.
           </p>
           {step === "done" ? (
             <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 700, fontSize: "1rem", color: "#1B1F3B" }}>
@@ -958,7 +958,7 @@ export default function Home() {
           ) : step === "phone" ? (
             <div>
               <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 600, fontSize: "0.88rem", color: "#1B1F3B", marginBottom: 14 }}>
-                ✓ Got it! Want texts when we launch?
+                ✓ 30% off locked in! Add your number for an extra 10% off code.
               </p>
               <form onSubmit={handlePhoneSubmit} style={{ display: "flex", gap: 8, flexWrap: "wrap", justifyContent: "center" }}>
                 <input
@@ -987,7 +987,7 @@ export default function Home() {
                 style={{ flex: "1 1 240px", padding: "15px 20px", border: "2px solid #1B1F3B", background: "rgba(255,255,255,0.5)", color: "#1B1F3B", fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.95rem", fontWeight: 500, minWidth: 0 }}
               />
               <button type="submit" disabled={loading} style={{ padding: "15px 28px", border: "none", background: "#1B1F3B", color: "#C8FF3A", fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 800, fontSize: "0.75rem", letterSpacing: "0.12em", textTransform: "uppercase", cursor: loading ? "wait" : "pointer", whiteSpace: "nowrap" }}>
-                {loading ? "…" : "Claim 40% off →"}
+                {loading ? "…" : "Claim 30% off →"}
               </button>
             </form>
           )}

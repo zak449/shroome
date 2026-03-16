@@ -3,11 +3,11 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Shroomé — Café Energy. Home Address.",
-  description: "Ceremonial matcha meets functional mushrooms. 3g. One sachet. Pour over your latte base and feel the shift. Join the pre-launch list for 40% off your first order.",
+  description: "Ceremonial matcha meets functional mushrooms. 3g. One sachet. Pour over your latte base and feel the shift. Join the pre-launch list for 30% off your first order.",
   keywords: ["ceremonial matcha", "functional mushrooms", "matcha latte", "adaptogenic", "coming soon", "pre-launch"],
   openGraph: {
     title: "Shroomé — Café Energy. Home Address.",
-    description: "3g ceremonial matcha + functional mushrooms in one sachet. The café came home. Join the pre-launch list for 40% off.",
+    description: "3g ceremonial matcha + functional mushrooms in one sachet. The café came home. Join the pre-launch list for 30% off.",
     type: "website",
     url: "https://shroome.com",
     images: [
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Shroomé — Café Energy. Home Address.",
-    description: "3g ceremonial matcha + functional mushrooms in one sachet. Join the list for 40% off.",
+    description: "3g ceremonial matcha + functional mushrooms in one sachet. Join the list for 30% off.",
   },
 };
 
