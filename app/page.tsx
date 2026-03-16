@@ -753,7 +753,7 @@ export default function Home() {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 24 }}>
             {[
               { name: "Ceremonial Matcha", dose: "3g", detail: "First-harvest, shade-grown. ~75mg caffeine. Not culinary grade — the real thing.", color: "#C8FF3A", bg: "#1B1F3B" },
-              { name: "Mushroom Beta Glucans", dose: "200mg", detail: "Organic Lion's Mane + Chaga. Immune support and sustained focus.", color: "#FFB7D1", bg: "#1B1F3B" },
+              { name: "Organic Mushroom Extracts", dose: "200mg", detail: "Immune support and sustained focus.", color: "#FFB7D1", bg: "#1B1F3B" },
               { name: "Grass-Fed Collagen", dose: "2g", detail: "Pre-dissolved bioavailable peptides for skin, hair, nails, and gut.", color: "#C8FF3A", bg: "#1B1F3B" },
             ].map((item, i) => (
               <div

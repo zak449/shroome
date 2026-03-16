@@ -258,7 +258,7 @@ export async function POST(req: NextRequest) {
                       <table width="100%" cellpadding="0" cellspacing="0">
                         ${[
                           ["🍵 ceremonial-grade matcha", "first-harvest, shade-grown. 3g per sachet — this is the real deal, not that culinary stuff."],
-                          ["🍄 functional mushrooms", "lion's mane + chaga for that clean, clear focus. energy without the jitters."],
+                          ["🍄 organic mushroom extracts", "clean, clear focus and immune support. energy without the jitters."],
                           ["✨ grass-fed collagen", "2g pre-dissolved. your skin, hair, nails, and gut will thank you."],
                           ["⚡ tear. pour. done.", "no blender, no whisk, no mess. 60 seconds to a café-grade latte in your kitchen."],
                         ]
