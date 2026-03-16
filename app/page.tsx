@@ -155,7 +155,7 @@ const FLAVORS = {
   },
 } as const;
 
-function Sachet({ flavor = "vanilla" as "vanilla" | "strawberry", scale = 1 }: { flavor?: "vanilla"|"strawberry"; scale?: number }) {
+function Sachet({ flavor = "vanilla" as "vanilla" | "strawberry", scale = 1, height }: { flavor?: "vanilla"|"strawberry"; scale?: number; height?: number }) {
   // ↓ Drop your product renders into /public/ to instantly activate:
   //   sachet-vanilla.png  |  sachet-strawberry.png
   const [imgFailed, setImgFailed] = useState(false);
@@ -164,13 +164,16 @@ function Sachet({ flavor = "vanilla" as "vanilla" | "strawberry", scale = 1 }: {
   const cfg = FLAVORS[flavor];
 
   if (!imgFailed) {
+    const imgStyle: React.CSSProperties = height
+      ? { display: "block", height: height, width: "auto", maxWidth: "100%", objectFit: "contain" }
+      : { display: "block", maxWidth: "100%", objectFit: "contain" };
     return (
       <div className="sachet-float" style={{ filter: "drop-shadow(0 32px 64px rgba(0,0,0,0.45))" }}>
         <img
           src={pngSrc}
           alt={`shroomé ${flavor} sachet`}
-          width={w}
-          style={{ display: "block", maxWidth: "100%", objectFit: "contain" }}
+          {...(!height ? { width: w } : {})}
+          style={imgStyle}
           onError={() => setImgFailed(true)}
         />
       </div>
@@ -348,16 +351,17 @@ export default function Home() {
 
         @media (max-width:700px) {
           .hero-grid { grid-template-columns:1fr !important; }
-          .hero-sachet { order:-1; min-height:50vw; max-height:72vw; padding:16px 0 8px; overflow:hidden; }
-          .hero-sachet img { max-height:68vw !important; width:auto !important; }
+          .hero-sachet { order:-1; min-height:50vw; max-height:90vw; padding:16px 0 8px; overflow:hidden; }
+          .hero-sachet img { max-height:82vw !important; width:auto !important; height:auto !important; }
           .hero-stat-card { display:none !important; }
           .hide-mob { display:none !important; }
           .hero-blob-1 { width:95vw; height:95vw; top:-8%; right:-20%; }
           .hero-blob-2 { display:none; }
           .cmp-inner { min-width:0 !important; }
-          .cmp-circle { width:20px !important; height:20px !important; font-size:0.68rem !important; }
-          .cmp-head { font-size:0.52rem !important; letter-spacing:0.01em !important; line-height:1.1 !important; padding:0 1px !important; }
-          .cmp-brand { font-size:0.82rem !important; }
+          .cmp-circle { width:22px !important; height:22px !important; font-size:0.72rem !important; }
+          .cmp-head { writing-mode:vertical-rl !important; transform:rotate(180deg) !important; font-size:0.58rem !important; letter-spacing:0.06em !important; padding:4px 2px !important; height:90px !important; align-self:end !important; white-space:nowrap !important; }
+          .cmp-brand { font-size:0.85rem !important; }
+          .cmp-grid { grid-template-columns:1.8fr repeat(5,1fr) !important; }
         }
       `}</style>
 
@@ -458,11 +462,11 @@ export default function Home() {
             </div>
             {/* Vanilla — back, angled left */}
             <div style={{ position: "absolute", transform: "rotate(-9deg) translateX(-28%)", transformOrigin: "bottom center", zIndex: 1, opacity: 0.88 }}>
-              <Sachet flavor="vanilla" scale={0.72} />
+              <Sachet flavor="vanilla" height={380} />
             </div>
             {/* Strawberry — front, slight tilt */}
             <div style={{ transform: "rotate(4deg)", transformOrigin: "bottom center", zIndex: 2 }}>
-              <Sachet flavor="strawberry" scale={0.72} />
+              <Sachet flavor="strawberry" height={380} />
             </div>
             {/* stat cards */}
             <div className="hero-stat-card" style={{ position: "absolute", bottom: "22%", left: 0, background: C.cream, padding: "14px 20px", border: `2px solid ${C.navy}`, zIndex: 3 }}>
@@ -478,7 +482,7 @@ export default function Home() {
         </section>
 
         {/* ── Ghia-style dark product moment ─────────────────────── */}
-        <section style={{ background: "#08090E", padding: "80px 5% 96px", position: "relative", overflow: "hidden", borderTop: `2px solid ${C.navy}` }}>
+        <section style={{ background: "#08090E", padding: "80px 5% 96px", position: "relative", overflowX: "hidden" as any, borderTop: `2px solid ${C.navy}` }}>
           {/* light rays from center */}
           <div style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, background: "radial-gradient(ellipse 70% 90% at 50% 30%, rgba(255,220,150,0.13) 0%, rgba(200,150,80,0.04) 45%, transparent 70%)", pointerEvents: "none" }}/>
           {/* side glow accents */}
@@ -499,7 +503,7 @@ export default function Home() {
               {/* Vanilla */}
               <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 20 }}>
                 <div style={{ transform: "rotate(-6deg)", filter: "drop-shadow(0 32px 72px rgba(245,240,232,0.22))" }}>
-                  <Sachet flavor="vanilla" scale={1.1} />
+                  <Sachet flavor="vanilla" height={420} />
                 </div>
                 <div style={{ textAlign: "center" }}>
                   <p style={{ fontFamily: FD, fontSize: "1.4rem", fontStyle: "italic", color: C.cream, marginBottom: 4 }}>Vanilla</p>
@@ -513,7 +517,7 @@ export default function Home() {
               {/* Strawberry */}
               <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 20 }}>
                 <div style={{ transform: "rotate(6deg)", filter: "drop-shadow(0 32px 72px rgba(255,184,194,0.22))" }}>
-                  <Sachet flavor="strawberry" scale={1.1} />
+                  <Sachet flavor="strawberry" height={420} />
                 </div>
                 <div style={{ textAlign: "center" }}>
                   <p style={{ fontFamily: FD, fontSize: "1.4rem", fontStyle: "italic", color: C.cream, marginBottom: 4 }}>Strawberry</p>
@@ -611,14 +615,14 @@ export default function Home() {
               {/* mobile scroll wrapper */}
               <div style={{ overflowX: "auto", WebkitOverflowScrolling: "touch" as any }}>
                 <div className="cmp-inner" style={{ minWidth: 340 }}>
-                  <div style={{ display: "grid", gridTemplateColumns: "2fr repeat(5, 1fr)", gap: 0, marginBottom: 14 }}>
+                  <div className="cmp-grid" style={{ display: "grid", gridTemplateColumns: "2fr repeat(5, 1fr)", gap: 0, marginBottom: 14, alignItems: "end" }}>
                     <div/>
                     {COMPARE_HEADS.map(h => (
                       <div key={h} className="cmp-head" style={{ fontFamily: FB, fontWeight: 700, fontSize: "0.7rem", letterSpacing: "0.04em", textTransform: "uppercase" as const, color: "rgba(253,244,238,0.75)", textAlign: "center", padding: "0 3px", lineHeight: 1.25 }}>{h}</div>
                     ))}
                   </div>
                   {COMPARE.map((row) => (
-                    <div key={row.brand} style={{ display: "grid", gridTemplateColumns: "2fr repeat(5, 1fr)", gap: 0, padding: "13px 0", borderTop: `1px solid rgba(253,244,238,${row.us ? "0.15" : "0.07"})`, background: row.us ? "rgba(200,255,58,0.08)" : "transparent", alignItems: "center" }}>
+                    <div key={row.brand} className="cmp-grid" style={{ display: "grid", gridTemplateColumns: "2fr repeat(5, 1fr)", gap: 0, padding: "13px 0", borderTop: `1px solid rgba(253,244,238,${row.us ? "0.15" : "0.07"})`, background: row.us ? "rgba(200,255,58,0.08)" : "transparent", alignItems: "center" }}>
                       <div className="cmp-brand" style={{ fontFamily: FD, fontSize: row.us ? "1.15rem" : "0.95rem", color: row.us ? C.lime : "rgba(253,244,238,0.6)", fontStyle: row.us ? "italic" : "normal" }}>{row.brand}</div>
                       {row.checks.map((c, i) => (
                         <div key={i} style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
