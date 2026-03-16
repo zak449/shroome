@@ -1,724 +1,1004 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 
-// ── Color tokens — FUNKY, COLOR-BLOCKED ───────────────────────────
-const C = {
-  cream:    "#FDF4EE",   // warm blush cream
-  navy:     "#1B1F3B",   // dark anchor — body text / dark sections
-  sage:     "#809463",   // exact logo green
-  sageDark: "#5A6B3E",   // deeper sage for hover / contrast
-  pink:     "#FFB7D1",   // bubblegum pink — hero bg
-  pinkDeep: "#FF6B9D",   // hot pink — CTA punch
-  lime:     "#C8FF3A",   // electric lime
-  coral:    "#FF7043",   // warm coral/orange
-  teal:     "#00C9A7",   // fresh teal
-  lavender: "#D4B8E0",   // soft lavender
-  blush:    "#FFE8F2",   // pale blush
-  fog:      "#F2EBE4",   // warm off-white
-  ink:      "#1B1F3B",   // body text
-  muted:    "#7A6E80",   // muted grey-violet
-};
-
-// Fonts — NO Syne Mono in any UI text
-const FD = "'Instrument Serif', Georgia, serif";
-const FB = "'Syne', system-ui, sans-serif";
-
-// ── Logo: the actual traced SVG file ──────────────────────────────
-function LogoImg({ size = 40, invert = false, tint }: { size?: number; invert?: boolean; tint?: string }) {
-  const filter = invert
-    ? "brightness(0) invert(1)"
-    : tint === "lime"
-    ? "brightness(0) saturate(100%) invert(85%) sepia(60%) saturate(500%) hue-rotate(30deg)"
-    : "none";
-  return (
-    <img
-      src="/logo-mark.svg"
-      width={size}
-      height={size}
-      alt=""
-      aria-hidden="true"
-      style={{ display: "block", filter, objectFit: "contain", flexShrink: 0 }}
-    />
-  );
+declare global {
+  interface Window {
+    turnstile?: {
+      render: (container: string | HTMLElement, options: Record<string, unknown>) => string;
+      remove: (widgetId: string) => void;
+    };
+  }
 }
 
-// ── Data ──────────────────────────────────────────────────────────
-const INGREDIENTS = [
-  {
-    num: "01", emoji: "🍵",
-    title: "3g Organic Ceremonial Matcha",
-    badge: "First-harvest · Shade-grown",
-    body: "Not culinary-grade powder. First-harvest ceremonial, shade-grown for three weeks to concentrate L-theanine. The exact quality that costs $9 at a café.",
-    stat: "~75mg", statLabel: "Natural caffeine",
-    bg: C.blush, accent: C.pinkDeep,
-  },
-  {
-    num: "02", emoji: "🌿",
-    title: "200mg Organic Mushroom Beta Glucans",
-    badge: "1,3/1,6 beta glucans · Certified organic",
-    body: "The active compounds clinically studied for focus, creativity, and immune support. No filler. No proprietary blend. Just the dose that actually does the thing.",
-    stat: "200mg", statLabel: "Beta glucans",
-    bg: "#E8F0DB", accent: C.sageDark,
-  },
-  {
-    num: "03", emoji: "✨",
-    title: "2g Grass-Fed Collagen",
-    badge: "Type I & III peptides · Pre-dissolved",
-    body: "Already dissolved in the sachet so it actually absorbs. Skin elasticity, hair, nails, joints — the beauty supplement you keep forgetting to take, every morning.",
-    stat: "2g", statLabel: "Pre-dissolved peptides",
-    bg: C.lavender, accent: "#5B2D8E",
-  },
-];
-
-const COMPARE = [
-  { brand: "shroomé",    us: true,  checks: [true,  true,  true,  true,  true ] },
-  { brand: "Clevr",      us: false, checks: [false, false, true,  true,  false] },
-  { brand: "RYZE",       us: false, checks: [false, false, false, true,  false] },
-  { brand: "MatchaKo",   us: false, checks: [false, true,  false, false, true ] },
-  { brand: "Café latte", us: false, checks: [false, true,  false, false, false] },
-];
-const COMPARE_HEADS = ["Liquid", "Ceremonial", "Collagen", "Mushrooms", "≤$3"];
-
-const STEPS = [
-  { num: "01", title: "Tear",  body: "Tear the tip. 3g of liquid ceremonial matcha hits the cup. No scoop. No clump. No mess.", bg: C.pink,     ink: C.navy },
-  { num: "02", title: "Pour",  body: "Drop it into oat milk, almond, coconut — whatever. Hot or iced. The green swirls through and it looks insane.", bg: C.teal,     ink: C.navy },
-  { num: "03", title: "Hit",   body: "75mg clean caffeine + lion's mane + collagen kicks in with zero crash, zero jitters. This is what energy is supposed to feel like.", bg: C.lime,     ink: C.navy },
-];
-
-const TESTIMONIALS = [
-  { quote: "literally replaced my $7 matcha latte. same energy, way less broke.", name: "Sofia M.", loc: "NYC", bg: C.blush },
-  { quote: "lion's mane + matcha is cheating for focus. i get more done before 10am now it's unreal.", name: "Kira J.", loc: "LA", bg: "#E8F0DB" },
-  { quote: "no crash. no jitters. just locked in from the first sip. i'm not going back.", name: "Priya S.", loc: "Austin", bg: C.lavender },
-];
-
-// ── Email form ────────────────────────────────────────────────────
-function EmailForm({ dark = false }: { dark?: boolean }) {
+export default function Home() {
   const [email, setEmail] = useState("");
-  const [done, setDone] = useState(false);
+  const [phone, setPhone] = useState("");
+  const [step, setStep] = useState<"email" | "captcha" | "phone" | "done">("email");
   const [loading, setLoading] = useState(false);
-  const handleSubmit = async (e: React.FormEvent) => {
+  const captchaRef = useRef<HTMLDivElement>(null);
+  const widgetIdRef = useRef<string | null>(null);
+  const [visible, setVisible] = useState<Record<string, boolean>>({});
+  const observers = useRef<IntersectionObserver[]>([]);
+
+  useEffect(() => {
+    const els = document.querySelectorAll("[data-anim]");
+    els.forEach((el) => {
+      const ob = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setVisible((v) => ({ ...v, [el.getAttribute("data-anim")!]: true }));
+            ob.disconnect();
+          }
+        },
+        { threshold: 0.1 }
+      );
+      ob.observe(el);
+      observers.current.push(ob);
+    });
+    return () => observers.current.forEach((o) => o.disconnect());
+  }, []);
+
+  const handleEmailSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email.trim() || loading) return;
-    setLoading(true);
-    try { await fetch("/api/waitlist", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ email }) }); } catch {}
-    setLoading(false); setDone(true);
+    setStep("captcha");
   };
-  if (done) return (
-    <div style={{ display: "inline-flex", alignItems: "center", gap: 10, padding: "18px 36px", background: dark ? "rgba(200,255,58,0.15)" : C.fog, color: dark ? C.lime : C.navy, fontFamily: FB, fontSize: "1.05rem", fontWeight: 700 }}>
-      ✓ &nbsp;You&apos;re in — 40% off is locked.
-    </div>
-  );
-  return (
-    <form onSubmit={handleSubmit} style={{ display: "flex", flexWrap: "wrap", gap: 8, alignItems: "stretch", maxWidth: 520 }}>
-      <input
-        type="email" required value={email} onChange={e => setEmail(e.target.value)}
-        placeholder="your@email.com"
-        style={{ flex: "1 1 240px", padding: "18px 24px", border: dark ? "2px solid rgba(253,244,238,0.3)" : `2px solid ${C.navy}`, background: dark ? "rgba(253,244,238,0.08)" : "#fff", color: dark ? C.cream : C.ink, fontFamily: FB, fontSize: "1rem", fontWeight: 500, outline: "none", minWidth: 0 }}
-      />
-      <button
-        type="submit" disabled={loading}
-        style={{ padding: "18px 32px", border: "none", background: C.lime, color: C.navy, fontFamily: FB, fontSize: "0.9rem", fontWeight: 800, letterSpacing: "0.08em", textTransform: "uppercase" as const, cursor: loading ? "wait" : "pointer", whiteSpace: "nowrap" as const, opacity: loading ? 0.7 : 1 }}
-      >
-        {loading ? "Joining…" : "Claim 40% Off →"}
-      </button>
-    </form>
-  );
-}
 
-// ── Sachet — uses real product PNG if available, falls back to SVG ─
-// Drop sachet-vanilla.png + sachet-strawberry.png into /public/ to activate
-// Flat flexible mylar pouch — simple rectangle, heat-seal border, dashed tear line
-// viewBox 0 0 160 320
-const SACHET_PATH = `M 12,6 L 148,6 Q 154,6 154,12 L 154,308 Q 154,314 148,314 L 12,314 Q 6,314 6,308 L 6,12 Q 6,6 12,6 Z`;
-const SACHET_CAP_PATH = `M 14,8 L 146,8 L 146,72 L 14,72 Z`;
+  const onTurnstileSuccess = useCallback(async (token: string) => {
+    setLoading(true);
+    try {
+      await fetch("/api/waitlist", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, turnstileToken: token }),
+      });
+    } catch {}
+    setLoading(false);
+    setStep("phone");
+  }, [email]);
 
-const FLAVORS = {
-  vanilla: {
-    bg:       "#F5F0E8",
-    bgEdge:   "#E2DBD0",
-    nameColor:"#2C5530",
-    sub:      "#8B4A2A",
-    subLabel: "vanilla",
-    textMid:  "#2C5530",
-    capTint:  "rgba(255,255,255,0.14)",
-    perf:     "rgba(44,85,48,0.32)",
-  },
-  strawberry: {
-    bg:       "#FFB8C2",
-    bgEdge:   "#F09AAA",
-    nameColor:"#1A3020",
-    sub:      "#9B1A1A",
-    subLabel: "strawberry",
-    textMid:  "#1A3020",
-    capTint:  "rgba(255,255,255,0.18)",
-    perf:     "rgba(26,48,32,0.28)",
-  },
-} as const;
+  // Load Turnstile script and render widget when captcha step is active
+  useEffect(() => {
+    if (step !== "captcha") return;
+    const renderWidget = () => {
+      if (!captchaRef.current || !window.turnstile) return;
+      // Clear any existing widget
+      if (widgetIdRef.current) {
+        try { window.turnstile.remove(widgetIdRef.current); } catch {}
+      }
+      widgetIdRef.current = window.turnstile.render(captchaRef.current, {
+        sitekey: (process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY && !process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY.startsWith("REPLACE")) ? process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY : "1x00000000000000000000AA",
+        callback: onTurnstileSuccess,
+        theme: "light",
+      });
+    };
+    if (window.turnstile) {
+      renderWidget();
+    } else {
+      const script = document.createElement("script");
+      script.src = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
+      script.async = true;
+      script.onload = renderWidget;
+      document.head.appendChild(script);
+    }
+  }, [step, onTurnstileSuccess]);
 
-function Sachet({ flavor = "vanilla" as "vanilla" | "strawberry", scale = 1, height }: { flavor?: "vanilla"|"strawberry"; scale?: number; height?: number }) {
-  // ↓ Drop your product renders into /public/ to instantly activate:
-  //   sachet-vanilla.png  |  sachet-strawberry.png
-  const [imgFailed, setImgFailed] = useState(false);
-  const pngSrc = `/sachet-${flavor}.png`;
-  const w = Math.round(260 * scale);
-  const cfg = FLAVORS[flavor];
+  const handlePhoneSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!phone.trim() || loading) return;
+    setLoading(true);
+    try {
+      await fetch("/api/waitlist", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, phone }),
+      });
+    } catch {}
+    setLoading(false);
+    setStep("done");
+  };
 
-  if (!imgFailed) {
-    const imgStyle: React.CSSProperties = height
-      ? { display: "block", height: height, width: "auto", maxWidth: "100%", objectFit: "contain" }
-      : { display: "block", maxWidth: "100%", objectFit: "contain" };
-    return (
-      <div className="sachet-float" style={{ filter: "drop-shadow(0 32px 64px rgba(0,0,0,0.45))" }}>
-        <img
-          src={pngSrc}
-          alt={`shroomé ${flavor} sachet`}
-          {...(!height ? { width: w } : {})}
-          style={imgStyle}
-          onError={() => setImgFailed(true)}
-        />
-      </div>
-    );
-  }
+  const skipPhone = () => setStep("done");
 
-  // Fallback: full SVG sachet render with actual logo + brand colors
-  const ph = Math.round(260 * scale);
-  const uid = flavor;
-  // flat 160×320 pouch coordinate space
-  const cx = 80; // horizontal center
-  const logoSz = 50;
-  const logoX = cx - logoSz / 2;
-  const logoY = 98;
-  const nameY  = logoY + logoSz + 22;
-  const divY   = nameY + 16;
-  const flavY  = divY + 14;
-  const statsY = 285;
-  return (
-    <div className="sachet-float" style={{ filter: "drop-shadow(0 24px 56px rgba(0,0,0,0.4))", width: ph, flexShrink: 0 }}>
-      <svg viewBox="0 0 160 320" width={ph} style={{ display: "block", overflow: "visible" }}>
-        <defs>
-          {/* Flat foil gradient — subtle horizontal light sweep */}
-          <linearGradient id={`bg-${uid}`} x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%"   stopColor={cfg.bgEdge} />
-            <stop offset="10%"  stopColor={cfg.bg} />
-            <stop offset="38%"  stopColor="#fff" stopOpacity="0.2" />
-            <stop offset="50%"  stopColor={cfg.bg} />
-            <stop offset="90%"  stopColor={cfg.bg} />
-            <stop offset="100%" stopColor={cfg.bgEdge} />
-          </linearGradient>
-          {/* Slightly darker header tint */}
-          <linearGradient id={`hdr-${uid}`} x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%"   stopColor={cfg.bgEdge} stopOpacity="0.9" />
-            <stop offset="50%"  stopColor={cfg.bg} />
-            <stop offset="100%" stopColor={cfg.bgEdge} stopOpacity="0.9" />
-          </linearGradient>
-          <clipPath id={`clip-${uid}`}>
-            <path d={SACHET_PATH} />
-          </clipPath>
-        </defs>
+  const anim = (id: string, delay = 0) => ({
+    "data-anim": id,
+    style: {
+      opacity: visible[id] ? 1 : 0,
+      transform: visible[id] ? "translateY(0)" : "translateY(28px)",
+      transition: `opacity 0.8s cubic-bezier(0.22,1,0.36,1) ${delay}s, transform 0.8s cubic-bezier(0.22,1,0.36,1) ${delay}s`,
+    } as React.CSSProperties,
+  });
 
-        {/* ── Pouch body ── */}
-        <path d={SACHET_PATH} fill={`url(#bg-${uid})`} />
+  const scrollTo = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  };
 
-        {/* ── Heat-seal border frame — inset rectangle ── */}
-        <rect x="14" y="10" width="132" height="300" rx="2"
-          fill="none" stroke={cfg.bgEdge} strokeWidth="3.5" />
-
-
-
-        {/* ── Soft sheen diagonal ── */}
-        <path d="M 48,76 L 38,316" stroke="white" strokeWidth="22" strokeOpacity="0.11"
-          clipPath={`url(#clip-${uid})`} strokeLinecap="round" />
-
-        {/* ── Actual logo mark ── */}
-        <image href="/logo-mark.svg" x={logoX} y={logoY} width={logoSz} height={logoSz} />
-
-        {/* ── Brand name ── */}
-        <text x={cx} y={nameY}
-          fill={cfg.nameColor} fontSize="22"
-          fontFamily="'Instrument Serif', Georgia, serif"
-          fontStyle="italic" textAnchor="middle">shroomé</text>
-
-        {/* ── Rule ── */}
-        <line x1={cx - 28} y1={divY - 3} x2={cx + 28} y2={divY - 3}
-          stroke={cfg.nameColor} strokeWidth="0.5" strokeOpacity="0.2" />
-
-        {/* ── Flavor ── */}
-        <text x={cx} y={flavY}
-          fill={cfg.sub} fontSize="11"
-          fontFamily="'Instrument Serif', Georgia, serif"
-          fontStyle="italic" textAnchor="middle">{cfg.subLabel}</text>
-
-        {/* ── Stats ── */}
-        <text x={cx} y={statsY}
-          fill={cfg.nameColor} fontSize="5.8"
-          fontFamily="'Syne', system-ui, sans-serif"
-          letterSpacing="0.7" textAnchor="middle" opacity="0.38">
-          75MG CAFFEINE · LION'S MANE · COLLAGEN
-        </text>
-
-        {/* ── Outer seam outline ── */}
-        <path d={SACHET_PATH} fill="none" stroke={cfg.bgEdge} strokeWidth="2" />
-      </svg>
-    </div>
-  );
-}
-
-// ── Page ──────────────────────────────────────────────────────────
-export default function Home() {
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Syne:wght@400;500;600;700;800&display=swap');
-
-        @keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
-        .marquee-track { display:flex; white-space:nowrap; animation:marquee 28s linear infinite; width:max-content; }
-        .marquee-track:hover { animation-play-state:paused; }
-
-        @keyframes sachet-float {
-          0%,100% { transform:translateY(0px) rotate(-1.5deg); }
-          50%      { transform:translateY(-18px) rotate(1.5deg); }
+        @keyframes morphA {
+          0%, 100% { border-radius: 42% 58% 62% 38% / 45% 55% 45% 55%; transform: translate(0, 0) scale(1); }
+          33% { border-radius: 55% 45% 38% 62% / 52% 48% 52% 48%; transform: translate(15px, -20px) scale(1.04); }
+          66% { border-radius: 38% 62% 55% 45% / 48% 52% 48% 52%; transform: translate(-10px, 15px) scale(0.97); }
         }
-        .sachet-float { animation:sachet-float 6s ease-in-out infinite; }
-
-        @keyframes pulse { 0%,100%{transform:scale(1);opacity:1} 50%{transform:scale(1.8);opacity:.4} }
-        .pulse-dot { animation:pulse 2.2s ease-in-out infinite; }
-
-        /* ── Funky color-blocked hero blobs ── */
-        @keyframes morphBlob1 {
-          0%,100% { border-radius:60% 40% 55% 45% / 50% 46% 54% 50%; transform:translate(0,0) scale(1); }
-          33%  { border-radius:40% 60% 45% 55% / 60% 40% 58% 42%; transform:translate(16px,-20px) scale(1.04); }
-          66%  { border-radius:55% 45% 62% 38% / 44% 58% 46% 52%; transform:translate(-10px,12px) scale(0.97); }
+        @keyframes morphB {
+          0%, 100% { border-radius: 55% 45% 48% 52% / 42% 58% 42% 58%; transform: translate(0, 0) scale(1); }
+          33% { border-radius: 45% 55% 52% 48% / 58% 42% 58% 42%; transform: translate(-20px, 10px) scale(1.06); }
+          66% { border-radius: 52% 48% 42% 58% / 55% 45% 55% 45%; transform: translate(12px, -15px) scale(0.95); }
         }
-        @keyframes morphBlob2 {
-          0%,100% { border-radius:48% 52% 60% 40% / 56% 44% 56% 44%; transform:translate(0,0); }
-          50%  { border-radius:62% 38% 46% 54% / 42% 58% 44% 56%; transform:translate(-14px,16px); }
+        @keyframes morphC {
+          0%, 100% { border-radius: 48% 52% 55% 45% / 38% 62% 38% 62%; transform: translate(0, 0) scale(1); }
+          50% { border-radius: 62% 38% 45% 55% / 52% 48% 52% 48%; transform: translate(8px, 12px) scale(1.03); }
         }
-        @keyframes morphBlob3 {
-          0%,100% { border-radius:55% 45% 50% 50% / 48% 56% 44% 52%; transform:translate(0,0) rotate(0deg); }
-          50%  { border-radius:45% 55% 60% 40% / 54% 44% 56% 46%; transform:translate(10px,-14px) rotate(10deg); }
-        }
-
-        .hero-blob-1 {
-          position:absolute; width:62vw; height:62vw;
-          max-width:760px; max-height:760px;
-          top:-20%; right:-16%;
-          background:#D4B8E0;
-          border-radius:60% 40% 55% 45% / 50% 46% 54% 50%;
-          animation:morphBlob1 14s ease-in-out infinite;
-          pointer-events:none; z-index:0;
-        }
-        .hero-blob-2 {
-          position:absolute; width:28vw; height:28vw;
-          max-width:360px; max-height:360px;
-          bottom:-8%; left:-4%;
-          background:#C8FF3A;
-          border-radius:48% 52% 60% 40% / 56% 44% 56% 44%;
-          animation:morphBlob2 18s ease-in-out infinite;
-          pointer-events:none; z-index:0; opacity:0.35;
-        }
-        .hero-blob-3 {
-          position:absolute; width:18vw; height:18vw;
-          max-width:220px; max-height:220px;
-          top:12%; left:42%;
-          background:#FF7043;
-          border-radius:55% 45% 50% 50% / 48% 56% 44% 52%;
-          animation:morphBlob3 22s ease-in-out infinite;
-          pointer-events:none; z-index:0; opacity:0.18;
-        }
-
-        @keyframes fadeUp {
-          from { opacity:0; transform:translateY(40px); }
-          to   { opacity:1; transform:translateY(0); }
-        }
-        .fade-up-1 { animation:fadeUp 0.9s cubic-bezier(0.22,1,0.36,1) 0.05s both; }
-        .fade-up-2 { animation:fadeUp 0.9s cubic-bezier(0.22,1,0.36,1) 0.18s both; }
-        .fade-up-3 { animation:fadeUp 0.9s cubic-bezier(0.22,1,0.36,1) 0.32s both; }
-        .fade-up-4 { animation:fadeUp 0.9s cubic-bezier(0.22,1,0.36,1) 0.46s both; }
-        .fade-up-5 { animation:fadeUp 0.9s cubic-bezier(0.22,1,0.36,1) 0.60s both; }
-        .fade-up-6 { animation:fadeUp 0.9s cubic-bezier(0.22,1,0.36,1) 0.75s both; }
-
-        * { box-sizing:border-box; margin:0; padding:0; }
-        html { scroll-behavior:smooth; }
-        body { overflow-x:hidden; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
-        input::placeholder { color:rgba(27,31,59,0.35); }
-        input:focus { outline:none; box-shadow:0 0 0 3px rgba(200,255,58,0.45); }
-
-        .lift { transition:transform .25s ease, box-shadow .25s ease; }
-        .lift:hover { transform:translateY(-5px); box-shadow:0 20px 56px rgba(27,31,59,0.14); }
-
-        .chk-y { background:rgba(200,255,58,0.25); color:#C8FF3A; }
-        .chk-n { background:rgba(253,244,238,0.07); color:rgba(253,244,238,0.22); }
-
-        @media (max-width:700px) {
-          .hero-grid { grid-template-columns:1fr !important; }
-          .hero-sachet { order:-1; min-height:50vw; max-height:90vw; padding:16px 0 8px; overflow:hidden; }
-          .hero-sachet img { max-height:82vw !important; width:auto !important; height:auto !important; }
-          .hero-stat-card { display:none !important; }
-          .hide-mob { display:none !important; }
-          .hero-blob-1 { width:95vw; height:95vw; top:-8%; right:-20%; }
-          .hero-blob-2 { display:none; }
-          .cmp-inner { min-width:0 !important; }
-          .cmp-circle { width:22px !important; height:22px !important; font-size:0.72rem !important; }
-          .cmp-head { writing-mode:vertical-rl !important; transform:rotate(180deg) !important; font-size:0.58rem !important; letter-spacing:0.06em !important; padding:4px 2px !important; height:90px !important; align-self:end !important; white-space:nowrap !important; }
-          .cmp-brand { font-size:0.85rem !important; }
-          .cmp-grid { grid-template-columns:1.8fr repeat(5,1fr) !important; }
-        }
+        .blob-a { animation: morphA 18s ease-in-out infinite; }
+        .blob-b { animation: morphB 14s ease-in-out infinite; }
+        .blob-c { animation: morphC 22s ease-in-out infinite; }
+        .lift:hover { transform: translateY(-5px); box-shadow: 0 12px 40px rgba(0,0,0,0.1); }
+        .lift { transition: transform 0.3s, box-shadow 0.3s; }
       `}</style>
 
-      <div style={{ fontFamily: FB, background: C.cream, color: C.ink, overflowX: "clip" as any }}>
-
-        {/* ── Announcement bar ───────────────────────────────── */}
-        <div style={{ background: C.navy, color: C.cream, overflow: "hidden", padding: "10px 0" }}>
-          <div className="marquee-track">
-            {[...Array(2)].map((_, p) =>
-              ["THE WORLD'S FIRST READY-TO-POUR MATCHA LATTE", "ENERGY WITHOUT THE CRASH", "3G MATCHA · MUSHROOMS · COLLAGEN", "FIRST 500 GET 40% OFF", "FREE SHIPPING"].map((t, i) => (
-                <span key={p * 100 + i} style={{ fontFamily: FB, fontWeight: 600, fontSize: "0.75rem", letterSpacing: "0.2em", padding: "0 32px", color: C.cream, opacity: 0.85 }}>
-                  {t}<span style={{ marginLeft: 32, color: C.lime, opacity: 0.9 }}>✦</span>
-                </span>
-              ))
-            )}
-          </div>
-        </div>
-
-        {/* ── Nav ────────────────────────────────────────────── */}
-        <nav style={{ background: `rgba(253,244,238,0.97)`, backdropFilter: "blur(20px)", WebkitBackdropFilter: "blur(20px)", borderBottom: `2px solid ${C.navy}`, padding: "0 5%", height: 68, display: "flex", alignItems: "center", justifyContent: "space-between", position: "sticky", top: 0, zIndex: 50 }}>
-          <a href="#" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none" }}>
-            <LogoImg size={32} />
-            <span style={{ fontFamily: FD, fontStyle: "italic", fontSize: "1.7rem", color: C.navy, letterSpacing: "-0.02em", lineHeight: 1 }}>
-              shroomé
-            </span>
-          </a>
-          <div className="hide-mob" style={{ display: "flex", gap: 36 }}>
-            {["Why shroomé", "Ingredients", "How it Works"].map(l => (
-              <a key={l} href="#" style={{ fontFamily: FB, fontWeight: 600, fontSize: "0.8rem", letterSpacing: "0.12em", textTransform: "uppercase" as const, color: C.muted, textDecoration: "none" }}>{l}</a>
-            ))}
-          </div>
-          <button
-            onClick={() => document.getElementById("waitlist")?.scrollIntoView({ behavior: "smooth" })}
-            style={{ background: C.navy, color: C.cream, border: "none", padding: "12px 26px", fontFamily: FB, fontWeight: 800, fontSize: "0.78rem", letterSpacing: "0.12em", textTransform: "uppercase" as const, cursor: "pointer" }}
-            onMouseEnter={e => { e.currentTarget.style.background = C.lime; e.currentTarget.style.color = C.navy; }}
-            onMouseLeave={e => { e.currentTarget.style.background = C.navy; e.currentTarget.style.color = C.cream; }}
-          >
-            Get 40% Off →
-          </button>
-        </nav>
-
-        {/* ── Hero ───────────────────────────────────────────── */}
-        <section style={{ background: C.pink, minHeight: "92vh", display: "grid", gridTemplateColumns: "1fr 1fr", position: "relative", overflowX: "clip" as any }} className="hero-grid">
-          <div className="hero-blob-1" />
-          <div className="hero-blob-2" />
-          <div className="hero-blob-3" />
-
-          {/* Left — copy */}
-          <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", padding: "80px 6% 80px 8%", position: "relative", zIndex: 2 }}>
-
-            {/* Pre-launch badge */}
-            <div className="fade-up-1" style={{ display: "inline-flex", alignItems: "center", gap: 10, marginBottom: 32, alignSelf: "flex-start" }}>
-              <div className="pulse-dot" style={{ width: 9, height: 9, borderRadius: "50%", background: C.coral, flexShrink: 0 }}/>
-              <span style={{ fontFamily: FB, fontWeight: 700, fontSize: "1.05rem", letterSpacing: "0.06em", textTransform: "uppercase" as const, color: C.navy }}>
-                Pre-Launch · First 500 Get 40% Off
+      {/* ════════════════════ MARQUEE TOP BAR ════════════════════ */}
+      <div
+        style={{
+          background: "#1B1F3B",
+          padding: "10px 0",
+          overflow: "hidden",
+          position: "relative",
+          zIndex: 100,
+        }}
+      >
+        <div className="ticker-track">
+          {Array(4)
+            .fill(
+              "THE WORLD'S FIRST READY-TO-POUR MATCHA LATTE  ✦  ENERGY WITHOUT THE CRASH  ✦  3G MATCHA · MUSHROOM EXTRACTS · COLLAGEN  ✦  "
+            )
+            .map((t, i) => (
+              <span
+                key={i}
+                style={{
+                  fontFamily: "'Syne', system-ui, sans-serif",
+                  fontWeight: 600,
+                  fontSize: "0.65rem",
+                  letterSpacing: "0.18em",
+                  color: "#C8FF3A",
+                  paddingRight: 16,
+                  whiteSpace: "nowrap",
+                }}
+              >
+                {t}
               </span>
-            </div>
+            ))}
+        </div>
+      </div>
 
-            <h1 className="fade-up-2" style={{ fontFamily: FD, fontSize: "clamp(54px, 6.5vw, 96px)", fontWeight: 400, lineHeight: 0.92, letterSpacing: "-0.03em", color: C.navy, marginBottom: 28 }}>
-              Café energy.<br />
-              Home address.<br />
-              <em style={{ fontStyle: "italic", color: C.coral }}>No crash.</em>
+      {/* ════════════════════ STICKY NAV ════════════════════ */}
+      <nav
+        style={{
+          position: "sticky",
+          top: 0,
+          zIndex: 99,
+          background: "rgba(255,183,209,0.85)",
+          backdropFilter: "blur(16px)",
+          WebkitBackdropFilter: "blur(16px)",
+          borderBottom: "1px solid rgba(27,31,59,0.08)",
+          padding: "14px 32px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+        }}
+      >
+        <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+          <img src="/logo-mark.svg" width={28} height={28} alt="S" style={{ filter: "brightness(0) saturate(100%) invert(10%) sepia(30%) saturate(1500%) hue-rotate(200deg) brightness(95%)" }} />
+          <span
+            style={{
+              fontFamily: "'Instrument Serif', Georgia, serif",
+              fontStyle: "italic",
+              fontSize: "1.3rem",
+              color: "#1B1F3B",
+            }}
+          >
+            shroomé
+          </span>
+        </div>
+        <div style={{ display: "flex", alignItems: "center", gap: 32 }}>
+          {[
+            { label: "Why Shroomé", id: "why" },
+            { label: "Ingredients", id: "ingredients" },
+            { label: "How It Works", id: "how" },
+          ].map((l) => (
+            <button
+              key={l.id}
+              onClick={() => scrollTo(l.id)}
+              style={{
+                background: "none",
+                border: "none",
+                fontFamily: "'Syne', system-ui, sans-serif",
+                fontWeight: 600,
+                fontSize: "0.72rem",
+                letterSpacing: "0.08em",
+                textTransform: "uppercase",
+                color: "#1B1F3B",
+                cursor: "pointer",
+                display: "none",
+              }}
+              className="nav-link"
+            >
+              {l.label}
+            </button>
+          ))}
+          <button
+            onClick={() => scrollTo("cta")}
+            style={{
+              background: "#1B1F3B",
+              color: "#FDF4EE",
+              border: "none",
+              padding: "10px 22px",
+              fontFamily: "'Syne', system-ui, sans-serif",
+              fontWeight: 800,
+              fontSize: "0.68rem",
+              letterSpacing: "0.1em",
+              textTransform: "uppercase",
+              cursor: "pointer",
+            }}
+          >
+            Get 40% off →
+          </button>
+        </div>
+      </nav>
+
+      {/* ════════════════════ HERO — PINK WITH BLOBS ════════════════════ */}
+      <section
+        style={{
+          minHeight: "100vh",
+          background: "#FFB7D1",
+          position: "relative",
+          overflow: "hidden",
+          padding: "80px 40px 100px",
+          display: "flex",
+          alignItems: "center",
+        }}
+      >
+        {/* Morphing blobs */}
+        <div
+          className="blob-a"
+          style={{
+            position: "absolute",
+            top: "-10%",
+            right: "-10%",
+            width: "62vw",
+            height: "62vw",
+            background: "#D4B8E0",
+            opacity: 0.7,
+            pointerEvents: "none",
+          }}
+        />
+        <div
+          className="blob-b"
+          style={{
+            position: "absolute",
+            bottom: "-8%",
+            left: "-5%",
+            width: "28vw",
+            height: "28vw",
+            background: "#C8FF3A",
+            opacity: 0.35,
+            pointerEvents: "none",
+          }}
+        />
+        <div
+          className="blob-c"
+          style={{
+            position: "absolute",
+            top: "35%",
+            left: "15%",
+            width: "18vw",
+            height: "18vw",
+            background: "#FF7043",
+            opacity: 0.18,
+            pointerEvents: "none",
+          }}
+        />
+        <div
+          className="blob-b"
+          style={{
+            position: "absolute",
+            top: "60%",
+            right: "5%",
+            width: "22vw",
+            height: "22vw",
+            background: "#FDF4EE",
+            opacity: 0.12,
+            pointerEvents: "none",
+          }}
+        />
+        <div
+          className="blob-a"
+          style={{
+            position: "absolute",
+            top: "10%",
+            left: "-8%",
+            width: "20vw",
+            height: "20vw",
+            background: "#FFB7D1",
+            opacity: 0.25,
+            pointerEvents: "none",
+          }}
+        />
+
+        <div style={{ position: "relative", zIndex: 1, maxWidth: 1200, margin: "0 auto", width: "100%", display: "flex", alignItems: "center", gap: 48, flexWrap: "wrap" }}>
+          {/* Left — copy */}
+          <div style={{ flex: "1 1 440px", minWidth: 300 }}>
+            <p
+              className="fade-up"
+              style={{
+                fontFamily: "'Syne', system-ui, sans-serif",
+                fontWeight: 700,
+                fontSize: "0.7rem",
+                letterSpacing: "0.18em",
+                textTransform: "uppercase",
+                color: "#2D4A2D",
+                marginBottom: 20,
+                opacity: 0,
+              }}
+            >
+              <span style={{ display: "inline-block", width: 8, height: 8, borderRadius: "50%", background: "#C8FF3A", marginRight: 10, verticalAlign: "middle" }} />
+              Pre-launch · First 500 get 40% off
+            </p>
+
+            <h1
+              className="fade-up delay-100"
+              style={{
+                fontFamily: "'Instrument Serif', Georgia, serif",
+                fontSize: "clamp(2.6rem, 5.5vw, 4.2rem)",
+                color: "#2D4A2D",
+                lineHeight: 1.05,
+                marginBottom: 8,
+                opacity: 0,
+              }}
+            >
+              Café energy.
+              <br />
+              Home address.
+              <br />
+              <span style={{ fontStyle: "italic", color: "#FF7043" }}>No crash.</span>
             </h1>
 
-            <p className="fade-up-3" style={{ fontFamily: FB, fontWeight: 500, fontSize: "1.1rem", lineHeight: 1.75, color: C.muted, maxWidth: 400, marginBottom: 10 }}>
-              The world&apos;s first ready-to-pour ceremonial matcha latte.
-              3g matcha. 2g collagen. Real mushrooms.{" "}
-              <strong style={{ color: C.navy, fontWeight: 700 }}>Tear it open. Pour it in. Done.</strong>
+            <p
+              className="fade-up delay-200"
+              style={{
+                fontFamily: "'Syne', system-ui, sans-serif",
+                fontSize: "0.95rem",
+                color: "rgba(27,31,59,0.7)",
+                lineHeight: 1.65,
+                maxWidth: 420,
+                margin: "24px 0",
+                opacity: 0,
+              }}
+            >
+              The world&apos;s first ready-to-pour ceremonial matcha latte. 3g matcha. 2g collagen. Real mushrooms.{" "}
+              <strong>Tear it open. Pour it in. Done.</strong>
             </p>
-            <p className="fade-up-3" style={{ fontFamily: FB, fontWeight: 700, fontSize: "1rem", letterSpacing: "0.08em", textTransform: "uppercase" as const, color: C.sageDark, marginBottom: 36 }}>
+
+            <p
+              className="fade-up delay-350"
+              style={{
+                fontFamily: "'Syne', system-ui, sans-serif",
+                fontWeight: 700,
+                fontSize: "0.68rem",
+                letterSpacing: "0.15em",
+                textTransform: "uppercase",
+                color: "#2D4A2D",
+                marginBottom: 24,
+                opacity: 0,
+              }}
+            >
               75mg caffeine · Zero jitters · Actually tastes good.
             </p>
 
-            <div className="fade-up-4" style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 40 }}>
+            {/* Ingredient pills */}
+            <div className="fade-up delay-350" style={{ display: "flex", gap: 10, flexWrap: "wrap", marginBottom: 28, opacity: 0 }}>
               {[
-                { label: "3g Matcha", bg: C.blush, color: C.pinkDeep },
-                { label: "Mushroom Extracts", bg: "#E8F0DB", color: C.sageDark },
-                { label: "Collagen", bg: C.lavender, color: "#5B2D8E" },
-                { label: "No Mixing", bg: "#FFF0D6", color: C.coral },
-              ].map(p => (
-                <span key={p.label} style={{ background: p.bg, padding: "9px 18px", fontFamily: FB, fontWeight: 700, fontSize: "0.78rem", letterSpacing: "0.1em", textTransform: "uppercase" as const, color: p.color }}>{p.label}</span>
+                { label: "3g Matcha", bg: "rgba(255,112,67,0.2)", color: "#1B1F3B" },
+                { label: "Mushroom Extracts", bg: "rgba(212,184,224,0.35)", color: "#1B1F3B" },
+                { label: "Collagen", bg: "rgba(200,255,58,0.3)", color: "#1B1F3B" },
+                { label: "No Mixing", bg: "rgba(27,31,59,0.12)", color: "#1B1F3B" },
+              ].map((p) => (
+                <span
+                  key={p.label}
+                  style={{
+                    fontFamily: "'Syne', system-ui, sans-serif",
+                    fontWeight: 700,
+                    fontSize: "0.65rem",
+                    letterSpacing: "0.08em",
+                    textTransform: "uppercase",
+                    background: p.bg,
+                    color: p.color,
+                    padding: "8px 16px",
+                    borderRadius: 2,
+                  }}
+                >
+                  {p.label}
+                </span>
               ))}
             </div>
 
-            <div className="fade-up-5">
-              <EmailForm dark={false} />
-            </div>
-            <p className="fade-up-6" style={{ marginTop: 14, fontFamily: FB, fontWeight: 500, fontSize: "0.8rem", letterSpacing: "0.04em", color: C.muted, opacity: 0.75 }}>
-              No spam. 40% off code drops at launch.
-            </p>
-          </div>
-
-          {/* Right — both sachets */}
-          <div className="hero-sachet fade-up-2" style={{ display: "flex", alignItems: "center", justifyContent: "center", position: "relative", zIndex: 2, overflow: "visible" }}>
-            {/* ghost logo */}
-            <div style={{ position: "absolute", bottom: "-5%", right: "-4%", pointerEvents: "none", userSelect: "none" as const, opacity: 0.035 }}>
-              <LogoImg size={280} />
-            </div>
-            {/* Vanilla — back, angled left */}
-            <div style={{ position: "absolute", transform: "rotate(-9deg) translateX(-28%)", transformOrigin: "bottom center", zIndex: 1, opacity: 0.88 }}>
-              <Sachet flavor="vanilla" height={380} />
-            </div>
-            {/* Strawberry — front, slight tilt */}
-            <div style={{ transform: "rotate(4deg)", transformOrigin: "bottom center", zIndex: 2 }}>
-              <Sachet flavor="strawberry" height={380} />
-            </div>
-            {/* stat cards */}
-            <div className="hero-stat-card" style={{ position: "absolute", bottom: "22%", left: 0, background: C.cream, padding: "14px 20px", border: `2px solid ${C.navy}`, zIndex: 3 }}>
-              <p style={{ fontFamily: FB, fontWeight: 600, fontSize: "0.68rem", letterSpacing: "0.18em", textTransform: "uppercase" as const, color: C.muted, marginBottom: 3 }}>Per serving</p>
-              <p style={{ fontFamily: FD, fontSize: "2rem", color: C.sageDark, lineHeight: 1 }}>$3</p>
-              <p style={{ fontFamily: FB, fontWeight: 500, fontSize: "0.82rem", color: C.muted, marginTop: 3 }}>vs. $9 at your café</p>
-            </div>
-            <div className="hero-stat-card" style={{ position: "absolute", top: "18%", right: 0, background: C.navy, padding: "14px 20px", zIndex: 3 }}>
-              <p style={{ fontFamily: FB, fontWeight: 600, fontSize: "0.68rem", letterSpacing: "0.18em", textTransform: "uppercase" as const, color: C.lime, marginBottom: 3 }}>Flavors</p>
-              <p style={{ fontFamily: FD, fontSize: "1.1rem", color: C.cream, lineHeight: 1.3 }}>Vanilla<br/>Strawberry</p>
-            </div>
-          </div>
-        </section>
-
-        {/* ── Ghia-style dark product moment ─────────────────────── */}
-        <section style={{ background: "#08090E", padding: "80px 5% 96px", position: "relative", overflowX: "hidden" as any, borderTop: `2px solid ${C.navy}` }}>
-          {/* light rays from center */}
-          <div style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, background: "radial-gradient(ellipse 70% 90% at 50% 30%, rgba(255,220,150,0.13) 0%, rgba(200,150,80,0.04) 45%, transparent 70%)", pointerEvents: "none" }}/>
-          {/* side glow accents */}
-          <div style={{ position: "absolute", top: "5%", left: "-8%", width: "35vw", height: "35vw", maxWidth: 380, maxHeight: 380, borderRadius: "50%", background: "radial-gradient(circle, rgba(255,184,194,0.12) 0%, transparent 70%)", pointerEvents: "none" }}/>
-          <div style={{ position: "absolute", top: "5%", right: "-8%", width: "35vw", height: "35vw", maxWidth: 380, maxHeight: 380, borderRadius: "50%", background: "radial-gradient(circle, rgba(245,240,232,0.10) 0%, transparent 70%)", pointerEvents: "none" }}/>
-
-          <div style={{ maxWidth: 1100, margin: "0 auto", display: "flex", flexDirection: "column", alignItems: "center", gap: 48 }}>
-            {/* headline */}
-            <div style={{ textAlign: "center", position: "relative", zIndex: 2 }}>
-              <p style={{ fontFamily: FB, fontWeight: 700, fontSize: "0.78rem", letterSpacing: "0.3em", textTransform: "uppercase" as const, color: C.lime, marginBottom: 16, opacity: 0.85 }}>2 Flavors · 1 Ritual</p>
-              <h2 style={{ fontFamily: FD, fontSize: "clamp(2.8rem, 5vw, 5rem)", fontWeight: 400, lineHeight: 0.93, letterSpacing: "-0.03em", color: C.cream }}>
-                Pick your flavor.<br /><em style={{ color: C.pink }}>Both hit different.</em>
-              </h2>
-            </div>
-
-            {/* sachets side by side */}
-            <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "center", gap: "clamp(16px, 4vw, 56px)", position: "relative", zIndex: 2 }}>
-              {/* Vanilla */}
-              <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 20 }}>
-                <div style={{ transform: "rotate(-6deg)", filter: "drop-shadow(0 32px 72px rgba(245,240,232,0.22))" }}>
-                  <Sachet flavor="vanilla" height={420} />
-                </div>
-                <div style={{ textAlign: "center" }}>
-                  <p style={{ fontFamily: FD, fontSize: "1.4rem", fontStyle: "italic", color: C.cream, marginBottom: 4 }}>Vanilla</p>
-                  <p style={{ fontFamily: FB, fontWeight: 500, fontSize: "0.78rem", color: "rgba(253,244,238,0.45)", letterSpacing: "0.1em" }}>Warm · Floral · Grounding</p>
-                </div>
+            {/* Email + price */}
+            <div className="fade-up delay-500" style={{ display: "flex", gap: 16, alignItems: "flex-start", flexWrap: "wrap", opacity: 0 }}>
+              <div style={{ flex: "1 1 260px" }}>
+                {step === "done" ? (
+                  <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 700, fontSize: "1rem", color: "#2D4A2D" }}>
+                    ✓ You&apos;re on the list — 40% off locked in.
+                  </p>
+                ) : step === "captcha" ? (
+                  <div>
+                    <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 600, fontSize: "0.82rem", color: "#2D4A2D", marginBottom: 14 }}>
+                      Quick verification for {email}
+                    </p>
+                    <div ref={captchaRef} style={{ marginBottom: 8 }} />
+                    {loading && (
+                      <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.72rem", color: "rgba(27,31,59,0.45)" }}>
+                        Submitting...
+                      </p>
+                    )}
+                  </div>
+                ) : step === "phone" ? (
+                  <>
+                    <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 600, fontSize: "0.82rem", color: "#2D4A2D", marginBottom: 12 }}>
+                      ✓ Got it! Want texts when we launch?
+                    </p>
+                    <input
+                      type="tel"
+                      value={phone}
+                      onChange={(e) => setPhone(e.target.value)}
+                      placeholder="(555) 123-4567"
+                      style={{
+                        width: "100%",
+                        padding: "16px 20px",
+                        border: "2px solid #1B1F3B",
+                        background: "#fff",
+                        fontFamily: "'Syne', system-ui, sans-serif",
+                        fontSize: "0.95rem",
+                        fontWeight: 500,
+                        marginBottom: 10,
+                      }}
+                    />
+                    <div style={{ display: "flex", gap: 10, alignItems: "center" }}>
+                      <button
+                        onClick={(e) => { e.preventDefault(); handlePhoneSubmit(e as unknown as React.FormEvent); }}
+                        disabled={loading}
+                        style={{
+                          padding: "16px 32px",
+                          border: "none",
+                          background: "#C8FF3A",
+                          color: "#2D4A2D",
+                          fontFamily: "'Syne', system-ui, sans-serif",
+                          fontWeight: 800,
+                          fontSize: "0.78rem",
+                          letterSpacing: "0.1em",
+                          textTransform: "uppercase",
+                          cursor: loading ? "wait" : "pointer",
+                        }}
+                      >
+                        {loading ? "…" : "Add phone →"}
+                      </button>
+                      <button
+                        onClick={skipPhone}
+                        style={{
+                          padding: "16px 16px",
+                          border: "none",
+                          background: "transparent",
+                          color: "rgba(27,31,59,0.45)",
+                          fontFamily: "'Syne', system-ui, sans-serif",
+                          fontWeight: 600,
+                          fontSize: "0.72rem",
+                          cursor: "pointer",
+                          textDecoration: "underline",
+                        }}
+                      >
+                        Skip
+                      </button>
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <input
+                      type="email"
+                      required
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="your@email.com"
+                      style={{
+                        width: "100%",
+                        padding: "16px 20px",
+                        border: "2px solid #1B1F3B",
+                        background: "#fff",
+                        fontFamily: "'Syne', system-ui, sans-serif",
+                        fontSize: "0.95rem",
+                        fontWeight: 500,
+                        marginBottom: 10,
+                      }}
+                    />
+                    <button
+                      onClick={(e) => { e.preventDefault(); handleEmailSubmit(e as unknown as React.FormEvent); }}
+                      disabled={loading}
+                      style={{
+                        padding: "16px 32px",
+                        border: "none",
+                        background: "#C8FF3A",
+                        color: "#2D4A2D",
+                        fontFamily: "'Syne', system-ui, sans-serif",
+                        fontWeight: 800,
+                        fontSize: "0.78rem",
+                        letterSpacing: "0.1em",
+                        textTransform: "uppercase",
+                        cursor: loading ? "wait" : "pointer",
+                      }}
+                    >
+                      {loading ? "…" : "Claim 40% off →"}
+                    </button>
+                    <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.72rem", color: "rgba(27,31,59,0.45)", marginTop: 10 }}>
+                      No spam. 40% off code drops at launch.
+                    </p>
+                  </>
+                )}
               </div>
-
-              {/* center divider line */}
-              <div style={{ width: 1, height: 80, background: "rgba(253,244,238,0.12)", alignSelf: "center" }} className="hide-mob"/>
-
-              {/* Strawberry */}
-              <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 20 }}>
-                <div style={{ transform: "rotate(6deg)", filter: "drop-shadow(0 32px 72px rgba(255,184,194,0.22))" }}>
-                  <Sachet flavor="strawberry" height={420} />
-                </div>
-                <div style={{ textAlign: "center" }}>
-                  <p style={{ fontFamily: FD, fontSize: "1.4rem", fontStyle: "italic", color: C.cream, marginBottom: 4 }}>Strawberry</p>
-                  <p style={{ fontFamily: FB, fontWeight: 500, fontSize: "0.78rem", color: "rgba(253,244,238,0.45)", letterSpacing: "0.1em" }}>Bright · Fruity · Fresh</p>
-                </div>
-              </div>
-            </div>
-
-            {/* CTA */}
-            <div style={{ position: "relative", zIndex: 2, display: "flex", flexDirection: "column", alignItems: "center", gap: 12 }}>
-              <button
-                onClick={() => document.getElementById("waitlist")?.scrollIntoView({ behavior: "smooth" })}
-                style={{ background: C.lime, color: C.navy, border: "none", padding: "18px 48px", fontFamily: FB, fontWeight: 800, fontSize: "0.88rem", letterSpacing: "0.1em", textTransform: "uppercase" as const, cursor: "pointer" }}
-                onMouseEnter={e => { e.currentTarget.style.background = "#fff"; }}
-                onMouseLeave={e => { e.currentTarget.style.background = C.lime; }}
+              <div
+                style={{
+                  border: "1px solid rgba(27,31,59,0.15)",
+                  padding: "14px 24px",
+                  textAlign: "center",
+                  background: "rgba(253,244,238,0.6)",
+                }}
               >
-                Claim 40% Off at Launch →
-              </button>
-              <p style={{ fontFamily: FB, fontWeight: 500, fontSize: "0.78rem", color: "rgba(253,244,238,0.38)", letterSpacing: "0.04em" }}>First 500 spots only · Free shipping</p>
+                <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 700, fontSize: "0.58rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "rgba(27,31,59,0.5)", marginBottom: 4 }}>Per box</p>
+                <p style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "2rem", color: "#2D4A2D", lineHeight: 1 }}>12</p>
+                <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.68rem", color: "rgba(27,31,59,0.4)", fontStyle: "italic" }}>servings per box</p>
+              </div>
             </div>
           </div>
-        </section>
 
-        {/* ── Ticker ─────────────────────────────────────────── */}
-        <div style={{ background: C.coral, padding: "12px 0", overflow: "hidden", borderTop: `2px solid ${C.navy}`, borderBottom: `2px solid ${C.navy}` }}>
-          <div className="marquee-track">
-            {[...Array(2)].map((_, p) =>
-              ["ENERGY WITHOUT THE CRASH", "TEAR", "POUR", "HIT", "FIRST-EVER READY-TO-POUR", "12 SERVINGS", "$3 / SERVING", "CEREMONIAL GRADE", "FREE SHIPPING"].map((t, i) => (
-                <span key={p * 100 + i} style={{ fontFamily: FB, fontWeight: 800, fontSize: "0.85rem", letterSpacing: "0.1em", textTransform: "uppercase" as const, color: C.cream, padding: "0 28px" }}>
-                  {t}<span style={{ marginLeft: 28, color: "rgba(253,244,238,0.5)" }}>·</span>
-                </span>
-              ))
-            )}
+          {/* Right — sachet images */}
+          <div
+            style={{
+              flex: "1 1 420px",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              gap: 24,
+              minWidth: 320,
+            }}
+          >
+            <img
+              src="/sachet-vanilla.png"
+              alt="Shroomé vanilla sachet"
+              className="sachet-float"
+              style={{ width: "48%", maxWidth: 280, height: "auto", filter: "drop-shadow(0 16px 48px rgba(0,0,0,0.15))" }}
+            />
+            <img
+              src="/sachet-strawberry.png"
+              alt="Shroomé strawberry sachet"
+              className="sachet-float"
+              style={{ width: "48%", maxWidth: 280, height: "auto", animationDelay: "2s", filter: "drop-shadow(0 16px 48px rgba(0,0,0,0.15))" }}
+            />
           </div>
         </div>
 
-        {/* ── Ingredients — color-blocked ──────────────────────── */}
-        <section style={{ background: C.cream, padding: "96px 5%" }}>
-          <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-            <div style={{ textAlign: "center", marginBottom: 56 }}>
-              <p style={{ fontFamily: FB, fontWeight: 700, fontSize: "0.85rem", letterSpacing: "0.3em", textTransform: "uppercase" as const, color: C.sage, marginBottom: 14 }}>What&apos;s Inside 👀</p>
-              <h2 style={{ fontFamily: FD, fontSize: "clamp(2.2rem, 4vw, 3.75rem)", lineHeight: 1.03, letterSpacing: "-0.025em", color: C.navy }}>
-                Three obsessions.<br /><em style={{ color: C.coral }}>One sachet.</em>
-              </h2>
-            </div>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 300px), 1fr))", gap: 0, border: `2px solid ${C.navy}` }}>
-              {INGREDIENTS.map((card, idx) => (
-                <div key={card.title} className="lift" style={{ background: card.bg, padding: "52px 40px", position: "relative", borderRight: idx < 2 ? `2px solid ${C.navy}` : "none" }}>
-                  <div style={{ position: "absolute", top: 22, right: 24, fontFamily: FB, fontWeight: 800, fontSize: "0.75rem", color: C.navy, opacity: 0.18, letterSpacing: "0.1em" }}>{card.num}</div>
-                  <div style={{ fontSize: "2.5rem", marginBottom: 18 }}>{card.emoji}</div>
-                  <div style={{ display: "inline-block", padding: "6px 14px", background: "rgba(0,0,0,0.07)", marginBottom: 16, fontFamily: FB, fontWeight: 700, fontSize: "0.72rem", letterSpacing: "0.1em", color: card.accent, textTransform: "uppercase" as const }}>{card.badge}</div>
-                  <h3 style={{ fontFamily: FD, fontSize: "1.5rem", color: C.navy, marginBottom: 16, lineHeight: 1.2 }}>{card.title}</h3>
-                  <p style={{ fontFamily: FB, fontWeight: 500, fontSize: "0.95rem", lineHeight: 1.78, color: C.ink, marginBottom: 30, opacity: 0.8 }}>{card.body}</p>
-                  <div style={{ display: "flex", alignItems: "baseline", gap: 10 }}>
-                    <span style={{ fontFamily: FD, fontSize: "3rem", color: card.accent, lineHeight: 1 }}>{card.stat}</span>
-                    <span style={{ fontFamily: FB, fontWeight: 600, fontSize: "0.75rem", color: C.muted, letterSpacing: "0.1em", textTransform: "uppercase" as const }}>{card.statLabel}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* Flavor sidebar */}
+        <div
+          style={{
+            position: "absolute",
+            right: 0,
+            bottom: 40,
+            background: "#1B1F3B",
+            color: "#FDF4EE",
+            padding: "20px 20px",
+            textAlign: "center",
+            zIndex: 2,
+          }}
+        >
+          <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 700, fontSize: "0.55rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "#C8FF3A", marginBottom: 8 }}>Flavors</p>
+          <p style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontStyle: "italic", fontSize: "0.95rem", lineHeight: 1.5 }}>Vanilla<br />Strawberry</p>
+        </div>
+      </section>
 
-        {/* ── Invented. Not Improved. ─────────────────────────── */}
-        <section style={{ background: C.lavender, padding: "96px 5%", position: "relative", borderTop: `2px solid ${C.navy}` }}>
-          {/* corner blob — stays within bounds so no overflow:hidden needed */}
-          <div style={{ position: "absolute", width: "38vw", height: "38vw", maxWidth: 480, maxHeight: 480, top: "-10%", right: "0%", background: C.pink, borderRadius: "58% 42% 55% 45% / 50% 48% 52% 50%", pointerEvents: "none", opacity: 0.45 }}/>
-          <div style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 440px), 1fr))", gap: "56px 80px", alignItems: "start", position: "relative", zIndex: 1 }}>
-            {/* left */}
-            <div>
-              <p style={{ fontFamily: FB, fontWeight: 700, fontSize: "0.85rem", letterSpacing: "0.3em", textTransform: "uppercase" as const, color: C.sageDark, marginBottom: 20 }}>A New Category</p>
-              <h2 style={{ fontFamily: FD, fontSize: "clamp(2.5rem, 5vw, 5rem)", lineHeight: 0.95, letterSpacing: "-0.03em", color: C.navy, marginBottom: 24 }}>
-                Invented.<br /><em style={{ color: C.coral }}>Not improved.</em>
-              </h2>
-              <p style={{ fontFamily: FB, fontWeight: 500, fontSize: "1rem", lineHeight: 1.8, color: "rgba(27,31,59,0.68)", marginBottom: 28, maxWidth: 400 }}>
-                Matcha powders clump. Collagen sinks. Mushroom blends taste like dirt. We didn&apos;t try to fix any of that. We made a liquid sachet that dissolves all three perfectly, every single time.
-              </p>
-              <div style={{ borderLeft: `4px solid ${C.coral}`, paddingLeft: 22, marginBottom: 32 }}>
-                <p style={{ fontFamily: FD, fontStyle: "italic", fontSize: "1.2rem", color: C.coral, lineHeight: 1.45 }}>
-                  &ldquo;Not a better powder. A new category.&rdquo;
-                </p>
-              </div>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 2 }}>
-                {[["3g", "Matcha per serve"], ["2g", "Collagen peptides"], ["200mg", "Beta glucans"], ["~75mg", "Natural caffeine"]].map(([n, l]) => (
-                  <div key={l} style={{ background: C.navy, padding: "20px 22px" }}>
-                    <div style={{ fontFamily: FD, fontSize: "2.2rem", color: C.lime, lineHeight: 1, marginBottom: 4 }}>{n}</div>
-                    <div style={{ fontFamily: FB, fontWeight: 600, fontSize: "0.72rem", letterSpacing: "0.12em", textTransform: "uppercase" as const, color: "rgba(253,244,238,0.5)" }}>{l}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
+      {/* ════════════════════ DARK — PICK YOUR FLAVOR (GHIA STYLE) ════════════════════ */}
+      <section
+        id="why"
+        style={{
+          padding: "80px 24px 48px",
+          background: "#000",
+          position: "relative",
+          overflow: "hidden",
+          textAlign: "center",
+          color: "#FDF4EE",
+        }}
+      >
+        {/* Dramatic starburst light rays */}
+        <div
+          style={{
+            position: "absolute",
+            inset: "-20%",
+            background: `conic-gradient(
+              from 0deg at 50% 45%,
+              transparent 0deg, rgba(255,240,220,0.18) 4deg, transparent 8deg,
+              transparent 14deg, rgba(255,240,220,0.14) 18deg, transparent 22deg,
+              transparent 28deg, rgba(255,240,220,0.2) 32deg, transparent 36deg,
+              transparent 44deg, rgba(255,240,220,0.12) 48deg, transparent 52deg,
+              transparent 58deg, rgba(255,240,220,0.18) 62deg, transparent 66deg,
+              transparent 74deg, rgba(255,240,220,0.14) 78deg, transparent 82deg,
+              transparent 88deg, rgba(255,240,220,0.2) 92deg, transparent 96deg,
+              transparent 104deg, rgba(255,240,220,0.12) 108deg, transparent 112deg,
+              transparent 118deg, rgba(255,240,220,0.18) 122deg, transparent 126deg,
+              transparent 134deg, rgba(255,240,220,0.14) 138deg, transparent 142deg,
+              transparent 148deg, rgba(255,240,220,0.2) 152deg, transparent 156deg,
+              transparent 164deg, rgba(255,240,220,0.12) 168deg, transparent 172deg,
+              transparent 178deg, rgba(255,240,220,0.18) 182deg, transparent 186deg,
+              transparent 194deg, rgba(255,240,220,0.14) 198deg, transparent 202deg,
+              transparent 208deg, rgba(255,240,220,0.2) 212deg, transparent 216deg,
+              transparent 224deg, rgba(255,240,220,0.12) 228deg, transparent 232deg,
+              transparent 238deg, rgba(255,240,220,0.18) 242deg, transparent 246deg,
+              transparent 254deg, rgba(255,240,220,0.14) 258deg, transparent 262deg,
+              transparent 268deg, rgba(255,240,220,0.2) 272deg, transparent 276deg,
+              transparent 284deg, rgba(255,240,220,0.12) 288deg, transparent 292deg,
+              transparent 298deg, rgba(255,240,220,0.18) 302deg, transparent 306deg,
+              transparent 314deg, rgba(255,240,220,0.14) 318deg, transparent 322deg,
+              transparent 328deg, rgba(255,240,220,0.2) 332deg, transparent 336deg,
+              transparent 344deg, rgba(255,240,220,0.12) 348deg, transparent 352deg,
+              transparent 360deg
+            )`,
+            pointerEvents: "none",
+          }}
+        />
+        {/* Central warm glow */}
+        <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse 45% 50% at 50% 45%, rgba(255,220,180,0.25) 0%, rgba(255,180,140,0.1) 40%, transparent 70%)", pointerEvents: "none" }} />
+        {/* Subtle edge vignette */}
+        <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse 80% 80% at 50% 50%, transparent 40%, rgba(0,0,0,0.6) 100%)", pointerEvents: "none" }} />
 
-            {/* right — comparison table, dark box */}
-            <div style={{ background: C.navy, padding: "28px 22px", border: `2px solid ${C.navy}` }}>
-              {/* mobile scroll wrapper */}
-              <div style={{ overflowX: "auto", WebkitOverflowScrolling: "touch" as any }}>
-                <div className="cmp-inner" style={{ minWidth: 340 }}>
-                  <div className="cmp-grid" style={{ display: "grid", gridTemplateColumns: "2fr repeat(5, 1fr)", gap: 0, marginBottom: 14, alignItems: "end" }}>
-                    <div/>
-                    {COMPARE_HEADS.map(h => (
-                      <div key={h} className="cmp-head" style={{ fontFamily: FB, fontWeight: 700, fontSize: "0.7rem", letterSpacing: "0.04em", textTransform: "uppercase" as const, color: "rgba(253,244,238,0.75)", textAlign: "center", padding: "0 3px", lineHeight: 1.25 }}>{h}</div>
-                    ))}
-                  </div>
-                  {COMPARE.map((row) => (
-                    <div key={row.brand} className="cmp-grid" style={{ display: "grid", gridTemplateColumns: "2fr repeat(5, 1fr)", gap: 0, padding: "13px 0", borderTop: `1px solid rgba(253,244,238,${row.us ? "0.15" : "0.07"})`, background: row.us ? "rgba(200,255,58,0.08)" : "transparent", alignItems: "center" }}>
-                      <div className="cmp-brand" style={{ fontFamily: FD, fontSize: row.us ? "1.15rem" : "0.95rem", color: row.us ? C.lime : "rgba(253,244,238,0.6)", fontStyle: row.us ? "italic" : "normal" }}>{row.brand}</div>
-                      {row.checks.map((c, i) => (
-                        <div key={i} style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
-                          <span className={`cmp-circle ${c ? "chk-y" : "chk-n"}`} style={{ width: 26, height: 26, borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.8rem", fontWeight: 700 }}>{c ? "✓" : "✕"}</span>
-                        </div>
-                      ))}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ── How it Works — 3 bold color blocks ───────────────── */}
-        <section style={{ background: C.cream, padding: "96px 5%", borderTop: `2px solid ${C.navy}` }}>
-          <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-            <div style={{ textAlign: "center", marginBottom: 56 }}>
-              <p style={{ fontFamily: FB, fontWeight: 700, fontSize: "0.85rem", letterSpacing: "0.3em", textTransform: "uppercase" as const, color: C.sage, marginBottom: 14 }}>30 seconds. That&apos;s it.</p>
-              <h2 style={{ fontFamily: FD, fontSize: "clamp(2.2rem, 4vw, 3.5rem)", lineHeight: 1.05, letterSpacing: "-0.025em", color: C.navy }}>
-                Tear. Pour. <em style={{ color: C.teal }}>Hit.</em>
-              </h2>
-            </div>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 280px), 1fr))", gap: 0, border: `2px solid ${C.navy}` }}>
-              {STEPS.map((step, idx) => (
-                <div key={step.num} className="lift" style={{ background: step.bg, padding: "56px 44px", position: "relative", borderRight: idx < 2 ? `2px solid ${C.navy}` : "none" }}>
-                  <div style={{ fontFamily: FD, fontStyle: "italic", fontSize: "5.5rem", color: "rgba(27,31,59,0.1)", lineHeight: 1, marginBottom: 20 }}>{step.num}</div>
-                  <h3 style={{ fontFamily: FD, fontSize: "3rem", fontWeight: 400, color: step.ink, marginBottom: 18, letterSpacing: "-0.02em" }}>{step.title}</h3>
-                  <p style={{ fontFamily: FB, fontWeight: 500, fontSize: "0.98rem", lineHeight: 1.78, color: step.ink, opacity: 0.8 }}>{step.body}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ── Testimonials ───────────────────────────────────── */}
-        <section style={{ background: C.fog, padding: "88px 5%", borderTop: `2px solid ${C.navy}` }}>
-          <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-            <p style={{ fontFamily: FB, fontWeight: 700, fontSize: "0.85rem", letterSpacing: "0.3em", textTransform: "uppercase" as const, color: C.sage, marginBottom: 48, textAlign: "center" }}>Real people. Real energy. 🔋</p>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 300px), 1fr))", gap: 0, border: `2px solid ${C.navy}` }}>
-              {TESTIMONIALS.map((t, idx) => (
-                <div key={t.name} style={{ background: t.bg, padding: "44px 38px", borderRight: idx < 2 ? `2px solid ${C.navy}` : "none" }}>
-                  <p style={{ fontFamily: FD, fontStyle: "italic", fontSize: "1.2rem", lineHeight: 1.62, color: C.navy, marginBottom: 28 }}>&ldquo;{t.quote}&rdquo;</p>
-                  <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
-                    <div style={{ width: 40, height: 40, background: C.navy, display: "flex", alignItems: "center", justifyContent: "center", fontFamily: FD, fontSize: "1.1rem", color: C.cream, flexShrink: 0 }}>{t.name[0]}</div>
-                    <div>
-                      <div style={{ fontFamily: FB, fontWeight: 700, fontSize: "0.95rem", color: C.navy }}>{t.name}</div>
-                      <div style={{ fontFamily: FB, fontWeight: 500, fontSize: "0.75rem", color: C.muted, letterSpacing: "0.04em" }}>{t.loc} · early tester</div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ── Final CTA ──────────────────────────────────────── */}
-        <section id="waitlist" style={{ background: C.pink, padding: "96px 5%", position: "relative", overflow: "hidden", borderTop: `2px solid ${C.navy}` }}>
-          {/* corner blobs */}
-          <div style={{ position: "absolute", width: "35vw", height: "35vw", maxWidth: 460, maxHeight: 460, bottom: "-20%", left: "-8%", background: C.coral, borderRadius: "55% 45% 60% 40% / 48% 56% 44% 52%", pointerEvents: "none", opacity: 0.3 }}/>
-          <div style={{ position: "absolute", width: "24vw", height: "24vw", maxWidth: 320, maxHeight: 320, top: "-14%", right: "8%", background: C.lime, borderRadius: "48% 52% 58% 42% / 52% 44% 56% 48%", pointerEvents: "none", opacity: 0.5 }}/>
-          <div style={{ maxWidth: 600, margin: "0 auto", textAlign: "center", position: "relative", zIndex: 1 }}>
-            <div style={{ display: "flex", justifyContent: "center", marginBottom: 24 }}>
-              <LogoImg size={64} />
-            </div>
-            <p style={{ fontFamily: FB, fontWeight: 700, fontSize: "0.9rem", letterSpacing: "0.3em", textTransform: "uppercase" as const, color: C.navy, marginBottom: 20 }}>Join the Waitlist</p>
-            <h2 style={{ fontFamily: FD, fontSize: "clamp(2.8rem, 5.5vw, 5.5rem)", lineHeight: 0.98, letterSpacing: "-0.03em", color: C.navy, marginBottom: 18 }}>
-              First 500 get <em style={{ color: C.coral }}>40% off.</em>
-            </h2>
-            <p style={{ fontFamily: FB, fontWeight: 500, fontSize: "1.05rem", lineHeight: 1.65, color: "rgba(27,31,59,0.65)", maxWidth: 380, margin: "0 auto 40px" }}>
-              Drop your email. Your code hits your inbox the second we launch.
+        <div style={{ position: "relative", zIndex: 1, maxWidth: 1000, margin: "0 auto" }}>
+          <div {...anim("flavor-head")}>
+            <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 700, fontSize: "0.65rem", letterSpacing: "0.25em", textTransform: "uppercase", color: "#C8FF3A", marginBottom: 16 }}>
+              2 Flavors
             </p>
-            <div style={{ display: "flex", justifyContent: "center" }}>
-              <EmailForm dark={false} />
+            <h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "clamp(2rem, 5vw, 3.5rem)", lineHeight: 1.05, marginBottom: 8 }}>
+              Pick your flavor.
+              <br />
+              <span style={{ fontStyle: "italic", color: "#FFB7D1" }}>Both hit different.</span>
+            </h2>
+          </div>
+
+          {/* Sachet images — large with reflections */}
+          <div
+            {...anim("flavor-imgs", 0.2)}
+            style={{
+              ...anim("flavor-imgs", 0.2).style,
+              display: "flex",
+              justifyContent: "center",
+              gap: 56,
+              margin: "40px auto 0",
+              maxWidth: 720,
+            }}
+          >
+            {[
+              { src: "/sachet-vanilla.png", alt: "Vanilla", delay: "0s", shadow: "rgba(255,220,180,0.3)" },
+              { src: "/sachet-strawberry.png", alt: "Strawberry", delay: "1.8s", shadow: "rgba(212,114,122,0.35)" },
+            ].map((s) => (
+              <div key={s.alt} style={{ width: "46%", display: "flex", flexDirection: "column", alignItems: "center" }}>
+                <img
+                  src={s.src}
+                  alt={s.alt}
+                  className="sachet-float"
+                  style={{
+                    width: "100%",
+                    height: "auto",
+                    animationDelay: s.delay,
+                    filter: `drop-shadow(0 0 40px ${s.shadow}) drop-shadow(0 0 80px ${s.shadow})`,
+                  }}
+                />
+                {/* Reflection */}
+                <img
+                  src={s.src}
+                  alt=""
+                  aria-hidden="true"
+                  style={{
+                    width: "100%",
+                    height: "auto",
+                    transform: "scaleY(-1) translateY(4px)",
+                    maxHeight: 60,
+                    maskImage: "linear-gradient(to bottom, rgba(0,0,0,0.18) 0%, transparent 45%)",
+                    WebkitMaskImage: "linear-gradient(to bottom, rgba(0,0,0,0.18) 0%, transparent 45%)",
+                    filter: "blur(2px)",
+                    opacity: 0.35,
+                    pointerEvents: "none",
+                  }}
+                />
+              </div>
+            ))}
+          </div>
+
+          {/* Glossy floor line */}
+          <div style={{ width: "70%", maxWidth: 500, height: 1, background: "linear-gradient(to right, transparent, rgba(255,240,220,0.15), transparent)", margin: "-20px auto 16px" }} />
+
+          {/* Flavor cards side by side */}
+          <div {...anim("flavor-cards", 0.3)} style={{ ...anim("flavor-cards", 0.3).style, display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 40, textAlign: "center" }}>
+            <div>
+              <h3 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontStyle: "italic", fontSize: "1.5rem", marginBottom: 8 }}>Vanilla</h3>
+              <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.82rem", color: "rgba(253,244,238,0.4)", letterSpacing: "0.06em" }}>Warm · Floral · Grounding</p>
             </div>
-            <div style={{ marginTop: 22, display: "flex", justifyContent: "center", gap: 28, flexWrap: "wrap" as const }}>
-              {["No spam", "40% off launch price", "Ships free"].map(item => (
-                <span key={item} style={{ fontFamily: FB, fontWeight: 600, fontSize: "0.8rem", color: "rgba(27,31,59,0.55)", letterSpacing: "0.04em" }}>✓ {item}</span>
-              ))}
+            <div>
+              <h3 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontStyle: "italic", fontSize: "1.5rem", marginBottom: 8 }}>Strawberry</h3>
+              <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.82rem", color: "rgba(253,244,238,0.4)", letterSpacing: "0.06em" }}>Bright · Fruity · Fresh</p>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* ── Footer ─────────────────────────────────────────── */}
-        <footer style={{ background: C.navy, color: C.cream, padding: "38px 5%", borderTop: `2px solid ${C.navy}` }}>
-          <div style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 200px), 1fr))", gap: "14px 32px", alignItems: "center" }}>
-            <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-              <LogoImg size={26} invert />
-              <span style={{ fontFamily: FD, fontStyle: "italic", fontSize: "1.5rem", color: C.cream }}>shroomé</span>
-            </div>
-            <div style={{ fontFamily: FB, fontWeight: 500, fontSize: "0.72rem", letterSpacing: "0.12em", color: "rgba(253,244,238,0.32)", textAlign: "center", textTransform: "uppercase" as const }}>The world&apos;s first ready-to-pour matcha latte. © 2026</div>
-            <div style={{ fontFamily: FB, fontWeight: 500, fontSize: "0.8rem", color: "rgba(253,244,238,0.45)", textAlign: "right" }}>hello@drinkshroome.com</div>
+      {/* ════════════════════ INGREDIENTS ════════════════════ */}
+      <section
+        id="ingredients"
+        style={{ padding: "100px 24px", background: "#D4B8E0", position: "relative", overflow: "hidden" }}
+      >
+        <div className="blob-c" style={{ position: "absolute", top: "5%", right: "3%", width: "25vw", height: "25vw", background: "#FFB7D1", opacity: 0.4, pointerEvents: "none" }} />
+        <div className="blob-b" style={{ position: "absolute", bottom: "5%", left: "3%", width: "20vw", height: "20vw", background: "#1B1F3B", opacity: 0.12, pointerEvents: "none" }} />
+        <div className="blob-a" style={{ position: "absolute", top: "40%", left: "50%", width: "15vw", height: "15vw", background: "#C8FF3A", opacity: 0.2, pointerEvents: "none" }} />
+        <div style={{ maxWidth: 1000, margin: "0 auto" }}>
+          <div {...anim("ing-head")} style={{ ...anim("ing-head").style, textAlign: "center", marginBottom: 56 }}>
+            <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 600, fontSize: "0.68rem", letterSpacing: "0.25em", textTransform: "uppercase", color: "#1B1F3B", marginBottom: 16 }}>
+              What&apos;s inside
+            </p>
+            <h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontStyle: "italic", fontSize: "clamp(2rem, 4.5vw, 3rem)", color: "#1B1F3B", lineHeight: 1.1 }}>
+              Clean label. Real doses.
+            </h2>
           </div>
-        </footer>
 
-      </div>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 24 }}>
+            {[
+              { name: "Ceremonial Matcha", dose: "3g", detail: "First-harvest, shade-grown. ~75mg caffeine. Not culinary grade — the real thing.", color: "#C8FF3A", bg: "#1B1F3B" },
+              { name: "Mushroom Beta Glucans", dose: "200mg", detail: "Organic Lion's Mane + Chaga. Immune support and sustained focus.", color: "#FFB7D1", bg: "#1B1F3B" },
+              { name: "Grass-Fed Collagen", dose: "2g", detail: "Pre-dissolved bioavailable peptides for skin, hair, nails, and gut.", color: "#C8FF3A", bg: "#1B1F3B" },
+            ].map((item, i) => (
+              <div
+                key={item.name}
+                className="lift"
+                {...anim(`ing-${i}`, i * 0.1)}
+                style={{
+                  ...anim(`ing-${i}`, i * 0.1).style,
+                  padding: "32px 28px",
+                  background: item.bg,
+                  borderRadius: 8,
+                }}
+              >
+                <div style={{ display: "flex", alignItems: "baseline", gap: 12, marginBottom: 16 }}>
+                  <span style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "2.2rem", color: item.color, lineHeight: 1 }}>{item.dose}</span>
+                  <span style={{ fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 700, fontSize: "0.62rem", letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(253,244,238,0.5)" }}>{item.name}</span>
+                </div>
+                <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.85rem", color: "rgba(253,244,238,0.45)", lineHeight: 1.6 }}>{item.detail}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ════════════════════ COMPARISON TABLE ════════════════════ */}
+      <section style={{ padding: "80px 24px 100px", background: "#FFB7D1", color: "#1B1F3B", position: "relative", overflow: "hidden" }}>
+        <div className="blob-c" style={{ position: "absolute", top: "8%", left: "3%", width: "20vw", height: "20vw", background: "#D4B8E0", opacity: 0.4, pointerEvents: "none" }} />
+        <div className="blob-a" style={{ position: "absolute", bottom: "8%", right: "3%", width: "16vw", height: "16vw", background: "#C8FF3A", opacity: 0.15, pointerEvents: "none" }} />
+        <div style={{ maxWidth: 800, margin: "0 auto", position: "relative", zIndex: 1 }}>
+          <div {...anim("comp-head")} style={{ ...anim("comp-head").style, textAlign: "center", marginBottom: 48 }}>
+            <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 600, fontSize: "0.68rem", letterSpacing: "0.25em", textTransform: "uppercase", color: "#1B1F3B", marginBottom: 16 }}>
+              How we compare
+            </p>
+            <h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontStyle: "italic", fontSize: "clamp(1.8rem, 4vw, 2.6rem)", lineHeight: 1.1, color: "#1B1F3B" }}>
+              Not all matcha is created equal.
+            </h2>
+          </div>
+
+          <div {...anim("comp-table", 0.15)} style={{ ...anim("comp-table", 0.15).style, background: "#1B1F3B", borderRadius: 16, padding: "8px 0", boxShadow: "0 4px 30px rgba(0,0,0,0.2)", overflow: "hidden" }}>
+            <div>
+              <table style={{ width: "100%", borderCollapse: "collapse", fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.85rem" }}>
+                <thead>
+                  <tr>
+                    <th style={{ textAlign: "left", padding: "14px 14px", borderBottom: "1px solid rgba(253,244,238,0.08)", color: "rgba(253,244,238,0.35)", fontWeight: 600, fontSize: "0.72rem", letterSpacing: "0.08em", textTransform: "uppercase" }}></th>
+                    {["Shroomé", "Clevr", "RYZE", "MatchaKo", "Café"].map((b) => (
+                      <th key={b} style={{ textAlign: "center", padding: "14px 10px", borderBottom: "1px solid rgba(253,244,238,0.08)", color: b === "Shroomé" ? "#C8FF3A" : "rgba(253,244,238,0.35)", fontWeight: 700, fontSize: "0.72rem", letterSpacing: "0.08em", textTransform: "uppercase" }}>{b}</th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    { feature: "Ceremonial matcha", values: [true, false, false, true, true] },
+                    { feature: "Collagen", values: [true, false, false, false, false] },
+                    { feature: "Mushrooms", values: [true, true, true, false, false] },
+                    { feature: "Ready to pour", values: [true, false, false, false, true] },
+                    { feature: "12+ servings", values: [true, false, true, true, false] },
+                  ].map((row) => (
+                    <tr key={row.feature}>
+                      <td style={{ padding: "16px 14px", borderBottom: "1px solid rgba(253,244,238,0.06)", color: "#FDF4EE", fontWeight: 600, fontSize: "0.85rem" }}>{row.feature}</td>
+                      {row.values.map((v, i) => (
+                        <td key={i} style={{ textAlign: "center", padding: "16px 10px", borderBottom: "1px solid rgba(253,244,238,0.06)" }}>
+                          <span style={{ display: "inline-block", width: 34, height: 34, lineHeight: "34px", borderRadius: 4, fontSize: "1rem", fontWeight: 700, background: v ? "rgba(200,255,58,0.2)" : "rgba(253,244,238,0.04)", color: v ? "#C8FF3A" : "rgba(253,244,238,0.15)" }}>
+                            {v ? "✓" : "—"}
+                          </span>
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ════════════════════ HOW IT WORKS ════════════════════ */}
+      <section id="how" style={{ padding: "100px 24px", background: "#1B1F3B", position: "relative", overflow: "hidden" }}>
+        <div className="blob-a" style={{ position: "absolute", top: "10%", right: "3%", width: "22vw", height: "22vw", background: "#FFB7D1", opacity: 0.15, pointerEvents: "none" }} />
+        <div className="blob-c" style={{ position: "absolute", bottom: "5%", left: "5%", width: "18vw", height: "18vw", background: "#C8FF3A", opacity: 0.1, pointerEvents: "none" }} />
+        <div className="blob-b" style={{ position: "absolute", top: "5%", left: "8%", width: "14vw", height: "14vw", background: "#D4B8E0", opacity: 0.15, pointerEvents: "none" }} />
+        <div style={{ maxWidth: 900, margin: "0 auto", textAlign: "center" }}>
+          <div {...anim("how-head")}>
+            <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 600, fontSize: "0.68rem", letterSpacing: "0.25em", textTransform: "uppercase", color: "#C8FF3A", marginBottom: 16 }}>
+              How it works
+            </p>
+            <h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontStyle: "italic", fontSize: "clamp(2rem, 4.5vw, 3rem)", color: "#FDF4EE", lineHeight: 1.1, marginBottom: 64 }}>
+              Tear. Pour. <span style={{ color: "#FFB7D1" }}>Hit.</span>
+            </h2>
+          </div>
+
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 40 }}>
+            {[
+              { num: "01", title: "Tear", desc: "Rip open one sachet — that's your perfectly measured dose." },
+              { num: "02", title: "Pour", desc: "Over your milk of choice. Oat, almond, coconut, dairy. Hot or iced." },
+              { num: "03", title: "Hit", desc: "Stir once. 30 seconds to café-grade matcha latte. No blender, no whisk, no mess." },
+            ].map((step, i) => (
+              <div key={step.num} {...anim(`step-${i}`, i * 0.12)}>
+                <p style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.7rem", letterSpacing: "0.15em", color: "#C8FF3A", marginBottom: 14 }}>{step.num}</p>
+                <h3 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontStyle: "italic", fontSize: "1.6rem", color: "#FDF4EE", marginBottom: 10 }}>{step.title}</h3>
+                <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.85rem", color: "rgba(253,244,238,0.45)", lineHeight: 1.65 }}>{step.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ════════════════════ HANDS PHOTO ════════════════════ */}
+      <section style={{ padding: "60px 24px 0", background: "#D4B8E0", textAlign: "center", position: "relative", overflow: "hidden" }}>
+        {/* Bold abstract blobs — pink, navy & lime */}
+        <div className="blob-a" style={{ position: "absolute", top: "5%", left: "3%", width: "20vw", height: "20vw", background: "#FFB7D1", opacity: 0.4, pointerEvents: "none" }} />
+        <div className="blob-b" style={{ position: "absolute", top: "5%", right: "5%", width: "16vw", height: "16vw", background: "#1B1F3B", opacity: 0.12, pointerEvents: "none" }} />
+        <div className="blob-c" style={{ position: "absolute", bottom: "25%", right: "8%", width: "14vw", height: "14vw", background: "#C8FF3A", opacity: 0.2, pointerEvents: "none" }} />
+        <div className="blob-a" style={{ position: "absolute", bottom: "15%", left: "6%", width: "12vw", height: "12vw", background: "#FF7043", opacity: 0.15, pointerEvents: "none" }} />
+        <div {...anim("hands")} style={{ ...anim("hands").style, maxWidth: 600, margin: "0 auto", overflow: "hidden", borderRadius: "16px 16px 0 0", position: "relative", zIndex: 1 }}>
+          <img src="/sachets-both.png" alt="Both flavors" style={{ width: "100%", height: "auto", display: "block", marginBottom: "-12%" }} />
+        </div>
+      </section>
+
+      {/* ════════════════════ TESTIMONIALS ════════════════════ */}
+      <section style={{ padding: "80px 24px 100px", background: "#FFB7D1", position: "relative", overflow: "hidden" }}>
+        <div className="blob-b" style={{ position: "absolute", top: "10%", right: "5%", width: "18vw", height: "18vw", background: "#D4B8E0", opacity: 0.4, pointerEvents: "none" }} />
+        <div className="blob-a" style={{ position: "absolute", bottom: "10%", left: "3%", width: "15vw", height: "15vw", background: "#C8FF3A", opacity: 0.15, pointerEvents: "none" }} />
+        <div style={{ maxWidth: 900, margin: "0 auto", position: "relative", zIndex: 1 }}>
+          <div {...anim("test-head")} style={{ ...anim("test-head").style, textAlign: "center", marginBottom: 48 }}>
+            <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 600, fontSize: "0.68rem", letterSpacing: "0.25em", textTransform: "uppercase", color: "#1B1F3B", marginBottom: 16 }}>
+              Early testers
+            </p>
+            <h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontStyle: "italic", fontSize: "clamp(1.8rem, 4vw, 2.6rem)", color: "#1B1F3B", lineHeight: 1.1 }}>
+              What people are saying.
+            </h2>
+          </div>
+
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 24 }}>
+            {[
+              { quote: "I replaced my $7 oat milk latte with this. Tastes better, costs less, and I actually feel focused.", name: "Sarah M.", loc: "Austin, TX" },
+              { quote: "The strawberry one is insane. My kids think it's a treat. I know it's fuel.", name: "Mike R.", loc: "Brooklyn, NY" },
+              { quote: "Finally a matcha product that doesn't taste like grass. The vanilla is my daily non-negotiable.", name: "Jess L.", loc: "Portland, OR" },
+            ].map((t, i) => (
+              <div
+                key={t.name}
+                className="lift"
+                {...anim(`test-${i}`, i * 0.1)}
+                style={{
+                  ...anim(`test-${i}`, i * 0.1).style,
+                  padding: "28px 24px",
+                  background: "#1B1F3B",
+                  borderRadius: 8,
+                }}
+              >
+                <p style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontStyle: "italic", fontSize: "1.05rem", color: "#FDF4EE", lineHeight: 1.55, marginBottom: 20 }}>
+                  &ldquo;{t.quote}&rdquo;
+                </p>
+                <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 700, fontSize: "0.75rem", color: "#C8FF3A" }}>{t.name}</p>
+                <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.68rem", color: "rgba(253,244,238,0.4)" }}>{t.loc} · Early tester</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ════════════════════ FINAL CTA ════════════════════ */}
+      <section
+        id="cta"
+        style={{
+          padding: "100px 24px 60px",
+          background: "#D4B8E0",
+          color: "#1B1F3B",
+          textAlign: "center",
+          position: "relative",
+          overflow: "hidden",
+        }}
+      >
+        <div className="blob-a" style={{ position: "absolute", top: "10%", right: "5%", width: "25vw", height: "25vw", background: "#FFB7D1", opacity: 0.4, pointerEvents: "none" }} />
+        <div className="blob-b" style={{ position: "absolute", bottom: "10%", left: "5%", width: "20vw", height: "20vw", background: "#C8FF3A", opacity: 0.15, pointerEvents: "none" }} />
+
+        <div {...anim("cta-block")} style={{ ...anim("cta-block").style, maxWidth: 520, margin: "0 auto", position: "relative", zIndex: 1 }}>
+          <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 600, fontSize: "0.68rem", letterSpacing: "0.25em", textTransform: "uppercase", color: "#1B1F3B", marginBottom: 16 }}>
+            Pre-launch list
+          </p>
+          <h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontStyle: "italic", fontSize: "clamp(1.8rem, 4vw, 2.8rem)", lineHeight: 1.1, marginBottom: 14, color: "#1B1F3B" }}>
+            Be first. Get 40% off.
+          </h2>
+          <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.88rem", color: "rgba(27,31,59,0.5)", lineHeight: 1.6, marginBottom: 36 }}>
+            First 500 get 40% off their first order — code delivered to your inbox on launch day.
+          </p>
+          {step === "done" ? (
+            <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 700, fontSize: "1rem", color: "#1B1F3B" }}>
+              ✓ You&apos;re on the list.
+            </p>
+          ) : step === "captcha" ? (
+            <div>
+              <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 600, fontSize: "0.88rem", color: "#1B1F3B", marginBottom: 14 }}>
+                Quick verification for {email}
+              </p>
+              {!captchaRef.current && <div ref={captchaRef} style={{ display: "flex", justifyContent: "center", marginBottom: 8 }} />}
+              {loading && (
+                <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.72rem", color: "rgba(27,31,59,0.45)" }}>
+                  Submitting...
+                </p>
+              )}
+            </div>
+          ) : step === "phone" ? (
+            <div>
+              <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 600, fontSize: "0.88rem", color: "#1B1F3B", marginBottom: 14 }}>
+                ✓ Got it! Want texts when we launch?
+              </p>
+              <form onSubmit={handlePhoneSubmit} style={{ display: "flex", gap: 8, flexWrap: "wrap", justifyContent: "center" }}>
+                <input
+                  type="tel"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                  placeholder="(555) 123-4567"
+                  style={{ flex: "1 1 240px", padding: "15px 20px", border: "2px solid #1B1F3B", background: "rgba(255,255,255,0.5)", color: "#1B1F3B", fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.95rem", fontWeight: 500, minWidth: 0 }}
+                />
+                <button type="submit" disabled={loading} style={{ padding: "15px 28px", border: "none", background: "#1B1F3B", color: "#C8FF3A", fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 800, fontSize: "0.75rem", letterSpacing: "0.12em", textTransform: "uppercase", cursor: loading ? "wait" : "pointer", whiteSpace: "nowrap" }}>
+                  {loading ? "…" : "Add phone →"}
+                </button>
+              </form>
+              <button onClick={skipPhone} style={{ marginTop: 10, background: "transparent", border: "none", color: "rgba(27,31,59,0.45)", fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.72rem", cursor: "pointer", textDecoration: "underline" }}>
+                Skip
+              </button>
+            </div>
+          ) : (
+            <form onSubmit={handleEmailSubmit} style={{ display: "flex", gap: 8, flexWrap: "wrap", justifyContent: "center" }}>
+              <input
+                type="email"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="your@email.com"
+                style={{ flex: "1 1 240px", padding: "15px 20px", border: "2px solid #1B1F3B", background: "rgba(255,255,255,0.5)", color: "#1B1F3B", fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.95rem", fontWeight: 500, minWidth: 0 }}
+              />
+              <button type="submit" disabled={loading} style={{ padding: "15px 28px", border: "none", background: "#1B1F3B", color: "#C8FF3A", fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 800, fontSize: "0.75rem", letterSpacing: "0.12em", textTransform: "uppercase", cursor: loading ? "wait" : "pointer", whiteSpace: "nowrap" }}>
+                {loading ? "…" : "Claim 40% off →"}
+              </button>
+            </form>
+          )}
+        </div>
+
+        <div style={{ marginTop: 80, paddingTop: 28, borderTop: "1px solid rgba(27,31,59,0.08)", position: "relative", zIndex: 1 }}>
+          <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.68rem", color: "rgba(27,31,59,0.3)", letterSpacing: "0.08em" }}>
+            © 2026 Shroomé · hello@drinkshroome.com
+          </p>
+        </div>
+      </section>
     </>
   );
 }
