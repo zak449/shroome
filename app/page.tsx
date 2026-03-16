@@ -348,11 +348,16 @@ export default function Home() {
 
         @media (max-width:700px) {
           .hero-grid { grid-template-columns:1fr !important; }
-          .hero-sachet { order:-1; min-height:60vw; padding:24px 0 16px; }
+          .hero-sachet { order:-1; min-height:50vw; max-height:72vw; padding:16px 0 8px; overflow:hidden; }
+          .hero-sachet img { max-height:68vw !important; width:auto !important; }
           .hero-stat-card { display:none !important; }
           .hide-mob { display:none !important; }
           .hero-blob-1 { width:95vw; height:95vw; top:-8%; right:-20%; }
           .hero-blob-2 { display:none; }
+          .cmp-inner { min-width:0 !important; }
+          .cmp-circle { width:20px !important; height:20px !important; font-size:0.68rem !important; }
+          .cmp-head { font-size:0.52rem !important; letter-spacing:0.01em !important; line-height:1.1 !important; padding:0 1px !important; }
+          .cmp-brand { font-size:0.82rem !important; }
         }
       `}</style>
 
@@ -453,11 +458,11 @@ export default function Home() {
             </div>
             {/* Vanilla — back, angled left */}
             <div style={{ position: "absolute", transform: "rotate(-9deg) translateX(-28%)", transformOrigin: "bottom center", zIndex: 1, opacity: 0.88 }}>
-              <Sachet flavor="vanilla" scale={1.1} />
+              <Sachet flavor="vanilla" scale={0.72} />
             </div>
             {/* Strawberry — front, slight tilt */}
             <div style={{ transform: "rotate(4deg)", transformOrigin: "bottom center", zIndex: 2 }}>
-              <Sachet flavor="strawberry" scale={1.1} />
+              <Sachet flavor="strawberry" scale={0.72} />
             </div>
             {/* stat cards */}
             <div className="hero-stat-card" style={{ position: "absolute", bottom: "22%", left: 0, background: C.cream, padding: "14px 20px", border: `2px solid ${C.navy}`, zIndex: 3 }}>
@@ -605,19 +610,19 @@ export default function Home() {
             <div style={{ background: C.navy, padding: "28px 22px", border: `2px solid ${C.navy}` }}>
               {/* mobile scroll wrapper */}
               <div style={{ overflowX: "auto", WebkitOverflowScrolling: "touch" as any }}>
-                <div style={{ minWidth: 340 }}>
+                <div className="cmp-inner" style={{ minWidth: 340 }}>
                   <div style={{ display: "grid", gridTemplateColumns: "2fr repeat(5, 1fr)", gap: 0, marginBottom: 14 }}>
                     <div/>
                     {COMPARE_HEADS.map(h => (
-                      <div key={h} style={{ fontFamily: FB, fontWeight: 700, fontSize: "0.7rem", letterSpacing: "0.04em", textTransform: "uppercase" as const, color: "rgba(253,244,238,0.75)", textAlign: "center", padding: "0 3px", lineHeight: 1.25 }}>{h}</div>
+                      <div key={h} className="cmp-head" style={{ fontFamily: FB, fontWeight: 700, fontSize: "0.7rem", letterSpacing: "0.04em", textTransform: "uppercase" as const, color: "rgba(253,244,238,0.75)", textAlign: "center", padding: "0 3px", lineHeight: 1.25 }}>{h}</div>
                     ))}
                   </div>
                   {COMPARE.map((row) => (
                     <div key={row.brand} style={{ display: "grid", gridTemplateColumns: "2fr repeat(5, 1fr)", gap: 0, padding: "13px 0", borderTop: `1px solid rgba(253,244,238,${row.us ? "0.15" : "0.07"})`, background: row.us ? "rgba(200,255,58,0.08)" : "transparent", alignItems: "center" }}>
-                      <div style={{ fontFamily: FD, fontSize: row.us ? "1.15rem" : "0.95rem", color: row.us ? C.lime : "rgba(253,244,238,0.6)", fontStyle: row.us ? "italic" : "normal" }}>{row.brand}</div>
+                      <div className="cmp-brand" style={{ fontFamily: FD, fontSize: row.us ? "1.15rem" : "0.95rem", color: row.us ? C.lime : "rgba(253,244,238,0.6)", fontStyle: row.us ? "italic" : "normal" }}>{row.brand}</div>
                       {row.checks.map((c, i) => (
                         <div key={i} style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
-                          <span style={{ width: 26, height: 26, borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.8rem", fontWeight: 700 }} className={c ? "chk-y" : "chk-n"}>{c ? "✓" : "✕"}</span>
+                          <span className={`cmp-circle ${c ? "chk-y" : "chk-n"}`} style={{ width: 26, height: 26, borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.8rem", fontWeight: 700 }}>{c ? "✓" : "✕"}</span>
                         </div>
                       ))}
                     </div>
