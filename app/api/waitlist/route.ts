@@ -184,9 +184,10 @@ export async function POST(req: NextRequest) {
     // ─── 3. Send confirmation email (only on initial signup, not phone update)
     if (!phone) {
       await resend.emails.send({
-        from: "Shroomé <noreply@communityattire.com>",
+        from: "Shroomé <hello@drinkshroome.com>",
         to: [email],
-        subject: "Welcome to Shroomé — We're so excited to share this with you",
+        replyTo: "hello@drinkshroome.com",
+        subject: "you're in 🍵✨ welcome to the shroomé fam",
         html: `
         <!DOCTYPE html>
         <html>
@@ -207,10 +208,10 @@ export async function POST(req: NextRequest) {
                         shroomé
                       </p>
                       <h1 style="margin:0 0 16px;font-size:28px;color:#FDF4EE;font-family:Georgia,'Times New Roman',serif;font-weight:700;line-height:1.25;">
-                        We are so excited to share Shroomé with you.
+                        ok wait — we're literally so excited rn 🎉
                       </h1>
-                      <p style="margin:0;font-size:16px;color:rgba(253,244,238,0.7);line-height:1.7;">
-                        We hope once we launch, you'll enjoy the latte and the savings. Your <strong style="color:#C8FF3A;">30% off</strong> code is locked in — we'll send it the moment we go live. Add your phone number on site for an extra 10% off code!
+                      <p style="margin:0;font-size:16px;color:rgba(253,244,238,0.8);line-height:1.7;">
+                        you just locked in your spot on the shroomé pre-launch list and honestly? we can't wait for you to try this. café-grade matcha lattes at home, no barista needed, no crash, just vibes ✨
                       </p>
                     </td>
                   </tr>
@@ -219,39 +220,54 @@ export async function POST(req: NextRequest) {
                   <tr>
                     <td style="padding:36px 32px;background:#D4B8E0;">
 
-                      <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:28px;background:#1B1F3B;border-radius:16px;overflow:hidden;">
+                      <!-- Discount card -->
+                      <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:24px;background:#1B1F3B;border-radius:16px;overflow:hidden;">
                         <tr>
                           <td style="padding:24px 28px;">
                             <p style="margin:0 0 6px;font-size:11px;letter-spacing:0.15em;color:#C8FF3A;text-transform:uppercase;font-family:monospace;">
-                              Your pre-launch perk
+                              🔒 your pre-launch perk
                             </p>
-                            <p style="margin:0;font-size:18px;color:#FDF4EE;font-weight:600;">
-                              30% off your first Shroomé order
+                            <p style="margin:0;font-size:20px;color:#FDF4EE;font-weight:700;">
+                              30% off your first order
                             </p>
-                            <p style="margin:8px 0 0;font-size:13px;color:rgba(253,244,238,0.5);">
-                              Delivered to this inbox on launch day. First 500 only.
+                            <p style="margin:8px 0 0;font-size:13px;color:rgba(253,244,238,0.6);line-height:1.5;">
+                              your code drops in this inbox the moment we go live. first 500 only — and you're one of them 💅
                             </p>
                           </td>
                         </tr>
                       </table>
 
-                      <p style="margin:0 0 20px;font-size:15px;color:#1B1F3B;line-height:1.7;font-weight:500;">
-                        Here's what makes Shroomé different:
+                      <!-- Extra 10% card -->
+                      <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:28px;background:#FF7043;border-radius:16px;overflow:hidden;">
+                        <tr>
+                          <td style="padding:20px 28px;">
+                            <p style="margin:0 0 4px;font-size:14px;color:#FDF4EE;font-weight:700;">
+                              📱 want an extra 10% off on top?
+                            </p>
+                            <p style="margin:0;font-size:13px;color:rgba(253,244,238,0.85);line-height:1.5;">
+                              head back to <a href="https://drinkshroome.com" style="color:#FDF4EE;font-weight:600;">drinkshroome.com</a> and drop your phone number. that's 30% + 10% = you're basically stealing from us (we're ok with it)
+                            </p>
+                          </td>
+                        </tr>
+                      </table>
+
+                      <p style="margin:0 0 20px;font-size:15px;color:#1B1F3B;line-height:1.7;font-weight:600;">
+                        here's why shroomé hits different 🍄
                       </p>
 
                       <table width="100%" cellpadding="0" cellspacing="0">
                         ${[
-                          ["Ceremonial-grade matcha", "First-harvest, shade-grown. 3g per sachet — not the culinary powder."],
-                          ["Functional mushrooms", "Lion's Mane + Chaga for clean focus and lasting energy."],
-                          ["Grass-fed collagen", "2g pre-dissolved for skin, hair, nails, and gut."],
-                          ["Tear. Pour. Done.", "No blender, no whisk. 60 seconds to a café-grade latte."],
+                          ["🍵 ceremonial-grade matcha", "first-harvest, shade-grown. 3g per sachet — this is the real deal, not that culinary stuff."],
+                          ["🍄 functional mushrooms", "lion's mane + chaga for that clean, clear focus. energy without the jitters."],
+                          ["✨ grass-fed collagen", "2g pre-dissolved. your skin, hair, nails, and gut will thank you."],
+                          ["⚡ tear. pour. done.", "no blender, no whisk, no mess. 60 seconds to a café-grade latte in your kitchen."],
                         ]
                           .map(
                             ([title, desc]) => `
                           <tr>
-                            <td style="padding:14px 20px;margin-bottom:8px;background:#1B1F3B;border-radius:12px;">
+                            <td style="padding:14px 20px;background:#1B1F3B;border-radius:12px;">
                               <p style="margin:0 0 4px;font-size:14px;color:#C8FF3A;font-weight:600;">${title}</p>
-                              <p style="margin:0;font-size:13px;color:rgba(253,244,238,0.6);line-height:1.5;">${desc}</p>
+                              <p style="margin:0;font-size:13px;color:rgba(253,244,238,0.7);line-height:1.5;">${desc}</p>
                             </td>
                           </tr>
                           <tr><td style="height:8px;"></td></tr>`
@@ -264,14 +280,14 @@ export async function POST(req: NextRequest) {
                   <!-- Footer -->
                   <tr>
                     <td align="center" style="padding:28px 32px;background:#FFB7D1;border-radius:0 0 24px 24px;">
-                      <p style="margin:0 0 8px;font-size:13px;color:#1B1F3B;font-weight:500;">
-                        Thank you for joining the Shroomé family.
+                      <p style="margin:0 0 12px;font-size:14px;color:#1B1F3B;font-weight:600;">
+                        welcome to the fam 💕 talk soon
                       </p>
                       <p style="margin:0 0 16px;font-size:12px;color:rgba(27,31,59,0.5);">
-                        © 2026 Shroomé · Ceremonial matcha, functional mushrooms, no nonsense.
+                        © 2026 Shroomé · ceremonial matcha, functional mushrooms, no nonsense.
                       </p>
                       <p style="margin:0;font-size:11px;color:rgba(27,31,59,0.35);">
-                        You signed up at drinkshroome.com. We'll never spam you.
+                        you signed up at drinkshroome.com · <a href="https://drinkshroome.com/unsubscribe?email=${encodeURIComponent(email)}" style="color:rgba(27,31,59,0.35);text-decoration:underline;">unsubscribe</a>
                       </p>
                     </td>
                   </tr>
@@ -287,7 +303,7 @@ export async function POST(req: NextRequest) {
 
       // ─── 4. Notify admin of new signup ──────────────────────────────────
       await resend.emails.send({
-        from: "Shroomé Waitlist <noreply@communityattire.com>",
+        from: "Shroomé Waitlist <hello@drinkshroome.com>",
         to: ["zak@communityattire.com"],
         subject: `🍵 New waitlist signup: ${email}`,
         html: `<p style="font-family:Arial,sans-serif;">New waitlist signup from <strong>${email}</strong></p><p style="font-family:Arial,sans-serif;color:#666;">Time: ${new Date().toISOString()}</p>`,
