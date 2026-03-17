@@ -16,6 +16,13 @@ export const metadata: Metadata = {
     title: "shroomé — Café Energy. Home Address.",
     description: "3g ceremonial matcha + functional mushrooms in one sachet. Join the list for 30% off.",
   },
+    icons: {
+          icon: [
+            { url: "/favicon.svg", type: "image/svg+xml" },
+            { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
+                ],
+          apple: "/apple-touch-icon.png",
+    },
 };
 
 export default function RootLayout({
