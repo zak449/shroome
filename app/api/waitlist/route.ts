@@ -14,7 +14,7 @@ async function verifyTurnstile(token: string): Promise<boolean> {
   return data.success === true;
 }
 
-// ─── Klaviyo: subscribe with proper consent + track event ────────────────────
+// ─── Klaviyo: import profile, add to list, subscribe, and track event ────────
 async function syncToKlaviyo(email: string, phone?: string) {
   const apiKey = process.env.KLAVIYO_API_KEY;
   if (!apiKey) return;
@@ -31,68 +31,9 @@ async function syncToKlaviyo(email: string, phone?: string) {
     ? phone.startsWith("+") ? phone : `+1${phone.replace(/\D/g, "")}`
     : undefined;
 
-  // Subscribe to email list with consent
-  if (listId) {
-    try {
-      const emailSubscription: Record<string, unknown> = {
-        type: "profile-subscription-bulk-create-job",
-        attributes: {
-          profiles: {
-            data: [{
-              type: "profile",
-              attributes: {
-                email,
-                properties: { source: "drinkshroome.com", signup_date: new Date().toISOString() },
-                subscriptions: { email: { marketing: { consent: "SUBSCRIBED" } } },
-              },
-            }],
-          },
-        },
-        relationships: { list: { data: { type: "list", id: listId } } },
-      };
-      await fetch("https://a.klaviyo.com/api/profile-subscription-bulk-create-jobs/", {
-        method: "POST",
-        headers,
-        body: JSON.stringify({ data: emailSubscription }),
-      });
-    } catch (err) {
-      console.error("Klaviyo email subscribe error:", err);
-    }
-  }
-
-  // Subscribe to SMS list with consent (if phone provided)
-  if (smsListId && phoneE164) {
-    try {
-      const smsSubscription: Record<string, unknown> = {
-        type: "profile-subscription-bulk-create-job",
-        attributes: {
-          profiles: {
-            data: [{
-              type: "profile",
-              attributes: {
-                email,
-                phone_number: phoneE164,
-                properties: { source: "drinkshroome.com", signup_date: new Date().toISOString() },
-                subscriptions: { sms: { marketing: { consent: "SUBSCRIBED" } } },
-              },
-            }],
-          },
-        },
-        relationships: { list: { data: { type: "list", id: smsListId } } },
-      };
-      await fetch("https://a.klaviyo.com/api/profile-subscription-bulk-create-jobs/", {
-        method: "POST",
-        headers,
-        body: JSON.stringify({ data: smsSubscription }),
-      });
-    } catch (err) {
-      console.error("Klaviyo SMS subscribe error:", err);
-    }
-  }
-
-  // Track "Waitlist Signup" event for flow triggers
+  // Step 1: Import/upsert the profile
+  let profileId: string | undefined;
   try {
-    // First get/create profile ID
     const profileRes = await fetch("https://a.klaviyo.com/api/profile-import/", {
       method: "POST",
       headers,
@@ -107,31 +48,113 @@ async function syncToKlaviyo(email: string, phone?: string) {
         },
       }),
     });
-
     if (profileRes.ok) {
       const profileData = await profileRes.json();
-      const profileId = profileData?.data?.id;
-      if (profileId) {
-        await fetch("https://a.klaviyo.com/api/events/", {
-          method: "POST",
-          headers,
-          body: JSON.stringify({
-            data: {
-              type: "event",
-              attributes: {
-                metric: { data: { type: "metric", attributes: { name: "Waitlist Signup" } } },
-                profile: { data: { type: "profile", id: profileId } },
-                properties: {
-                  source: "drinkshroome.com",
-                  has_phone: !!phone,
-                  signup_date: new Date().toISOString(),
-                },
+      profileId = profileData?.data?.id;
+    }
+  } catch (err) {
+    console.error("Klaviyo profile import error:", err);
+  }
+
+  if (!profileId) return;
+
+  // Step 2: Directly add profile to email list (reliable, triggers "Added to list" flows)
+  if (listId) {
+    try {
+      await fetch(`https://a.klaviyo.com/api/lists/${listId}/relationships/profiles/`, {
+        method: "POST",
+        headers,
+        body: JSON.stringify({ data: [{ type: "profile", id: profileId }] }),
+      });
+    } catch (err) {
+      console.error("Klaviyo list add error:", err);
+    }
+  }
+
+  // Step 3: Subscribe email consent
+  if (listId) {
+    try {
+      await fetch("https://a.klaviyo.com/api/profile-subscription-bulk-create-jobs/", {
+        method: "POST",
+        headers,
+        body: JSON.stringify({
+          data: {
+            type: "profile-subscription-bulk-create-job",
+            attributes: {
+              profiles: {
+                data: [{
+                  type: "profile",
+                  attributes: {
+                    email,
+                    subscriptions: { email: { marketing: { consent: "SUBSCRIBED" } } },
+                  },
+                }],
               },
             },
-          }),
-        });
-      }
+            relationships: { list: { data: { type: "list", id: listId } } },
+          },
+        }),
+      });
+    } catch (err) {
+      console.error("Klaviyo email subscribe error:", err);
     }
+  }
+
+  // Step 4: Add to SMS list + subscribe (if phone provided)
+  if (smsListId && phoneE164) {
+    try {
+      await fetch(`https://a.klaviyo.com/api/lists/${smsListId}/relationships/profiles/`, {
+        method: "POST",
+        headers,
+        body: JSON.stringify({ data: [{ type: "profile", id: profileId }] }),
+      });
+      await fetch("https://a.klaviyo.com/api/profile-subscription-bulk-create-jobs/", {
+        method: "POST",
+        headers,
+        body: JSON.stringify({
+          data: {
+            type: "profile-subscription-bulk-create-job",
+            attributes: {
+              profiles: {
+                data: [{
+                  type: "profile",
+                  attributes: {
+                    email,
+                    phone_number: phoneE164,
+                    subscriptions: { sms: { marketing: { consent: "SUBSCRIBED" } } },
+                  },
+                }],
+              },
+            },
+            relationships: { list: { data: { type: "list", id: smsListId } } },
+          },
+        }),
+      });
+    } catch (err) {
+      console.error("Klaviyo SMS subscribe error:", err);
+    }
+  }
+
+  // Step 5: Track "Waitlist Signup" event for flow triggers
+  try {
+    await fetch("https://a.klaviyo.com/api/events/", {
+      method: "POST",
+      headers,
+      body: JSON.stringify({
+        data: {
+          type: "event",
+          attributes: {
+            metric: { data: { type: "metric", attributes: { name: "Waitlist Signup" } } },
+            profile: { data: { type: "profile", id: profileId } },
+            properties: {
+              source: "drinkshroome.com",
+              has_phone: !!phone,
+              signup_date: new Date().toISOString(),
+            },
+          },
+        },
+      }),
+    });
   } catch (err) {
     console.error("Klaviyo event tracking error:", err);
   }
