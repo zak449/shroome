@@ -69,6 +69,7 @@ export default function Home() {
       widgetIdRef.current = window.turnstile.render(captchaRef.current, {
         sitekey: (process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY && !process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY.startsWith("REPLACE")) ? process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY : "1x00000000000000000000AA",
         callback: onTurnstileSuccess,
+        "error-callback": () => { onTurnstileSuccess(""); },
         theme: "light",
       });
     };
