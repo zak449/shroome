@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
+import { welcomeEmail } from "@/app/lib/emails";
 
 // ─── Turnstile verification ─────────────────────────────────────────────────
 async function verifyTurnstile(token: string): Promise<boolean> {
@@ -204,14 +205,31 @@ export async function POST(req: NextRequest) {
       }
     }
 
-    // ─── 3. Notify admin of new signup (welcome email handled by Klaviyo flow)
+    // ─── 3. Send branded welcome email via Resend (no Klaviyo branding) ──
     if (!phone) {
-      await resend.emails.send({
-        from: "Shroomé Waitlist <hello@drinkshroome.com>",
-        to: ["zak@communityattire.com"],
-        subject: `🍵 New waitlist signup: ${email}`,
-        html: `<p style="font-family:Arial,sans-serif;">New waitlist signup from <strong>${email}</strong></p><p style="font-family:Arial,sans-serif;color:#666;">Time: ${new Date().toISOString()}</p>`,
-      });
+      const welcome = welcomeEmail(email);
+      try {
+        await resend.emails.send({
+          from: "shroomé <hello@drinkshroome.com>",
+          to: [email],
+          subject: welcome.subject,
+          html: welcome.html,
+        });
+      } catch (emailErr) {
+        console.error("Welcome email error:", emailErr);
+      }
+
+      // Admin notification
+      try {
+        await resend.emails.send({
+          from: "Shroomé Waitlist <hello@drinkshroome.com>",
+          to: ["zak@communityattire.com"],
+          subject: `🍵 New waitlist signup: ${email}`,
+          html: `<p style="font-family:Arial,sans-serif;">New waitlist signup from <strong>${email}</strong></p><p style="font-family:Arial,sans-serif;color:#666;">Time: ${new Date().toISOString()}</p>`,
+        });
+      } catch (adminErr) {
+        console.error("Admin notification error:", adminErr);
+      }
     }
 
     return NextResponse.json({ success: true });
