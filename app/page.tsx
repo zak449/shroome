@@ -793,8 +793,8 @@ export default function Home() {
           </div>
 
           <div {...anim("comp-table", 0.15)} style={{ ...anim("comp-table", 0.15).style, background: "#1B1F3B", borderRadius: 16, padding: "8px 0", boxShadow: "0 4px 30px rgba(0,0,0,0.2)", overflow: "hidden" }}>
-            <div>
-              <table style={{ width: "100%", borderCollapse: "collapse", fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.85rem" }}>
+            <div style={{ overflowX: "auto", WebkitOverflowScrolling: "touch" }}>
+              <table style={{ width: "100%", minWidth: 580, borderCollapse: "collapse", fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.85rem" }}>
                 <thead>
                   <tr>
                     <th style={{ textAlign: "left", padding: "14px 14px", borderBottom: "1px solid rgba(253,244,238,0.08)", color: "rgba(253,244,238,0.35)", fontWeight: 600, fontSize: "0.72rem", letterSpacing: "0.08em", textTransform: "uppercase" }}></th>
