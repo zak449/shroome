@@ -202,7 +202,7 @@ export default function Home() {
         </div>
         <div style={{ display: "flex", alignItems: "center", gap: 32 }}>
           {[
-            { label: "Why Shroomé", id: "why" },
+            { label: "Why shroomé", id: "why" },
             { label: "Ingredients", id: "ingredients" },
             { label: "How It Works", id: "how" },
           ].map((l) => (
@@ -570,13 +570,13 @@ export default function Home() {
           >
             <img
               src="/sachet-vanilla.png"
-              alt="Shroomé vanilla sachet"
+              alt="shroomé vanilla sachet"
               className="sachet-float"
               style={{ width: "48%", maxWidth: 280, height: "auto", filter: "drop-shadow(0 16px 48px rgba(0,0,0,0.15))" }}
             />
             <img
               src="/sachet-strawberry.png"
-              alt="Shroomé strawberry sachet"
+              alt="shroomé strawberry sachet"
               className="sachet-float"
               style={{ width: "48%", maxWidth: 280, height: "auto", animationDelay: "2s", filter: "drop-shadow(0 16px 48px rgba(0,0,0,0.15))" }}
             />
@@ -798,8 +798,8 @@ export default function Home() {
                 <thead>
                   <tr>
                     <th style={{ textAlign: "left", padding: "14px 14px", borderBottom: "1px solid rgba(253,244,238,0.08)", color: "rgba(253,244,238,0.35)", fontWeight: 600, fontSize: "0.72rem", letterSpacing: "0.08em", textTransform: "uppercase" }}></th>
-                    {["Shroomé", "Clevr", "RYZE", "MatchaKo", "Café"].map((b) => (
-                      <th key={b} style={{ textAlign: "center", padding: "14px 10px", borderBottom: "1px solid rgba(253,244,238,0.08)", color: b === "Shroomé" ? "#C8FF3A" : "rgba(253,244,238,0.35)", fontWeight: 700, fontSize: "0.72rem", letterSpacing: "0.08em", textTransform: "uppercase" }}>{b}</th>
+                    {["shroomé", "Clevr", "RYZE", "MatchaKo", "Café"].map((b) => (
+                      <th key={b} style={{ textAlign: "center", padding: "14px 10px", borderBottom: "1px solid rgba(253,244,238,0.08)", color: b === "shroomé" ? "#C8FF3A" : "rgba(253,244,238,0.35)", fontWeight: 700, fontSize: "0.72rem", letterSpacing: "0.08em", textTransform: "uppercase" }}>{b}</th>
                     ))}
                   </tr>
                 </thead>
@@ -995,7 +995,7 @@ export default function Home() {
 
         <div style={{ marginTop: 80, paddingTop: 28, borderTop: "1px solid rgba(27,31,59,0.08)", position: "relative", zIndex: 1 }}>
           <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.68rem", color: "rgba(27,31,59,0.3)", letterSpacing: "0.08em" }}>
-            © 2026 Shroomé · hello@drinkshroome.com
+            © 2026 shroomé · hello@drinkshroome.com
           </p>
         </div>
       </section>
