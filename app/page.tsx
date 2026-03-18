@@ -260,7 +260,7 @@ export default function Home() {
           background: "#FFB7D1",
           position: "relative",
           overflow: "hidden",
-          padding: "80px 40px 100px",
+          padding: "80px 24px 100px",
           display: "flex",
           alignItems: "center",
         }}
@@ -578,7 +578,7 @@ export default function Home() {
                   background: "rgba(253,244,238,0.6)",
                 }}
               >
-                <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 700, fontSize: "0.58rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "rgba(27,31,59,0.5)", marginBottom: 4 }}>Per box</p>
+                <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 700, fontSize: "0.7rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "rgba(27,31,59,0.5)", marginBottom: 4 }}>Per box</p>
                 <p style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "2rem", color: "#2D4A2D", lineHeight: 1 }}>12</p>
                 <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.68rem", color: "rgba(27,31,59,0.4)", fontStyle: "italic" }}>servings per box</p>
               </div>
@@ -593,7 +593,7 @@ export default function Home() {
               justifyContent: "center",
               alignItems: "center",
               gap: 24,
-              minWidth: 320,
+              minWidth: 0,
             }}
           >
             <img
@@ -624,7 +624,7 @@ export default function Home() {
             zIndex: 2,
           }}
         >
-          <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 700, fontSize: "0.55rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "#C8FF3A", marginBottom: 8 }}>Flavors</p>
+          <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 700, fontSize: "0.65rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "#C8FF3A", marginBottom: 8 }}>Flavors</p>
           <p style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontStyle: "italic", fontSize: "0.95rem", lineHeight: 1.5 }}>Vanilla<br />Strawberry</p>
         </div>
       </section>
@@ -704,7 +704,7 @@ export default function Home() {
               ...anim("flavor-imgs", 0.2).style,
               display: "flex",
               justifyContent: "center",
-              gap: 56,
+              gap: 32,
               margin: "40px auto 0",
               maxWidth: 720,
             }}
