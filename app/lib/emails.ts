@@ -229,7 +229,7 @@ export function welcomeEmail(email: string) {
         <tr>
           <td style="padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
             <p style="margin:0;font-size:16px;font-weight:700;color:#fff;">Focus that lasts all day.</p>
-            <p style="margin:4px 0 0;font-size:13px;color:rgba(255,255,255,0.4);">Lion\u2019s mane beta-glucans + 75mg matcha caffeine + L-theanine.</p>
+            <p style="margin:4px 0 0;font-size:13px;color:rgba(255,255,255,0.4);">Lion\u2019s mane beta-glucans + 50mg matcha caffeine + L-theanine.</p>
           </td>
         </tr>
         <tr>

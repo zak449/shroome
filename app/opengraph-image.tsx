@@ -88,7 +88,7 @@ export default async function Image() {
               color: "#2D4A2D",
             }}
           >
-            Pre-launch · First 500 get 30% off
+            Pre-launch · 20% off + free shipping
           </p>
         </div>
 
