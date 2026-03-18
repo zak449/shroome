@@ -669,6 +669,8 @@ export default function Home() {
               transparent 344deg, rgba(255,240,220,0.12) 348deg, transparent 352deg,
               transparent 360deg
             )`,
+            maskImage: "radial-gradient(ellipse 80% 70% at 50% 40%, white 0%, white 50%, transparent 80%)",
+            WebkitMaskImage: "radial-gradient(ellipse 80% 70% at 50% 40%, white 0%, white 50%, transparent 80%)",
             pointerEvents: "none",
           }}
         />
