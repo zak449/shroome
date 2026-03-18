@@ -7,6 +7,7 @@ declare global {
       render: (container: string | HTMLElement, options: Record<string, unknown>) => string;
       remove: (widgetId: string) => void;
     };
+    gtag?: (...args: unknown[]) => void;
   }
 }
 
@@ -55,6 +56,7 @@ export default function Home() {
     } catch {}
     setLoading(false);
     setStep("phone");
+    window.gtag?.("event", "generate_lead", { currency: "USD", value: 1.0 });
   }, [email]);
 
   // Load Turnstile script and render widget when captcha step is active
@@ -97,9 +99,13 @@ export default function Home() {
     } catch {}
     setLoading(false);
     setStep("done");
+    window.gtag?.("event", "sign_up", { method: "waitlist_phone" });
   };
 
-  const skipPhone = () => setStep("done");
+  const skipPhone = () => {
+    setStep("done");
+    window.gtag?.("event", "sign_up", { method: "waitlist_email_only" });
+  };
 
   const anim = (id: string, delay = 0) => ({
     "data-anim": id,
