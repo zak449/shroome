@@ -717,23 +717,6 @@ export default function Home() {
                     filter: `drop-shadow(0 0 40px ${s.shadow}) drop-shadow(0 0 80px ${s.shadow})`,
                   }}
                 />
-                {/* Reflection */}
-                <img
-                  src={s.src}
-                  alt=""
-                  aria-hidden="true"
-                  style={{
-                    width: "100%",
-                    height: "auto",
-                    transform: "scaleY(-1) translateY(4px)",
-                    maxHeight: 60,
-                    maskImage: "linear-gradient(to bottom, rgba(0,0,0,0.18) 0%, transparent 45%)",
-                    WebkitMaskImage: "linear-gradient(to bottom, rgba(0,0,0,0.18) 0%, transparent 45%)",
-                    filter: "blur(2px)",
-                    opacity: 0.35,
-                    pointerEvents: "none",
-                  }}
-                />
               </div>
             ))}
           </div>
