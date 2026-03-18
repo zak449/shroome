@@ -54,7 +54,7 @@ export function welcomeEmail(email: string) {
     <!-- NAVY TOP BAR — scrolling marquee feel -->
     <tr><td style="padding:12px 16px;background-color:${BRAND.navy};text-align:center;">
       <p style="margin:0;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:${BRAND.lime};font-weight:600;">
-        ENERGY WITHOUT THE CRASH \u2726 3G MATCHA \u00b7 MUSHROOM EXTRACTS \u00b7 COLLAGEN
+        ENERGY WITHOUT THE CRASH \u2726 2G MATCHA \u00b7 MUSHROOM EXTRACTS \u00b7 COLLAGEN
       </p>
     </td></tr>
 
@@ -74,7 +74,7 @@ export function welcomeEmail(email: string) {
     <!-- Sub-line — matches site -->
     <tr><td style="padding:20px 40px 8px;background-color:${BRAND.softLav};">
       <p style="margin:0;font-size:14px;color:${BRAND.navy};line-height:1.6;">
-        The world's first ready-to-pour ceremonial matcha latte. 3g matcha. 2g collagen. Real mushrooms. <strong>Tear it open. Pour it in. Done.</strong>
+        The world's first ready-to-pour ceremonial matcha latte. 2g matcha. 2g collagen. Real mushrooms. <strong>Tear it open. Pour it in. Done.</strong>
       </p>
     </td></tr>
 
@@ -83,7 +83,7 @@ export function welcomeEmail(email: string) {
       <table role="presentation" cellpadding="0" cellspacing="0">
         <tr>
           <td style="background-color:${BRAND.cream};border-radius:20px;padding:6px 14px;margin-right:6px;">
-            <span style="font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:${BRAND.navy};">3G MATCHA</span>
+            <span style="font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:${BRAND.navy};">2G MATCHA</span>
           </td>
           <td style="width:8px;"></td>
           <td style="background-color:${BRAND.cream};border-radius:20px;padding:6px 14px;">
@@ -130,7 +130,7 @@ export function welcomeEmail(email: string) {
         </td></tr>
       </table>
       <p style="margin:10px 0 0;font-size:11px;color:${BRAND.navy};opacity:0.45;">
-        Your 30% off code drops at launch. You\u2019re locked in.
+        Your 20% off + free shipping code drops at launch. You\u2019re locked in.
       </p>
     </td></tr>
 
@@ -147,15 +147,15 @@ export function welcomeEmail(email: string) {
     <!-- Three stat cards — matching drinkshroome.com exactly -->
     <tr><td style="padding:0 24px;background-color:${BRAND.navy};">
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
-        <!-- 3g MATCHA card -->
+        <!-- 2g MATCHA card -->
         <tr><td style="padding:0 0 10px;">
           <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
             <tr><td style="background-color:rgba(255,255,255,0.06);border-radius:12px;padding:20px 24px;border:1px solid rgba(255,255,255,0.06);">
               <p style="margin:0;">
-                <span style="font-size:36px;font-weight:300;color:${BRAND.lime};font-family:${SERIF};font-style:italic;">3g</span>
+                <span style="font-size:36px;font-weight:300;color:${BRAND.lime};font-family:${SERIF};font-style:italic;">2g</span>
                 <span style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-left:12px;"> CEREMONIAL MATCHA</span>
               </p>
-              <p style="margin:8px 0 0;font-size:13px;color:rgba(255,255,255,0.4);line-height:1.4;">First-harvest, shade-grown. 75mg caffeine. Not culinary grade \u2014 the real thing.</p>
+              <p style="margin:8px 0 0;font-size:13px;color:rgba(255,255,255,0.4);line-height:1.4;">First-harvest, shade-grown. 50mg caffeine. Not culinary grade \u2014 the real thing.</p>
             </td></tr>
           </table>
         </td></tr>
@@ -271,7 +271,7 @@ export function welcomeEmail(email: string) {
         </td></tr>
       </table>
       <p style="margin:14px 0 0;font-size:12px;color:${BRAND.navy};opacity:0.4;">
-        Your exclusive 30% off drops when we launch. Stay tuned.
+        Your exclusive 20% off + free shipping drops when we launch. Stay tuned.
       </p>
     </td></tr>
 
@@ -299,7 +299,7 @@ export function sachetEmail(email: string) {
     <!-- NAVY BAR -->
     <tr><td style="padding:12px 16px;background-color:${BRAND.navy};text-align:center;">
       <p style="margin:0;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:${BRAND.lime};font-weight:600;">
-        3G MATCHA \u2726 200MG BETA GLUCANS \u2726 2G COLLAGEN \u2726 READY TO POUR
+        2G MATCHA \u2726 200MG BETA GLUCANS \u2726 2G COLLAGEN \u2726 READY TO POUR
       </p>
     </td></tr>
 
@@ -409,7 +409,7 @@ export function sachetEmail(email: string) {
       <table role="presentation" cellpadding="0" cellspacing="0" style="margin:0 auto;">
         <tr><td style="background:${BRAND.navy};border-radius:50px;padding:16px 52px;">
           <a href="${BRAND.siteUrl}" style="color:${BRAND.lime};font-size:13px;font-weight:700;text-decoration:none;letter-spacing:2px;text-transform:uppercase;">
-            CLAIM 30% OFF \u2192
+            CLAIM 20% OFF \u2192
           </a>
         </td></tr>
       </table>

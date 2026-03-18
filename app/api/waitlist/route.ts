@@ -151,6 +151,8 @@ async function syncToKlaviyo(email: string, phone?: string) {
               source: "drinkshroome.com",
               has_phone: !!phone,
               signup_date: new Date().toISOString(),
+              discount_tier: phone ? "30_off_free_shipping" : "20_off_free_shipping",
+              stackable_extra_10: !!phone,
             },
           },
         },
@@ -198,6 +200,9 @@ export async function POST(req: NextRequest) {
             phone: phone || "",
             timestamp: new Date().toISOString(),
             source: "drinkshroome.com",
+            discount: "20% off + free shipping",
+            stackable_extra_10: phone ? "YES" : "NO",
+            total_discount: phone ? "30% off + free shipping" : "20% off + free shipping",
           }),
         });
       } catch (sheetErr) {
@@ -223,9 +228,9 @@ export async function POST(req: NextRequest) {
       try {
         await resend.emails.send({
           from: "Shroomé Waitlist <hello@drinkshroome.com>",
-          to: ["zak@communityattire.com"],
+          to: ["info@drinkshroome.com"],
           subject: `🍵 New waitlist signup: ${email}`,
-          html: `<p style="font-family:Arial,sans-serif;">New waitlist signup from <strong>${email}</strong></p><p style="font-family:Arial,sans-serif;color:#666;">Time: ${new Date().toISOString()}</p>`,
+          html: `<p style="font-family:Arial,sans-serif;">New waitlist signup from <strong>${email}</strong></p><p style="font-family:Arial,sans-serif;color:#666;">Time: ${new Date().toISOString()}</p><p style="font-family:Arial,sans-serif;color:#666;">Discount: 20% off + free shipping${phone ? " + extra 10% (phone provided)" : ""}</p>`,
         });
       } catch (adminErr) {
         console.error("Admin notification error:", adminErr);
