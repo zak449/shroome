@@ -1085,6 +1085,11 @@ export default function Home() {
           <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.68rem", color: "rgba(27,31,59,0.3)", letterSpacing: "0.08em" }}>
             © 2026 shroomé · hello@drinkshroome.com
           </p>
+          <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.62rem", color: "rgba(27,31,59,0.2)", marginTop: 8 }}>
+            <a href="/privacy" style={{ color: "rgba(27,31,59,0.3)", textDecoration: "underline" }}>Privacy Policy</a>
+            {" · "}
+            <a href="/terms" style={{ color: "rgba(27,31,59,0.3)", textDecoration: "underline" }}>Terms of Service</a>
+          </p>
         </div>
       </section>
     </>
