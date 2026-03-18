@@ -581,6 +581,9 @@ export default function Home() {
                         Skip
                       </button>
                     </div>
+                    <p style={{ margin: "8px 0 0", fontSize: "0.6rem", color: "rgba(27,31,59,0.35)", lineHeight: 1.4, maxWidth: 400 }}>
+                      By providing your phone number, you agree to receive marketing texts from shroomé. Msg &amp; data rates may apply. Reply STOP to unsubscribe.
+                    </p>
                   </>
                 ) : (
                   <>
@@ -1057,6 +1060,9 @@ export default function Home() {
               <button onClick={skipPhone} style={{ marginTop: 10, background: "transparent", border: "none", color: "rgba(27,31,59,0.45)", fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.72rem", cursor: "pointer", textDecoration: "underline" }}>
                 Skip
               </button>
+              <p style={{ margin: "8px 0 0", fontSize: "0.6rem", color: "rgba(27,31,59,0.35)", lineHeight: 1.4, maxWidth: 400 }}>
+                By providing your phone number, you agree to receive marketing texts from shroomé. Msg &amp; data rates may apply. Reply STOP to unsubscribe.
+              </p>
             </div>
           ) : (
             <form onSubmit={handleEmailSubmit} style={{ display: "flex", gap: 8, flexWrap: "wrap", justifyContent: "center" }}>
