@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   keywords: ["ceremonial matcha", "functional mushrooms", "matcha latte", "adaptogenic", "coming soon", "pre-launch"],
   openGraph: {
     title: "shroomé — Café Energy. Home Address.",
-    description: "2g ceremonial matcha + functional mushrooms in one sachet. The café came home. Join the pre-launch list for 30% off.",
+    description: "2g ceremonial matcha + functional mushrooms in one sachet. The café came home. Join the pre-launch list for 20% off + free shipping.",
     type: "website",
     url: "https://drinkshroome.com",
   },
