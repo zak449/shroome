@@ -210,7 +210,7 @@ export async function POST(req: NextRequest) {
       }
     }
 
-    // ─── 3. Send branded welcome email via Resend (no Klaviyo branding) ──
+    // ─── 3. Send branded welcome email via Resend (first call only, no phone yet) ──
     if (!phone) {
       const welcome = welcomeEmail(email);
       try {
@@ -223,18 +223,18 @@ export async function POST(req: NextRequest) {
       } catch (emailErr) {
         console.error("Welcome email error:", emailErr);
       }
+    }
 
-      // Admin notification
-      try {
-        await resend.emails.send({
-          from: "Shroomé Waitlist <hello@drinkshroome.com>",
-          to: ["info@drinkshroome.com"],
-          subject: `🍵 New waitlist signup: ${email}`,
-          html: `<p style="font-family:Arial,sans-serif;">New waitlist signup from <strong>${email}</strong></p><p style="font-family:Arial,sans-serif;color:#666;">Time: ${new Date().toISOString()}</p><p style="font-family:Arial,sans-serif;color:#666;">Discount: 20% off + free shipping${phone ? " + extra 10% (phone provided)" : ""}</p>`,
-        });
-      } catch (adminErr) {
-        console.error("Admin notification error:", adminErr);
-      }
+    // ─── 4. Admin notification (always — both email-only and phone signups) ──
+    try {
+      await resend.emails.send({
+        from: "Shroomé Waitlist <hello@drinkshroome.com>",
+        to: ["info@drinkshroome.com"],
+        subject: phone ? `📱 Phone added: ${email}` : `🍵 New waitlist signup: ${email}`,
+        html: `<p style="font-family:Arial,sans-serif;">${phone ? "Phone number added" : "New waitlist signup"} from <strong>${email}</strong></p>${phone ? `<p style="font-family:Arial,sans-serif;">Phone: <strong>${phone}</strong></p>` : ""}<p style="font-family:Arial,sans-serif;color:#666;">Time: ${new Date().toISOString()}</p><p style="font-family:Arial,sans-serif;color:#666;">Discount: ${phone ? "30% off + free shipping (20% + extra 10% phone)" : "20% off + free shipping"}</p>`,
+      });
+    } catch (adminErr) {
+      console.error("Admin notification error:", adminErr);
     }
 
     return NextResponse.json({ success: true });
