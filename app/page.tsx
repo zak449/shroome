@@ -247,7 +247,7 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* ════════════════════ HERO — PINK WITH BLOBS ════════════════════ */}
+      {/* ════════════════════ HERO — PINK WITH CLOUD BACKGROUND ════════════════════ */}
       <section
         style={{
           minHeight: "100vh",
@@ -259,6 +259,27 @@ export default function Home() {
           alignItems: "center",
         }}
       >
+        {/* Cloud background image */}
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            backgroundImage: "url(/email-clouds-bg.jpg)",
+            backgroundSize: "cover",
+            backgroundPosition: "center bottom",
+            opacity: 0.35,
+            pointerEvents: "none",
+          }}
+        />
+        {/* Pink overlay to blend clouds with brand */}
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            background: "linear-gradient(180deg, rgba(255,183,209,0.5) 0%, rgba(255,183,209,0.2) 40%, rgba(253,244,238,0.4) 100%)",
+            pointerEvents: "none",
+          }}
+        />
         {/* Morphing blobs */}
         <div
           className="blob-a"
@@ -277,12 +298,12 @@ export default function Home() {
           className="blob-b"
           style={{
             position: "absolute",
-            bottom: "-8%",
-            left: "-5%",
-            width: "28vw",
-            height: "28vw",
+            bottom: "15%",
+            left: "-8%",
+            width: "20vw",
+            height: "20vw",
             background: "#C8FF3A",
-            opacity: 0.35,
+            opacity: 0.15,
             pointerEvents: "none",
           }}
         />
@@ -606,8 +627,9 @@ export default function Home() {
       <section
         id="why"
         style={{
-          padding: "80px 24px 48px",
-          background: "#000",
+          padding: "120px 24px 48px",
+          marginTop: -2,
+          background: "linear-gradient(180deg, #FFB7D1 0%, #c47a96 8%, #6b3a52 18%, #1B1F3B 30%, #000 40%, #000 100%)",
           position: "relative",
           overflow: "hidden",
           textAlign: "center",
@@ -832,9 +854,9 @@ export default function Home() {
 
       {/* ════════════════════ HOW IT WORKS ════════════════════ */}
       <section id="how" style={{ padding: "100px 24px", background: "#1B1F3B", position: "relative", overflow: "hidden" }}>
-        <div className="blob-a" style={{ position: "absolute", top: "10%", right: "3%", width: "22vw", height: "22vw", background: "#FFB7D1", opacity: 0.15, pointerEvents: "none" }} />
-        <div className="blob-c" style={{ position: "absolute", bottom: "5%", left: "5%", width: "18vw", height: "18vw", background: "#C8FF3A", opacity: 0.1, pointerEvents: "none" }} />
-        <div className="blob-b" style={{ position: "absolute", top: "5%", left: "8%", width: "14vw", height: "14vw", background: "#D4B8E0", opacity: 0.15, pointerEvents: "none" }} />
+        <div className="blob-a" style={{ position: "absolute", top: "10%", right: "3%", width: "18vw", height: "18vw", background: "#FFB7D1", opacity: 0.08, pointerEvents: "none" }} />
+        <div className="blob-c" style={{ position: "absolute", bottom: "5%", left: "5%", width: "14vw", height: "14vw", background: "#D4B8E0", opacity: 0.06, pointerEvents: "none" }} />
+        <div className="blob-b" style={{ position: "absolute", top: "5%", left: "8%", width: "12vw", height: "12vw", background: "#D4B8E0", opacity: 0.08, pointerEvents: "none" }} />
         <div style={{ maxWidth: 900, margin: "0 auto", textAlign: "center" }}>
           <div {...anim("how-head")}>
             <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 600, fontSize: "0.68rem", letterSpacing: "0.25em", textTransform: "uppercase", color: "#C8FF3A", marginBottom: 16 }}>
@@ -863,11 +885,11 @@ export default function Home() {
 
       {/* ════════════════════ HANDS PHOTO ════════════════════ */}
       <section style={{ padding: "60px 24px 0", background: "#D4B8E0", textAlign: "center", position: "relative", overflow: "hidden" }}>
-        {/* Bold abstract blobs — pink, navy & lime */}
-        <div className="blob-a" style={{ position: "absolute", top: "5%", left: "3%", width: "20vw", height: "20vw", background: "#FFB7D1", opacity: 0.4, pointerEvents: "none" }} />
-        <div className="blob-b" style={{ position: "absolute", top: "5%", right: "5%", width: "16vw", height: "16vw", background: "#1B1F3B", opacity: 0.12, pointerEvents: "none" }} />
-        <div className="blob-c" style={{ position: "absolute", bottom: "25%", right: "8%", width: "14vw", height: "14vw", background: "#C8FF3A", opacity: 0.2, pointerEvents: "none" }} />
-        <div className="blob-a" style={{ position: "absolute", bottom: "15%", left: "6%", width: "12vw", height: "12vw", background: "#FF7043", opacity: 0.15, pointerEvents: "none" }} />
+        {/* Subtle abstract blobs */}
+        <div className="blob-a" style={{ position: "absolute", top: "5%", left: "3%", width: "18vw", height: "18vw", background: "#FFB7D1", opacity: 0.3, pointerEvents: "none" }} />
+        <div className="blob-b" style={{ position: "absolute", top: "5%", right: "5%", width: "14vw", height: "14vw", background: "#1B1F3B", opacity: 0.06, pointerEvents: "none" }} />
+        <div className="blob-c" style={{ position: "absolute", bottom: "25%", right: "8%", width: "12vw", height: "12vw", background: "#D4B8E0", opacity: 0.15, pointerEvents: "none" }} />
+        <div className="blob-a" style={{ position: "absolute", bottom: "15%", left: "6%", width: "10vw", height: "10vw", background: "#FFB7D1", opacity: 0.1, pointerEvents: "none" }} />
         <div {...anim("hands")} style={{ ...anim("hands").style, maxWidth: 600, margin: "0 auto", overflow: "hidden", borderRadius: "16px 16px 0 0", position: "relative", zIndex: 1 }}>
           <img src="/sachets-both.png" alt="Both flavors" style={{ width: "100%", height: "auto", display: "block", marginBottom: "-12%" }} />
         </div>
@@ -927,8 +949,21 @@ export default function Home() {
           overflow: "hidden",
         }}
       >
-        <div className="blob-a" style={{ position: "absolute", top: "10%", right: "5%", width: "25vw", height: "25vw", background: "#FFB7D1", opacity: 0.4, pointerEvents: "none" }} />
-        <div className="blob-b" style={{ position: "absolute", bottom: "10%", left: "5%", width: "20vw", height: "20vw", background: "#C8FF3A", opacity: 0.15, pointerEvents: "none" }} />
+        {/* Cloud background overlay */}
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            backgroundImage: "url(/email-clouds-bg.jpg)",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            opacity: 0.35,
+            pointerEvents: "none",
+          }}
+        />
+        {/* Warm pink overlay to blend */}
+        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, rgba(212,184,224,0.6) 0%, rgba(255,183,209,0.3) 50%, rgba(212,184,224,0.5) 100%)", pointerEvents: "none" }} />
+        <div className="blob-a" style={{ position: "absolute", top: "10%", right: "5%", width: "25vw", height: "25vw", background: "#FFB7D1", opacity: 0.3, pointerEvents: "none" }} />
 
         <div {...anim("cta-block")} style={{ ...anim("cta-block").style, maxWidth: 520, margin: "0 auto", position: "relative", zIndex: 1 }}>
           <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 600, fontSize: "0.68rem", letterSpacing: "0.25em", textTransform: "uppercase", color: "#1B1F3B", marginBottom: 16 }}>
