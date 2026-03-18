@@ -758,7 +758,7 @@ export default function Home() {
       {/* ════════════════════ INGREDIENTS ════════════════════ */}
       <section
         id="ingredients"
-        style={{ padding: "100px 24px", background: "#D4B8E0", position: "relative", overflow: "hidden" }}
+        style={{ padding: "100px 24px", background: "linear-gradient(180deg, #000 0%, #1B1F3B 5%, #4a3560 12%, #8b6a9e 20%, #D4B8E0 30%, #D4B8E0 100%)", position: "relative", overflow: "hidden" }}
       >
         <div className="blob-c" style={{ position: "absolute", top: "5%", right: "3%", width: "25vw", height: "25vw", background: "#FFB7D1", opacity: 0.4, pointerEvents: "none" }} />
         <div className="blob-b" style={{ position: "absolute", bottom: "5%", left: "3%", width: "20vw", height: "20vw", background: "#1B1F3B", opacity: 0.12, pointerEvents: "none" }} />
