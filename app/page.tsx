@@ -103,11 +103,17 @@ export default function Home() {
   const onTurnstileSuccess = useCallback(async (token: string) => {
     setLoading(true);
     try {
-      await fetch("/api/waitlist", {
+      const res = await fetch("/api/waitlist", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, turnstileToken: token }),
       });
+      const data = await res.json();
+      if (data.closed) {
+        setStep("done");
+        setLoading(false);
+        return;
+      }
     } catch {}
     setLoading(false);
     setStep("phone");

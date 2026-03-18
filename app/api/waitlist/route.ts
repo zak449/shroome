@@ -164,6 +164,11 @@ async function syncToKlaviyo(email: string, phone?: string) {
 }
 
 export async function POST(req: NextRequest) {
+  // ─── CAMPAIGN KILL SWITCH — set WAITLIST_CLOSED=true in Vercel env to close signups ──
+  if (process.env.WAITLIST_CLOSED === "true") {
+    return NextResponse.json({ error: "Waitlist is closed. We've launched! Visit drinkshroome.com to shop.", closed: true }, { status: 410 });
+  }
+
   const resend = new Resend(process.env.RESEND_API_KEY);
 
   try {
