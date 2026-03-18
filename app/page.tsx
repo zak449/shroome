@@ -738,8 +738,8 @@ export default function Home() {
             ))}
           </div>
 
-          {/* Glossy floor line */}
-          <div style={{ width: "70%", maxWidth: 500, height: 1, background: "linear-gradient(to right, transparent, rgba(255,240,220,0.15), transparent)", margin: "-20px auto 16px" }} />
+          {/* Floor spacer */}
+          <div style={{ height: 16 }} />
 
           {/* Flavor cards side by side */}
           <div {...anim("flavor-cards", 0.3)} style={{ ...anim("flavor-cards", 0.3).style, display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 40, textAlign: "center" }}>
@@ -758,7 +758,7 @@ export default function Home() {
       {/* ════════════════════ INGREDIENTS ════════════════════ */}
       <section
         id="ingredients"
-        style={{ padding: "100px 24px", background: "linear-gradient(180deg, #000 0%, #1B1F3B 5%, #4a3560 12%, #8b6a9e 20%, #D4B8E0 30%, #D4B8E0 100%)", position: "relative", overflow: "hidden" }}
+        style={{ padding: "100px 24px", marginTop: -2, background: "linear-gradient(180deg, #000 0%, #1B1F3B 5%, #4a3560 12%, #8b6a9e 20%, #D4B8E0 30%, #D4B8E0 100%)", position: "relative", overflow: "hidden" }}
       >
         <div className="blob-c" style={{ position: "absolute", top: "5%", right: "3%", width: "25vw", height: "25vw", background: "#FFB7D1", opacity: 0.4, pointerEvents: "none" }} />
         <div className="blob-b" style={{ position: "absolute", bottom: "5%", left: "3%", width: "20vw", height: "20vw", background: "#1B1F3B", opacity: 0.12, pointerEvents: "none" }} />
