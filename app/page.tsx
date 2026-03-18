@@ -21,6 +21,11 @@ export default function Home() {
   const [visible, setVisible] = useState<Record<string, boolean>>({});
   const observers = useRef<IntersectionObserver[]>([]);
 
+  // ── Analytics: section visibility tracking ──
+  const sectionsSeen = useRef<Set<string>>(new Set());
+  const scrollMilestones = useRef<Set<number>>(new Set());
+  const sessionStart = useRef(Date.now());
+
   useEffect(() => {
     const els = document.querySelectorAll("[data-anim]");
     els.forEach((el) => {
@@ -39,9 +44,59 @@ export default function Home() {
     return () => observers.current.forEach((o) => o.disconnect());
   }, []);
 
+  // ── Track section views (which sections users actually see) ──
+  useEffect(() => {
+    const sections = document.querySelectorAll("section[id]");
+    const obs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const id = entry.target.id;
+          if (entry.isIntersecting && !sectionsSeen.current.has(id)) {
+            sectionsSeen.current.add(id);
+            window.gtag?.("event", "section_view", {
+              section_name: id,
+              time_to_section: Math.round((Date.now() - sessionStart.current) / 1000),
+            });
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+    sections.forEach((s) => obs.observe(s));
+    return () => obs.disconnect();
+  }, []);
+
+  // ── Scroll depth tracking (25%, 50%, 75%, 100%) ──
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPct = Math.round(
+        (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100
+      );
+      [25, 50, 75, 100].forEach((milestone) => {
+        if (scrollPct >= milestone && !scrollMilestones.current.has(milestone)) {
+          scrollMilestones.current.add(milestone);
+          window.gtag?.("event", "scroll_depth", { percent_scrolled: milestone });
+        }
+      });
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // ── Time on site tracking (30s, 60s, 120s, 300s) ──
+  useEffect(() => {
+    const timers = [30, 60, 120, 300].map((sec) =>
+      setTimeout(() => {
+        window.gtag?.("event", "engaged_time", { seconds: sec });
+      }, sec * 1000)
+    );
+    return () => timers.forEach(clearTimeout);
+  }, []);
+
   const handleEmailSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email.trim() || loading) return;
+    window.gtag?.("event", "begin_checkout", { items: [{ item_name: "waitlist_signup" }] });
     setStep("captcha");
   };
 
@@ -234,7 +289,7 @@ export default function Home() {
             </button>
           ))}
           <button
-            onClick={() => scrollTo("cta")}
+            onClick={() => { scrollTo("cta"); window.gtag?.("event", "select_promotion", { promotion_name: "nav_cta_30_off" }); }}
             style={{
               background: "#1B1F3B",
               color: "#FDF4EE",
