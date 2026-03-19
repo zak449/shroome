@@ -112,18 +112,21 @@ body {
     padding: 14px 16px !important;
   }
   .site-nav {
-    flex-wrap: wrap !important;
+    flex-direction: column !important;
     padding: 10px 16px !important;
-    gap: 0 !important;
+    gap: 6px !important;
+    align-items: stretch !important;
+  }
+  .site-nav > div:first-child {
+    align-self: flex-start !important;
   }
   .nav-cta-btn {
     width: 100% !important;
     text-align: center !important;
-    padding: 9px 14px !important;
+    padding: 10px 14px !important;
     font-size: 0.62rem !important;
     letter-spacing: 0.08em !important;
     white-space: nowrap !important;
-    margin-top: 6px !important;
     box-sizing: border-box !important;
   }
 }
