@@ -273,10 +273,11 @@ export default function Home() {
             { label: "Why shroomé", id: "why" },
             { label: "Ingredients", id: "ingredients" },
             { label: "How It Works", id: "how" },
+            { label: "FAQ", id: "faq", href: "/faq" },
           ].map((l) => (
             <button
               key={l.id}
-              onClick={() => scrollTo(l.id)}
+              onClick={() => { if ((l as { href?: string }).href) { window.location.href = (l as { href: string }).href; } else { scrollTo(l.id); } }}
               style={{
                 background: "none",
                 border: "none",
@@ -296,6 +297,7 @@ export default function Home() {
           ))}
           <button
             onClick={() => { scrollTo("cta"); window.gtag?.("event", "select_promotion", { promotion_name: "nav_cta_30_off" }); }}
+            className="nav-cta-btn"
             style={{
               background: "#1B1F3B",
               color: "#FDF4EE",
@@ -305,7 +307,7 @@ export default function Home() {
               fontWeight: 800,
               fontSize: "0.68rem",
               letterSpacing: "0.1em",
-              textTransform: "uppercase",
+              textTransform: "uppercase" as const,
               cursor: "pointer",
             }}
           >
@@ -1088,6 +1090,17 @@ export default function Home() {
         </div>
 
         <div style={{ marginTop: 80, paddingTop: 28, borderTop: "1px solid rgba(27,31,59,0.08)", position: "relative", zIndex: 1 }}>
+          <div style={{ display: "flex", gap: 24, justifyContent: "center", marginBottom: 20 }}>
+            {[
+              { label: "TIKTOK", href: "https://tiktok.com/@drinkshroome" },
+              { label: "INSTAGRAM", href: "https://instagram.com/drinkshroome" },
+              { label: "YOUTUBE", href: "https://youtube.com/@drinkshroome" },
+            ].map((s) => (
+              <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" style={{ fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 700, fontSize: "0.7rem", letterSpacing: "0.12em", color: "#1B1F3B", textDecoration: "none" }}>
+                {s.label}
+              </a>
+            ))}
+          </div>
           <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.68rem", color: "rgba(27,31,59,0.3)", letterSpacing: "0.08em" }}>
             © 2026 shroomé · hello@drinkshroome.com
           </p>
@@ -1095,6 +1108,11 @@ export default function Home() {
             <a href="/privacy" style={{ color: "rgba(27,31,59,0.3)", textDecoration: "underline" }}>Privacy Policy</a>
             {" · "}
             <a href="/terms" style={{ color: "rgba(27,31,59,0.3)", textDecoration: "underline" }}>Terms of Service</a>
+            {" · "}
+            <a href="/faq" style={{ color: "rgba(27,31,59,0.3)", textDecoration: "underline" }}>FAQ</a>
+          </p>
+          <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.6rem", color: "rgba(27,31,59,0.2)", marginTop: 6 }}>
+            @drinkshroome
           </p>
         </div>
       </section>
