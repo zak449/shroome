@@ -4,5 +4,13 @@
       "path": "/api/cron/follow-up",
       "schedule": "0 14 * * *"
     }
+  ],
+  "headers": [
+    {
+      "source": "/sachet-strawberry.png",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+      ]
+    }
   ]
 }
