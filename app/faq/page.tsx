@@ -76,7 +76,7 @@ const faqData = [
     items: [
       {
         q: "How do I make a shroomé matcha latte?",
-        a: `<strong>Tear. Pour. Hit.</strong> Tear open the sachet, pour over ice (or into hot water), top with 6–8 oz of your milk of choice, and swirl. That's it — no frother, no whisk, no mess. A full café-quality matcha latte in under 15 seconds.`,
+        a: `Fill your glass with ice (or warm your mug), add 6–8 oz of your milk of choice, then <strong>tear open the sachet and pour shroomé in last.</strong> Give it a swirl with your hand, a straw, or a spoon — no frother, no whisk, no mess. A full café-quality matcha latte in under 15 seconds.`,
       },
       {
         q: "Can I pour shroomé over oat milk?",
