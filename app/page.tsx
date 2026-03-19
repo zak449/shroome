@@ -241,6 +241,7 @@ export default function Home() {
 
       {/* ════════════════════ STICKY NAV ════════════════════ */}
       <nav
+        className="site-nav"
         style={{
           position: "sticky",
           top: 0,

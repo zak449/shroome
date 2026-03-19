@@ -111,12 +111,20 @@ body {
   .nav-bar {
     padding: 14px 16px !important;
   }
+  .site-nav {
+    flex-wrap: wrap !important;
+    padding: 10px 16px !important;
+    gap: 0 !important;
+  }
   .nav-cta-btn {
+    width: 100% !important;
+    text-align: center !important;
     padding: 9px 14px !important;
-    font-size: 0.56rem !important;
-    letter-spacing: 0.06em !important;
+    font-size: 0.62rem !important;
+    letter-spacing: 0.08em !important;
     white-space: nowrap !important;
-    max-width: 200px !important;
+    margin-top: 6px !important;
+    box-sizing: border-box !important;
   }
 }
 
@@ -126,10 +134,5 @@ body {
   }
   .flavor-imgs-wrap {
     gap: 16px !important;
-  }
-  .nav-cta-btn {
-    padding: 8px 12px !important;
-    font-size: 0.52rem !important;
-    max-width: 180px !important;
   }
 }
