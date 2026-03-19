@@ -664,7 +664,7 @@ export default function Home() {
             }}
           >
             <img
-              src="/sachet-vanilla.png"
+              src="/sachet-vanilla.png?v=2"
               alt="shroomé vanilla sachet"
               className="sachet-float"
               style={{ width: "48%", maxWidth: 280, height: "auto", filter: "drop-shadow(0 16px 48px rgba(0,0,0,0.15))" }}
@@ -777,7 +777,7 @@ export default function Home() {
             }}
           >
             {[
-              { src: "/sachet-vanilla.png", alt: "Vanilla", delay: "0s", shadow: "rgba(255,220,180,0.3)" },
+              { src: "/sachet-vanilla.png?v=2", alt: "Vanilla", delay: "0s", shadow: "rgba(255,220,180,0.3)" },
               { src: "/sachet-strawberry.png?v=2", alt: "Strawberry", delay: "1.8s", shadow: "rgba(212,114,122,0.35)" },
             ].map((s) => (
               <div key={s.alt} style={{ width: "46%", display: "flex", flexDirection: "column", alignItems: "center" }}>
