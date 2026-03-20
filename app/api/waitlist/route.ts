@@ -2,6 +2,11 @@ import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 import { welcomeEmail } from "@/app/lib/emails";
 
+// ─── Referral code generation ────────────────────────────────────────────────
+function generateReferralCode(): string {
+  return Math.random().toString(36).substring(2, 8).toUpperCase();
+}
+
 // ─── Turnstile verification ─────────────────────────────────────────────────
 async function verifyTurnstile(token: string): Promise<boolean> {
   const secret = process.env.TURNSTILE_SECRET_KEY;
@@ -16,7 +21,7 @@ async function verifyTurnstile(token: string): Promise<boolean> {
 }
 
 // ─── Klaviyo: import profile, add to list, subscribe, and track event ────────
-async function syncToKlaviyo(email: string, phone?: string) {
+async function syncToKlaviyo(email: string, phone?: string, referralCode?: string, referredBy?: string) {
   const apiKey = process.env.KLAVIYO_API_KEY;
   if (!apiKey) return;
 
@@ -44,7 +49,12 @@ async function syncToKlaviyo(email: string, phone?: string) {
           attributes: {
             email,
             ...(phoneE164 ? { phone_number: phoneE164 } : {}),
-            properties: { source: "drinkshroome.com", signup_date: new Date().toISOString() },
+            properties: {
+              source: "drinkshroome.com",
+              signup_date: new Date().toISOString(),
+              ...(referralCode ? { referral_code: referralCode } : {}),
+              ...(referredBy ? { referred_by: referredBy } : {}),
+            },
           },
         },
       }),
@@ -153,6 +163,8 @@ async function syncToKlaviyo(email: string, phone?: string) {
               signup_date: new Date().toISOString(),
               discount_tier: phone ? "30_off_free_shipping" : "20_off_free_shipping",
               stackable_extra_10: !!phone,
+              ...(referralCode ? { referral_code: referralCode } : {}),
+              ...(referredBy ? { referred_by: referredBy } : {}),
             },
           },
         },
@@ -172,7 +184,7 @@ export async function POST(req: NextRequest) {
   const resend = new Resend(process.env.RESEND_API_KEY);
 
   try {
-    const { email, phone, turnstileToken } = await req.json();
+    const { email, phone, turnstileToken, ref } = await req.json();
 
     if (!email || !email.includes("@")) {
       return NextResponse.json({ error: "Invalid email" }, { status: 400 });
@@ -186,9 +198,13 @@ export async function POST(req: NextRequest) {
       }
     }
 
+    // ─── Generate referral code for this signup ─────────────────────────
+    const referralCode = generateReferralCode();
+    const referredBy = ref && typeof ref === "string" ? ref.toUpperCase() : undefined;
+
     // ─── 1. Sync to Klaviyo ─────────────────────────────────────────────
     try {
-      await syncToKlaviyo(email, phone);
+      await syncToKlaviyo(email, phone, referralCode, referredBy);
     } catch (klaviyoErr) {
       console.error("Klaviyo error:", klaviyoErr);
     }
@@ -208,6 +224,8 @@ export async function POST(req: NextRequest) {
             discount: "20% off + free shipping",
             stackable_extra_10: phone ? "YES" : "NO",
             total_discount: phone ? "30% off + free shipping" : "20% off + free shipping",
+            referral_code: referralCode,
+            referred_by: referredBy || "",
           }),
         });
       } catch (sheetErr) {
@@ -217,7 +235,7 @@ export async function POST(req: NextRequest) {
 
     // ─── 3. Send branded welcome email via Resend (first call only, no phone yet) ──
     if (!phone) {
-      const welcome = welcomeEmail(email);
+      const welcome = welcomeEmail(email, referralCode);
       try {
         await resend.emails.send({
           from: "shroomé <hello@drinkshroome.com>",
@@ -236,13 +254,13 @@ export async function POST(req: NextRequest) {
         from: "Shroomé Waitlist <hello@drinkshroome.com>",
         to: ["info@drinkshroome.com"],
         subject: phone ? `📱 Phone added: ${email}` : `🍵 New waitlist signup: ${email}`,
-        html: `<p style="font-family:Arial,sans-serif;">${phone ? "Phone number added" : "New waitlist signup"} from <strong>${email}</strong></p>${phone ? `<p style="font-family:Arial,sans-serif;">Phone: <strong>${phone}</strong></p>` : ""}<p style="font-family:Arial,sans-serif;color:#666;">Time: ${new Date().toISOString()}</p><p style="font-family:Arial,sans-serif;color:#666;">Discount: ${phone ? "30% off + free shipping (20% + extra 10% phone)" : "20% off + free shipping"}</p>`,
+        html: `<p style="font-family:Arial,sans-serif;">${phone ? "Phone number added" : "New waitlist signup"} from <strong>${email}</strong></p>${phone ? `<p style="font-family:Arial,sans-serif;">Phone: <strong>${phone}</strong></p>` : ""}<p style="font-family:Arial,sans-serif;color:#666;">Time: ${new Date().toISOString()}</p><p style="font-family:Arial,sans-serif;color:#666;">Discount: ${phone ? "30% off + free shipping (20% + extra 10% phone)" : "20% off + free shipping"}</p><p style="font-family:Arial,sans-serif;color:#666;">Referral code: ${referralCode}</p>${referredBy ? `<p style="font-family:Arial,sans-serif;color:#666;">Referred by: ${referredBy}</p>` : ""}`,
       });
     } catch (adminErr) {
       console.error("Admin notification error:", adminErr);
     }
 
-    return NextResponse.json({ success: true });
+    return NextResponse.json({ success: true, referralCode });
   } catch (error) {
     console.error("Waitlist error:", error);
     return NextResponse.json({ error: "Failed to subscribe" }, { status: 500 });

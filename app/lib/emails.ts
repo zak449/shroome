@@ -47,7 +47,7 @@ function emailShell(content: string, email: string) {
 </html>`;
 }
 
-export function welcomeEmail(email: string) {
+export function welcomeEmail(email: string, referralCode?: string) {
   const subject = "you just made the list \ud83d\udc9a";
   const html = emailShell(`
 
@@ -133,6 +133,38 @@ export function welcomeEmail(email: string) {
         Your 20% off + free shipping code drops at launch. You\u2019re locked in.
       </p>
     </td></tr>
+
+    <!-- ═══ REFERRAL SECTION — lime accent block ═══════════════════════ -->
+    ${referralCode ? `
+    <tr><td style="padding:0;background-color:${BRAND.lime};">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+        <tr><td style="padding:36px 40px 12px;text-align:center;">
+          <p style="margin:0 0 6px;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:${BRAND.navy};opacity:0.5;font-weight:600;">SHARE THE LOVE</p>
+          <p style="margin:0 0 16px;font-size:28px;color:${BRAND.navy};font-weight:400;font-family:${SERIF};font-style:italic;line-height:1.1;">
+            Give your friends the same deal.
+          </p>
+          <p style="margin:0 0 20px;font-size:14px;color:${BRAND.navy};line-height:1.6;opacity:0.7;">
+            Refer 3 friends &rarr; unlock an extra 10% off at launch<br/>(stackable with your existing discount).
+          </p>
+        </td></tr>
+        <tr><td style="padding:0 40px 16px;text-align:center;">
+          <table role="presentation" cellpadding="0" cellspacing="0" style="margin:0 auto;">
+            <tr><td style="background:${BRAND.navy};border-radius:8px;padding:16px 32px;">
+              <p style="margin:0;font-size:11px;color:rgba(255,255,255,0.5);letter-spacing:1px;text-transform:uppercase;font-weight:600;">Your referral link</p>
+              <a href="https://drinkshroome.com?ref=${referralCode}" style="font-size:18px;font-weight:700;color:${BRAND.lime};text-decoration:none;letter-spacing:0.5px;font-family:${SANS};">
+                drinkshroome.com?ref=${referralCode}
+              </a>
+            </td></tr>
+          </table>
+        </td></tr>
+        <tr><td style="padding:8px 40px 32px;text-align:center;">
+          <p style="margin:0;font-size:12px;color:${BRAND.navy};opacity:0.45;">
+            Share it everywhere. Every friend who joins counts toward your extra 10% off.
+          </p>
+        </td></tr>
+      </table>
+    </td></tr>
+    ` : ''}
 
     <!-- ═══ BETA-GLUCAN SECTION (60%) — navy block ═══════════════════════
          The education hook. Point-blank. Bold.

@@ -21,10 +21,34 @@ export default function Home() {
   const [visible, setVisible] = useState<Record<string, boolean>>({});
   const observers = useRef<IntersectionObserver[]>([]);
 
+  // ── Referral system state ──
+  const [referralCode, setReferralCode] = useState<string | null>(null);
+  const [referredBy, setReferredBy] = useState<string | null>(null);
+  const [referralCount, setReferralCount] = useState(0);
+  const [copied, setCopied] = useState(false);
+
   // ── Analytics: section visibility tracking ──
   const sectionsSeen = useRef<Set<string>>(new Set());
   const scrollMilestones = useRef<Set<number>>(new Set());
   const sessionStart = useRef(Date.now());
+
+  // ── Detect referral code from URL ──
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const ref = params.get("ref");
+    if (ref && ref.length >= 4) {
+      setReferredBy(ref.toUpperCase());
+    }
+  }, []);
+
+  // ── Fetch referral stats when we have a code and are done ──
+  useEffect(() => {
+    if (!referralCode) return;
+    fetch(`/api/referral?code=${referralCode}`)
+      .then((r) => r.json())
+      .then((d) => { if (typeof d.referralCount === "number") setReferralCount(d.referralCount); })
+      .catch(() => {});
+  }, [referralCode, step]);
 
   useEffect(() => {
     const els = document.querySelectorAll("[data-anim]");
@@ -106,7 +130,7 @@ export default function Home() {
       const res = await fetch("/api/waitlist", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, turnstileToken: token }),
+        body: JSON.stringify({ email, turnstileToken: token, ref: referredBy }),
       });
       const data = await res.json();
       if (data.closed) {
@@ -114,11 +138,14 @@ export default function Home() {
         setLoading(false);
         return;
       }
+      if (data.referralCode) {
+        setReferralCode(data.referralCode);
+      }
     } catch {}
     setLoading(false);
     setStep("phone");
     window.gtag?.("event", "generate_lead", { currency: "USD", value: 1.0 });
-  }, [email]);
+  }, [email, referredBy]);
 
   // Load Turnstile script and render widget when captcha step is active
   useEffect(() => {
@@ -155,7 +182,7 @@ export default function Home() {
       await fetch("/api/waitlist", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, phone }),
+        body: JSON.stringify({ email, phone, ref: referredBy }),
       });
     } catch {}
     setLoading(false);
@@ -179,6 +206,50 @@ export default function Home() {
 
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  // ── Referral helpers ──
+  const referralLink = referralCode ? `https://drinkshroome.com?ref=${referralCode}` : "";
+  const referralMessage = "I just joined the shroomé waitlist — the world's first ready-to-pour matcha latte with real mushroom extracts and collagen. Use my link to sign up and we both get extra perks:";
+
+  const copyReferralLink = () => {
+    if (!referralLink) return;
+    navigator.clipboard.writeText(referralLink).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    }).catch(() => {});
+    window.gtag?.("event", "share", { method: "copy_link", content_type: "referral" });
+  };
+
+  const shareOnPlatform = (platform: string) => {
+    if (!referralLink) return;
+    const text = encodeURIComponent(`${referralMessage} ${referralLink}`);
+    const url = encodeURIComponent(referralLink);
+    let shareUrl = "";
+    switch (platform) {
+      case "instagram":
+        // Instagram doesn't have a direct share URL — copy link and open Instagram
+        navigator.clipboard.writeText(`${referralMessage} ${referralLink}`).catch(() => {});
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+        window.open("https://instagram.com/drinkshroome", "_blank");
+        break;
+      case "tiktok":
+        navigator.clipboard.writeText(`${referralMessage} ${referralLink}`).catch(() => {});
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+        window.open("https://tiktok.com/@drinkshroome", "_blank");
+        break;
+      case "text":
+        shareUrl = `sms:?&body=${text}`;
+        window.open(shareUrl);
+        break;
+      case "twitter":
+        shareUrl = `https://twitter.com/intent/tweet?text=${text}`;
+        window.open(shareUrl, "_blank");
+        break;
+    }
+    window.gtag?.("event", "share", { method: platform, content_type: "referral" });
   };
 
   return (
@@ -420,6 +491,23 @@ export default function Home() {
         <div style={{ position: "relative", zIndex: 1, maxWidth: 1200, margin: "0 auto", width: "100%", display: "flex", alignItems: "center", gap: 48, flexWrap: "wrap" }}>
           {/* Left — copy */}
           <div style={{ flex: "1 1 440px", minWidth: 300 }}>
+            {referredBy && step === "email" && (
+              <div
+                className="fade-up"
+                style={{
+                  background: "#C8FF3A",
+                  padding: "10px 16px",
+                  marginBottom: 16,
+                  display: "inline-block",
+                  opacity: 0,
+                }}
+              >
+                <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 700, fontSize: "0.72rem", color: "#1B1F3B", margin: 0 }}>
+                  You were referred by a friend! You both get extra perks.
+                </p>
+              </div>
+            )}
+
             <p
               className="fade-up"
               style={{
@@ -518,9 +606,59 @@ export default function Home() {
             <div className="fade-up delay-500" style={{ display: "flex", gap: 16, alignItems: "flex-start", flexWrap: "wrap", opacity: 0 }}>
               <div style={{ flex: "1 1 260px" }}>
                 {step === "done" ? (
-                  <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 700, fontSize: "1rem", color: "#2D4A2D" }}>
-                    ✓ You&apos;re on the list — 20% off + free shipping locked in. Add your phone for an extra 10%!
-                  </p>
+                  <div>
+                    <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 700, fontSize: "1rem", color: "#2D4A2D", marginBottom: referralCode ? 16 : 0 }}>
+                      ✓ You&apos;re on the list — 20% off + free shipping locked in.
+                    </p>
+                    {referralCode && (
+                      <div style={{ marginTop: 16, padding: "20px", background: "rgba(27,31,59,0.07)", borderRadius: 8 }}>
+                        <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 700, fontSize: "0.78rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "#1B1F3B", marginBottom: 8 }}>
+                          Refer 3 friends → extra 10% off
+                        </p>
+                        <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.75rem", color: "rgba(27,31,59,0.5)", marginBottom: 12 }}>
+                          Stackable with your existing discount. Share your link:
+                        </p>
+                        <div style={{ display: "flex", gap: 8, alignItems: "center", marginBottom: 12, flexWrap: "wrap" }}>
+                          <div style={{ flex: "1 1 200px", background: "#fff", border: "2px solid #1B1F3B", padding: "10px 14px", fontFamily: "'DM Mono', monospace", fontSize: "0.78rem", color: "#1B1F3B", minWidth: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                            drinkshroome.com?ref={referralCode}
+                          </div>
+                          <button
+                            onClick={copyReferralLink}
+                            style={{ padding: "10px 20px", border: "none", background: copied ? "#1B1F3B" : "#C8FF3A", color: copied ? "#C8FF3A" : "#1B1F3B", fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 800, fontSize: "0.7rem", letterSpacing: "0.08em", textTransform: "uppercase", cursor: "pointer", whiteSpace: "nowrap", transition: "all 0.2s" }}
+                          >
+                            {copied ? "Copied!" : "Copy"}
+                          </button>
+                        </div>
+                        <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+                          {[
+                            { label: "Share on Instagram", platform: "instagram", bg: "#D4B8E0" },
+                            { label: "Share on TikTok", platform: "tiktok", bg: "#FFB7D1" },
+                            { label: "Text a friend", platform: "text", bg: "#C8FF3A" },
+                          ].map((s) => (
+                            <button
+                              key={s.platform}
+                              onClick={() => shareOnPlatform(s.platform)}
+                              style={{ padding: "8px 14px", border: "none", background: s.bg, color: "#1B1F3B", fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 700, fontSize: "0.65rem", letterSpacing: "0.06em", textTransform: "uppercase", cursor: "pointer", borderRadius: 2 }}
+                            >
+                              {s.label}
+                            </button>
+                          ))}
+                        </div>
+                        <div style={{ marginTop: 14, display: "flex", alignItems: "center", gap: 8 }}>
+                          <div style={{ display: "flex", gap: 4 }}>
+                            {[0, 1, 2].map((i) => (
+                              <div key={i} style={{ width: 28, height: 28, borderRadius: "50%", border: "2px solid #1B1F3B", background: i < referralCount ? "#C8FF3A" : "transparent", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.65rem", fontWeight: 700, color: i < referralCount ? "#1B1F3B" : "rgba(27,31,59,0.3)", fontFamily: "'Syne', system-ui, sans-serif", transition: "all 0.3s" }}>
+                                {i < referralCount ? "✓" : ""}
+                              </div>
+                            ))}
+                          </div>
+                          <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.72rem", color: "rgba(27,31,59,0.5)", fontWeight: 600 }}>
+                            {referralCount}/3 friends joined
+                          </p>
+                        </div>
+                      </div>
+                    )}
+                  </div>
                 ) : step === "captcha" ? (
                   <div>
                     <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 600, fontSize: "0.82rem", color: "#2D4A2D", marginBottom: 14 }}>
@@ -1034,9 +1172,59 @@ export default function Home() {
             Get 20% off + free shipping on your first order — add your phone for an extra 10% off code.
           </p>
           {step === "done" ? (
-            <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 700, fontSize: "1rem", color: "#1B1F3B" }}>
-              ✓ You&apos;re on the list.
-            </p>
+            <div>
+              <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 700, fontSize: "1rem", color: "#1B1F3B", marginBottom: referralCode ? 16 : 0 }}>
+                ✓ You&apos;re on the list.
+              </p>
+              {referralCode && (
+                <div style={{ marginTop: 16, padding: "24px", background: "rgba(27,31,59,0.08)", borderRadius: 12, textAlign: "left" }}>
+                  <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 700, fontSize: "0.78rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "#1B1F3B", marginBottom: 8 }}>
+                    Refer 3 friends → extra 10% off
+                  </p>
+                  <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.75rem", color: "rgba(27,31,59,0.5)", marginBottom: 14 }}>
+                    Stackable with your existing discount. Share your link:
+                  </p>
+                  <div style={{ display: "flex", gap: 8, alignItems: "center", marginBottom: 14, flexWrap: "wrap" }}>
+                    <div style={{ flex: "1 1 200px", background: "rgba(255,255,255,0.6)", border: "2px solid #1B1F3B", padding: "10px 14px", fontFamily: "'DM Mono', monospace", fontSize: "0.78rem", color: "#1B1F3B", minWidth: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                      drinkshroome.com?ref={referralCode}
+                    </div>
+                    <button
+                      onClick={copyReferralLink}
+                      style={{ padding: "10px 20px", border: "none", background: copied ? "#1B1F3B" : "#C8FF3A", color: copied ? "#C8FF3A" : "#1B1F3B", fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 800, fontSize: "0.7rem", letterSpacing: "0.08em", textTransform: "uppercase", cursor: "pointer", whiteSpace: "nowrap", transition: "all 0.2s" }}
+                    >
+                      {copied ? "Copied!" : "Copy"}
+                    </button>
+                  </div>
+                  <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 14 }}>
+                    {[
+                      { label: "Share on Instagram", platform: "instagram", bg: "#D4B8E0" },
+                      { label: "Share on TikTok", platform: "tiktok", bg: "#FFB7D1" },
+                      { label: "Text a friend", platform: "text", bg: "#C8FF3A" },
+                    ].map((s) => (
+                      <button
+                        key={s.platform}
+                        onClick={() => shareOnPlatform(s.platform)}
+                        style={{ padding: "8px 14px", border: "none", background: s.bg, color: "#1B1F3B", fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 700, fontSize: "0.65rem", letterSpacing: "0.06em", textTransform: "uppercase", cursor: "pointer", borderRadius: 2 }}
+                      >
+                        {s.label}
+                      </button>
+                    ))}
+                  </div>
+                  <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                    <div style={{ display: "flex", gap: 4 }}>
+                      {[0, 1, 2].map((i) => (
+                        <div key={i} style={{ width: 28, height: 28, borderRadius: "50%", border: "2px solid #1B1F3B", background: i < referralCount ? "#C8FF3A" : "transparent", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.65rem", fontWeight: 700, color: i < referralCount ? "#1B1F3B" : "rgba(27,31,59,0.3)", fontFamily: "'Syne', system-ui, sans-serif", transition: "all 0.3s" }}>
+                          {i < referralCount ? "✓" : ""}
+                        </div>
+                      ))}
+                    </div>
+                    <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.72rem", color: "rgba(27,31,59,0.5)", fontWeight: 600 }}>
+                      {referralCount}/3 friends joined
+                    </p>
+                  </div>
+                </div>
+              )}
+            </div>
           ) : step === "captcha" ? (
             <div>
               <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 600, fontSize: "0.88rem", color: "#1B1F3B", marginBottom: 14 }}>
