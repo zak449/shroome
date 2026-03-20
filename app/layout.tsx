@@ -26,6 +26,43 @@ export const metadata: Metadata = {
     },
 };
 
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "ZSQUARED INC",
+  "brand": { "@type": "Brand", "name": "shroomé" },
+  "url": "https://drinkshroome.com",
+  "logo": "https://drinkshroome.com/logo-navy.png",
+  "description": "shroomé is the world's first ready-to-pour ceremonial matcha latte with organic mushroom extracts and grass-fed collagen peptides.",
+  "sameAs": [
+    "https://tiktok.com/@drinkshroome",
+    "https://instagram.com/drinkshroome",
+    "https://youtube.com/@drinkshroome"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "hello@drinkshroome.com",
+    "contactType": "customer service"
+  }
+};
+
+const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "shroomé Ceremonial Matcha Latte",
+  "description": "Ready-to-pour ceremonial matcha latte with organic mushroom extracts (70%+ beta-glucans) and grass-fed collagen peptides",
+  "brand": { "@type": "Brand", "name": "shroomé" },
+  "category": "Functional Beverages",
+  "material": "Ceremonial Matcha, Organic Mushroom Extracts, Grass-Fed Collagen Peptides",
+  "url": "https://drinkshroome.com",
+  "image": "https://drinkshroome.com/sachets-both.png",
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/PreOrder",
+    "priceCurrency": "USD"
+  }
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -34,6 +71,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Schema.org structured data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+        />
         {/* Google Analytics */}
         <Script src="https://www.googletagmanager.com/gtag/js?id=G-60FPK4E1PF" strategy="afterInteractive" />
         <Script id="google-analytics" strategy="afterInteractive">

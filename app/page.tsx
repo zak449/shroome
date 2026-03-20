@@ -346,6 +346,7 @@ export default function Home() {
             { label: "Ingredients", id: "ingredients" },
             { label: "How It Works", id: "how" },
             { label: "FAQ", id: "faq", href: "/faq" },
+            { label: "Blog", id: "blog", href: "/blog" },
           ].map((l) => (
             <button
               key={l.id}
@@ -1299,6 +1300,8 @@ export default function Home() {
             <a href="/terms" style={{ color: "rgba(27,31,59,0.3)", textDecoration: "underline" }}>Terms of Service</a>
             {" · "}
             <a href="/faq" style={{ color: "rgba(27,31,59,0.3)", textDecoration: "underline" }}>FAQ</a>
+            {" · "}
+            <a href="/blog" style={{ color: "rgba(27,31,59,0.3)", textDecoration: "underline" }}>Blog</a>
           </p>
           <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.6rem", color: "rgba(27,31,59,0.2)", marginTop: 6 }}>
             @drinkshroome

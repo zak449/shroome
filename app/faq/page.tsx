@@ -108,9 +108,11 @@ const faqSchema = {
 const orgSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "shroomé",
+  name: "ZSQUARED INC",
+  brand: { "@type": "Brand", name: "shroomé" },
   alternateName: ["Shroome", "Shroomé", "drinkshroome"],
   url: "https://drinkshroome.com",
+  logo: "https://drinkshroome.com/logo-navy.png",
   description:
     "shroomé is the world's first ready-to-pour ceremonial matcha latte. 2g matcha, 2g grass-fed collagen, real mushroom extracts. Tear it open. Pour it in. Done.",
   sameAs: [
@@ -370,6 +372,7 @@ export default function FAQ() {
           <a href="/#ingredients">Ingredients</a>
           <a href="/#how">How It Works</a>
           <a href="/faq" className="active">FAQ</a>
+          <a href="/blog">Blog</a>
         </div>
         <a href="/" className="faq-nav-cta">Get 20% off + free shipping →</a>
       </nav>
