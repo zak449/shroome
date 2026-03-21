@@ -57,10 +57,10 @@ export function welcomeEmail(email: string, referralCode?: string) {
     <tr><td style="padding:0;background-color:${BRAND.navy};">
       <!--[if gte mso 9]><v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:600px;height:400px;">
       <v:fill type="frame" src="${heroImg}" /><v:textbox inset="0,0,0,0"><![endif]-->
-      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:url('${heroImg}') center center / cover no-repeat ${BRAND.navy};">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:url('${heroImg}') center top / cover no-repeat ${BRAND.navy};">
         <tr><td style="padding:0;">
-          <!-- Dark overlay for text legibility -->
-          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:linear-gradient(180deg, rgba(27,31,59,0.55) 0%, rgba(27,31,59,0.15) 50%, rgba(27,31,59,0.65) 100%);">
+          <!-- Overlay — lighter at top to show cup, darker at bottom for text -->
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:linear-gradient(180deg, rgba(27,31,59,0.15) 0%, rgba(27,31,59,0.1) 35%, rgba(27,31,59,0.6) 60%, rgba(27,31,59,0.8) 100%);">
             <!-- Top nav bar -->
             <tr><td style="padding:16px 28px;">
               <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
@@ -73,8 +73,11 @@ export function welcomeEmail(email: string, referralCode?: string) {
               </table>
             </td></tr>
 
-            <!-- Hero text on image — pushed below the cup -->
-            <tr><td style="padding:220px 36px 16px;text-align:center;">
+            <!-- Spacer — lets the cup image breathe -->
+            <tr><td style="padding:160px 0 0;"></td></tr>
+
+            <!-- Hero text below the cup -->
+            <tr><td style="padding:0 36px 12px;text-align:center;">
               <p style="margin:0 0 12px;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:${BRAND.lime};font-weight:700;">
                 \u2726 YOU\u2019RE IN \u2726
               </p>
@@ -84,14 +87,14 @@ export function welcomeEmail(email: string, referralCode?: string) {
                 Caf\u00e9 energy.<br/><span style="font-style:italic;color:${BRAND.lime};">Home address.</span>
               </h1>
             </td></tr>
-            <tr><td style="padding:16px 48px 24px;text-align:center;">
-              <p style="margin:0;font-size:14px;color:rgba(255,255,255,0.8);line-height:1.6;">
+            <tr><td style="padding:16px 48px 20px;text-align:center;">
+              <p style="margin:0;font-size:14px;color:rgba(255,255,255,0.85);line-height:1.6;">
                 The world\u2019s first ready-to-pour ceremonial matcha latte.<br/>2g matcha \u00b7 mushroom extracts \u00b7 collagen \u00b7 zero crash.
               </p>
             </td></tr>
 
             <!-- Pill tags on image -->
-            <tr><td style="padding:0 36px 48px;text-align:center;">
+            <tr><td style="padding:0 36px 40px;text-align:center;">
               <table role="presentation" cellpadding="0" cellspacing="0" style="margin:0 auto;">
                 <tr>
                   <td style="background:rgba(255,255,255,0.15);backdrop-filter:blur(10px);border-radius:20px;padding:6px 14px;border:1px solid rgba(255,255,255,0.2);">
@@ -114,12 +117,12 @@ export function welcomeEmail(email: string, referralCode?: string) {
       <!--[if gte mso 9]></v:textbox></v:rect><![endif]-->
     </td></tr>
 
-    <!-- ═══ PRODUCT SHOWCASE — sachets on pink with gradient ═══ -->
-    <tr><td style="padding:0;background:linear-gradient(180deg, ${BRAND.pink} 0%, ${BRAND.blush} 100%);">
+    <!-- ═══ PRODUCT SHOWCASE — sachets on lavender ═══ -->
+    <tr><td style="padding:0;background-color:${BRAND.lavender};">
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
         <tr><td style="padding:40px 36px 8px;text-align:center;">
-          <p style="margin:0 0 6px;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:${BRAND.navy};opacity:0.4;font-weight:600;">THE RITUAL</p>
-          <p style="margin:0;font-size:32px;color:${BRAND.navy};font-weight:400;font-family:${SERIF};font-style:italic;line-height:1.1;">
+          <p style="margin:0 0 6px;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#2D4A2D;opacity:0.6;font-weight:600;">THE RITUAL</p>
+          <p style="margin:0;font-size:32px;color:#2D4A2D;font-weight:400;font-family:${SERIF};font-style:italic;line-height:1.1;">
             Tear. Pour. <span style="color:#E8936D;">Feel the shift.</span>
           </p>
         </td></tr>
@@ -127,13 +130,13 @@ export function welcomeEmail(email: string, referralCode?: string) {
           <img src="${BRAND.sachetsBoth}" alt="shroom\u00e9 vanilla and strawberry sachets" width="480" style="display:inline-block;width:85%;max-width:480px;height:auto;" />
         </td></tr>
         <tr><td style="padding:20px 40px 12px;text-align:center;">
-          <p style="margin:0;font-size:13px;color:${BRAND.navy};line-height:1.7;opacity:0.6;">
-            Two flavors. Twelve sachets per box. Each one pre-dissolved \u2014 no powder clumps, no frother, no ritual required. Just 15 seconds to caf\u00e9-grade matcha.
+          <p style="margin:0;font-size:13px;color:#2D4A2D;line-height:1.7;opacity:0.65;">
+            Two flavors. Twelve sachets per box. Each one pre-dissolved \u2014 no powder, no frother. Just 15 seconds to caf\u00e9-grade matcha.
           </p>
         </td></tr>
-        <tr><td style="padding:8px 36px 40px;text-align:center;">
+        <tr><td style="padding:8px 36px 36px;text-align:center;">
           <table role="presentation" cellpadding="0" cellspacing="0" style="margin:0 auto;">
-            <tr><td style="background:${BRAND.navy};border-radius:50px;padding:14px 44px;">
+            <tr><td style="background:#2D4A2D;border-radius:50px;padding:14px 44px;">
               <a href="${BRAND.siteUrl}" style="color:${BRAND.lime};font-size:12px;font-weight:700;text-decoration:none;letter-spacing:2px;text-transform:uppercase;">
                 SEE WHAT\u2019S INSIDE \u2192
               </a>
@@ -369,13 +372,13 @@ export function sachetEmail(email: string) {
               </table>
             </td></tr>
             <tr><td style="padding:40px 36px 12px;text-align:center;">
-              <p style="margin:0 0 12px;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:${BRAND.navy};opacity:0.5;font-weight:700;">INSIDE THE SACHET</p>
-              <h1 style="margin:0;font-size:44px;color:${BRAND.navy};font-weight:400;line-height:1.05;font-family:${SERIF};">
+              <p style="margin:0 0 12px;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#2D4A2D;opacity:0.6;font-weight:700;">INSIDE THE SACHET</p>
+              <h1 style="margin:0;font-size:44px;color:#2D4A2D;font-weight:400;line-height:1.05;font-family:${SERIF};">
                 Not all matcha is<br/>created <span style="color:#E8936D;font-style:italic;">equal.</span>
               </h1>
             </td></tr>
             <tr><td style="padding:16px 48px 44px;text-align:center;">
-              <p style="margin:0;font-size:14px;color:${BRAND.navy};line-height:1.6;opacity:0.65;">
+              <p style="margin:0;font-size:14px;color:#2D4A2D;line-height:1.6;opacity:0.65;">
                 Here\u2019s what separates shroom\u00e9 from everything else on the shelf \u2014 and why the ingredients matter more than the label.
               </p>
             </td></tr>
@@ -384,17 +387,17 @@ export function sachetEmail(email: string) {
       </table>
     </td></tr>
 
-    <!-- ═══ PRODUCT — vanilla sachet on gradient ═══ -->
-    <tr><td style="padding:0;background:linear-gradient(180deg, ${BRAND.cream} 0%, ${BRAND.pink} 100%);">
+    <!-- ═══ PRODUCT — vanilla sachet on lavender (visible contrast) ═══ -->
+    <tr><td style="padding:0;background-color:${BRAND.lavender};">
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
         <tr><td style="padding:36px 20px 0;text-align:center;">
           <img src="${BRAND.sachetVanilla}" alt="shroom\u00e9 vanilla sachet" width="200" style="display:inline-block;width:200px;max-width:200px;height:auto;" />
         </td></tr>
         <tr><td style="padding:20px 40px 36px;text-align:center;">
-          <p style="margin:0;font-size:20px;color:${BRAND.navy};font-weight:400;font-family:${SERIF};font-style:italic;">
+          <p style="margin:0;font-size:20px;color:#2D4A2D;font-weight:400;font-family:${SERIF};font-style:italic;">
             pour \u00b7 swirl \u00b7 <span style="color:#E8936D;">glow</span>
           </p>
-          <p style="margin:10px 0 0;font-size:12px;color:${BRAND.navy};opacity:0.45;letter-spacing:1px;text-transform:uppercase;font-weight:600;">
+          <p style="margin:10px 0 0;font-size:12px;color:#2D4A2D;opacity:0.55;letter-spacing:1px;text-transform:uppercase;font-weight:600;">
             ceremonial matcha \u00b7 collagen \u00b7 mushroom beta-glucans
           </p>
         </td></tr>
