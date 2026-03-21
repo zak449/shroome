@@ -111,35 +111,21 @@ async function syncToKlaviyo(email: string, phone?: string, referralCode?: strin
     }
   }
 
-  // Step 4: Subscribe to SMS (if phone provided)
-  // NOTE: Only use subscription API — do NOT also add to list separately,
-  // as that triggers a duplicate auto-welcome text from Klaviyo
+  // Step 4: Add to SMS list (if phone provided)
+  // Uses list-add only (NOT subscription API with consent: "SUBSCRIBED")
+  // because the subscription API triggers Klaviyo's built-in welcome SMS
+  // ("hey bestie" text) that we can't customize. Instead, adding to list
+  // triggers the double opt-in flow (reply YES) which uses our custom
+  // keyword response text that we control.
   if (smsListId && phoneE164) {
     try {
-      await fetch("https://a.klaviyo.com/api/profile-subscription-bulk-create-jobs/", {
+      await fetch(`https://a.klaviyo.com/api/lists/${smsListId}/relationships/profiles/`, {
         method: "POST",
         headers,
-        body: JSON.stringify({
-          data: {
-            type: "profile-subscription-bulk-create-job",
-            attributes: {
-              profiles: {
-                data: [{
-                  type: "profile",
-                  attributes: {
-                    email,
-                    phone_number: phoneE164,
-                    subscriptions: { sms: { marketing: { consent: "SUBSCRIBED" } } },
-                  },
-                }],
-              },
-            },
-            relationships: { list: { data: { type: "list", id: smsListId } } },
-          },
-        }),
+        body: JSON.stringify({ data: [{ type: "profile", id: profileId }] }),
       });
     } catch (err) {
-      console.error("Klaviyo SMS subscribe error:", err);
+      console.error("Klaviyo SMS list add error:", err);
     }
   }
 
