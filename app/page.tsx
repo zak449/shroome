@@ -209,7 +209,7 @@ export default function Home() {
   };
 
   // ── Referral helpers ──
-  const referralLink = referralCode ? `https://drinkshroome.com?ref=${referralCode}` : "";
+  const referralLink = referralCode ? `https://www.drinkshroome.com?ref=${referralCode}` : "";
   const referralMessage = "I just joined the shroomé waitlist — the world's first ready-to-pour matcha latte with real mushroom extracts and collagen. Use my link to sign up and we both get extra perks:";
 
   const copyReferralLink = () => {

@@ -2,7 +2,7 @@ import { MetadataRoute } from "next";
 import { blogPosts } from "./blog/posts";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://drinkshroome.com";
+  const baseUrl = "https://www.drinkshroome.com";
 
   const staticPages: MetadataRoute.Sitemap = [
     {

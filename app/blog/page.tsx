@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     description:
       "Evidence-based articles on ceremonial matcha, functional mushrooms, collagen, and building a better morning routine.",
     type: "website",
-    url: "https://drinkshroome.com/blog",
+    url: "https://www.drinkshroome.com/blog",
   },
   twitter: {
     card: "summary_large_image",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
       "Evidence-based articles on ceremonial matcha, functional mushrooms, collagen, and wellness.",
   },
   alternates: {
-    canonical: "https://drinkshroome.com/blog",
+    canonical: "https://www.drinkshroome.com/blog",
   },
 };
 
@@ -45,19 +45,19 @@ export default function BlogIndex() {
             name: "shroomé Blog",
             description:
               "Evidence-based articles on ceremonial matcha, functional mushrooms, collagen, and wellness.",
-            url: "https://drinkshroome.com/blog",
+            url: "https://www.drinkshroome.com/blog",
             inLanguage: "en-US",
             publisher: {
               "@type": "Organization",
               name: "shroomé",
-              url: "https://drinkshroome.com",
+              url: "https://www.drinkshroome.com",
             },
             blogPost: blogPosts.map((post) => ({
               "@type": "BlogPosting",
               headline: post.title,
               description: post.metaDescription,
               datePublished: post.date,
-              url: `https://drinkshroome.com/blog/${post.slug}`,
+              url: `https://www.drinkshroome.com/blog/${post.slug}`,
               author: { "@type": "Person", name: post.author },
               articleSection: post.category,
             })),
@@ -73,8 +73,8 @@ export default function BlogIndex() {
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             itemListElement: [
-              { "@type": "ListItem", position: 1, name: "Home", item: "https://drinkshroome.com" },
-              { "@type": "ListItem", position: 2, name: "Blog", item: "https://drinkshroome.com/blog" },
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://www.drinkshroome.com" },
+              { "@type": "ListItem", position: 2, name: "Blog", item: "https://www.drinkshroome.com/blog" },
             ],
           }),
         }}

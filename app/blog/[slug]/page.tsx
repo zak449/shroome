@@ -25,7 +25,7 @@ export async function generateMetadata({
       title: post.title,
       description: post.metaDescription,
       type: "article",
-      url: `https://drinkshroome.com/blog/${post.slug}`,
+      url: `https://www.drinkshroome.com/blog/${post.slug}`,
       publishedTime: post.date,
       authors: [post.author],
       siteName: "shroomé",
@@ -36,7 +36,7 @@ export async function generateMetadata({
       description: post.metaDescription,
     },
     alternates: {
-      canonical: `https://drinkshroome.com/blog/${post.slug}`,
+      canonical: `https://www.drinkshroome.com/blog/${post.slug}`,
     },
   };
 }
@@ -79,29 +79,29 @@ export default async function BlogPost({
       "@type": "Person",
       name: post.author,
       jobTitle: "Founder & CEO",
-      url: "https://drinkshroome.com",
+      url: "https://www.drinkshroome.com",
       worksFor: { "@type": "Organization", name: "ZSQUARED INC" },
     },
     publisher: {
       "@type": "Organization",
       name: "shroomé",
-      url: "https://drinkshroome.com",
+      url: "https://www.drinkshroome.com",
       logo: {
         "@type": "ImageObject",
-        url: "https://drinkshroome.com/logo-mark.png",
+        url: "https://www.drinkshroome.com/logo-mark.png",
         width: 200,
         height: 200,
       },
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `https://drinkshroome.com/blog/${post.slug}`,
+      "@id": `https://www.drinkshroome.com/blog/${post.slug}`,
     },
     articleSection: post.category,
     wordCount: post.content.replace(/<[^>]*>/g, "").split(/\s+/).length,
     inLanguage: "en-US",
     isAccessibleForFree: true,
-    url: `https://drinkshroome.com/blog/${post.slug}`,
+    url: `https://www.drinkshroome.com/blog/${post.slug}`,
     keywords: post.metaDescription,
   };
 
@@ -113,25 +113,25 @@ export default async function BlogPost({
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://drinkshroome.com",
+        item: "https://www.drinkshroome.com",
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Blog",
-        item: "https://drinkshroome.com/blog",
+        item: "https://www.drinkshroome.com/blog",
       },
       {
         "@type": "ListItem",
         position: 3,
         name: post.title,
-        item: `https://drinkshroome.com/blog/${post.slug}`,
+        item: `https://www.drinkshroome.com/blog/${post.slug}`,
       },
     ],
   };
 
   const shareUrl = encodeURIComponent(
-    `https://drinkshroome.com/blog/${post.slug}`
+    `https://www.drinkshroome.com/blog/${post.slug}`
   );
   const shareTitle = encodeURIComponent(post.title);
 

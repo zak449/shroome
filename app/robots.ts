@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/api/", "/dashboard/", "/unsubscribe/"],
     },
-    sitemap: "https://drinkshroome.com/sitemap.xml",
+    sitemap: "https://www.drinkshroome.com/sitemap.xml",
   };
 }

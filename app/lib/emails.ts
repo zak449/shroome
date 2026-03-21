@@ -13,7 +13,7 @@ const BRAND = {
   blush: "#FFE0EC",
   sachetsBoth: "https://www.drinkshroome.com/sachets-both.png",
   sachetVanilla: "https://www.drinkshroome.com/sachet-vanilla.png",
-  siteUrl: "https://drinkshroome.com",
+  siteUrl: "https://www.drinkshroome.com",
 };
 
 function unsub(email: string) {
@@ -151,7 +151,7 @@ export function welcomeEmail(email: string, referralCode?: string) {
           <table role="presentation" cellpadding="0" cellspacing="0" style="margin:0 auto;">
             <tr><td style="background:${BRAND.navy};border-radius:8px;padding:16px 32px;">
               <p style="margin:0;font-size:11px;color:rgba(255,255,255,0.5);letter-spacing:1px;text-transform:uppercase;font-weight:600;">Your referral link</p>
-              <a href="https://drinkshroome.com?ref=${referralCode}" style="font-size:18px;font-weight:700;color:${BRAND.lime};text-decoration:none;letter-spacing:0.5px;font-family:${SANS};">
+              <a href="https://www.drinkshroome.com?ref=${referralCode}" style="font-size:18px;font-weight:700;color:${BRAND.lime};text-decoration:none;letter-spacing:0.5px;font-family:${SANS};">
                 drinkshroome.com?ref=${referralCode}
               </a>
             </td></tr>

@@ -19,10 +19,10 @@ export const metadata: Metadata = {
     title: "FAQ — shroomé | Café Energy. Home Address.",
     description:
       "Everything you need to know about shroomé — the world's first ready-to-pour ceremonial matcha latte with collagen + mushrooms.",
-    url: "https://drinkshroome.com/faq",
+    url: "https://www.drinkshroome.com/faq",
   },
   alternates: {
-    canonical: "https://drinkshroome.com/faq",
+    canonical: "https://www.drinkshroome.com/faq",
   },
 };
 

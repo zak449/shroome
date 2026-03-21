@@ -54,7 +54,7 @@ function UnsubscribeFlow() {
     >
       <div style={{ maxWidth: 480, width: "100%", textAlign: "center" }}>
         {/* Logo */}
-        <a href="https://drinkshroome.com" style={{ display: "inline-block", marginBottom: 40 }}>
+        <a href="https://www.drinkshroome.com" style={{ display: "inline-block", marginBottom: 40 }}>
           <img src="/logo-mark.png" alt="shroomé" width={100} style={{ display: "block" }} />
         </a>
 
@@ -111,7 +111,7 @@ function UnsubscribeFlow() {
                 Yes, unsubscribe me
               </button>
               <a
-                href="https://drinkshroome.com"
+                href="https://www.drinkshroome.com"
                 style={{
                   padding: "14px 32px",
                   background: "#C8FF3A",
@@ -223,7 +223,7 @@ function UnsubscribeFlow() {
               you can always sign up again at drinkshroome.com.
             </p>
             <a
-              href="https://drinkshroome.com"
+              href="https://www.drinkshroome.com"
               style={{
                 padding: "14px 32px",
                 background: "#C8FF3A",

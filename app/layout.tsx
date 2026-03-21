@@ -3,6 +3,10 @@ import Script from "next/script";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.drinkshroome.com"),
+  alternates: {
+    canonical: "/",
+  },
   title: "shroomé — Café Energy. Home Address.",
   description: "Ceremonial matcha meets functional mushrooms. 2g. One sachet. Pour over your latte base and feel the shift. Join the pre-launch list for 20% off + free shipping on your first order.",
   keywords: ["ceremonial matcha latte", "functional mushrooms", "matcha latte", "beta-glucans", "mushroom extract", "collagen peptides", "ready to pour matcha", "matcha sachet", "coffee alternative", "L-theanine", "adaptogenic", "shroomé", "drinkshroome"],
@@ -10,7 +14,7 @@ export const metadata: Metadata = {
     title: "shroomé — Café Energy. Home Address.",
     description: "2g ceremonial matcha + functional mushrooms in one sachet. The café came home. Join the pre-launch list for 20% off + free shipping.",
     type: "website",
-    url: "https://drinkshroome.com",
+    url: "https://www.drinkshroome.com",
   },
   twitter: {
     card: "summary_large_image",
@@ -32,8 +36,8 @@ const organizationSchema = {
   "name": "ZSQUARED INC",
   "brand": { "@type": "Brand", "name": "shroomé" },
   "alternateName": ["Shroome", "Shroomé", "drinkshroome", "drink shroome"],
-  "url": "https://drinkshroome.com",
-  "logo": "https://drinkshroome.com/logo-mark.png",
+  "url": "https://www.drinkshroome.com",
+  "logo": "https://www.drinkshroome.com/logo-mark.png",
   "description": "shroomé is the world's first ready-to-pour ceremonial matcha latte — combining 2g ceremonial-grade matcha, 200mg organic mushroom extracts (70%+ beta-glucans via fruiting body extraction), and 2g grass-fed collagen peptides in a single-serve sachet.",
   "foundingDate": "2025",
   "founder": {
@@ -75,11 +79,11 @@ const productSchema = {
   "brand": { "@type": "Brand", "name": "shroomé" },
   "manufacturer": { "@type": "Organization", "name": "ZSQUARED INC" },
   "category": "Functional Beverages",
-  "url": "https://drinkshroome.com",
+  "url": "https://www.drinkshroome.com",
   "image": [
-    "https://drinkshroome.com/sachets-both.png",
-    "https://drinkshroome.com/sachet-vanilla.png",
-    "https://drinkshroome.com/sachet-strawberry.png"
+    "https://www.drinkshroome.com/sachets-both.png",
+    "https://www.drinkshroome.com/sachet-vanilla.png",
+    "https://www.drinkshroome.com/sachet-strawberry.png"
   ],
   "sku": "SHROOME-VARIETY-12",
   "mpn": "SHROOME-V1",
@@ -96,7 +100,7 @@ const productSchema = {
     "@type": "Offer",
     "availability": "https://schema.org/PreOrder",
     "priceCurrency": "USD",
-    "url": "https://drinkshroome.com",
+    "url": "https://www.drinkshroome.com",
     "seller": { "@type": "Organization", "name": "ZSQUARED INC" }
   },
   "isFamilyFriendly": true,
@@ -112,12 +116,12 @@ const websiteSchema = {
   "@type": "WebSite",
   "name": "shroomé",
   "alternateName": ["drinkshroome", "Shroomé", "Shroome"],
-  "url": "https://drinkshroome.com",
+  "url": "https://www.drinkshroome.com",
   "description": "The world's first ready-to-pour ceremonial matcha latte with organic mushroom extracts and grass-fed collagen.",
   "publisher": { "@type": "Organization", "name": "ZSQUARED INC" },
   "potentialAction": {
     "@type": "SearchAction",
-    "target": "https://drinkshroome.com/blog?q={search_term_string}",
+    "target": "https://www.drinkshroome.com/blog?q={search_term_string}",
     "query-input": "required name=search_term_string"
   },
   "inLanguage": "en-US"

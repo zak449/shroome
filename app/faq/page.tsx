@@ -113,13 +113,13 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://drinkshroome.com",
+      item: "https://www.drinkshroome.com",
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "FAQ",
-      item: "https://drinkshroome.com/faq",
+      item: "https://www.drinkshroome.com/faq",
     },
   ],
 };
