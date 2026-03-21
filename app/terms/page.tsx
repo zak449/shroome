@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import MobileNav from "../MobileNav";
 
 export const metadata: Metadata = {
   title: "Terms of Service — shroomé | Café Energy. Home Address.",
@@ -66,6 +67,7 @@ export default function Terms() {
         .tos-nav-logo img{width:28px;height:28px;filter:brightness(0) saturate(100%) invert(10%) sepia(30%) saturate(1500%) hue-rotate(200deg) brightness(95%)}
         .tos-nav-logo span{font-family:'Instrument Serif',Georgia,serif;font-size:22px;font-weight:400;font-style:italic;color:#1B1F3B}
         .tos-nav-links{display:flex;gap:8px}
+        @media(max-width:768px){.tos-nav-links{display:none !important}}
         .tos-nav-links a{
           background:none;border:none;cursor:pointer;
           font-family:'Syne',system-ui,sans-serif;font-size:11.5px;font-weight:600;
@@ -168,7 +170,7 @@ export default function Terms() {
         /* ── RESPONSIVE ─── */
         @media(max-width:640px){
           .tos-nav{padding:0 4%;height:54px;gap:8px}
-          .tos-nav-links{display:none}
+          /* tos-nav-links hidden via main style block above */
           .tos-nav-logo{gap:6px}
           .tos-nav-logo span{font-size:18px}
           .tos-nav-logo img{width:24px;height:24px}
@@ -213,7 +215,17 @@ export default function Terms() {
           <a href="/faq">FAQ</a>
           <a href="/blog">Blog</a>
         </div>
-        <a href="/" className="tos-nav-cta">Get 20% off + free shipping →</a>
+        <a href="/" className="tos-nav-cta">Get 20% off + free shipping &rarr;</a>
+        <MobileNav
+          prefix="tos"
+          links={[
+            { label: "Why shroom\u00e9", href: "/#why" },
+            { label: "Ingredients", href: "/#ingredients" },
+            { label: "How It Works", href: "/#how" },
+            { label: "FAQ", href: "/faq" },
+            { label: "Blog", href: "/blog" },
+          ]}
+        />
       </nav>
 
       {/* ═══ HERO ═══ */}

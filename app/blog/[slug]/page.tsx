@@ -4,6 +4,7 @@ import Script from "next/script";
 import { blogPosts, getPostBySlug, getRelatedPosts } from "../posts";
 import BlogCTA from "./BlogCTA";
 import { notFound } from "next/navigation";
+import MobileNav from "../../MobileNav";
 
 export async function generateStaticParams() {
   return blogPosts.map((post) => ({ slug: post.slug }));
@@ -162,6 +163,7 @@ export default async function BlogPost({
         .post-nav-logo img{width:28px;height:28px;filter:brightness(0) saturate(100%) invert(10%) sepia(30%) saturate(1500%) hue-rotate(200deg) brightness(95%)}
         .post-nav-logo span{font-family:'Instrument Serif',Georgia,serif;font-size:22px;font-weight:400;font-style:italic;color:#1B1F3B}
         .post-nav-links{display:flex;gap:8px}
+        @media(max-width:768px){.post-nav-links{display:none !important}}
         .post-nav-links a{
           background:none;border:none;cursor:pointer;
           font-family:'Syne',system-ui,sans-serif;font-size:11.5px;font-weight:600;
@@ -318,7 +320,7 @@ export default async function BlogPost({
         /* ── RESPONSIVE ── */
         @media(max-width:640px){
           .post-nav{padding:0 4%;height:54px;gap:8px}
-          .post-nav-links{display:none}
+          /* post-nav-links hidden via main style block above */
           .post-nav-logo{gap:6px}
           .post-nav-logo span{font-size:18px}
           .post-nav-logo img{width:24px;height:24px}
@@ -356,6 +358,16 @@ export default async function BlogPost({
         <Link href="/" className="post-nav-cta">
           Get 20% off + free shipping &rarr;
         </Link>
+        <MobileNav
+          prefix="post"
+          links={[
+            { label: "Why shroom\u00e9", href: "/#why" },
+            { label: "Ingredients", href: "/#ingredients" },
+            { label: "How It Works", href: "/#how" },
+            { label: "FAQ", href: "/faq" },
+            { label: "Blog", href: "/blog" },
+          ]}
+        />
       </nav>
 
       {/* HEADER */}

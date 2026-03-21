@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Script from "next/script";
 import { blogPosts } from "./posts";
+import MobileNav from "../MobileNav";
 
 export const metadata: Metadata = {
   title: "Blog — shroomé | Matcha, Mushrooms & Wellness",
@@ -94,6 +95,7 @@ export default function BlogIndex() {
         .blog-nav-logo img{width:28px;height:28px;filter:brightness(0) saturate(100%) invert(10%) sepia(30%) saturate(1500%) hue-rotate(200deg) brightness(95%)}
         .blog-nav-logo span{font-family:'Instrument Serif',Georgia,serif;font-size:22px;font-weight:400;font-style:italic;color:#1B1F3B}
         .blog-nav-links{display:flex;gap:8px}
+        @media(max-width:768px){.blog-nav-links{display:none !important}}
         .blog-nav-links a{
           background:none;border:none;cursor:pointer;
           font-family:'Syne',system-ui,sans-serif;font-size:11.5px;font-weight:600;
@@ -181,7 +183,7 @@ export default function BlogIndex() {
         /* ── RESPONSIVE ── */
         @media(max-width:640px){
           .blog-nav{padding:0 4%;height:54px;gap:8px}
-          .blog-nav-links{display:none}
+          /* blog-nav-links hidden via main style block above */
           .blog-nav-logo{gap:6px}
           .blog-nav-logo span{font-size:18px}
           .blog-nav-logo img{width:24px;height:24px}
@@ -211,6 +213,16 @@ export default function BlogIndex() {
         <Link href="/" className="blog-nav-cta">
           Get 20% off + free shipping &rarr;
         </Link>
+        <MobileNav
+          prefix="blog"
+          links={[
+            { label: "Why shroom\u00e9", href: "/#why" },
+            { label: "Ingredients", href: "/#ingredients" },
+            { label: "How It Works", href: "/#how" },
+            { label: "FAQ", href: "/faq" },
+            { label: "Blog", href: "/blog" },
+          ]}
+        />
       </nav>
 
       {/* HERO */}

@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import MobileNav from "../MobileNav";
 
 declare global {
   interface Window {
@@ -71,7 +72,7 @@ export default function ReferPage() {
     <>
       <style>{`
         .ref-page { min-height: 100vh; background: #FDF4EE; font-family: 'Syne', system-ui, sans-serif; color: #1B1F3B; }
-        .ref-nav { display: flex; align-items: center; justify-content: space-between; padding: 0 6%; height: 60px; border-bottom: 1px solid rgba(27,31,59,0.06); }
+        .ref-nav { display: flex; align-items: center; justify-content: space-between; padding: 0 6%; height: 60px; border-bottom: 1px solid rgba(27,31,59,0.06); position: relative; }
         .ref-nav-logo { display: flex; align-items: center; gap: 8px; text-decoration: none; color: #1B1F3B; }
         .ref-nav-logo span { font-family: 'Instrument Serif', Georgia, serif; font-size: 22px; font-style: italic; }
         .ref-nav-cta { background: #1B1F3B; color: #FDF4EE; padding: 10px 20px; font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; transition: background 0.2s; }
@@ -144,7 +145,17 @@ export default function ReferPage() {
             <img src="/logo-mark.png" width={28} height={28} alt="shroomé S" />
             <span>shroomé</span>
           </a>
-          <a href="/" className="ref-nav-cta">Get 20% off →</a>
+          <a href="/" className="ref-nav-cta">Get 20% off &rarr;</a>
+          <MobileNav
+            prefix="ref"
+            links={[
+              { label: "Why shroom\u00e9", href: "/#why" },
+              { label: "Ingredients", href: "/#ingredients" },
+              { label: "How It Works", href: "/#how" },
+              { label: "FAQ", href: "/faq" },
+              { label: "Blog", href: "/blog" },
+            ]}
+          />
         </nav>
 
         {/* Hero */}

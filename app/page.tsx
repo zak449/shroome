@@ -422,7 +422,7 @@ export default function Home() {
             top: "100%",
             left: 0,
             right: 0,
-            background: "#1B1F3B",
+            background: "#FDF4EE",
             maxHeight: menuOpen ? 400 : 0,
             overflow: "hidden",
             transition: "max-height 0.35s ease",
@@ -430,6 +430,7 @@ export default function Home() {
             flexDirection: "column",
             alignItems: "center",
             gap: 0,
+            boxShadow: menuOpen ? "0 8px 32px rgba(27,31,59,0.10)" : "none",
           }}
         >
           {[
@@ -452,7 +453,7 @@ export default function Home() {
               style={{
                 background: "none",
                 border: "none",
-                borderBottom: "1px solid rgba(253,244,238,0.1)",
+                borderBottom: "1px solid rgba(27,31,59,0.08)",
                 width: "100%",
                 padding: "16px 24px",
                 fontFamily: "'Syne', system-ui, sans-serif",
@@ -460,7 +461,7 @@ export default function Home() {
                 fontSize: "0.78rem",
                 letterSpacing: "0.1em",
                 textTransform: "uppercase" as const,
-                color: "#FDF4EE",
+                color: "#1B1F3B",
                 cursor: "pointer",
                 textAlign: "center",
               }}

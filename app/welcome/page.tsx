@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import MobileNav from "../MobileNav";
 
 declare global {
   interface Window {
@@ -75,6 +76,7 @@ export default function WelcomePage() {
           padding: "20px 24px",
           maxWidth: 1120,
           margin: "0 auto",
+          position: "relative" as const,
         }}
       >
         <a
@@ -122,6 +124,16 @@ export default function WelcomePage() {
         >
           Get 20% off &rarr;
         </a>
+        <MobileNav
+          prefix="wel"
+          links={[
+            { label: "Why shroom\u00e9", href: "/#why" },
+            { label: "Ingredients", href: "/#ingredients" },
+            { label: "How It Works", href: "/#how" },
+            { label: "FAQ", href: "/faq" },
+            { label: "Blog", href: "/blog" },
+          ]}
+        />
       </nav>
 
       {/* ── HERO ───────────────────────────────────── */}
