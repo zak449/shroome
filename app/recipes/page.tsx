@@ -24,9 +24,9 @@ const recipes = [
     name: "Vanilla Matcha Smoothie",
     description:
       "A creamy, thick matcha smoothie with frozen banana and vanilla shroomé. Blend it up in under a minute.",
-    prepTime: "PT1M",
-    prepLabel: "1 min",
-    totalTime: "PT2M",
+    prepTime: "PT45S",
+    prepLabel: "45 sec",
+    totalTime: "PT1M",
     color: "#FFB7D1",
     textColor: "#1B1F3B",
     ingredients: [
@@ -89,9 +89,9 @@ const recipes = [
     name: "Protein Matcha Shake",
     description:
       "Post-workout matcha with protein. Blend a shroomé sachet with your favorite protein powder for clean energy and recovery.",
-    prepTime: "PT1M",
-    prepLabel: "1 min",
-    totalTime: "PT2M",
+    prepTime: "PT45S",
+    prepLabel: "45 sec",
+    totalTime: "PT1M",
     color: "#C8FF3A",
     textColor: "#1B1F3B",
     ingredients: [
@@ -114,7 +114,7 @@ const recipes = [
       "The classic hot matcha latte — steamed oat milk and one shroomé sachet. Cozy, clean energy in under a minute.",
     prepTime: "PT30S",
     prepLabel: "30 sec",
-    totalTime: "PT1M30S",
+    totalTime: "PT1M",
     color: "#FFB7D1",
     textColor: "#1B1F3B",
     ingredients: [
@@ -591,14 +591,13 @@ export default function RecipesPage() {
         <div className="rec-hero-inner">
           <div className="rec-hero-tag">Recipes</div>
           <h1>
-            Six ways to pour.
+            Nine ways to pour.
             <br />
-            <em>All under two minutes.</em>
+            <em>All under a minute.</em>
           </h1>
           <p className="rec-hero-sub">
-            shroomé was made for simplicity. One sachet. Your milk. Done.
-            Here are <strong>six recipes</strong> to get you started — from the
-            classic iced latte to a matcha affogato.
+            shroomé was built for convenience. One sachet. Your milk. Done.
+            Here are <strong>nine recipes</strong> — every single one takes under 60 seconds. Because your morning shouldn't be a production.
           </p>
         </div>
       </section>
