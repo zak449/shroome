@@ -69,10 +69,10 @@ export function welcomeEmail(email: string, referralCode?: string) {
                 </tr>
               </table>
             </td></tr>
-            <tr><td style="padding:140px 0 0;"></td></tr>
+            <tr><td style="padding:300px 0 0;"></td></tr>
             <tr><td style="padding:0 36px 8px;text-align:center;">
               <p style="margin:0 0 10px;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:${BRAND.lime};font-weight:700;">\u2726 YOU\u2019RE IN \u2726</p>
-              <h1 style="margin:0;font-size:46px;color:#fff;font-weight:400;line-height:1.05;font-family:${SERIF};">
+              <h1 style="margin:0;font-size:42px;color:#fff;font-weight:400;line-height:1.05;font-family:${SERIF};">
                 Caf\u00e9 energy.<br/><span style="font-style:italic;color:${BRAND.lime};">Home address.</span>
               </h1>
             </td></tr>

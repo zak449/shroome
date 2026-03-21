@@ -111,14 +111,11 @@ async function syncToKlaviyo(email: string, phone?: string, referralCode?: strin
     }
   }
 
-  // Step 4: Add to SMS list + subscribe (if phone provided)
+  // Step 4: Subscribe to SMS (if phone provided)
+  // NOTE: Only use subscription API — do NOT also add to list separately,
+  // as that triggers a duplicate auto-welcome text from Klaviyo
   if (smsListId && phoneE164) {
     try {
-      await fetch(`https://a.klaviyo.com/api/lists/${smsListId}/relationships/profiles/`, {
-        method: "POST",
-        headers,
-        body: JSON.stringify({ data: [{ type: "profile", id: profileId }] }),
-      });
       await fetch("https://a.klaviyo.com/api/profile-subscription-bulk-create-jobs/", {
         method: "POST",
         headers,
