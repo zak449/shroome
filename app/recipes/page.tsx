@@ -410,7 +410,8 @@ export default function RecipesPage() {
         .rec-full:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
         .rec-full-image{
           width:100%;
-          height:240px;
+          max-width:400px;
+          aspect-ratio:3/4;
           border-radius:14px;
           display:flex;align-items:center;justify-content:center;
           margin-bottom:28px;
@@ -536,7 +537,7 @@ export default function RecipesPage() {
           .rec-nav-cta{padding:8px 14px;font-size:10px;letter-spacing:.04em;white-space:nowrap}
           .rec-hero{padding:48px 6% 40px}
           .rec-card{padding:24px 20px;min-height:180px}
-          .rec-full-image{height:180px}
+          .rec-full-image{max-width:100%;aspect-ratio:3/4}
         }
         @media(max-width:480px){
           .rec-grid{grid-template-columns:1fr;gap:12px}
