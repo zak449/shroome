@@ -157,6 +157,11 @@ export function welcomeEmail(email: string, referralCode?: string) {
             </td></tr>
           </table>
         </td></tr>
+        <tr><td style="padding:12px 40px 8px;text-align:center;">
+          <a href="https://www.drinkshroome.com/refer" style="display:inline-block;background:${BRAND.navy};color:${BRAND.cream};padding:14px 32px;font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;font-family:${SANS};">
+            Share &amp; track your referrals &rarr;
+          </a>
+        </td></tr>
         <tr><td style="padding:8px 40px 32px;text-align:center;">
           <p style="margin:0;font-size:12px;color:${BRAND.navy};opacity:0.45;">
             Share it everywhere. Every friend who joins counts toward your extra 10% off.

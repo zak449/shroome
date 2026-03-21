@@ -663,6 +663,12 @@ export default function Home() {
                             {referralCount}/3 friends joined
                           </p>
                         </div>
+                        <a
+                          href="/refer"
+                          style={{ display: "inline-block", marginTop: 14, fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.06em", textTransform: "uppercase" as const, color: "#1B1F3B", textDecoration: "underline", opacity: 0.5 }}
+                        >
+                          Share &amp; track referrals →
+                        </a>
                       </div>
                     )}
                   </div>
