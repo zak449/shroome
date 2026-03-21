@@ -1,7 +1,8 @@
 // ─── shroome emails — premium beverage brand ────────────────────────────────
-// ONE concept. SHORT copy. BOLD type. CONFIDENT.
-// 60% beta glucans · 20% collagen · 20% drink
-// Visual DNA: sachets on lavender/pink, organic circles, navy stat cards, lime accents
+// DESIGN PHILOSOPHY: One flowing canvas. Every section melts into the next.
+// No jarring color blocks. Smooth gradient transitions. Full-bleed images.
+// Matcha green text (#2D4A2D), never black. Lifestyle > catalog.
+// Inspired by: Blume, Italic, La Machine Cycling Club, Glossier
 
 const BRAND = {
   navy: "#1B1F3B",
@@ -11,6 +12,7 @@ const BRAND = {
   lavender: "#D4B8E0",
   softLav: "#E8D5F0",
   blush: "#FFE0EC",
+  matcha: "#2D4A2D",
   sachetsBoth: "https://www.drinkshroome.com/sachets-both.png",
   sachetVanilla: "https://www.drinkshroome.com/sachet-vanilla.png",
   siteUrl: "https://www.drinkshroome.com",
@@ -51,97 +53,66 @@ export function welcomeEmail(email: string, referralCode?: string) {
   const subject = "you just made the list \ud83d\udc9a";
   const heroImg = "https://www.drinkshroome.com/email-hero-cup.jpg";
   const cloudsImg = "https://www.drinkshroome.com/email-clouds-bg.jpg";
+  const G = BRAND.matcha; // matcha green shorthand
   const html = emailShell(`
 
-    <!-- ═══ FULL-BLEED HERO — lifestyle image with overlay ═══ -->
+    <!-- ═══ HERO — full-bleed lifestyle image, text below the cup ═══ -->
     <tr><td style="padding:0;background-color:${BRAND.navy};">
-      <!--[if gte mso 9]><v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:600px;height:400px;">
-      <v:fill type="frame" src="${heroImg}" /><v:textbox inset="0,0,0,0"><![endif]-->
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:url('${heroImg}') center top / cover no-repeat ${BRAND.navy};">
         <tr><td style="padding:0;">
-          <!-- Overlay — lighter at top to show cup, darker at bottom for text -->
-          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:linear-gradient(180deg, rgba(27,31,59,0.15) 0%, rgba(27,31,59,0.1) 35%, rgba(27,31,59,0.6) 60%, rgba(27,31,59,0.8) 100%);">
-            <!-- Top nav bar -->
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:linear-gradient(180deg, rgba(27,31,59,0.08) 0%, rgba(27,31,59,0.05) 30%, rgba(27,31,59,0.55) 55%, rgba(27,31,59,0.88) 100%);">
             <tr><td style="padding:16px 28px;">
               <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
                 <tr>
                   <td style="font-size:22px;font-family:${SERIF};font-style:italic;color:#fff;font-weight:400;">shroom\u00e9</td>
-                  <td align="right">
-                    <span style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:${BRAND.lime};font-weight:700;">PRE-LAUNCH LIST</span>
-                  </td>
+                  <td align="right"><span style="font-size:9px;letter-spacing:2px;text-transform:uppercase;color:${BRAND.lime};font-weight:700;">PRE-LAUNCH</span></td>
                 </tr>
               </table>
             </td></tr>
-
-            <!-- Spacer — lets the cup image breathe -->
-            <tr><td style="padding:160px 0 0;"></td></tr>
-
-            <!-- Hero text below the cup -->
-            <tr><td style="padding:0 36px 12px;text-align:center;">
-              <p style="margin:0 0 12px;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:${BRAND.lime};font-weight:700;">
-                \u2726 YOU\u2019RE IN \u2726
-              </p>
-            </td></tr>
-            <tr><td style="padding:0 36px 0;text-align:center;">
-              <h1 style="margin:0;font-size:48px;color:#fff;font-weight:400;line-height:1.05;font-family:${SERIF};">
+            <tr><td style="padding:140px 0 0;"></td></tr>
+            <tr><td style="padding:0 36px 8px;text-align:center;">
+              <p style="margin:0 0 10px;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:${BRAND.lime};font-weight:700;">\u2726 YOU\u2019RE IN \u2726</p>
+              <h1 style="margin:0;font-size:46px;color:#fff;font-weight:400;line-height:1.05;font-family:${SERIF};">
                 Caf\u00e9 energy.<br/><span style="font-style:italic;color:${BRAND.lime};">Home address.</span>
               </h1>
             </td></tr>
-            <tr><td style="padding:16px 48px 20px;text-align:center;">
-              <p style="margin:0;font-size:14px;color:rgba(255,255,255,0.85);line-height:1.6;">
+            <tr><td style="padding:12px 48px 16px;text-align:center;">
+              <p style="margin:0;font-size:13px;color:rgba(255,255,255,0.8);line-height:1.6;">
                 The world\u2019s first ready-to-pour ceremonial matcha latte.<br/>2g matcha \u00b7 mushroom extracts \u00b7 collagen \u00b7 zero crash.
               </p>
             </td></tr>
-
-            <!-- Pill tags on image -->
-            <tr><td style="padding:0 36px 40px;text-align:center;">
+            <tr><td style="padding:0 36px 28px;text-align:center;">
               <table role="presentation" cellpadding="0" cellspacing="0" style="margin:0 auto;">
                 <tr>
-                  <td style="background:rgba(255,255,255,0.15);backdrop-filter:blur(10px);border-radius:20px;padding:6px 14px;border:1px solid rgba(255,255,255,0.2);">
-                    <span style="font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#fff;">20% OFF</span>
-                  </td>
-                  <td style="width:8px;"></td>
-                  <td style="background:rgba(255,255,255,0.15);border-radius:20px;padding:6px 14px;border:1px solid rgba(255,255,255,0.2);">
-                    <span style="font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#fff;">FREE SHIPPING</span>
-                  </td>
-                  <td style="width:8px;"></td>
-                  <td style="background:rgba(255,255,255,0.15);border-radius:20px;padding:6px 14px;border:1px solid rgba(255,255,255,0.2);">
-                    <span style="font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#fff;">EARLY ACCESS</span>
-                  </td>
+                  <td style="background:rgba(200,255,58,0.15);border-radius:20px;padding:5px 13px;border:1px solid rgba(200,255,58,0.25);"><span style="font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:${BRAND.lime};">20% OFF</span></td>
+                  <td style="width:6px;"></td>
+                  <td style="background:rgba(200,255,58,0.15);border-radius:20px;padding:5px 13px;border:1px solid rgba(200,255,58,0.25);"><span style="font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:${BRAND.lime};">FREE SHIPPING</span></td>
+                  <td style="width:6px;"></td>
+                  <td style="background:rgba(200,255,58,0.15);border-radius:20px;padding:5px 13px;border:1px solid rgba(200,255,58,0.25);"><span style="font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:${BRAND.lime};">EARLY ACCESS</span></td>
                 </tr>
               </table>
             </td></tr>
           </table>
         </td></tr>
       </table>
-      <!--[if gte mso 9]></v:textbox></v:rect><![endif]-->
     </td></tr>
 
-    <!-- ═══ PRODUCT SHOWCASE — sachets on lavender ═══ -->
-    <tr><td style="padding:0;background-color:${BRAND.lavender};">
+    <!-- ═══ FLOW: hero → sachets (navy fades into lavender) ═══ -->
+    <tr><td style="padding:0;background:linear-gradient(180deg, ${BRAND.navy} 0%, ${BRAND.lavender} 100%);text-align:center;">
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
-        <tr><td style="padding:40px 36px 8px;text-align:center;">
-          <p style="margin:0 0 6px;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#2D4A2D;opacity:0.6;font-weight:600;">THE RITUAL</p>
-          <p style="margin:0;font-size:32px;color:#2D4A2D;font-weight:400;font-family:${SERIF};font-style:italic;line-height:1.1;">
-            Tear. Pour. <span style="color:#E8936D;">Feel the shift.</span>
+        <tr><td style="padding:36px 36px 6px;text-align:center;">
+          <p style="margin:0 0 4px;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.4);font-weight:600;">THE RITUAL</p>
+          <p style="margin:0;font-size:30px;color:#fff;font-weight:400;font-family:${SERIF};font-style:italic;line-height:1.1;">
+            Tear. Pour. <span style="color:${BRAND.lime};">Feel the shift.</span>
           </p>
         </td></tr>
-        <tr><td style="padding:24px 20px 0;text-align:center;">
-          <img src="${BRAND.sachetsBoth}" alt="shroom\u00e9 vanilla and strawberry sachets" width="480" style="display:inline-block;width:85%;max-width:480px;height:auto;" />
+        <tr><td style="padding:20px 16px 0;text-align:center;">
+          <img src="${BRAND.sachetsBoth}" alt="shroom\u00e9 sachets" width="460" style="display:inline-block;width:82%;max-width:460px;height:auto;" />
         </td></tr>
-        <tr><td style="padding:20px 40px 12px;text-align:center;">
-          <p style="margin:0;font-size:13px;color:#2D4A2D;line-height:1.7;opacity:0.65;">
-            Two flavors. Twelve sachets per box. Each one pre-dissolved \u2014 no powder, no frother. Just 15 seconds to caf\u00e9-grade matcha.
+        <tr><td style="padding:16px 40px 32px;text-align:center;">
+          <p style="margin:0;font-size:12px;color:${G};line-height:1.7;opacity:0.7;">
+            Two flavors. Twelve per box. Pre-dissolved \u2014 no powder, no frother. 15 seconds to caf\u00e9-grade matcha.
           </p>
-        </td></tr>
-        <tr><td style="padding:8px 36px 36px;text-align:center;">
-          <table role="presentation" cellpadding="0" cellspacing="0" style="margin:0 auto;">
-            <tr><td style="background:#2D4A2D;border-radius:50px;padding:14px 44px;">
-              <a href="${BRAND.siteUrl}" style="color:${BRAND.lime};font-size:12px;font-weight:700;text-decoration:none;letter-spacing:2px;text-transform:uppercase;">
-                SEE WHAT\u2019S INSIDE \u2192
-              </a>
-            </td></tr>
-          </table>
         </td></tr>
       </table>
     </td></tr>
@@ -183,13 +154,11 @@ export function welcomeEmail(email: string, referralCode?: string) {
     </td></tr>
     ` : ''}
 
-    <!-- ═══ BETA-GLUCAN SECTION (60%) — navy block ═══════════════════════
-         The education hook. Point-blank. Bold.
-         ═════════════════════════════════════════════════════════════════ -->
-    <tr><td style="padding:48px 40px 24px;background-color:${BRAND.navy};text-align:center;">
-      <p style="margin:0 0 6px;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:${BRAND.lavender};font-weight:600;">WHAT\u2019S INSIDE</p>
-      <p style="margin:0 0 16px;font-size:38px;color:${BRAND.lavender};font-weight:400;font-family:${SERIF};font-style:italic;line-height:1.05;opacity:0.6;">
-        Clean label. Real doses.
+    <!-- ═══ FLOW: lavender → navy (smooth transition into ingredients) ═══ -->
+    <tr><td style="padding:40px 40px 24px;background:linear-gradient(180deg, ${BRAND.lavender} 0%, ${BRAND.navy} 100%);text-align:center;">
+      <p style="margin:0 0 6px;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.5);font-weight:600;">WHAT\u2019S INSIDE</p>
+      <p style="margin:0;font-size:34px;color:#fff;font-weight:400;font-family:${SERIF};font-style:italic;line-height:1.1;">
+        Clean label. <span style="color:${BRAND.lime};">Real doses.</span>
       </p>
     </td></tr>
 
@@ -296,49 +265,43 @@ export function welcomeEmail(email: string, referralCode?: string) {
       </table>
     </td></tr>
 
-    <!-- Organic circle accent on navy -->
-    <tr><td style="padding:0 0 0;background-color:${BRAND.navy};text-align:right;line-height:0;">
-      <table role="presentation" cellpadding="0" cellspacing="0" style="margin-left:auto;">
-        <tr>
-          <td style="width:100px;height:100px;border-radius:50%;background-color:${BRAND.lavender};opacity:0.08;"></td>
-          <td style="width:30px;"></td>
-        </tr>
+    <!-- ═══ FLOW: navy → clouds CTA (seamless transition) ═══ -->
+    <tr><td style="padding:0;background:linear-gradient(180deg, ${BRAND.navy} 0%, ${BRAND.pink} 100%);">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+        <tr><td style="padding:36px 40px 0;text-align:center;">
+          <p style="margin:0;font-size:13px;color:rgba(255,255,255,0.2);font-style:italic;">
+            \u201cEvery competitor sells mushroom powder. We sell what\u2019s actually inside it.\u201d
+          </p>
+        </td></tr>
+        <tr><td style="padding:24px 0 0;"></td></tr>
       </table>
     </td></tr>
 
-    <!-- ═══ FINAL CTA — clouds image background with overlay ═══ -->
     <tr><td style="padding:0;background-color:${BRAND.pink};">
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:url('${cloudsImg}') center center / cover no-repeat ${BRAND.pink};">
         <tr><td style="padding:0;">
-          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:linear-gradient(180deg, rgba(255,183,209,0.85) 0%, rgba(255,183,209,0.7) 50%, rgba(212,184,224,0.8) 100%);">
-            <tr><td style="padding:48px 40px 16px;text-align:center;">
-              <p style="margin:0 0 6px;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:${BRAND.navy};opacity:0.5;font-weight:600;">YOU\u2019RE ON THE LIST</p>
-              <p style="margin:0 0 24px;font-size:38px;color:${BRAND.navy};font-weight:400;font-family:${SERIF};font-style:italic;line-height:1.05;">
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:linear-gradient(180deg, rgba(255,183,209,0.75) 0%, rgba(255,183,209,0.55) 40%, rgba(212,184,224,0.7) 100%);">
+            <tr><td style="padding:40px 40px 16px;text-align:center;">
+              <p style="margin:0 0 20px;font-size:34px;color:${G};font-weight:400;font-family:${SERIF};font-style:italic;line-height:1.1;">
                 This is what<br/>you\u2019re <span style="color:#E8936D;">getting.</span>
               </p>
               <table role="presentation" cellpadding="0" cellspacing="0" style="margin:0 auto;">
-                <tr><td style="background:${BRAND.navy};border-radius:50px;padding:16px 52px;">
-                  <a href="${BRAND.siteUrl}" style="color:${BRAND.lime};font-size:13px;font-weight:700;text-decoration:none;letter-spacing:2px;text-transform:uppercase;">
+                <tr><td style="background:${G};border-radius:50px;padding:14px 48px;">
+                  <a href="${BRAND.siteUrl}" style="color:${BRAND.lime};font-size:12px;font-weight:700;text-decoration:none;letter-spacing:2px;text-transform:uppercase;">
                     EXPLORE SHROOM\u00c9 \u2192
                   </a>
                 </td></tr>
               </table>
-              <p style="margin:14px 0 0;font-size:12px;color:${BRAND.navy};opacity:0.5;">
-                Your exclusive 20% off + free shipping drops when we launch.
+              <p style="margin:12px 0 0;font-size:11px;color:${G};opacity:0.5;">
+                20% off + free shipping locked in.
               </p>
             </td></tr>
-            <tr><td style="padding:20px 40px 40px;text-align:center;">
+            <tr><td style="padding:24px 40px 36px;text-align:center;">
               <table role="presentation" cellpadding="0" cellspacing="0" style="margin:0 auto;">
                 <tr>
-                  <td style="text-align:center;padding:0 16px;">
-                    <a href="https://tiktok.com/@drinkshroome" style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:${BRAND.navy};text-decoration:none;opacity:0.5;">TikTok</a>
-                  </td>
-                  <td style="text-align:center;padding:0 16px;">
-                    <a href="https://instagram.com/drinkshroome" style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:${BRAND.navy};text-decoration:none;opacity:0.5;">Instagram</a>
-                  </td>
-                  <td style="text-align:center;padding:0 16px;">
-                    <a href="https://youtube.com/@drinkshroome" style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:${BRAND.navy};text-decoration:none;opacity:0.5;">YouTube</a>
-                  </td>
+                  <td style="padding:0 14px;"><a href="https://tiktok.com/@drinkshroome" style="font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:${G};text-decoration:none;opacity:0.4;">TikTok</a></td>
+                  <td style="padding:0 14px;"><a href="https://instagram.com/drinkshroome" style="font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:${G};text-decoration:none;opacity:0.4;">Instagram</a></td>
+                  <td style="padding:0 14px;"><a href="https://youtube.com/@drinkshroome" style="font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:${G};text-decoration:none;opacity:0.4;">YouTube</a></td>
                 </tr>
               </table>
             </td></tr>
@@ -387,25 +350,25 @@ export function sachetEmail(email: string) {
       </table>
     </td></tr>
 
-    <!-- ═══ PRODUCT — vanilla sachet on lavender (visible contrast) ═══ -->
-    <tr><td style="padding:0;background-color:${BRAND.lavender};">
+    <!-- ═══ FLOW: clouds hero → sachet on lavender → navy ═══ -->
+    <tr><td style="padding:0;background:linear-gradient(180deg, ${BRAND.pink} 0%, ${BRAND.lavender} 100%);">
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
-        <tr><td style="padding:36px 20px 0;text-align:center;">
-          <img src="${BRAND.sachetVanilla}" alt="shroom\u00e9 vanilla sachet" width="200" style="display:inline-block;width:200px;max-width:200px;height:auto;" />
+        <tr><td style="padding:32px 20px 0;text-align:center;">
+          <img src="${BRAND.sachetVanilla}" alt="shroom\u00e9 vanilla sachet" width="180" style="display:inline-block;width:180px;max-width:180px;height:auto;" />
         </td></tr>
-        <tr><td style="padding:20px 40px 36px;text-align:center;">
-          <p style="margin:0;font-size:20px;color:#2D4A2D;font-weight:400;font-family:${SERIF};font-style:italic;">
+        <tr><td style="padding:16px 40px 28px;text-align:center;">
+          <p style="margin:0;font-size:20px;color:${BRAND.matcha};font-weight:400;font-family:${SERIF};font-style:italic;">
             pour \u00b7 swirl \u00b7 <span style="color:#E8936D;">glow</span>
           </p>
-          <p style="margin:10px 0 0;font-size:12px;color:#2D4A2D;opacity:0.55;letter-spacing:1px;text-transform:uppercase;font-weight:600;">
+          <p style="margin:8px 0 0;font-size:11px;color:${BRAND.matcha};opacity:0.5;letter-spacing:1px;text-transform:uppercase;font-weight:600;">
             ceremonial matcha \u00b7 collagen \u00b7 mushroom beta-glucans
           </p>
         </td></tr>
       </table>
     </td></tr>
 
-    <!-- ═══ THE HOOK — full-width on navy ═══ -->
-    <tr><td style="padding:48px 40px 20px;background-color:${BRAND.navy};text-align:center;">
+    <!-- ═══ FLOW: lavender → navy (seamless) ═══ -->
+    <tr><td style="padding:40px 40px 20px;background:linear-gradient(180deg, ${BRAND.lavender} 0%, ${BRAND.navy} 100%);text-align:center;">
       <p style="margin:0 0 6px;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:${BRAND.lavender};font-weight:600;">THE DIFFERENCE</p>
       <p style="margin:0 0 14px;font-size:34px;color:#fff;font-weight:400;font-family:${SERIF};font-style:italic;line-height:1.1;">
         It\u2019s not the mushroom.
@@ -471,37 +434,40 @@ export function sachetEmail(email: string) {
       </table>
     </td></tr>
 
-    <!-- Quote -->
-    <tr><td style="padding:24px 40px 40px;background-color:${BRAND.navy};text-align:center;">
-      <p style="margin:0;font-size:14px;color:rgba(255,255,255,0.2);font-style:italic;line-height:1.5;">
-        \u201cEvery competitor sells mushroom powder.<br/>We sell what\u2019s actually inside it.\u201d
-      </p>
+    <!-- ═══ FLOW: navy → lifestyle CTA (seamless with gradient bridge) ═══ -->
+    <tr><td style="padding:0;background:linear-gradient(180deg, ${BRAND.navy} 0%, rgba(27,31,59,0.85) 100%);">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+        <tr><td style="padding:28px 40px;text-align:center;">
+          <p style="margin:0;font-size:13px;color:rgba(255,255,255,0.2);font-style:italic;">
+            \u201cEvery competitor sells mushroom powder. We sell what\u2019s actually inside it.\u201d
+          </p>
+        </td></tr>
+      </table>
     </td></tr>
 
-    <!-- ═══ FINAL CTA — lifestyle image background ═══ -->
     <tr><td style="padding:0;background-color:${BRAND.navy};">
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:url('${heroImg}') center center / cover no-repeat ${BRAND.navy};">
         <tr><td style="padding:0;">
-          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:linear-gradient(180deg, rgba(27,31,59,0.7) 0%, rgba(27,31,59,0.4) 50%, rgba(27,31,59,0.75) 100%);">
-            <tr><td style="padding:60px 40px 20px;text-align:center;">
-              <p style="margin:0 0 24px;font-size:38px;color:#fff;font-weight:400;font-family:${SERIF};font-style:italic;line-height:1.1;">
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:linear-gradient(180deg, rgba(27,31,59,0.8) 0%, rgba(27,31,59,0.35) 40%, rgba(255,183,209,0.5) 100%);">
+            <tr><td style="padding:48px 40px 16px;text-align:center;">
+              <p style="margin:0 0 20px;font-size:36px;color:#fff;font-weight:400;font-family:${SERIF};font-style:italic;line-height:1.1;">
                 The ritual is ready.<br/><span style="color:${BRAND.lime};">Just pour.</span>
               </p>
               <table role="presentation" cellpadding="0" cellspacing="0" style="margin:0 auto;">
-                <tr><td style="background:${BRAND.lime};border-radius:50px;padding:16px 52px;">
-                  <a href="${BRAND.siteUrl}" style="color:${BRAND.navy};font-size:13px;font-weight:700;text-decoration:none;letter-spacing:2px;text-transform:uppercase;">
+                <tr><td style="background:${BRAND.lime};border-radius:50px;padding:14px 48px;">
+                  <a href="${BRAND.siteUrl}" style="color:${BRAND.navy};font-size:12px;font-weight:700;text-decoration:none;letter-spacing:2px;text-transform:uppercase;">
                     EXPLORE SHROOM\u00c9 \u2192
                   </a>
                 </td></tr>
               </table>
-              <p style="margin:14px 0 0;font-size:12px;color:rgba(255,255,255,0.5);">Your 20% off + free shipping is locked in.</p>
+              <p style="margin:12px 0 0;font-size:11px;color:rgba(255,255,255,0.55);">20% off + free shipping locked in.</p>
             </td></tr>
-            <tr><td style="padding:20px 40px 48px;text-align:center;">
+            <tr><td style="padding:20px 40px 40px;text-align:center;">
               <table role="presentation" cellpadding="0" cellspacing="0" style="margin:0 auto;">
                 <tr>
-                  <td style="padding:0 16px;"><a href="https://tiktok.com/@drinkshroome" style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.4);text-decoration:none;">TikTok</a></td>
-                  <td style="padding:0 16px;"><a href="https://instagram.com/drinkshroome" style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.4);text-decoration:none;">Instagram</a></td>
-                  <td style="padding:0 16px;"><a href="https://youtube.com/@drinkshroome" style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.4);text-decoration:none;">YouTube</a></td>
+                  <td style="padding:0 14px;"><a href="https://tiktok.com/@drinkshroome" style="font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.35);text-decoration:none;">TikTok</a></td>
+                  <td style="padding:0 14px;"><a href="https://instagram.com/drinkshroome" style="font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.35);text-decoration:none;">Instagram</a></td>
+                  <td style="padding:0 14px;"><a href="https://youtube.com/@drinkshroome" style="font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.35);text-decoration:none;">YouTube</a></td>
                 </tr>
               </table>
             </td></tr>
