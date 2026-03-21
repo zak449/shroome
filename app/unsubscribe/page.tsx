@@ -55,7 +55,7 @@ function UnsubscribeFlow() {
       <div style={{ maxWidth: 480, width: "100%", textAlign: "center" }}>
         {/* Logo */}
         <a href="https://drinkshroome.com" style={{ display: "inline-block", marginBottom: 40 }}>
-          <img src="/logo-navy.png" alt="shroomé" width={100} style={{ display: "block" }} />
+          <img src="/logo-mark.png" alt="shroomé" width={100} style={{ display: "block" }} />
         </a>
 
         {/* Step 1: Confirm */}

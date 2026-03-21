@@ -328,7 +328,7 @@ export default function Home() {
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-          <img src="/logo-mark.svg" width={28} height={28} alt="S" style={{ filter: "brightness(0) saturate(100%) invert(10%) sepia(30%) saturate(1500%) hue-rotate(200deg) brightness(95%)" }} />
+          <img src="/logo-mark.png" width={28} height={28} alt="shroomé S" />
           <span
             style={{
               fontFamily: "'Instrument Serif', Georgia, serif",

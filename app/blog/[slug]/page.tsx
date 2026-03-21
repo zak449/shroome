@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Script from "next/script";
 import { blogPosts, getPostBySlug, getRelatedPosts } from "../posts";
+import BlogCTA from "./BlogCTA";
 import { notFound } from "next/navigation";
 
 export async function generateStaticParams() {
@@ -69,7 +70,7 @@ export default async function BlogPost({
 
   const articleSchema = {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": "BlogPosting",
     headline: post.title,
     description: post.metaDescription,
     datePublished: post.date,
@@ -77,8 +78,9 @@ export default async function BlogPost({
     author: {
       "@type": "Person",
       name: post.author,
-      jobTitle: "Founder",
+      jobTitle: "Founder & CEO",
       url: "https://drinkshroome.com",
+      worksFor: { "@type": "Organization", name: "ZSQUARED INC" },
     },
     publisher: {
       "@type": "Organization",
@@ -86,7 +88,9 @@ export default async function BlogPost({
       url: "https://drinkshroome.com",
       logo: {
         "@type": "ImageObject",
-        url: "https://drinkshroome.com/logo-mark.svg",
+        url: "https://drinkshroome.com/logo-mark.png",
+        width: 200,
+        height: 200,
       },
     },
     mainEntityOfPage: {
@@ -95,6 +99,35 @@ export default async function BlogPost({
     },
     articleSection: post.category,
     wordCount: post.content.replace(/<[^>]*>/g, "").split(/\s+/).length,
+    inLanguage: "en-US",
+    isAccessibleForFree: true,
+    url: `https://drinkshroome.com/blog/${post.slug}`,
+    keywords: post.metaDescription,
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://drinkshroome.com",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Blog",
+        item: "https://drinkshroome.com/blog",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: post.title,
+        item: `https://drinkshroome.com/blog/${post.slug}`,
+      },
+    ],
   };
 
   const shareUrl = encodeURIComponent(
@@ -108,6 +141,11 @@ export default async function BlogPost({
         id="article-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <Script
+        id="breadcrumb-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
       <style>{`
@@ -305,7 +343,7 @@ export default async function BlogPost({
       {/* NAV */}
       <nav className="post-nav">
         <Link href="/" className="post-nav-logo">
-          <img src="/logo-mark.svg" width={28} height={28} alt="S" />
+          <img src="/logo-mark.png" width={28} height={28} alt="shroomé S" />
           <span>shroom&eacute;</span>
         </Link>
         <div className="post-nav-links">
@@ -346,6 +384,9 @@ export default async function BlogPost({
         className="post-body"
         dangerouslySetInnerHTML={{ __html: post.content }}
       />
+
+      {/* EMAIL CAPTURE CTA */}
+      <BlogCTA />
 
       {/* SHARE */}
       <div className="post-share">

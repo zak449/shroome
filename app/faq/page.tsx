@@ -105,26 +105,23 @@ const faqSchema = {
   ),
 };
 
-const orgSchema = {
+const breadcrumbSchema = {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  name: "ZSQUARED INC",
-  brand: { "@type": "Brand", name: "shroomé" },
-  alternateName: ["Shroome", "Shroomé", "drinkshroome"],
-  url: "https://drinkshroome.com",
-  logo: "https://drinkshroome.com/logo-navy.png",
-  description:
-    "shroomé is the world's first ready-to-pour ceremonial matcha latte. 2g matcha, 2g grass-fed collagen, real mushroom extracts. Tear it open. Pour it in. Done.",
-  sameAs: [
-    "https://tiktok.com/@drinkshroome",
-    "https://instagram.com/drinkshroome",
-    "https://youtube.com/@drinkshroome",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://drinkshroome.com",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "FAQ",
+      item: "https://drinkshroome.com/faq",
+    },
   ],
-  contactPoint: {
-    "@type": "ContactPoint",
-    email: "hello@drinkshroome.com",
-    contactType: "customer service",
-  },
 };
 
 const pills = [
@@ -168,9 +165,9 @@ export default function FAQ() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <Script
-        id="org-schema"
+        id="breadcrumb-schema"
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
       <style>{`
@@ -364,7 +361,7 @@ export default function FAQ() {
       {/* ═══ NAV ═══ */}
       <nav className="faq-nav">
         <a href="/" className="faq-nav-logo">
-          <img src="/logo-mark.svg" width={28} height={28} alt="S" />
+          <img src="/logo-mark.png" width={28} height={28} alt="shroomé S" />
           <span>shroomé</span>
         </a>
         <div className="faq-nav-links">

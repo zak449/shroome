@@ -46,11 +46,36 @@ export default function BlogIndex() {
             description:
               "Evidence-based articles on ceremonial matcha, functional mushrooms, collagen, and wellness.",
             url: "https://drinkshroome.com/blog",
+            inLanguage: "en-US",
             publisher: {
               "@type": "Organization",
               name: "shroomé",
               url: "https://drinkshroome.com",
             },
+            blogPost: blogPosts.map((post) => ({
+              "@type": "BlogPosting",
+              headline: post.title,
+              description: post.metaDescription,
+              datePublished: post.date,
+              url: `https://drinkshroome.com/blog/${post.slug}`,
+              author: { "@type": "Person", name: post.author },
+              articleSection: post.category,
+            })),
+          }),
+        }}
+      />
+
+      <Script
+        id="blog-breadcrumb"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://drinkshroome.com" },
+              { "@type": "ListItem", position: 2, name: "Blog", item: "https://drinkshroome.com/blog" },
+            ],
           }),
         }}
       />
@@ -173,7 +198,7 @@ export default function BlogIndex() {
       {/* NAV */}
       <nav className="blog-nav">
         <Link href="/" className="blog-nav-logo">
-          <img src="/logo-mark.svg" width={28} height={28} alt="S" />
+          <img src="/logo-mark.png" width={28} height={28} alt="shroomé S" />
           <span>shroom&eacute;</span>
         </Link>
         <div className="blog-nav-links">
