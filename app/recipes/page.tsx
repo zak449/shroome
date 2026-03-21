@@ -24,9 +24,9 @@ const recipes = [
     name: "Vanilla Matcha Smoothie",
     description:
       "A creamy, thick matcha smoothie with frozen banana and vanilla shroomé. Blend it up in under a minute.",
-    prepTime: "PT45S",
-    prepLabel: "45 sec",
-    totalTime: "PT1M",
+    prepTime: "PT1M",
+    prepLabel: "1 min",
+    totalTime: "PT2M",
     color: "#FFB7D1",
     textColor: "#1B1F3B",
     ingredients: [
@@ -89,9 +89,9 @@ const recipes = [
     name: "Protein Matcha Shake",
     description:
       "Post-workout matcha with protein. Blend a shroomé sachet with your favorite protein powder for clean energy and recovery.",
-    prepTime: "PT45S",
-    prepLabel: "45 sec",
-    totalTime: "PT1M",
+    prepTime: "PT1M",
+    prepLabel: "1 min",
+    totalTime: "PT2M",
     color: "#C8FF3A",
     textColor: "#1B1F3B",
     ingredients: [
@@ -114,7 +114,7 @@ const recipes = [
       "The classic hot matcha latte — steamed oat milk and one shroomé sachet. Cozy, clean energy in under a minute.",
     prepTime: "PT30S",
     prepLabel: "30 sec",
-    totalTime: "PT1M",
+    totalTime: "PT1M30S",
     color: "#FFB7D1",
     textColor: "#1B1F3B",
     ingredients: [
