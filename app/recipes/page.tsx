@@ -128,6 +128,76 @@ const recipes = [
     ],
     datePublished: "2026-03-01",
   },
+  {
+    id: "light-matcha-agua-fresca",
+    name: "Light Matcha Agua Fresca",
+    description:
+      "Half water, half almond milk — a light, refreshing matcha drink with barely-there sweetness. Perfect when you want energy without the heaviness.",
+    prepTime: "PT15S",
+    prepLabel: "15 sec",
+    totalTime: "PT30S",
+    color: "#D4B8E0",
+    textColor: "#1B1F3B",
+    ingredients: [
+      "1 shroomé original sachet",
+      "4 oz cold water",
+      "4 oz almond milk",
+      "Ice",
+      "Optional: squeeze of lemon",
+    ],
+    steps: [
+      "Fill a glass with ice. Pour in cold water and almond milk.",
+      "Tear open a shroomé sachet and pour it in.",
+      "Add a squeeze of lemon if you want a citrus twist. Stir and sip.",
+    ],
+    datePublished: "2026-03-21",
+  },
+  {
+    id: "coconut-water-matcha",
+    name: "Coconut Water Matcha",
+    description:
+      "Tropical and hydrating — shroomé mixed with coconut water for a light, electrolyte-rich matcha refresher. No milk needed.",
+    prepTime: "PT15S",
+    prepLabel: "15 sec",
+    totalTime: "PT30S",
+    color: "#1B1F3B",
+    textColor: "#FDF4EE",
+    ingredients: [
+      "1 shroomé original sachet",
+      "8 oz cold coconut water",
+      "Ice",
+      "Optional: fresh mint leaves",
+    ],
+    steps: [
+      "Pour coconut water over a glass of ice.",
+      "Tear open a shroomé sachet and pour it in.",
+      "Garnish with fresh mint. Pure tropical energy.",
+    ],
+    datePublished: "2026-03-21",
+  },
+  {
+    id: "sparkling-matcha",
+    name: "Sparkling Matcha",
+    description:
+      "Matcha meets sparkling water — fizzy, light, and surprisingly refreshing. The coolest way to pour a shroomé.",
+    prepTime: "PT15S",
+    prepLabel: "15 sec",
+    totalTime: "PT30S",
+    color: "#C8FF3A",
+    textColor: "#1B1F3B",
+    ingredients: [
+      "1 shroomé original sachet",
+      "6 oz sparkling water",
+      "Ice",
+      "Optional: splash of oat milk on top",
+    ],
+    steps: [
+      "Fill a glass with ice and pour in sparkling water.",
+      "Tear open a shroomé sachet and pour it slowly over the fizz.",
+      "Top with a splash of oat milk for a creamy float effect. Don't stir — let it layer.",
+    ],
+    datePublished: "2026-03-21",
+  },
 ];
 
 function buildRecipeSchema(recipe: (typeof recipes)[0]) {
