@@ -4,6 +4,7 @@ const recipes = [
   {
     id: "classic-iced-matcha-latte",
     name: "Classic Iced Matcha Latte",
+    image: "/recipes/iced-matcha-latte.jpg",
     description:
       "The simplest iced matcha latte you'll ever make. One shroomé sachet, oat milk, ice — done in 15 seconds flat.",
     prepTime: "PT15S",
@@ -22,6 +23,7 @@ const recipes = [
   {
     id: "vanilla-matcha-smoothie",
     name: "Vanilla Matcha Smoothie",
+    image: "/recipes/vanilla-matcha-smoothie.jpg",
     description:
       "A creamy, thick matcha smoothie with frozen banana and vanilla shroomé. Blend it up in under a minute.",
     prepTime: "PT1M",
@@ -45,6 +47,7 @@ const recipes = [
   {
     id: "strawberry-rose-matcha-latte",
     name: "Strawberry Rose Matcha Latte",
+    image: "/recipes/strawberry-rose.jpg",
     description:
       "Floral and fruity — strawberry shroomé meets a splash of rose water for an elevated matcha moment.",
     prepTime: "PT30S",
@@ -67,6 +70,7 @@ const recipes = [
   {
     id: "matcha-affogato",
     name: "Matcha Affogato",
+    image: "/recipes/matcha-affogato.jpg",
     description:
       "Matcha meets ice cream. Pour one shroomé sachet over a scoop of vanilla — the easiest dessert of your life.",
     prepTime: "PT15S",
@@ -87,6 +91,7 @@ const recipes = [
   {
     id: "protein-matcha-shake",
     name: "Protein Matcha Shake",
+    image: "/recipes/protein-matcha-shake.jpg",
     description:
       "Post-workout matcha with protein. Blend a shroomé sachet with your favorite protein powder for clean energy and recovery.",
     prepTime: "PT1M",
@@ -110,6 +115,7 @@ const recipes = [
   {
     id: "hot-matcha-latte",
     name: "Hot Matcha Latte",
+    image: "/recipes/hot-matcha-latte.jpg",
     description:
       "The classic hot matcha latte — steamed oat milk and one shroomé sachet. Cozy, clean energy in under a minute.",
     prepTime: "PT30S",
@@ -131,6 +137,7 @@ const recipes = [
   {
     id: "light-matcha-agua-fresca",
     name: "Light Matcha Agua Fresca",
+    image: "/recipes/agua-fresca.jpg",
     description:
       "Half water, half almond milk — a light, refreshing matcha drink with barely-there sweetness. Perfect when you want energy without the heaviness.",
     prepTime: "PT15S",
@@ -155,6 +162,7 @@ const recipes = [
   {
     id: "coconut-water-matcha",
     name: "Coconut Water Matcha",
+    image: "/recipes/coconut-water-matcha.jpg",
     description:
       "Tropical and hydrating — shroomé mixed with coconut water for a light, electrolyte-rich matcha refresher. No milk needed.",
     prepTime: "PT15S",
@@ -178,6 +186,7 @@ const recipes = [
   {
     id: "sparkling-matcha",
     name: "Sparkling Matcha",
+    image: "/recipes/sparkling-matcha.jpg",
     description:
       "Matcha meets sparkling water — fizzy, light, and surprisingly refreshing. The coolest way to pour a shroomé.",
     prepTime: "PT15S",
@@ -668,19 +677,13 @@ export default function RecipesPage() {
         <div className="rec-full-title">Full recipes</div>
         {recipes.map((recipe) => (
           <article key={recipe.id} id={recipe.id} className="rec-full">
-            {/* Image placeholder */}
-            <div
-              className="rec-full-image"
-              style={{
-                background: `linear-gradient(135deg, ${recipe.color}40, ${recipe.color}20)`,
-              }}
-            >
-              <div
-                className="rec-full-image-text"
-                style={{ color: recipe.textColor === "#FDF4EE" ? "#1B1F3B" : recipe.textColor }}
-              >
-                {recipe.name}
-              </div>
+            {/* Recipe image */}
+            <div className="rec-full-image" style={{ background: recipe.color, padding: 0 }}>
+              <img
+                src={recipe.image}
+                alt={recipe.name}
+                style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", borderRadius: 14 }}
+              />
             </div>
 
             {/* Header */}
