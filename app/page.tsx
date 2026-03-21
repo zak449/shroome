@@ -850,64 +850,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ════════════════════ AS SEEN IN — PRESS BAR ════════════════════ */}
-      <div
-        style={{
-          background: "#FDFAF7",
-          padding: "28px 24px",
-          textAlign: "center",
-          borderTop: "1px solid rgba(27,31,59,0.04)",
-          borderBottom: "1px solid rgba(27,31,59,0.04)",
-        }}
-      >
-        <p
-          style={{
-            fontFamily: "'DM Mono', monospace",
-            fontSize: "10px",
-            fontWeight: 500,
-            letterSpacing: "2px",
-            textTransform: "uppercase" as const,
-            color: "rgba(27,31,59,0.3)",
-            marginBottom: 14,
-          }}
-        >
-          As Seen In
-        </p>
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            gap: 32,
-            flexWrap: "wrap",
-          }}
-        >
-          {[
-            { name: "OpenPR", weight: 500 },
-            { name: "1888 Press Release", weight: 500 },
-            { name: "Quora", weight: 500 },
-          ].map((pub, i, arr) => (
-            <span key={pub.name} style={{ display: "flex", alignItems: "center", gap: 32 }}>
-              <span
-                style={{
-                  fontFamily: "'DM Mono', monospace",
-                  fontSize: "11px",
-                  fontWeight: pub.weight,
-                  letterSpacing: "1.5px",
-                  textTransform: "uppercase" as const,
-                  color: "rgba(27,31,59,0.35)",
-                }}
-              >
-                {pub.name}
-              </span>
-              {i < arr.length - 1 && (
-                <span style={{ color: "rgba(27,31,59,0.15)", fontSize: "10px" }}>&middot;</span>
-              )}
-            </span>
-          ))}
-        </div>
-      </div>
-
       {/* ════════════════════ DARK — PICK YOUR FLAVOR (GHIA STYLE) ════════════════════ */}
       <section
         id="why"
