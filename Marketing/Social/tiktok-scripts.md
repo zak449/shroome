@@ -20,8 +20,8 @@ Close-up macro shot of fingers gripping the sachet notch. The tear sound is cris
 
 | Time | Shot | Audio |
 |------|------|-------|
-| 0-2s | Extreme close-up: fingers tear sachet along the perforation. Powder visible inside. | Amplified tear sound. No music yet. |
-| 2-5s | Overhead: powder streams out of sachet into a clear glass filled with oat milk. Slow, controlled pour. | Soft powder-hitting-liquid sound. Gentle ambient tone fades in. |
+| 0-2s | Extreme close-up: fingers tear sachet along the perforation. Liquid visible inside. | Amplified tear sound. No music yet. |
+| 2-5s | Overhead: liquid streams out of sachet into a clear glass filled with oat milk. Slow, controlled pour. | Soft liquid-into-milk sound. Gentle ambient tone fades in. |
 | 5-9s | Side angle through glass: matcha plume blooms and swirls through the milk. Green ribbons curling downward. No stirring yet. | Lo-fi ambient pad builds slightly. |
 | 9-12s | Close-up: a single slow stir with a spoon. The drink turns from streaked to uniform sage green. | Spoon-against-glass clink. |
 | 12-15s | Beauty shot: glass on a sunlit surface, condensation on the outside, hand reaches in and lifts it. Hold for 2 beats. | Music resolves. Silence on the sip. |
