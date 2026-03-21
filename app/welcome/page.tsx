@@ -89,7 +89,7 @@ export default function WelcomePage() {
         >
           <Image
             src="/logo-mark.png"
-            alt="shroome S"
+            alt="shroomé S"
             width={28}
             height={28}
             style={{ borderRadius: 6 }}
@@ -102,7 +102,7 @@ export default function WelcomePage() {
               letterSpacing: "-0.02em",
             }}
           >
-            shroome
+            shroomé
           </span>
         </a>
         <a
@@ -508,7 +508,7 @@ export default function WelcomePage() {
             color: C.muted,
           }}
         >
-          &copy; 2026 shroome &middot; hello@drinkshroome.com
+          &copy; 2026 shroomé &middot; hello@drinkshroome.com
         </span>
         <div style={{ display: "flex", gap: 20 }}>
           {[

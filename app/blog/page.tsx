@@ -204,6 +204,7 @@ export default function BlogIndex() {
         <div className="blog-nav-links">
           <Link href="/#why">Why shroom&eacute;</Link>
           <Link href="/#ingredients">Ingredients</Link>
+          <Link href="/#how">How It Works</Link>
           <Link href="/faq">FAQ</Link>
           <Link href="/blog" className="active">Blog</Link>
         </div>

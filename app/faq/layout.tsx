@@ -21,6 +21,12 @@ export const metadata: Metadata = {
       "Everything you need to know about shroomé — the world's first ready-to-pour ceremonial matcha latte with collagen + mushrooms.",
     url: "https://www.drinkshroome.com/faq",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "FAQ — shroomé | Café Energy. Home Address.",
+    description:
+      "Everything you need to know about shroomé — the world's first ready-to-pour ceremonial matcha latte with collagen + mushrooms.",
+  },
   alternates: {
     canonical: "https://www.drinkshroome.com/faq",
   },

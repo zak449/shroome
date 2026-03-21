@@ -1,3 +1,27 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy — shroomé | Café Energy. Home Address.",
+  description:
+    "How shroomé collects, uses, and protects your information. Read our full privacy policy.",
+  openGraph: {
+    title: "Privacy Policy — shroomé",
+    description:
+      "How shroomé collects, uses, and protects your information. Read our full privacy policy.",
+    type: "website",
+    url: "https://www.drinkshroome.com/privacy",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Privacy Policy — shroomé",
+    description:
+      "How shroomé collects, uses, and protects your information. Read our full privacy policy.",
+  },
+  alternates: {
+    canonical: "https://www.drinkshroome.com/privacy",
+  },
+};
+
 const pills = [
   "2g Matcha",
   "Collagen",
@@ -265,7 +289,7 @@ export default function Privacy() {
 
         <h2>Data Retention</h2>
         <p>
-          We retain your personal information for as long as your account is active or as needed to provide you services. You may request deletion of your data at any time by emailing info@drinkshroome.com.
+          We retain your personal information for as long as your account is active or as needed to provide you services. You may request deletion of your data at any time by emailing hello@drinkshroome.com.
         </p>
 
         <h2>Your Rights</h2>
@@ -297,7 +321,7 @@ export default function Privacy() {
         <p>
           If you have questions about this Privacy Policy, contact us at:<br />
           <strong>ZSQUARED INC</strong><br />
-          Email: info@drinkshroome.com
+          Email: hello@drinkshroome.com
         </p>
       </div>
 

@@ -1,3 +1,27 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Terms of Service — shroomé | Café Energy. Home Address.",
+  description:
+    "Terms of Service for drinkshroome.com, operated by ZSQUARED INC. Read our terms before using the site.",
+  openGraph: {
+    title: "Terms of Service — shroomé",
+    description:
+      "Terms of Service for drinkshroome.com, operated by ZSQUARED INC. Read our terms before using the site.",
+    type: "website",
+    url: "https://www.drinkshroome.com/terms",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Terms of Service — shroomé",
+    description:
+      "Terms of Service for drinkshroome.com, operated by ZSQUARED INC. Read our terms before using the site.",
+  },
+  alternates: {
+    canonical: "https://www.drinkshroome.com/terms",
+  },
+};
+
 const pills = [
   "2g Matcha",
   "Collagen",
@@ -249,7 +273,7 @@ export default function Terms() {
           <li>Consent is not a condition of any purchase</li>
           <li>Message frequency varies; message and data rates may apply</li>
           <li>You can opt out at any time by replying <strong>STOP</strong></li>
-          <li>For help, reply <strong>HELP</strong> or contact info@drinkshroome.com</li>
+          <li>For help, reply <strong>HELP</strong> or contact hello@drinkshroome.com</li>
           <li>Compatible carriers include but are not limited to AT&T, T-Mobile, Verizon, and Sprint</li>
           <li>shroomé and its service providers (including Klaviyo) may have access to your phone number for the purpose of sending messages</li>
         </ul>
@@ -288,7 +312,7 @@ export default function Terms() {
         <p>
           Questions about these Terms? Contact us at:<br />
           <strong>ZSQUARED INC</strong><br />
-          Email: info@drinkshroome.com
+          Email: hello@drinkshroome.com
         </p>
       </div>
 

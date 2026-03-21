@@ -119,11 +119,6 @@ const websiteSchema = {
   "url": "https://www.drinkshroome.com",
   "description": "The world's first ready-to-pour ceremonial matcha latte with organic mushroom extracts and grass-fed collagen.",
   "publisher": { "@type": "Organization", "name": "ZSQUARED INC" },
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": "https://www.drinkshroome.com/blog?q={search_term_string}",
-    "query-input": "required name=search_term_string"
-  },
   "inLanguage": "en-US"
 };
 

@@ -154,11 +154,11 @@ export default function ReferPage() {
           <div className="ref-hero-inner">
             <p className="ref-tag">Referral Program</p>
             <h1 className="ref-h1">
-              Give 25% off.<br /><em>Get $10 credit.</em>
+              Share shroomé.<br /><em>Stack your discount.</em>
             </h1>
             <p className="ref-sub">
               Share your unique link with friends. When 3 friends join the waitlist,
-              you unlock an extra 10% off — stackable with your existing 20% discount.
+              you unlock an extra 10% off — for a total of 30% off + free shipping at launch.
             </p>
           </div>
         </section>

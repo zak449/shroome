@@ -31,7 +31,7 @@ function emailShell(content: string, email: string) {
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>shroome</title>
+  <title>shroomé</title>
 </head>
 <body style="margin:0;padding:0;background-color:${BRAND.softLav};font-family:${SANS};-webkit-font-smoothing:antialiased;">
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:${BRAND.softLav};">
