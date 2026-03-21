@@ -111,12 +111,11 @@ async function syncToKlaviyo(email: string, phone?: string, referralCode?: strin
     }
   }
 
-  // Step 4: Add to SMS list (if phone provided)
-  // Uses list-add only (NOT subscription API with consent: "SUBSCRIBED")
-  // because the subscription API triggers Klaviyo's built-in welcome SMS
-  // ("hey bestie" text) that we can't customize. Instead, adding to list
-  // triggers the double opt-in flow (reply YES) which uses our custom
-  // keyword response text that we control.
+  // Step 4: Subscribe to SMS (if phone provided)
+  // Adds profile to SMS list with single opt-in enabled in Klaviyo.
+  // This triggers ONE text: the YES/JOIN keyword response we customized:
+  // "hey, it's zack from shroome. you're locked in..."
+  // No double opt-in, no "hey bestie", just one personal text.
   if (smsListId && phoneE164) {
     try {
       await fetch(`https://a.klaviyo.com/api/lists/${smsListId}/relationships/profiles/`, {
