@@ -73,8 +73,8 @@ export function welcomeEmail(email: string, referralCode?: string) {
               </table>
             </td></tr>
 
-            <!-- Hero text on image -->
-            <tr><td style="padding:80px 36px 16px;text-align:center;">
+            <!-- Hero text on image — pushed below the cup -->
+            <tr><td style="padding:220px 36px 16px;text-align:center;">
               <p style="margin:0 0 12px;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:${BRAND.lime};font-weight:700;">
                 \u2726 YOU\u2019RE IN \u2726
               </p>
@@ -91,7 +91,7 @@ export function welcomeEmail(email: string, referralCode?: string) {
             </td></tr>
 
             <!-- Pill tags on image -->
-            <tr><td style="padding:0 36px 60px;text-align:center;">
+            <tr><td style="padding:0 36px 48px;text-align:center;">
               <table role="presentation" cellpadding="0" cellspacing="0" style="margin:0 auto;">
                 <tr>
                   <td style="background:rgba(255,255,255,0.15);backdrop-filter:blur(10px);border-radius:20px;padding:6px 14px;border:1px solid rgba(255,255,255,0.2);">
