@@ -1,0 +1,455 @@
+import Script from "next/script";
+import { notFound } from "next/navigation";
+import { recipes } from "../data";
+
+export function generateStaticParams() {
+  return recipes.map((recipe) => ({ slug: recipe.id }));
+}
+
+function buildRecipeSchema(recipe: (typeof recipes)[0]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Recipe",
+    name: recipe.name,
+    description: recipe.description,
+    image: `https://www.drinkshroome.com${recipe.image}`,
+    prepTime: recipe.prepTime,
+    totalTime: recipe.totalTime,
+    recipeIngredient: recipe.ingredients,
+    recipeInstructions: recipe.steps.map((step, i) => ({
+      "@type": "HowToStep",
+      position: i + 1,
+      text: step,
+    })),
+    author: {
+      "@type": "Organization",
+      name: "shroomé",
+      url: "https://www.drinkshroome.com",
+    },
+    datePublished: recipe.datePublished,
+    recipeCategory: "Beverage",
+    recipeCuisine: "American",
+    keywords: `matcha latte, ${recipe.name.toLowerCase()}, shroomé recipe, easy matcha recipe`,
+    recipeYield: "1 serving",
+  };
+}
+
+export default async function RecipeDetailPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const recipe = recipes.find((r) => r.id === slug);
+
+  if (!recipe) {
+    notFound();
+  }
+
+  const recipeSchema = buildRecipeSchema(recipe);
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://www.drinkshroome.com",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Recipes",
+        item: "https://www.drinkshroome.com/recipes",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: recipe.name,
+        item: `https://www.drinkshroome.com/recipes/${recipe.id}`,
+      },
+    ],
+  };
+
+  return (
+    <>
+      <Script
+        id={`recipe-schema-${recipe.id}`}
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(recipeSchema) }}
+      />
+      <Script
+        id="breadcrumb-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+
+      <style>{`
+        /* ── TICKER ── */
+        .rd-ticker{background:#1B1F3B;padding:10px 0;overflow:hidden;white-space:nowrap}
+        .rd-ticker-track{display:inline-flex;animation:rdTick 28s linear infinite}
+        .rd-ticker-item{font-family:'DM Mono',monospace;font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;padding:0 28px;color:rgba(253,244,238,.75)}
+        .rd-ticker-item em{color:#C8FF3A;font-style:normal;font-weight:500}
+        @keyframes rdTick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+        /* ── NAV ── */
+        .rd-nav{
+          position:sticky;top:0;z-index:200;
+          display:flex;align-items:center;justify-content:space-between;
+          padding:0 5%;height:60px;
+          background:rgba(255,183,209,0.85);
+          backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+          border-bottom:1px solid rgba(27,31,59,0.06)
+        }
+        .rd-nav-logo{
+          display:flex;align-items:center;gap:8px;
+          text-decoration:none;color:#1B1F3B
+        }
+        .rd-nav-logo img{width:28px;height:28px;filter:brightness(0) saturate(100%) invert(10%) sepia(30%) saturate(1500%) hue-rotate(200deg) brightness(95%)}
+        .rd-nav-logo span{font-family:'Instrument Serif',Georgia,serif;font-size:22px;font-weight:400;font-style:italic;color:#1B1F3B}
+        .rd-nav-links{display:flex;gap:8px}
+        .rd-nav-links a{
+          background:none;border:none;cursor:pointer;
+          font-family:'Syne',system-ui,sans-serif;font-size:11.5px;font-weight:600;
+          letter-spacing:.08em;text-transform:uppercase;color:#1B1F3B;
+          padding:8px 14px;transition:color .2s;text-decoration:none
+        }
+        .rd-nav-links a:hover{color:#2D4A2D}
+        .rd-nav-cta{
+          background:#1B1F3B;color:#FDF4EE;border:none;
+          padding:10px 20px;font-family:'Syne',system-ui,sans-serif;
+          font-size:12px;font-weight:700;letter-spacing:.06em;
+          text-transform:uppercase;cursor:pointer;transition:background .2s;text-decoration:none
+        }
+        .rd-nav-cta:hover{background:#2a2e4f}
+
+        /* ── HERO ── */
+        .rd-hero{
+          position:relative;overflow:hidden;
+          min-height:420px;
+          display:flex;align-items:flex-end;
+          padding:0 0 48px 0
+        }
+        .rd-hero-bg{
+          position:absolute;inset:0;
+          background-size:cover;background-position:center;
+          filter:brightness(0.85) saturate(1.1)
+        }
+        .rd-hero-overlay{
+          position:absolute;inset:0;
+          background:linear-gradient(180deg,rgba(0,0,0,0) 0%,rgba(0,0,0,0.15) 40%,rgba(0,0,0,0.55) 100%)
+        }
+        .rd-hero-color{
+          position:absolute;inset:0;
+          mix-blend-mode:multiply;opacity:0.45
+        }
+        .rd-hero-inner{
+          position:relative;z-index:2;
+          padding:0 8%;width:100%
+        }
+        .rd-hero-back{
+          display:inline-flex;align-items:center;gap:6px;
+          font-family:'DM Mono',monospace;font-size:11px;font-weight:500;
+          letter-spacing:.14em;text-transform:uppercase;
+          color:rgba(253,244,238,0.8);text-decoration:none;
+          margin-bottom:20px;transition:color .2s
+        }
+        .rd-hero-back:hover{color:#FDF4EE}
+        .rd-hero h1{
+          font-family:'Instrument Serif',Georgia,serif;
+          font-size:clamp(40px,6vw,72px);font-weight:400;font-style:italic;
+          line-height:1;letter-spacing:-.02em;
+          color:#FDF4EE;margin-bottom:20px;
+          text-shadow:0 2px 24px rgba(0,0,0,0.25)
+        }
+        .rd-hero-badges{display:flex;gap:10px;flex-wrap:wrap}
+        .rd-hero-badge{
+          font-family:'DM Mono',monospace;font-size:11px;font-weight:500;
+          letter-spacing:.12em;text-transform:uppercase;
+          padding:7px 16px;border-radius:100px;
+          background:rgba(255,255,255,0.18);backdrop-filter:blur(10px);
+          color:#FDF4EE
+        }
+
+        /* ── BODY ── */
+        .rd-body{
+          max-width:720px;margin:0 auto;
+          padding:56px 6% 80px
+        }
+        .rd-desc{
+          font-family:'Syne',system-ui,sans-serif;font-size:17px;line-height:1.8;
+          color:rgba(27,31,59,0.7);margin-bottom:48px;max-width:580px
+        }
+
+        /* ── SECTION LABELS ── */
+        .rd-label{
+          font-family:'DM Mono',monospace;font-size:10px;font-weight:500;
+          letter-spacing:.22em;text-transform:uppercase;color:rgba(27,31,59,0.4);
+          margin-bottom:16px;
+          display:flex;align-items:center;gap:12px
+        }
+        .rd-label::after{content:'';flex:1;height:1px;background:rgba(27,31,59,0.1)}
+
+        /* ── INGREDIENTS ── */
+        .rd-ingredients{list-style:none;padding:0;margin:0 0 48px}
+        .rd-ingredients li{
+          font-family:'Syne',system-ui,sans-serif;font-size:15px;
+          color:#1B1F3B;padding:11px 0;
+          border-bottom:1px solid rgba(27,31,59,0.07);
+          display:flex;align-items:center;gap:12px
+        }
+        .rd-ingredients li::before{
+          content:'';width:7px;height:7px;border-radius:50%;
+          background:#C8FF3A;flex-shrink:0
+        }
+
+        /* ── STEPS ── */
+        .rd-steps{list-style:none;padding:0;margin:0 0 56px;counter-reset:rd-steps}
+        .rd-steps li{
+          counter-increment:rd-steps;
+          font-family:'Syne',system-ui,sans-serif;font-size:15px;line-height:1.8;
+          color:#1B1F3B;padding:16px 0;
+          border-bottom:1px solid rgba(27,31,59,0.07);
+          display:flex;gap:16px
+        }
+        .rd-steps li::before{
+          content:counter(rd-steps,decimal-leading-zero);
+          font-family:'DM Mono',monospace;font-size:13px;font-weight:500;
+          color:rgba(27,31,59,0.3);padding-top:3px;flex-shrink:0;
+          min-width:24px
+        }
+
+        /* ── BACK LINK ── */
+        .rd-back-section{
+          max-width:720px;margin:0 auto;
+          padding:0 6% 64px
+        }
+        .rd-back-link{
+          display:inline-flex;align-items:center;gap:8px;
+          font-family:'DM Mono',monospace;font-size:11px;font-weight:500;
+          letter-spacing:.14em;text-transform:uppercase;
+          color:rgba(27,31,59,0.5);text-decoration:none;
+          padding:12px 24px;
+          border:1px solid rgba(27,31,59,0.15);border-radius:100px;
+          transition:all .2s
+        }
+        .rd-back-link:hover{color:#1B1F3B;border-color:rgba(27,31,59,0.35)}
+
+        /* ── CTA ── */
+        .rd-cta{
+          text-align:center;padding:80px 8%;
+          background:linear-gradient(180deg,#FDF4EE 0%,rgba(200,255,58,0.08) 100%)
+        }
+        .rd-cta-tag{
+          font-family:'DM Mono',monospace;font-size:11px;font-weight:500;
+          letter-spacing:.18em;text-transform:uppercase;color:rgba(27,31,59,0.5);
+          margin-bottom:20px
+        }
+        .rd-cta h2{
+          font-family:'Instrument Serif',Georgia,serif;
+          font-size:clamp(32px,4.5vw,52px);font-weight:400;line-height:1.05;
+          color:#1B1F3B;margin-bottom:14px
+        }
+        .rd-cta h2 em{font-style:italic;color:#2D4A2D}
+        .rd-cta-sub{
+          font-family:'Syne',system-ui,sans-serif;font-size:14px;
+          color:rgba(27,31,59,0.6);margin-bottom:28px
+        }
+        .rd-btn-cta{
+          display:inline-block;
+          background:#1B1F3B;color:#FDF4EE;
+          padding:16px 36px;
+          font-family:'Syne',system-ui,sans-serif;font-size:13px;font-weight:700;
+          letter-spacing:.08em;text-transform:uppercase;
+          text-decoration:none;transition:background .2s
+        }
+        .rd-btn-cta:hover{background:#2a2e4f}
+
+        /* ── FOOTER ── */
+        .rd-footer{
+          background:#1B1F3B;color:rgba(253,244,238,0.6);
+          padding:40px 8%;text-align:center;
+          font-family:'Syne',system-ui,sans-serif;font-size:12px
+        }
+        .rd-footer-top{display:flex;justify-content:center;gap:24px;margin-bottom:16px}
+        .rd-footer-top a{
+          color:rgba(253,244,238,0.7);text-decoration:none;
+          font-family:'DM Mono',monospace;font-size:11px;font-weight:500;
+          letter-spacing:.12em;text-transform:uppercase;transition:color .2s
+        }
+        .rd-footer-top a:hover{color:#C8FF3A}
+        .rd-footer-mid{line-height:1.8}
+        .rd-footer-mid a{color:rgba(253,244,238,0.5);text-decoration:none;transition:color .2s}
+        .rd-footer-mid a:hover{color:#FDF4EE}
+        .rd-footer-bot{
+          margin-top:12px;
+          font-family:'Instrument Serif',Georgia,serif;font-style:italic;
+          font-size:14px;color:rgba(253,244,238,0.4)
+        }
+
+        /* ── RESPONSIVE ── */
+        @media(max-width:768px){
+          .rd-nav{padding:0 4%;height:54px;gap:8px}
+          .rd-nav-links{display:none}
+          .rd-nav-logo{gap:6px}
+          .rd-nav-logo span{font-size:18px}
+          .rd-nav-logo img{width:24px;height:24px}
+          .rd-nav-cta{padding:8px 14px;font-size:10px;letter-spacing:.04em;white-space:nowrap}
+          .rd-hero{min-height:340px;padding-bottom:36px}
+          .rd-hero-inner{padding:0 5%}
+          .rd-body{padding:40px 5% 56px}
+          .rd-back-section{padding:0 5% 48px}
+        }
+      `}</style>
+
+      {/* ── TICKER ── */}
+      <div className="rd-ticker">
+        <div className="rd-ticker-track">
+          {[
+            "TEAR ✦ POUR ✦ DONE",
+            "9 EASY RECIPES",
+            "UNDER 2 MINUTES",
+            "CEREMONIAL MATCHA + MUSHROOMS + COLLAGEN",
+            "TEAR ✦ POUR ✦ DONE",
+            "9 EASY RECIPES",
+            "UNDER 2 MINUTES",
+            "CEREMONIAL MATCHA + MUSHROOMS + COLLAGEN",
+          ].map((t, i) => (
+            <span
+              key={i}
+              className="rd-ticker-item"
+              dangerouslySetInnerHTML={{
+                __html: t.replace(/✦/g, "<em>✦</em>"),
+              }}
+            />
+          ))}
+        </div>
+      </div>
+
+      {/* ── NAV ── */}
+      <nav className="rd-nav">
+        <a href="/" className="rd-nav-logo">
+          <img
+            src="/logo-mark.png"
+            width={28}
+            height={28}
+            alt="shroomé logo"
+          />
+          <span>shroomé</span>
+        </a>
+        <div className="rd-nav-links">
+          <a href="/#why">Why shroomé</a>
+          <a href="/#ingredients">Ingredients</a>
+          <a href="/#how">How It Works</a>
+          <a href="/faq">FAQ</a>
+          <a href="/blog">Blog</a>
+        </div>
+        <a href="/" className="rd-nav-cta">
+          Get 20% off + free shipping →
+        </a>
+      </nav>
+
+      {/* ── HERO ── */}
+      <section className="rd-hero">
+        <div
+          className="rd-hero-bg"
+          style={{ backgroundImage: `url(${recipe.image})` }}
+        />
+        <div className="rd-hero-overlay" />
+        <div
+          className="rd-hero-color"
+          style={{ background: recipe.color }}
+        />
+        <div className="rd-hero-inner">
+          <a href="/recipes" className="rd-hero-back">
+            ← All Recipes
+          </a>
+          <h1>{recipe.name}</h1>
+          <div className="rd-hero-badges">
+            <span className="rd-hero-badge">Prep: {recipe.prepLabel}</span>
+            <span className="rd-hero-badge">
+              {recipe.ingredients.length} ingredient{recipe.ingredients.length !== 1 ? "s" : ""}
+            </span>
+          </div>
+        </div>
+      </section>
+
+      {/* ── BODY ── */}
+      <div className="rd-body">
+        <p className="rd-desc">{recipe.description}</p>
+
+        <div className="rd-label">Ingredients</div>
+        <ul className="rd-ingredients">
+          {recipe.ingredients.map((ing, i) => (
+            <li key={i}>{ing}</li>
+          ))}
+        </ul>
+
+        <div className="rd-label">Steps</div>
+        <ol className="rd-steps">
+          {recipe.steps.map((step, i) => (
+            <li key={i}>{step}</li>
+          ))}
+        </ol>
+      </div>
+
+      {/* ── BACK ── */}
+      <div className="rd-back-section">
+        <a href="/recipes" className="rd-back-link">
+          ← Back to all recipes
+        </a>
+      </div>
+
+      {/* ── CTA ── */}
+      <section className="rd-cta">
+        <div className="rd-cta-tag">Pre-Launch List</div>
+        <h2>
+          Ready to pour?
+          <br />
+          <em>Get 20% off + free shipping.</em>
+        </h2>
+        <p className="rd-cta-sub">
+          12 servings per box · Tear. Pour. Done.
+        </p>
+        <a href="/" className="rd-btn-cta">
+          Claim 20% off →
+        </a>
+      </section>
+
+      {/* ── FOOTER ── */}
+      <footer className="rd-footer">
+        <div className="rd-footer-top">
+          <a
+            href="https://tiktok.com/@drinkshroome"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            TikTok
+          </a>
+          <a
+            href="https://instagram.com/drinkshroome"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Instagram
+          </a>
+          <a
+            href="https://youtube.com/@drinkshroome"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            YouTube
+          </a>
+        </div>
+        <div className="rd-footer-mid">
+          &copy; 2026 shroomé &middot; hello@drinkshroome.com &middot;{" "}
+          <a href="/privacy">Privacy Policy</a> &middot;{" "}
+          <a href="/terms">Terms of Service</a>
+        </div>
+        <div className="rd-footer-bot">@drinkshroome</div>
+      </footer>
+    </>
+  );
+}

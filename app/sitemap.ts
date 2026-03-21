@@ -1,5 +1,6 @@
 import { MetadataRoute } from "next";
 import { blogPosts } from "./blog/posts";
+import { recipes } from "./recipes/data";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://www.drinkshroome.com";
@@ -68,5 +69,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...staticPages, ...blogPages];
+  const recipePages: MetadataRoute.Sitemap = recipes.map((recipe) => ({
+    url: `${baseUrl}/recipes/${recipe.id}`,
+    lastModified: new Date(recipe.datePublished),
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
+  return [...staticPages, ...blogPages, ...recipePages];
 }
