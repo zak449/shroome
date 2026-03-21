@@ -151,7 +151,7 @@ export default async function Image() {
               letterSpacing: "0.05em",
             }}
           >
-            drinkshroome.com
+            www.drinkshroome.com
           </p>
         </div>
       </div>

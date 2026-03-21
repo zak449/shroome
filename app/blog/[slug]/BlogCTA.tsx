@@ -1,6 +1,13 @@
 "use client";
 
 import { useState, useEffect, useCallback, FormEvent } from "react";
+import ExitPopup from "../../ExitPopup";
+
+declare global {
+  interface Window {
+    gtag?: (...args: unknown[]) => void;
+  }
+}
 
 export default function BlogCTA() {
   /* ── shared form state ── */
@@ -38,7 +45,8 @@ export default function BlogCTA() {
   async function submitEmail(
     email: string,
     setStatus: (s: "idle" | "loading" | "success" | "error") => void,
-    setError: (s: string) => void
+    setError: (s: string) => void,
+    source: string
   ) {
     if (!email || !email.includes("@")) {
       setError("Please enter a valid email.");
@@ -58,6 +66,15 @@ export default function BlogCTA() {
         throw new Error(data.error || "Something went wrong. Please try again.");
       }
       setStatus("success");
+      window.gtag?.('event', 'sign_up', {
+        method: 'waitlist',
+        event_category: 'engagement',
+        event_label: source,
+      });
+      window.gtag?.('event', 'generate_lead', {
+        currency: 'USD',
+        value: 5.00,
+      });
     } catch (err: unknown) {
       setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
       setStatus("error");
@@ -66,12 +83,12 @@ export default function BlogCTA() {
 
   const handleInlineSubmit = (e: FormEvent) => {
     e.preventDefault();
-    submitEmail(inlineEmail, setInlineStatus, setInlineError);
+    submitEmail(inlineEmail, setInlineStatus, setInlineError, 'blog_inline_cta');
   };
 
   const handleStickySubmit = (e: FormEvent) => {
     e.preventDefault();
-    submitEmail(stickyEmail, setStickyStatus, setStickyError);
+    submitEmail(stickyEmail, setStickyStatus, setStickyError, 'blog_sticky_bar');
   };
 
   const stickyVisible = showSticky && !dismissed;
@@ -390,6 +407,9 @@ export default function BlogCTA() {
           /* Stack the sticky bar vertically is handled by flexWrap */
         }
       `}</style>
+
+      {/* Exit-intent popup */}
+      <ExitPopup />
     </>
   );
 }

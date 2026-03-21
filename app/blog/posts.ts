@@ -41,7 +41,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>Here's where the mushroom supplement industry gets murky. There are two ways to grow mushrooms for supplements:</p>
 
-<p><strong>Fruiting body extraction</strong> uses the actual mushroom — the part you'd recognize growing in a forest. The fruiting body contains the highest concentration of beta-glucans because those compounds are structural components of the mushroom's cell walls.</p>
+<p><strong>Fruiting body extraction</strong> uses the actual mushroom — the part you'd recognize growing in a forest. The fruiting body contains the highest concentration of beta-glucans because those compounds are structural components of the mushroom's cell walls. (We go deeper on this distinction in our guide to <a href="https://www.drinkshroome.com/blog/fruiting-body-vs-mycelium-mushroom-supplement">fruiting body vs. mycelium supplements</a>.)</p>
 
 <p><strong>Mycelium-on-grain</strong> is a cheaper, faster method. Mycelium (the root-like network of the fungus) is grown on a bed of rice or oats. The problem? When it's time to harvest, you can't fully separate the mycelium from the grain. So the final product is a mix of fungal tissue and starch — sometimes mostly starch.</p>
 
@@ -71,7 +71,7 @@ export const blogPosts: BlogPost[] = [
 
 <h2>The Practical Takeaway</h2>
 
-<p>Beta-glucans are the reason mushroom supplements exist. They're the bioactive compound behind the immune-supporting properties that have made functional mushrooms so popular. But not all products are created equal, and the difference between a well-sourced fruiting body extract and a mycelium-on-grain powder is enormous.</p>
+<p>Beta-glucans are the reason mushroom supplements exist. They're the bioactive compound behind the immune-supporting properties that have made functional mushrooms so popular. Combined with other evidence-backed ingredients like <a href="https://www.drinkshroome.com/blog/caffeine-l-theanine-nootropic-stack">caffeine and L-theanine for focused energy</a>, they form the foundation of a truly functional daily ritual. But not all products are created equal, and the difference between a well-sourced fruiting body extract and a mycelium-on-grain powder is enormous.</p>
 
 <p>When we formulated <a href="https://www.drinkshroome.com">shroom&eacute;</a>, standardizing to 70%+ beta-glucan content from fruiting body extracts was non-negotiable. At that concentration, you're getting a meaningful amount of the compound that actually does something — not a capsule of rice starch with a mushroom label on it.</p>
 
@@ -101,7 +101,7 @@ export const blogPosts: BlogPost[] = [
 
 <h2>What Makes Matcha "Ceremonial"</h2>
 
-<p>Ceremonial grade matcha comes from the first harvest of the year, known in Japanese as <em>ichiban-cha</em>. These are the youngest, most tender leaves at the top of the tea plant. They've been shade-covered for a minimum of 21 days before harvest — a practice called <em>kabuse</em> — which fundamentally changes the chemistry of the leaf.</p>
+<p>Ceremonial grade matcha comes from the first harvest of the year, known in Japanese as <em>ichiban-cha</em>. (For a full breakdown of what this term actually requires, see our guide on <a href="https://www.drinkshroome.com/blog/what-is-ceremonial-grade-matcha">what ceremonial grade matcha really means</a>.) These are the youngest, most tender leaves at the top of the tea plant. They've been shade-covered for a minimum of 21 days before harvest — a practice called <em>kabuse</em> — which fundamentally changes the chemistry of the leaf.</p>
 
 <p>When tea plants are shaded, they compensate for reduced sunlight by producing more chlorophyll (which gives ceremonial matcha its vivid, almost electric green color) and more L-theanine (an amino acid responsible for the calm, focused feeling matcha is known for). The plant essentially goes into overdrive trying to capture every available photon, and the biochemical result is a leaf with a dramatically different composition than one grown in full sun.</p>
 
@@ -119,7 +119,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>L-theanine is arguably the most important compound that separates matcha from other caffeinated drinks. It's an amino acid that promotes alpha brain wave activity — the same brain state associated with meditation, deep focus, and creative flow.</p>
 
-<p>When L-theanine is consumed alongside caffeine (as it naturally occurs in matcha), it modulates the caffeine's effects. Instead of the rapid spike and crash you get from coffee, you experience what researchers describe as "calm alertness" — focused energy without the jitters or anxiety that caffeine alone can cause.</p>
+<p>When L-theanine is consumed alongside caffeine (as it naturally occurs in matcha), it modulates the caffeine's effects. Instead of the rapid spike and crash you get from coffee, you experience what researchers describe as "calm alertness" — focused energy without the jitters or anxiety that caffeine alone can cause. (We break down the full science behind this pairing in our deep dive on the <a href="https://www.drinkshroome.com/blog/caffeine-l-theanine-nootropic-stack">caffeine + L-theanine nootropic stack</a>.)</p>
 
 <p>Here's the critical point: <strong>L-theanine content varies significantly by grade</strong>. Shade-grown, first-harvest ceremonial matcha contains the highest concentration of L-theanine because the shading process directly stimulates its production. Studies have measured L-theanine levels in ceremonial matcha at 30-40mg per gram — roughly double what you'd find in a typical culinary grade.</p>
 
@@ -147,7 +147,7 @@ export const blogPosts: BlogPost[] = [
 
 <h2>Why This Matters for Your Daily Ritual</h2>
 
-<p>If you're making matcha part of your routine, the grade determines whether that routine delivers on its promise. Ceremonial matcha gives you higher L-theanine for calm focus, better flavor without added sweeteners, and the full antioxidant profile (particularly EGCG) that matcha is celebrated for.</p>
+<p>If you're making matcha part of your routine — whether you're <a href="https://www.drinkshroome.com/blog/replace-morning-coffee-without-crash">replacing your morning coffee</a> or just upgrading your daily cup — the grade determines whether that routine delivers on its promise. Ceremonial matcha gives you higher L-theanine for calm focus, better flavor without added sweeteners, and the full antioxidant profile (particularly EGCG) that matcha is celebrated for.</p>
 
 <p>This is exactly why we use first-harvest, shade-grown ceremonial matcha in <a href="https://www.drinkshroome.com">shroom&eacute;</a> — because the grade isn't a marketing detail. It's the difference between a product that works and one that just looks green.</p>
 
@@ -185,7 +185,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>Matcha contains caffeine too — about 50mg per gram, roughly half a cup of coffee. But matcha delivers its caffeine alongside a compound called L-theanine, an amino acid that fundamentally changes how caffeine affects your brain.</p>
 
-<p>L-theanine crosses the blood-brain barrier and promotes alpha brain wave activity. Alpha waves are associated with relaxed alertness — the state you're in when you're deeply focused but not stressed. When researchers have studied the combination of caffeine and L-theanine together, the results are consistent: improved attention, better working memory, and reduced subjective experience of jitters and anxiety compared to caffeine alone.</p>
+<p>L-theanine crosses the blood-brain barrier and promotes alpha brain wave activity. Alpha waves are associated with relaxed alertness — the state you're in when you're deeply focused but not stressed. When researchers have studied <a href="https://www.drinkshroome.com/blog/caffeine-l-theanine-nootropic-stack">the combination of caffeine and L-theanine together</a>, the results are consistent: improved attention, better working memory, and reduced subjective experience of jitters and anxiety compared to caffeine alone.</p>
 
 <p>A 2008 study in <em>Nutritional Neuroscience</em> found that the combination improved both speed and accuracy on attention-switching tasks. A 2010 study in the same journal showed reduced self-reported headache and fatigue compared to caffeine alone. The synergy isn't subtle — it's measurable.</p>
 
@@ -197,7 +197,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>With coffee, the energy profile looks like a mountain — steep climb, sharp peak, steep descent. With matcha, it looks more like a rolling hill — gradual rise, sustained plateau, gentle decline. You feel alert and productive without the hyperarousal that makes you tap your foot under your desk or lose your train of thought mid-sentence.</p>
 
-<p>The lower caffeine content also means less cortisol stimulation. Cortisol is a stress hormone, and while some is fine, the repeated cortisol spikes from multiple cups of coffee throughout the day can contribute to anxiety, disrupted sleep, and that wired-but-tired feeling that's become so normalized.</p>
+<p>The L-theanine content is also why <a href="https://www.drinkshroome.com/blog/ceremonial-vs-culinary-matcha-grade-matters">choosing ceremonial grade matcha over culinary grade</a> matters so much — ceremonial matcha has roughly double the L-theanine. The lower caffeine content also means less cortisol stimulation. Cortisol is a stress hormone, and while some is fine, the repeated cortisol spikes from multiple cups of coffee throughout the day can contribute to anxiety, disrupted sleep, and that wired-but-tired feeling that's become so normalized.</p>
 
 <h2>A Realistic Plan for Making the Switch</h2>
 
@@ -283,9 +283,9 @@ export const blogPosts: BlogPost[] = [
 
 <p>This makes physiological sense. Collagen turnover in your body is a slow process. Your body is constantly breaking down old collagen and building new collagen, and the peptides you consume contribute to that rebuilding cycle. Missing a day won't undo anything, but sporadic supplementation — once or twice a week — is unlikely to produce the consistent results that daily intake delivers.</p>
 
-<p>This is also why integrating collagen into something you already do every day is so effective. Rather than remembering to take a separate supplement, adding collagen to your morning drink creates a habit that sticks. You don't have to think about it — it's just part of your routine.</p>
+<p>This is also why integrating collagen into something you already do every day is so effective. Rather than remembering to take a separate supplement, adding collagen to <a href="https://www.drinkshroome.com/blog/replace-morning-coffee-without-crash">your morning drink</a> creates a habit that sticks. You don't have to think about it — it's just part of your routine.</p>
 
-<p>It's one of the reasons we include 2g of grass-fed collagen peptides directly in every <a href="https://www.drinkshroome.com">shroom&eacute;</a> sachet. When collagen is already in your morning matcha, consistency happens automatically. No extra step, no separate supplement to remember.</p>
+<p>It's one of the reasons we include 2g of grass-fed collagen peptides directly in every <a href="https://www.drinkshroome.com">shroom&eacute;</a> sachet. When collagen is already in your morning <a href="https://www.drinkshroome.com/blog/what-is-ceremonial-grade-matcha">ceremonial grade matcha</a>, consistency happens automatically. No extra step, no separate supplement to remember.</p>
 
 <h2>What Collagen Won't Do</h2>
 
@@ -303,7 +303,7 @@ export const blogPosts: BlogPost[] = [
 
 <p><strong>Grass-fed, pasture-raised source.</strong> Cleaner sourcing means fewer unwanted residues. Look for bovine collagen from grass-fed cattle for the Type I and III combination.</p>
 
-<p><strong>Third-party testing.</strong> As with any supplement, independent testing for heavy metals and contaminants is a baseline quality standard. If a brand can't produce a Certificate of Analysis on request, consider a brand that can.</p>
+<p><strong>Third-party testing.</strong> As with any supplement — whether it's collagen, <a href="https://www.drinkshroome.com/blog/what-are-beta-glucans-mushroom-compound">beta-glucan-rich mushroom extracts</a>, or matcha — independent testing for heavy metals and contaminants is a baseline quality standard. If a brand can't produce a Certificate of Analysis on request, consider a brand that can.</p>
 
 <p><strong>No unnecessary additives.</strong> Some collagen products come loaded with sweeteners, fillers, or artificial flavors. The collagen peptides themselves are virtually tasteless and odorless when properly hydrolyzed — they shouldn't need flavor masking.</p>
 
@@ -389,7 +389,7 @@ export const blogPosts: BlogPost[] = [
 
 <h2>Beta-Glucans: The Compounds That Actually Matter</h2>
 
-<p>If there is one number you should care about on a mushroom supplement label, it is the <strong>beta-glucan content</strong>.</p>
+<p>If there is one number you should care about on a mushroom supplement label, it is the <strong>beta-glucan content</strong>. (For a primer on what these compounds are and why they matter, see our guide on <a href="https://www.drinkshroome.com/blog/what-are-beta-glucans-mushroom-compound">beta-glucans in mushroom supplements</a>.)</p>
 
 <p>Beta-glucans are a class of polysaccharides — long chains of glucose molecules — that are the primary bioactive compounds in medicinal mushrooms. But not all beta-glucans are the same. The structure determines the function.</p>
 
@@ -510,7 +510,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>The difference between a quality fruiting body extract and a mycelium on grain product is not subtle — it can be the difference between 60 percent beta-glucans and 6 percent. That is a tenfold gap, and it matters.</p>
 
-<p>At <a href="https://www.drinkshroome.com">shroom&eacute;</a>, this is precisely why we use fruiting body mushroom extracts standardized to 70%+ beta-glucan content. When you combine that with ceremonial-grade matcha and collagen peptides, every ingredient earns its place based on verified potency — not label decoration.</p>
+<p>At <a href="https://www.drinkshroome.com">shroom&eacute;</a>, this is precisely why we use fruiting body mushroom extracts standardized to 70%+ beta-glucan content. When you combine that with <a href="https://www.drinkshroome.com/blog/ceremonial-vs-culinary-matcha-grade-matters">ceremonial-grade matcha</a> and <a href="https://www.drinkshroome.com/blog/collagen-in-morning-drink-research">collagen peptides</a>, every ingredient earns its place based on verified potency — not label decoration.</p>
 
 <p>Your supplement should contain what it claims to contain. Read the label. Look for the numbers. And choose accordingly.</p>
 
@@ -638,7 +638,7 @@ export const blogPosts: BlogPost[] = [
 <li><strong>Result:</strong> A gentler rise in blood caffeine levels, sustained over a longer period, with L-theanine actively counterbalancing the anxiogenic effects in real time</li>
 </ul>
 
-<p>This is the critical difference. When you drink matcha, you are not just consuming caffeine. You are consuming caffeine <em>with its natural molecular counterpart already built in.</em> The ratio of caffeine to L-theanine in quality ceremonial matcha approximates a <strong>1:1 ratio</strong>, which falls within the range studied in clinical trials.</p>
+<p>This is the critical difference. When you drink matcha, you are not just consuming caffeine. You are consuming caffeine <em>with its natural molecular counterpart already built in.</em> The ratio of caffeine to L-theanine in quality <a href="https://www.drinkshroome.com/blog/what-is-ceremonial-grade-matcha">ceremonial matcha</a> approximates a <strong>1:1 ratio</strong>, which falls within the range studied in clinical trials.</p>
 
 <p>The tea plant produces both compounds simultaneously. Evolution, in a sense, already designed this nootropic stack. Matcha simply preserves it in its most concentrated, bioavailable form — because you consume the entire ground leaf, not just a water extract.</p>
 
@@ -672,7 +672,7 @@ export const blogPosts: BlogPost[] = [
 <li><strong>Bioavailability:</strong> The polyphenol matrix in matcha may enhance absorption and modulate release kinetics in ways that isolated compounds in capsules do not replicate</li>
 <li><strong>Additional bioactive compounds:</strong> Matcha contains EGCG (epigallocatechin gallate), chlorophyll, and a spectrum of catechins that have their own well-documented roles in supporting antioxidant status</li>
 <li><strong>Sustained release:</strong> The fiber and phytonutrient matrix of whole-leaf matcha creates a more gradual absorption curve than a capsule dissolving in stomach acid</li>
-<li><strong>Ritual and consistency:</strong> A daily matcha practice builds a sustainable routine. Capsules are easy to forget. A morning drink is a habit that sticks.</li>
+<li><strong>Ritual and consistency:</strong> A daily matcha practice builds a sustainable routine — especially if you are <a href="https://www.drinkshroome.com/blog/replace-morning-coffee-without-crash">transitioning away from coffee</a>. Capsules are easy to forget. A morning drink is a habit that sticks.</li>
 <li><strong>No artificial fillers:</strong> Capsules require binding agents, flow agents, and capsule materials. Matcha is one ingredient: ground tea leaves.</li>
 </ul>
 
@@ -682,7 +682,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>And matcha is the only widely available whole food that naturally delivers both compounds in a clinically relevant ratio, every single serving.</p>
 
-<p>If you are looking for a matcha focus solution that goes further, <a href="https://www.drinkshroome.com">shroom&eacute;</a> starts with ceremonial-grade matcha — the natural caffeine + L-theanine foundation — and adds functional mushroom extracts and collagen peptides for a more complete daily ritual. No synthetic stacks. No capsules. Just the science, delivered the way the tea plant intended.</p>
+<p>If you are looking for a matcha focus solution that goes further, <a href="https://www.drinkshroome.com">shroom&eacute;</a> starts with ceremonial-grade matcha — the natural caffeine + L-theanine foundation — and adds <a href="https://www.drinkshroome.com/blog/what-are-beta-glucans-mushroom-compound">beta-glucan-rich functional mushroom extracts</a> and collagen peptides for a more complete daily ritual. No synthetic stacks. No capsules. Just the science, delivered the way the tea plant intended.</p>
 
 <hr />
 
@@ -783,7 +783,7 @@ export const blogPosts: BlogPost[] = [
 
 <h2>Ceremonial vs. Culinary Grade Matcha: A Side-by-Side Comparison</h2>
 
-<p>Understanding the difference between ceremonial and culinary matcha is essential for choosing the best matcha powder for your needs.</p>
+<p>Understanding the difference between ceremonial and culinary matcha is essential for choosing the best matcha powder for your needs. (For a side-by-side breakdown of how these grades affect taste, nutrition, and daily use, see our guide on <a href="https://www.drinkshroome.com/blog/ceremonial-vs-culinary-matcha-grade-matters">ceremonial vs. culinary matcha</a>.)</p>
 
 <h3>Ceremonial Grade</h3>
 
@@ -848,7 +848,7 @@ export const blogPosts: BlogPost[] = [
 
 <h2>Why It Matters for Your Daily Ritual</h2>
 
-<p>The grade of matcha you choose affects more than just taste. First-harvest, properly shade-grown ceremonial matcha delivers a higher concentration of <strong>L-theanine</strong>, which supports a state of calm, focused alertness without the crash associated with coffee. The elevated chlorophyll content gives it its distinctive color and contributes to its nutrient density. And the careful stone-grinding process preserves these compounds rather than degrading them through heat.</p>
+<p>The grade of matcha you choose affects more than just taste. First-harvest, properly shade-grown ceremonial matcha delivers a higher concentration of <strong>L-theanine</strong>, which — when paired with caffeine — creates what researchers call the <a href="https://www.drinkshroome.com/blog/caffeine-l-theanine-nootropic-stack">most validated nootropic stack in nutritional science</a>, supporting calm, focused alertness without the crash associated with coffee. The elevated chlorophyll content gives it its distinctive color and contributes to its nutrient density. And the careful stone-grinding process preserves these compounds rather than degrading them through heat.</p>
 
 <p>When you drink ceremonial grade matcha, you are consuming the whole leaf — every compound, every amino acid, every antioxidant that the plant produced over months of careful cultivation. That is fundamentally different from steeping a tea bag and discarding the leaves.</p>
 
@@ -856,7 +856,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>Now that you know what ceremonial grade actually means — first harvest, 21+ days of shading, stone-ground, sourced from established Japanese regions — you can evaluate any matcha product against these criteria.</p>
 
-<p>At <a href="https://www.drinkshroome.com">shroom&eacute;</a>, we built our functional matcha around these exact standards: first-harvest ceremonial matcha from Japan's premier growing regions, shade-grown and stone-ground the way it has been done for centuries. Because if the foundation is not right, nothing you add to it matters.</p>
+<p>At <a href="https://www.drinkshroome.com">shroom&eacute;</a>, we built our functional matcha around these exact standards: first-harvest ceremonial matcha from Japan's premier growing regions, shade-grown and stone-ground the way it has been done for centuries. We pair it with <a href="https://www.drinkshroome.com/blog/fruiting-body-vs-mycelium-mushroom-supplement">fruiting body mushroom extracts</a> and grass-fed collagen — because if the foundation is not right, nothing you add to it matters.</p>
 
 <p>Choose your matcha carefully. Your daily ritual deserves it.</p>
 

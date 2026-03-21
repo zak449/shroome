@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect, useRef, useCallback } from "react";
+import ExitPopup from "./ExitPopup";
 
 declare global {
   interface Window {
@@ -144,7 +145,12 @@ export default function Home() {
     } catch {}
     setLoading(false);
     setStep("phone");
-    window.gtag?.("event", "generate_lead", { currency: "USD", value: 1.0 });
+    window.gtag?.('event', 'sign_up', {
+      method: 'waitlist',
+      event_category: 'engagement',
+      event_label: 'homepage',
+    });
+    window.gtag?.('event', 'generate_lead', { currency: 'USD', value: 5.00 });
   }, [email, referredBy]);
 
   // Load Turnstile script and render widget when captcha step is active
@@ -187,12 +193,12 @@ export default function Home() {
     } catch {}
     setLoading(false);
     setStep("done");
-    window.gtag?.("event", "sign_up", { method: "waitlist_phone" });
+    window.gtag?.('event', 'sign_up', { method: 'waitlist_phone', event_category: 'engagement', event_label: 'homepage' });
   };
 
   const skipPhone = () => {
     setStep("done");
-    window.gtag?.("event", "sign_up", { method: "waitlist_email_only" });
+    window.gtag?.('event', 'sign_up', { method: 'waitlist_email_only', event_category: 'engagement', event_label: 'homepage' });
   };
 
   const anim = (id: string, delay = 0) => ({
@@ -1308,6 +1314,9 @@ export default function Home() {
           </p>
         </div>
       </section>
+
+      {/* Exit-intent popup */}
+      <ExitPopup />
     </>
   );
 }
