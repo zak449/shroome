@@ -27,6 +27,7 @@ export default function Home() {
   const [referredBy, setReferredBy] = useState<string | null>(null);
   const [referralCount, setReferralCount] = useState(0);
   const [copied, setCopied] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   // ── Analytics: section visibility tracking ──
   const sectionsSeen = useRef<Set<string>>(new Set());
@@ -393,6 +394,104 @@ export default function Home() {
             Get 20% off + free shipping →
           </button>
         </div>
+
+        {/* ── Hamburger button (mobile only) ── */}
+        <button
+          className="hamburger-btn"
+          onClick={() => setMenuOpen((v) => !v)}
+          aria-label="Toggle menu"
+          style={{
+            display: "none",
+            background: "none",
+            border: "none",
+            fontSize: "1.6rem",
+            color: "#1B1F3B",
+            cursor: "pointer",
+            padding: "4px 8px",
+            lineHeight: 1,
+          }}
+        >
+          {menuOpen ? "✕" : "☰"}
+        </button>
+
+        {/* ── Mobile dropdown menu ── */}
+        <div
+          className="mobile-menu"
+          style={{
+            position: "absolute",
+            top: "100%",
+            left: 0,
+            right: 0,
+            background: "#1B1F3B",
+            maxHeight: menuOpen ? 400 : 0,
+            overflow: "hidden",
+            transition: "max-height 0.35s ease",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            gap: 0,
+          }}
+        >
+          {[
+            { label: "Why shroomé", id: "why" },
+            { label: "Ingredients", id: "ingredients" },
+            { label: "How It Works", id: "how" },
+            { label: "FAQ", id: "faq", href: "/faq" },
+            { label: "Blog", id: "blog", href: "/blog" },
+          ].map((l) => (
+            <button
+              key={l.id}
+              onClick={() => {
+                setMenuOpen(false);
+                if ((l as { href?: string }).href) {
+                  window.location.href = (l as { href: string }).href;
+                } else {
+                  scrollTo(l.id);
+                }
+              }}
+              style={{
+                background: "none",
+                border: "none",
+                borderBottom: "1px solid rgba(253,244,238,0.1)",
+                width: "100%",
+                padding: "16px 24px",
+                fontFamily: "'Syne', system-ui, sans-serif",
+                fontWeight: 600,
+                fontSize: "0.78rem",
+                letterSpacing: "0.1em",
+                textTransform: "uppercase" as const,
+                color: "#FDF4EE",
+                cursor: "pointer",
+                textAlign: "center",
+              }}
+            >
+              {l.label}
+            </button>
+          ))}
+          <button
+            onClick={() => {
+              setMenuOpen(false);
+              scrollTo("cta");
+              window.gtag?.("event", "select_promotion", { promotion_name: "mobile_nav_cta" });
+            }}
+            style={{
+              background: "#C8FF3A",
+              color: "#1B1F3B",
+              border: "none",
+              width: "calc(100% - 48px)",
+              margin: "16px 24px",
+              padding: "14px 22px",
+              fontFamily: "'Syne', system-ui, sans-serif",
+              fontWeight: 800,
+              fontSize: "0.72rem",
+              letterSpacing: "0.1em",
+              textTransform: "uppercase" as const,
+              cursor: "pointer",
+            }}
+          >
+            Get 20% off + free shipping →
+          </button>
+        </div>
       </nav>
 
       {/* ════════════════════ HERO — PINK WITH CLOUD BACKGROUND ════════════════════ */}
@@ -585,10 +684,10 @@ export default function Home() {
             {/* Ingredient pills */}
             <div className="fade-up delay-350" style={{ display: "flex", gap: 10, flexWrap: "wrap", marginBottom: 28, opacity: 0 }}>
               {[
-                { label: "2g Matcha", bg: "rgba(255,112,67,0.2)", color: "#1B1F3B" },
-                { label: "Mushroom Extracts", bg: "rgba(212,184,224,0.35)", color: "#1B1F3B" },
-                { label: "Collagen", bg: "rgba(200,255,58,0.3)", color: "#1B1F3B" },
-                { label: "No Mixing", bg: "rgba(27,31,59,0.12)", color: "#1B1F3B" },
+                { label: "Clean Energy", bg: "rgba(255,112,67,0.2)", color: "#1B1F3B" },
+                { label: "Zero Crash", bg: "rgba(212,184,224,0.35)", color: "#1B1F3B" },
+                { label: "Ready to Pour", bg: "rgba(200,255,58,0.3)", color: "#1B1F3B" },
+                { label: "15 Seconds", bg: "rgba(27,31,59,0.12)", color: "#1B1F3B" },
               ].map((p) => (
                 <span
                   key={p.label}
