@@ -14,10 +14,16 @@ export default function BlogCTA() {
   const [inlineEmail, setInlineEmail] = useState("");
   const [inlineStatus, setInlineStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [inlineError, setInlineError] = useState("");
+  const [inlinePhone, setInlinePhone] = useState("");
+  const [inlinePhoneStep, setInlinePhoneStep] = useState(false);
+  const [inlinePhoneDone, setInlinePhoneDone] = useState(false);
 
   const [stickyEmail, setStickyEmail] = useState("");
   const [stickyStatus, setStickyStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [stickyError, setStickyError] = useState("");
+  const [stickyPhone, setStickyPhone] = useState("");
+  const [stickyPhoneStep, setStickyPhoneStep] = useState(false);
+  const [stickyPhoneDone, setStickyPhoneDone] = useState(false);
 
   /* ── sticky bar visibility ── */
   const [showSticky, setShowSticky] = useState(false);
@@ -172,16 +178,28 @@ export default function BlogCTA() {
           </p>
 
           {inlineStatus === "success" ? (
-            <p
-              style={{
-                fontFamily: "'Syne', system-ui, sans-serif",
-                fontSize: 15,
-                fontWeight: 600,
-                color: "#C8FF3A",
-              }}
-            >
-              You&rsquo;re in! Check your email. &#10003;
-            </p>
+            inlinePhoneDone ? (
+              <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: 15, fontWeight: 600, color: "#C8FF3A" }}>
+                You&rsquo;re all set! Check your email{inlinePhone ? " — we'll text you too" : ""}. &#10003;
+              </p>
+            ) : (
+              <div>
+                <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: 13, fontWeight: 600, color: "#C8FF3A", marginBottom: 10 }}>
+                  &#10003; 20% off locked in! Add your number for an extra 10%:
+                </p>
+                <form onSubmit={async (e) => {
+                  e.preventDefault();
+                  if (!inlinePhone.trim()) return;
+                  try { await fetch("/api/waitlist", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ email: inlineEmail, phone: inlinePhone }) }); } catch {}
+                  window.gtag?.("event", "sign_up", { method: "waitlist_phone", event_label: "blog_inline_cta_phone" });
+                  setInlinePhoneDone(true);
+                }} style={{ display: "flex", gap: 0, maxWidth: 380, margin: "0 auto", flexWrap: "wrap" as const, justifyContent: "center" }}>
+                  <input type="tel" placeholder="(555) 123-4567" value={inlinePhone} onChange={(e) => setInlinePhone(e.target.value)} required style={{ flex: "1 1 200px", padding: "12px 14px", fontFamily: "'Syne', sans-serif", fontSize: 13, color: "#1B1F3B", background: "#FDF4EE", border: "2px solid transparent", outline: "none" }} />
+                  <button type="submit" style={{ padding: "12px 20px", background: "#C8FF3A", color: "#1B1F3B", border: "none", fontFamily: "'Syne', sans-serif", fontWeight: 800, fontSize: 12, letterSpacing: "0.06em", textTransform: "uppercase" as const, cursor: "pointer" }}>Stack it</button>
+                </form>
+                <button onClick={() => setInlinePhoneDone(true)} style={{ background: "none", border: "none", color: "rgba(253,244,238,0.4)", fontSize: 11, fontFamily: "'Syne', sans-serif", cursor: "pointer", marginTop: 8, textDecoration: "underline" }}>Skip — 20% is enough</button>
+              </div>
+            )
           ) : (
             <form
               onSubmit={handleInlineSubmit}
@@ -283,17 +301,26 @@ export default function BlogCTA() {
         }}
       >
         {stickyStatus === "success" ? (
-          <p
-            style={{
-              fontFamily: "'Syne', system-ui, sans-serif",
-              fontSize: 13,
-              fontWeight: 600,
-              color: "#C8FF3A",
-              margin: 0,
-            }}
-          >
-            You&rsquo;re in! Check your email. &#10003;
-          </p>
+          stickyPhoneDone ? (
+            <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: 13, fontWeight: 600, color: "#C8FF3A", margin: 0 }}>
+              You&rsquo;re all set! &#10003;
+            </p>
+          ) : (
+            <div style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap" as const, justifyContent: "center" }}>
+              <p style={{ fontFamily: "'Syne', sans-serif", fontSize: 12, color: "#C8FF3A", fontWeight: 600, margin: 0, whiteSpace: "nowrap" as const }}>&#10003; 20% locked! Add phone for 30%:</p>
+              <form onSubmit={async (e) => {
+                e.preventDefault();
+                if (!stickyPhone.trim()) return;
+                try { await fetch("/api/waitlist", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ email: stickyEmail, phone: stickyPhone }) }); } catch {}
+                window.gtag?.("event", "sign_up", { method: "waitlist_phone", event_label: "blog_sticky_bar_phone" });
+                setStickyPhoneDone(true);
+              }} style={{ display: "flex", gap: 0 }}>
+                <input type="tel" placeholder="(555) 123-4567" value={stickyPhone} onChange={(e) => setStickyPhone(e.target.value)} required style={{ padding: "8px 12px", fontSize: 12, fontFamily: "'Syne', sans-serif", border: "none", background: "rgba(253,244,238,0.15)", color: "#FDF4EE", outline: "none", width: 130 }} />
+                <button type="submit" style={{ padding: "8px 14px", background: "#C8FF3A", color: "#1B1F3B", border: "none", fontFamily: "'Syne', sans-serif", fontWeight: 800, fontSize: 10, letterSpacing: "0.06em", textTransform: "uppercase" as const, cursor: "pointer" }}>Add</button>
+              </form>
+              <button onClick={() => setStickyPhoneDone(true)} style={{ background: "none", border: "none", color: "rgba(253,244,238,0.35)", fontSize: 10, cursor: "pointer", textDecoration: "underline", fontFamily: "'Syne', sans-serif" }}>Skip</button>
+            </div>
+          )
         ) : (
           <>
             <p

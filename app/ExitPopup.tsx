@@ -4,7 +4,9 @@ import { useState, useEffect, useCallback } from "react";
 export default function ExitPopup() {
   const [show, setShow] = useState(false);
   const [email, setEmail] = useState("");
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [phone, setPhone] = useState("");
+  const [step, setStep] = useState<"email" | "phone" | "done">("email");
+  const [status, setStatus] = useState<"idle" | "loading" | "error">("idle");
   const [dismissed, setDismissed] = useState(false);
 
   const handleMouseLeave = useCallback(
@@ -50,7 +52,7 @@ export default function ExitPopup() {
     document.removeEventListener("mouseleave", handleMouseLeave);
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleEmailSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email || status === "loading") return;
     setStatus("loading");
@@ -61,7 +63,8 @@ export default function ExitPopup() {
         body: JSON.stringify({ email, turnstileToken: "exit-popup-bypass" }),
       });
       if (res.ok) {
-        setStatus("success");
+        setStep("phone");
+        setStatus("idle");
         sessionStorage.setItem("shroome_exit_popup_converted", "1");
         window.gtag?.("event", "sign_up", {
           method: "waitlist",
@@ -79,6 +82,30 @@ export default function ExitPopup() {
     } catch {
       setStatus("error");
     }
+  };
+
+  const handlePhoneSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!phone.trim() || status === "loading") return;
+    setStatus("loading");
+    try {
+      await fetch("/api/waitlist", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, phone }),
+      });
+      window.gtag?.("event", "sign_up", {
+        method: "waitlist_phone",
+        event_category: "engagement",
+        event_label: "exit_popup_phone",
+      });
+    } catch {}
+    setStatus("idle");
+    setStep("done");
+  };
+
+  const skipPhone = () => {
+    setStep("done");
   };
 
   if (!show) return null;
@@ -199,7 +226,7 @@ export default function ExitPopup() {
             &times;
           </button>
 
-          {status !== "success" ? (
+          {step === "email" ? (
             <>
               <div className="ep-emoji">🍵</div>
               <h2 className="ep-title">
@@ -209,7 +236,7 @@ export default function ExitPopup() {
                 Get <strong style={{ color: "#1B1F3B", fontWeight: 700 }}>20% off + free shipping</strong> on the
                 world&apos;s first ready-to-pour ceremonial matcha latte. Only for early access members.
               </p>
-              <form className="ep-form" onSubmit={handleSubmit}>
+              <form className="ep-form" onSubmit={handleEmailSubmit}>
                 <input
                   className="ep-input"
                   type="email"
@@ -237,12 +264,42 @@ export default function ExitPopup() {
                 No thanks, I&apos;ll pay full price
               </button>
             </>
+          ) : step === "phone" ? (
+            <>
+              <div className="ep-emoji">📱</div>
+              <h2 className="ep-success-title">20% off locked in!</h2>
+              <p className="ep-sub">
+                Want an <strong style={{ color: "#1B1F3B", fontWeight: 700 }}>extra 10% off</strong>? Add your number for a total of 30% off + free shipping at launch.
+              </p>
+              <form className="ep-form" onSubmit={handlePhoneSubmit}>
+                <input
+                  className="ep-input"
+                  type="tel"
+                  placeholder="(555) 123-4567"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                  required
+                  autoFocus
+                />
+                <button className="ep-btn" type="submit" disabled={status === "loading"}>
+                  {status === "loading" ? "..." : "Stack it"}
+                </button>
+              </form>
+              <div className="ep-perks">
+                <span className="ep-perk">30% total</span>
+                <span className="ep-perk">SMS alerts</span>
+                <span className="ep-perk">Launch priority</span>
+              </div>
+              <button className="ep-no-thanks" onClick={skipPhone}>
+                No thanks, 20% is enough
+              </button>
+            </>
           ) : (
             <>
               <div className="ep-emoji">💚</div>
-              <h2 className="ep-success-title">you&apos;re in!</h2>
+              <h2 className="ep-success-title">you&apos;re all set!</h2>
               <p className="ep-success-sub">
-                Check your email for your exclusive discount code. We&apos;ll let you know the moment we launch.
+                Check your email for your discount code.{phone ? " We'll text you too when we launch." : ""} You&apos;re ahead of the line.
               </p>
               <button className="ep-success-btn" onClick={dismiss}>
                 Back to browsing
