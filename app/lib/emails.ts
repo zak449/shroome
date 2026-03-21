@@ -351,126 +351,160 @@ export function welcomeEmail(email: string, referralCode?: string) {
 
 export function sachetEmail(email: string) {
   const subject = "what\u2019s actually in it \ud83d\udc9a";
+  const heroImg = "https://www.drinkshroome.com/email-hero-cup.jpg";
+  const cloudsImg = "https://www.drinkshroome.com/email-clouds-bg.jpg";
   const html = emailShell(`
 
-    <!-- NAVY BAR -->
-    <tr><td style="padding:12px 16px;background-color:${BRAND.navy};text-align:center;">
-      <p style="margin:0;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:${BRAND.lime};font-weight:600;">
-        2G MATCHA \u2726 200MG BETA GLUCANS \u2726 2G COLLAGEN \u2726 READY TO POUR
-      </p>
-    </td></tr>
-
-    <!-- HERO -->
-    <tr><td style="padding:44px 40px 20px;background-color:${BRAND.softLav};">
-      <p style="margin:0 0 8px;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:${BRAND.navy};opacity:0.5;font-weight:600;">HOW WE COMPARE</p>
-      <h1 style="margin:0;font-size:44px;color:${BRAND.navy};font-weight:400;line-height:1.05;font-family:${SERIF};">
-        Not all matcha is<br/>created <em style="color:#E8936D;">equal.</em>
-      </h1>
-    </td></tr>
-
-    <!-- VANILLA SACHET — single product hero -->
-    <tr><td style="padding:24px 40px 0;background-color:${BRAND.softLav};text-align:center;">
-      <img src="${BRAND.sachetVanilla}" alt="shroome vanilla sachet" width="220" style="display:inline-block;width:220px;max-width:220px;height:auto;" />
-    </td></tr>
-
-    <!-- Organic circles -->
-    <tr><td style="padding:0;background-color:${BRAND.softLav};text-align:center;line-height:0;">
-      <table role="presentation" cellpadding="0" cellspacing="0" style="margin:0 auto;">
-        <tr>
-          <td style="width:60px;height:60px;border-radius:50%;background-color:${BRAND.pink};opacity:0.5;"></td>
-          <td style="width:180px;"></td>
-          <td style="width:90px;height:90px;border-radius:50%;background-color:${BRAND.lavender};opacity:0.4;"></td>
-        </tr>
+    <!-- ═══ HERO — clouds background with overlay ═══ -->
+    <tr><td style="padding:0;background-color:${BRAND.pink};">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:url('${cloudsImg}') center top / cover no-repeat ${BRAND.pink};">
+        <tr><td style="padding:0;">
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:linear-gradient(180deg, rgba(212,184,224,0.8) 0%, rgba(255,183,209,0.7) 50%, rgba(253,244,238,0.85) 100%);">
+            <tr><td style="padding:20px 28px 0;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td style="font-size:22px;font-family:${SERIF};font-style:italic;color:${BRAND.navy};font-weight:400;">shroom\u00e9</td>
+                  <td align="right"><span style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:${BRAND.navy};font-weight:700;opacity:0.5;">EMAIL 2 OF 2</span></td>
+                </tr>
+              </table>
+            </td></tr>
+            <tr><td style="padding:40px 36px 12px;text-align:center;">
+              <p style="margin:0 0 12px;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:${BRAND.navy};opacity:0.5;font-weight:700;">INSIDE THE SACHET</p>
+              <h1 style="margin:0;font-size:44px;color:${BRAND.navy};font-weight:400;line-height:1.05;font-family:${SERIF};">
+                Not all matcha is<br/>created <span style="color:#E8936D;font-style:italic;">equal.</span>
+              </h1>
+            </td></tr>
+            <tr><td style="padding:16px 48px 44px;text-align:center;">
+              <p style="margin:0;font-size:14px;color:${BRAND.navy};line-height:1.6;opacity:0.65;">
+                Here\u2019s what separates shroom\u00e9 from everything else on the shelf \u2014 and why the ingredients matter more than the label.
+              </p>
+            </td></tr>
+          </table>
+        </td></tr>
       </table>
     </td></tr>
 
-    <tr><td style="padding:20px 40px 36px;background-color:${BRAND.softLav};text-align:center;">
-      <p style="margin:0;font-size:14px;color:${BRAND.navy};line-height:1.6;">
-        <strong>pour / swirl / glow</strong><br/>
-        ceremonial matcha \u00b7 grass-fed collagen \u00b7 mushroom beta glucans
-      </p>
+    <!-- ═══ PRODUCT — vanilla sachet on gradient ═══ -->
+    <tr><td style="padding:0;background:linear-gradient(180deg, ${BRAND.cream} 0%, ${BRAND.pink} 100%);">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+        <tr><td style="padding:36px 20px 0;text-align:center;">
+          <img src="${BRAND.sachetVanilla}" alt="shroom\u00e9 vanilla sachet" width="200" style="display:inline-block;width:200px;max-width:200px;height:auto;" />
+        </td></tr>
+        <tr><td style="padding:20px 40px 36px;text-align:center;">
+          <p style="margin:0;font-size:20px;color:${BRAND.navy};font-weight:400;font-family:${SERIF};font-style:italic;">
+            pour \u00b7 swirl \u00b7 <span style="color:#E8936D;">glow</span>
+          </p>
+          <p style="margin:10px 0 0;font-size:12px;color:${BRAND.navy};opacity:0.45;letter-spacing:1px;text-transform:uppercase;font-weight:600;">
+            ceremonial matcha \u00b7 collagen \u00b7 mushroom beta-glucans
+          </p>
+        </td></tr>
+      </table>
     </td></tr>
 
-    <!-- BETA-GLUCAN HOOK — navy -->
-    <tr><td style="padding:40px 40px 20px;background-color:${BRAND.navy};text-align:center;">
-      <p style="margin:0 0 14px;font-size:32px;color:#fff;font-weight:400;font-family:${SERIF};font-style:italic;line-height:1.1;">
+    <!-- ═══ THE HOOK — full-width on navy ═══ -->
+    <tr><td style="padding:48px 40px 20px;background-color:${BRAND.navy};text-align:center;">
+      <p style="margin:0 0 6px;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:${BRAND.lavender};font-weight:600;">THE DIFFERENCE</p>
+      <p style="margin:0 0 14px;font-size:34px;color:#fff;font-weight:400;font-family:${SERIF};font-style:italic;line-height:1.1;">
         It\u2019s not the mushroom.
       </p>
-      <p style="margin:0;font-size:28px;color:${BRAND.lime};font-weight:700;font-family:${SANS};line-height:1.15;">
+      <p style="margin:0;font-size:26px;color:${BRAND.lime};font-weight:700;font-family:${SANS};line-height:1.15;">
         It\u2019s the beta-glucan inside it.
       </p>
     </td></tr>
 
-    <!-- LIME STAT CARD -->
-    <tr><td style="padding:20px 36px;background-color:${BRAND.navy};">
+    <!-- ═══ 70%+ STAT — lime card ═══ -->
+    <tr><td style="padding:24px 28px;background-color:${BRAND.navy};">
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
-        <tr><td style="background-color:${BRAND.lime};border-radius:16px;padding:32px 24px;text-align:center;">
-          <p style="margin:0;font-size:72px;font-weight:800;color:${BRAND.navy};line-height:1;letter-spacing:-3px;">70%+</p>
-          <p style="margin:6px 0 0;font-size:13px;font-weight:700;color:${BRAND.navy};letter-spacing:1.5px;text-transform:uppercase;">
-            BETA-GLUCAN (1/3, 1/6) CONCENTRATION
+        <tr><td style="background-color:${BRAND.lime};border-radius:16px;padding:36px 24px;text-align:center;">
+          <p style="margin:0;font-size:80px;font-weight:800;color:${BRAND.navy};line-height:1;letter-spacing:-3px;">70%+</p>
+          <p style="margin:8px 0 0;font-size:12px;font-weight:700;color:${BRAND.navy};letter-spacing:1.5px;text-transform:uppercase;">
+            BETA-GLUCAN (1,3 AND 1,6) CONCENTRATION
           </p>
-          <p style="margin:8px 0 0;font-size:12px;color:${BRAND.navy};opacity:0.6;">
-            The highest you can get. Most brands: 15\u201330%.
+          <p style="margin:10px 0 0;font-size:13px;color:${BRAND.navy};opacity:0.55;line-height:1.5;">
+            The highest commercially available. Most supplements: 15\u201330%.
           </p>
         </td></tr>
       </table>
     </td></tr>
 
-    <!-- POINT BLANK FACTS -->
-    <tr><td style="padding:24px 40px 12px;background-color:${BRAND.navy};">
+    <!-- ═══ VS COMPARISON — side by side ═══ -->
+    <tr><td style="padding:24px 28px 8px;background-color:${BRAND.navy};">
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
         <tr>
-          <td style="padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
-            <p style="margin:0;font-size:16px;font-weight:700;color:#fff;">200mg per sachet. FDA GRAS.</p>
-            <p style="margin:4px 0 0;font-size:13px;color:rgba(255,255,255,0.4);">Most brands sit at 15\u201330%. If they even test.</p>
+          <td width="48%" style="background:rgba(255,255,255,0.04);border-radius:12px;padding:20px 16px;text-align:center;vertical-align:top;border:1px solid rgba(255,255,255,0.06);">
+            <p style="margin:0 0 6px;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.3);font-weight:700;">THEM</p>
+            <p style="margin:0 0 8px;font-size:28px;font-weight:800;color:rgba(255,255,255,0.2);line-height:1;">15\u201330%</p>
+            <p style="margin:0;font-size:11px;color:rgba(255,255,255,0.25);line-height:1.4;">Mycelium on grain.<br/>Mostly rice starch.<br/>Untested.</p>
           </td>
-        </tr>
-        <tr>
-          <td style="padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
-            <p style="margin:0;font-size:16px;font-weight:700;color:#fff;">Activates your immune system.</p>
-            <p style="margin:4px 0 0;font-size:13px;color:rgba(255,255,255,0.4);">Macrophages and natural killer cells. Fully switched on.</p>
-          </td>
-        </tr>
-        <tr>
-          <td style="padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
-            <p style="margin:0;font-size:16px;font-weight:700;color:#fff;">Focus without the spike.</p>
-            <p style="margin:4px 0 0;font-size:13px;color:rgba(255,255,255,0.4);">Lion\u2019s mane beta-glucans support nerve growth factor.</p>
-          </td>
-        </tr>
-        <tr>
-          <td style="padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
-            <p style="margin:0;font-size:16px;font-weight:700;color:#fff;">No crash. Zero anxiety.</p>
-            <p style="margin:4px 0 0;font-size:13px;color:rgba(255,255,255,0.4);">Reishi beta-glucans balance cortisol.</p>
-          </td>
-        </tr>
-        <tr>
-          <td style="padding:14px 0;">
-            <p style="margin:0;font-size:16px;font-weight:700;color:#fff;">Gut health. Skin glow.</p>
-            <p style="margin:4px 0 0;font-size:13px;color:rgba(255,255,255,0.4);">Prebiotic + 2g grass-fed collagen. Week two is when you feel it.</p>
+          <td width="4%"></td>
+          <td width="48%" style="background:rgba(200,255,58,0.08);border-radius:12px;padding:20px 16px;text-align:center;vertical-align:top;border:1px solid rgba(200,255,58,0.15);">
+            <p style="margin:0 0 6px;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:${BRAND.lime};font-weight:700;">SHROOM\u00c9</p>
+            <p style="margin:0 0 8px;font-size:28px;font-weight:800;color:${BRAND.lime};line-height:1;">70%+</p>
+            <p style="margin:0;font-size:11px;color:rgba(255,255,255,0.5);line-height:1.4;">Fruiting body extract.<br/>Hot water extracted.<br/>Third-party verified.</p>
           </td>
         </tr>
       </table>
     </td></tr>
 
-    <tr><td style="padding:20px 40px 40px;background-color:${BRAND.navy};text-align:center;">
-      <p style="margin:0;font-size:13px;color:rgba(255,255,255,0.25);font-style:italic;">
-        Every competitor sells mushroom powder. We sell the most concentrated beta-glucan extract you can put in a drink.
-      </p>
-    </td></tr>
-
-    <!-- CTA — pink -->
-    <tr><td style="padding:40px 40px 16px;background-color:${BRAND.pink};text-align:center;">
-      <p style="margin:0 0 24px;font-size:34px;color:${BRAND.navy};font-weight:400;font-family:${SERIF};font-style:italic;line-height:1.1;">
-        The ritual is ready.<br/>Just pour.
-      </p>
-      <table role="presentation" cellpadding="0" cellspacing="0" style="margin:0 auto;">
-        <tr><td style="background:${BRAND.navy};border-radius:50px;padding:16px 52px;">
-          <a href="${BRAND.siteUrl}" style="color:${BRAND.lime};font-size:13px;font-weight:700;text-decoration:none;letter-spacing:2px;text-transform:uppercase;">
-            CLAIM 20% OFF \u2192
-          </a>
+    <!-- ═══ BENEFITS LIST ═══ -->
+    <tr><td style="padding:28px 36px 12px;background-color:${BRAND.navy};">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+        <tr><td style="padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
+          <p style="margin:0;font-size:16px;font-weight:700;color:#fff;">\u26a1 Immune system on full blast.</p>
+          <p style="margin:4px 0 0;font-size:13px;color:rgba(255,255,255,0.4);">Activates macrophages &amp; natural killer cells.</p>
+        </td></tr>
+        <tr><td style="padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
+          <p style="margin:0;font-size:16px;font-weight:700;color:#fff;">\ud83e\udde0 Focus that lasts all day.</p>
+          <p style="margin:4px 0 0;font-size:13px;color:rgba(255,255,255,0.4);">Lion\u2019s mane + 50mg matcha caffeine + L-theanine.</p>
+        </td></tr>
+        <tr><td style="padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
+          <p style="margin:0;font-size:16px;font-weight:700;color:#fff;">\u2728 Skin glow. Gut health.</p>
+          <p style="margin:4px 0 0;font-size:13px;color:rgba(255,255,255,0.4);">2g grass-fed collagen peptides + prebiotic beta-glucans.</p>
+        </td></tr>
+        <tr><td style="padding:16px 0;">
+          <p style="margin:0;font-size:16px;font-weight:700;color:#fff;">\ud83d\udc9a No crash. Zero anxiety.</p>
+          <p style="margin:4px 0 0;font-size:13px;color:rgba(255,255,255,0.4);">Reishi regulates cortisol. Energy up, jitters gone.</p>
         </td></tr>
       </table>
-      <p style="margin:14px 0 0;font-size:12px;color:${BRAND.navy};opacity:0.4;">First 500 only.</p>
+    </td></tr>
+
+    <!-- Quote -->
+    <tr><td style="padding:24px 40px 40px;background-color:${BRAND.navy};text-align:center;">
+      <p style="margin:0;font-size:14px;color:rgba(255,255,255,0.2);font-style:italic;line-height:1.5;">
+        \u201cEvery competitor sells mushroom powder.<br/>We sell what\u2019s actually inside it.\u201d
+      </p>
+    </td></tr>
+
+    <!-- ═══ FINAL CTA — lifestyle image background ═══ -->
+    <tr><td style="padding:0;background-color:${BRAND.navy};">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:url('${heroImg}') center center / cover no-repeat ${BRAND.navy};">
+        <tr><td style="padding:0;">
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:linear-gradient(180deg, rgba(27,31,59,0.7) 0%, rgba(27,31,59,0.4) 50%, rgba(27,31,59,0.75) 100%);">
+            <tr><td style="padding:60px 40px 20px;text-align:center;">
+              <p style="margin:0 0 24px;font-size:38px;color:#fff;font-weight:400;font-family:${SERIF};font-style:italic;line-height:1.1;">
+                The ritual is ready.<br/><span style="color:${BRAND.lime};">Just pour.</span>
+              </p>
+              <table role="presentation" cellpadding="0" cellspacing="0" style="margin:0 auto;">
+                <tr><td style="background:${BRAND.lime};border-radius:50px;padding:16px 52px;">
+                  <a href="${BRAND.siteUrl}" style="color:${BRAND.navy};font-size:13px;font-weight:700;text-decoration:none;letter-spacing:2px;text-transform:uppercase;">
+                    EXPLORE SHROOM\u00c9 \u2192
+                  </a>
+                </td></tr>
+              </table>
+              <p style="margin:14px 0 0;font-size:12px;color:rgba(255,255,255,0.5);">Your 20% off + free shipping is locked in.</p>
+            </td></tr>
+            <tr><td style="padding:20px 40px 48px;text-align:center;">
+              <table role="presentation" cellpadding="0" cellspacing="0" style="margin:0 auto;">
+                <tr>
+                  <td style="padding:0 16px;"><a href="https://tiktok.com/@drinkshroome" style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.4);text-decoration:none;">TikTok</a></td>
+                  <td style="padding:0 16px;"><a href="https://instagram.com/drinkshroome" style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.4);text-decoration:none;">Instagram</a></td>
+                  <td style="padding:0 16px;"><a href="https://youtube.com/@drinkshroome" style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.4);text-decoration:none;">YouTube</a></td>
+                </tr>
+              </table>
+            </td></tr>
+          </table>
+        </td></tr>
+      </table>
     </td></tr>
 
   `, email);
