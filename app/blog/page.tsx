@@ -33,6 +33,9 @@ const categoryColors: Record<string, { bg: string; text: string }> = {
   Wellness: { bg: "rgba(255,183,209,0.25)", text: "#B44C7A" },
   "How-To": { bg: "rgba(200,255,58,0.2)", text: "#4A6B1A" },
   Science: { bg: "rgba(212,184,224,0.3)", text: "#6B4D7A" },
+  Lifestyle: { bg: "rgba(255,223,150,0.25)", text: "#8B6914" },
+  Education: { bg: "rgba(150,200,255,0.25)", text: "#2A5A8C" },
+  Press: { bg: "rgba(40,40,40,0.12)", text: "#333333" },
 };
 
 export default function BlogIndex() {
