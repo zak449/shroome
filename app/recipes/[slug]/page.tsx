@@ -146,27 +146,21 @@ export default async function RecipeDetailPage({
         /* ── HERO ── */
         .rd-hero{
           position:relative;overflow:hidden;
-          min-height:560px;
+          min-height:85vh;
           display:flex;align-items:flex-end;
           padding:0 0 48px 0
         }
         .rd-hero-bg{
-          position:absolute;inset:0;
-          display:flex;align-items:center;justify-content:center
+          position:absolute;inset:0
         }
         .rd-hero-bg img{
           width:100%;height:100%;
-          object-fit:contain;
-          object-position:center center;
-          filter:brightness(0.85) saturate(1.1)
+          object-fit:cover;
+          object-position:center center
         }
         .rd-hero-overlay{
           position:absolute;inset:0;
-          background:linear-gradient(180deg,rgba(0,0,0,0) 0%,rgba(0,0,0,0.1) 30%,rgba(0,0,0,0.55) 100%)
-        }
-        .rd-hero-color{
-          position:absolute;inset:0;
-          mix-blend-mode:multiply;opacity:0.45
+          background:linear-gradient(180deg,rgba(0,0,0,0) 40%,rgba(0,0,0,0.5) 100%)
         }
         .rd-hero-inner{
           position:relative;z-index:2;
@@ -320,7 +314,7 @@ export default async function RecipeDetailPage({
           .rd-nav-logo span{font-size:18px}
           .rd-nav-logo img{width:30px;height:30px}
           .rd-nav-cta{padding:8px 14px;font-size:10px;letter-spacing:.04em;white-space:nowrap}
-          .rd-hero{min-height:500px;padding-bottom:36px}
+          .rd-hero{min-height:70vh;padding-bottom:36px}
           .rd-hero-inner{padding:0 5%}
           .rd-body{padding:40px 5% 56px}
           .rd-back-section{padding:0 5% 48px}
@@ -391,7 +385,7 @@ export default async function RecipeDetailPage({
       <section className="rd-hero">
         <div
           className="rd-hero-bg"
-          style={{ background: '#1B1F3B' }}
+          style={{ background: recipe.imageBg }}
         >
           <img src={recipe.image} alt={recipe.name} />
         </div>
