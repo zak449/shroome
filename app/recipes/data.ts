@@ -8,6 +8,7 @@ export interface Recipe {
   prepLabel: string;
   totalTime: string;
   color: string;
+  imageBg: string;
   textColor: string;
   ingredients: string[];
   steps: string[];
@@ -25,6 +26,7 @@ export const recipes: Recipe[] = [
     prepLabel: "15 sec",
     totalTime: "PT1M",
     color: "#C8FF3A",
+    imageBg: "#D9585B",
     textColor: "#1B1F3B",
     ingredients: ["1 shroomé original sachet", "6-8 oz oat milk", "Ice"],
     steps: [
@@ -44,6 +46,7 @@ export const recipes: Recipe[] = [
     prepLabel: "1 min",
     totalTime: "PT2M",
     color: "#FFB7D1",
+    imageBg: "#E8C820",
     textColor: "#1B1F3B",
     ingredients: [
       "1 shroomé vanilla sachet",
@@ -68,6 +71,7 @@ export const recipes: Recipe[] = [
     prepLabel: "30 sec",
     totalTime: "PT1M",
     color: "#D4B8E0",
+    imageBg: "#E8956A",
     textColor: "#1B1F3B",
     ingredients: [
       "1 shroomé strawberry sachet",
@@ -92,6 +96,7 @@ export const recipes: Recipe[] = [
     prepLabel: "15 sec",
     totalTime: "PT30S",
     color: "#1B1F3B",
+    imageBg: "#9B8ACA",
     textColor: "#FDF4EE",
     ingredients: [
       "1 shroomé original sachet",
@@ -113,6 +118,7 @@ export const recipes: Recipe[] = [
     prepLabel: "1 min",
     totalTime: "PT2M",
     color: "#C8FF3A",
+    imageBg: "#4DD9A5",
     textColor: "#1B1F3B",
     ingredients: [
       "1 shroomé original sachet",
@@ -138,6 +144,7 @@ export const recipes: Recipe[] = [
     prepLabel: "1 min",
     totalTime: "PT2M",
     color: "#FFB7D1",
+    imageBg: "#1565C0",
     textColor: "#1B1F3B",
     ingredients: [
       "1 shroomé original sachet",
@@ -153,17 +160,18 @@ export const recipes: Recipe[] = [
   },
   {
     id: "light-matcha-agua-fresca",
-    name: "Light Matcha Agua Fresca",
+    name: "Strawberry Matcha Agua Fresca",
     image: "/recipes/agua-fresca.jpg",
     description:
-      "A true agua fresca — matcha stirred into cold water with fresh lemon and a touch of agave. Light, citrusy, and barely sweet. The easiest refresher you'll ever make.",
+      "A true agua fresca — strawberry shroomé stirred into cold water with fresh lemon and a touch of agave. Light, citrusy, and barely sweet. The easiest refresher you'll ever make.",
     prepTime: "PT15S",
     prepLabel: "15 sec",
     totalTime: "PT30S",
     color: "#D4B8E0",
+    imageBg: "#E87830",
     textColor: "#1B1F3B",
     ingredients: [
-      "1 shroomé original sachet",
+      "1 shroomé strawberry sachet",
       "8 oz cold water",
       "Squeeze of fresh lemon juice (about half a lemon)",
       "1 tsp agave or honey",
@@ -173,7 +181,7 @@ export const recipes: Recipe[] = [
     steps: [
       "Fill a tall glass with ice. Pour in cold water.",
       "Squeeze in fresh lemon juice and drizzle in a teaspoon of agave. Stir to dissolve.",
-      "Tear open a shroomé sachet and pour it in. Stir gently — the matcha will turn the water a soft, pale green. Place a lemon wedge on the rim.",
+      "Tear open a shroomé strawberry sachet and pour it in. Stir gently — the matcha will turn the water a soft, pale green with a hint of berry. Place a lemon wedge on the rim.",
     ],
     datePublished: "2026-03-21",
   },
@@ -187,6 +195,7 @@ export const recipes: Recipe[] = [
     prepLabel: "15 sec",
     totalTime: "PT30S",
     color: "#1B1F3B",
+    imageBg: "#3BBFA0",
     textColor: "#FDF4EE",
     ingredients: [
       "1 shroomé original sachet",
@@ -212,6 +221,7 @@ export const recipes: Recipe[] = [
     prepLabel: "15 sec",
     totalTime: "PT30S",
     color: "#C8FF3A",
+    imageBg: "#D65A50",
     textColor: "#1B1F3B",
     ingredients: [
       "1 shroomé original sachet",

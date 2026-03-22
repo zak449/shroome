@@ -127,58 +127,44 @@ export default function RecipesPage() {
         .rec-pill-sep{opacity:.3}
 
         /* ── TILE GRID ── */
-        .rec-grid-section{max-width:1100px;margin:0 auto;padding:64px 6% 48px}
+        .rec-grid-section{padding:48px 0 0}
         .rec-grid-title{
           font-family:'DM Mono',monospace;font-size:11px;font-weight:500;
           letter-spacing:.2em;text-transform:uppercase;color:rgba(27,31,59,0.5);
-          margin-bottom:32px
+          margin-bottom:32px;padding:0 6%;text-align:center
         }
+        /* Desktop: 3-col grid, no gaps, colors bleed together */
         .rec-grid{
           display:grid;
           grid-template-columns:repeat(3,1fr);
-          gap:18px
+          gap:0
         }
         .rec-tile{
           position:relative;overflow:hidden;
-          border-radius:16px;
-          min-height:320px;
+          aspect-ratio:2/3;
           display:flex;flex-direction:column;justify-content:flex-end;
           cursor:pointer;
           text-decoration:none;
-          transition:transform .3s cubic-bezier(.22,1,.36,1),box-shadow .3s
+          transition:filter .3s,transform .3s
         }
-        .rec-tile:hover{transform:translateY(-5px);box-shadow:0 16px 48px rgba(27,31,59,0.18)}
+        .rec-tile:hover{filter:brightness(1.06);transform:scale(1.02);z-index:2}
         .rec-tile-img{
           position:absolute;inset:0;
           display:flex;align-items:center;justify-content:center;
-          transition:transform .4s cubic-bezier(.22,1,.36,1)
+          transition:transform .5s cubic-bezier(.22,1,.36,1)
         }
         .rec-tile-img img{
           width:100%;height:100%;
-          object-fit:contain;
+          object-fit:cover;
           object-position:center center
         }
         .rec-tile:hover .rec-tile-img{transform:scale(1.04)}
         .rec-tile-overlay{
           position:absolute;inset:0;
-          background:linear-gradient(180deg,rgba(0,0,0,0) 30%,rgba(0,0,0,0.55) 100%);
-          transition:background .3s
+          background:linear-gradient(180deg,rgba(0,0,0,0) 50%,rgba(0,0,0,0.5) 100%);
+          pointer-events:none
         }
-        .rec-tile-color{
-          position:absolute;inset:0;
-          opacity:0;
-          mix-blend-mode:multiply;
-          transition:opacity .3s
-        }
-        .rec-tile:hover .rec-tile-color{opacity:0.35}
-        .rec-tile-badge{
-          position:absolute;top:14px;right:14px;
-          font-family:'DM Mono',monospace;font-size:10px;font-weight:500;
-          letter-spacing:.14em;text-transform:uppercase;
-          padding:5px 12px;border-radius:100px;
-          background:rgba(255,255,255,0.2);backdrop-filter:blur(8px);
-          color:#FDF4EE;z-index:2
-        }
+        .rec-tile-badge{display:none}
         .rec-tile-content{
           position:relative;z-index:2;
           padding:24px
@@ -190,10 +176,10 @@ export default function RecipesPage() {
         }
         .rec-tile-name{
           font-family:'Instrument Serif',Georgia,serif;
-          font-size:clamp(20px,2.2vw,26px);font-weight:400;font-style:italic;
-          line-height:1.15;letter-spacing:-.01em;
+          font-size:clamp(22px,2.5vw,32px);font-weight:400;font-style:italic;
+          line-height:1.1;letter-spacing:-.01em;
           color:#FDF4EE;
-          text-shadow:0 1px 8px rgba(0,0,0,0.2)
+          text-shadow:0 2px 16px rgba(0,0,0,0.25)
         }
 
         /* ── CTA ── */
@@ -250,19 +236,20 @@ export default function RecipesPage() {
 
         /* ── RESPONSIVE ── */
         @media(max-width:768px){
-          .rec-grid{grid-template-columns:1fr 1fr;gap:14px}
-          .rec-tile{min-height:340px}
           .rec-nav{padding:0 4%;height:54px;gap:8px}
           .rec-nav-logo{gap:6px}
           .rec-nav-logo span{font-size:18px}
           .rec-nav-logo img{width:30px;height:30px}
           .rec-nav-cta{padding:8px 14px;font-size:10px;letter-spacing:.04em;white-space:nowrap}
           .rec-hero{padding:48px 6% 40px}
-          .rec-tile-content{padding:18px}
+          .rec-grid{grid-template-columns:1fr}
+          .rec-tile{aspect-ratio:auto;min-height:80vh}
+          .rec-tile-content{padding:0 6% 40px}
+          .rec-tile-name{font-size:clamp(28px,7vw,42px)}
         }
         @media(max-width:480px){
-          .rec-grid{grid-template-columns:1fr;gap:12px}
-          .rec-tile{min-height:400px}
+          .rec-tile{min-height:75vh}
+          .rec-tile-content{padding:0 5% 32px}
         }
       `}</style>
 
@@ -380,23 +367,13 @@ export default function RecipesPage() {
               href={`/recipes/${recipe.id}`}
               className="rec-tile"
             >
-              <div
-                className="rec-tile-img"
-                style={{ background: recipe.color }}
-              >
+              <div className="rec-tile-img">
                 <img src={recipe.image} alt={recipe.name} />
               </div>
               <div className="rec-tile-overlay" />
-              <div
-                className="rec-tile-color"
-                style={{ background: recipe.color }}
-              />
-              <div className="rec-tile-badge">
-                {recipe.prepLabel}
-              </div>
               <div className="rec-tile-content">
                 <div className="rec-tile-ingredients">
-                  {recipe.ingredients.length} ingredients
+                  {recipe.ingredients.length} ingredients · {recipe.prepLabel}
                 </div>
                 <div className="rec-tile-name">
                   {recipe.name}
