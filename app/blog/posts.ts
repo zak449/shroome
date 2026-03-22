@@ -1615,6 +1615,324 @@ export const blogPosts: BlogPost[] = [
 <p><em>*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</em></p>
 `,
   },
+  {
+    slug: "what-are-adaptogens-functional-mushrooms-guide",
+    title: "What Are Adaptogens? The Beginner's Guide to Functional Mushrooms",
+    excerpt:
+      "Adaptogens are everywhere right now — but what do they actually do? Here's a no-hype breakdown of how functional mushrooms work and which ones are worth your time.",
+    date: "2026-03-21",
+    readTime: "7 min read",
+    category: "Wellness",
+    metaDescription:
+      "Learn what adaptogens are, how functional mushrooms like lion's mane, reishi, and chaga work in the body, and how to choose the right ones for focus, immunity, and stress relief.",
+    ogImage: "/og-blog-adaptogens-guide.jpg",
+    author: "Zachary Kaufman",
+    content: `
+<p>If you've spent any time in the wellness aisle lately, you've probably seen the word "adaptogen" on everything from powdered drink mixes to gummy vitamins. It sounds impressive. It sounds scientific. But when someone asks you what an adaptogen actually <em>is</em>, things get a little fuzzy.</p>
+
+<p>That's not your fault. The term gets thrown around loosely, and most brands are more interested in slapping it on a label than explaining what it means. So let's fix that.</p>
+
+<h2>What Adaptogens Actually Are</h2>
+
+<p>An adaptogen is a natural substance — usually a plant or fungus — that helps your body adapt to stress. Not "stress" in the vague, hand-wavy sense. We're talking about the biological stress response: the cascade of cortisol, adrenaline, and other hormones your body releases when it perceives a threat, whether that threat is a deadline, a bad night of sleep, or an intense workout.</p>
+
+<p>The concept was formalized by Soviet scientist Dr. Nikolai Lazarev in 1947 and later refined by Dr. Israel Brekhman, who established three criteria a substance must meet to qualify as an adaptogen:</p>
+
+<p><strong>1. It must be non-toxic at normal doses.</strong> You should be able to take it daily without harmful side effects.</p>
+
+<p><strong>2. It must help the body resist a wide range of stressors</strong> — physical, chemical, and biological. Not just one type of stress, but stress broadly.</p>
+
+<p><strong>3. It must have a normalizing effect.</strong> This is the key one. Adaptogens don't push your body in one direction. They help bring it back to balance. If your cortisol is too high, they help bring it down. If your immune response is sluggish, they help bring it up. The technical term for this is <em>homeostasis</em>.</p>
+
+<p>This third criterion is what separates adaptogens from stimulants like caffeine (which only pushes your energy up) or sedatives like melatonin (which only pushes it down). Adaptogens work with your body's existing systems, helping them function more efficiently rather than overriding them.</p>
+
+<h2>How Adaptogens Work in Your Body</h2>
+
+<p>When you encounter stress, your body moves through three stages: alarm (the initial "fight or flight" response), resistance (your body trying to cope and restore balance), and exhaustion (when coping resources are depleted).</p>
+
+<p>Adaptogens extend the resistance phase. They help your body stay in that productive, coping state longer before tipping into exhaustion. At the molecular level, they interact with the hypothalamic-pituitary-adrenal (HPA) axis — the system that regulates your stress response — and help modulate the production of stress hormones like cortisol.</p>
+
+<p>Think of it like a thermostat for your stress response. Without adaptogens, your body might overcorrect in either direction — too much cortisol when you're anxious, too little when you're burned out. Adaptogens help keep that thermostat calibrated.</p>
+
+<h2>Functional Mushrooms: The Adaptogens That Aren't Just Hype</h2>
+
+<p>Among all the adaptogenic substances out there — ashwagandha, rhodiola, holy basil, and dozens more — functional mushrooms stand out for one reason: they have an unusually deep body of research behind them. We're talking centuries of use in Traditional Chinese Medicine backed by modern clinical studies.</p>
+
+<p>Here are the three you'll encounter most often, and what they actually do:</p>
+
+<h3>Lion's Mane (<em>Hericium erinaceus</em>)</h3>
+
+<p>Lion's mane is the brain mushroom. It contains two unique compounds — hericenones and erinacines — that stimulate the production of Nerve Growth Factor (NGF). NGF is a protein your brain needs to grow, maintain, and repair neurons. It's essential for neuroplasticity, the process by which your brain forms new connections and adapts to new information.</p>
+
+<p>In practical terms, lion's mane supports <strong>focus, memory, and mental clarity</strong>. Research published in <em>Phytotherapy Research</em> found that adults who supplemented with lion's mane showed significant improvements in cognitive function compared to a placebo group. This isn't subtle stuff — participants noticed the difference, and it was measurable on standardized cognitive tests.</p>
+
+<p>Lion's mane is the adaptogen you reach for when you want your brain working at its best. Studying, deep work, creative projects — that's its wheelhouse.</p>
+
+<h3>Reishi (<em>Ganoderma lucidum</em>)</h3>
+
+<p>If lion's mane is the focus mushroom, reishi is the calm-down mushroom. Known as the "mushroom of immortality" in traditional Chinese herbalism (dramatic, but they weren't wrong about its benefits), reishi has been used for over 2,000 years to promote relaxation and support immune function.</p>
+
+<p>Reishi works primarily through its triterpene content — compounds that have been shown to support the body's stress response and promote a sense of calm without sedation. It also contains <a href="/blog/what-are-beta-glucans-mushroom-compound">beta-glucans that modulate immune function</a>, helping your immune system stay responsive without overreacting.</p>
+
+<p>Reishi is the adaptogen for people who run hot — high-stress jobs, racing thoughts, difficulty winding down. It helps smooth out the edges without making you drowsy.</p>
+
+<h3>Chaga (<em>Inonotus obliquus</em>)</h3>
+
+<p>Chaga is the immune system powerhouse. This birch-tree fungus has one of the highest ORAC (Oxygen Radical Absorbance Capacity) scores of any natural food, which means it's exceptionally rich in antioxidants. It also contains a significant concentration of beta-glucans, making it a potent supporter of immune health.</p>
+
+<p>Beyond immune support, chaga has been studied for its potential to support healthy inflammatory response and digestive health. It's the adaptogen you want in your corner during cold season or any period where your body is under extra physical stress — travel, training, seasonal changes.</p>
+
+<h2>Why Source and Quality Matter</h2>
+
+<p>Here's where things get important: not all mushroom products are created equal. The adaptogenic compounds in functional mushrooms — the beta-glucans, triterpenes, hericenones, and erinacines — are concentrated in the <strong>fruiting body</strong> (the actual mushroom). Many cheaper supplements use mycelium grown on grain, which dilutes the active compounds with starch filler.</p>
+
+<p>When shopping for functional mushroom products, look for:</p>
+
+<p><strong>Fruiting body extract</strong> (not mycelium-on-grain)<br />
+<strong>Standardized beta-glucan content</strong> (ideally 30%+)<br />
+<strong>Third-party testing</strong> with Certificates of Analysis available<br />
+<strong>Hot water or dual extraction</strong> to liberate compounds from chitin cell walls</p>
+
+<p>You can dig deeper into our sourcing standards on our <a href="/#ingredients">ingredients page</a>, where we break down exactly what's in each serving and why.</p>
+
+<h2>How Shroom&eacute; Puts This Into Practice</h2>
+
+<p>We built <a href="/">shroom&eacute;</a> around the idea that adaptogens should be part of your daily routine — not something you have to remember to take separately. Every serving combines lion's mane, reishi, and chaga with ceremonial-grade matcha, creating a single drink that delivers focus, calm energy, and immune support in about 15 seconds of prep time.</p>
+
+<p>The matcha provides the caffeine and L-theanine for immediate energy and focus. The functional mushrooms provide the adaptogenic support that builds over time. Together, they cover both the short game (feeling alert right now) and the long game (supporting your body's stress response, cognitive function, and immunity over weeks and months of consistent use).</p>
+
+<p>If you're curious about the science behind how matcha and mushrooms complement each other, check out our <a href="/faq">FAQ</a> for answers to the most common questions.</p>
+
+<h2>The Practical Takeaway</h2>
+
+<p>Adaptogens aren't magic. They won't erase your stress or turn you into a superhuman. What they do — when they're properly sourced, correctly dosed, and taken consistently — is help your body handle stress more efficiently. They support the systems that keep you balanced, focused, and resilient.</p>
+
+<p>Functional mushrooms are some of the most well-studied adaptogens available, with research spanning decades and cultures. Lion's mane for your brain, reishi for your stress response, chaga for your immune system — each one addresses a different dimension of daily wellness.</p>
+
+<p>The best part? You don't need three separate supplements to get all three. You just need the right morning ritual.</p>
+
+<hr />
+
+<p><em>*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</em></p>
+`,
+  },
+  {
+    slug: "collagen-matcha-benefits",
+    title: "Collagen in Your Matcha: Why It's the Smartest Add You'll Ever Make",
+    excerpt:
+      "Collagen peptides and matcha are a surprisingly perfect pair. Here's the science behind why adding collagen to your daily matcha delivers real results for skin, hair, gut, and joints.",
+    date: "2026-03-21",
+    readTime: "7 min read",
+    category: "Ingredients",
+    metaDescription:
+      "Discover why collagen peptides in matcha is the ideal pairing for skin, hair, gut health, and joint support. Learn about bioavailability, types of collagen, and how to get the most from your daily matcha.",
+    ogImage: "/og-blog-collagen-matcha.jpg",
+    author: "Zachary Kaufman",
+    content: `
+<p>You've probably seen collagen supplements everywhere — powders, capsules, gummies, even coffee creamers. The promises range from glowing skin to stronger joints to better gut health. Some of those promises are backed by solid research. Others are marketing fluff.</p>
+
+<p>But here's what most people miss: <strong>how</strong> you take collagen matters almost as much as <strong>whether</strong> you take it. And pairing collagen peptides with matcha isn't just convenient — it's biochemically smart. Let's break down why.</p>
+
+<h2>What Collagen Actually Does in Your Body</h2>
+
+<p>Collagen is the most abundant protein in the human body. It's the structural scaffolding that holds you together — literally. It makes up about 75% of your skin's dry weight, forms the framework of your bones and cartilage, lines your gut, and strengthens your hair, nails, and tendons.</p>
+
+<p>Your body produces collagen naturally, but that production starts declining around age 25. By your mid-30s, you're losing roughly 1% to 1.5% of your collagen per year. This is why skin starts losing elasticity, joints get stiffer, and recovery from workouts takes longer as you age. It's not just "getting older" — it's a measurable decline in a specific protein.</p>
+
+<p>Supplementing with collagen peptides (also called hydrolyzed collagen) gives your body the amino acid building blocks it needs to support its own collagen production. The key amino acids are glycine, proline, and hydroxyproline — and they're found in much higher concentrations in collagen than in typical dietary protein sources.</p>
+
+<h2>Collagen Peptides vs. Whole Collagen: Bioavailability Matters</h2>
+
+<p>Not all collagen supplements are the same. The difference comes down to how the collagen has been processed.</p>
+
+<p><strong>Whole collagen</strong> (like gelatin) has large, intact protein molecules. Your body has to work hard to break these down during digestion, and absorption rates are relatively low. This is fine for making gummy bears, but it's not ideal if you want the amino acids to actually reach your bloodstream efficiently.</p>
+
+<p><strong>Collagen peptides</strong> (hydrolyzed collagen) have been enzymatically broken down into much smaller molecules — typically between 2,000 and 5,000 daltons in molecular weight. These smaller peptides are absorbed through the intestinal wall significantly more efficiently. Studies show that hydrolyzed collagen peptides appear in the bloodstream within 30 minutes of consumption and reach peak levels within a few hours.</p>
+
+<p>This is a critical distinction. A 10g serving of collagen peptides delivers meaningfully more usable amino acids than the same amount of whole collagen or gelatin. When you're taking something every day, that efficiency difference compounds over time.</p>
+
+<h2>The Research: What Collagen Peptides Can Actually Do</h2>
+
+<p>Let's separate the well-supported claims from the speculation:</p>
+
+<h3>Skin Elasticity and Hydration — Strong Evidence</h3>
+
+<p>A meta-analysis published in the <em>International Journal of Dermatology</em> reviewed 19 studies involving over 1,100 participants and found that collagen peptide supplementation significantly improved skin hydration, elasticity, and wrinkle depth compared to placebo. Most studies used doses between 2.5g and 10g daily, with results becoming noticeable after 4 to 8 weeks of consistent use.</p>
+
+<p>The mechanism makes sense: collagen peptides provide the specific amino acids your skin needs to maintain its structure, and some studies suggest the peptides themselves may signal skin cells (fibroblasts) to ramp up their own collagen production.</p>
+
+<h3>Joint Support — Solid Evidence</h3>
+
+<p>Several randomized controlled trials have shown that collagen peptide supplementation reduces joint discomfort in athletes and older adults. A study in the journal <em>Applied Physiology, Nutrition, and Metabolism</em> found that athletes taking 5g of collagen peptides daily for 12 weeks reported significantly less activity-related joint pain than the placebo group.</p>
+
+<p>Collagen is a primary component of cartilage, so providing additional collagen peptides supports the body's ability to maintain and repair joint tissue — particularly useful for people who are physically active or experiencing age-related wear.</p>
+
+<h3>Hair and Nail Strength — Emerging Evidence</h3>
+
+<p>Research here is newer but promising. Collagen provides proline, a key building block of keratin (the protein in hair and nails). A study in the <em>Journal of Cosmetic Dermatology</em> found that collagen supplementation reduced nail brittleness by 42% and increased nail growth rate after 24 weeks. Hair-related studies are smaller but show similar directional improvements in thickness and growth.</p>
+
+<h3>Gut Lining Support — Promising but Early</h3>
+
+<p>The amino acids in collagen — particularly glycine and glutamine — play roles in maintaining the integrity of the intestinal lining. Glycine has been studied for its role in supporting the mucosal barrier of the gut, which is relevant for people dealing with gut permeability issues. The research is earlier stage than skin or joint studies, but the biochemistry is sound.</p>
+
+<h2>Why Matcha + Collagen Is a Genuinely Smart Pairing</h2>
+
+<p>Here's where it gets interesting. Collagen peptides are essentially flavorless and dissolve easily in liquid, which makes them a natural addition to a daily drink. But pairing them with matcha specifically — rather than coffee, juice, or water — offers distinct advantages.</p>
+
+<p><strong>Antioxidant protection.</strong> One of the biggest enemies of your body's existing collagen is oxidative stress — free radicals that break down collagen fibers faster than your body can replace them. Matcha is exceptionally rich in catechins, particularly EGCG (epigallocatechin gallate), which is one of the most potent antioxidants found in food. Drinking matcha with collagen means you're simultaneously building new collagen <em>and</em> protecting the collagen you already have. That's a two-front approach most people miss.</p>
+
+<p><strong>Vitamin C synergy.</strong> Your body needs vitamin C to synthesize collagen — it's a required cofactor in the enzymatic process that stabilizes collagen molecules. Matcha contains meaningful amounts of vitamin C (unlike coffee, which contains essentially none). While you should still get vitamin C from fruits and vegetables, having some present alongside your collagen helps support the synthesis process.</p>
+
+<p><strong>No interference with absorption.</strong> Coffee's high acidity and tannin content can interfere with the absorption of certain nutrients. Matcha is significantly less acidic and, while it does contain tannins, the L-theanine and other amino acids present help buffer any interference. Collagen peptides dissolve cleanly in matcha and are absorbed without issues.</p>
+
+<p><strong>The ritual factor.</strong> Collagen works through consistency — you need to take it daily for weeks before you see results. Pairing it with a daily matcha ritual means you never have to remember a separate supplement. It becomes automatic. And automatic habits are the ones that actually stick.</p>
+
+<h2>How Shroom&eacute; Brings It All Together</h2>
+
+<p>When we formulated <a href="/">shroom&eacute;</a>, including collagen peptides wasn't an afterthought — it was a core design decision. Every serving contains grass-fed, hydrolyzed collagen peptides alongside ceremonial-grade matcha and functional mushrooms.</p>
+
+<p>The result is a daily drink that covers <a href="/#ingredients">multiple dimensions of wellness in a single serving</a>: the matcha delivers caffeine and L-theanine for focused energy, the mushroom extracts provide adaptogenic support, and the collagen peptides work on skin, joint, gut, and hair health in the background.</p>
+
+<p>You can see the full ingredient breakdown and sourcing details on our <a href="/#ingredients">ingredients section</a>. Everything is third-party tested, and we list exact amounts — no proprietary blends, no hidden fillers.</p>
+
+<h2>Making It Work for You</h2>
+
+<p>If you're going to add collagen to your routine, here are a few things to keep in mind:</p>
+
+<p><strong>Consistency beats dosage.</strong> Taking 5g daily for 3 months will deliver better results than taking 15g sporadically. Build it into an existing habit — like your morning matcha — and you'll actually stick with it.</p>
+
+<p><strong>Look for hydrolyzed peptides.</strong> Make sure the product specifies "hydrolyzed collagen peptides," not just "collagen." The molecular size matters for absorption.</p>
+
+<p><strong>Give it time.</strong> Collagen is not a next-day supplement. Skin improvements typically show up around the 4 to 8 week mark. Joint benefits may take 8 to 12 weeks. This is a long game, which is exactly why having it built into your daily drink matters — you don't have to think about it.</p>
+
+<p>Try it in one of our <a href="/recipes">matcha recipes</a> if you want to see how it fits into different preparations. Whether you whisk it traditional-style or blend it into a latte, the collagen dissolves completely without changing the flavor.</p>
+
+<hr />
+
+<p><em>*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</em></p>
+`,
+  },
+  {
+    slug: "morning-routine-with-matcha",
+    title: "How to Build a Morning Routine That Actually Sticks (With Matcha)",
+    excerpt:
+      "Most morning routines fail because they're too complicated. Here's how to build one that actually works — and why a 15-second matcha ritual might be the anchor it needs.",
+    date: "2026-03-21",
+    readTime: "8 min read",
+    category: "Lifestyle",
+    metaDescription:
+      "Learn how to build a sustainable morning routine with practical tips, habit science, and a simple matcha ritual that anchors your day. No 5 AM wake-ups required.",
+    ogImage: "/og-blog-morning-routine.jpg",
+    author: "Zachary Kaufman",
+    content: `
+<p>Let's be honest about morning routines for a second. If you've ever scrolled through wellness content online, you've probably seen some version of the "perfect morning": wake up at 5 AM, meditate for 20 minutes, journal, exercise, take a cold shower, make a smoothie with 14 ingredients, and review your goals — all before 7 AM.</p>
+
+<p>Sounds aspirational. Also sounds like a part-time job.</p>
+
+<p>The truth is, most morning routines fail not because people lack discipline, but because the routines themselves are unsustainable. They require too many steps, too much time, and too much willpower from someone who just opened their eyes three minutes ago. If your morning routine feels like a performance, it's only a matter of time before you stop performing.</p>
+
+<p>Here's how to build one that actually sticks — based on how habits actually work, not how they look on social media.</p>
+
+<h2>Why Mornings Matter (But Not for the Reasons You Think)</h2>
+
+<p>The case for a morning routine isn't about productivity hacking or becoming a morning person. It's about something simpler: <strong>your first decisions set the tone for everything that follows</strong>.</p>
+
+<p>Behavioral research shows that decisions made early in the day have an outsized impact on subsequent choices. This is partly because of decision fatigue — the well-documented phenomenon where the quality of your decisions degrades as you make more of them throughout the day. By establishing a simple, positive sequence of actions in the morning, you reduce the number of decisions required during your lowest-resistance window.</p>
+
+<p>It's also about cortisol. Your cortisol levels naturally peak within 30 to 45 minutes of waking (this is called the Cortisol Awakening Response). This natural spike is your body's way of preparing you for the day. A well-designed morning routine works <em>with</em> this natural rhythm rather than fighting against it.</p>
+
+<p>The goal isn't to cram as much as possible into your morning. The goal is to have a reliable, low-friction sequence that makes you feel prepared and grounded before the chaos of the day begins.</p>
+
+<h2>The Habit Science: Why Simple Wins</h2>
+
+<p>James Clear's habit research (popularized in <em>Atomic Habits</em>) points to four laws of behavior change: make it obvious, make it attractive, make it easy, and make it satisfying. The morning routines that fail typically violate the third law — they're not easy enough.</p>
+
+<p>A 45-minute morning routine has 45 minutes worth of resistance. A 5-minute morning routine has 5 minutes worth of resistance. When you're groggy, warm in bed, and your alarm just went off, which one do you think has a better survival rate?</p>
+
+<p>The research on habit formation also shows that consistency matters far more than intensity. Doing something small every single day builds a stronger neural pathway than doing something ambitious three times a week. Your brain doesn't care how impressive your routine is — it cares how often you repeat it.</p>
+
+<p>This is why the most sustainable morning routines are built around <strong>anchor habits</strong> — small, easy actions that require almost no willpower and serve as the foundation for everything else.</p>
+
+<h2>Building Your Morning Routine: A Practical Framework</h2>
+
+<p>Forget the 12-step morning protocol. Start with these three layers, and add only when each layer is automatic:</p>
+
+<h3>Layer 1: The Anchor (Non-Negotiable, Under 2 Minutes)</h3>
+
+<p>This is the one thing you do every single morning, no matter what. It should be so simple that it's almost impossible to skip. It should require virtually no setup and deliver an immediate, tangible reward.</p>
+
+<p>For a lot of people, this is making a drink — coffee, tea, matcha. It works as an anchor because it's sensory (you see, smell, taste, and feel it), it's rewarding (caffeine is a powerful reinforcer), and it creates a natural pause between "just woke up" and "starting the day."</p>
+
+<p>This is exactly why we designed <a href="/">shroom&eacute;</a> to be a 15-second preparation. Tear open a sachet, pour it into water or milk, stir, and you're done. No measuring scoops, no blender, no boiling water, no waiting. The entire point is to make the anchor habit as frictionless as possible so it happens every single day — including the mornings when you're running late, didn't sleep well, or just aren't feeling it.</p>
+
+<p>Those difficult mornings are actually the ones that matter most. Anyone can do a morning routine when they feel great. The routines that stick are the ones that survive your worst mornings.</p>
+
+<h3>Layer 2: The Body Check-In (2-5 Minutes)</h3>
+
+<p>Once your anchor habit is automatic — meaning you do it without thinking about it, like brushing your teeth — you can add a brief body check-in. This doesn't have to be a full workout or a yoga session. It can be:</p>
+
+<p><strong>5 minutes of stretching</strong> while your matcha cools down<br />
+<strong>A short walk outside</strong> (even just around the block — morning sunlight exposure helps regulate your circadian rhythm)<br />
+<strong>3 deep breaths</strong> with your eyes closed before you look at your phone</p>
+
+<p>The purpose of this layer isn't fitness. It's proprioception — becoming aware of how your body feels today. Are you stiff? Energized? Sore? Tense? This check-in takes almost no time, but it gives you information that helps you make better decisions throughout the day (whether to push hard at the gym or take it easy, whether you need an extra glass of water, whether that tension in your shoulders means you need to address something).</p>
+
+<h3>Layer 3: The Mental Set (2-5 Minutes)</h3>
+
+<p>Once Layers 1 and 2 are habitual, you can optionally add a brief mental practice. This is where journaling, meditation, or intention-setting lives — but keep it contained:</p>
+
+<p><strong>Write down 1 to 3 priorities for the day</strong> (not a to-do list — priorities)<br />
+<strong>2 minutes of focused breathing</strong> (not a 20-minute meditation, just 2 minutes)<br />
+<strong>Read one page of a book</strong> (yes, just one — the habit is what matters, not the volume)</p>
+
+<p>Notice that even with all three layers, we're talking about a morning routine that takes 5 to 12 minutes. That's it. No 5 AM alarm required. No elaborate setup. Just a simple sequence of small actions that compound over time.</p>
+
+<h2>The Role of Ritual (Not Just Routine)</h2>
+
+<p>There's an important distinction between a routine and a ritual. A routine is a sequence of actions. A ritual is a sequence of actions with <em>meaning attached</em>.</p>
+
+<p>Making instant coffee in a Styrofoam cup is a routine. Whisking matcha in a bowl you chose specifically for the purpose, watching the foam form, and taking the first sip before the day begins — that's closer to a ritual. The actions might take the same amount of time, but the experience is different because you're present for it.</p>
+
+<p>Rituals work because they engage your senses and your attention simultaneously, which pulls you out of autopilot and into the current moment. This is why tea ceremonies exist across cultures — the act of preparing and consuming a drink can be genuinely meditative when you let it.</p>
+
+<p>You don't need to turn your morning into a formal ceremony. But treating your anchor habit with a little bit of intentionality — using a cup you like, standing somewhere with natural light, putting your phone in another room for those 60 seconds — transforms a routine into something your brain actually looks forward to. And habits your brain looks forward to are habits that last.</p>
+
+<h2>Common Morning Routine Mistakes (and How to Avoid Them)</h2>
+
+<p><strong>Starting too big.</strong> If your current morning routine is "snooze alarm, check phone, panic," don't try to jump to a 30-minute wellness protocol. Start with one anchor habit. Do it for two weeks. Then consider adding Layer 2. Gradual expansion is the only expansion that sticks.</p>
+
+<p><strong>Making it phone-dependent.</strong> If your morning routine requires you to open your phone (guided meditation app, workout video, habit tracker), you will inevitably get pulled into email, notifications, and social media. Keep your morning routine analog whenever possible. Your phone is a tool, not a morning companion.</p>
+
+<p><strong>Optimizing before habituating.</strong> Don't worry about the "best" stretching sequence or the "optimal" journaling framework. The best morning routine is the one you actually do. Optimize after the habit is locked in — not before.</p>
+
+<p><strong>Skipping weekends.</strong> Habits form through repetition, and your brain doesn't know what day of the week it is. If your morning routine only happens Monday through Friday, you're breaking the chain 104 times a year. Keep the anchor habit consistent seven days a week, even if the other layers flex.</p>
+
+<h2>What a Realistic Morning Looks Like</h2>
+
+<p>Here's what a sustainable morning routine might look like in practice:</p>
+
+<p><strong>6:45 AM</strong> — Alarm goes off. No snooze. Feet on floor.<br />
+<strong>6:46 AM</strong> — Walk to kitchen. Pour a sachet of <a href="/">shroom&eacute;</a> into your favorite cup, add water or oat milk, stir. 15 seconds.<br />
+<strong>6:47 AM</strong> — Stand by the window. Drink your matcha. No phone. Just taste the drink and look at whatever's outside.<br />
+<strong>6:52 AM</strong> — 3 minutes of stretching. Neck, shoulders, hips. Nothing fancy.<br />
+<strong>6:55 AM</strong> — Grab a notebook. Write down today's top 3 priorities. Done.<br />
+<strong>6:58 AM</strong> — Shower, get ready, start the day.</p>
+
+<p>Total time: 13 minutes. No heroics. No suffering. Just a simple sequence that gives you energy (ceremonial matcha + functional mushrooms), awareness (stretching), and direction (priorities) before the day begins. Check out our <a href="/recipes">recipes page</a> for different ways to prepare your morning matcha — from a classic whisk to an iced latte that takes under a minute.</p>
+
+<h2>The Compound Effect</h2>
+
+<p>The magic of a morning routine isn't in any single morning. It's in the compounding. Two hundred consecutive mornings where you started with intention, moved your body briefly, and clarified your priorities will fundamentally change how you experience your days.</p>
+
+<p>Not because any one morning is transformative, but because consistency builds momentum, and momentum builds identity. After a few months, you stop being someone who's "trying to have a morning routine" and start being someone who simply has one. That identity shift is where the real change lives.</p>
+
+<p>Start with the anchor. Make it absurdly simple. Protect it on your hardest mornings. Everything else grows from there.</p>
+
+<hr />
+
+<p><em>*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</em></p>
+`,
+  },
 ];
 
 export function getPostBySlug(slug: string): BlogPost | undefined {
