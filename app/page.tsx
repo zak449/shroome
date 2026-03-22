@@ -354,6 +354,7 @@ export default function Home() {
             { label: "How It Works", id: "how" },
             { label: "FAQ", id: "faq", href: "/faq" },
             { label: "Blog", id: "blog", href: "/blog" },
+            { label: "Recipes", id: "recipes", href: "/recipes" },
           ].map((l) => (
             <button
               key={l.id}
@@ -439,6 +440,7 @@ export default function Home() {
             { label: "How It Works", id: "how" },
             { label: "FAQ", id: "faq", href: "/faq" },
             { label: "Blog", id: "blog", href: "/blog" },
+            { label: "Recipes", id: "recipes", href: "/recipes" },
           ].map((l) => (
             <button
               key={l.id}

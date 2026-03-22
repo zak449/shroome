@@ -44,6 +44,23 @@ export default function Privacy() {
   return (
     <>
       <style>{`
+        /* ── PAGE WRAPPER (retro 90s background) ── */
+        .pp-page{
+          background:
+            radial-gradient(ellipse 120% 80% at 20% 10%, rgba(212,184,224,0.35) 0%, transparent 50%),
+            radial-gradient(ellipse 100% 70% at 80% 85%, rgba(200,255,58,0.12) 0%, transparent 50%),
+            radial-gradient(ellipse 60% 50% at 60% 40%, rgba(255,183,209,0.2) 0%, transparent 50%),
+            linear-gradient(180deg, #F0E4D8 0%, #EDE0D4 30%, #E8D8CC 60%, #F0E4D8 100%);
+          background-attachment:fixed;
+          position:relative
+        }
+        .pp-page::before{
+          content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
+          background-image:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%231B1F3B' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+          opacity:0.6
+        }
+        .pp-page>*{position:relative;z-index:1}
+
         /* ── TICKER ─── */
         .pp-ticker{background:#1B1F3B;padding:10px 0;overflow:hidden;white-space:nowrap}
         .pp-ticker-track{display:inline-flex;animation:ppTick 28s linear infinite}
@@ -64,7 +81,7 @@ export default function Privacy() {
           display:flex;align-items:center;gap:8px;
           text-decoration:none;color:#1B1F3B
         }
-        .pp-nav-logo img{width:28px;height:28px;filter:brightness(0) saturate(100%) invert(10%) sepia(30%) saturate(1500%) hue-rotate(200deg) brightness(95%)}
+        .pp-nav-logo img{width:32px;height:32px;border-radius:6px}
         .pp-nav-logo span{font-family:'Instrument Serif',Georgia,serif;font-size:22px;font-weight:400;font-style:italic;color:#1B1F3B}
         .pp-nav-links{display:flex;gap:8px}
         @media(max-width:768px){.pp-nav-links{display:none !important}}
@@ -173,7 +190,7 @@ export default function Privacy() {
           /* pp-nav-links hidden via main style block above */
           .pp-nav-logo{gap:6px}
           .pp-nav-logo span{font-size:18px}
-          .pp-nav-logo img{width:24px;height:24px}
+          .pp-nav-logo img{width:26px;height:26px}
           .pp-nav-cta{padding:8px 14px;font-size:10px;letter-spacing:.04em;white-space:nowrap}
           .pp-hero{padding:48px 5% 44px}
           .pp-hero h1{font-size:clamp(32px,9vw,46px)}
@@ -192,6 +209,7 @@ export default function Privacy() {
       `}</style>
 
       {/* ═══ TICKER ═══ */}
+      <div className="pp-page">
       <div className="pp-ticker">
         <div className="pp-ticker-track">
           {[...tickerItems, ...tickerItems].map((t, i) => (
@@ -214,7 +232,7 @@ export default function Privacy() {
           <a href="/#how">How It Works</a>
           <a href="/faq">FAQ</a>
           <a href="/blog">Blog</a>
-        </div>
+          <a href="/recipes">Recipes</a>        </div>
         <a href="/" className="pp-nav-cta">Get 20% off + free shipping &rarr;</a>
         <MobileNav
           prefix="pp"
@@ -224,6 +242,7 @@ export default function Privacy() {
             { label: "How It Works", href: "/#how" },
             { label: "FAQ", href: "/faq" },
             { label: "Blog", href: "/blog" },
+            { label: "Recipes", href: "/recipes" },
           ]}
         />
       </nav>
@@ -364,6 +383,7 @@ export default function Privacy() {
         </div>
         <div className="pp-footer-bot">@drinkshroome</div>
       </footer>
+      </div>
     </>
   );
 }

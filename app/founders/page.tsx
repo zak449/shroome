@@ -211,7 +211,7 @@ export default function Founders() {
           <a href="/#how">How It Works</a>
           <a href="/faq">FAQ</a>
           <a href="/blog">Blog</a>
-        </div>
+          <a href="/recipes">Recipes</a>        </div>
         <a href="#signup" className="fb-nav-cta">Claim Your Box &rarr;</a>
         <MobileNav
           prefix="fb"
@@ -221,6 +221,7 @@ export default function Founders() {
             { label: "How It Works", href: "/#how" },
             { label: "FAQ", href: "/faq" },
             { label: "Blog", href: "/blog" },
+            { label: "Recipes", href: "/recipes" },
           ]}
         />
       </nav>

@@ -82,6 +82,23 @@ export default function BlogIndex() {
       />
 
       <style>{`
+        /* ── PAGE WRAPPER (retro 90s background) ── */
+        .blog-page{
+          background:
+            radial-gradient(ellipse 120% 80% at 20% 10%, rgba(212,184,224,0.35) 0%, transparent 50%),
+            radial-gradient(ellipse 100% 70% at 80% 85%, rgba(200,255,58,0.12) 0%, transparent 50%),
+            radial-gradient(ellipse 60% 50% at 60% 40%, rgba(255,183,209,0.2) 0%, transparent 50%),
+            linear-gradient(180deg, #F0E4D8 0%, #EDE0D4 30%, #E8D8CC 60%, #F0E4D8 100%);
+          background-attachment:fixed;
+          position:relative
+        }
+        .blog-page::before{
+          content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
+          background-image:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%231B1F3B' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+          opacity:0.6
+        }
+        .blog-page>*{position:relative;z-index:1}
+
         /* ── NAV ── */
         .blog-nav{
           position:sticky;top:0;z-index:200;
@@ -92,7 +109,7 @@ export default function BlogIndex() {
           border-bottom:1px solid rgba(27,31,59,0.06)
         }
         .blog-nav-logo{display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B1F3B}
-        .blog-nav-logo img{width:28px;height:28px;filter:brightness(0) saturate(100%) invert(10%) sepia(30%) saturate(1500%) hue-rotate(200deg) brightness(95%)}
+        .blog-nav-logo img{width:32px;height:32px;border-radius:6px}
         .blog-nav-logo span{font-family:'Instrument Serif',Georgia,serif;font-size:22px;font-weight:400;font-style:italic;color:#1B1F3B}
         .blog-nav-links{display:flex;gap:8px}
         @media(max-width:768px){.blog-nav-links{display:none !important}}
@@ -186,7 +203,7 @@ export default function BlogIndex() {
           /* blog-nav-links hidden via main style block above */
           .blog-nav-logo{gap:6px}
           .blog-nav-logo span{font-size:18px}
-          .blog-nav-logo img{width:24px;height:24px}
+          .blog-nav-logo img{width:26px;height:26px}
           .blog-nav-cta{padding:8px 14px;font-size:10px;letter-spacing:.04em;white-space:nowrap}
           .blog-hero{padding:48px 5% 40px}
           .blog-hero h1{font-size:clamp(32px,9vw,46px)}
@@ -197,6 +214,7 @@ export default function BlogIndex() {
         }
       `}</style>
 
+      <div className="blog-page">
       {/* NAV */}
       <nav className="blog-nav">
         <Link href="/" className="blog-nav-logo">
@@ -209,6 +227,7 @@ export default function BlogIndex() {
           <Link href="/#how">How It Works</Link>
           <Link href="/faq">FAQ</Link>
           <Link href="/blog" className="active">Blog</Link>
+          <Link href="/recipes">Recipes</Link>
         </div>
         <Link href="/" className="blog-nav-cta">
           Get 20% off + free shipping &rarr;
@@ -221,6 +240,7 @@ export default function BlogIndex() {
             { label: "How It Works", href: "/#how" },
             { label: "FAQ", href: "/faq" },
             { label: "Blog", href: "/blog" },
+            { label: "Recipes", href: "/recipes" },
           ]}
         />
       </nav>
@@ -292,6 +312,7 @@ export default function BlogIndex() {
         </div>
         <div className="blog-footer-bot">@drinkshroome</div>
       </footer>
+      </div>
     </>
   );
 }

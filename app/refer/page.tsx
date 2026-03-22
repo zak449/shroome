@@ -154,6 +154,7 @@ export default function ReferPage() {
               { label: "How It Works", href: "/#how" },
               { label: "FAQ", href: "/faq" },
               { label: "Blog", href: "/blog" },
+            { label: "Recipes", href: "/recipes" },
             ]}
           />
         </nav>

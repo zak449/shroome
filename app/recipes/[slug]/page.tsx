@@ -108,7 +108,7 @@ export default async function RecipeDetailPage({
           display:flex;align-items:center;gap:8px;
           text-decoration:none;color:#1B1F3B
         }
-        .rd-nav-logo img{width:28px;height:28px;filter:brightness(0) saturate(100%) invert(10%) sepia(30%) saturate(1500%) hue-rotate(200deg) brightness(95%)}
+        .rd-nav-logo img{width:32px;height:32px;border-radius:6px}
         .rd-nav-logo span{font-family:'Instrument Serif',Georgia,serif;font-size:22px;font-weight:400;font-style:italic;color:#1B1F3B}
         .rd-nav-links{display:flex;gap:8px}
         @media(max-width:768px){.rd-nav-links{display:none !important}}
@@ -127,21 +127,38 @@ export default async function RecipeDetailPage({
         }
         .rd-nav-cta:hover{background:#2a2e4f}
 
+        /* ── PAGE WRAPPER (retro 90s background) ── */
+        .rd-page{
+          background:
+            radial-gradient(ellipse 120% 80% at 20% 10%, rgba(212,184,224,0.35) 0%, transparent 50%),
+            radial-gradient(ellipse 100% 70% at 80% 85%, rgba(200,255,58,0.12) 0%, transparent 50%),
+            radial-gradient(ellipse 60% 50% at 60% 40%, rgba(255,183,209,0.2) 0%, transparent 50%),
+            linear-gradient(180deg, #F0E4D8 0%, #EDE0D4 30%, #E8D8CC 60%, #F0E4D8 100%);
+          background-attachment:fixed;
+          position:relative
+        }
+        .rd-page::before{
+          content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
+          background-image:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%231B1F3B' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+          opacity:0.6
+        }
+        .rd-page>*{position:relative;z-index:1}
+
         /* ── HERO ── */
         .rd-hero{
           position:relative;overflow:hidden;
-          min-height:420px;
+          min-height:520px;
           display:flex;align-items:flex-end;
           padding:0 0 48px 0
         }
         .rd-hero-bg{
           position:absolute;inset:0;
-          background-size:cover;background-position:center;
+          background-size:cover;background-position:center top;
           filter:brightness(0.85) saturate(1.1)
         }
         .rd-hero-overlay{
           position:absolute;inset:0;
-          background:linear-gradient(180deg,rgba(0,0,0,0) 0%,rgba(0,0,0,0.15) 40%,rgba(0,0,0,0.55) 100%)
+          background:linear-gradient(180deg,rgba(0,0,0,0) 0%,rgba(0,0,0,0.1) 30%,rgba(0,0,0,0.55) 100%)
         }
         .rd-hero-color{
           position:absolute;inset:0;
@@ -182,24 +199,24 @@ export default async function RecipeDetailPage({
         }
         .rd-desc{
           font-family:'Syne',system-ui,sans-serif;font-size:17px;line-height:1.8;
-          color:rgba(27,31,59,0.7);margin-bottom:48px;max-width:580px
+          color:rgba(27,31,59,0.75);margin-bottom:48px;max-width:580px
         }
 
         /* ── SECTION LABELS ── */
         .rd-label{
           font-family:'DM Mono',monospace;font-size:10px;font-weight:500;
-          letter-spacing:.22em;text-transform:uppercase;color:rgba(27,31,59,0.4);
+          letter-spacing:.22em;text-transform:uppercase;color:rgba(27,31,59,0.45);
           margin-bottom:16px;
           display:flex;align-items:center;gap:12px
         }
-        .rd-label::after{content:'';flex:1;height:1px;background:rgba(27,31,59,0.1)}
+        .rd-label::after{content:'';flex:1;height:1px;background:rgba(27,31,59,0.12)}
 
         /* ── INGREDIENTS ── */
         .rd-ingredients{list-style:none;padding:0;margin:0 0 48px}
         .rd-ingredients li{
           font-family:'Syne',system-ui,sans-serif;font-size:15px;
           color:#1B1F3B;padding:11px 0;
-          border-bottom:1px solid rgba(27,31,59,0.07);
+          border-bottom:1px solid rgba(27,31,59,0.08);
           display:flex;align-items:center;gap:12px
         }
         .rd-ingredients li::before{
@@ -213,13 +230,13 @@ export default async function RecipeDetailPage({
           counter-increment:rd-steps;
           font-family:'Syne',system-ui,sans-serif;font-size:15px;line-height:1.8;
           color:#1B1F3B;padding:16px 0;
-          border-bottom:1px solid rgba(27,31,59,0.07);
+          border-bottom:1px solid rgba(27,31,59,0.08);
           display:flex;gap:16px
         }
         .rd-steps li::before{
           content:counter(rd-steps,decimal-leading-zero);
           font-family:'DM Mono',monospace;font-size:13px;font-weight:500;
-          color:rgba(27,31,59,0.3);padding-top:3px;flex-shrink:0;
+          color:rgba(27,31,59,0.35);padding-top:3px;flex-shrink:0;
           min-width:24px
         }
 
@@ -234,15 +251,16 @@ export default async function RecipeDetailPage({
           letter-spacing:.14em;text-transform:uppercase;
           color:rgba(27,31,59,0.5);text-decoration:none;
           padding:12px 24px;
-          border:1px solid rgba(27,31,59,0.15);border-radius:100px;
+          border:1px solid rgba(27,31,59,0.18);border-radius:100px;
+          background:rgba(255,255,255,0.15);backdrop-filter:blur(6px);
           transition:all .2s
         }
-        .rd-back-link:hover{color:#1B1F3B;border-color:rgba(27,31,59,0.35)}
+        .rd-back-link:hover{color:#1B1F3B;border-color:rgba(27,31,59,0.35);background:rgba(255,255,255,0.3)}
 
         /* ── CTA ── */
         .rd-cta{
           text-align:center;padding:80px 8%;
-          background:linear-gradient(180deg,#FDF4EE 0%,rgba(200,255,58,0.08) 100%)
+          background:linear-gradient(180deg, rgba(212,184,224,0.25) 0%, rgba(200,255,58,0.1) 50%, rgba(255,183,209,0.15) 100%)
         }
         .rd-cta-tag{
           font-family:'DM Mono',monospace;font-size:11px;font-weight:500;
@@ -294,18 +312,18 @@ export default async function RecipeDetailPage({
         /* ── RESPONSIVE ── */
         @media(max-width:768px){
           .rd-nav{padding:0 4%;height:54px;gap:8px}
-          /* rd-nav-links hidden via main style block above */
           .rd-nav-logo{gap:6px}
           .rd-nav-logo span{font-size:18px}
-          .rd-nav-logo img{width:24px;height:24px}
+          .rd-nav-logo img{width:26px;height:26px}
           .rd-nav-cta{padding:8px 14px;font-size:10px;letter-spacing:.04em;white-space:nowrap}
-          .rd-hero{min-height:340px;padding-bottom:36px}
+          .rd-hero{min-height:380px;padding-bottom:36px}
           .rd-hero-inner{padding:0 5%}
           .rd-body{padding:40px 5% 56px}
           .rd-back-section{padding:0 5% 48px}
         }
       `}</style>
 
+      <div className="rd-page">
       {/* ── TICKER ── */}
       <div className="rd-ticker">
         <div className="rd-ticker-track">
@@ -335,9 +353,9 @@ export default async function RecipeDetailPage({
         <a href="/" className="rd-nav-logo">
           <img
             src="/logo-mark.png"
-            width={28}
-            height={28}
-            alt="shroomé logo"
+            width={32}
+            height={32}
+            alt="shroomé S"
           />
           <span>shroomé</span>
         </a>
@@ -347,6 +365,7 @@ export default async function RecipeDetailPage({
           <a href="/#how">How It Works</a>
           <a href="/faq">FAQ</a>
           <a href="/blog">Blog</a>
+          <a href="/recipes">Recipes</a>
         </div>
         <a href="/" className="rd-nav-cta">
           Get 20% off + free shipping &rarr;
@@ -359,6 +378,7 @@ export default async function RecipeDetailPage({
             { label: "How It Works", href: "/#how" },
             { label: "FAQ", href: "/faq" },
             { label: "Blog", href: "/blog" },
+            { label: "Recipes", href: "/recipes" },
           ]}
         />
       </nav>
@@ -367,7 +387,7 @@ export default async function RecipeDetailPage({
       <section className="rd-hero">
         <div
           className="rd-hero-bg"
-          style={{ backgroundImage: `url(${recipe.image})` }}
+          style={{ backgroundImage: `url(${recipe.heroImage || recipe.image})` }}
         />
         <div className="rd-hero-overlay" />
         <div
@@ -462,6 +482,7 @@ export default async function RecipeDetailPage({
         </div>
         <div className="rd-footer-bot">@drinkshroome</div>
       </footer>
+      </div>
     </>
   );
 }
