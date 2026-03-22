@@ -230,7 +230,7 @@ export default function ExitPopup() {
             <>
               <div className="ep-emoji">🍵</div>
               <h2 className="ep-title">
-                wait — don&apos;t miss <em>this.</em>
+                wait — don&apos;t leave without your <em>20% off.</em>
               </h2>
               <p className="ep-sub">
                 Get <strong style={{ color: "#1B1F3B", fontWeight: 700 }}>20% off + free shipping</strong> on the

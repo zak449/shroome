@@ -226,32 +226,39 @@ export default function RecipesPage() {
         /* ── CTA ── */
         .rec-cta{
           text-align:center;padding:80px 8%;
-          background:linear-gradient(180deg, rgba(212,184,224,0.25) 0%, rgba(200,255,58,0.1) 50%, rgba(255,183,209,0.15) 100%)
+          background:#1B1F3B;
+          position:relative;overflow:hidden
+        }
+        .rec-cta::before{
+          content:'';position:absolute;inset:0;
+          background:radial-gradient(ellipse 80% 60% at 50% 50%, rgba(200,255,58,0.08) 0%, transparent 70%);
+          pointer-events:none
         }
         .rec-cta-tag{
           font-family:'DM Mono',monospace;font-size:11px;font-weight:500;
-          letter-spacing:.18em;text-transform:uppercase;color:rgba(27,31,59,0.5);
-          margin-bottom:20px
+          letter-spacing:.2em;text-transform:uppercase;color:#C8FF3A;
+          margin-bottom:20px;position:relative
         }
         .rec-cta h2{
           font-family:'Instrument Serif',Georgia,serif;
-          font-size:clamp(32px,4.5vw,52px);font-weight:400;line-height:1.05;
-          color:#1B1F3B;margin-bottom:14px
+          font-size:clamp(32px,4.5vw,52px);font-weight:400;font-style:italic;line-height:1.05;
+          color:#FDF4EE;margin-bottom:14px;position:relative
         }
-        .rec-cta h2 em{font-style:italic;color:#2D4A2D}
+        .rec-cta h2 em{font-style:italic;color:#FF7043}
         .rec-cta-sub{
           font-family:'Syne',system-ui,sans-serif;font-size:14px;
-          color:rgba(27,31,59,0.6);margin-bottom:28px
+          color:rgba(253,244,238,0.5);margin-bottom:32px;position:relative
         }
         .rec-btn-cta{
           display:inline-block;
-          background:#1B1F3B;color:#FDF4EE;
-          padding:16px 36px;
+          background:#C8FF3A;color:#1B1F3B;
+          padding:16px 40px;
           font-family:'Syne',system-ui,sans-serif;font-size:13px;font-weight:700;
-          letter-spacing:.08em;text-transform:uppercase;
-          text-decoration:none;transition:background .2s
+          letter-spacing:.1em;text-transform:uppercase;
+          text-decoration:none;transition:background .2s,transform .2s;
+          position:relative
         }
-        .rec-btn-cta:hover{background:#2a2e4f}
+        .rec-btn-cta:hover{background:#d4ff5a;transform:translateY(-2px)}
 
         /* ── FOOTER ── */
         .rec-footer{
@@ -427,17 +434,17 @@ export default function RecipesPage() {
 
       {/* ── CTA ── */}
       <section className="rec-cta">
-        <div className="rec-cta-tag">Pre-Launch List</div>
+        <div className="rec-cta-tag">Made with One Sachet</div>
         <h2>
-          Ready to pour?
+          Made with one shroom&eacute; sachet.
           <br />
-          <em>Get 20% off + free shipping.</em>
+          <em>Get yours.</em>
         </h2>
         <p className="rec-cta-sub">
-          12 servings per box · Tear. Pour. Done.
+          20% off + free shipping on your first box &middot; 12 servings &middot; Tear. Pour. Done.
         </p>
         <a href="/" className="rec-btn-cta">
-          Claim 20% off →
+          Join the Waitlist &rarr;
         </a>
       </section>
 

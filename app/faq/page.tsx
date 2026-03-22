@@ -470,15 +470,15 @@ export default function FAQ() {
 
       {/* ═══ CTA ═══ */}
       <section className="faq-cta">
-        <div className="faq-cta-tag">Pre-Launch List</div>
+        <div className="faq-cta-tag">Try It Risk-Free</div>
         <h2>
-          Be first.
+          Still have questions?
           <br />
-          <em>Get 20% off + free shipping.</em>
+          <em>Try it risk-free.</em>
         </h2>
-        <p className="faq-cta-sub">12 servings per box · Tear. Pour. Hit.</p>
+        <p className="faq-cta-sub">20% off + free shipping. Tear. Pour. Done.</p>
         <a href="/" className="faq-btn-cta">
-          Claim 20% off →
+          Join the Waitlist &rarr;
         </a>
       </section>
 

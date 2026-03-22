@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 import BackToTop from "./BackToTop";
+import StickyCTA from "./StickyCTA";
+import ExitPopup from "./ExitPopup";
 import "./globals.css";
 
 export const viewport: Viewport = {
@@ -184,6 +186,8 @@ export default function RootLayout({
           {children}
         </main>
         <BackToTop />
+        <StickyCTA />
+        <ExitPopup />
       </body>
     </html>
   );

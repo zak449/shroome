@@ -302,6 +302,33 @@ export default async function BlogPost({
           color:rgba(27,31,59,0.55);line-height:1.5;font-weight:400
         }
 
+        /* ── EDITORIAL CALLOUT ── */
+        .post-editorial-cta{
+          max-width:680px;margin:0 auto;padding:0 6% 48px
+        }
+        .post-editorial-cta-inner{
+          border-left:4px solid #C8FF3A;
+          background:#FDF4EE;
+          padding:32px 28px;
+          position:relative
+        }
+        .post-editorial-cta-inner h3{
+          font-family:'Instrument Serif',Georgia,serif;
+          font-size:clamp(20px,3vw,26px);font-weight:400;font-style:italic;
+          color:#1B1F3B;line-height:1.2;margin:0 0 10px
+        }
+        .post-editorial-cta-inner p{
+          font-family:'Syne',system-ui,sans-serif;
+          font-size:14px;color:rgba(27,31,59,0.65);line-height:1.7;margin:0 0 16px;font-weight:400
+        }
+        .post-editorial-link{
+          font-family:'Syne',system-ui,sans-serif;
+          font-size:13px;font-weight:700;color:#2D4A2D;
+          text-decoration:none;letter-spacing:0.04em;
+          transition:color .2s
+        }
+        .post-editorial-link:hover{color:#1B1F3B}
+
         /* ── CTA ── */
         .post-cta{background:#1B1F3B;padding:64px 7%;text-align:center;position:relative;overflow:hidden}
         .post-cta-tag{font-family:'DM Mono',monospace;font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#C8FF3A;margin-bottom:16px}
@@ -493,6 +520,19 @@ export default async function BlogPost({
               ingredients, real doses, zero compromises.
             </p>
           </div>
+        </div>
+      </div>
+
+      {/* EDITORIAL CALLOUT CTA */}
+      <div className="post-editorial-cta">
+        <div className="post-editorial-cta-inner">
+          <h3>Ready to try the cleanest matcha?</h3>
+          <p>
+            Get 20% off + free shipping on your first box. Ceremonial matcha, mushroom extracts, and collagen — in one pour.
+          </p>
+          <Link href="/" className="post-editorial-link">
+            Join the waitlist &rarr;
+          </Link>
         </div>
       </div>
 

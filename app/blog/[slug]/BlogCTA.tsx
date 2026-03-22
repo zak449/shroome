@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect, useCallback, FormEvent } from "react";
-import ExitPopup from "../../ExitPopup";
 
 declare global {
   interface Window {
@@ -435,8 +434,6 @@ export default function BlogCTA() {
         }
       `}</style>
 
-      {/* Exit-intent popup */}
-      <ExitPopup />
     </>
   );
 }
