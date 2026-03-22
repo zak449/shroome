@@ -362,7 +362,7 @@ export default async function BlogPost({
       {/* NAV */}
       <nav className="post-nav">
         <Link href="/" className="post-nav-logo">
-          <img src="/logo-mark.png" width={28} height={28} alt="shroomé S" />
+          <img src="/logo-mark.png" width={32} height={32} alt="shroomé S" style={{ borderRadius: 6 }} />
           <span>shroom&eacute;</span>
         </Link>
         <div className="post-nav-links">

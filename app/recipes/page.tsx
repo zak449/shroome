@@ -156,7 +156,7 @@ export default function RecipesPage() {
         .rec-tile-img img{
           width:100%;height:100%;
           object-fit:cover;
-          object-position:center center
+          object-position:center 15%
         }
         .rec-tile:hover .rec-tile-img{transform:scale(1.04)}
         .rec-tile-overlay{

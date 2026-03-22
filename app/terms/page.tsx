@@ -222,7 +222,7 @@ export default function Terms() {
       {/* ═══ NAV ═══ */}
       <nav className="tos-nav">
         <a href="/" className="tos-nav-logo">
-          <img src="/logo-mark.png" width={28} height={28} alt="shroomé S" />
+          <img src="/logo-mark.png" width={32} height={32} alt="shroomé S" style={{ borderRadius: 6 }} />
           <span>shroomé</span>
         </a>
         <div className="tos-nav-links">

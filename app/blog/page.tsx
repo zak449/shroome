@@ -217,7 +217,7 @@ export default function BlogIndex() {
       {/* NAV */}
       <nav className="blog-nav">
         <Link href="/" className="blog-nav-logo">
-          <img src="/logo-mark.png" width={28} height={28} alt="shroomé S" />
+          <img src="/logo-mark.png" width={32} height={32} alt="shroomé S" style={{ borderRadius: 6 }} />
           <span>shroom&eacute;</span>
         </Link>
         <div className="blog-nav-links">

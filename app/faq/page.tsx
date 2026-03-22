@@ -380,7 +380,7 @@ export default function FAQ() {
       {/* ═══ NAV ═══ */}
       <nav className="faq-nav">
         <a href="/" className="faq-nav-logo">
-          <img src="/logo-mark.png" width={28} height={28} alt="shroomé S" />
+          <img src="/logo-mark.png" width={32} height={32} alt="shroomé S" style={{ borderRadius: 6 }} />
           <span>shroomé</span>
         </a>
         <div className="faq-nav-links">
