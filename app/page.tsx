@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect, useRef, useCallback } from "react";
+import Image from "next/image";
 import ExitPopup from "./ExitPopup";
 
 declare global {
@@ -319,6 +320,7 @@ export default function Home() {
 
       {/* ════════════════════ STICKY NAV ════════════════════ */}
       <nav
+        aria-label="Main navigation"
         className="site-nav"
         style={{
           position: "sticky",
@@ -335,7 +337,7 @@ export default function Home() {
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-          <img src="/logo-mark.png" width={32} height={32} alt="shroomé S" style={{ borderRadius: 6 }} />
+          <Image src="/logo-mark.png" width={32} height={32} alt="shroomé S" style={{ borderRadius: 6 }} priority />
           <span
             style={{
               fontFamily: "'Instrument Serif', Georgia, serif",
@@ -400,7 +402,7 @@ export default function Home() {
         <button
           className="hamburger-btn"
           onClick={() => setMenuOpen((v) => !v)}
-          aria-label="Toggle menu"
+          aria-label="Toggle navigation menu"
           style={{
             display: "none",
             background: "none",
@@ -919,16 +921,22 @@ export default function Home() {
               minWidth: 0,
             }}
           >
-            <img
-              src="/sachet-vanilla.png?v=4"
-              alt="shroomé vanilla sachet"
+            <Image
+              src="/sachet-vanilla.png"
+              alt="shroomé Vanilla matcha sachet — single-serve packet with ceremonial matcha, lion's mane, and collagen"
+              width={280}
+              height={400}
               className="sachet-float"
+              priority
               style={{ width: "48%", maxWidth: 280, height: "auto", filter: "drop-shadow(0 16px 48px rgba(0,0,0,0.15))" }}
             />
-            <img
-              src="/sachet-strawberry.png?v=4"
-              alt="shroomé strawberry sachet"
+            <Image
+              src="/sachet-strawberry.png"
+              alt="shroomé Strawberry matcha sachet — single-serve packet with ceremonial matcha, lion's mane, and collagen"
+              width={280}
+              height={400}
               className="sachet-float"
+              priority
               style={{ width: "48%", maxWidth: 280, height: "auto", animationDelay: "2s", filter: "drop-shadow(0 16px 48px rgba(0,0,0,0.15))" }}
             />
           </div>
@@ -1033,14 +1041,17 @@ export default function Home() {
             }}
           >
             {[
-              { src: "/sachet-vanilla.png?v=4", alt: "Vanilla", delay: "0s", shadow: "rgba(255,220,180,0.3)", href: "/flavors/vanilla" },
-              { src: "/sachet-strawberry.png?v=4", alt: "Strawberry", delay: "1.8s", shadow: "rgba(212,114,122,0.35)", href: "/flavors/strawberry" },
+              { src: "/sachet-vanilla.png", alt: "shroomé Vanilla matcha sachet — warm, floral, grounding blend", delay: "0s", shadow: "rgba(255,220,180,0.3)", href: "/flavors/vanilla" },
+              { src: "/sachet-strawberry.png", alt: "shroomé Strawberry matcha sachet — bright, fruity, fresh blend", delay: "1.8s", shadow: "rgba(212,114,122,0.35)", href: "/flavors/strawberry" },
             ].map((s) => (
               <a key={s.alt} href={s.href} style={{ width: "46%", display: "flex", flexDirection: "column", alignItems: "center", textDecoration: "none" }}>
-                <img
+                <Image
                   src={s.src}
                   alt={s.alt}
+                  width={280}
+                  height={400}
                   className="sachet-float"
+                  loading="lazy"
                   style={{
                     width: "100%",
                     height: "auto",
@@ -1206,7 +1217,7 @@ export default function Home() {
         <div className="blob-c" style={{ position: "absolute", bottom: "25%", right: "8%", width: "12vw", height: "12vw", background: "#D4B8E0", opacity: 0.15, pointerEvents: "none" }} />
         <div className="blob-a" style={{ position: "absolute", bottom: "15%", left: "6%", width: "10vw", height: "10vw", background: "#FFB7D1", opacity: 0.1, pointerEvents: "none" }} />
         <div {...anim("hands")} style={{ ...anim("hands").style, maxWidth: 600, margin: "0 auto", overflow: "hidden", borderRadius: "16px 16px 0 0", position: "relative", zIndex: 1 }}>
-          <img src="/sachets-both.png" alt="Both flavors" style={{ width: "100%", height: "auto", display: "block", marginBottom: "-12%" }} />
+          <Image src="/sachets-both.png" alt="Two shroomé sachets side by side — Vanilla and Strawberry matcha blends" width={1536} height={1024} loading="lazy" style={{ width: "100%", height: "auto", display: "block", marginBottom: "-12%" }} />
         </div>
       </section>
 

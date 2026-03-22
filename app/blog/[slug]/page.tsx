@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Script from "next/script";
+import Image from "next/image";
 import { blogPosts, getPostBySlug, getRelatedPosts } from "../posts";
 import BlogCTA from "./BlogCTA";
 import { notFound } from "next/navigation";
@@ -19,9 +20,29 @@ export async function generateMetadata({
   const post = getPostBySlug(slug);
   if (!post) return { title: "Not Found" };
 
+  /* Build keywords from the post title, category, and core brand terms */
+  const titleWords = post.title
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, "")
+    .split(/\s+/)
+    .filter((w) => w.length > 3);
+  const keywords = [
+    ...new Set([
+      post.title.toLowerCase(),
+      post.category.toLowerCase(),
+      "shroomé",
+      "matcha",
+      "mushroom supplement",
+      "lion's mane",
+      "collagen",
+      ...titleWords,
+    ]),
+  ].join(", ");
+
   return {
     title: `${post.title} — shroomé`,
     description: post.metaDescription,
+    keywords,
     openGraph: {
       title: post.title,
       description: post.metaDescription,
@@ -74,6 +95,7 @@ export default async function BlogPost({
     "@type": "BlogPosting",
     headline: post.title,
     description: post.metaDescription,
+    image: `https://www.drinkshroome.com/blog/${post.slug}/opengraph-image`,
     datePublished: post.date,
     dateModified: post.date,
     author: {
@@ -360,9 +382,9 @@ export default async function BlogPost({
 
       <div className="post-page">
       {/* NAV */}
-      <nav className="post-nav">
+      <nav className="post-nav" aria-label="Main navigation">
         <Link href="/" className="post-nav-logo">
-          <img src="/logo-mark.png" width={32} height={32} alt="shroomé S" style={{ borderRadius: 6 }} />
+          <Image src="/logo-mark.png" width={32} height={32} alt="shroomé S" style={{ borderRadius: 6 }} priority />
           <span>shroom&eacute;</span>
         </Link>
         <div className="post-nav-links">
@@ -371,6 +393,7 @@ export default async function BlogPost({
           <Link href="/#how">How It Works</Link>
           <Link href="/faq">FAQ</Link>
           <Link href="/blog" className="active">Blog</Link>
+          <Link href="/recipes">Recipes</Link>
         </div>
         <Link href="/" className="post-nav-cta">
           Get 20% off + free shipping &rarr;
@@ -482,7 +505,7 @@ export default async function BlogPost({
       {/* RELATED */}
       {related.length > 0 && (
         <section className="post-related">
-          <div className="post-related-label">Keep reading</div>
+          <h2 className="post-related-label">Keep reading</h2>
           <div className="post-related-grid">
             {related.map((r) => {
               const rc = categoryColors[r.category] || {

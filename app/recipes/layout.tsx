@@ -24,6 +24,7 @@ export const metadata: Metadata = {
       "6 easy matcha latte recipes using shroomé sachets. Iced, hot, blended, and more — all ready in under 2 minutes.",
     url: "https://www.drinkshroome.com/recipes",
     type: "website",
+    siteName: "shroomé",
   },
   twitter: {
     card: "summary_large_image",

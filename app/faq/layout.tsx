@@ -20,6 +20,8 @@ export const metadata: Metadata = {
     description:
       "Everything you need to know about shroomé — the world's first ready-to-pour ceremonial matcha latte with collagen + mushrooms.",
     url: "https://www.drinkshroome.com/faq",
+    siteName: "shroomé",
+    type: "website",
   },
   twitter: {
     card: "summary_large_image",

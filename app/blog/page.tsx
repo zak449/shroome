@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Script from "next/script";
+import Image from "next/image";
 import { blogPosts } from "./posts";
 import MobileNav from "../MobileNav";
 
@@ -14,6 +15,7 @@ export const metadata: Metadata = {
       "Evidence-based articles on ceremonial matcha, functional mushrooms, collagen, and building a better morning routine.",
     type: "website",
     url: "https://www.drinkshroome.com/blog",
+    siteName: "shroomé",
   },
   twitter: {
     card: "summary_large_image",
@@ -215,9 +217,9 @@ export default function BlogIndex() {
 
       <div className="blog-page">
       {/* NAV */}
-      <nav className="blog-nav">
+      <nav className="blog-nav" aria-label="Main navigation">
         <Link href="/" className="blog-nav-logo">
-          <img src="/logo-mark.png" width={32} height={32} alt="shroomé S" style={{ borderRadius: 6 }} />
+          <Image src="/logo-mark.png" width={32} height={32} alt="shroomé S" style={{ borderRadius: 6 }} priority />
           <span>shroom&eacute;</span>
         </Link>
         <div className="blog-nav-links">

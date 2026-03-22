@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import MobileNav from "../MobileNav";
 
 export const metadata: Metadata = {
@@ -11,6 +12,7 @@ export const metadata: Metadata = {
       "Terms of Service for drinkshroome.com, operated by ZSQUARED INC. Read our terms before using the site.",
     type: "website",
     url: "https://www.drinkshroome.com/terms",
+    siteName: "shroomé",
   },
   twitter: {
     card: "summary_large_image",
@@ -220,9 +222,9 @@ export default function Terms() {
       </div>
 
       {/* ═══ NAV ═══ */}
-      <nav className="tos-nav">
+      <nav className="tos-nav" aria-label="Main navigation">
         <a href="/" className="tos-nav-logo">
-          <img src="/logo-mark.png" width={32} height={32} alt="shroomé S" style={{ borderRadius: 6 }} />
+          <Image src="/logo-mark.png" width={32} height={32} alt="shroomé S" style={{ borderRadius: 6 }} priority />
           <span>shroomé</span>
         </a>
         <div className="tos-nav-links">

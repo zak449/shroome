@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import MobileNav from "../MobileNav";
 
 export const metadata: Metadata = {
@@ -11,6 +12,7 @@ export const metadata: Metadata = {
       "How shroomé collects, uses, and protects your information. Read our full privacy policy.",
     type: "website",
     url: "https://www.drinkshroome.com/privacy",
+    siteName: "shroomé",
   },
   twitter: {
     card: "summary_large_image",
@@ -220,9 +222,9 @@ export default function Privacy() {
       </div>
 
       {/* ═══ NAV ═══ */}
-      <nav className="pp-nav">
+      <nav className="pp-nav" aria-label="Main navigation">
         <a href="/" className="pp-nav-logo">
-          <img src="/logo-mark.png" width={32} height={32} alt="shroomé S" style={{ borderRadius: 6 }} />
+          <Image src="/logo-mark.png" width={32} height={32} alt="shroomé S" style={{ borderRadius: 6 }} priority />
           <span>shroomé</span>
         </a>
         <div className="pp-nav-links">

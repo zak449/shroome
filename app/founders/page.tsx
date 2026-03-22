@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import MobileNav from "../MobileNav";
 
 declare global {
@@ -200,9 +201,9 @@ export default function Founders() {
       </div>
 
       {/* NAV */}
-      <nav className="fb-nav">
+      <nav className="fb-nav" aria-label="Main navigation">
         <a href="/" className="fb-nav-logo">
-          <img src="/logo-mark.png" alt="shroomé S" />
+          <Image src="/logo-mark.png" alt="shroomé logo mark" width={32} height={32} priority />
           <span>shroomé</span>
         </a>
         <div className="fb-nav-links">
@@ -248,6 +249,7 @@ export default function Founders() {
 
       {/* BENEFITS */}
       <section className="fb-benefits">
+        <h2 className="sr-only" style={{ position: "absolute", width: 1, height: 1, padding: 0, margin: -1, overflow: "hidden", clip: "rect(0,0,0,0)", whiteSpace: "nowrap", border: 0 }}>Founders Batch Benefits</h2>
         <div className="fb-benefits-grid">
           {benefits.map((b) => (
             <div className="fb-benefit" key={b.num}>
@@ -308,9 +310,9 @@ export default function Founders() {
       {/* FOOTER */}
       <footer className="fb-footer">
         <div className="fb-footer-social">
-          <a href="https://tiktok.com/@drinkshroome">TikTok</a>
-          <a href="https://instagram.com/drinkshroome">Instagram</a>
-          <a href="https://youtube.com/@drinkshroome">YouTube</a>
+          <a href="https://tiktok.com/@drinkshroome" target="_blank" rel="noopener noreferrer">TikTok</a>
+          <a href="https://instagram.com/drinkshroome" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a href="https://youtube.com/@drinkshroome" target="_blank" rel="noopener noreferrer">YouTube</a>
         </div>
         <div className="fb-footer-links">
           <a href="/privacy">Privacy Policy</a>

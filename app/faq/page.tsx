@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Script from "next/script";
+import Image from "next/image";
 import MobileNav from "../MobileNav";
 
 const faqData = [
@@ -378,9 +379,9 @@ export default function FAQ() {
       </div>
 
       {/* ═══ NAV ═══ */}
-      <nav className="faq-nav">
+      <nav className="faq-nav" aria-label="Main navigation">
         <a href="/" className="faq-nav-logo">
-          <img src="/logo-mark.png" width={32} height={32} alt="shroomé S" style={{ borderRadius: 6 }} />
+          <Image src="/logo-mark.png" width={32} height={32} alt="shroomé S" style={{ borderRadius: 6 }} priority />
           <span>shroomé</span>
         </a>
         <div className="faq-nav-links">
@@ -445,7 +446,7 @@ export default function FAQ() {
               const isOpen = !!openItems[key];
               return (
                 <div key={key} className={`faq-item${isOpen ? " faq-item-open" : ""}`}>
-                  <button className="faq-q-btn" onClick={() => toggle(key)}>
+                  <button className="faq-q-btn" onClick={() => toggle(key)} aria-expanded={isOpen}>
                     {item.q}
                   </button>
                   <div className="faq-answer">

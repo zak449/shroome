@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
 
@@ -55,7 +56,7 @@ function UnsubscribeFlow() {
       <div style={{ maxWidth: 480, width: "100%", textAlign: "center" }}>
         {/* Logo */}
         <a href="https://www.drinkshroome.com" style={{ display: "inline-block", marginBottom: 40 }}>
-          <img src="/logo-mark.png" alt="shroomé" width={100} style={{ display: "block" }} />
+          <Image src="/logo-mark.png" alt="shroomé logo mark" width={100} height={100} style={{ display: "block" }} priority />
         </a>
 
         {/* Step 1: Confirm */}

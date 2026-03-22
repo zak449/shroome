@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
+import Image from "next/image";
 import MobileNav from "../../MobileNav";
 
 export const metadata: Metadata = {
@@ -20,6 +21,8 @@ export const metadata: Metadata = {
     description:
       "Ceremonial matcha meets real freeze-dried strawberry, functional mushroom extracts, and grass-fed collagen. One sachet, 15 seconds.",
     url: "https://www.drinkshroome.com/flavors/strawberry",
+    siteName: "shroomé",
+    type: "website",
   },
   twitter: {
     card: "summary_large_image",
@@ -277,9 +280,9 @@ export default function StrawberryFlavorPage() {
         </div>
 
         {/* ── NAV ── */}
-        <nav className="sf-nav">
+        <nav className="sf-nav" aria-label="Main navigation">
           <a href="/" className="sf-nav-logo">
-            <img src="/logo-mark.png" width={32} height={32} alt="shroom&eacute; S" />
+            <Image src="/logo-mark.png" width={32} height={32} alt="shroomé S" priority />
             <span>shroom&eacute;</span>
           </a>
           <div className="sf-nav-links">
@@ -311,12 +314,13 @@ export default function StrawberryFlavorPage() {
           <div className="sf-hero-blob-a" />
           <div className="sf-hero-blob-b" />
           <div className="sf-hero-inner">
-            <img
+            <Image
               src="/sachet-strawberry.png"
-              alt="shroom&eacute; Strawberry sachet"
+              alt="shroomé Strawberry matcha sachet — single-serve packet with ceremonial matcha, lion's mane, and collagen"
               className="sf-hero-sachet"
               width={180}
-              height={260}
+              height={270}
+              priority
             />
             <div className="sf-hero-tag">Flavor Profile</div>
             <h1>Strawberry</h1>
@@ -330,7 +334,7 @@ export default function StrawberryFlavorPage() {
 
         {/* ── KEY INGREDIENTS ── */}
         <div className="sf-ingredients">
-          <div className="sf-label">Key Ingredients</div>
+          <h2 className="sf-label">Key Ingredients</h2>
           <ul className="sf-ing-list">
             {ingredients.map((ing, i) => (
               <li key={i}>
@@ -345,7 +349,7 @@ export default function StrawberryFlavorPage() {
 
         {/* ── RECIPES WITH THIS FLAVOR ── */}
         <div className="sf-recipes">
-          <div className="sf-label">Recipes with Strawberry</div>
+          <h2 className="sf-label">Recipes with Strawberry</h2>
           {recipes.map((r, i) => (
             <a key={i} href={r.href} className="sf-recipe-card">
               <h3>{r.name}</h3>

@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Image from "next/image";
 import MobileNav from "../MobileNav";
 
 declare global {
@@ -143,7 +144,7 @@ export default function ReferPage() {
         {/* Nav */}
         <nav className="ref-nav">
           <a href="/" className="ref-nav-logo">
-            <img src="/logo-mark.png" width={32} height={32} alt="shroomé S" style={{ borderRadius: 6 }} />
+            <Image src="/logo-mark.png" width={32} height={32} alt="shroomé S" style={{ borderRadius: 6 }} priority />
             <span>shroomé</span>
           </a>
           <a href="/" className="ref-nav-cta">Get 20% off &rarr;</a>

@@ -7,7 +7,49 @@ export function generateStaticParams() {
   return recipes.map((recipe) => ({ slug: recipe.id }));
 }
 
+/* ── Per-recipe Schema.org keyword strings ── */
+const schemaKeywordsMap: Record<string, string> = {
+  "classic-iced-matcha-latte":
+    "iced matcha latte, classic iced matcha, oat milk matcha, shroomé, ceremonial matcha, lion's mane, collagen, easy matcha latte recipe",
+  "vanilla-matcha-smoothie":
+    "vanilla matcha smoothie, matcha banana smoothie, shroomé, vanilla, ceremonial matcha, lion's mane, collagen, blended matcha recipe",
+  "strawberry-rose-matcha-latte":
+    "strawberry matcha latte, rose matcha, pink matcha latte, shroomé, strawberry, rose water, ceremonial matcha, lion's mane, collagen",
+  "matcha-affogato":
+    "matcha affogato, matcha ice cream, matcha dessert, shroomé, vanilla ice cream, ceremonial matcha, lion's mane, collagen",
+  "protein-matcha-shake":
+    "protein matcha shake, matcha protein smoothie, post workout matcha, shroomé, protein powder, almond milk, ceremonial matcha, lion's mane, collagen",
+  "hot-matcha-latte":
+    "hot matcha latte, matcha latte art, steamed matcha, shroomé, oat milk, ceremonial matcha, lion's mane, collagen, easy hot matcha recipe",
+  "light-matcha-agua-fresca":
+    "matcha agua fresca, strawberry matcha water, matcha lemonade, shroomé, strawberry, lemon, agave, ceremonial matcha, lion's mane, collagen",
+  "coconut-water-matcha":
+    "coconut water matcha, tropical matcha, hydrating matcha, shroomé, coconut water, mint, ceremonial matcha, lion's mane, collagen",
+  "sparkling-matcha":
+    "sparkling matcha, fizzy matcha, matcha sparkling water, shroomé, sparkling water, ceremonial matcha, lion's mane, collagen, matcha soda",
+};
+
+/* ── Recipes that do NOT contain dairy / animal ice cream by default ── */
+const veganFriendlyIds = new Set([
+  "classic-iced-matcha-latte",
+  "vanilla-matcha-smoothie",
+  "strawberry-rose-matcha-latte",
+  "protein-matcha-shake",
+  "hot-matcha-latte",
+  "light-matcha-agua-fresca",
+  "coconut-water-matcha",
+  "sparkling-matcha",
+]);
+
 function buildRecipeSchema(recipe: (typeof recipes)[0]) {
+  const keywords =
+    schemaKeywordsMap[recipe.id] ??
+    `matcha latte, ${recipe.name.toLowerCase()}, shroomé recipe, easy matcha recipe`;
+
+  const suitableForDiet = veganFriendlyIds.has(recipe.id)
+    ? ["https://schema.org/VeganDiet", "https://schema.org/GlutenFreeDiet"]
+    : ["https://schema.org/GlutenFreeDiet"];
+
   return {
     "@context": "https://schema.org",
     "@type": "Recipe",
@@ -30,8 +72,14 @@ function buildRecipeSchema(recipe: (typeof recipes)[0]) {
     datePublished: recipe.datePublished,
     recipeCategory: "Beverage",
     recipeCuisine: "American",
-    keywords: `matcha latte, ${recipe.name.toLowerCase()}, shroomé recipe, easy matcha recipe`,
+    keywords,
     recipeYield: "1 serving",
+    suitableForDiet,
+    nutrition: {
+      "@type": "NutritionInformation",
+      calories: "30-50 calories",
+      servingSize: "1 serving (1 sachet)",
+    },
   };
 }
 
@@ -160,7 +208,7 @@ export default async function RecipeDetailPage({
         }
         .rd-hero-overlay{
           position:absolute;inset:0;
-          background:linear-gradient(180deg,rgba(0,0,0,0) 40%,rgba(0,0,0,0.5) 100%)
+          background:linear-gradient(180deg,rgba(0,0,0,0) 30%,rgba(0,0,0,0.6) 100%)
         }
         .rd-hero-inner{
           position:relative;z-index:2;
@@ -347,7 +395,7 @@ export default async function RecipeDetailPage({
       </div>
 
       {/* ── NAV ── */}
-      <nav className="rd-nav">
+      <nav className="rd-nav" aria-label="Main navigation">
         <a href="/" className="rd-nav-logo">
           <img
             src="/logo-mark.png"
@@ -387,7 +435,7 @@ export default async function RecipeDetailPage({
           className="rd-hero-bg"
           style={{ background: recipe.imageBg }}
         >
-          <img src={recipe.heroImage || recipe.image} alt={recipe.name} />
+          <img src={recipe.heroImage || recipe.image} alt={recipe.imageAlt} width={4165} height={2343} loading="eager" />
         </div>
         <div className="rd-hero-overlay" />
         <div className="rd-hero-inner">
@@ -408,14 +456,14 @@ export default async function RecipeDetailPage({
       <div className="rd-body">
         <p className="rd-desc">{recipe.description}</p>
 
-        <div className="rd-label">Ingredients</div>
+        <h2 className="rd-label">Ingredients</h2>
         <ul className="rd-ingredients">
           {recipe.ingredients.map((ing, i) => (
             <li key={i}>{ing}</li>
           ))}
         </ul>
 
-        <div className="rd-label">Steps</div>
+        <h2 className="rd-label">Steps</h2>
         <ol className="rd-steps">
           {recipe.steps.map((step, i) => (
             <li key={i}>{step}</li>

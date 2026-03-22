@@ -66,7 +66,7 @@ export default function MobileNav({ links, prefix }: MobileNavProps) {
       <button
         className={`${prefix}-hamburger`}
         onClick={() => setMenuOpen((v) => !v)}
-        aria-label="Toggle menu"
+        aria-label="Toggle navigation menu"
       >
         {menuOpen ? "\u2715" : "\u2630"}
       </button>

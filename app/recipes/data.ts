@@ -3,6 +3,7 @@ export interface Recipe {
   name: string;
   image: string;
   heroImage?: string;
+  imageAlt: string;
   description: string;
   prepTime: string;
   prepLabel: string;
@@ -20,8 +21,8 @@ export const recipes: Recipe[] = [
     id: "classic-iced-matcha-latte",
     name: "Classic Iced Matcha Latte",
     image: "/recipes/iced-matcha-latte.jpg?v=2",
-
     heroImage: "/recipes/hero/hero-iced-matcha-latte.jpg",
+    imageAlt: "Classic Iced Matcha Latte — layered green matcha floating over oat milk with ice in a tall glass",
     description:
       "The simplest iced matcha latte you'll ever make. One shroomé sachet, oat milk, ice — done in 15 seconds flat.",
     prepTime: "PT15S",
@@ -42,8 +43,8 @@ export const recipes: Recipe[] = [
     id: "vanilla-matcha-smoothie",
     name: "Vanilla Matcha Smoothie",
     image: "/recipes/vanilla-matcha-smoothie.jpg?v=2",
-
     heroImage: "/recipes/hero/hero-vanilla-matcha-smoothie.jpg",
+    imageAlt: "Vanilla Matcha Smoothie — thick creamy green smoothie with frozen banana in a stemless glass",
     description:
       "A creamy, thick matcha smoothie with frozen banana and vanilla shroomé. Blend it up in under a minute.",
     prepTime: "PT1M",
@@ -69,8 +70,8 @@ export const recipes: Recipe[] = [
     id: "strawberry-rose-matcha-latte",
     name: "Strawberry Rose Matcha Latte",
     image: "/recipes/strawberry-rose.jpg?v=2",
-
     heroImage: "/recipes/hero/hero-strawberry-rose.jpg",
+    imageAlt: "Strawberry Rose Matcha Latte — pink and green layered latte topped with dried rose petals",
     description:
       "Floral and fruity — strawberry shroomé meets a splash of rose water for an elevated matcha moment.",
     prepTime: "PT30S",
@@ -96,8 +97,8 @@ export const recipes: Recipe[] = [
     id: "matcha-affogato",
     name: "Matcha Affogato",
     image: "/recipes/matcha-affogato.jpg?v=2",
-
     heroImage: "/recipes/hero/hero-matcha-affogato.jpg",
+    imageAlt: "Matcha Affogato — vibrant green matcha poured over a scoop of vanilla ice cream in a rocks glass",
     description:
       "Matcha meets ice cream. Pour one shroomé sachet over a scoop of vanilla — the easiest dessert of your life.",
     prepTime: "PT15S",
@@ -120,8 +121,8 @@ export const recipes: Recipe[] = [
     id: "protein-matcha-shake",
     name: "Protein Matcha Shake",
     image: "/recipes/protein-matcha-shake.jpg?v=2",
-
     heroImage: "/recipes/hero/hero-protein-matcha-shake.jpg",
+    imageAlt: "Protein Matcha Shake — green protein smoothie in a tall glass garnished with fresh mint and lemon",
     description:
       "Post-workout matcha with protein. Blend a shroomé sachet with your favorite protein powder for clean energy and recovery.",
     prepTime: "PT1M",
@@ -148,8 +149,8 @@ export const recipes: Recipe[] = [
     id: "hot-matcha-latte",
     name: "Hot Matcha Latte",
     image: "/recipes/hot-matcha-latte.jpg?v=2",
-
     heroImage: "/recipes/hero/hero-hot-matcha-latte.jpg",
+    imageAlt: "Hot Matcha Latte — steaming green matcha latte with latte art in a ceramic mug",
     description:
       "The classic hot matcha latte — steamed oat milk and one shroomé sachet. Cozy, clean energy in under a minute.",
     prepTime: "PT1M",
@@ -174,8 +175,8 @@ export const recipes: Recipe[] = [
     id: "light-matcha-agua-fresca",
     name: "Strawberry Matcha Agua Fresca",
     image: "/recipes/agua-fresca.jpg?v=2",
-
     heroImage: "/recipes/hero/hero-agua-fresca.jpg",
+    imageAlt: "Strawberry Matcha Agua Fresca — light green matcha drink with lemon and ice in a tall glass",
     description:
       "A true agua fresca — strawberry shroomé stirred into cold water with fresh lemon and a touch of agave. Light, citrusy, and barely sweet. The easiest refresher you'll ever make.",
     prepTime: "PT15S",
@@ -203,8 +204,8 @@ export const recipes: Recipe[] = [
     id: "coconut-water-matcha",
     name: "Coconut Water Matcha",
     image: "/recipes/coconut-water-matcha.jpg?v=2",
-
     heroImage: "/recipes/hero/hero-coconut-water-matcha.jpg",
+    imageAlt: "Coconut Water Matcha — refreshing green matcha with coconut water, mint leaves, and lemon in a tall glass",
     description:
       "Tropical and hydrating — shroomé mixed with coconut water for a light, electrolyte-rich matcha refresher. No milk needed.",
     prepTime: "PT15S",
@@ -231,8 +232,8 @@ export const recipes: Recipe[] = [
     id: "sparkling-matcha",
     name: "Sparkling Matcha",
     image: "/recipes/sparkling-matcha.jpg?v=2",
-
     heroImage: "/recipes/hero/hero-sparkling-matcha.jpg",
+    imageAlt: "Sparkling Matcha — fizzy green matcha with sparkling water, oat milk float, mint, and lemon",
     description:
       "Matcha meets sparkling water — fizzy, light, and surprisingly refreshing. The coolest way to pour a shroomé.",
     prepTime: "PT15S",

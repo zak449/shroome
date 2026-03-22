@@ -1,6 +1,47 @@
+import type { Metadata } from "next";
 import Script from "next/script";
 import { recipes } from "./data";
 import MobileNav from "../MobileNav";
+
+export const metadata: Metadata = {
+  title: "9 Easy Matcha Recipes — shroomé | Under 60 Seconds",
+  description:
+    "Nine easy matcha recipes you can make in under 60 seconds with shroomé: Classic Iced Matcha Latte, Vanilla Matcha Smoothie, Strawberry Rose Matcha Latte, Matcha Affogato, Protein Matcha Shake, Hot Matcha Latte, Strawberry Matcha Agua Fresca, Coconut Water Matcha, and Sparkling Matcha. Ceremonial matcha, lion's mane mushroom, and collagen — tear, pour, done.",
+  keywords: [
+    "matcha recipes",
+    "easy matcha recipes",
+    "shroomé recipes",
+    "iced matcha latte",
+    "vanilla matcha smoothie",
+    "strawberry matcha latte",
+    "matcha affogato",
+    "protein matcha shake",
+    "hot matcha latte",
+    "matcha agua fresca",
+    "coconut water matcha",
+    "sparkling matcha",
+    "mushroom matcha",
+    "collagen matcha",
+    "quick matcha recipes",
+    "matcha latte recipe",
+  ],
+  openGraph: {
+    title: "9 Easy Matcha Recipes — shroomé | Under 60 Seconds",
+    description:
+      "Nine easy matcha recipes made in under 60 seconds with shroomé — ceremonial matcha, lion's mane mushroom, and collagen in every sachet. Iced, hot, blended, sparkling, and more.",
+    url: "https://www.drinkshroome.com/recipes",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "9 Easy Matcha Recipes — shroomé | Under 60 Seconds",
+    description:
+      "Nine easy matcha recipes made in under 60 seconds with shroomé — ceremonial matcha, lion's mane mushroom, and collagen in every sachet.",
+  },
+  alternates: {
+    canonical: "https://www.drinkshroome.com/recipes",
+  },
+};
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
@@ -161,7 +202,7 @@ export default function RecipesPage() {
         .rec-tile:hover .rec-tile-img{transform:scale(1.04)}
         .rec-tile-overlay{
           position:absolute;inset:0;
-          background:linear-gradient(180deg,rgba(0,0,0,0) 50%,rgba(0,0,0,0.5) 100%);
+          background:linear-gradient(180deg,rgba(0,0,0,0) 40%,rgba(0,0,0,0.6) 100%);
           pointer-events:none
         }
         .rec-tile-badge{display:none}
@@ -279,7 +320,7 @@ export default function RecipesPage() {
       </div>
 
       {/* ── NAV ── */}
-      <nav className="rec-nav">
+      <nav className="rec-nav" aria-label="Main navigation">
         <a href="/" className="rec-nav-logo">
           <img
             src="/logo-mark.png"
@@ -359,7 +400,7 @@ export default function RecipesPage() {
 
       {/* ── RECIPE TILE GRID ── */}
       <section className="rec-grid-section">
-        <div className="rec-grid-title">Pick your pour</div>
+        <h2 className="rec-grid-title">Pick your pour</h2>
         <div className="rec-grid">
           {recipes.map((recipe) => (
             <a
@@ -368,7 +409,7 @@ export default function RecipesPage() {
               className="rec-tile"
             >
               <div className="rec-tile-img">
-                <img src={recipe.image} alt={recipe.name} />
+                <img src={recipe.image} alt={recipe.imageAlt} width={1511} height={2343} loading="lazy" />
               </div>
               <div className="rec-tile-overlay" />
               <div className="rec-tile-content">
