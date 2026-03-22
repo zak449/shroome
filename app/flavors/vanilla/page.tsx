@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import Image from "next/image";
 import MobileNav from "../../MobileNav";
+import Breadcrumb from "../../Breadcrumb";
 
 export const metadata: Metadata = {
   title: "Vanilla — shroomé | Ready-to-Pour Vanilla Matcha Latte",
@@ -327,6 +328,16 @@ export default function VanillaFlavorPage() {
             </p>
           </div>
         </section>
+
+        {/* ── BREADCRUMB ── */}
+        <Breadcrumb
+          prefix="vf"
+          items={[
+            { label: "Home", href: "/" },
+            { label: "Flavors", href: "/#flavors" },
+            { label: "Vanilla" },
+          ]}
+        />
 
         {/* ── KEY INGREDIENTS ── */}
         <div className="vf-ingredients">

@@ -2,6 +2,9 @@ import Script from "next/script";
 import { notFound } from "next/navigation";
 import { recipes } from "../data";
 import MobileNav from "../../MobileNav";
+import CopyLinkButton from "./CopyLinkButton";
+import PrintButton from "./PrintButton";
+import Breadcrumb from "../../Breadcrumb";
 
 export function generateStaticParams() {
   return recipes.map((recipe) => ({ slug: recipe.id }));
@@ -333,6 +336,58 @@ export default async function RecipeDetailPage({
         }
         .rd-btn-cta:hover{background:#2a2e4f}
 
+        /* ── MORE RECIPES ── */
+        .rd-more{padding:72px 8% 80px}
+        .rd-more-label{
+          font-family:'DM Mono',monospace;font-size:10px;font-weight:500;
+          letter-spacing:.22em;text-transform:uppercase;color:rgba(27,31,59,0.45);
+          margin-bottom:32px;text-align:center
+        }
+        .rd-more-grid{
+          display:grid;grid-template-columns:repeat(3,1fr);gap:24px;
+          max-width:960px;margin:0 auto
+        }
+        .rd-more-card{
+          text-decoration:none;color:inherit;
+          border-radius:14px;overflow:hidden;
+          background:rgba(255,255,255,0.35);
+          backdrop-filter:blur(8px);
+          border:1px solid rgba(27,31,59,0.08);
+          transition:transform .25s ease,box-shadow .25s ease;
+          display:flex;flex-direction:column
+        }
+        .rd-more-card:hover{
+          transform:translateY(-6px);
+          box-shadow:0 12px 32px rgba(27,31,59,0.12)
+        }
+        .rd-more-card-img{
+          width:100%;aspect-ratio:4/3;object-fit:cover;display:block
+        }
+        .rd-more-card-body{padding:16px 18px 20px}
+        .rd-more-card-name{
+          font-family:'Instrument Serif',Georgia,serif;
+          font-size:20px;font-weight:400;font-style:italic;
+          color:#1B1F3B;line-height:1.2;margin-bottom:6px
+        }
+        .rd-more-card-meta{
+          font-family:'DM Mono',monospace;font-size:11px;font-weight:500;
+          letter-spacing:.1em;text-transform:uppercase;
+          color:rgba(27,31,59,0.45)
+        }
+        @media(max-width:768px){
+          .rd-more{padding:56px 5% 64px}
+          .rd-more-grid{
+            display:flex;gap:16px;
+            overflow-x:auto;-webkit-overflow-scrolling:touch;
+            scroll-snap-type:x mandatory;
+            padding-bottom:8px
+          }
+          .rd-more-card{
+            min-width:260px;flex-shrink:0;
+            scroll-snap-align:start
+          }
+        }
+
         /* ── FOOTER ── */
         .rd-footer{
           background:#1B1F3B;color:rgba(253,244,238,0.6);
@@ -353,6 +408,26 @@ export default async function RecipeDetailPage({
           margin-top:12px;
           font-family:'Instrument Serif',Georgia,serif;font-style:italic;
           font-size:14px;color:rgba(253,244,238,0.4)
+        }
+
+        /* ── SHARE ── */
+        .rd-share{margin-bottom:56px}
+        .rd-share-buttons{display:flex;flex-wrap:wrap;gap:10px;margin-top:4px}
+        .rd-share-btn{
+          display:inline-flex;align-items:center;gap:6px;
+          font-family:'DM Mono',monospace;font-size:11px;font-weight:500;
+          letter-spacing:.12em;text-transform:uppercase;
+          color:rgba(27,31,59,0.55);text-decoration:none;
+          padding:9px 20px;
+          border:1px solid rgba(27,31,59,0.18);border-radius:100px;
+          background:rgba(255,255,255,0.15);backdrop-filter:blur(6px);
+          cursor:pointer;transition:all .2s;
+          white-space:nowrap
+        }
+        .rd-share-btn:hover{
+          color:#1B1F3B;
+          border-color:rgba(27,31,59,0.35);
+          background:rgba(255,255,255,0.35)
         }
 
         /* ── RESPONSIVE ── */
@@ -452,6 +527,16 @@ export default async function RecipeDetailPage({
         </div>
       </section>
 
+      {/* ── BREADCRUMB ── */}
+      <Breadcrumb
+        prefix="rd"
+        items={[
+          { label: "Home", href: "/" },
+          { label: "Recipes", href: "/recipes" },
+          { label: recipe.name },
+        ]}
+      />
+
       {/* ── BODY ── */}
       <div className="rd-body">
         <p className="rd-desc">{recipe.description}</p>
@@ -469,6 +554,37 @@ export default async function RecipeDetailPage({
             <li key={i}>{step}</li>
           ))}
         </ol>
+
+        {/* ── SHARE ── */}
+        <div className="rd-share">
+          <h2 className="rd-label">Share This Recipe</h2>
+          <div className="rd-share-buttons">
+            <CopyLinkButton url={`https://www.drinkshroome.com/recipes/${recipe.id}`} />
+            <a
+              href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(recipe.name)}&url=${encodeURIComponent(`https://www.drinkshroome.com/recipes/${recipe.id}`)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rd-share-btn"
+            >
+              𝕏 Twitter
+            </a>
+            <a
+              href={`sms:?body=${encodeURIComponent(`Check out this recipe: ${recipe.name} https://www.drinkshroome.com/recipes/${recipe.id}`)}`}
+              className="rd-share-btn"
+            >
+              💬 iMessage
+            </a>
+            <a
+              href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(`https://www.drinkshroome.com/recipes/${recipe.id}`)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rd-share-btn"
+            >
+              f Facebook
+            </a>
+            <PrintButton />
+          </div>
+        </div>
       </div>
 
       {/* ── BACK ── */}
@@ -493,6 +609,40 @@ export default async function RecipeDetailPage({
           Claim 20% off →
         </a>
       </section>
+
+      {/* ── MORE RECIPES ── */}
+      {(() => {
+        const currentIndex = recipes.findIndex((r) => r.id === recipe.id);
+        const related = Array.from({ length: 3 }, (_, i) => {
+          const idx = (currentIndex + 1 + i) % recipes.length;
+          return recipes[idx];
+        });
+        return (
+          <section className="rd-more">
+            <div className="rd-more-label">More Recipes</div>
+            <div className="rd-more-grid">
+              {related.map((r) => (
+                <a key={r.id} href={`/recipes/${r.id}`} className="rd-more-card">
+                  <img
+                    src={r.image}
+                    alt={r.imageAlt}
+                    className="rd-more-card-img"
+                    loading="lazy"
+                    width={400}
+                    height={300}
+                  />
+                  <div className="rd-more-card-body">
+                    <div className="rd-more-card-name">{r.name}</div>
+                    <div className="rd-more-card-meta">
+                      {r.prepLabel} &middot; {r.ingredients.length} ingredient{r.ingredients.length !== 1 ? "s" : ""}
+                    </div>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </section>
+        );
+      })()}
 
       {/* ── FOOTER ── */}
       <footer className="rd-footer">

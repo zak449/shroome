@@ -6,6 +6,7 @@ import { blogPosts, getPostBySlug, getRelatedPosts } from "../posts";
 import BlogCTA from "./BlogCTA";
 import { notFound } from "next/navigation";
 import MobileNav from "../../MobileNav";
+import Breadcrumb from "../../Breadcrumb";
 
 export async function generateStaticParams() {
   return blogPosts.map((post) => ({ slug: post.slug }));
@@ -432,6 +433,16 @@ export default async function BlogPost({
           <h1>{post.title}</h1>
         </div>
       </header>
+
+      {/* BREADCRUMB */}
+      <Breadcrumb
+        prefix="post"
+        items={[
+          { label: "Home", href: "/" },
+          { label: "Blog", href: "/blog" },
+          { label: post.title },
+        ]}
+      />
 
       {/* BODY */}
       <article

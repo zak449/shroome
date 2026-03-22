@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import Image from "next/image";
 import MobileNav from "../../MobileNav";
+import Breadcrumb from "../../Breadcrumb";
 
 export const metadata: Metadata = {
   title: "Strawberry — shroomé | Ready-to-Pour Strawberry Matcha Latte",
@@ -331,6 +332,16 @@ export default function StrawberryFlavorPage() {
             </p>
           </div>
         </section>
+
+        {/* ── BREADCRUMB ── */}
+        <Breadcrumb
+          prefix="sf"
+          items={[
+            { label: "Home", href: "/" },
+            { label: "Flavors", href: "/#flavors" },
+            { label: "Strawberry" },
+          ]}
+        />
 
         {/* ── KEY INGREDIENTS ── */}
         <div className="sf-ingredients">

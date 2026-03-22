@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
+import BackToTop from "./BackToTop";
 import "./globals.css";
 
 export const viewport: Viewport = {
@@ -182,6 +183,7 @@ export default function RootLayout({
         <main id="main-content">
           {children}
         </main>
+        <BackToTop />
       </body>
     </html>
   );

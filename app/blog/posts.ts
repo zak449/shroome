@@ -13,6 +13,316 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "matcha-recipes-under-60-seconds",
+    title: "5 Matcha Recipes You Can Make in Under 60 Seconds",
+    excerpt:
+      "No bamboo whisk. No complicated steps. Just tear, pour, and drink. Here are five matcha recipes that take less than a minute from sachet to sip.",
+    date: "2026-03-21",
+    readTime: "5 min read",
+    category: "How-To",
+    metaDescription:
+      "Five easy matcha recipes for beginners that take under 60 seconds. Quick matcha latte, smoothie, iced matcha, and more — no equipment or barista skills needed.",
+    ogImage: "/og-blog-matcha-recipes-60s.jpg",
+    author: "Zachary Kaufman",
+    content: `
+<p>Let's be honest — most matcha recipes online are aspirational at best. They require a bamboo whisk, a chawan, a thermometer, maybe a minor in Japanese tea ceremony. That's beautiful if you have the time. But if you're trying to get out the door in the morning (or just want something delicious without the production), you need recipes that actually fit your life.</p>
+
+<p>These five matcha recipes all take under 60 seconds. They're designed around <a href="https://www.drinkshroome.com">shroom&eacute;</a> sachets, which dissolve instantly in any liquid — hot or cold, dairy or plant-based. No sifting. No clumps. No special equipment. Just tear, pour, stir or shake, and you're done.</p>
+
+<h2>1. The Classic Iced Matcha Latte</h2>
+
+<p>This is the one that got most of us into matcha in the first place. The layered green-over-white look. The creamy, slightly sweet taste. The focus without the jitters. And with a pre-portioned sachet, it's genuinely a 15-second drink.</p>
+
+<h3>How to Make It</h3>
+
+<ul>
+<li>Fill a tall glass with ice and pour in 6-8 oz of oat milk (or any milk you like).</li>
+<li>Tear open a shroom&eacute; sachet and pour the powder slowly over the back of a spoon so it floats on top.</li>
+<li>That's it. Let it layer or stir it up — your call.</li>
+</ul>
+
+<p>The key here is the instant-dissolve formula. Traditional matcha powder clumps in cold liquid unless you whisk it separately in hot water first. That extra step is exactly what makes people give up on homemade matcha. With shroom&eacute;, the powder disperses on contact. Get the <a href="/recipes/classic-iced-matcha-latte">full Classic Iced Matcha Latte recipe here</a>.</p>
+
+<h2>2. Vanilla Matcha Smoothie</h2>
+
+<p>If you want something more substantial — something that counts as breakfast — this smoothie is your move. Frozen banana gives it thickness, the matcha gives it energy, and you get lion's mane and reishi in the mix without tasting anything "mushroomy."</p>
+
+<h3>How to Make It</h3>
+
+<ul>
+<li>Throw a frozen banana, 6 oz of oat milk, a handful of ice, and one shroom&eacute; vanilla sachet into a blender.</li>
+<li>Blend for 20-30 seconds until smooth.</li>
+<li>Pour and go.</li>
+</ul>
+
+<p>The frozen banana is doing the heavy lifting here — it creates that thick, creamy texture without any protein powder or yogurt. Though if you want extra protein, you can absolutely add a scoop. Check out the <a href="/recipes/vanilla-matcha-smoothie">full Vanilla Matcha Smoothie recipe</a> for more details.</p>
+
+<h2>3. Hot Matcha Latte</h2>
+
+<p>Sometimes you want something warm. Especially on mornings when it's cold out or you just want that cozy ritual of holding a hot mug. This is the simplest hot matcha you'll ever make — no kettle thermometer required.</p>
+
+<h3>How to Make It</h3>
+
+<ul>
+<li>Heat 6-8 oz of your favorite milk (oat, almond, or dairy all work great).</li>
+<li>Pour the warm milk into your mug and stir in one shroom&eacute; sachet.</li>
+<li>Stir for a few seconds until fully dissolved. Done.</li>
+</ul>
+
+<p>Pro tip: if you have a milk frother, use it. Frothing gives you that cafe-quality microfoam layer on top. But it's completely optional — the drink tastes just as good without it. See the <a href="/recipes/hot-matcha-latte">full Hot Matcha Latte recipe</a>.</p>
+
+<h2>4. Sparkling Matcha</h2>
+
+<p>This one surprises people. Matcha and sparkling water? It sounds unusual, but it's incredibly refreshing — especially in the afternoon when you want a pick-me-up that isn't another heavy latte. It's light, a little effervescent, and the matcha flavor really comes through.</p>
+
+<h3>How to Make It</h3>
+
+<ul>
+<li>Add one shroom&eacute; sachet to a glass.</li>
+<li>Pour in 2 oz of regular water and stir to dissolve the powder.</li>
+<li>Add ice, then top with 6 oz of sparkling water. Give it one gentle stir.</li>
+</ul>
+
+<p>The trick is dissolving the matcha in still water first. If you pour the sachet straight into carbonated water, you'll lose some fizz. Two ounces of still water, a quick stir, then the sparkling water on top. Check the <a href="/recipes/sparkling-matcha">full Sparkling Matcha recipe</a>.</p>
+
+<h2>5. Protein Matcha Shake</h2>
+
+<p>For anyone who works out in the morning — or just wants a high-protein start — this is your grab-and-go meal replacement. It combines the sustained energy of matcha and functional mushrooms with whatever protein powder you already use.</p>
+
+<h3>How to Make It</h3>
+
+<ul>
+<li>Add one scoop of protein powder, one shroom&eacute; sachet, 8 oz of milk, and a handful of ice to a shaker bottle or blender.</li>
+<li>Shake or blend for 15-20 seconds.</li>
+<li>That's your breakfast, pre-workout, and focus supplement in one glass.</li>
+</ul>
+
+<p>Vanilla or unflavored protein works best here — chocolate protein with matcha is a bold choice (some love it, some don't). See the <a href="/recipes/protein-matcha-shake">full Protein Matcha Shake recipe</a> for more options.</p>
+
+<h2>Why Sachets Make the Difference</h2>
+
+<p>The reason most people don't make matcha at home isn't that they don't like matcha. It's that traditional matcha preparation is fussy. You need to sift the powder, heat water to exactly 175&deg;F, whisk in a specific pattern, and clean up the tools afterward. For a morning drink, that's a lot of friction.</p>
+
+<p>Shroom&eacute; sachets remove all of that. Each one is pre-portioned with ceremonial-grade matcha, functional mushroom extracts (lion's mane and reishi with 70%+ beta-glucan content), collagen peptides, and L-theanine. You get the same <a href="/#ingredients">ingredients</a> you'd get from buying five separate supplements — in one sachet that dissolves in seconds.</p>
+
+<p>That's why all five of these recipes work. The sachet format means there's no barrier between you and a great matcha drink. No learning curve. No equipment. No wasted powder at the bottom of the cup.</p>
+
+<h2>Find More Recipes</h2>
+
+<p>These five are just the starting point. We've got a full collection of matcha recipes — from <a href="/recipes/strawberry-rose-matcha-latte">strawberry rose lattes</a> to <a href="/recipes/matcha-affogato">matcha affogatos</a> — all designed to be made in under a minute with a single sachet. Browse all of them on our <a href="/recipes">recipes page</a>.</p>
+
+<p>And if you haven't tried shroom&eacute; yet, we're currently offering <strong>20% off for pre-launch orders</strong>. It's the easiest way to start making matcha at home without any of the usual hassle. Check out the offer at <a href="https://www.drinkshroome.com">drinkshroome.com</a>.</p>
+
+<p>Got questions about which recipe to start with? Check out our <a href="/faq">FAQ page</a> — we cover everything from flavor profiles to the best milk pairings.</p>
+
+<hr />
+
+<p><em>*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</em></p>
+`,
+  },
+  {
+    slug: "matcha-vs-coffee-gen-z-switch",
+    title: "Matcha vs Coffee: Why Gen Z Is Making the Switch",
+    excerpt:
+      "Coffee isn't going anywhere, but a growing number of people are trading their morning espresso for matcha. Here's the science behind why — and whether it's worth it.",
+    date: "2026-03-21",
+    readTime: "7 min read",
+    category: "Wellness",
+    metaDescription:
+      "Matcha vs coffee: comparing caffeine, L-theanine, energy crashes, and long-term health benefits. Why more people are switching from coffee to matcha for sustained focus.",
+    ogImage: "/og-blog-matcha-vs-coffee.jpg",
+    author: "Zachary Kaufman",
+    content: `
+<p>Coffee has had an incredible run. It's been the default morning ritual for generations — the smell, the routine, the caffeine hit that pulls you from groggy to functional. Nobody's saying coffee is bad. But something is shifting, and it's not subtle.</p>
+
+<p>Google Trends data shows that searches for "matcha vs coffee" have more than tripled over the past three years. Matcha sales in the U.S. are growing at over 10% annually. And if you spend any time on social media, you've probably noticed: the iced matcha latte has quietly replaced the iced americano as the go-to morning drink for an entire generation.</p>
+
+<p>This isn't just aesthetics. There's real science behind why people feel better on matcha — and why, once they switch, most don't go back.</p>
+
+<h2>The Caffeine Question: It's Not How Much, It's How</h2>
+
+<p>Let's start with the most common question: does matcha have less caffeine than coffee?</p>
+
+<p>A typical cup of coffee contains 95-200mg of caffeine, depending on brew method and serving size. A serving of matcha contains roughly 60-70mg. So yes, matcha generally has less caffeine per cup. But that's not the interesting part.</p>
+
+<p>The interesting part is <em>how</em> that caffeine is delivered. Coffee caffeine hits fast. It's absorbed rapidly, spikes your cortisol and adrenaline, and gives you that familiar "wired" feeling within 15-30 minutes. It also drops off relatively quickly, which is why the 2pm energy crash is such a universal experience for coffee drinkers.</p>
+
+<p>Matcha caffeine behaves differently because of one compound: <strong>L-theanine</strong>.</p>
+
+<h2>L-Theanine: The Compound Coffee Doesn't Have</h2>
+
+<p>L-theanine is an amino acid found almost exclusively in tea plants. It crosses the blood-brain barrier and promotes alpha brain wave activity — the same brain wave pattern associated with meditation, focused attention, and creative thinking.</p>
+
+<p>When L-theanine and caffeine are consumed together (as they naturally occur in matcha), something interesting happens. <a href="/blog/caffeine-l-theanine-nootropic-stack">The caffeine and L-theanine work synergistically</a>: L-theanine smooths out caffeine's stimulant effects. Instead of a sharp spike and crash, you get a gradual ramp-up of alertness that sustains for 4-6 hours. Researchers describe it as "calm alertness" or "focused energy" — you're sharp and productive without feeling wired or anxious.</p>
+
+<p>This is not a subtle difference. Anyone who's experienced coffee jitters, a racing heartbeat after an espresso, or that post-caffeine anxiety knows exactly what we're talking about. Matcha gives you the focus without those side effects because L-theanine is actively modulating your stress response while the caffeine does its job.</p>
+
+<p>Ceremonial-grade matcha (the kind in <a href="https://www.drinkshroome.com">shroom&eacute;</a>) contains the highest L-theanine levels — around 30-40mg per gram — because the shade-growing process used for ceremonial matcha stimulates L-theanine production. <a href="/blog/ceremonial-vs-culinary-matcha-grade-matters">The grade of matcha you use directly determines</a> how much of this compound you're actually getting.</p>
+
+<h2>The Crash Problem</h2>
+
+<p>Ask anyone who's quit coffee why they did it, and you'll hear the same answer: the crash.</p>
+
+<p>Coffee's caffeine curve looks like a mountain — steep ascent, peak, steep descent. That descent is where the afternoon slump lives. Your body responded to the caffeine spike by releasing cortisol (stress hormone) and adrenaline. Once the caffeine wears off, you're left with the aftermath of that stress response: fatigue, irritability, and brain fog. So you reach for another cup, and the cycle repeats.</p>
+
+<p>Matcha's caffeine curve looks more like a rolling hill. The L-theanine extends the duration of the caffeine's effects while reducing the peak intensity. You don't get as high, but you stay elevated much longer — and the comedown is so gradual that most people don't notice it at all.</p>
+
+<p>This is also why matcha is increasingly popular as a pre-workout alternative. <a href="/blog/matcha-vs-pre-workout">Compared to traditional pre-workout supplements</a>, matcha provides sustained energy without the crash or the tingling skin from beta-alanine.</p>
+
+<h2>What About the Gut?</h2>
+
+<p>Coffee is acidic. It stimulates gastric acid production, which is why so many coffee drinkers experience acid reflux, stomach discomfort, or the urgent need to visit the bathroom after their morning cup. For some people, this is a feature. For others, it's a dealbreaker.</p>
+
+<p>Matcha is significantly less acidic than coffee. Its pH sits around 7-8 (roughly neutral), compared to coffee's 4.5-5.5. People who switch from coffee to matcha frequently report that their digestive issues resolve within the first week. No more acid reflux. No more stomach churning before 9am.</p>
+
+<p>This is one of those benefits that's hard to appreciate until you experience it. If coffee has always agreed with your stomach, you might not care. But if you've been dealing with coffee-related gut issues and just accepted them as normal — matcha might be worth trying for this reason alone.</p>
+
+<h2>Antioxidants and Long-Term Health</h2>
+
+<p>Both coffee and matcha contain antioxidants. Coffee is actually one of the largest sources of antioxidants in the Western diet (mostly because people drink so much of it). But gram for gram, matcha contains significantly more.</p>
+
+<p>Matcha's primary antioxidant is EGCG (epigallocatechin gallate), a catechin that has been extensively studied for its anti-inflammatory and cellular protection properties. Because you're consuming the entire ground tea leaf rather than just a brewed extract, a single serving of matcha delivers roughly 10 times the antioxidants of a cup of steeped green tea.</p>
+
+<p>Over the long term, these antioxidants support cardiovascular health, cellular repair, and reduction of oxidative stress. Combined with functional mushroom extracts — like the lion's mane and reishi in shroom&eacute; that provide <a href="/blog/what-are-beta-glucans-mushroom-compound">immune-supporting beta-glucans</a> — you're getting a morning drink that does more than just wake you up.</p>
+
+<h2>The Social Factor</h2>
+
+<p>Let's address the elephant in the room: matcha is trendy right now. And trends make people skeptical. Fair enough.</p>
+
+<p>But matcha isn't new. It's been consumed in Japan for nearly a thousand years. The ceremonial preparation of matcha dates back to 12th-century Zen monks who used it for sustained focus during long meditation sessions. What's new is that the Western world is finally paying attention — and that the format has evolved to make it accessible.</p>
+
+<p>Gen Z isn't switching to matcha because it looks good on social media (though it does). They're switching because they grew up watching their parents rely on coffee and deal with the anxiety, the crashes, and the stomach issues that come with it. They're the most health-information-savvy generation in history, and they're making choices based on how things actually make them feel.</p>
+
+<h2>How to Actually Make the Switch</h2>
+
+<p>If you're thinking about switching from coffee to matcha, here's the honest playbook:</p>
+
+<p><strong>Week 1:</strong> Don't quit coffee cold turkey unless you enjoy headaches. Instead, replace your second cup of coffee with a matcha. Keep your morning coffee for now.</p>
+
+<p><strong>Week 2:</strong> Switch your morning coffee to matcha. You might feel slightly less "punched awake" than coffee provides — that's normal. The L-theanine effect is smoother and less dramatic. Give it a few days.</p>
+
+<p><strong>Week 3 and beyond:</strong> By now, most people notice they're sleeping better, feeling less anxious, and have more consistent energy throughout the day. The afternoon crash disappears. The 3pm caffeine craving fades.</p>
+
+<p>The easiest way to try it? <a href="https://www.drinkshroome.com">Shroom&eacute; sachets</a> dissolve instantly in any liquid, so there's zero learning curve. No special equipment, no technique to master. If you can stir a spoon, you can make matcha. And right now, we're offering <strong>20% off pre-launch orders</strong> — making it cheaper per serving than most coffee shop lattes.</p>
+
+<p>Still have questions about making the switch? Our <a href="/faq">FAQ page</a> covers caffeine content, taste differences, and the best way to get started.</p>
+
+<hr />
+
+<p><em>*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</em></p>
+`,
+  },
+  {
+    slug: "ultimate-guide-mushroom-matcha-lions-mane-reishi",
+    title:
+      "The Ultimate Guide to Mushroom Matcha: Lion's Mane, Reishi & Beyond",
+    excerpt:
+      "Functional mushrooms meet ceremonial matcha. Here's what mushroom matcha actually is, which mushrooms matter, and how to tell real adaptogens from marketing fluff.",
+    date: "2026-03-21",
+    readTime: "8 min read",
+    category: "Ingredients",
+    metaDescription:
+      "Everything you need to know about mushroom matcha: lion's mane for focus, reishi for calm, beta-glucan content, adaptogenic benefits, and how to choose a quality product.",
+    ogImage: "/og-blog-mushroom-matcha-guide.jpg",
+    author: "Zachary Kaufman",
+    content: `
+<p>If you've spent any time in the wellness aisle lately, you've seen the phrase "mushroom matcha" everywhere. It sounds like a trend — two buzzy ingredients mashed together for marketing purposes. But there's actually solid science behind why these two ingredients work so well as a pair, and understanding that science is the key to telling genuinely functional products apart from expensive green powder with a mushroom label.</p>
+
+<p>This guide breaks down everything: which mushrooms actually do something, what to look for on a label, and why the combination of matcha and functional mushrooms creates effects that neither ingredient achieves alone.</p>
+
+<h2>What Is Mushroom Matcha?</h2>
+
+<p>At its simplest, mushroom matcha is matcha green tea powder combined with extracts from functional mushrooms — species that have been used in traditional medicine for centuries and are now backed by modern research. The most common mushrooms you'll find in these blends are lion's mane, reishi, chaga, and cordyceps.</p>
+
+<p>The idea isn't to make your matcha taste like mushrooms (good products don't taste mushroomy at all). The idea is to combine matcha's natural caffeine and L-theanine with the adaptogenic and nootropic compounds found in specific mushroom species. The result is a drink that provides energy, focus, immune support, and stress resilience — all from one serving.</p>
+
+<p>But here's where it gets complicated: not all mushroom matcha products are created equal. The quality of both the matcha and the mushroom extracts varies wildly, and the difference between a well-formulated product and a poorly made one is enormous.</p>
+
+<h2>Lion's Mane: The Focus Mushroom</h2>
+
+<p>Lion's mane (<em>Hericium erinaceus</em>) is the mushroom that's gotten the most attention in the nootropics space, and for good reason. It contains two unique groups of compounds — hericenones and erinacines — that have been shown to stimulate the production of Nerve Growth Factor (NGF) in the brain.</p>
+
+<p>NGF is a protein that's essential for the growth, maintenance, and survival of neurons. It's involved in neuroplasticity — your brain's ability to form new connections and adapt. Declining NGF levels are associated with age-related cognitive decline, which is why lion's mane has become one of the most studied natural nootropics.</p>
+
+<p>Research published in peer-reviewed journals has shown that lion's mane supplementation can improve mild cognitive function, support memory recall, and reduce symptoms of brain fog. One widely cited study found that adults who took lion's mane extract for 16 weeks showed significant improvements in cognitive function scores compared to the placebo group.</p>
+
+<p>When you combine lion's mane with matcha's natural caffeine and L-theanine, you get a complementary stack: the caffeine provides immediate alertness, the L-theanine ensures that alertness is calm and focused rather than jittery (learn more about <a href="/blog/caffeine-l-theanine-nootropic-stack">how the caffeine + L-theanine stack works</a>), and the lion's mane supports the underlying neural infrastructure that makes sustained focus possible.</p>
+
+<h2>Reishi: The Calm and Immunity Mushroom</h2>
+
+<p>Reishi (<em>Ganoderma lucidum</em>) is often called the "mushroom of immortality" in traditional Chinese medicine — a title it earned from centuries of use as a tonic for overall vitality and longevity. Modern science has validated several of those traditional uses, particularly around immune modulation and stress resilience.</p>
+
+<p>Reishi is classified as an adaptogen — a substance that helps the body adapt to stress by regulating the hypothalamic-pituitary-adrenal (HPA) axis. In practical terms, this means reishi can help your body manage cortisol levels more effectively, which translates to better stress tolerance, improved sleep quality, and a calmer baseline state.</p>
+
+<p>On the immune side, reishi is rich in beta-glucans — the polysaccharides that interact with immune cell receptors to keep your immune system responsive and balanced. (We did a deep dive on <a href="/blog/what-are-beta-glucans-mushroom-compound">what beta-glucans are and why they matter</a> if you want the full biochemistry.) Reishi's beta-glucans, combined with its triterpene compounds (ganoderic acids), support both innate and adaptive immune function.</p>
+
+<p>In a mushroom matcha blend, reishi serves as the counterbalance to caffeine's stimulant effects. While the matcha wakes you up, the reishi helps ensure that wakefulness doesn't tip into stress or overstimulation. It's the ingredient that makes a mushroom matcha feel different from regular matcha — more grounded, less edgy.</p>
+
+<h2>Beta-Glucans: The Number That Actually Matters</h2>
+
+<p>Here's where most mushroom matcha products fall short. The mushroom species matters, but the <strong>concentration of bioactive compounds</strong> matters even more. And the primary bioactive compound in functional mushrooms is beta-glucans.</p>
+
+<p>Beta-glucans are polysaccharides found in the cell walls of mushrooms. They're the compounds responsible for the immune-modulating, anti-inflammatory, and prebiotic effects that make functional mushrooms functional. Without adequate beta-glucan content, a mushroom extract is just expensive fiber.</p>
+
+<p>The problem is that many products on the market use mycelium-on-grain — mushroom root material grown on rice or oats — rather than fruiting body extracts. Mycelium-on-grain products typically test at just 5-30% beta-glucans, and much of that comes from the grain itself (oat beta-glucans, which are structurally different and don't interact with immune receptors the same way). <a href="/blog/fruiting-body-vs-mycelium-mushroom-supplement">Our comparison of fruiting body vs. mycelium supplements</a> goes into the full details of why this distinction matters.</p>
+
+<p>Fruiting body extracts processed through hot water extraction routinely test at <strong>40-70%+ beta-glucans</strong>. That's the range where you're getting a meaningful dose of the compounds that actually do something.</p>
+
+<p>When evaluating any mushroom matcha product, the beta-glucan percentage is the single most important number on the label. If the brand doesn't list it, that's a red flag. If they list total polysaccharides instead of beta-glucans specifically, that's also a red flag — total polysaccharides include starch and other non-bioactive compounds, which inflates the number without reflecting actual potency.</p>
+
+<h2>Beyond Lion's Mane and Reishi: Other Functional Mushrooms</h2>
+
+<p>While lion's mane and reishi are the two most common mushrooms in matcha blends (and the two in <a href="https://www.drinkshroome.com">shroom&eacute;</a>), there are other species worth knowing about:</p>
+
+<p><strong>Chaga</strong> (<em>Inonotus obliquus</em>) is exceptionally high in antioxidants — it has one of the highest ORAC (Oxygen Radical Absorbance Capacity) scores of any natural food. It's traditionally used for immune support and has been studied for its anti-inflammatory properties.</p>
+
+<p><strong>Cordyceps</strong> (<em>Cordyceps militaris</em>) is the athlete's mushroom. Research suggests it may improve oxygen utilization and endurance performance by increasing ATP production at the cellular level. It's a common addition in products targeting physical performance.</p>
+
+<p><strong>Turkey tail</strong> (<em>Trametes versicolor</em>) is one of the most-researched mushrooms for immune function. Its polysaccharide-K (PSK) compound has been studied extensively in clinical settings for immune support.</p>
+
+<p>Each of these mushrooms has legitimate research behind it. The key is always the same: look for fruiting body extracts with verified beta-glucan content from a transparent brand.</p>
+
+<h2>Why Matcha Is the Ideal Base</h2>
+
+<p>You can add functional mushrooms to coffee, hot water, or a smoothie. So why matcha specifically?</p>
+
+<p>Three reasons:</p>
+
+<p><strong>Synergistic caffeine delivery.</strong> Matcha's natural L-theanine creates a smoother, longer-lasting energy curve than coffee. Adding functional mushrooms to coffee gives you the mushroom benefits, but you still get coffee's spike-and-crash caffeine pattern. Matcha's caffeine delivery is inherently better suited to the sustained, grounded effects that adaptogens provide.</p>
+
+<p><strong>Complementary antioxidant profiles.</strong> Matcha's EGCG (epigallocatechin gallate) and the various antioxidant compounds in functional mushrooms work through different pathways. You're getting broader antioxidant coverage than either ingredient provides alone.</p>
+
+<p><strong>Flavor compatibility.</strong> High-quality <a href="/blog/ceremonial-vs-culinary-matcha-grade-matters">ceremonial-grade matcha</a> has a naturally smooth, slightly sweet, umami-rich flavor that masks the earthiness of mushroom extracts beautifully. This is why well-made mushroom matcha doesn't taste like mushrooms — the matcha's flavor profile is dominant, and the mushroom extracts are essentially undetectable.</p>
+
+<h2>How to Choose a Quality Mushroom Matcha</h2>
+
+<p>Not all products are worth your money. Here's a quick checklist:</p>
+
+<ul>
+<li><strong>Matcha grade:</strong> Is it ceremonial grade, first harvest, from Japan? Or is it unspecified "matcha powder" that could be culinary grade from anywhere?</li>
+<li><strong>Mushroom source:</strong> Fruiting body extract or mycelium-on-grain? Look for "fruiting body" explicitly on the label.</li>
+<li><strong>Beta-glucan content:</strong> Is it listed? Is it 40%+ for each mushroom species? If the brand won't tell you, they're probably not proud of the number.</li>
+<li><strong>Extraction method:</strong> Hot water extraction is the gold standard for liberating beta-glucans from chitin. Dual extraction (hot water + alcohol) captures additional compounds like triterpenes.</li>
+<li><strong>Third-party testing:</strong> Does the brand offer a Certificate of Analysis from an independent lab? This is how you verify the numbers on the label are real.</li>
+<li><strong>Additional functional ingredients:</strong> Some blends include complementary ingredients like collagen peptides for skin and joint support, or additional L-theanine to amplify the calming focus effect. These are bonuses if they're well-dosed.</li>
+</ul>
+
+<p>Shroom&eacute; checks every box on this list. We use ceremonial-grade Japanese matcha, lion's mane and reishi fruiting body extracts standardized to 70%+ beta-glucan content, marine collagen peptides, and added L-theanine — all in a single-serve sachet that dissolves instantly. You can see the <a href="/#ingredients">full ingredient breakdown here</a>.</p>
+
+<h2>Getting Started with Mushroom Matcha</h2>
+
+<p>If you're new to functional mushrooms or matcha (or both), the easiest entry point is a product that combines everything in one serving. Buying lion's mane capsules, reishi powder, ceremonial matcha, and collagen separately gets expensive fast and leaves you guessing on dosages.</p>
+
+<p>Shroom&eacute; was designed specifically to solve that problem — one sachet, every ingredient dosed properly, ready in seconds. And right now, we're offering <strong>20% off pre-launch orders</strong> at <a href="https://www.drinkshroome.com">drinkshroome.com</a>. It's the simplest way to try a genuinely well-formulated mushroom matcha without the guesswork.</p>
+
+<p>Want to see what you can make with it? Browse our <a href="/recipes">full recipe collection</a> for ideas — from <a href="/recipes/classic-iced-matcha-latte">classic iced lattes</a> to <a href="/recipes/matcha-affogato">matcha affogatos</a>. And if you have questions about ingredients, dosing, or what to expect, our <a href="/faq">FAQ page</a> has you covered.</p>
+
+<hr />
+
+<p><em>*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</em></p>
+`,
+  },
+  {
     slug: "what-are-beta-glucans-mushroom-compound",
     title: "What Are Beta-Glucans? The Mushroom Compound That Actually Matters",
     excerpt:

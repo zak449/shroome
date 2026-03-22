@@ -176,3 +176,158 @@ body {
     gap: 16px !important;
   }
 }
+
+/* ── Print-friendly styles ── */
+@media print {
+  @page {
+    margin: 1in;
+  }
+
+  /* Reset backgrounds and colors for clean print */
+  body {
+    background: #fff !important;
+    color: #000 !important;
+    font-family: 'Syne', system-ui, sans-serif !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Hide non-essential UI */
+  .rd-ticker,
+  .rd-nav,
+  .rd-hero-back,
+  .rd-hero-overlay,
+  .rd-hero-badges,
+  .rd-back-section,
+  .rd-cta,
+  .rd-footer,
+  .rd-share,
+  .rd-print-btn,
+  .ticker-track,
+  .nav-bar,
+  .site-nav,
+  .nav-link,
+  .hamburger-btn,
+  .mobile-menu,
+  .nav-cta-btn,
+  .rd-nav-cta,
+  .rd-nav-links,
+  [class*="MobileNav"],
+  [data-mobile-nav] {
+    display: none !important;
+  }
+
+  /* Remove background patterns and gradients */
+  .rd-page {
+    background: #fff !important;
+  }
+  .rd-page::before {
+    display: none !important;
+  }
+
+  /* Remove all animations, transitions, backdrop-filters */
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  /* Hero image: print at reasonable size */
+  .rd-hero {
+    min-height: auto !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    position: relative !important;
+    display: block !important;
+    page-break-after: avoid;
+  }
+  .rd-hero-bg {
+    position: relative !important;
+    height: auto !important;
+  }
+  .rd-hero-bg img {
+    width: 100% !important;
+    max-width: 300px !important;
+    height: auto !important;
+    object-fit: contain !important;
+    display: block !important;
+  }
+  .rd-hero-inner {
+    padding: 16px 0 !important;
+  }
+
+  /* Recipe title */
+  .rd-hero h1 {
+    color: #000 !important;
+    text-shadow: none !important;
+    font-size: 28px !important;
+    margin-bottom: 8px !important;
+  }
+
+  /* Body section */
+  .rd-body {
+    max-width: 100% !important;
+    padding: 16px 0 !important;
+    color: #000 !important;
+  }
+  .rd-desc {
+    color: #333 !important;
+    font-size: 14px !important;
+    margin-bottom: 24px !important;
+  }
+
+  /* Section labels */
+  .rd-label {
+    color: #000 !important;
+    font-size: 11px !important;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 4px;
+  }
+  .rd-label::after {
+    background: #ccc !important;
+  }
+
+  /* Ingredients */
+  .rd-ingredients li {
+    color: #000 !important;
+    font-size: 13px !important;
+    border-bottom-color: #ddd !important;
+  }
+  .rd-ingredients li::before {
+    background: #000 !important;
+  }
+
+  /* Steps */
+  .rd-steps li {
+    color: #000 !important;
+    font-size: 13px !important;
+    border-bottom-color: #ddd !important;
+  }
+  .rd-steps li::before {
+    color: #666 !important;
+  }
+
+  /* Footer branding via ::after */
+  .rd-body::after {
+    content: 'drinkshroome.com';
+    display: block;
+    margin-top: 32px;
+    padding-top: 12px;
+    border-top: 1px solid #ccc;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: #999;
+    text-align: center;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  /* Links: show as plain text */
+  a {
+    color: #000 !important;
+    text-decoration: none !important;
+  }
+}
