@@ -1033,10 +1033,10 @@ export default function Home() {
             }}
           >
             {[
-              { src: "/sachet-vanilla.png?v=4", alt: "Vanilla", delay: "0s", shadow: "rgba(255,220,180,0.3)" },
-              { src: "/sachet-strawberry.png?v=4", alt: "Strawberry", delay: "1.8s", shadow: "rgba(212,114,122,0.35)" },
+              { src: "/sachet-vanilla.png?v=4", alt: "Vanilla", delay: "0s", shadow: "rgba(255,220,180,0.3)", href: "/flavors/vanilla" },
+              { src: "/sachet-strawberry.png?v=4", alt: "Strawberry", delay: "1.8s", shadow: "rgba(212,114,122,0.35)", href: "/flavors/strawberry" },
             ].map((s) => (
-              <div key={s.alt} style={{ width: "46%", display: "flex", flexDirection: "column", alignItems: "center" }}>
+              <a key={s.alt} href={s.href} style={{ width: "46%", display: "flex", flexDirection: "column", alignItems: "center", textDecoration: "none" }}>
                 <img
                   src={s.src}
                   alt={s.alt}
@@ -1046,9 +1046,10 @@ export default function Home() {
                     height: "auto",
                     animationDelay: s.delay,
                     filter: `drop-shadow(0 0 40px ${s.shadow}) drop-shadow(0 0 80px ${s.shadow})`,
+                    cursor: "pointer",
                   }}
                 />
-              </div>
+              </a>
             ))}
           </div>
 
@@ -1057,14 +1058,14 @@ export default function Home() {
 
           {/* Flavor cards side by side */}
           <div {...anim("flavor-cards", 0.3)} style={{ ...anim("flavor-cards", 0.3).style, display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 40, textAlign: "center" }}>
-            <div>
+            <a href="/flavors/vanilla" style={{ textDecoration: "none", color: "inherit" }}>
               <h3 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontStyle: "italic", fontSize: "1.5rem", marginBottom: 8 }}>Vanilla</h3>
               <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.82rem", color: "rgba(253,244,238,0.4)", letterSpacing: "0.06em" }}>Warm · Floral · Grounding</p>
-            </div>
-            <div>
+            </a>
+            <a href="/flavors/strawberry" style={{ textDecoration: "none", color: "inherit" }}>
               <h3 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontStyle: "italic", fontSize: "1.5rem", marginBottom: 8 }}>Strawberry</h3>
               <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.82rem", color: "rgba(253,244,238,0.4)", letterSpacing: "0.06em" }}>Bright · Fruity · Fresh</p>
-            </div>
+            </a>
           </div>
         </div>
       </section>
