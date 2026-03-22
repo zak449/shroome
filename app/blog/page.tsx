@@ -111,7 +111,7 @@ export default function BlogIndex() {
         .blog-nav-logo img{width:32px;height:32px;border-radius:6px}
         .blog-nav-logo span{font-family:'Instrument Serif',Georgia,serif;font-size:22px;font-weight:400;font-style:italic;color:#1B1F3B}
         .blog-nav-links{display:flex;gap:8px}
-        @media(max-width:768px){.blog-nav-links{display:none !important}}
+        @media(max-width:768px){.blog-nav-links{display:none !important}.blog-nav-cta{display:none !important}}
         .blog-nav-links a{
           background:none;border:none;cursor:pointer;
           font-family:'Syne',system-ui,sans-serif;font-size:11.5px;font-weight:600;

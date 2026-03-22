@@ -83,7 +83,7 @@ export default function Privacy() {
         .pp-nav-logo img{width:32px;height:32px;border-radius:6px}
         .pp-nav-logo span{font-family:'Instrument Serif',Georgia,serif;font-size:22px;font-weight:400;font-style:italic;color:#1B1F3B}
         .pp-nav-links{display:flex;gap:8px}
-        @media(max-width:768px){.pp-nav-links{display:none !important}}
+        @media(max-width:768px){.pp-nav-links{display:none !important}.pp-nav-cta{display:none !important}}
         .pp-nav-links a{
           background:none;border:none;cursor:pointer;
           font-family:'Syne',system-ui,sans-serif;font-size:11.5px;font-weight:600;

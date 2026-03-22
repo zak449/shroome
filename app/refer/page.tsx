@@ -77,6 +77,7 @@ export default function ReferPage() {
         .ref-nav-logo span { font-family: 'Instrument Serif', Georgia, serif; font-size: 22px; font-style: italic; }
         .ref-nav-cta { background: #1B1F3B; color: #FDF4EE; padding: 10px 20px; font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; transition: background 0.2s; }
         .ref-nav-cta:hover { background: #2a2e4f; }
+        @media(max-width:768px){.ref-nav-cta{display:none !important}}
 
         .ref-hero { text-align: center; padding: 80px 6% 60px; position: relative; overflow: hidden; }
         .ref-blob-1 { position: absolute; width: 300px; height: 300px; border-radius: 50%; background: #D4B8E0; opacity: 0.3; top: -80px; right: 10%; }

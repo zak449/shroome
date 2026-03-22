@@ -66,6 +66,7 @@ export default function WelcomePage() {
 
   return (
     <div style={{ background: C.cream, color: C.navy, minHeight: "100vh" }}>
+      <style>{`@media(max-width:768px){.wel-nav-cta{display:none !important}}`}</style>
       {/* ── NAV ────────────────────────────────────── */}
       <nav
         style={{
@@ -109,6 +110,7 @@ export default function WelcomePage() {
         </a>
         <a
           href="#signup"
+          className="wel-nav-cta"
           style={{
             fontFamily: F.body,
             fontSize: 14,
