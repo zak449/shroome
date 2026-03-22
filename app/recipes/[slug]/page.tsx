@@ -315,7 +315,7 @@ export default async function RecipeDetailPage({
           .rd-nav-logo span{font-size:18px}
           .rd-nav-logo img{width:26px;height:26px}
           .rd-nav-cta{padding:8px 14px;font-size:10px;letter-spacing:.04em;white-space:nowrap}
-          .rd-hero{min-height:380px;padding-bottom:36px}
+          .rd-hero{min-height:480px;padding-bottom:36px}
           .rd-hero-inner{padding:0 5%}
           .rd-body{padding:40px 5% 56px}
           .rd-back-section{padding:0 5% 48px}
