@@ -19,7 +19,6 @@ export const recipes: Recipe[] = [
     id: "classic-iced-matcha-latte",
     name: "Classic Iced Matcha Latte",
     image: "/recipes/iced-matcha-latte.jpg",
-    heroImage: "/recipes/hero-iced-matcha-latte.jpg",
     description:
       "The simplest iced matcha latte you'll ever make. One shroomé sachet, oat milk, ice — done in 15 seconds flat.",
     prepTime: "PT15S",
@@ -39,7 +38,6 @@ export const recipes: Recipe[] = [
     id: "vanilla-matcha-smoothie",
     name: "Vanilla Matcha Smoothie",
     image: "/recipes/vanilla-matcha-smoothie.jpg",
-    heroImage: "/recipes/hero-vanilla-matcha-smoothie.jpg",
     description:
       "A creamy, thick matcha smoothie with frozen banana and vanilla shroomé. Blend it up in under a minute.",
     prepTime: "PT1M",
@@ -64,7 +62,6 @@ export const recipes: Recipe[] = [
     id: "strawberry-rose-matcha-latte",
     name: "Strawberry Rose Matcha Latte",
     image: "/recipes/strawberry-rose.jpg",
-    heroImage: "/recipes/hero-strawberry-rose.jpg",
     description:
       "Floral and fruity — strawberry shroomé meets a splash of rose water for an elevated matcha moment.",
     prepTime: "PT30S",
@@ -88,7 +85,6 @@ export const recipes: Recipe[] = [
     id: "matcha-affogato",
     name: "Matcha Affogato",
     image: "/recipes/matcha-affogato.jpg",
-    heroImage: "/recipes/hero-matcha-affogato.jpg",
     description:
       "Matcha meets ice cream. Pour one shroomé sachet over a scoop of vanilla — the easiest dessert of your life.",
     prepTime: "PT15S",
@@ -110,7 +106,6 @@ export const recipes: Recipe[] = [
     id: "protein-matcha-shake",
     name: "Protein Matcha Shake",
     image: "/recipes/protein-matcha-shake.jpg",
-    heroImage: "/recipes/hero-protein-matcha-shake.jpg",
     description:
       "Post-workout matcha with protein. Blend a shroomé sachet with your favorite protein powder for clean energy and recovery.",
     prepTime: "PT1M",
@@ -135,7 +130,6 @@ export const recipes: Recipe[] = [
     id: "hot-matcha-latte",
     name: "Hot Matcha Latte",
     image: "/recipes/hot-matcha-latte.jpg",
-    heroImage: "/recipes/hero-hot-matcha-latte.jpg",
     description:
       "The classic hot matcha latte — steamed oat milk and one shroomé sachet. Cozy, clean energy in under a minute.",
     prepTime: "PT30S",
@@ -158,7 +152,6 @@ export const recipes: Recipe[] = [
     id: "light-matcha-agua-fresca",
     name: "Light Matcha Agua Fresca",
     image: "/recipes/agua-fresca.jpg",
-    heroImage: "/recipes/hero-agua-fresca.jpg",
     description:
       "Half water, half almond milk — a light, refreshing matcha drink with barely-there sweetness. Perfect when you want energy without the heaviness.",
     prepTime: "PT15S",
@@ -184,7 +177,6 @@ export const recipes: Recipe[] = [
     id: "coconut-water-matcha",
     name: "Coconut Water Matcha",
     image: "/recipes/coconut-water-matcha.jpg",
-    heroImage: "/recipes/hero-coconut-water-matcha.jpg",
     description:
       "Tropical and hydrating — shroomé mixed with coconut water for a light, electrolyte-rich matcha refresher. No milk needed.",
     prepTime: "PT15S",
@@ -209,7 +201,6 @@ export const recipes: Recipe[] = [
     id: "sparkling-matcha",
     name: "Sparkling Matcha",
     image: "/recipes/sparkling-matcha.jpg",
-    heroImage: "/recipes/hero-sparkling-matcha.jpg",
     description:
       "Matcha meets sparkling water — fizzy, light, and surprisingly refreshing. The coolest way to pour a shroomé.",
     prepTime: "PT15S",

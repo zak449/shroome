@@ -84,11 +84,10 @@ export default function RecipesPage() {
           position:relative
         }
         .rec-page::before{
-          content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
+          content:'';position:fixed;inset:0;pointer-events:none;z-index:-1;
           background-image:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%231B1F3B' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
           opacity:0.6
         }
-        .rec-page>*{position:relative;z-index:1}
 
         /* ── HERO ── */
         .rec-hero{position:relative;overflow:hidden;padding:72px 8% 64px}
@@ -247,7 +246,7 @@ export default function RecipesPage() {
         /* ── RESPONSIVE ── */
         @media(max-width:768px){
           .rec-grid{grid-template-columns:1fr 1fr;gap:14px}
-          .rec-tile{min-height:260px}
+          .rec-tile{min-height:340px}
           .rec-nav{padding:0 4%;height:54px;gap:8px}
           .rec-nav-logo{gap:6px}
           .rec-nav-logo span{font-size:18px}
@@ -258,7 +257,7 @@ export default function RecipesPage() {
         }
         @media(max-width:480px){
           .rec-grid{grid-template-columns:1fr;gap:12px}
-          .rec-tile{min-height:280px}
+          .rec-tile{min-height:400px}
         }
       `}</style>
 
