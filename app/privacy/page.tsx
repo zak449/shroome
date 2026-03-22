@@ -189,7 +189,7 @@ export default function Privacy() {
           /* pp-nav-links hidden via main style block above */
           .pp-nav-logo{gap:6px}
           .pp-nav-logo span{font-size:18px}
-          .pp-nav-logo img{width:26px;height:26px}
+          .pp-nav-logo img{width:30px;height:30px}
           .pp-nav-cta{padding:8px 14px;font-size:10px;letter-spacing:.04em;white-space:nowrap}
           .pp-hero{padding:48px 5% 44px}
           .pp-hero h1{font-size:clamp(32px,9vw,46px)}

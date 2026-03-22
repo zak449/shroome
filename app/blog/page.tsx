@@ -202,7 +202,7 @@ export default function BlogIndex() {
           /* blog-nav-links hidden via main style block above */
           .blog-nav-logo{gap:6px}
           .blog-nav-logo span{font-size:18px}
-          .blog-nav-logo img{width:26px;height:26px}
+          .blog-nav-logo img{width:30px;height:30px}
           .blog-nav-cta{padding:8px 14px;font-size:10px;letter-spacing:.04em;white-space:nowrap}
           .blog-hero{padding:48px 5% 40px}
           .blog-hero h1{font-size:clamp(32px,9vw,46px)}

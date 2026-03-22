@@ -119,7 +119,7 @@ export default function Founders() {
 
         .fb-nav{position:sticky;top:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 5%;height:60px;background:rgba(255,183,209,0.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(27,31,59,0.06)}
         .fb-nav-logo{display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B1F3B}
-        .fb-nav-logo img{width:28px;height:28px}
+        .fb-nav-logo img{width:32px;height:32px;border-radius:6px}
         .fb-nav-logo span{font-family:'Instrument Serif',Georgia,serif;font-size:22px;font-weight:400;font-style:italic;color:#1B1F3B}
         .fb-nav-links{display:flex;gap:8px}
         @media(max-width:768px){.fb-nav-links{display:none !important}}

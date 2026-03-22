@@ -189,7 +189,7 @@ export default function Terms() {
           /* tos-nav-links hidden via main style block above */
           .tos-nav-logo{gap:6px}
           .tos-nav-logo span{font-size:18px}
-          .tos-nav-logo img{width:26px;height:26px}
+          .tos-nav-logo img{width:30px;height:30px}
           .tos-nav-cta{padding:8px 14px;font-size:10px;letter-spacing:.04em;white-space:nowrap}
           .tos-hero{padding:48px 5% 44px}
           .tos-hero h1{font-size:clamp(32px,9vw,46px)}

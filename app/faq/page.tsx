@@ -344,7 +344,7 @@ export default function FAQ() {
           /* faq-nav-links hidden via main style block above */
           .faq-nav-logo{gap:6px}
           .faq-nav-logo span{font-size:18px}
-          .faq-nav-logo img{width:26px;height:26px}
+          .faq-nav-logo img{width:30px;height:30px}
           .faq-nav-cta{padding:8px 14px;font-size:10px;letter-spacing:.04em;white-space:nowrap}
           .faq-hero{padding:48px 5% 44px}
           .faq-hero h1{font-size:clamp(32px,9vw,46px)}

@@ -339,7 +339,7 @@ export default async function BlogPost({
           /* post-nav-links hidden via main style block above */
           .post-nav-logo{gap:6px}
           .post-nav-logo span{font-size:18px}
-          .post-nav-logo img{width:26px;height:26px}
+          .post-nav-logo img{width:30px;height:30px}
           .post-nav-cta{padding:8px 14px;font-size:10px;letter-spacing:.04em;white-space:nowrap}
           .post-header{padding:44px 5% 36px}
           .post-header h1{font-size:clamp(28px,8vw,40px)}

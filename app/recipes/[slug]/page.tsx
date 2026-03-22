@@ -146,13 +146,18 @@ export default async function RecipeDetailPage({
         /* ── HERO ── */
         .rd-hero{
           position:relative;overflow:hidden;
-          min-height:520px;
+          min-height:560px;
           display:flex;align-items:flex-end;
           padding:0 0 48px 0
         }
         .rd-hero-bg{
           position:absolute;inset:0;
-          background-size:cover;background-position:center top;
+          display:flex;align-items:center;justify-content:center
+        }
+        .rd-hero-bg img{
+          width:100%;height:100%;
+          object-fit:contain;
+          object-position:center center;
           filter:brightness(0.85) saturate(1.1)
         }
         .rd-hero-overlay{
@@ -313,9 +318,9 @@ export default async function RecipeDetailPage({
           .rd-nav{padding:0 4%;height:54px;gap:8px}
           .rd-nav-logo{gap:6px}
           .rd-nav-logo span{font-size:18px}
-          .rd-nav-logo img{width:26px;height:26px}
+          .rd-nav-logo img{width:30px;height:30px}
           .rd-nav-cta{padding:8px 14px;font-size:10px;letter-spacing:.04em;white-space:nowrap}
-          .rd-hero{min-height:480px;padding-bottom:36px}
+          .rd-hero{min-height:500px;padding-bottom:36px}
           .rd-hero-inner{padding:0 5%}
           .rd-body{padding:40px 5% 56px}
           .rd-back-section{padding:0 5% 48px}
@@ -386,8 +391,10 @@ export default async function RecipeDetailPage({
       <section className="rd-hero">
         <div
           className="rd-hero-bg"
-          style={{ backgroundImage: `url(${recipe.heroImage || recipe.image})` }}
-        />
+          style={{ background: recipe.color }}
+        >
+          <img src={recipe.image} alt={recipe.name} />
+        </div>
         <div className="rd-hero-overlay" />
         <div
           className="rd-hero-color"

@@ -150,8 +150,13 @@ export default function RecipesPage() {
         .rec-tile:hover{transform:translateY(-5px);box-shadow:0 16px 48px rgba(27,31,59,0.18)}
         .rec-tile-img{
           position:absolute;inset:0;
-          background-size:cover;background-position:center 25%;
+          display:flex;align-items:center;justify-content:center;
           transition:transform .4s cubic-bezier(.22,1,.36,1)
+        }
+        .rec-tile-img img{
+          width:100%;height:100%;
+          object-fit:contain;
+          object-position:center center
         }
         .rec-tile:hover .rec-tile-img{transform:scale(1.04)}
         .rec-tile-overlay{
@@ -250,7 +255,7 @@ export default function RecipesPage() {
           .rec-nav{padding:0 4%;height:54px;gap:8px}
           .rec-nav-logo{gap:6px}
           .rec-nav-logo span{font-size:18px}
-          .rec-nav-logo img{width:26px;height:26px}
+          .rec-nav-logo img{width:30px;height:30px}
           .rec-nav-cta{padding:8px 14px;font-size:10px;letter-spacing:.04em;white-space:nowrap}
           .rec-hero{padding:48px 6% 40px}
           .rec-tile-content{padding:18px}
@@ -377,8 +382,10 @@ export default function RecipesPage() {
             >
               <div
                 className="rec-tile-img"
-                style={{ backgroundImage: `url(${recipe.image})` }}
-              />
+                style={{ background: recipe.color }}
+              >
+                <img src={recipe.image} alt={recipe.name} />
+              </div>
               <div className="rec-tile-overlay" />
               <div
                 className="rec-tile-color"
