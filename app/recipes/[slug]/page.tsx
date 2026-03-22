@@ -391,15 +391,11 @@ export default async function RecipeDetailPage({
       <section className="rd-hero">
         <div
           className="rd-hero-bg"
-          style={{ background: recipe.color }}
+          style={{ background: '#1B1F3B' }}
         >
           <img src={recipe.image} alt={recipe.name} />
         </div>
         <div className="rd-hero-overlay" />
-        <div
-          className="rd-hero-color"
-          style={{ background: recipe.color }}
-        />
         <div className="rd-hero-inner">
           <a href="/recipes" className="rd-hero-back">
             ← All Recipes

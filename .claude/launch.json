@@ -3,10 +3,9 @@
   "configurations": [
     {
       "name": "shroome-dev",
-      "runtimeExecutable": "bash",
-      "runtimeArgs": ["-c", "cd /tmp/shroome-link && npm run dev"],
-      "port": 3000,
-      "autoPort": true
+      "runtimeExecutable": "/tmp/start-shroome.sh",
+      "runtimeArgs": [],
+      "port": 3001
     }
   ]
 }
