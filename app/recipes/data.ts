@@ -19,7 +19,7 @@ export const recipes: Recipe[] = [
   {
     id: "classic-iced-matcha-latte",
     name: "Classic Iced Matcha Latte",
-    image: "/recipes/iced-matcha-latte.jpg",
+    image: "/recipes/iced-matcha-latte.jpg?v=2",
 
     heroImage: "/recipes/hero/hero-iced-matcha-latte.jpg",
     description:
@@ -41,7 +41,7 @@ export const recipes: Recipe[] = [
   {
     id: "vanilla-matcha-smoothie",
     name: "Vanilla Matcha Smoothie",
-    image: "/recipes/vanilla-matcha-smoothie.jpg",
+    image: "/recipes/vanilla-matcha-smoothie.jpg?v=2",
 
     heroImage: "/recipes/hero/hero-vanilla-matcha-smoothie.jpg",
     description:
@@ -68,7 +68,7 @@ export const recipes: Recipe[] = [
   {
     id: "strawberry-rose-matcha-latte",
     name: "Strawberry Rose Matcha Latte",
-    image: "/recipes/strawberry-rose.jpg",
+    image: "/recipes/strawberry-rose.jpg?v=2",
 
     heroImage: "/recipes/hero/hero-strawberry-rose.jpg",
     description:
@@ -95,7 +95,7 @@ export const recipes: Recipe[] = [
   {
     id: "matcha-affogato",
     name: "Matcha Affogato",
-    image: "/recipes/matcha-affogato.jpg",
+    image: "/recipes/matcha-affogato.jpg?v=2",
 
     heroImage: "/recipes/hero/hero-matcha-affogato.jpg",
     description:
@@ -119,7 +119,7 @@ export const recipes: Recipe[] = [
   {
     id: "protein-matcha-shake",
     name: "Protein Matcha Shake",
-    image: "/recipes/protein-matcha-shake.jpg",
+    image: "/recipes/protein-matcha-shake.jpg?v=2",
 
     heroImage: "/recipes/hero/hero-protein-matcha-shake.jpg",
     description:
@@ -147,7 +147,7 @@ export const recipes: Recipe[] = [
   {
     id: "hot-matcha-latte",
     name: "Hot Matcha Latte",
-    image: "/recipes/hot-matcha-latte.jpg",
+    image: "/recipes/hot-matcha-latte.jpg?v=2",
 
     heroImage: "/recipes/hero/hero-hot-matcha-latte.jpg",
     description:
@@ -173,7 +173,7 @@ export const recipes: Recipe[] = [
   {
     id: "light-matcha-agua-fresca",
     name: "Strawberry Matcha Agua Fresca",
-    image: "/recipes/agua-fresca.jpg",
+    image: "/recipes/agua-fresca.jpg?v=2",
 
     heroImage: "/recipes/hero/hero-agua-fresca.jpg",
     description:
@@ -202,7 +202,7 @@ export const recipes: Recipe[] = [
   {
     id: "coconut-water-matcha",
     name: "Coconut Water Matcha",
-    image: "/recipes/coconut-water-matcha.jpg",
+    image: "/recipes/coconut-water-matcha.jpg?v=2",
 
     heroImage: "/recipes/hero/hero-coconut-water-matcha.jpg",
     description:
@@ -230,7 +230,7 @@ export const recipes: Recipe[] = [
   {
     id: "sparkling-matcha",
     name: "Sparkling Matcha",
-    image: "/recipes/sparkling-matcha.jpg",
+    image: "/recipes/sparkling-matcha.jpg?v=2",
 
     heroImage: "/recipes/hero/hero-sparkling-matcha.jpg",
     description:
