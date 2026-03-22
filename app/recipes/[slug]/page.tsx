@@ -383,7 +383,7 @@ export default async function RecipeDetailPage({
             padding-bottom:8px
           }
           .rd-more-card{
-            min-width:260px;flex-shrink:0;
+            width:260px;min-width:260px;max-width:260px;flex-shrink:0;
             scroll-snap-align:start
           }
         }
@@ -627,7 +627,7 @@ export default async function RecipeDetailPage({
                     src={r.image}
                     alt={r.imageAlt}
                     className="rd-more-card-img"
-                    loading="lazy"
+                    loading="eager"
                     width={400}
                     height={300}
                   />

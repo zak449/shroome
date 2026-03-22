@@ -117,9 +117,46 @@ const productSchema = {
   "offers": {
     "@type": "Offer",
     "availability": "https://schema.org/PreOrder",
+    "price": "36.00",
     "priceCurrency": "USD",
+    "priceValidUntil": "2027-12-31",
     "url": "https://www.drinkshroome.com",
-    "seller": { "@type": "Organization", "name": "ZSQUARED INC" }
+    "seller": { "@type": "Organization", "name": "ZSQUARED INC" },
+    "hasMerchantReturnPolicy": {
+      "@type": "MerchantReturnPolicy",
+      "applicableCountry": "US",
+      "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+      "merchantReturnDays": 30,
+      "returnMethod": "https://schema.org/ReturnByMail",
+      "returnFees": "https://schema.org/FreeReturn"
+    },
+    "shippingDetails": {
+      "@type": "OfferShippingDetails",
+      "shippingRate": {
+        "@type": "MonetaryAmount",
+        "value": "0",
+        "currency": "USD"
+      },
+      "shippingDestination": {
+        "@type": "DefinedRegion",
+        "addressCountry": "US"
+      },
+      "deliveryTime": {
+        "@type": "ShippingDeliveryTime",
+        "handlingTime": {
+          "@type": "QuantitativeValue",
+          "minValue": 1,
+          "maxValue": 3,
+          "unitCode": "DAY"
+        },
+        "transitTime": {
+          "@type": "QuantitativeValue",
+          "minValue": 3,
+          "maxValue": 7,
+          "unitCode": "DAY"
+        }
+      }
+    }
   },
   "isFamilyFriendly": true,
   "audience": {
