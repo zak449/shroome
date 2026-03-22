@@ -127,11 +127,11 @@ export default function RecipesPage() {
         .rec-pill-sep{opacity:.3}
 
         /* ── TILE GRID ── */
-        .rec-grid-section{padding:48px 0 0}
+        .rec-grid-section{padding:20px 0 0}
         .rec-grid-title{
           font-family:'DM Mono',monospace;font-size:11px;font-weight:500;
           letter-spacing:.2em;text-transform:uppercase;color:rgba(27,31,59,0.5);
-          margin-bottom:32px;padding:0 6%;text-align:center
+          margin-bottom:16px;padding:0 6%;text-align:center
         }
         /* Desktop: 3-col grid, no gaps, colors bleed together */
         .rec-grid{
