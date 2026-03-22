@@ -13,11 +13,84 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "shroome-launches-9-matcha-recipes",
+    title:
+      "shroomé Launches 9 Ready-in-Seconds Matcha Recipes — From Iced Lattes to Sparkling Matcha",
+    excerpt:
+      "shroomé unveils a curated collection of 9 original matcha recipes designed around its single-serve sachets — each one ready in 15 seconds or less, no equipment required.",
+    date: "2026-03-22",
+    readTime: "3 min read",
+    category: "Press",
+    metaDescription:
+      "shroomé launches 9 original matcha recipes featuring ceremonial matcha, lion's mane, reishi, and collagen. Each recipe is ready in 15 seconds with a single sachet. Available at drinkshroome.com.",
+    ogImage: "/og-blog-press-recipes.jpg",
+    author: "shroomé",
+    content: `
+<p style="text-align:center;font-weight:700;letter-spacing:0.05em;margin-bottom:0.25em;">FOR IMMEDIATE RELEASE</p>
+
+<p><strong>LOS ANGELES, March 22, 2026</strong> — <a href="https://www.drinkshroome.com">shroom&eacute;</a>, the ceremonial matcha + functional mushroom + collagen brand, today launched a collection of 9 original recipes designed to show that great matcha drinks don't require a barista, a bamboo whisk, or more than 15 seconds of your morning. The full collection is now live at <a href="/recipes">drinkshroome.com/recipes</a>.</p>
+
+<p>Each recipe is built around shroom&eacute;'s single-serve sachets, which combine ceremonial-grade Japanese matcha, lion's mane and reishi mushroom extracts (standardized to 70%+ beta-glucan content), grass-fed bovine collagen peptides, and L-theanine. The format is tear, pour, done — no measuring, no equipment, no cleanup.</p>
+
+<h2>The 9 Recipes</h2>
+
+<p>The collection spans hot and cold, simple and unexpected — all united by the same 15-second prep time:</p>
+
+<ul>
+<li><strong><a href="/recipes/classic-iced-matcha-latte">Classic Iced Matcha Latte</a></strong> — The signature layered green-over-white drink that needs nothing more than ice, milk, and a sachet.</li>
+<li><strong><a href="/recipes/hot-matcha-latte">Hot Matcha Latte</a></strong> — A cozy, froth-optional warm latte for mornings that call for something comforting.</li>
+<li><strong><a href="/recipes/vanilla-matcha-smoothie">Vanilla Matcha Smoothie</a></strong> — A frozen banana-based breakfast smoothie with sustained energy from matcha and functional mushrooms.</li>
+<li><strong><a href="/recipes/strawberry-rose-matcha-latte">Strawberry Rose Matcha Latte</a></strong> — A floral, berry-forward twist that layers strawberry pur&eacute;e with matcha for a caf&eacute;-worthy presentation.</li>
+<li><strong><a href="/recipes/sparkling-matcha">Sparkling Matcha</a></strong> — A light, effervescent afternoon refresher that pairs matcha with sparkling water.</li>
+<li><strong><a href="/recipes/matcha-affogato">Matcha Affogato</a></strong> — A dessert-meets-drink indulgence: vanilla ice cream drowned in concentrated matcha.</li>
+<li><strong><a href="/recipes/protein-matcha-shake">Protein Matcha Shake</a></strong> — A high-protein, post-workout shake combining matcha with your favorite protein powder.</li>
+<li><strong><a href="/recipes/light-matcha-agua-fresca">Light Matcha Agua Fresca</a></strong> — A hydrating, low-calorie sipper with citrus and a hint of sweetness.</li>
+<li><strong><a href="/recipes/coconut-water-matcha">Coconut Water Matcha</a></strong> — A tropical-leaning electrolyte drink built for recovery and hydration.</li>
+</ul>
+
+<h2>Why It Matters</h2>
+
+<p>"Most people love the idea of matcha but get intimidated by the process," said Zachary Kaufman, co-founder of shroom&eacute;. "We built these recipes to prove that you don't need any experience or any equipment. If you can pour a sachet into a glass, you can make a drink that looks and tastes like it came from a $7 matcha bar."</p>
+
+<p>"We wanted to make matcha fun, not just functional," added Zachary Arenson, co-founder. "Recipes like the Sparkling Matcha and the Affogato show people that matcha isn't just a latte ingredient — it's a platform for creativity. And every recipe still delivers the same lion's mane, reishi, and collagen benefits."</p>
+
+<h2>About the Product</h2>
+
+<p>shroom&eacute; sachets are currently available in two flavors — <a href="/flavors/vanilla">Vanilla</a> and <a href="/flavors/strawberry">Strawberry</a> — each containing:</p>
+
+<ul>
+<li>Ceremonial-grade Japanese matcha</li>
+<li>Lion's mane mushroom extract (70%+ beta-glucan)</li>
+<li>Reishi mushroom extract (70%+ beta-glucan)</li>
+<li>Grass-fed bovine collagen peptides</li>
+<li>L-theanine</li>
+</ul>
+
+<p>Pre-launch orders are now available at <a href="https://www.drinkshroome.com">drinkshroome.com</a> with <strong>20% off and free shipping</strong>.</p>
+
+<h2>Media Contact</h2>
+
+<p>
+<strong>shroom&eacute; Press</strong><br />
+Email: <a href="mailto:hello@drinkshroome.com">hello@drinkshroome.com</a><br />
+Web: <a href="https://www.drinkshroome.com">drinkshroome.com</a>
+</p>
+
+<h2>About shroom&eacute;</h2>
+
+<p>shroom&eacute; is a Los Angeles-based wellness brand on a mission to make ceremonial matcha accessible, convenient, and genuinely enjoyable. Each single-serve sachet combines ceremonial-grade Japanese matcha with functional mushroom extracts (lion's mane and reishi), grass-fed collagen peptides, and L-theanine — delivering focus, immunity support, and skin health in a format that dissolves instantly in any liquid. No whisk. No mess. No compromise on quality. Follow shroom&eacute; on <a href="https://www.tiktok.com/@drinkshroome" target="_blank" rel="noopener">TikTok</a>, <a href="https://www.instagram.com/drinkshroome" target="_blank" rel="noopener">Instagram</a>, and <a href="https://www.youtube.com/@drinkshroome" target="_blank" rel="noopener">YouTube</a> @drinkshroome.</p>
+
+<hr />
+
+<p><em>*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</em></p>
+`,
+  },
+  {
     slug: "matcha-recipes-under-60-seconds",
     title: "5 Matcha Recipes You Can Make in Under 60 Seconds",
     excerpt:
       "No bamboo whisk. No complicated steps. Just tear, pour, and drink. Here are five matcha recipes that take less than a minute from sachet to sip.",
-    date: "2026-03-20",
+    date: "2026-03-21",
     readTime: "5 min read",
     category: "How-To",
     metaDescription:
@@ -125,7 +198,7 @@ export const blogPosts: BlogPost[] = [
     title: "Matcha vs Coffee: Why Gen Z Is Making the Switch",
     excerpt:
       "Coffee isn't going anywhere, but a growing number of people are trading their morning espresso for matcha. Here's the science behind why — and whether it's worth it.",
-    date: "2026-03-13",
+    date: "2026-03-14",
     readTime: "7 min read",
     category: "Wellness",
     metaDescription:
@@ -327,7 +400,7 @@ export const blogPosts: BlogPost[] = [
     title: "What Are Beta-Glucans? The Mushroom Compound That Actually Matters",
     excerpt:
       "Most mushroom supplements are selling you filler. Beta-glucans are the bioactive compound that actually does something — here's how to tell if yours has enough.",
-    date: "2026-02-27",
+    date: "2026-02-26",
     readTime: "6 min read",
     category: "Ingredients",
     metaDescription:
@@ -397,7 +470,7 @@ export const blogPosts: BlogPost[] = [
     title: "Ceremonial vs. Culinary Matcha: Why the Grade Matters",
     excerpt:
       "Not all matcha is the same. The difference between ceremonial and culinary grade affects taste, nutrition, and how you feel after drinking it. Here's what to look for.",
-    date: "2026-02-20",
+    date: "2026-02-18",
     readTime: "6 min read",
     category: "Ingredients",
     metaDescription:
@@ -469,7 +542,7 @@ export const blogPosts: BlogPost[] = [
     title: "How to Replace Your Morning Coffee Without the Crash",
     excerpt:
       "Tired of the 2pm wall? Here's how caffeine + L-theanine delivers 4-6 hours of clean energy — and a realistic plan for making the switch from coffee.",
-    date: "2026-02-13",
+    date: "2026-02-11",
     readTime: "7 min read",
     category: "Wellness",
     metaDescription:
@@ -545,7 +618,7 @@ export const blogPosts: BlogPost[] = [
     title: "Collagen in Your Morning Drink: What the Research Says",
     excerpt:
       "Collagen peptides are everywhere — but does adding them to your daily drink actually do anything? Here's what the studies show and what to look for.",
-    date: "2026-02-05",
+    date: "2026-02-03",
     readTime: "6 min read",
     category: "Science",
     metaDescription:
@@ -630,7 +703,7 @@ export const blogPosts: BlogPost[] = [
       "Fruiting Body vs Mycelium: What's Actually in Your Mushroom Supplement?",
     excerpt:
       "Most mushroom supplements contain more grain filler than actual mushroom. Learn the critical difference between fruiting body and mycelium-on-grain products — and how to read labels.",
-    date: "2026-01-29",
+    date: "2026-01-26",
     readTime: "9 min read",
     category: "Science",
     metaDescription:
@@ -835,7 +908,7 @@ export const blogPosts: BlogPost[] = [
       "Caffeine + L-Theanine: The Most Researched Nootropic Stack You've Never Heard Of",
     excerpt:
       "The caffeine and L-theanine combination is backed by double-blind studies for calm focus without jitters. Here's how the science works — and why matcha delivers it naturally.",
-    date: "2026-01-22",
+    date: "2026-01-18",
     readTime: "8 min read",
     category: "Science",
     metaDescription:
@@ -1004,7 +1077,7 @@ export const blogPosts: BlogPost[] = [
     title: "What Does Ceremonial Grade Matcha Actually Mean?",
     excerpt:
       "\"Ceremonial grade\" is on every matcha tin — but most products don't qualify. Learn the specific growing, harvesting, and processing standards that define real ceremonial matcha.",
-    date: "2026-01-15",
+    date: "2026-01-11",
     readTime: "8 min read",
     category: "Ingredients",
     metaDescription:
@@ -1180,7 +1253,7 @@ export const blogPosts: BlogPost[] = [
     title: "Best Matcha Latte Delivery: How to Get Café-Quality Matcha at Home",
     excerpt:
       "Café matcha costs $7 a cup. Powder requires a whisk, sifter, and technique. There's a third option that nobody's talking about.",
-    date: "2026-01-08",
+    date: "2026-01-03",
     readTime: "7 min read",
     category: "Lifestyle",
     metaDescription:
@@ -1347,7 +1420,7 @@ export const blogPosts: BlogPost[] = [
     title: "Matcha vs Pre-Workout: Which One Actually Improves Performance?",
     excerpt:
       "Pre-workouts are loaded with synthetic stimulants and artificial sweeteners. Matcha offers a cleaner path to performance — here's what the research says.",
-    date: "2026-02-10",
+    date: "2025-12-26",
     readTime: "8 min read",
     category: "Science",
     metaDescription:
@@ -1476,7 +1549,7 @@ export const blogPosts: BlogPost[] = [
       "The Morning Routine Stack: Matcha, Mushrooms, and Collagen in One Pour",
     excerpt:
       "Three supplements. Three different jars. Three different routines. Or one sachet that does it all in 15 seconds.",
-    date: "2026-02-18",
+    date: "2025-12-18",
     readTime: "6 min read",
     category: "Lifestyle",
     metaDescription:
@@ -1620,7 +1693,7 @@ export const blogPosts: BlogPost[] = [
     title: "What Are Adaptogens? The Beginner's Guide to Functional Mushrooms",
     excerpt:
       "Adaptogens are everywhere right now — but what do they actually do? Here's a no-hype breakdown of how functional mushrooms work and which ones are worth your time.",
-    date: "2026-02-25",
+    date: "2025-12-11",
     readTime: "7 min read",
     category: "Wellness",
     metaDescription:
@@ -1721,7 +1794,7 @@ export const blogPosts: BlogPost[] = [
     title: "Collagen in Your Matcha: Why It's the Smartest Add You'll Ever Make",
     excerpt:
       "Collagen peptides and matcha are a surprisingly perfect pair. Here's the science behind why adding collagen to your daily matcha delivers real results for skin, hair, gut, and joints.",
-    date: "2026-03-04",
+    date: "2025-12-03",
     readTime: "7 min read",
     category: "Ingredients",
     metaDescription:
@@ -1817,7 +1890,7 @@ export const blogPosts: BlogPost[] = [
     title: "How to Build a Morning Routine That Actually Sticks (With Matcha)",
     excerpt:
       "Most morning routines fail because they're too complicated. Here's how to build one that actually works — and why a 15-second matcha ritual might be the anchor it needs.",
-    date: "2026-03-11",
+    date: "2025-11-25",
     readTime: "8 min read",
     category: "Lifestyle",
     metaDescription:
@@ -1934,84 +2007,11 @@ export const blogPosts: BlogPost[] = [
 `,
   },
   {
-    slug: "shroome-launches-9-matcha-recipes",
-    title:
-      "shroomé Launches 9 Ready-in-Seconds Matcha Recipes — From Iced Lattes to Sparkling Matcha",
-    excerpt:
-      "shroomé unveils a curated collection of 9 original matcha recipes designed around its single-serve sachets — each one ready in 15 seconds or less, no equipment required.",
-    date: "2026-03-22",
-    readTime: "3 min read",
-    category: "Press",
-    metaDescription:
-      "shroomé launches 9 original matcha recipes featuring ceremonial matcha, lion's mane, reishi, and collagen. Each recipe is ready in 15 seconds with a single sachet. Available at drinkshroome.com.",
-    ogImage: "/og-blog-press-recipes.jpg",
-    author: "shroomé",
-    content: `
-<p style="text-align:center;font-weight:700;letter-spacing:0.05em;margin-bottom:0.25em;">FOR IMMEDIATE RELEASE</p>
-
-<p><strong>LOS ANGELES, March 22, 2026</strong> — <a href="https://www.drinkshroome.com">shroom&eacute;</a>, the ceremonial matcha + functional mushroom + collagen brand, today launched a collection of 9 original recipes designed to show that great matcha drinks don't require a barista, a bamboo whisk, or more than 15 seconds of your morning. The full collection is now live at <a href="/recipes">drinkshroome.com/recipes</a>.</p>
-
-<p>Each recipe is built around shroom&eacute;'s single-serve sachets, which combine ceremonial-grade Japanese matcha, lion's mane and reishi mushroom extracts (standardized to 70%+ beta-glucan content), grass-fed bovine collagen peptides, and L-theanine. The format is tear, pour, done — no measuring, no equipment, no cleanup.</p>
-
-<h2>The 9 Recipes</h2>
-
-<p>The collection spans hot and cold, simple and unexpected — all united by the same 15-second prep time:</p>
-
-<ul>
-<li><strong><a href="/recipes/classic-iced-matcha-latte">Classic Iced Matcha Latte</a></strong> — The signature layered green-over-white drink that needs nothing more than ice, milk, and a sachet.</li>
-<li><strong><a href="/recipes/hot-matcha-latte">Hot Matcha Latte</a></strong> — A cozy, froth-optional warm latte for mornings that call for something comforting.</li>
-<li><strong><a href="/recipes/vanilla-matcha-smoothie">Vanilla Matcha Smoothie</a></strong> — A frozen banana-based breakfast smoothie with sustained energy from matcha and functional mushrooms.</li>
-<li><strong><a href="/recipes/strawberry-rose-matcha-latte">Strawberry Rose Matcha Latte</a></strong> — A floral, berry-forward twist that layers strawberry pur&eacute;e with matcha for a caf&eacute;-worthy presentation.</li>
-<li><strong><a href="/recipes/sparkling-matcha">Sparkling Matcha</a></strong> — A light, effervescent afternoon refresher that pairs matcha with sparkling water.</li>
-<li><strong><a href="/recipes/matcha-affogato">Matcha Affogato</a></strong> — A dessert-meets-drink indulgence: vanilla ice cream drowned in concentrated matcha.</li>
-<li><strong><a href="/recipes/protein-matcha-shake">Protein Matcha Shake</a></strong> — A high-protein, post-workout shake combining matcha with your favorite protein powder.</li>
-<li><strong><a href="/recipes/light-matcha-agua-fresca">Light Matcha Agua Fresca</a></strong> — A hydrating, low-calorie sipper with citrus and a hint of sweetness.</li>
-<li><strong><a href="/recipes/coconut-water-matcha">Coconut Water Matcha</a></strong> — A tropical-leaning electrolyte drink built for recovery and hydration.</li>
-</ul>
-
-<h2>Why It Matters</h2>
-
-<p>"Most people love the idea of matcha but get intimidated by the process," said Zachary Kaufman, co-founder of shroom&eacute;. "We built these recipes to prove that you don't need any experience or any equipment. If you can pour a sachet into a glass, you can make a drink that looks and tastes like it came from a $7 matcha bar."</p>
-
-<p>"We wanted to make matcha fun, not just functional," added Zachary Arenson, co-founder. "Recipes like the Sparkling Matcha and the Affogato show people that matcha isn't just a latte ingredient — it's a platform for creativity. And every recipe still delivers the same lion's mane, reishi, and collagen benefits."</p>
-
-<h2>About the Product</h2>
-
-<p>shroom&eacute; sachets are currently available in two flavors — <a href="/flavors/vanilla">Vanilla</a> and <a href="/flavors/strawberry">Strawberry</a> — each containing:</p>
-
-<ul>
-<li>Ceremonial-grade Japanese matcha</li>
-<li>Lion's mane mushroom extract (70%+ beta-glucan)</li>
-<li>Reishi mushroom extract (70%+ beta-glucan)</li>
-<li>Grass-fed bovine collagen peptides</li>
-<li>L-theanine</li>
-</ul>
-
-<p>Pre-launch orders are now available at <a href="https://www.drinkshroome.com">drinkshroome.com</a> with <strong>20% off and free shipping</strong>.</p>
-
-<h2>Media Contact</h2>
-
-<p>
-<strong>shroom&eacute; Press</strong><br />
-Email: <a href="mailto:hello@drinkshroome.com">hello@drinkshroome.com</a><br />
-Web: <a href="https://www.drinkshroome.com">drinkshroome.com</a>
-</p>
-
-<h2>About shroom&eacute;</h2>
-
-<p>shroom&eacute; is a Los Angeles-based wellness brand on a mission to make ceremonial matcha accessible, convenient, and genuinely enjoyable. Each single-serve sachet combines ceremonial-grade Japanese matcha with functional mushroom extracts (lion's mane and reishi), grass-fed collagen peptides, and L-theanine — delivering focus, immunity support, and skin health in a format that dissolves instantly in any liquid. No whisk. No mess. No compromise on quality. Follow shroom&eacute; on <a href="https://www.tiktok.com/@drinkshroome" target="_blank" rel="noopener">TikTok</a>, <a href="https://www.instagram.com/drinkshroome" target="_blank" rel="noopener">Instagram</a>, and <a href="https://www.youtube.com/@drinkshroome" target="_blank" rel="noopener">YouTube</a> @drinkshroome.</p>
-
-<hr />
-
-<p><em>*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</em></p>
-`,
-  },
-  {
     slug: "what-is-ceremonial-grade-matcha-complete-guide",
     title: "What Is Ceremonial Grade Matcha? The Complete Guide",
     excerpt:
       "Not all matcha is matcha. Learn what ceremonial grade actually means, how it differs from culinary grade, and why most brands mislead you about what's in the tin.",
-    date: "2026-01-12",
+    date: "2025-11-17",
     readTime: "8 min read",
     category: "Education",
     metaDescription:
@@ -2098,7 +2098,7 @@ Web: <a href="https://www.drinkshroome.com">drinkshroome.com</a>
     title: "Lion's Mane Mushroom: Benefits, Research & How It Works",
     excerpt:
       "Lion's mane is one of the most studied functional mushrooms on the planet. Here's what the research actually says about its effects on cognition, nerve growth, and brain health.",
-    date: "2026-01-19",
+    date: "2025-11-10",
     readTime: "9 min read",
     category: "Ingredients",
     metaDescription:
@@ -2180,7 +2180,7 @@ Web: <a href="https://www.drinkshroome.com">drinkshroome.com</a>
     title: "L-Theanine and Caffeine: The Science Behind Matcha's Calm Energy",
     excerpt:
       "The reason matcha feels different from coffee isn't marketing — it's biochemistry. L-theanine changes how your brain processes caffeine. Here's the research.",
-    date: "2026-01-26",
+    date: "2025-11-02",
     readTime: "7 min read",
     category: "Science",
     metaDescription:
@@ -2262,7 +2262,7 @@ Web: <a href="https://www.drinkshroome.com">drinkshroome.com</a>
     title: "Collagen Peptides Explained: Types, Benefits & What the Science Says",
     excerpt:
       "Collagen is the most abundant protein in your body. But does supplementing it actually work? Here's what the clinical research says about peptides, types, and bioavailability.",
-    date: "2026-02-02",
+    date: "2025-10-25",
     readTime: "8 min read",
     category: "Ingredients",
     metaDescription:
@@ -2349,7 +2349,7 @@ Web: <a href="https://www.drinkshroome.com">drinkshroome.com</a>
     title: "Beta-Glucans: The Compound That Makes Mushroom Supplements Actually Work",
     excerpt:
       "Beta-glucan content is the single most important metric for evaluating a mushroom supplement. Here's what beta-glucans are, how they work, and why most products fall short.",
-    date: "2026-02-08",
+    date: "2025-10-17",
     readTime: "7 min read",
     category: "Science",
     metaDescription:
@@ -2427,7 +2427,7 @@ Web: <a href="https://www.drinkshroome.com">drinkshroome.com</a>
     title: "Is Matcha Better Than Coffee? Here\u2019s What 30 Days Taught Me",
     excerpt:
       "I switched from coffee to matcha for a full month and tracked everything \u2014 energy, sleep, skin, anxiety, productivity. Here\u2019s the honest, unfiltered breakdown.",
-    date: "2026-01-05",
+    date: "2025-10-10",
     readTime: "6 min read",
     category: "Lifestyle",
     metaDescription:
@@ -2499,7 +2499,7 @@ Web: <a href="https://www.drinkshroome.com">drinkshroome.com</a>
     title: "How Much Caffeine Is in Matcha? (And Why It Hits Different)",
     excerpt:
       "A cup of matcha has 25-70mg of caffeine depending on the grade. But the real story isn\u2019t the milligrams \u2014 it\u2019s how your body processes it compared to coffee.",
-    date: "2026-02-16",
+    date: "2025-10-02",
     readTime: "5 min read",
     category: "Education",
     metaDescription:
@@ -2583,7 +2583,7 @@ Web: <a href="https://www.drinkshroome.com">drinkshroome.com</a>
     title: "Can You Drink Matcha Every Day? A Dietitian\u2019s Take",
     excerpt:
       "Yes, 1-3 servings of matcha per day is considered safe for most adults. Here\u2019s what to know about caffeine limits, oxalates, heavy metals, and who should be careful.",
-    date: "2026-02-23",
+    date: "2025-09-24",
     readTime: "5 min read",
     category: "Wellness",
     metaDescription:
@@ -2661,7 +2661,7 @@ Web: <a href="https://www.drinkshroome.com">drinkshroome.com</a>
     title: "What Does Matcha Taste Like? (Honest Answer for First-Timers)",
     excerpt:
       "Matcha tastes vegetal, slightly sweet, and umami-rich when it\u2019s good. When it\u2019s bad, it tastes like bitter lawn clippings. Here\u2019s why quality matters and how to make your first cup actually enjoyable.",
-    date: "2026-03-08",
+    date: "2025-09-16",
     readTime: "4 min read",
     category: "Education",
     metaDescription:
@@ -2738,7 +2738,7 @@ Web: <a href="https://www.drinkshroome.com">drinkshroome.com</a>
     title: "Mushroom Coffee vs Matcha: Which Functional Drink Is Right for You?",
     excerpt:
       "Mushroom coffee and matcha both promise focus without the crash. But they\u2019re fundamentally different drinks. Here\u2019s an honest comparison of caffeine, taste, mushrooms, price, and which one actually delivers.",
-    date: "2026-03-16",
+    date: "2025-09-08",
     readTime: "6 min read",
     category: "Wellness",
     metaDescription:
