@@ -13,7 +13,7 @@ declare global {
 const tickerItems = [
   "First Pour Pre-Order",
   "✦ 30% Off · $25.20 vs $36",
-  "✦ Ships June 1 · 2 Weeks Early",
+  "✦ Ships June 15 · Launch Day",
   "✦ 3 Reorder Codes Included",
   "✦ Free Shipping · Limited Time",
 ];
@@ -30,8 +30,8 @@ const benefits = [
   },
   {
     num: "02",
-    title: "Ships June 1",
-    desc: "Your box ships 2 full weeks before public launch on June 15. You pour first.",
+    title: "Ships June 15",
+    desc: "Your box ships on launch day, June 15. You're first in line.",
     color: "#FFB7D1",
   },
   {
@@ -93,7 +93,7 @@ const discountTiers = [
 const faqs = [
   {
     q: "What is First Pour?",
-    a: "First Pour is shroomé's pre-order for people who want in before the public launch. You pay now at 30% off ($25.20 vs $36), your box ships June 1 — two weeks before anyone else gets theirs. No numbered boxes, no gimmicks. Just the best price we'll ever offer and early access.",
+    a: "First Pour is shroomé's pre-order for people who want in before the public launch. You pay now at 30% off ($25.20 vs $36), your box ships June 15 on launch day. No numbered boxes, no gimmicks. Just the best price we'll ever offer and early access.",
   },
   {
     q: "What are the 3 reorder codes?",
@@ -101,7 +101,7 @@ const faqs = [
   },
   {
     q: "When does it ship?",
-    a: "First Pour orders ship June 1, 2026 — 2 weeks before the public launch date of June 15. You'll get a tracking email the moment your box leaves the warehouse.",
+    a: "First Pour orders ship June 15, 2026 — launch day. You'll get a tracking email the moment your box leaves the warehouse.",
   },
   {
     q: "Can I stack my referral discount?",

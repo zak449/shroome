@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "First Pour Pre-Order — shroomé | 30% Off + 3 Reorder Codes",
   description:
-    "Pre-order shroomé at 30% off ($25.20 vs $36). Ships June 1 — 2 weeks before public launch. Includes 3 reorder codes at 30% off. Ceremonial matcha + lion's mane + collagen.",
+    "Pre-order shroomé at 30% off ($25.20 vs $36). Ships June 15 — launch day. Includes 3 reorder codes at 30% off. Ceremonial matcha + lion's mane + collagen.",
   keywords: [
     "shroomé pre-order",
     "matcha pre-order discount",
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "First Pour Pre-Order — shroomé | 30% Off + 3 Reorder Codes",
     description:
-      "Pre-order shroomé at 30% off. $25.20 vs $36. Ships June 1, 2 weeks early. 3 reorder codes included.",
+      "Pre-order shroomé at 30% off. $25.20 vs $36. Ships June 15, launch day. 3 reorder codes included.",
     url: "https://www.drinkshroome.com/founders",
     siteName: "shroomé",
   },
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "First Pour Pre-Order — shroomé | 30% Off + 3 Reorder Codes",
     description:
-      "Pre-order shroomé at 30% off. $25.20 vs $36. Ships June 1, 2 weeks early. 3 reorder codes included.",
+      "Pre-order shroomé at 30% off. $25.20 vs $36. Ships June 15, launch day. 3 reorder codes included.",
   },
   alternates: {
     canonical: "https://www.drinkshroome.com/founders",

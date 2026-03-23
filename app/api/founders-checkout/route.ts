@@ -40,7 +40,7 @@ export async function POST(req: NextRequest) {
       custom_text: {
         submit: {
           message:
-            "Your box is numbered and reserved. Ships 2 weeks before public launch on June 15, 2026.",
+            "Your box is reserved. Ships June 15, 2026 — launch day. Includes 3 reorder codes at 30% off.",
         },
       },
       // Allow promo codes so referral stacking works later

@@ -53,7 +53,7 @@ export default function FoundersSuccess() {
         <h1 className="fs-heading">You&apos;re a Founder.</h1>
         <p className="fs-sub">
           Your box is numbered and reserved. You&apos;ll get a confirmation email shortly.
-          Your box ships 2 weeks before public launch — June 1, 2026.
+          Your box ships on launch day — June 15, 2026.
         </p>
 
         <div className="fs-details">
@@ -63,7 +63,7 @@ export default function FoundersSuccess() {
           </div>
           <div className="fs-detail">
             <span className="fs-detail-label">Ships</span>
-            <span className="fs-detail-val">June 1, 2026</span>
+            <span className="fs-detail-val">June 15, 2026</span>
           </div>
           <div className="fs-detail">
             <span className="fs-detail-label">Shipping</span>
