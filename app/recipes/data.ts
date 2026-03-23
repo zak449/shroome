@@ -97,7 +97,6 @@ export const recipes: Recipe[] = [
     id: "matcha-affogato",
     name: "Matcha Affogato",
     image: "/recipes/matcha-affogato.jpg?v=2",
-    heroImage: "/recipes/hero/hero-matcha-affogato.jpg",
     imageAlt: "Matcha Affogato — vibrant green matcha poured over a scoop of vanilla ice cream in a rocks glass",
     description:
       "Matcha meets ice cream. Pour one shroomé sachet over a scoop of vanilla — the easiest dessert of your life.",

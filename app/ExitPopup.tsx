@@ -60,7 +60,7 @@ export default function ExitPopup() {
       const res = await fetch("/api/waitlist", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, turnstileToken: "exit-popup-bypass" }),
+        body: JSON.stringify({ email }),
       });
       if (res.ok) {
         setStep("phone");

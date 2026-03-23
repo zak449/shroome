@@ -510,7 +510,7 @@ export default async function RecipeDetailPage({
           className="rd-hero-bg"
           style={{ background: recipe.imageBg }}
         >
-          <img src={recipe.heroImage || recipe.image} alt={recipe.imageAlt} width={4165} height={2343} loading="eager" />
+          <img src={recipe.heroImage || recipe.image} alt={recipe.imageAlt} width={4165} height={2343} loading="eager" style={{ objectPosition: recipe.heroImage ? 'center center' : 'center 35%' }} />
         </div>
         <div className="rd-hero-overlay" />
         <div className="rd-hero-inner">
