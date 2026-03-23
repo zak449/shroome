@@ -744,8 +744,8 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Email + price */}
-            <div className="fade-up delay-500" style={{ display: "flex", gap: 16, alignItems: "flex-start", flexWrap: "wrap", opacity: 0 }}>
+            {/* Email + price — removed from hero, lives in bottom CTA section only */}
+            {false && <div className="fade-up delay-500" style={{ display: "flex", gap: 16, alignItems: "flex-start", flexWrap: "wrap", opacity: 0 }}>
               <div style={{ flex: "1 1 260px" }}>
                 {step === "done" ? (
                   <div>
@@ -938,7 +938,7 @@ export default function Home() {
                 <p style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "2rem", color: "#2D4A2D", lineHeight: 1 }}>12</p>
                 <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.68rem", color: "rgba(27,31,59,0.4)", fontStyle: "italic" }}>servings per box</p>
               </div>
-            </div>
+            </div>}
           </div>
 
           {/* Right — sachet images */}
