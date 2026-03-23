@@ -192,6 +192,7 @@ export default function RecipesPage() {
         .rec-tile-img{
           position:absolute;inset:0;
           display:flex;align-items:center;justify-content:center;
+          background:#1a1a1a;
           transition:transform .5s cubic-bezier(.22,1,.36,1)
         }
         .rec-tile-img img{
@@ -409,14 +410,14 @@ export default function RecipesPage() {
       <section className="rec-grid-section">
         <h2 className="rec-grid-title">Pick your pour</h2>
         <div className="rec-grid">
-          {recipes.map((recipe) => (
+          {recipes.map((recipe, i) => (
             <a
               key={recipe.id}
               href={`/recipes/${recipe.id}`}
               className="rec-tile"
             >
               <div className="rec-tile-img">
-                <img src={recipe.image} alt={recipe.imageAlt} width={1511} height={2343} loading="lazy" />
+                <img src={recipe.image} alt={recipe.imageAlt} width={1511} height={2343} loading={i < 3 ? "eager" : "lazy"} />
               </div>
               <div className="rec-tile-overlay" />
               <div className="rec-tile-content">
