@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 
@@ -10,7 +10,7 @@ declare global {
   }
 }
 
-export default function FoundersCheckout() {
+function CheckoutRedirect() {
   const searchParams = useSearchParams();
   const ref = searchParams.get("ref") ?? undefined;
   const email = searchParams.get("email") ?? undefined;
@@ -66,5 +66,13 @@ export default function FoundersCheckout() {
         <p className="fc-sub">Taking you to secure checkout. One moment.</p>
       </div>
     </>
+  );
+}
+
+export default function FoundersCheckout() {
+  return (
+    <Suspense>
+      <CheckoutRedirect />
+    </Suspense>
   );
 }

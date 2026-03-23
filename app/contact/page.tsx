@@ -63,7 +63,7 @@ export default function Contact() {
             <a key={l.href} href={l.href}>{l.label}</a>
           ))}
         </div>
-        <MobileNav links={navLinks} />
+        <MobileNav links={navLinks} prefix="contact" />
       </nav>
 
       {/* HERO */}
