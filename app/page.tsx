@@ -295,11 +295,9 @@ export default function Home() {
         }}
       >
         <div className="ticker-track">
-          {Array(4)
-            .fill(
-              "TEAR. POUR. DONE.                    ✦                    ZERO JITTERS                    ✦                    "
-            )
-            .map((t, i) => (
+          {Array(8)
+            .fill(null)
+            .map((_, i) => (
               <span
                 key={i}
                 style={{
@@ -307,12 +305,12 @@ export default function Home() {
                   fontWeight: 600,
                   fontSize: "0.65rem",
                   letterSpacing: "0.18em",
-                  color: "#C8FF3A",
-                  paddingRight: 16,
+                  color: i % 2 === 0 ? "#C8FF3A" : "rgba(200,255,58,0.4)",
+                  padding: "0 64px",
                   whiteSpace: "nowrap",
                 }}
               >
-                {t}
+                {i % 2 === 0 ? (i % 4 === 0 ? "TEAR. POUR. DONE." : "ZERO JITTERS") : "✦"}
               </span>
             ))}
         </div>
