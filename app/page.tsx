@@ -379,7 +379,7 @@ export default function Home() {
             </button>
           ))}
           <button
-            onClick={() => { scrollTo("cta"); window.gtag?.("event", "select_promotion", { promotion_name: "nav_cta_30_off" }); }}
+            onClick={() => { window.location.href = "/founders"; window.gtag?.("event", "select_promotion", { promotion_name: "nav_cta_preorder" }); }}
             className="nav-cta-btn"
             style={{
               background: "#1B1F3B",
@@ -394,7 +394,7 @@ export default function Home() {
               cursor: "pointer",
             }}
           >
-            Get 20% off + free shipping →
+            PRE-ORDER →
           </button>
         </div>
 
@@ -476,8 +476,8 @@ export default function Home() {
           <button
             onClick={() => {
               setMenuOpen(false);
-              scrollTo("cta");
-              window.gtag?.("event", "select_promotion", { promotion_name: "mobile_nav_cta" });
+              window.location.href = "/founders";
+              window.gtag?.("event", "select_promotion", { promotion_name: "mobile_nav_cta_preorder" });
             }}
             style={{
               background: "#C8FF3A",
@@ -494,7 +494,7 @@ export default function Home() {
               cursor: "pointer",
             }}
           >
-            Get 20% off + free shipping →
+            PRE-ORDER NOW →
           </button>
         </div>
       </nav>
@@ -633,7 +633,7 @@ export default function Home() {
               }}
             >
               <span style={{ display: "inline-block", width: 8, height: 8, borderRadius: "50%", background: "#C8FF3A", marginRight: 10, verticalAlign: "middle" }} />
-              Pre-launch · 20% off + free shipping
+              First Pour Pre-Order · 30% off · Ships June 15
             </p>
 
             <h1
@@ -711,6 +711,32 @@ export default function Home() {
                   {p.label}
                 </span>
               ))}
+            </div>
+
+            {/* Primary pre-order CTA */}
+            <div className="fade-up delay-400" style={{ display: "flex", gap: 12, alignItems: "center", flexWrap: "wrap", marginBottom: 20, opacity: 0 }}>
+              <a
+                href="/founders"
+                onClick={() => window.gtag?.("event", "select_promotion", { promotion_name: "hero_preorder_btn" })}
+                style={{
+                  display: "inline-block",
+                  padding: "14px 32px",
+                  background: "#1B1F3B",
+                  color: "#C8FF3A",
+                  fontFamily: "'Syne', system-ui, sans-serif",
+                  fontWeight: 800,
+                  fontSize: "0.78rem",
+                  letterSpacing: "0.12em",
+                  textTransform: "uppercase",
+                  textDecoration: "none",
+                  borderRadius: 2,
+                }}
+              >
+                Pre-Order Now — 30% Off →
+              </a>
+              <span style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.72rem", color: "rgba(27,31,59,0.5)" }}>
+                $25.20 <s style={{ opacity: 0.5 }}>$36</s> · Ships June 15
+              </span>
             </div>
 
             {/* Email + price */}
@@ -1293,13 +1319,36 @@ export default function Home() {
 
         <div {...anim("cta-block")} style={{ ...anim("cta-block").style, maxWidth: 520, margin: "0 auto", position: "relative", zIndex: 1 }}>
           <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 600, fontSize: "0.68rem", letterSpacing: "0.25em", textTransform: "uppercase", color: "#1B1F3B", marginBottom: 16 }}>
-            Pre-launch list
+            First Pour Pre-Order — Live Now
           </p>
           <h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontStyle: "italic", fontSize: "clamp(1.8rem, 4vw, 2.8rem)", lineHeight: 1.1, marginBottom: 14, color: "#1B1F3B" }}>
-            Be first. Get 20% off + free shipping.
+            Pour first. Pay less.
           </h2>
-          <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.88rem", color: "rgba(27,31,59,0.5)", lineHeight: 1.6, marginBottom: 36 }}>
-            Get 20% off + free shipping on your first order — add your phone for an extra 10% off code.
+          <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.88rem", color: "rgba(27,31,59,0.5)", lineHeight: 1.6, marginBottom: 24 }}>
+            Pre-order at 30% off — $25.20 vs $36. Ships June 15, 2026. Free shipping. Includes 3 reorder codes at 30% off.
+          </p>
+          <a
+            href="/founders"
+            onClick={() => window.gtag?.("event", "select_promotion", { promotion_name: "bottom_cta_preorder_btn" })}
+            style={{
+              display: "inline-block",
+              padding: "15px 40px",
+              background: "#1B1F3B",
+              color: "#C8FF3A",
+              fontFamily: "'Syne', system-ui, sans-serif",
+              fontWeight: 800,
+              fontSize: "0.78rem",
+              letterSpacing: "0.12em",
+              textTransform: "uppercase",
+              textDecoration: "none",
+              borderRadius: 2,
+              marginBottom: 32,
+            }}
+          >
+            Pre-Order Now — 30% Off →
+          </a>
+          <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 600, fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "rgba(27,31,59,0.4)", marginBottom: 16 }}>
+            Or join the waitlist for launch updates
           </p>
           {step === "done" ? (
             <div>
