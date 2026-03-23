@@ -306,7 +306,7 @@ export default function Founders() {
             <span>First Pour Pre-Order</span>
           </div>
           <h1>Pour first.<br />Pay less.</h1>
-          <p className="fb-hero-sub">Pre-order shroomé at 30% off and get your box<br />2 weeks before the public launch.</p>
+          <p className="fb-hero-sub">Pre-order shroomé at 30% off.<br />Ships June 15, 2026 — launch day.</p>
           <div className="fb-hero-pct">30% off</div>
           <div className="fb-hero-pct-sub">First Pour Pre-Order Price</div>
           <div className="fb-hero-price">
