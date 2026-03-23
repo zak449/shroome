@@ -295,7 +295,7 @@ export default function Home() {
         }}
       >
         <div className="ticker-track">
-          {Array(8)
+          {Array(16)
             .fill(null)
             .map((_, i) => (
               <span

@@ -78,9 +78,6 @@ body {
   width: max-content;
 }
 
-.ticker-track:hover {
-  animation-play-state: paused;
-}
 
 /* ── Fade-up entrance ── */
 @keyframes fadeUp {
