@@ -297,7 +297,7 @@ export default function Home() {
         <div className="ticker-track">
           {Array(4)
             .fill(
-              "THE WORLD'S FIRST READY-TO-POUR MATCHA LATTE  ✦  ENERGY WITHOUT THE CRASH  ✦  2G MATCHA · MUSHROOM EXTRACTS · COLLAGEN  ✦  "
+              "FIRST POUR PRE-ORDER LIVE  ✦  30% OFF — $25.20 VS $36  ✦  SHIPS JUNE 15 · LAUNCH DAY  ✦  FREE SHIPPING  ✦  LIMITED BATCH  ✦  "
             )
             .map((t, i) => (
               <span
@@ -734,9 +734,14 @@ export default function Home() {
               >
                 Pre-Order Now — 30% Off →
               </a>
-              <span style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.72rem", color: "rgba(27,31,59,0.5)" }}>
-                $25.20 <s style={{ opacity: 0.5 }}>$36</s> · Ships June 15
-              </span>
+              <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
+                <span style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.72rem", color: "rgba(27,31,59,0.5)" }}>
+                  $25.20 <s style={{ opacity: 0.5 }}>$36</s> · Ships June 15
+                </span>
+                <span style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.68rem", color: "rgba(27,31,59,0.45)" }}>
+                  ★★★★★ Loved by 100+ beta testers
+                </span>
+              </div>
             </div>
 
             {/* Email + price */}
@@ -910,13 +915,13 @@ export default function Home() {
                         cursor: loading ? "wait" : "pointer",
                       }}
                     >
-                      {loading ? "…" : "Claim 20% off →"}
+                      {loading ? "…" : "Get launch updates →"}
                     </button>
                     <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.72rem", color: "rgba(27,31,59,0.45)", marginTop: 10 }}>
-                      No spam. 20% off + free shipping code drops at launch. Add your phone for an extra 10%.
+                      No spam. Add your phone for an extra 10% off code at launch.
                     </p>
                     <p style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.65rem", color: "rgba(27,31,59,0.35)", marginTop: 8, letterSpacing: "0.03em" }}>
-                      Join 100+ early adopters on the pre-launch list
+                      Join 100+ early adopters
                     </p>
                   </>
                 )}
@@ -1451,7 +1456,7 @@ export default function Home() {
                 style={{ flex: "1 1 240px", padding: "15px 20px", border: "2px solid #1B1F3B", background: "rgba(255,255,255,0.5)", color: "#1B1F3B", fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.95rem", fontWeight: 500, minWidth: 0 }}
               />
               <button type="submit" disabled={loading} style={{ padding: "15px 28px", border: "none", background: "#1B1F3B", color: "#C8FF3A", fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 800, fontSize: "0.75rem", letterSpacing: "0.12em", textTransform: "uppercase", cursor: loading ? "wait" : "pointer", whiteSpace: "nowrap" }}>
-                {loading ? "…" : "Claim 20% off →"}
+                {loading ? "…" : "Get launch updates →"}
               </button>
             </form>
           )}
