@@ -297,7 +297,7 @@ export default function Home() {
         <div className="ticker-track">
           {Array(4)
             .fill(
-              "FIRST POUR PRE-ORDER LIVE  ✦  30% OFF — $25.20 VS $36  ✦  SHIPS JUNE 15 · LAUNCH DAY  ✦  FREE SHIPPING  ✦  LIMITED BATCH  ✦  "
+              "CEREMONIAL GRADE MATCHA          ✦          2G COLLAGEN          ✦          ZERO JITTERS          ✦          15 SECONDS          ✦          TEAR. POUR. DONE.          ✦          "
             )
             .map((t, i) => (
               <span
@@ -336,7 +336,7 @@ export default function Home() {
           justifyContent: "space-between",
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+        <a href="/" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none" }}>
           <Image src="/logo-mark.png" width={32} height={32} alt="shroomé S" style={{ borderRadius: 6 }} priority />
           <span
             style={{
@@ -348,7 +348,7 @@ export default function Home() {
           >
             shroomé
           </span>
-        </div>
+        </a>
         <div style={{ display: "flex", alignItems: "center", gap: 32 }}>
           {[
             { label: "Why shroomé", id: "why" },
@@ -379,7 +379,7 @@ export default function Home() {
             </button>
           ))}
           <button
-            onClick={() => { window.location.href = "/founders"; window.gtag?.("event", "select_promotion", { promotion_name: "nav_cta_preorder" }); }}
+            onClick={() => { scrollTo("cta"); window.gtag?.("event", "select_promotion", { promotion_name: "nav_cta_waitlist" }); }}
             className="nav-cta-btn"
             style={{
               background: "#1B1F3B",
@@ -394,7 +394,7 @@ export default function Home() {
               cursor: "pointer",
             }}
           >
-            PRE-ORDER →
+            Get 20% Off →
           </button>
         </div>
 
@@ -476,8 +476,8 @@ export default function Home() {
           <button
             onClick={() => {
               setMenuOpen(false);
-              window.location.href = "/founders";
-              window.gtag?.("event", "select_promotion", { promotion_name: "mobile_nav_cta_preorder" });
+              scrollTo("cta");
+              window.gtag?.("event", "select_promotion", { promotion_name: "mobile_nav_cta_waitlist" });
             }}
             style={{
               background: "#C8FF3A",
@@ -494,7 +494,7 @@ export default function Home() {
               cursor: "pointer",
             }}
           >
-            PRE-ORDER NOW →
+            Get 20% Off →
           </button>
         </div>
       </nav>
@@ -633,7 +633,7 @@ export default function Home() {
               }}
             >
               <span style={{ display: "inline-block", width: 8, height: 8, borderRadius: "50%", background: "#C8FF3A", marginRight: 10, verticalAlign: "middle" }} />
-              First Pour Pre-Order · 30% off · Ships June 15
+              Join the pre-launch list · 20% off + free shipping
             </p>
 
             <h1
@@ -713,39 +713,8 @@ export default function Home() {
               ))}
             </div>
 
-            {/* Primary pre-order CTA */}
-            <div className="fade-up delay-400" style={{ display: "flex", gap: 12, alignItems: "center", flexWrap: "wrap", marginBottom: 20, opacity: 0 }}>
-              <a
-                href="/founders"
-                onClick={() => window.gtag?.("event", "select_promotion", { promotion_name: "hero_preorder_btn" })}
-                style={{
-                  display: "inline-block",
-                  padding: "14px 32px",
-                  background: "#1B1F3B",
-                  color: "#C8FF3A",
-                  fontFamily: "'Syne', system-ui, sans-serif",
-                  fontWeight: 800,
-                  fontSize: "0.78rem",
-                  letterSpacing: "0.12em",
-                  textTransform: "uppercase",
-                  textDecoration: "none",
-                  borderRadius: 2,
-                }}
-              >
-                Pre-Order Now — 30% Off →
-              </a>
-              <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
-                <span style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.72rem", color: "rgba(27,31,59,0.5)" }}>
-                  $25.20 <s style={{ opacity: 0.5 }}>$36</s> · Ships June 15
-                </span>
-                <span style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.68rem", color: "rgba(27,31,59,0.45)" }}>
-                  ★★★★★ Loved by 100+ beta testers
-                </span>
-              </div>
-            </div>
-
-            {/* Email + price — removed from hero, lives in bottom CTA section only */}
-            {false && <div className="fade-up delay-500" style={{ display: "flex", gap: 16, alignItems: "flex-start", flexWrap: "wrap", opacity: 0 }}>
+            {/* Email signup form */}
+            <div className="fade-up delay-400" style={{ display: "flex", gap: 16, alignItems: "flex-start", flexWrap: "wrap", opacity: 0 }}>
               <div style={{ flex: "1 1 260px" }}>
                 {step === "done" ? (
                   <div>
@@ -938,7 +907,7 @@ export default function Home() {
                 <p style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "2rem", color: "#2D4A2D", lineHeight: 1 }}>12</p>
                 <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.68rem", color: "rgba(27,31,59,0.4)", fontStyle: "italic" }}>servings per box</p>
               </div>
-            </div>}
+            </div>
           </div>
 
           {/* Right — sachet images */}
@@ -1324,36 +1293,13 @@ export default function Home() {
 
         <div {...anim("cta-block")} style={{ ...anim("cta-block").style, maxWidth: 520, margin: "0 auto", position: "relative", zIndex: 1 }}>
           <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 600, fontSize: "0.68rem", letterSpacing: "0.25em", textTransform: "uppercase", color: "#1B1F3B", marginBottom: 16 }}>
-            First Pour Pre-Order — Live Now
+            Early Access
           </p>
           <h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontStyle: "italic", fontSize: "clamp(1.8rem, 4vw, 2.8rem)", lineHeight: 1.1, marginBottom: 14, color: "#1B1F3B" }}>
-            Pour first. Pay less.
+            Get 20% off at launch.
           </h2>
           <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.88rem", color: "rgba(27,31,59,0.5)", lineHeight: 1.6, marginBottom: 24 }}>
-            Pre-order at 30% off — $25.20 vs $36. Ships June 15, 2026. Free shipping. Includes 3 reorder codes at 30% off.
-          </p>
-          <a
-            href="/founders"
-            onClick={() => window.gtag?.("event", "select_promotion", { promotion_name: "bottom_cta_preorder_btn" })}
-            style={{
-              display: "inline-block",
-              padding: "15px 40px",
-              background: "#1B1F3B",
-              color: "#C8FF3A",
-              fontFamily: "'Syne', system-ui, sans-serif",
-              fontWeight: 800,
-              fontSize: "0.78rem",
-              letterSpacing: "0.12em",
-              textTransform: "uppercase",
-              textDecoration: "none",
-              borderRadius: 2,
-              marginBottom: 32,
-            }}
-          >
-            Pre-Order Now — 30% Off →
-          </a>
-          <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 600, fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "rgba(27,31,59,0.4)", marginBottom: 16 }}>
-            Or join the waitlist for launch updates
+            Join the waitlist for 20% off + free shipping on your first box. Add your phone for an extra 10% off code.
           </p>
           {step === "done" ? (
             <div>

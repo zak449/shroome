@@ -85,7 +85,7 @@ export default function MobileNav({ links, prefix }: MobileNavProps) {
           </a>
         ))}
         <a
-          href="/"
+          href="/#signup"
           className={`${prefix}-mobile-menu-cta`}
           onClick={() => setMenuOpen(false)}
         >

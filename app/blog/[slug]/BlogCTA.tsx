@@ -196,7 +196,7 @@ export default function BlogCTA() {
                   <input type="tel" placeholder="(555) 123-4567" value={inlinePhone} onChange={(e) => setInlinePhone(e.target.value)} required style={{ flex: "1 1 200px", padding: "12px 14px", fontFamily: "'Syne', sans-serif", fontSize: 13, color: "#1B1F3B", background: "#FDF4EE", border: "2px solid transparent", outline: "none" }} />
                   <button type="submit" style={{ padding: "12px 20px", background: "#C8FF3A", color: "#1B1F3B", border: "none", fontFamily: "'Syne', sans-serif", fontWeight: 800, fontSize: 12, letterSpacing: "0.06em", textTransform: "uppercase" as const, cursor: "pointer" }}>Stack it</button>
                 </form>
-                <button onClick={() => setInlinePhoneDone(true)} style={{ background: "none", border: "none", color: "rgba(253,244,238,0.4)", fontSize: 11, fontFamily: "'Syne', sans-serif", cursor: "pointer", marginTop: 8, textDecoration: "underline" }}>Skip — 20% is enough</button>
+                <button onClick={() => setInlinePhoneDone(true)} style={{ background: "none", border: "none", color: "rgba(253,244,238,0.4)", fontSize: 11, fontFamily: "'Syne', sans-serif", cursor: "pointer", marginTop: 8, textDecoration: "underline" }}>Skip</button>
               </div>
             )
           ) : (

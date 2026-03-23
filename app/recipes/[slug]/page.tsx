@@ -488,7 +488,7 @@ export default async function RecipeDetailPage({
           <a href="/blog">Blog</a>
           <a href="/recipes">Recipes</a>
         </div>
-        <a href="/" className="rd-nav-cta">
+        <a href="/#signup" className="rd-nav-cta">
           Get 20% off + free shipping &rarr;
         </a>
         <MobileNav
@@ -605,7 +605,7 @@ export default async function RecipeDetailPage({
         <p className="rd-cta-sub">
           12 servings per box · Tear. Pour. Done.
         </p>
-        <a href="/" className="rd-btn-cta">
+        <a href="/#signup" className="rd-btn-cta">
           Claim 20% off →
         </a>
       </section>

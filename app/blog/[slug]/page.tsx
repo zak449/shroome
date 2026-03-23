@@ -423,7 +423,7 @@ export default async function BlogPost({
           <Link href="/blog" className="active">Blog</Link>
           <Link href="/recipes">Recipes</Link>
         </div>
-        <Link href="/" className="post-nav-cta">
+        <Link href="/#signup" className="post-nav-cta">
           Get 20% off + free shipping &rarr;
         </Link>
         <MobileNav
@@ -530,7 +530,7 @@ export default async function BlogPost({
           <p>
             Get 20% off + free shipping on your first box. Ceremonial matcha, mushroom extracts, and collagen — in one pour.
           </p>
-          <Link href="/" className="post-editorial-link">
+          <Link href="/#signup" className="post-editorial-link">
             Join the waitlist &rarr;
           </Link>
         </div>
@@ -548,7 +548,7 @@ export default async function BlogPost({
           12 servings per box &middot; Ceremonial matcha + mushroom extracts +
           collagen
         </p>
-        <Link href="/" className="post-btn-cta">
+        <Link href="/#signup" className="post-btn-cta">
           Claim 20% off &rarr;
         </Link>
       </section>

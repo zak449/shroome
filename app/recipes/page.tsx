@@ -345,7 +345,7 @@ export default function RecipesPage() {
           <a href="/blog">Blog</a>
           <a href="/recipes" className="active">Recipes</a>
         </div>
-        <a href="/" className="rec-nav-cta">
+        <a href="/#signup" className="rec-nav-cta">
           Get 20% off + free shipping &rarr;
         </a>
         <MobileNav
@@ -443,7 +443,7 @@ export default function RecipesPage() {
         <p className="rec-cta-sub">
           20% off + free shipping on your first box &middot; 12 servings &middot; Tear. Pour. Done.
         </p>
-        <a href="/" className="rec-btn-cta">
+        <a href="/#signup" className="rec-btn-cta">
           Join the Waitlist &rarr;
         </a>
       </section>
