@@ -297,7 +297,7 @@ export default function Home() {
         <div className="ticker-track">
           {Array(4)
             .fill(
-              "CEREMONIAL GRADE MATCHA          ✦          2G COLLAGEN          ✦          ZERO JITTERS          ✦          15 SECONDS          ✦          TEAR. POUR. DONE.          ✦          "
+              "TEAR. POUR. DONE.                    ✦                    ZERO JITTERS                    ✦                    "
             )
             .map((t, i) => (
               <span
