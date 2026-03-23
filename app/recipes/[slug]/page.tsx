@@ -580,7 +580,7 @@ export default async function RecipeDetailPage({
               rel="noopener noreferrer"
               className="rd-share-btn"
             >
-              f Facebook
+              Facebook
             </a>
             <PrintButton />
           </div>
