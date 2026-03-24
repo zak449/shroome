@@ -32,10 +32,11 @@ const productSchema = {
   "offers": {
     "@type": "Offer",
     "availability": "https://schema.org/PreOrder",
+    "itemCondition": "https://schema.org/NewCondition",
     "price": "36.00",
     "priceCurrency": "USD",
     "priceValidUntil": "2027-12-31",
-    "url": "https://www.drinkshroome.com",
+    "url": "https://www.drinkshroome.com/founders",
     "seller": { "@type": "Organization", "name": "ZSQUARED INC" },
     "hasMerchantReturnPolicy": {
       "@type": "MerchantReturnPolicy",
