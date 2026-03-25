@@ -39,13 +39,14 @@ export const metadata: Metadata = {
     description: "2g ceremonial matcha + functional mushrooms in one sachet. Join the list for 20% off + free shipping.",
     images: ["/opengraph-image"],
   },
-    icons: {
-          icon: [
-            { url: "/favicon.svg", type: "image/svg+xml" },
-            { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
-                ],
-          apple: "/apple-touch-icon.png",
-    },
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/icon-512.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
 };
 
 const organizationSchema = {
