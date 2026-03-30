@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Script from "next/script";
+
 import Image from "next/image";
 import MobileNav from "../MobileNav";
 
@@ -161,13 +161,11 @@ export default function FAQ() {
 
   return (
     <>
-      <Script
-        id="faq-schema"
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <Script
-        id="breadcrumb-schema"
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />

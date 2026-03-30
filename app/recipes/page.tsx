@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Script from "next/script";
+
 import { recipes } from "./data";
 import MobileNav from "../MobileNav";
 
@@ -65,8 +65,7 @@ const breadcrumbSchema = {
 export default function RecipesPage() {
   return (
     <>
-      <Script
-        id="recipes-breadcrumb"
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(breadcrumbSchema),

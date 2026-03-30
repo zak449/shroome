@@ -57,6 +57,22 @@ const productSchema = {
       }
     }
   },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "reviewCount": "12",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Early Taster" },
+      "datePublished": "2026-02-15",
+      "reviewBody": "The matcha is smooth, no bitterness at all. Love that it takes 15 seconds.",
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
+    }
+  ],
   "isFamilyFriendly": true,
   "audience": {
     "@type": "PeopleAudience",
@@ -324,8 +340,7 @@ export default function Home() {
 
   return (
     <>
-      <Script
-        id="product-schema"
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
       />

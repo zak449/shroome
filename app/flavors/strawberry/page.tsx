@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Script from "next/script";
+
 import Image from "next/image";
 import MobileNav from "../../MobileNav";
 import Breadcrumb from "../../Breadcrumb";
@@ -55,6 +55,66 @@ const breadcrumbSchema = {
   ],
 };
 
+const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "shroomé Strawberry Matcha Latte",
+  "description": "shroomé Strawberry — ceremonial matcha meets real freeze-dried strawberry, functional mushroom extracts standardized to 70%+ beta-glucan concentration, and grass-fed collagen peptides. One sachet, 15 seconds, zero compromise.",
+  "brand": { "@type": "Brand", "name": "shroomé" },
+  "manufacturer": { "@type": "Organization", "name": "ZSQUARED INC" },
+  "category": "Functional Beverages",
+  "url": "https://www.drinkshroome.com/flavors/strawberry",
+  "image": [
+    "https://www.drinkshroome.com/sachet-strawberry.png"
+  ],
+  "sku": "SHROOME-STRAWBERRY-12",
+  "mpn": "SHROOME-STR-V1",
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/PreOrder",
+    "itemCondition": "https://schema.org/NewCondition",
+    "price": "36.00",
+    "priceCurrency": "USD",
+    "priceValidUntil": "2027-12-31",
+    "url": "https://www.drinkshroome.com/founders",
+    "seller": { "@type": "Organization", "name": "ZSQUARED INC" },
+    "hasMerchantReturnPolicy": {
+      "@type": "MerchantReturnPolicy",
+      "applicableCountry": "US",
+      "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+      "merchantReturnDays": 30,
+      "returnMethod": "https://schema.org/ReturnByMail",
+      "returnFees": "https://schema.org/FreeReturn"
+    },
+    "shippingDetails": {
+      "@type": "OfferShippingDetails",
+      "shippingRate": { "@type": "MonetaryAmount", "value": "0", "currency": "USD" },
+      "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "US" },
+      "deliveryTime": {
+        "@type": "ShippingDeliveryTime",
+        "handlingTime": { "@type": "QuantitativeValue", "minValue": 1, "maxValue": 3, "unitCode": "DAY" },
+        "transitTime": { "@type": "QuantitativeValue", "minValue": 3, "maxValue": 7, "unitCode": "DAY" }
+      }
+    }
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "reviewCount": "6",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Early Taster" },
+      "datePublished": "2026-02-20",
+      "reviewBody": "The strawberry matcha combo is delicious. Tastes like real strawberries, not artificial at all.",
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
+    }
+  ]
+};
+
 const ingredients = [
   {
     name: "Ceremonial Matcha",
@@ -90,8 +150,11 @@ const recipes = [
 export default function StrawberryFlavorPage() {
   return (
     <>
-      <Script
-        id="breadcrumb-schema"
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+      />
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />

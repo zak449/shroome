@@ -1,4 +1,4 @@
-import Script from "next/script";
+
 import { notFound } from "next/navigation";
 import { recipes } from "../data";
 import MobileNav from "../../MobileNav";
@@ -127,13 +127,11 @@ export default async function RecipeDetailPage({
 
   return (
     <>
-      <Script
-        id={`recipe-schema-${recipe.id}`}
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(recipeSchema) }}
       />
-      <Script
-        id="breadcrumb-schema"
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />

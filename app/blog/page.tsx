@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Script from "next/script";
+
 import Image from "next/image";
 import { blogPosts } from "./posts";
 import MobileNav from "../MobileNav";
@@ -41,8 +41,7 @@ const categoryColors: Record<string, { bg: string; text: string }> = {
 export default function BlogIndex() {
   return (
     <>
-      <Script
-        id="blog-schema"
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
@@ -71,8 +70,7 @@ export default function BlogIndex() {
         }}
       />
 
-      <Script
-        id="blog-breadcrumb"
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({

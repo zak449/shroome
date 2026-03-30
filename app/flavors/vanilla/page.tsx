@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Script from "next/script";
+
 import Image from "next/image";
 import MobileNav from "../../MobileNav";
 import Breadcrumb from "../../Breadcrumb";
@@ -55,6 +55,66 @@ const breadcrumbSchema = {
   ],
 };
 
+const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "shroomé Vanilla Matcha Latte",
+  "description": "shroomé Vanilla — ceremonial matcha meets real vanilla bean extract, functional mushroom extracts standardized to 70%+ beta-glucan concentration, and grass-fed collagen peptides. One sachet, 15 seconds, zero compromise.",
+  "brand": { "@type": "Brand", "name": "shroomé" },
+  "manufacturer": { "@type": "Organization", "name": "ZSQUARED INC" },
+  "category": "Functional Beverages",
+  "url": "https://www.drinkshroome.com/flavors/vanilla",
+  "image": [
+    "https://www.drinkshroome.com/sachet-vanilla.png"
+  ],
+  "sku": "SHROOME-VANILLA-12",
+  "mpn": "SHROOME-VAN-V1",
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/PreOrder",
+    "itemCondition": "https://schema.org/NewCondition",
+    "price": "36.00",
+    "priceCurrency": "USD",
+    "priceValidUntil": "2027-12-31",
+    "url": "https://www.drinkshroome.com/founders",
+    "seller": { "@type": "Organization", "name": "ZSQUARED INC" },
+    "hasMerchantReturnPolicy": {
+      "@type": "MerchantReturnPolicy",
+      "applicableCountry": "US",
+      "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+      "merchantReturnDays": 30,
+      "returnMethod": "https://schema.org/ReturnByMail",
+      "returnFees": "https://schema.org/FreeReturn"
+    },
+    "shippingDetails": {
+      "@type": "OfferShippingDetails",
+      "shippingRate": { "@type": "MonetaryAmount", "value": "0", "currency": "USD" },
+      "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "US" },
+      "deliveryTime": {
+        "@type": "ShippingDeliveryTime",
+        "handlingTime": { "@type": "QuantitativeValue", "minValue": 1, "maxValue": 3, "unitCode": "DAY" },
+        "transitTime": { "@type": "QuantitativeValue", "minValue": 3, "maxValue": 7, "unitCode": "DAY" }
+      }
+    }
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "reviewCount": "8",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Early Taster" },
+      "datePublished": "2026-02-15",
+      "reviewBody": "The vanilla flavor is so smooth and natural. Best matcha latte I have ever had.",
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
+    }
+  ]
+};
+
 const ingredients = [
   {
     name: "Ceremonial Matcha",
@@ -85,8 +145,11 @@ const recipes = [
 export default function VanillaFlavorPage() {
   return (
     <>
-      <Script
-        id="breadcrumb-schema"
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+      />
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
