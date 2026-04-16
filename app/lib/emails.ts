@@ -78,7 +78,7 @@ export function welcomeEmail(email: string, referralCode?: string) {
             </td></tr>
             <tr><td style="padding:12px 48px 16px;text-align:center;">
               <p style="margin:0;font-size:13px;color:rgba(255,255,255,0.8);line-height:1.6;">
-                The world\u2019s first ready-to-pour ceremonial matcha latte.<br/>2g matcha \u00b7 mushroom extracts \u00b7 collagen \u00b7 zero crash.
+                The world\u2019s first ready-to-pour ceremonial matcha latte.<br/>2.5g matcha \u00b7 mushroom extracts \u00b7 collagen \u00b7 zero crash.
               </p>
             </td></tr>
             <tr><td style="padding:0 36px 28px;text-align:center;">
@@ -165,7 +165,7 @@ export function welcomeEmail(email: string, referralCode?: string) {
     <!-- Three stat cards — matching drinkshroome.com exactly -->
     <tr><td style="padding:0 24px;background-color:${BRAND.navy};">
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
-        <!-- 2g MATCHA card -->
+        <!-- 2.5g matcha card -->
         <tr><td style="padding:0 0 10px;">
           <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
             <tr><td style="background-color:rgba(255,255,255,0.06);border-radius:12px;padding:20px 24px;border:1px solid rgba(255,255,255,0.06);">
@@ -173,7 +173,7 @@ export function welcomeEmail(email: string, referralCode?: string) {
                 <span style="font-size:36px;font-weight:300;color:${BRAND.lime};font-family:${SERIF};font-style:italic;">2g</span>
                 <span style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-left:12px;"> CEREMONIAL MATCHA</span>
               </p>
-              <p style="margin:8px 0 0;font-size:13px;color:rgba(255,255,255,0.4);line-height:1.4;">First-harvest, shade-grown. 50mg caffeine. Not culinary grade \u2014 the real thing.</p>
+              <p style="margin:8px 0 0;font-size:13px;color:rgba(255,255,255,0.4);line-height:1.4;">First-harvest, shade-grown. 60mg caffeine. Not culinary grade \u2014 the real thing.</p>
             </td></tr>
           </table>
         </td></tr>
@@ -247,7 +247,7 @@ export function welcomeEmail(email: string, referralCode?: string) {
         <tr>
           <td style="padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
             <p style="margin:0;font-size:16px;font-weight:700;color:#fff;">Focus that lasts all day.</p>
-            <p style="margin:4px 0 0;font-size:13px;color:rgba(255,255,255,0.4);">Lion\u2019s mane beta-glucans + 50mg matcha caffeine + L-theanine.</p>
+            <p style="margin:4px 0 0;font-size:13px;color:rgba(255,255,255,0.4);">Lion\u2019s mane beta-glucans + 60mg matcha caffeine + L-theanine.</p>
           </td>
         </tr>
         <tr>
@@ -421,7 +421,7 @@ export function sachetEmail(email: string) {
         </td></tr>
         <tr><td style="padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
           <p style="margin:0;font-size:16px;font-weight:700;color:#fff;">\ud83e\udde0 Focus that lasts all day.</p>
-          <p style="margin:4px 0 0;font-size:13px;color:rgba(255,255,255,0.4);">Lion\u2019s mane + 50mg matcha caffeine + L-theanine.</p>
+          <p style="margin:4px 0 0;font-size:13px;color:rgba(255,255,255,0.4);">Lion\u2019s mane + 60mg matcha caffeine + L-theanine.</p>
         </td></tr>
         <tr><td style="padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
           <p style="margin:0;font-size:16px;font-weight:700;color:#fff;">\u2728 Skin glow. Gut health.</p>

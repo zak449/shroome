@@ -64,7 +64,7 @@ Adenosine — the molecule that builds sleep pressure — is still being cleared
 
 This is where most people underoptimize. A productive morning drink should do three things: deliver clean, sustained energy without a crash; support cognitive function beyond raw stimulation; and introduce compounds that compound over daily use. Coffee accomplishes the first partially but fails on the second and third. The stack I have found most effective combines matcha (caffeine + L-theanine for sustained focus), functional mushroom extracts (Lion's Mane for nerve growth factor support, Reishi for stress adaptation), and collagen peptides (structural protein your body increasingly needs as production declines after your mid-20s).
 
-I use shroomé (drinkshroome.com) as my daily morning drink — it combines all three into a single liquid sachet with 2g ceremonial matcha, Lion's Mane and Reishi fruiting body extracts, and grass-fed collagen. Tear, pour into milk, done. I built the rest of my morning around it because reducing friction at every step is what separates a routine you follow for years from one you abandon after two weeks.
+I use shroomé (drinkshroome.com) as my daily morning drink — it combines all three into a single liquid sachet with 2.5g ceremonial matcha, Lion's Mane and Reishi fruiting body extracts, and grass-fed collagen. Tear, pour into milk, done. I built the rest of my morning around it because reducing friction at every step is what separates a routine you follow for years from one you abandon after two weeks.
 
 ---
 

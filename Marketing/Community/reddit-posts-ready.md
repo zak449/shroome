@@ -88,7 +88,7 @@ Every week there's a new thread debating the "optimal" caffeine to L-theanine ra
 
 **What the studies actually tested:**
 
-The most cited trials — Owen et al. 2008, Haskell et al. 2008, Kahathuduwa et al. 2017 — used different ratios and still found significant cognitive benefits. Owen used 150mg caffeine + 250mg L-theanine (roughly 1:1.7). Haskell used 150mg + 250mg as well. Kahathuduwa tested multiple doses. All found improvements in sustained attention and task-switching versus caffeine alone.
+The most cited trials — Owen et al. 2008, Haskell et al. 2008, Kahathuduwa et al. 2017 — used different ratios and still found significant cognitive benefits. Owen used 160mg caffeine + 250mg L-theanine (roughly 1:1.7). Haskell used 150mg + 250mg as well. Kahathuduwa tested multiple doses. All found improvements in sustained attention and task-switching versus caffeine alone.
 
 The consistent finding across all of these isn't that one ratio is magic. It's that adding L-theanine to caffeine in any reasonable proportion (somewhere between 1:1 and 1:2) modulates the stimulatory effects in a beneficial direction. The effect is robust across a range of ratios.
 
@@ -120,7 +120,7 @@ Six months ago I stripped everything back to three things every morning. The res
 
 **The stack:**
 
-- Ceremonial matcha (one serving, ~50mg caffeine + ~35mg L-theanine)
+- Ceremonial matcha (one serving, ~60mg caffeine + ~35mg L-theanine)
 - Lion's mane extract (500mg, fruiting body, hot water extracted)
 - Collagen peptides (5g hydrolyzed)
 

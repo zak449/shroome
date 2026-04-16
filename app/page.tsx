@@ -8,7 +8,7 @@ const productSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "shroomé Ceremonial Matcha Latte",
-  "description": "The world's first ready-to-pour ceremonial matcha latte. 2g ceremonial-grade matcha, 200mg organic mushroom extracts standardized to 70%+ beta-glucan concentration via fruiting body extraction, and 2g grass-fed collagen peptides. No powder, no frother — tear, pour, done in 15 seconds.",
+  "description": "The world's first ready-to-pour ceremonial matcha latte. 2.5g ceremonial-grade matcha, 200mg organic mushroom extracts standardized to 70%+ beta-glucan concentration via fruiting body extraction, and 2g grass-fed collagen peptides. No powder, no frother — tear, pour, done in 15 seconds.",
   "brand": { "@type": "Brand", "name": "shroomé" },
   "manufacturer": { "@type": "Organization", "name": "ZSQUARED INC" },
   "category": "Functional Beverages",
@@ -22,7 +22,7 @@ const productSchema = {
   "mpn": "SHROOME-V1",
   "material": "Ceremonial Matcha, Organic Mushroom Beta-Glucan Extracts, Grass-Fed Collagen Peptides",
   "additionalProperty": [
-    { "@type": "PropertyValue", "name": "Caffeine Content", "value": "~50mg per sachet" },
+    { "@type": "PropertyValue", "name": "Caffeine Content", "value": "~60mg per sachet" },
     { "@type": "PropertyValue", "name": "Beta-Glucan Concentration", "value": "70%+ (1,3 and 1,6 linked)" },
     { "@type": "PropertyValue", "name": "Matcha Grade", "value": "Ceremonial (first harvest, shade-grown)" },
     { "@type": "PropertyValue", "name": "Collagen Source", "value": "Grass-fed bovine, hydrolyzed peptides" },
@@ -746,7 +746,7 @@ export default function Home() {
                 opacity: 0,
               }}
             >
-              The world&apos;s first ready-to-pour ceremonial matcha latte. 2g matcha. 2g collagen. Real mushrooms.{" "}
+              The world&apos;s first ready-to-pour ceremonial matcha latte. 2.5g matcha. 2g collagen. Real mushrooms.{" "}
               <strong>Tear it open. Pour it in. Done.</strong>
             </p>
 
@@ -763,7 +763,7 @@ export default function Home() {
                 opacity: 0,
               }}
             >
-              50mg caffeine · Zero jitters · Actually tastes good.
+              60mg caffeine · Zero jitters · Actually tastes good.
             </p>
 
             {/* Ingredient pills */}
@@ -1181,7 +1181,7 @@ export default function Home() {
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 24 }}>
             {[
-              { name: "Ceremonial Matcha", dose: "2g", detail: "First-harvest, shade-grown. ~50mg caffeine. Not culinary grade — the real thing.", color: "#C8FF3A", bg: "#1B1F3B" },
+              { name: "Ceremonial Matcha", dose: "2g", detail: "First-harvest, shade-grown. ~60mg caffeine. Not culinary grade — the real thing.", color: "#C8FF3A", bg: "#1B1F3B" },
               { name: "Organic Mushroom Extracts", dose: "200mg", detail: "70%+ beta-glucan purity — the active compound behind immune and focus benefits. Industry average: 15–30%. No mycelium-on-grain filler. No underdosing.", color: "#FFB7D1", bg: "#1B1F3B" },
               { name: "Grass-Fed Collagen", dose: "2g", detail: "Pre-dissolved bioavailable peptides for skin, hair, nails, and gut.", color: "#C8FF3A", bg: "#1B1F3B" },
             ].map((item, i) => (

@@ -206,7 +206,7 @@ export default function WelcomePage() {
             fontWeight: 400,
           }}
         >
-          2g ceremonial matcha. Functional mushroom extracts. Collagen peptides.
+          2.5g ceremonial matcha. Functional mushroom extracts. Collagen peptides.
           One sachet. 15 seconds. No crash.
         </p>
       </section>
@@ -271,7 +271,7 @@ export default function WelcomePage() {
               {
                 label: "Ceremonial Matcha",
                 accent: C.lime,
-                body: "First-harvest, shade-grown 21+ days, stone-ground. ~50mg caffeine + natural L-theanine.",
+                body: "First-harvest, shade-grown 21+ days, stone-ground. ~60mg caffeine + natural L-theanine.",
               },
               {
                 label: "Collagen Peptides",

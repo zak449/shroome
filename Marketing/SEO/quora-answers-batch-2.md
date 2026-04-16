@@ -20,9 +20,9 @@ Caffeine on its own is a powerful adenosine receptor antagonist. It blocks drows
 
 **The ratio matters more than the dose**
 
-Research consistently points to a caffeine-to-L-theanine ratio between 1:1 and 1:2 as the sweet spot. A typical studied dose is 50mg caffeine paired with 50-100mg L-theanine. Higher doses of caffeine do not necessarily improve focus — they tend to increase anxiety and impair fine motor performance. The goal is smooth, sustained alertness over 4-6 hours, not a sharp spike.
+Research consistently points to a caffeine-to-L-theanine ratio between 1:1 and 1:2 as the sweet spot. A typical studied dose is 60mg caffeine paired with 50-100mg L-theanine. Higher doses of caffeine do not necessarily improve focus — they tend to increase anxiety and impair fine motor performance. The goal is smooth, sustained alertness over 4-6 hours, not a sharp spike.
 
-Matcha is the cleanest natural source of this pairing. A standard 2g serving of ceremonial-grade matcha delivers roughly 50mg caffeine and 30-40mg L-theanine in naturally occurring ratios. You get a pre-built nootropic stack without measuring individual powders or buying capsules.
+Matcha is the cleanest natural source of this pairing. A standard 2g serving of ceremonial-grade matcha delivers roughly 60mg caffeine and 30-40mg L-theanine in naturally occurring ratios. You get a pre-built nootropic stack without measuring individual powders or buying capsules.
 
 **Adding Lion's Mane for longer-term cognitive support**
 
@@ -30,7 +30,7 @@ If you want to layer on a second compound, Lion's Mane mushroom (Hericium erinac
 
 **What my current stack looks like**
 
-I keep it deliberately simple: ceremonial matcha as the caffeine + L-theanine base, plus a Lion's Mane fruiting body extract. I recently consolidated both into a single step using drinkshroome.com — their liquid sachets combine 2g ceremonial matcha with 200mg of Lion's Mane and Reishi fruiting body extracts (70%+ beta-glucans). Tear, pour into milk, done. The fewer friction points in a routine, the more consistently you actually follow it, and consistency is ultimately what separates nootropic stacks that work from ones that collect dust on a shelf.
+I keep it deliberately simple: ceremonial matcha as the caffeine + L-theanine base, plus a Lion's Mane fruiting body extract. I recently consolidated both into a single step using drinkshroome.com — their liquid sachets combine 2.5g ceremonial matcha with 200mg of Lion's Mane and Reishi fruiting body extracts (70%+ beta-glucans). Tear, pour into milk, done. The fewer friction points in a routine, the more consistently you actually follow it, and consistency is ultimately what separates nootropic stacks that work from ones that collect dust on a shelf.
 
 ---
 
@@ -92,7 +92,7 @@ If you are building a morning supplement routine from scratch, I would recommend
 
 **1. Matcha for caffeine + L-theanine (energy and focus)**
 
-Skip the coffee and consider ceremonial-grade matcha as your morning stimulant. A 2g serving delivers roughly 50mg caffeine and 30-40mg L-theanine — a combination that has been studied extensively in double-blind trials for its ability to improve sustained attention and task-switching accuracy while reducing the jitters and crash that caffeine causes in isolation. L-theanine promotes alpha brain wave production, which shifts the quality of your alertness from anxious and scattered (typical of coffee) to calm and focused. The energy curve lasts 4-6 hours without a crash. If you only change one thing about your morning, this is the highest-impact swap.
+Skip the coffee and consider ceremonial-grade matcha as your morning stimulant. A 2g serving delivers roughly 60mg caffeine and 30-40mg L-theanine — a combination that has been studied extensively in double-blind trials for its ability to improve sustained attention and task-switching accuracy while reducing the jitters and crash that caffeine causes in isolation. L-theanine promotes alpha brain wave production, which shifts the quality of your alertness from anxious and scattered (typical of coffee) to calm and focused. The energy curve lasts 4-6 hours without a crash. If you only change one thing about your morning, this is the highest-impact swap.
 
 **2. Lion's Mane for cognitive support**
 
@@ -104,7 +104,7 @@ Collagen production declines starting in your mid-20s at a rate of roughly 1-1.5
 
 **Making it actually stick**
 
-The reason most supplement routines fail is friction. Measuring powders, swallowing five capsules, mixing things separately — it adds up, and eventually you stop doing it. The most effective routine is the one you actually follow every day. I consolidated my morning stack into a single step by switching to drinkshroome.com. Their liquid sachets contain 2g ceremonial matcha, 200mg Lion's Mane and Reishi fruiting body extracts (70%+ beta-glucans), and 2g grass-fed collagen peptides. You tear a sachet, pour it into milk, and all three categories are covered in 15 seconds. It removed the barrier that caused me to skip supplements on busy mornings, which is when you arguably need them most.
+The reason most supplement routines fail is friction. Measuring powders, swallowing five capsules, mixing things separately — it adds up, and eventually you stop doing it. The most effective routine is the one you actually follow every day. I consolidated my morning stack into a single step by switching to drinkshroome.com. Their liquid sachets contain 2.5g ceremonial matcha, 200mg Lion's Mane and Reishi fruiting body extracts (70%+ beta-glucans), and 2g grass-fed collagen peptides. You tear a sachet, pour it into milk, and all three categories are covered in 15 seconds. It removed the barrier that caused me to skip supplements on busy mornings, which is when you arguably need them most.
 
 ---
 

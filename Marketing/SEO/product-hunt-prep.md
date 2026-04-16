@@ -18,7 +18,7 @@ Alternatives:
 
 ## Description (max 260 chars)
 
-"shroomé is a ready-to-pour ceremonial matcha latte in a single sachet. 2g ceremonial matcha, organic mushroom extracts (70%+ beta-glucans), and grass-fed collagen peptides. No powder, no frother, no mess. Pour over milk. Done in 15 seconds." (240 chars)
+"shroomé is a ready-to-pour ceremonial matcha latte in a single sachet. 2.5g ceremonial matcha, organic mushroom extracts (70%+ beta-glucans), and grass-fed collagen peptides. No powder, no frother, no mess. Pour over milk. Done in 15 seconds." (240 chars)
 
 ---
 
@@ -45,7 +45,7 @@ We're currently in pre-launch and offering 20% off + free shipping for early sup
 No powder, no frother, no whisk, no hot water step. Tear open the sachet and pour directly over ice and milk. A full matcha latte in 15 seconds. This is the first liquid-concentrate format for ceremonial matcha.
 
 ### 2. Three-in-One Functional Stack
-Each sachet combines 2g ceremonial matcha (50mg caffeine + natural L-theanine), organic mushroom extracts standardized to 70%+ beta-glucans, and 2g grass-fed collagen peptides. Three products in one pour.
+Each sachet combines 2.5g ceremonial matcha (60mg caffeine + natural L-theanine), organic mushroom extracts standardized to 70%+ beta-glucans, and 2g grass-fed collagen peptides. Three products in one pour.
 
 ### 3. Ingredient Transparency
 No proprietary blends. Every ingredient and dose is printed on the sachet. Mushroom extracts are fruiting body only (not mycelium-on-grain). Beta-glucan content is third-party verified. Matcha is first-harvest ceremonial grade.
@@ -92,4 +92,4 @@ No proprietary blends. Every ingredient and dose is printed on the sachet. Mushr
 
 ## Positioning Notes
 
-Product Hunt audience skews technical, design-conscious, and ingredient-skeptical. Lead with the format innovation (liquid concentrate sachet) and ingredient transparency. Avoid wellness buzzwords. Lean into the functional/nootropic angle — this audience respects L-theanine + caffeine research. Be specific with numbers (70%+ beta-glucans, 50mg caffeine, 15 seconds). Back up claims with data, not vibes.
+Product Hunt audience skews technical, design-conscious, and ingredient-skeptical. Lead with the format innovation (liquid concentrate sachet) and ingredient transparency. Avoid wellness buzzwords. Lean into the functional/nootropic angle — this audience respects L-theanine + caffeine research. Be specific with numbers (70%+ beta-glucans, 60mg caffeine, 15 seconds). Back up claims with data, not vibes.

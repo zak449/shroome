@@ -27,7 +27,7 @@ shroomé's mushroom extract component uses fruiting body extraction — not myce
 
 **Product Highlights:**
 
-- 50mg naturally occurring caffeine per sachet (approximately half an espresso shot)
+- 60mg naturally occurring caffeine per sachet (approximately half an espresso shot)
 - Naturally occurring L-theanine from ceremonial-grade matcha supports calm, sustained focus
 - Grass-fed, pasture-raised bovine collagen peptides (Type I and Type III)
 - Third-party tested for purity, potency, and heavy metals

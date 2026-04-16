@@ -196,7 +196,7 @@ I've been stacking nootropics for about three years. Tried racetams, modafinil, 
 
 **The stack:**
 
-- 2g ceremonial matcha (~60-70mg caffeine + ~25mg naturally occurring L-theanine)
+- 2.5g ceremonial matcha (~60-70mg caffeine + ~25mg naturally occurring L-theanine)
 - 100mg supplemental L-theanine (bringing the total theanine:caffeine ratio to roughly 2:1)
 - 500mg lion's mane fruiting body extract (standardized to >25% beta-glucans)
 - 10g collagen peptides (hydrolyzed, for the glycine content)

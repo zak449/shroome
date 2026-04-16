@@ -26,20 +26,20 @@ export const metadata: Metadata = {
 };
 
 const pills = [
-  "2g Matcha",
+  "2.5g matcha",
   "Collagen",
   "Mushroom Extracts",
   "No Mixing",
   "12 Servings/Box",
-  "50mg Caffeine",
+  "60mg Caffeine",
   "Zero Crash",
 ];
 
 const tickerItems = [
   "The World's First Ready-to-Pour Matcha Latte",
   "✦ Energy Without the Crash",
-  "✦ 2g Matcha · Mushroom Extracts · Collagen",
-  "✦ 50mg Caffeine · Zero Jitters · Actually Tastes Good",
+  "✦ 2.5g matcha · Mushroom Extracts · Collagen",
+  "✦ 60mg Caffeine · Zero Jitters · Actually Tastes Good",
 ];
 
 export default function Privacy() {

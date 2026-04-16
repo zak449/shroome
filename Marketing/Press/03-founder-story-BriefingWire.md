@@ -29,7 +29,7 @@ The brand's target consumer is not the supplement enthusiast stacking 15 pills e
 
 "Our customer reads labels. They are skeptical of hype. They want to know exactly what they are putting in their body and why," Kaufman said. "We built shroomé for that person. One sachet, three functional ingredients, full transparency."
 
-Each sachet delivers approximately 50mg of caffeine from ceremonial matcha — roughly half an espresso shot — paired with naturally occurring L-theanine, an amino acid found in shade-grown tea leaves that research has associated with a calmer, more sustained form of alertness compared to coffee. The collagen component uses hydrolyzed peptides from grass-fed, pasture-raised bovine sources.
+Each sachet delivers approximately 60mg of caffeine from ceremonial matcha — roughly half an espresso shot — paired with naturally occurring L-theanine, an amino acid found in shade-grown tea leaves that research has associated with a calmer, more sustained form of alertness compared to coffee. The collagen component uses hydrolyzed peptides from grass-fed, pasture-raised bovine sources.
 
 **What's Next**
 

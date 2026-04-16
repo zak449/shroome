@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   keywords: ["ceremonial matcha latte", "functional mushrooms", "matcha latte", "beta-glucans", "mushroom extract", "collagen peptides", "ready to pour matcha", "matcha sachet", "coffee alternative", "L-theanine", "adaptogenic", "shroomé", "drinkshroome"],
   openGraph: {
     title: "shroomé — Café Energy. Home Address.",
-    description: "2g ceremonial matcha + functional mushrooms in one sachet. The café came home. Join the pre-launch list for 20% off + free shipping.",
+    description: "2.5g ceremonial matcha + functional mushrooms in one sachet. The café came home. Join the pre-launch list for 20% off + free shipping.",
     type: "website",
     siteName: "shroomé",
     url: "https://www.drinkshroome.com",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "shroomé — Café Energy. Home Address.",
-    description: "2g ceremonial matcha + functional mushrooms in one sachet. Join the list for 20% off + free shipping.",
+    description: "2.5g ceremonial matcha + functional mushrooms in one sachet. Join the list for 20% off + free shipping.",
     images: ["/opengraph-image"],
   },
   icons: {
@@ -57,7 +57,7 @@ const organizationSchema = {
   "alternateName": ["Shroome", "Shroomé", "drinkshroome", "drink shroome"],
   "url": "https://www.drinkshroome.com",
   "logo": "https://www.drinkshroome.com/logo-mark.png",
-  "description": "shroomé is the world's first ready-to-pour ceremonial matcha latte — combining 2g ceremonial-grade matcha, 200mg organic mushroom extracts (70%+ beta-glucans via fruiting body extraction), and 2g grass-fed collagen peptides in a single-serve sachet.",
+  "description": "shroomé is the world's first ready-to-pour ceremonial matcha latte — combining 2.5g ceremonial-grade matcha, 200mg organic mushroom extracts (70%+ beta-glucans via fruiting body extraction), and 2g grass-fed collagen peptides in a single-serve sachet.",
   "foundingDate": "2025",
   "founder": {
     "@type": "Person",

@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "FAQ — shroomé | Café Energy. Home Address.",
   description:
-    "Frequently asked questions about shroomé — the world's first ready-to-pour ceremonial matcha latte. 2g matcha, 2g collagen, real mushrooms. Learn about ingredients, how to pour, caffeine content, and more.",
+    "Frequently asked questions about shroomé — the world's first ready-to-pour ceremonial matcha latte. 2.5g matcha, 2g collagen, real mushrooms. Learn about ingredients, how to pour, caffeine content, and more.",
   keywords: [
     "shroomé faq",
     "matcha latte questions",

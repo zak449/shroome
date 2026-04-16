@@ -27,7 +27,7 @@ shroomé uses exclusively fruiting body extraction, followed by hot water proces
 
 Rather than positioning itself as a supplement, shroomé is formulated as a daily beverage — a ceremonial matcha latte that happens to contain functional ingredients. Each single-serve sachet includes:
 
-- **2g ceremonial-grade matcha** (first-harvest, shade-grown minimum 21 days) providing approximately 50mg caffeine and naturally occurring L-theanine
+- **2.5g ceremonial-grade matcha** (first-harvest, shade-grown minimum 21 days) providing approximately 60mg caffeine and naturally occurring L-theanine
 - **200mg organic mushroom extracts** standardized to 70%+ beta-glucans via fruiting body extraction
 - **2g grass-fed collagen peptides** (hydrolyzed, Types I and III) from pasture-raised bovine sources
 

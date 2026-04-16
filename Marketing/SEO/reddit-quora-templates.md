@@ -70,7 +70,7 @@ I've been stacking a high-concentration mushroom extract into my morning routine
 
 The crash you feel from coffee comes down to how caffeine interacts with your body in isolation. Coffee delivers caffeine fast — blood levels peak within 30-45 minutes — and then it drops off. That spike-and-crash curve is what gives you the jittery high followed by the afternoon wall. Add in coffee's effect on cortisol levels (especially when consumed first thing in the morning) and you've got a recipe for energy instability.
 
-Matcha is the best direct swap I've found, and there's actual science behind why it feels different. Matcha contains both caffeine (~50mg per serving, roughly half a cup of coffee) and L-theanine (~30-40mg), an amino acid that modulates how caffeine affects your brain. L-theanine promotes alpha brain wave activity, which is associated with calm, focused alertness — the opposite of the anxious, scattered energy coffee can produce.
+Matcha is the best direct swap I've found, and there's actual science behind why it feels different. Matcha contains both caffeine (~60mg per serving, roughly half a cup of coffee) and L-theanine (~30-40mg), an amino acid that modulates how caffeine affects your brain. L-theanine promotes alpha brain wave activity, which is associated with calm, focused alertness — the opposite of the anxious, scattered energy coffee can produce.
 
 The caffeine + L-theanine combination has been studied fairly extensively. The key findings are:
 
@@ -99,7 +99,7 @@ I've been drinking both matcha and coffee for years, and I eventually shifted to
 
 **Caffeine Content and Delivery**
 
-Coffee contains roughly 95-200mg of caffeine per cup depending on brewing method. Matcha contains approximately 50-70mg per serving (for a standard 2g ceremonial serving). But the critical difference isn't the amount — it's the delivery mechanism.
+Coffee contains roughly 95-200mg of caffeine per cup depending on brewing method. Matcha contains approximately 50-70mg per serving (for a standard 2.5g ceremonial serving). But the critical difference isn't the amount — it's the delivery mechanism.
 
 Coffee delivers caffeine in isolation, which means rapid absorption, a sharp peak in blood caffeine levels (within 30-45 minutes), and then a relatively steep decline. This is why many coffee drinkers experience an energy crash 3-4 hours after their morning cup.
 
@@ -184,12 +184,12 @@ L-theanine is an amino acid that crosses the blood-brain barrier and promotes al
 **The research:**
 - Multiple double-blind, placebo-controlled studies have demonstrated that the caffeine + L-theanine combination improves sustained attention, task-switching accuracy, and reaction time more effectively than caffeine alone
 - The combination reduces the subjective experience of jitters and anxiety that caffeine causes on its own
-- Typical studied ratio is roughly 1:1 to 1:2 caffeine-to-L-theanine (e.g., 50mg caffeine + 50-100mg L-theanine)
+- Typical studied ratio is roughly 1:1 to 1:2 caffeine-to-L-theanine (e.g., 60mg caffeine + 50-100mg L-theanine)
 - Effects are noticeable within 30-45 minutes and sustain for 4-6 hours
 
 **Natural delivery: matcha**
 
-The reason matcha keeps coming up in nootropic discussions is that it naturally contains both compounds in roughly the ideal ratio. A 2g serving of ceremonial matcha delivers approximately 50mg caffeine and 30-40mg L-theanine. You're getting a pre-built nootropic stack in a single whole-food source, without needing to measure and cap individual powders.
+The reason matcha keeps coming up in nootropic discussions is that it naturally contains both compounds in roughly the ideal ratio. A 2g serving of ceremonial matcha delivers approximately 60mg caffeine and 30-40mg L-theanine. You're getting a pre-built nootropic stack in a single whole-food source, without needing to measure and cap individual powders.
 
 **Optional additions to build on the base:**
 - **Mushroom beta-glucans:** Some evidence for supporting sustained cognitive performance and reducing the effects of stress on focus. Look for fruiting body extracts with verified beta-glucan content, not mycelium-on-grain.

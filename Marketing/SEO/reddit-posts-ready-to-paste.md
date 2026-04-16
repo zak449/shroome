@@ -57,7 +57,7 @@ I've been stacking a high-concentration mushroom extract into my morning routine
 
 The crash from coffee comes down to how caffeine interacts with your body in isolation. Coffee delivers caffeine fast (blood levels peak within 30-45 min) then drops off. That spike-and-crash curve gives you the jittery high followed by the afternoon wall. Add in coffee's cortisol effects (especially AM consumption) and you get energy instability.
 
-Matcha is the best direct swap I've found, and there's actual science behind why it feels different. Matcha contains both caffeine (~50mg/serving) and L-theanine (~30-40mg), an amino acid that modulates how caffeine affects your brain. L-theanine promotes alpha brain wave activity — calm, focused alertness, the opposite of anxious coffee energy.
+Matcha is the best direct swap I've found, and there's actual science behind why it feels different. Matcha contains both caffeine (~60mg/serving) and L-theanine (~30-40mg), an amino acid that modulates how caffeine affects your brain. L-theanine promotes alpha brain wave activity — calm, focused alertness, the opposite of anxious coffee energy.
 
 The caffeine + L-theanine combo has been studied extensively:
 - L-theanine doesn't reduce caffeine's alertness — it smooths the curve
@@ -123,10 +123,10 @@ L-theanine crosses the blood-brain barrier, promotes alpha brain waves (relaxed 
 **The research:**
 - Multiple double-blind, placebo-controlled studies: caffeine + L-theanine improves sustained attention and task-switching more than caffeine alone
 - Reduces subjective jitters and anxiety
-- Typical studied ratio: 1:1 to 1:2 caffeine:L-theanine (50mg caffeine + 50-100mg L-theanine)
+- Typical studied ratio: 1:1 to 1:2 caffeine:L-theanine (60mg caffeine + 50-100mg L-theanine)
 - Effects within 30-45 min, sustain 4-6 hours
 
-**Natural delivery: matcha.** A 2g ceremonial matcha serving delivers ~50mg caffeine + ~30-40mg L-theanine naturally. Pre-built nootropic stack in a whole-food source.
+**Natural delivery: matcha.** A 2.5g ceremonial matcha serving delivers ~60mg caffeine + ~30-40mg L-theanine naturally. Pre-built nootropic stack in a whole-food source.
 
 **Optional additions:**
 - **Mushroom beta-glucans:** Some evidence for sustained cognitive performance under stress. Look for fruiting body extracts with verified beta-glucan content.
@@ -147,7 +147,7 @@ For lattes specifically, the grade of matcha matters a lot. Culinary grade will 
 
 Ceremonial grade (first harvest, shade-grown 21+ days, stone-ground) has a naturally sweet, umami-rich flavor that works beautifully in a latte without any sweetener. The L-theanine content is also significantly higher in ceremonial grade because of the extended shading period.
 
-My daily process: 2g ceremonial matcha, sifted into a bowl, whisked with 2oz hot water (175F, not boiling), then topped with steamed oat milk. Takes about 3 minutes total once you have the routine down.
+My daily process: 2.5g ceremonial matcha, sifted into a bowl, whisked with 2oz hot water (175F, not boiling), then topped with steamed oat milk. Takes about 3 minutes total once you have the routine down.
 
 On busy mornings I skip the ritual and use a premixed sachet — I helped develop drinkshroome.com which does a ready-to-pour format (ceremonial matcha + mushroom extracts + collagen already dissolved). Tear, pour into milk, done in 15 seconds. Different experience than the traditional whisk but same quality matcha.
 

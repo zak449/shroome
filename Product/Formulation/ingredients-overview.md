@@ -21,14 +21,14 @@ Every ingredient in shroome is there for a reason, at a dose that matters. No pr
 | Grade | Ceremonial |
 | Harvest | First harvest (ichiban-cha) |
 | Cultivation | Shade-grown (minimum 21 days under cover) |
-| Caffeine | ~50mg per serving |
+| Caffeine | ~60mg per serving |
 | L-Theanine | Naturally occurring (~30-40mg) |
 
 **Why it matters:**
 - First-harvest, shade-grown matcha has higher L-theanine content than culinary grades, which promotes calm focus rather than jittery energy
 - 2g is a meaningful ceremonial serving — many competitors use 1-2g of culinary-grade matcha and call it "matcha-powered"
 - The L-theanine + caffeine combination produces sustained alertness without the crash associated with coffee
-- ~50mg caffeine is roughly half a shot of espresso, delivered with a smoother absorption curve
+- ~60mg caffeine is roughly half a shot of espresso, delivered with a smoother absorption curve
 
 **Taste contribution:** Vegetal sweetness, umami depth, the "green" backbone of the drink
 

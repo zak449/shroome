@@ -16,7 +16,7 @@ const faqData = [
       },
       {
         q: "What's the difference between shroomé and matcha powder?",
-        a: `Every matcha product on the market is a powder. Powder requires hot water, a frother, time, and cleanup. <strong>shroomé is the world's first ready-to-pour ceremonial matcha latte.</strong> It's already blended, already emulsified, already perfect. Tear it open. Pour it in. Done. Plus, shroomé stacks three benefits in one sachet: 2g ceremonial matcha, 2g grass-fed collagen, and real mushroom extracts.`,
+        a: `Every matcha product on the market is a powder. Powder requires hot water, a frother, time, and cleanup. <strong>shroomé is the world's first ready-to-pour ceremonial matcha latte.</strong> It's already blended, already emulsified, already perfect. Tear it open. Pour it in. Done. Plus, shroomé stacks three benefits in one sachet: 2.5g ceremonial matcha, 2g grass-fed collagen, and real mushroom extracts.`,
       },
       {
         q: "What flavors does shroomé come in?",
@@ -64,7 +64,7 @@ const faqData = [
     items: [
       {
         q: "Does shroomé contain caffeine?",
-        a: `Yes — each sachet contains approximately <strong>50mg of naturally occurring caffeine</strong> from ceremonial matcha, roughly half a cup of coffee. But the difference is matcha's L-theanine creates smooth, sustained energy — focused alertness for 4–6 hours without the spike, jitters, or crash. Café energy without the cortisol rollercoaster.`,
+        a: `Yes — each sachet contains approximately <strong>60mg of naturally occurring caffeine</strong> from ceremonial matcha, roughly half a cup of coffee. But the difference is matcha's L-theanine creates smooth, sustained energy — focused alertness for 4–6 hours without the spike, jitters, or crash. Café energy without the cortisol rollercoaster.`,
       },
       {
         q: "How does shroomé compare to coffee?",
@@ -127,20 +127,20 @@ const breadcrumbSchema = {
 };
 
 const pills = [
-  "2g Matcha",
+  "2.5g matcha",
   "Collagen",
   "Mushroom Extracts",
   "No Mixing",
   "12 Servings/Box",
-  "50mg Caffeine",
+  "60mg Caffeine",
   "Zero Crash",
 ];
 
 const tickerItems = [
   "The World's First Ready-to-Pour Matcha Latte",
   "✦ Energy Without the Crash",
-  "✦ 2g Matcha · Mushroom Extracts · Collagen",
-  "✦ 50mg Caffeine · Zero Jitters · Actually Tastes Good",
+  "✦ 2.5g matcha · Mushroom Extracts · Collagen",
+  "✦ 60mg Caffeine · Zero Jitters · Actually Tastes Good",
 ];
 
 export default function FAQ() {

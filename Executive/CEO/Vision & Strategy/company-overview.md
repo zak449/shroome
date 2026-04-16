@@ -53,8 +53,8 @@ This is not a marginal difference — it is a fundamentally different product ca
 
 | SKU | Flavor | Contents |
 |---|---|---|
-| SHR-VAN-01 | Vanilla | 2g ceremonial matcha, 200mg mushroom extract, 2g collagen |
-| SHR-STR-01 | Strawberry | 2g ceremonial matcha, 200mg mushroom extract, 2g collagen |
+| SHR-VAN-01 | Vanilla | 2.5g ceremonial matcha, 200mg mushroom extract, 2g collagen |
+| SHR-STR-01 | Strawberry | 2.5g ceremonial matcha, 200mg mushroom extract, 2g collagen |
 
 **Format:** Single-serve sachets
 **Preparation:** Add 6-8oz hot water, stir or shake
