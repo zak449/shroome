@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   title: "shroomé — Café Energy. Home Address.",
-  description: "Ceremonial matcha meets functional mushrooms. 2g. One sachet. Pour over your latte base and feel the shift. Join the pre-launch list for 20% off + free shipping on your first order.",
+  description: "Ceremonial matcha meets functional mushrooms. 2.5g. One sachet. Pour over your latte base and feel the shift. Join the pre-launch list for 20% off + free shipping on your first order.",
   keywords: ["ceremonial matcha latte", "functional mushrooms", "matcha latte", "beta-glucans", "mushroom extract", "collagen peptides", "ready to pour matcha", "matcha sachet", "coffee alternative", "L-theanine", "adaptogenic", "shroomé", "drinkshroome"],
   openGraph: {
     title: "shroomé — Café Energy. Home Address.",

@@ -170,7 +170,7 @@ export function welcomeEmail(email: string, referralCode?: string) {
           <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
             <tr><td style="background-color:rgba(255,255,255,0.06);border-radius:12px;padding:20px 24px;border:1px solid rgba(255,255,255,0.06);">
               <p style="margin:0;">
-                <span style="font-size:36px;font-weight:300;color:${BRAND.lime};font-family:${SERIF};font-style:italic;">2g</span>
+                <span style="font-size:36px;font-weight:300;color:${BRAND.lime};font-family:${SERIF};font-style:italic;">2.5g</span>
                 <span style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-left:12px;"> CEREMONIAL MATCHA</span>
               </p>
               <p style="margin:8px 0 0;font-size:13px;color:rgba(255,255,255,0.4);line-height:1.4;">First-harvest, shade-grown. 60mg caffeine. Not culinary grade \u2014 the real thing.</p>
