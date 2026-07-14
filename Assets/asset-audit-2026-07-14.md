@@ -77,3 +77,17 @@ For each item: what the founder should upload to the Drive "Shroomé" folder (cr
 ## 4. Local-machine items must go to Drive
 
 The founder has indicated some assets live only on their local machine. Anything not in Drive is invisible to the team and to this audit — specifically the likely candidates: logo vector masters, final packaging artwork/dielines, photography selects, and the brand deck. **Upload them to the shared Shroomé Drive folder (folder ID `19ITQU935yQqV8PP57PZGc5Pzzq3FUzb2`) using the subfolder structure suggested in Section 3.** The repo's `public/` assets (logos, sachet renders, recipe images, press image) should also be mirrored to Drive so designers and retail partners can access them without repo access.
+
+---
+
+## Addendum: Gmail Sweep (2026-07-14)
+
+Searched zak@communityattire.com for UPC/GS1/barcode and Shroomé threads.
+
+| Finding | Detail | Action |
+|---|---|---|
+| **UPC files exist but are apparel-side** | "ZKTB060226 UPC files" (2026-07-02, to caicai@for-cheng.com, FUNCHENG FUJIAN) — attachment `ZKTB060226-Z7.zip`. Pattern matches Community Attire/ThreadBeast POs, not Shroomé. | If Shroomé GTINs were assigned from the same GS1 prefix, upload the assignment sheet to the Shroomé Drive folder → codes get wired into SKU catalog + Shopify CSV + seed script (currently `PENDING-GS1`). |
+| **No GS1 correspondence found** | No emails from gs1us.org / gs1.org. | If no GS1 membership exists for Z SQUARED / Shroomé, register at gs1us.org before retail; DTC-only Shopify can launch without UPCs. |
+| **Bolden (bolden.com.br)** | Brand/packaging agency — "[Shroomé] Brand Presentation" (Apr 10), "[Shroomé] Packaging" (Apr 20), "Next steps" (Jun 10). | Final brand deck + sachet/box dielines likely live with Bolden — request final artwork package, upload to Drive. |
+| **Metarom USA** | Flavor house — vanilla & strawberry spec sheets requested from allen.distrito@metaromusa.com (May 8). | Chase spec sheets + COAs for the formula documentation gap. |
+| **Entity + email** | Z Squared Beverages LLC; zk@drinkshroome.com active. Tagline in signature: "CAFÉ ENERGY. HOME ADDRESS." | Use for Shopify store registration details. |
