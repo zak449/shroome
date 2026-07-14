@@ -140,7 +140,7 @@ export function welcomeEmail(email: string, referralCode?: string) {
             Give your friends the same deal.
           </p>
           <p style="margin:0 0 20px;font-size:14px;color:${BRAND.navy};line-height:1.6;opacity:0.7;">
-            Refer 3 friends &rarr; unlock an extra 10% off at launch<br/>(stackable with your existing discount).
+            Every friend who joins through your link = credit on your account:<br/><strong>$5 for your 1st &middot; $10 total at 3 &middot; $15 total at 5.</strong><br/>Real dollars, applied automatically at checkout on drop day.
           </p>
         </td></tr>
         <tr><td style="padding:0 40px 16px;text-align:center;">
@@ -160,7 +160,7 @@ export function welcomeEmail(email: string, referralCode?: string) {
         </td></tr>
         <tr><td style="padding:8px 40px 32px;text-align:center;">
           <p style="margin:0;font-size:12px;color:${BRAND.navy};opacity:0.45;">
-            Share it everywhere. Every friend who joins counts toward your extra 10% off.
+            Credits cap at $15 &mdash; and our top referrer gets a hand-numbered box from case 001.
           </p>
         </td></tr>
       </table>
@@ -306,7 +306,8 @@ export function welcomeEmail(email: string, referralCode?: string) {
                 </td></tr>
               </table>
               <p style="margin:12px 0 0;font-size:11px;color:${G};opacity:0.5;">
-                20% off + free shipping locked in.
+                20% off + free shipping locked in.<br/>
+                reply with your number for SHROOME30 &mdash; it replaces your 20% code. best code wins.
               </p>
             </td></tr>
             <tr><td style="padding:24px 40px 36px;text-align:center;">
