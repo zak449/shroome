@@ -149,7 +149,7 @@ Ceremonial grade (first harvest, shade-grown 21+ days, stone-ground) has a natur
 
 My daily process: 2.5g ceremonial matcha, sifted into a bowl, whisked with 2oz hot water (175F, not boiling), then topped with steamed oat milk. Takes about 3 minutes total once you have the routine down.
 
-On busy mornings I skip the ritual and use a premixed sachet — I helped develop drinkshroome.com which does a ready-to-pour format (ceremonial matcha + mushroom extracts + collagen already dissolved). Tear, pour into milk, done in 15 seconds. Different experience than the traditional whisk but same quality matcha.
+On busy mornings I skip the whisk and use a premixed sachet — I helped develop drinkshroome.com which does a ready-to-pour format (ceremonial matcha + mushroom extracts + collagen already dissolved). Tear, pour into milk, done in 15 seconds. Different experience than the traditional whisk but same quality matcha.
 
 Either way, the upgrade from culinary to real ceremonial grade is night and day for lattes.
 

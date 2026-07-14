@@ -13,7 +13,7 @@
 
 Same convention: `SHR_[stage]_[segment]_[format]_[hook#]`, hook numbers unique within segment+format across ALL stages (library rule). This pack:
 
-- Continues existing segment counters (e.g. ritual SPK is at 03 → this pack starts at 04).
+- Continues existing segment counters (e.g. RIT SPK is at 03 → this pack starts at 04).
 - **Extends `ALL` to MOF**: v1 used `ALL` only for list-wide BOF; this pack uses `SHR_MOF_ALL_*` for list-wide MOF retargeting pools (waitlist non-SMS, engaged social) where the promo item — not a segment story — is the message. Numbering within ALL continues past the BOF/RTG codes already minted (VID at 06 → 07; SPK unused → 01).
 
 ## 0.2 The promo items in one line each
@@ -52,7 +52,7 @@ Library end-card, two changes for this pack: line 2 becomes the earn line — "*
 ### SHR_MOF_RIT_SPK_04 — "she's on my keys now" (charm macro, soft-launch)
 - **Format:** TikTok spark, 9:16, 18s — retargets /lp/ritual visitors (30d non-signup) + RIT engagers
 - **Hook (0–1.5s):** extreme macro, keys lifting off a linen tray in golden light, the little sheep charm swinging into focus: **"you can't buy her. i had to earn her."**
-- **Script / shot timing:** (0–1.5s) macro hook, charm catching light. (1.5–6s) VO, soft-launch energy: "no link. no price. she comes in the first box if you're on the text list — or at three referrals if your group chat loves you." (6–11s) the charm clipped to a tote strap, then a belt loop, one beat each — worn like jewelry, not merch. (11–14s) the ritual answers: tear → pour → swirl (REAL master insert, ≥1.5s) with the keys resting beside the glass. (14–18s) MOF end-card: "not for sale. earned only." + drop line + Lime chip.
+- **Script / shot timing:** (0–1.5s) macro hook, charm catching light. (1.5–6s) VO, soft-launch energy: "no link. no price. she comes in the first box if you're on the text list — or at three referrals if your group chat loves you." (6–11s) the charm clipped to a tote strap, then a belt loop, one beat each — worn like jewelry, not merch. (11–14s) the pour answers: tear → pour → swirl (REAL master insert, ≥1.5s) with the keys resting beside the glass. (14–18s) MOF end-card: "not for sale. earned only." + drop line + Lime chip.
 - **On-screen text beats:** (0s) hook · (4s) "not sold. anywhere." · (8s) "3 referrals = mé" · (15s) "get drop access — shroomé"
 - **Caption:** she's 45 millimeters of pvc and she's never touching a shopping cart. text list gets her in the first box; three referrals earns her outright. #matchatok #keychain #softlaunch #dropculture
 - **CTA / destination:** `Sign up` → /lp/ritual (`utm_content=SHR_MOF_RIT_SPK_04`)
@@ -116,7 +116,7 @@ Library end-card, two changes for this pack: line 2 becomes the earn line — "*
 - **On-screen text beats:** (0s) "who is mé?" · (10s) "mé. as in shroo-mé." · (17s) "not merch. a receipt." · (24s) "get drop access — shroomé"
 - **Caption:** lore drop: the sheep has a name and a no-purchase policy. mé arrives in text-list first boxes or at three referrals. #brandlore #mascot #matcha #keychain
 - **CTA / destination:** `Sign up` → /lp/ritual (`utm_content=SHR_MOF_RIT_VID_04`)
-- **Visual spec — generate:** stills built on `[RENDER: keychain hero]` + `[RENDER: keychain tag detail]` over Firefly plates: "warm evening desk, cream #FDF4EE notebook paper texture, soft lavender #E8D5F0 lamp shadow, intimate macro depth, 9:16, heavy fine grain, empty center." Runway parallax on each still (§4), 3s+ holds — calm-segment pacing in ritual clothes. Mug/steam/swirl = REAL. VO: ElevenLabs ritual voice or founder-adjacent read; **never a founder voice clone.** Lore stays product-true: name, accent, softness — no fabricated origin dates, no fake "since" claims.
+- **Visual spec — generate:** stills built on `[RENDER: keychain hero]` + `[RENDER: keychain tag detail]` over Firefly plates: "warm evening desk, cream #FDF4EE notebook paper texture, soft lavender #E8D5F0 lamp shadow, intimate macro depth, 9:16, heavy fine grain, empty center." Runway parallax on each still (§4), 3s+ holds — calm-segment pacing in maximalist clothes. Mug/steam/swirl = REAL. VO: ElevenLabs RIT-segment voice or founder-adjacent read; **never a founder voice clone.** Lore stays product-true: name, accent, softness — no fabricated origin dates, no fake "since" claims.
 - **Compliance:** no claims. Lore is framing, not fact-claims about provenance. **Disclaimer: N.**
 
 ---
@@ -137,12 +137,12 @@ Library end-card, two changes for this pack: line 2 becomes the earn line — "*
 
 ---
 
-### SHR_MOF_GLW_SPK_04 — "pour. patch. fifteen." (morning ritual stack)
-- **Format:** TikTok spark, 9:16, 22s — retargets GLW engagers; real creator (ritual documentarian archetype)
+### SHR_MOF_GLW_SPK_04 — "pour. patch. fifteen." (the morning stack)
+- **Format:** TikTok spark, 9:16, 22s — retargets GLW engagers; real creator (morning documentarian archetype)
 - **Hook (0–1.5s):** creator taps a gel patch against the mirror like a credential: **"my morning has a 15-minute intermission and both leads are matcha-adjacent."**
-- **Script / shot timing:** (0–1.5s) mirror hook. (1.5–7s) the stack, one beat each: tear the sachet, pour, the swirl breathes (REAL master); patches on while the latte settles. (7–14s) the intermission montage — patches on, mug in hand, journal open, sunlight; timer chip counts 15:00 → 0:00 in three jumps. VO: "the drink does its thing. the gels cool and hydrate while i pretend to read. fifteen minutes, two rituals, zero extra effort." (14–18s) patches off, one blink to camera, sip. (18–22s) end-card: "the gift in box 3 — or five referrals gets you the box early. get drop access."
+- **Script / shot timing:** (0–1.5s) mirror hook. (1.5–7s) the stack, one beat each: tear the sachet, pour, the swirl breathes (REAL master); patches on while the latte settles. (7–14s) the intermission montage — patches on, mug in hand, journal open, sunlight; timer chip counts 15:00 → 0:00 in three jumps. VO: "the drink does its thing. the gels cool and hydrate while i pretend to read. fifteen minutes, two upgrades, zero extra effort." (14–18s) patches off, one blink to camera, sip. (18–22s) end-card: "the gift in box 3 — or five referrals gets you the box early. get drop access."
 - **On-screen text beats:** (0s) hook · (4s) "pour." · (6s) "patch." · (9s) "15:00" · (19s) "get drop access — shroomé"
-- **Caption:** the intermission is the routine. gels cool + hydrate while the matcha does the drinking part. not sold separately — earned via referrals or every 3rd sub box. #grwm #morningritual #eyepatches #matcha
+- **Caption:** the intermission is the routine. gels cool + hydrate while the matcha does the drinking part. not sold separately — earned via referrals or every 3rd sub box. #grwm #matchalatte #eyepatches #matcha
 - **CTA / destination:** `Sign up` → /lp/glow (`utm_content=SHR_MOF_GLW_SPK_04`)
 - **Visual spec:** all REAL footage (patch application + consumption = real humans, real product — book this only after gel samples land; until then this ad is queued, not trafficked). Blush grade, vanity-kitchen crossover set per creative-direction glow world. `[RENDER: gels box]` may appear only as a shelf insert if the real box isn't printed yet.
 - **Compliance:** cosmetic sensory language only ("cool," "hydrate"). No claims about the drink in this cut → **Disclaimer: N** (if a "supports skin health" line gets added in edit, flip to Y). Creator passes the pour test + claims quiz; no results promises, no timelines.
@@ -150,7 +150,7 @@ Library end-card, two changes for this pack: line 2 becomes the earn line — "*
 ---
 
 ### SHR_MOF_GLW_IMG_02 — "the gift in box 3" (subscription tease static)
-- **Format:** Meta static + stories, 4:5/9:16 — retargets glow + ritual LP visitors who scrolled ≥75% (high intent, non-signup) and waitlist non-subscribers
+- **Format:** Meta static + stories, 4:5/9:16 — retargets glow + RIT LP visitors who scrolled ≥75% (high intent, non-signup) and waitlist non-subscribers
 - **Hook (first line):** subscribers get their boxes reserved before every drop. box 3 comes with a secret.
 - **Primary text:** every third delivery on the 24- and 48-sachet subscriptions includes our under-eye gels — the glow you drink, now the glow you wear. cooling, hydrating, not sold separately. subscriptions already skip the drop-day refresh (your allocation is reserved first); the gels are just us saying thanks for staying. drop 001 sold out. get drop access, then pick your cadence when 002 opens.
 - **Headline:** box 3 has a plus-one.
@@ -209,7 +209,7 @@ Library end-card, two changes for this pack: line 2 becomes the earn line — "*
 | SHR_MOF_RIT_VID_04 | keychain | RIT+GLW 25% viewers + waitlist openers non-SMS | Meta reels + TikTok | waitlist joins / SMS opt-in | brand search lift |
 | SHR_MOF_GLW_VID_03 | gels | /lp/glow visitors 30d non-signup + GLW viewers | Meta | waitlist joins | sub intent (LP widget clicks) |
 | SHR_MOF_GLW_SPK_04 | gels | GLW engagers 180d | TikTok | referral starts | waitlist joins |
-| SHR_MOF_GLW_IMG_02 | gels | glow+ritual LP 75%-scroll non-signup + waitlist non-sub | Meta + stories | **sub intent** (plan-picker engagement at open) | waitlist joins |
+| SHR_MOF_GLW_IMG_02 | gels | glow+RIT LP 75%-scroll non-signup + waitlist non-sub | Meta + stories | **sub intent** (plan-picker engagement at open) | waitlist joins |
 | SHR_MOF_GLW_SPK_05 | gels | skincare interest pools + GLW LP bouncers | TikTok | waitlist joins | sub intent |
 | SHR_MOF_FCS_SPK_04 | gels | /lp/focus visitors + FCS engagers | TikTok | waitlist joins (trust unlock) | referral starts |
 | SHR_MOF_CLM_SPK_04 | gels | /lp/calm visitors + CLM engagers | TikTok + Meta reels | waitlist joins | SMS opt-in |

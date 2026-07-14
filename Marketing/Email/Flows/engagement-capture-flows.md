@@ -14,7 +14,7 @@
 |---|---|---|---|
 | 0 | email | waitlist number + personal referral link + **SHROOME20** locked for launch | email, `referral_code`, `referred_by`, `waitlist_position` |
 | 1 | phone (SMS opt-in) | **+10 min early drop access** + **SHROOME30 (replaces the 20)** | phone E.164, `sms_opt_in`, `sms_consent_at` |
-| 2 | flavor + ritual quiz (4 q's) | their **"first pour profile"** + **jump 50 spots** up the list | `flavor_pref`, `temp_pref`, `ritual_time`, `current_drink`, `pour_profile` |
+| 2 | flavor + pour quiz (4 q's) | their **"first pour profile"** + **jump 50 spots** up the list | `flavor_pref`, `temp_pref`, `pour_time`, `current_drink`, `pour_profile` |
 | 3 | birthday | **birthday sachet drop** — a free sachet rides along with their box in their birthday month | `birthday` |
 | 4 | referrals | **$5 / $10 / $15 credit at 1 / 3 / 5** + leaderboard: **top referrer gets case 001, hand-numbered box** | `referral_count`, `referral_credit` |
 | 5 | UGC / follow + join the "pour list" broadcast channel | entry into the **line-skip giveaway** (winner goes to position #1 for the next drop) | `pour_list_joined`, `ugc_entry`, `ig_handle` |
@@ -86,7 +86,7 @@ Global suppressions on every flow: unsubscribed/suppressed profiles, `WAITLIST_C
 | `waitlist_position` | number | signup counter | shown in welcome email |
 | `flavor_pref` | string | quiz | `strawberry` \| `vanilla` \| `both` |
 | `temp_pref` | string | quiz | `hot` \| `iced` |
-| `ritual_time` | string | quiz | `morning` \| `afternoon` |
+| `pour_time` | string | quiz | `morning` \| `afternoon` |
 | `current_drink` | string | quiz | `coffee` \| `energy_drink` \| `matcha` \| `tea` \| `none` |
 | `pour_profile` | string | quiz webhook | computed label, e.g. `iced strawberry sunrise` |
 | `quiz_completed_at` | datetime | quiz webhook | branch key in FLOW A |
@@ -177,7 +177,7 @@ Merge tags are Klaviyo syntax. All body copy is final; layout blocks in [bracket
 > 4 questions:
 > ☐ strawberry or vanilla
 > ☐ hot or iced
-> ☐ morning ritual or afternoon reset
+> ☐ morning pour or afternoon reset
 > ☐ what you currently drink (be honest, coffee people, we love you)
 >
 > what you get for 45 seconds of your life:
@@ -320,7 +320,7 @@ Trigger: FLOW F, scheduled. **Schedule the drop itself so T-10 lands ≥9:00am i
 **SMS 8 — birthday**
 Trigger: FLOW E, 9:00am profile local on `birthday`, yearly.
 
-> shroomé: happy birthday. a birthday sachet drop is riding along free with your next box - no code, it just shows up. from us, for the ritual.
+> shroomé: happy birthday. a birthday sachet drop is riding along free with your next box - no code, it just shows up. from us, for your daily pour.
 
 *141 chars · GSM-7 · 1 segment. Compliance: only sends to profiles with active SMS consent; suppressed profiles excluded automatically by Klaviyo.*
 

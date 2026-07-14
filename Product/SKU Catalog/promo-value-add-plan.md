@@ -11,7 +11,7 @@
 CFO ruling (2026-07-14, binding): **fixed rewards beat percentage discounts** — percentages compound unpredictably; fixed costs have a known ceiling. The promo items are the physical extension of that ruling:
 
 - A promo item has a **fixed, known COGS** and a **perceived value 4–10× that cost**. A percentage discount's cost scales with the order and its perceived value equals exactly its cost. The gift wins on both sides of the ledger.
-- **Neither item is ever positioned as a discount, a freebie-for-everyone, or a consolation prize.** They are earned, gifted, or unlocked — status objects and ritual extensions.
+- **Neither item is ever positioned as a discount, a freebie-for-everyone, or a consolation prize.** They are earned, gifted, or unlocked — status objects and daily-pour extensions.
 - Every placement below must clear the CFO's **30% contribution-margin floor per order** and never push an order past the **30% absolute discount cap** (a $0 gift line item doesn't count against the cap — it's COGS, not discount — but we check contribution anyway).
 
 ## 1. The two instruments
@@ -43,7 +43,7 @@ CFO ruling (2026-07-14, binding): **fixed rewards beat percentage discounts** �
 | # | Ladder step | Instrument | Mechanic | Unit cost/event | What it replaces / moves |
 |---|---|---|---|---|---|
 | P1 | **Waitlist → SMS opt-in** | keychain | surprise-and-delight: SMS-tier members find a Mé keychain **in their first drop box** (unannounced pre-purchase; teased in MOF ads as "the text list gets more than the link") | $1.50, only on conversion, ships inside a box | strengthens the SMS value prop beyond SHROOME30; post-launch, lets us shallow future SMS codes (see swap math) |
-| P2 | **Quiz completion** | keychain (draw) | "build your ritual" profile quiz completers are entered in a **per-drop draw for 100 keychains** (winners' keychains ride in their next order, or ship flat-mail) | capped: 100 × $1.50 = **$150/drop, fixed** | replaces any % incentive for quiz completion; capped cost regardless of volume |
+| P2 | **Quiz completion** | keychain (draw) | "find your pour" profile quiz completers are entered in a **per-drop draw for 100 keychains** (winners' keychains ride in their next order, or ship flat-mail) | capped: 100 × $1.50 = **$150/drop, fixed** | replaces any % incentive for quiz completion; capped cost regardless of volume |
 | P3 | **Referral milestone — 3 converted** | keychain | 3 referrals = Mé keychain, current-drop colorway, tucked into next box (**proposed amendment to `discount-matrix.md` §4** — replaces the $10 credit for the general post-launch program) | $1.50 vs $10 credit → **−$8.50/milestone** | founders keep their promised $5/$10/$15 (committed copy); keychain added as a free goodwill bonus at 3 for founders |
 | P4 | **Referral milestone — 5 converted** | eye gels | 5 referrals = gels 6-pack (replaces the $15 credit in the general program) | $3.25 vs $15 → **−$11.75/milestone** | full 5-referral advocate cost: $5 + $1.50 + $3.25 = **$9.75** vs $30 all-credit — blended cost/acquisition ≈ **$8.07** incl. friend's 15% code, vs ~$12 before |
 | P5 | **Subscription — first box** | keychain | every new subscriber's first delivery includes the keychain (any tier) — announced in the sub widget: "your first box comes with her" | $1.50 one-time per sub | a physical welcome that costs less than one month of one extra % point |
@@ -82,7 +82,7 @@ Margin-floor audit: every placement adds $1.08–3.25 of COGS to orders whose Ba
 2. **Colorway is a lot attribute, not a SKU.** Per the catalog's per-drop doctrine: SHR-KCH-01 stays the single SKU; colorway travels as metafield `shroome.kch_colorway: "002-lavender"` + 3PL lot separation (bin per colorway). No SKU proliferation.
 3. **"Not sold separately" rule.** Keychain: never priced, never sold, no exceptions — the moment it has a price it's merch; while it doesn't, it's proof you're inside. Gels: "not sold separately (yet)" — the (yet) is honest and builds the later $18 SKU launch.
 4. **Numbered / collab editions (later).** Case-001 numbering (P8) is the pilot. Bulk phase unlocks: numbered runs per colorway, a collab colorway with a creator (their colorway, still never for sale — earnable only through their referral link), and an annual "founders colorway" as the 48-tier anniversary gift (slots into the existing perks-ladder "annual founders-style gift").
-5. **Gels stay the ritual bridge, not a collectible.** One box design, recurring availability through the ladder — their scarcity story is *access* ("the gift in box 3," "the 5-referral reward"), not colorways. Two collectible systems would dilute both.
+5. **Gels stay the routine bridge, not a collectible.** One box design, recurring availability through the ladder — their scarcity story is *access* ("the gift in box 3," "the 5-referral reward"), not colorways. Two collectible systems would dilute both.
 
 ## 5. Shopify implementation
 

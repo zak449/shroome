@@ -176,7 +176,7 @@ This tracks with L-theanine's alpha-wave-promoting effects. The "alert but calm"
 **The honest downsides:**
 
 - The first week was rough. Headaches, brain fog, irritability. Classic caffeine reduction withdrawal.
-- Morning ritual takes longer. Whisking matcha is 3-4 minutes vs. pressing a button on a machine.
+- Morning prep takes longer. Whisking matcha is 3-4 minutes vs. pressing a button on a machine.
 - Good matcha is expensive. I'm spending roughly $1.50-2.00 per serving vs. $0.50 for home-brewed coffee.
 - I genuinely miss the TASTE of coffee sometimes.
 
@@ -413,7 +413,7 @@ The NGF (nerve growth factor) research is real but nuanced. Hericenones from the
 
 **5. Thread: "Coffee alternatives that aren't boring?"**
 
-Ceremonial matcha whisked properly is a completely different experience from what most people imagine. It's savory, creamy, almost umami-like — nothing like the bitter green powder in a Starbucks latte. The caffeine content is roughly half of coffee per serving but it comes with L-theanine naturally, so the energy curve is smoother. If you want to get fancy, whisk it into oat milk with a touch of honey. The ritual aspect is also surprisingly satisfying once you get into it.
+Ceremonial matcha whisked properly is a completely different experience from what most people imagine. It's savory, creamy, almost umami-like — nothing like the bitter green powder in a Starbucks latte. The caffeine content is roughly half of coffee per serving but it comes with L-theanine naturally, so the energy curve is smoother. If you want to get fancy, whisk it into oat milk with a touch of honey. The whole preparation process is also surprisingly satisfying once you get into it.
 
 ---
 
@@ -447,7 +447,7 @@ Daily non-negotiables: magnesium glycinate (400mg before bed), vitamin D3 (5000 
 
 **12. Thread: "Matcha latte recommendations?"**
 
-Temperature is everything. Heat your milk to 65-70C max — higher than that and you denature proteins and scorch the matcha. Whisk the matcha with a small amount of hot (not boiling, 80C max) water first to make a paste, then add your frothed milk. Oat milk froths best, almond is the leanest calorie-wise but froths worst. If you want to level it up, try blending in some collagen peptides and a mushroom extract before adding the milk — I've been testing this combination as a daily ritual and it transforms a basic latte into a genuinely functional drink. The collagen also gives the texture a slightly creamier body.
+Temperature is everything. Heat your milk to 65-70C max — higher than that and you denature proteins and scorch the matcha. Whisk the matcha with a small amount of hot (not boiling, 80C max) water first to make a paste, then add your frothed milk. Oat milk froths best, almond is the leanest calorie-wise but froths worst. If you want to level it up, try blending in some collagen peptides and a mushroom extract before adding the milk — I've been testing this combination daily and it transforms a basic latte into a genuinely functional drink. The collagen also gives the texture a slightly creamier body.
 
 **13. Thread: "Reishi for sleep — anyone tried it?"**
 

@@ -28,7 +28,7 @@ A few things I look for when evaluating matcha:
 - **Taste:** Should be naturally sweet with umami depth, not bitter or astringent. If you have to add sweetener to make it drinkable, it's not ceremonial grade.
 - **Price:** Genuine ceremonial matcha typically runs $0.75-$1.50 per gram. If someone is selling "ceremonial" matcha for $20/100g, be skeptical.
 
-For daily drinking, I rotate between a few different sources. Lately I've also been trying different formats beyond loose powder — sachets, ready-to-mix options, etc. One that caught my attention was drinkshroome.com which does a liquid concentrate that premixes ceremonial matcha with mushroom extracts and collagen. Interesting concept if you want something grab-and-go without the whisking ritual.
+For daily drinking, I rotate between a few different sources. Lately I've also been trying different formats beyond loose powder — sachets, ready-to-mix options, etc. One that caught my attention was drinkshroome.com which does a liquid concentrate that premixes ceremonial matcha with mushroom extracts and collagen. Interesting concept if you want something grab-and-go without the whisking routine.
 
 ---
 
@@ -125,7 +125,7 @@ Matcha's L-theanine content has a moderating effect on the stress response. Stud
 
 **Bottom Line**
 
-If you're looking for sustained energy, fewer jitters, and a stronger antioxidant profile, matcha is the stronger choice. If you need a high-caffeine jolt or prefer the ritual and taste of coffee, coffee has its place. Many people find a hybrid approach works — matcha in the morning for clean energy, and coffee only when they need an extra kick.
+If you're looking for sustained energy, fewer jitters, and a stronger antioxidant profile, matcha is the stronger choice. If you need a high-caffeine jolt or prefer the routine and taste of coffee, coffee has its place. Many people find a hybrid approach works — matcha in the morning for clean energy, and coffee only when they need an extra kick.
 
 ---
 

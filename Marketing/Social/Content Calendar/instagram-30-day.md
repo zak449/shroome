@@ -2,8 +2,8 @@
 
 > Owner: Social Lead
 > Status: first run SOLD OUT — every CTA drives waitlist signups at drinkshroome.com
-> Voice: lowercase, warm, obsessive-cult-brand, quiet luxury × internet native
-> Ritual language: pour / swirl / glow
+> Voice: lowercase, warm, obsessive-cult-brand, mixed-media pop × internet native (2026-07-14 repositioning: energetic, never earthy)
+> Signature action sequence: pour / swirl / glow (an action sequence, never framed as a ritual)
 > Companion docs: `content-pillars.md`, `tiktok-scripts.md`, `claims-guidelines.md`, `image-guidelines.md`, `brand-colors.md`
 
 ---
@@ -25,7 +25,7 @@
 | **S1 — the crash defector** | 24–32, drinks 2–3 coffees, hates the 2pm dip | wants energy without the spike/crash story |
 | **S2 — the matcha aesthete** | 20–28, already drinks matcha, cares about grade + the visual | converts on beauty + "no whisk" convenience |
 | **S3 — the label reader** | 25–35, supplement-literate, reads doses | converts on 70%+ beta-glucan, fruiting body, no proprietary blends |
-| **S4 — the glow seeker** | 22–30, skin/collagen-first wellness | converts on 2g grass-fed collagen + "glow" ritual language |
+| **S4 — the glow seeker** | 22–30, skin/collagen-first wellness | converts on 2g grass-fed collagen + "glow" routine language |
 | **S5 — the waitlist insider** | existing followers + waitlist members | converts on access, milestones, founder intimacy |
 
 ---
@@ -46,12 +46,12 @@ row 3:  [cream editorial: hands + glass]            [navy tile: waitlist milesto
 - Never two color-pop tiles adjacent; never pink + lime on the same tile.
 
 ### Pinned posts (3)
-1. **Day 2 ASMR reel** ("the 15-second matcha latte") — the ritual, instantly legible.
+1. **Day 2 ASMR reel** ("the 15-second matcha latte") — the pour, instantly legible.
 2. **Day 1 carousel** ("what's actually in the sachet") — the formulation argument.
 3. **Waitlist explainer** → swapped for the **Day 23 restock-date reel** once it posts (Aug 11).
 
 ### Highlights architecture (covers: cream circles, navy line icons)
-- **ritual** — pour/swirl/glow clips, how-to, milk pairings
+- **the pour** (pillar formerly "ritual," renamed 2026-07-14) — pour/swirl/glow clips, how-to, milk pairings
 - **ingredients** — matcha, lion's mane, collagen mini-explainers (each with FDA disclaimer frame where claims appear)
 - **waitlist** — how it works, milestones, "move up the list," restock info
 - **press** — press mentions, founder interviews, community screenshots (with permission)
@@ -122,7 +122,7 @@ tear the sachet, pour the concentrate, watch it swirl into oat milk, done.
 cafe energy. home address.
 sold out for now — waitlist link in bio.
 
-**hashtags:** #matcha #matchaasmr #asmr #morningritual #oatmilklatte #matchatok #shroome
+**hashtags:** #matcha #matchaasmr #asmr #cafeathome #oatmilklatte #matchatok #shroome
 **visual direction:** 9:16, macro tear on the perforation (amplified sound), overhead pour of dark-green liquid into cold oat milk, side-angle swirl bloom (the hero shot), final glass on sunlit counter — glass reads "shroomé." warm light, no music over the tear.
 **story frames (3):** ① reel reshared with "sound on 🔊" gif ② slider: "rate the swirl" ③ link sticker: "the waitlist is the way in."
 **CTA:** watch to the swirl, then link in bio.
@@ -181,7 +181,7 @@ saturday, poured.
 no line, no lid with your name spelled wrong, no whisk.
 just the good glass and the morning you actually wanted.
 
-**hashtags:** #slowmorning #matchalatte #saturdaymorning #morningritual #oatmilk #shroome
+**hashtags:** #saturdaymatcha #matchalatte #saturdaymorning #cafeathome #oatmilk #shroome
 **visual direction:** golden side-light through a window, lived-in kitchen (crumbs allowed), vanilla sachet torn beside a "shroomé" glass of bright-green latte, condensation. warm grade, creamy highlights, navy-brown shadows. candid, no faces needed.
 **story frames (2):** ① the same scene as a 5-second live-photo boomerang of the last swirl ② slider "how's your saturday pace: 🐌→⚡" + link sticker.
 **CTA:** soft — "the waitlist is in bio, whenever."
@@ -191,7 +191,7 @@ just the good glass and the morning you actually wanted.
 ### day 7 — sun jul 26 · STORY-FIRST · community/lifestyle · S5 (+S2)
 **concept:** sunday flavor referendum. no feed post. strawberry vs vanilla bracket in stories.
 
-**story frames (4):** ① blush frame: *"the referendum."* poll: strawberry 🍓 vs vanilla 🌼 ② pink tile: strawberry case — "bright, fruity, tastes like a soft launch" ③ cream tile: vanilla case — "warm, floral, grounding" ④ results teaser + question box "defend your vote" + link sticker "whichever wins, the waitlist pours first."
+**story frames (4):** ① blush frame: *"the referendum."* poll: strawberry 🍓 vs vanilla 🌼 ② pink tile: strawberry case — "bright, fruity, tastes like a soft launch" ③ cream tile: vanilla case — "warm, floral, cozy" ④ results teaser + question box "defend your vote" + link sticker "whichever wins, the waitlist pours first."
 **visual direction:** flat brand-color frames (#FFB7D1 vs #FDF4EE), sachet photos as the "candidates," Syne bold labels.
 **CTA:** vote, then link sticker to waitlist.
 
@@ -226,7 +226,7 @@ these statements have not been evaluated by the food and drug administration. th
 **concept:** cross-post of TikTok script 3 ("morning routine: before vs after") — chaos coffee morning vs one-sachet morning.
 
 **caption:**
-same morning. different ritual.
+same morning. different energy.
 left: grinder, filters, a spill, an apology to your calendar.
 right: tear, pour, swirl, out the door.
 supports healthy energy levels without the drama.
@@ -234,7 +234,7 @@ waitlist for round two — link in bio.
 these statements have not been evaluated by the food and drug administration. this product is not intended to diagnose, treat, cure, or prevent any disease. **[FDA disclaimer]**
 
 **hashtags:** #morningroutine #beforeandafter #matchalatte #quittingcoffee #routine #shroome
-**visual direction:** per script 3 — hard cut to black at the midpoint ("same morning. different ritual."), after-side in warm light, clean counter, single sachet. audio contrast carries it.
+**visual direction:** per script 3 — hard cut to black at the midpoint ("same morning. different energy."), after-side in warm light, clean counter, single sachet. audio contrast carries it.
 **story frames (3):** ① poll: "your morning rn: left / right" ② after-side clip loop ③ link sticker: "switch sides — waitlist in bio."
 **CTA:** comment "left" or "right"; link in bio.
 
@@ -316,7 +316,7 @@ waitlist in bio — round two is coming.
 ### day 14 — sun aug 2 · STORY-FIRST · community · S5
 **concept:** sunday reset, soft touchpoint. no feed post.
 
-**story frames (3):** ① cream frame, Instrument Serif: *"sunday. pour something slow."* ② question box: "what's the one ritual you protect on sundays?" (responses reshared through the evening) ③ soft-lavender frame + link sticker: "ours is in bio."
+**story frames (3):** ① cream frame, Instrument Serif: *"sunday. pour something good."* ② question box: "what's the one part of your sunday you refuse to give up?" (responses reshared through the evening) ③ soft-lavender frame + link sticker: "ours is in bio."
 **visual direction:** quiet, warm, one sachet photo max; this is the exhale day.
 **CTA:** question box + gentle link sticker.
 
@@ -330,7 +330,7 @@ waitlist in bio — round two is coming.
 2. "collagen peptides support skin health and gut health — at meaningful daily amounts."
 3. "a lot of drinks add a sprinkle for the label. we add 2g of grass-fed, hydrolyzed peptides per sachet."
 4. "hydrolyzed = broken into peptides your body can actually absorb."
-5. "it dissolves invisibly into the latte. you taste strawberry or vanilla. your ritual does the rest."
+5. "it dissolves invisibly into the latte. you taste strawberry or vanilla. your daily pour does the rest."
 6. navy CTA tile: "glow is a verb here. waitlist in bio." + FDA disclaimer small print.
 
 **caption:**
@@ -352,7 +352,7 @@ these statements have not been evaluated by the food and drug administration. th
 
 **caption (co-authored, on both handles via collab):**
 we handed @[collab] one sachet and zero instructions.
-their verdict on a 15-second latte vs their 4-minute whisk ritual — unscripted.
+their verdict on a 15-second latte vs their 4-minute whisk routine — unscripted.
 (they kept the rest of the box.)
 #partner
 waitlist for round two — link in bio.
@@ -400,7 +400,7 @@ waitlist in bio.
 these statements have not been evaluated by the food and drug administration. this product is not intended to diagnose, treat, cure, or prevent any disease. **[FDA disclaimer]**
 
 **hashtags:** #quittingcoffee #30daychallenge #mushroommatcha #matchalatte #nocrash #shroome
-**visual direction:** per script 4 — same pour ritual anchoring each "day," text overlays DAY 1/7/14/30, building music. "individual results may vary" as on-screen text at day 14/30 beats.
+**visual direction:** per script 4 — same pour sequence anchoring each "day," text overlays DAY 1/7/14/30, building music. "individual results may vary" as on-screen text at day 14/30 beats.
 **story frames (3):** ① poll: "could you do 30 days off coffee? easy / brutal" ② day-30 clip ③ link sticker: "start your day 1 at restock — waitlist in bio."
 **CTA:** comment your day-1 date; link in bio.
 
@@ -546,14 +546,14 @@ restock 08.18, waitlist first — link in bio.
 ---
 
 ### day 27 — sat aug 15 · REEL · lifestyle/energy · S2 (+S5)
-**concept:** "last quiet saturday" — a slow, beautiful weekend-ritual reel that doubles as a be-ready explainer. the calm before.
+**concept:** "last saturday before" — a beautiful weekend reel that doubles as a be-ready explainer. the deep breath before the drop.
 
 **caption:**
 last quiet saturday before the pour comes back.
 tuesday, 9am ET: waitlist emails go out in signup order. click, check out, done — your sachets ship this month.
-today: practice the ritual. glass, milk, sunlight. we'll bring the green.
+today: rehearse the pour. glass, milk, sunlight. we'll bring the green.
 
-**hashtags:** #weekendritual #matchalatte #restock #slowmorning #pourswirlglow #shroome
+**hashtags:** #weekendmatcha #matchalatte #restock #saturdaymatcha #pourswirlglow #shroome
 **visual direction:** golden weekend light, empty "shroomé" glass + oat milk staged like a place setting; wistful, warm, a little cheeky. end card: "08.18 · 9am ET."
 **story frames (3):** ① reel reshare ② poll: "first order: strawberry / vanilla / both, obviously" ③ countdown + link stickers.
 **CTA:** get on the list this weekend; link in bio.
@@ -625,10 +625,10 @@ All ads: lime CTA button color equivalent ("Sign Up" objective → waitlist), UT
 - **primary text:** most mushroom drinks use mycelium grown on grain — so you're mostly buying grain. shroomé uses dual-extracted lion's mane fruiting body at ≥70% beta-glucans, with the percentage printed on the label. beta-glucans support immune function. these statements have not been evaluated by the food and drug administration. this product is not intended to diagnose, treat, cure, or prevent any disease.
 - **headline:** the number is on the label
 
-### ad 3 — "same morning, different ritual" (from day 9 before/after reel)
+### ad 3 — "same morning, different energy" (from day 9 before/after reel)
 - **why:** the coffee-defector conversion story; before/after structure carries emotion + product demo in one unit. broadest addressable segment.
 - **audience:** S1 crash defector — interests: cold brew, energy drinks, morning routine; age 24–34. placements: reels + stories.
-- **primary text:** same morning. different ritual. ~60mg caffeine with matcha's naturally occurring l-theanine — supports sustained focus and healthy energy levels, one smooth curve instead of a spike. tear, pour, done. join the waitlist for the august restock. these statements have not been evaluated by the food and drug administration. this product is not intended to diagnose, treat, cure, or prevent any disease.
+- **primary text:** same morning. different energy. ~60mg caffeine with matcha's naturally occurring l-theanine — supports sustained focus and healthy energy levels, one smooth curve instead of a spike. tear, pour, done. join the waitlist for the august restock. these statements have not been evaluated by the food and drug administration. this product is not intended to diagnose, treat, cure, or prevent any disease.
 - **headline:** cafe energy. home address.
 
 ### ad 4 — "one ounce, nothing hiding" (from day 1 carousel)
@@ -641,7 +641,7 @@ All ads: lime CTA button color equivalent ("Sign Up" objective → waitlist), UT
 
 ## 5. Collab candidates (archetypes — do not name real people until vetted)
 
-1. **"the matcha grader"** (day 16): 20k–80k followers, matcha-first feed — home-cafe setups, grade reviews, latte art, whisk rituals. high comment-section literacy about harvests and origins. value: credibility transfer — if the person with the $200 whisk approves the 15-second sachet, the aesthete segment converts. deal shape: collab post + story set, product + flat fee, #partner + paid-partnership label.
+1. **"the matcha grader"** (day 16): 20k–80k followers, matcha-first feed — home-cafe setups, grade reviews, latte art, whisk routines. high comment-section literacy about harvests and origins. value: credibility transfer — if the person with the $200 whisk approves the 15-second sachet, the aesthete segment converts. deal shape: collab post + story set, product + flat fee, #partner + paid-partnership label.
 2. **"the evidence-first explainer"** (day 25): 15k–60k followers, dietitian/nutrition-science-adjacent, known for label debunks and "what the research actually says" content, zero woo. value: pre-validates our transparency claims for the label-reader segment days before restock. deal shape: collab reel using their own audit framework, unscripted verdict, #partner + FDA disclaimer in shared caption if claims are voiced.
 
 ---

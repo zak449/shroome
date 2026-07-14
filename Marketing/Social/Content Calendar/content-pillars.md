@@ -138,3 +138,16 @@ The goal is not to go viral — it is to build a community of informed, loyal cu
 - Never use urgency/scarcity language for waitlist or discounts
 - All product claims must be structure/function claims with appropriate disclaimers
 - Influencer content must be FTC-compliant with clear #ad or #partner disclosure
+
+---
+
+## ADDENDUM — 2026-07-14 REPOSITIONING (reads over everything above; body left intact as history)
+
+Founder directive: the word **"ritual"** is retired brand-wide, along with the earthy-wellness register ("ceremony" as a vibe, "sacred," "mindful," "grounded," "earthy," "slow morning"). The competition (Clevr, MUD\WTR, Ryze, the beige wellness aisle) owns that language; shroomé is the anti-earthy matcha — more energy, non-traditional, fun, internet-native, mixed-media (collage / scrapbook-pop / sticker energy; the Poppi/Starface/Graza cultural lane, never Aesop/Celine).
+
+How this changes the pillars above:
+- **Pillar 2 (Lifestyle / Energy):** read "the energy, the ritual, the feeling" as "the energy, the pour, the feeling." Vanilla's taste notes are "warm, floral, cozy" — never "grounding." Saturday's slot is "weekend morning pour content," not "morning ritual content."
+- **Replacement vocabulary:** "the 15 seconds" · "the pour" · "your daily pour" · "the swap" · "café energy" · "routine" (sparingly, functional only) — written naturally, never thesaurus-swapped.
+- **"Ceremonial" survives only as the matcha grade** (ceremonial-grade = first-harvest, shade-grown, stone-ground — a sourcing/quality spec). It never describes a mood, a morning, or the brand.
+- **What doesn't change:** honesty rules, compliant claims, drop mechanics, lowercase voice, Mé the sheep (fun and anti-hustle — she fits the new energy better, not worse), pour/swirl/glow (an action sequence, not a ritual), and quality receipts (real doses, printed).
+- Full detail: `Brand/site-reinvention-blueprint.md` §4 (voice guide, banned list B) and `Marketing/Creative/creative-direction.md` (anti-earthy visual mandate). Segment 1 is renamed "the matcha maximalists" (was "the ritual girlies"); the deployed `/lp/ritual` URL slug is unchanged.

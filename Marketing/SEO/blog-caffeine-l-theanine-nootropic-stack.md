@@ -138,7 +138,7 @@ You can buy caffeine + L-theanine capsules. They work. But there are reasons to 
 - **Bioavailability:** The polyphenol matrix in matcha may enhance absorption and modulate release kinetics in ways that isolated compounds in capsules do not replicate
 - **Additional bioactive compounds:** Matcha contains EGCG (epigallocatechin gallate), chlorophyll, and a spectrum of catechins that have their own well-documented roles in supporting antioxidant status
 - **Sustained release:** The fiber and phytonutrient matrix of whole-leaf matcha creates a more gradual absorption curve than a capsule dissolving in stomach acid
-- **Ritual and consistency:** A daily matcha practice builds a sustainable routine. Capsules are easy to forget. A morning drink is a habit that sticks.
+- **Consistency:** A daily matcha builds a routine that sustains itself. Capsules are easy to forget. A morning drink is a habit that sticks.
 - **No artificial fillers:** Capsules require binding agents, flow agents, and capsule materials. Matcha is one ingredient: ground tea leaves.
 
 ---
@@ -149,7 +149,7 @@ The caffeine + L-theanine stack is not new, experimental, or unproven. It is one
 
 And matcha is the only widely available whole food that naturally delivers both compounds in a clinically relevant ratio, every single serving.
 
-If you are looking for a **matcha focus** solution that goes further, [shroomé](https://drinkshroome.com) starts with ceremonial-grade matcha — the natural caffeine + L-theanine foundation — and adds functional mushroom extracts and collagen peptides for a more complete daily ritual. No synthetic stacks. No capsules. Just the science, delivered the way the tea plant intended.
+If you are looking for a **matcha focus** solution that goes further, [shroomé](https://drinkshroome.com) starts with ceremonial-grade matcha — the natural caffeine + L-theanine foundation — and adds functional mushroom extracts and collagen peptides for a more complete daily pour. No synthetic stacks. No capsules. Just the science, delivered the way the tea plant intended.
 
 ---
 

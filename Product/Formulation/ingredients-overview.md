@@ -74,7 +74,7 @@ Every ingredient in shroome is there for a reason, at a dose that matters. No pr
 ## Flavor Profiles
 
 ### Vanilla
-- **Character:** Warm, floral, grounding
+- **Character:** Warm, floral, cozy
 - **Experience:** Feels like a latte — smooth, comforting, slightly sweet
 - **Best for:** People who love oat milk lattes, chai, warm beverages with depth
 - **Flavor notes:** Madagascar vanilla, subtle caramel warmth, creamy finish

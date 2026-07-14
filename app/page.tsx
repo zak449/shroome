@@ -1143,7 +1143,7 @@ export default function Home() {
             }}
           >
             {[
-              { src: "/sachet-vanilla.png", alt: "shroomé Vanilla matcha sachet — warm, floral, grounding blend", delay: "0s", shadow: "rgba(255,220,180,0.3)", href: "/flavors/vanilla" },
+              { src: "/sachet-vanilla.png", alt: "shroomé Vanilla matcha sachet — warm, floral, cozy blend", delay: "0s", shadow: "rgba(255,220,180,0.3)", href: "/flavors/vanilla" },
               { src: "/sachet-strawberry.png", alt: "shroomé Strawberry matcha sachet — bright, fruity, fresh blend", delay: "1.8s", shadow: "rgba(212,114,122,0.35)", href: "/flavors/strawberry" },
             ].map((s) => (
               <a key={s.alt} href={s.href} style={{ width: "46%", display: "flex", flexDirection: "column", alignItems: "center", textDecoration: "none" }}>
@@ -1173,7 +1173,7 @@ export default function Home() {
           <div {...anim("flavor-cards", 0.3)} style={{ ...anim("flavor-cards", 0.3).style, display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 40, textAlign: "center" }}>
             <a href="/flavors/vanilla" style={{ textDecoration: "none", color: "inherit" }}>
               <h3 style={{ fontFamily: "var(--brand-font-display)", fontStyle: "italic", fontSize: "1.5rem", marginBottom: 8 }}>Vanilla</h3>
-              <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.82rem", color: "rgba(var(--brand-canvas-rgb),0.4)", letterSpacing: "0.06em" }}>Warm · Floral · Grounding</p>
+              <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.82rem", color: "rgba(var(--brand-canvas-rgb),0.4)", letterSpacing: "0.06em" }}>Warm · Floral · Cozy</p>
             </a>
             <a href="/flavors/strawberry" style={{ textDecoration: "none", color: "inherit" }}>
               <h3 style={{ fontFamily: "var(--brand-font-display)", fontStyle: "italic", fontSize: "1.5rem", marginBottom: 8 }}>Strawberry</h3>

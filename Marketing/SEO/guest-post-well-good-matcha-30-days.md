@@ -6,7 +6,7 @@ I have a confession: I was a three-cups-a-day coffee person. Not the leisurely, 
 
 The afternoon crashes had gotten worse. I'd hit a wall around 2 p.m. so hard that no amount of cold brew could pull me out of it. My sleep was fractured. And that low-grade anxiety I kept dismissing as "just stress"? It showed up every morning about 45 minutes after my first cup, right on schedule.
 
-So I did something that felt, frankly, radical for someone who built his identity around the morning coffee ritual: I swapped it for matcha. Specifically, a ceremonial matcha latte sachet — the kind you tear open and pour, no whisking required. I committed to 30 days and kept a journal. Here's what actually happened.
+So I did something that felt, frankly, radical for someone who built his identity around the morning coffee routine: I swapped it for matcha. Specifically, a ceremonial matcha latte sachet — the kind you tear open and pour, no whisking required. I committed to 30 days and kept a journal. Here's what actually happened.
 
 ## Why I Made the Switch
 
@@ -20,7 +20,7 @@ That synergy is what I was chasing.
 
 ## Week One: The Adjustment Period
 
-I won't sugarcoat it — the first three days were humbling. I had a mild headache on day two, which I expected. When you cut your caffeine intake even modestly, your body notices. I also missed the ritual of coffee: the sound of the grinder, the smell filling the kitchen.
+I won't sugarcoat it — the first three days were humbling. I had a mild headache on day two, which I expected. When you cut your caffeine intake even modestly, your body notices. I also missed the theater of coffee: the sound of the grinder, the smell filling the kitchen.
 
 But here's what surprised me. By day four, the headache was gone, and I started noticing something subtle but real. My energy in the morning felt different. Not the sharp spike-and-drop I was used to, but more of a slow ramp. I described it in my journal as "feeling like someone turned a dimmer switch up gradually instead of flipping the lights on."
 

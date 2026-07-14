@@ -94,7 +94,7 @@ Split screen or quick cut. Left side is chaotic. Right side is calm. The contras
 | 0-2s | BEFORE | Alarm blares. Hand slams phone. Person groans into pillow. | Harsh alarm sound. |
 | 2-5s | BEFORE | Stumbling to kitchen. Opens cabinet. Pulls out French press, grinder, filters. Counter is cluttered. | Clumsy sounds. Grinder buzz. |
 | 5-8s | BEFORE | Pouring coffee, spills on counter. Paper towels. Checks time. Panicked face. | Splashing, muttering. |
-| 8-10s | — | HARD CUT TO BLACK. Text: "same morning. different ritual." | Beat drop or silence. |
+| 8-10s | — | HARD CUT TO BLACK. Text: "same morning. different energy." | Beat drop or silence. |
 | 10-13s | AFTER | Same alarm. Hand calmly picks up phone. Stretches. Soft light. | Gentle tone. Calm music begins. |
 | 13-17s | AFTER | Kitchen is clean. One sachet on the counter. Tears it open. Pours into a glass of cold oat milk. Done. | ASMR tear. Pour. Single stir. |
 | 17-21s | AFTER | Sipping the latte by the window. Calm face. Puts on jacket. | Music continues, warm. |
@@ -103,7 +103,7 @@ Split screen or quick cut. Left side is chaotic. Right side is calm. The contras
 
 ### Text Overlays
 - (0s) — "POV: your morning before shroome"
-- (8s) — "same morning. different ritual."
+- (8s) — "same morning. different energy."
 - (17s) — "cafe energy. home address."
 - (24s) — "shroome" + logo
 
@@ -119,7 +119,7 @@ Before section: no music or chaotic/comedic sound. After section: warm lo-fi or 
 
 **Pillar:** Product Education / Lifestyle
 **Duration:** 30 seconds
-**Style:** Vlog/journal format. Each "day" is a quick cut with the same making-the-latte ritual as a visual anchor. Text-heavy with VO.
+**Style:** Vlog/journal format. Each "day" is a quick cut with the same making-the-latte sequence as a visual anchor. Text-heavy with VO.
 
 ### Hook (0-2s)
 Close-up of coffee mug being pushed aside. Shroome sachet slides into frame.
@@ -132,10 +132,10 @@ Close-up of coffee mug being pushed aside. Shroome sachet slides into frame.
 |------|-----|------|-------------------|
 | 0-2s | — | Coffee mug pushed aside. Shroome sachet enters frame. | "I replaced coffee for 30 days." |
 | 2-7s | Day 1 | Tearing sachet, pouring into milk. Skeptical face to camera. | "Day 1. I'm skeptical. This is weird." |
-| 7-12s | Day 7 | Same ritual, more fluid now. Person working at desk mid-afternoon, alert. | "Day 7. No crash at 2pm for the first time in years." |
+| 7-12s | Day 7 | Same pour, more fluid now. Person working at desk mid-afternoon, alert. | "Day 7. No crash at 2pm for the first time in years." |
 | 12-18s | Day 14 | Making the latte. Cut to phone showing Oura Ring sleep score trending up. | "Day 14. Sleeping better. My Oura Ring confirms it." |
 | 18-24s | Day 30 | Confident pour. Smiling. Walking outside with latte, energized. | "Day 30. I don't miss coffee. I didn't expect that." |
-| 24-27s | — | Quick montage: all four pours back-to-back, fast cuts. | "Same ritual. Every morning." |
+| 24-27s | — | Quick montage: all four pours back-to-back, fast cuts. | "Same pour. Every morning." |
 | 27-30s | — | End card: beauty shot of finished latte. Logo. | "shroome. Link in bio." |
 
 ### Text Overlays

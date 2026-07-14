@@ -66,7 +66,7 @@ Drop ledger, Syne 700, Cream strip cards on the Navy hero:
 **Body:** matcha's ~60mg of caffeine arrives alongside naturally occurring l-theanine — the combination people stack on purpose, already stacked by the leaf. it supports sustained focus with a smooth curve instead of a spike, so your deep-work block doesn't end at the crash.
 
 **Block 3 — title:** *fifteen seconds, zero friction*
-**Body:** flow states die in prep time. tear the sachet, pour into milk, one swirl — your entire pre-work ritual now takes less time than opening your task manager. same input, same dose, every single morning.
+**Body:** flow states die in prep time. tear the sachet, pour into milk, one swirl — your entire pre-work setup now takes less time than opening your task manager. same input, same dose, every single morning.
 
 **Small text directly under blocks (12px, Navy 60%):** These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.
 

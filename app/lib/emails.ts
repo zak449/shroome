@@ -120,7 +120,7 @@ export function welcomeEmail(email: string, referralCode?: string) {
     <tr><td style="padding:0;background:linear-gradient(180deg, ${EMAIL.ink} 0%, ${EMAIL.flavorFunctional} 100%);text-align:center;">
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
         <tr><td style="padding:36px 36px 6px;text-align:center;">
-          <p style="margin:0 0 4px;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.4);font-weight:600;">THE RITUAL</p>
+          <p style="margin:0 0 4px;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.4);font-weight:600;">THE 15 SECONDS</p>
           <p style="margin:0;font-size:30px;color:#fff;font-weight:400;font-family:${SERIF};font-style:italic;line-height:1.1;">
             Tear. Pour. <span style="color:${EMAIL.accent};">Feel the shift.</span>
           </p>
@@ -471,7 +471,7 @@ export function sachetEmail(email: string) {
           <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:linear-gradient(180deg, ${alpha("ink",0.8)} 0%, ${alpha("ink",0.35)} 40%, ${alpha("flavorStrawberry",0.5)} 100%);">
             <tr><td style="padding:48px 40px 16px;text-align:center;">
               <p style="margin:0 0 20px;font-size:36px;color:#fff;font-weight:400;font-family:${SERIF};font-style:italic;line-height:1.1;">
-                The ritual is ready.<br/><span style="color:${EMAIL.accent};">Just pour.</span>
+                The matcha is already made.<br/><span style="color:${EMAIL.accent};">Just pour.</span>
               </p>
               <table role="presentation" cellpadding="0" cellspacing="0" style="margin:0 auto;">
                 <tr><td style="background:${EMAIL.accent};border-radius:50px;padding:14px 48px;">

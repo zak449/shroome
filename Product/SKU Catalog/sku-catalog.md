@@ -194,7 +194,7 @@ Per `Product/Compliance & Claims/claims-guidelines.md` — structure/function on
 - ❌ "boosts immunity", "cures/treats/prevents", "clinically proven", disease or drug-alternative claims
 - FDA disclaimer required on every product page / Body HTML: *"These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease."*
 
-Brand voice: lowercase, quiet-luxury-meets-gen-z. Ritual language: **pour / swirl / glow**.
+Brand voice: lowercase, café-energy-meets-gen-z (2026-07-14 repositioning: energetic, never earthy). Signature action sequence: **pour / swirl / glow**.
 
 ---
 

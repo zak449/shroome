@@ -21,7 +21,7 @@ shroome is a **young energy brand**. Every image should feel like it belongs in 
 - Traditional tea ceremony imagery
 - Zen gardens, meditation poses, or "wellness" stock photography
 - Mushrooms in their raw/whole form (no forest floor shots)
-- AI-generated or AI-modified product images — the sachets are sacred
+- AI-generated or AI-modified product images — the sachets are untouchable
 - Generic/fake sachets — ONLY use the real designed sachets (see below)
 - Stock photography of generic supplements or pills
 - Clinical / laboratory aesthetics

@@ -4,6 +4,7 @@
 > Owner: Creative Director
 > Scope: paid social creative for the five segment LPs (`../Segments/segment-strategy.md`) and drop-launch content
 > Prime directive: AI accelerates concepting, b-roll, and variant volume. It never touches the sachet, the label, or the moments where taste credibility lives. See "what NOT to AI-generate" at the bottom — it overrides everything above it.
+> REPOSITIONING NOTE (2026-07-14): visual direction has pivoted to mixed-media energy — collage plates, sticker/badge elements, stop-motion sequences, kinetic transitions (see `creative-direction.md` "anti-earthy mandate"). Generation prompts should skew vivid and layered, never beige/linen/whisper-wellness. Current palette tokens stay until Bolden files land; direction = saturated, not soft-washed. Vocabulary in any generated on-screen text follows the brand ban list (no "ritual," "sacred," "mindful," "grounded," "earthy").
 
 ---
 
@@ -35,7 +36,7 @@
 
 **What it's for:** the dreamy cloud plates, lavender/blush gradient environments, and grain textures the brand system already approves for backgrounds (image-guidelines explicitly allows generated imagery for backgrounds only).
 
-**Why it fits the segments:** /lp/calm lives on clouds ("no crash" made visible); /lp/ritual needs soft-surreal gradient skies. Generating tinted cloud plates in brand hexes beats stock every time.
+**Why it fits the segments:** /lp/calm lives on clouds ("no crash" made visible); /lp/ritual (the matcha-maximalist page — slug kept, segment renamed) needs saturated-surreal gradient skies plus collage/scrapbook texture plates (torn-paper edges, tape, sticker sheets). Generating tinted plates in brand hexes beats stock every time.
 
 **Workflow note:** always tint to palette (Lavender #D4B8E0, Blush #FFE0EC, Soft Lavender #E8D5F0), add grain per creative-direction, and keep clouds clearly stylized — never photoreal weather that could read as a location claim. File naming: `bg-cloud-[palette]-[nn].png` into `Assets/Backgrounds/`.
 
@@ -69,7 +70,7 @@
 
 **What it's for:** VO on b-roll edits, hook-variant testing (same cut, 12 different opening lines), multilingual tests later, and scratch VO to time edits before a human session.
 
-**Why it fits the segments:** each segment wants a different vocal energy — hushed and intimate for /lp/ritual ASMR-adjacent cuts, warm and wry for /lp/pour mom-humor, precise and calm for /lp/focus. Design one saved voice per segment for consistency (name them after the LP slugs).
+**Why it fits the segments:** each segment wants a different vocal energy — bright and conspiratorial for /lp/ritual (the matcha maximalists; ASMR texture stays, whisper-wellness delivery goes), warm and wry for /lp/pour mom-humor, precise and calm for /lp/focus. Design one saved voice per segment for consistency (name them after the LP slugs).
 
 **Workflow note:** never clone the founder's voice or any real person's. Founder-voice content is recorded by the founder — that authenticity is a brand asset (see the NOT list). Disclose synthetic VO where platform rules require; keep VO scripts inside compliance language.
 
@@ -97,7 +98,7 @@
 
 ## What NOT to AI-generate (override list — no exceptions, no "just this once")
 
-1. **The sachets and any packshot.** The sachet design is locked and sacred (image-guidelines). No generation, no AI modification, no "cleanup" that touches the pouch or label. Real photography only, and AI concepting comps never leave internal review.
+1. **The sachets and any packshot.** The sachet design is locked and untouchable (image-guidelines). No generation, no AI modification, no "cleanup" that touches the pouch or label. Real photography only, and AI concepting comps never leave internal review.
 2. **The nutrition/supplement facts panel and any label text.** A hallucinated dose is a regulatory incident, not a typo. Panels are rendered from source design files only.
 3. **The real pour and swirl for taste credibility.** The hero pour/swirl macro footage — the moment that sells taste — must be real concentrate hitting real milk. AI liquid is for stylized dream inserts only, never passed off as product.
 4. **The founder's face and voice.** No avatar founder, no voice clone, no synthetic founder-to-camera. Community content (content-pillars: founder is a real person making this happen) trades entirely on authenticity.

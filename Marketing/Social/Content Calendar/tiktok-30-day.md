@@ -2,7 +2,7 @@
 
 > owner: social lead
 > state: first run SOLD OUT. every cta → waitlist at drinkshroome.com. "the next pour drops soon."
-> voice: lowercase, warm, obsessive-cult-brand energy. quiet luxury × internet native.
+> voice: lowercase, warm, obsessive-cult-brand energy. mixed-media pop × internet native (2026-07-14 repositioning: energetic, never earthy).
 > builds on: `Marketing/Social/tiktok-scripts.md` + `Content Calendar/content-pillars.md`
 > compliance: structure/function claims only (see `Product/Compliance & Claims/claims-guidelines.md`). "calm, focused energy" — never treat/cure/prevent. days flagged 🛡️ make a claim and must carry the FDA disclaimer in caption.
 > scarcity note: the pillars doc bans *manufactured* urgency. this month's scarcity is factual — we sold out. we state facts (sold out, waitlist open, restock in production). no fake countdowns, no fake "only 3 left."
@@ -13,9 +13,9 @@
 ## posting cadence & timing
 
 - **1 post/day, 30 days straight.** tiktok first; repurpose to reels 24–48h later.
-- **timing:** ritual/ASMR/GRWM content posts **7–8am ET** (catch the morning-scroll audience mid-craving). education, rants, and founder content post **6–8pm ET** (longer watch-time window). waitlist-crescendo posts in week 4 post **7am ET sharp** — train the audience that shroomé news arrives with their morning.
+- **timing:** pour/ASMR/GRWM content posts **7–8am ET** (catch the morning-scroll audience mid-craving). education, rants, and founder content post **6–8pm ET** (longer watch-time window). waitlist-crescendo posts in week 4 post **7am ET sharp** — train the audience that shroomé news arrives with their morning.
 - **batching:** film all ASMR pour days in one shoot (same setup, same glass, same light — repetition builds the recognizable asset). film both founder days in one sitting for consistent energy.
-- **weekly spine:** wk1 world-building + sold-out story → wk2 ingredient science made delicious → wk3 ritual/identity + UGC bait → wk4 waitlist FOMO crescendo + restock teasers.
+- **weekly spine:** wk1 world-building + sold-out story → wk2 ingredient science made delicious → wk3 pour-identity + UGC bait → wk4 waitlist FOMO crescendo + restock teasers.
 
 ## 5 evergreen hook formulas (reusable forever)
 
@@ -49,7 +49,7 @@
 ---
 
 ## day 1 — mon jul 20
-- **pillar:** community · **segment:** ritual girlies · **format:** founder story (1 of 2)
+- **pillar:** community · **segment:** matcha maximalists · **format:** founder story (1 of 2)
 - **HOOK (0–1.5s):** founder direct to camera, slightly too close, deadpan: **"so. we sold out in eleven days and i need to explain what happens next."**
 
 **script / shot list**
@@ -62,13 +62,13 @@
 
 - **sound:** no music for the first 6s (raw talking = trust), then soft warm lo-fi pad under the rest. resolve on the end card.
 - **on-screen text:** (0s) "we sold out." · (7s) "the last sachet in the studio" · (14s) "restock: in production" · (20s) "waitlist: open" · (26s) "shroomé — the next pour drops soon"
-- **caption:** eleven days. we thought we made enough. we were wrong and we're weirdly emotional about it. the next run is in production — waitlist is open if you want first pour. #matcha #matchatok #smallbusiness #foundertok #morningritual
+- **caption:** eleven days. we thought we made enough. we were wrong and we're weirdly emotional about it. the next run is in production — waitlist is open if you want first pour. #matcha #matchatok #smallbusiness #foundertok #cafeathome
 - **CTA:** waitlist at drinkshroome.com — the next pour drops soon.
 
 ---
 
 ## day 2 — tue jul 21
-- **pillar:** lifestyle/energy · **segment:** ritual girlies · **format:** ASMR pour (1 of 7) ⭐ spark-ad candidate
+- **pillar:** lifestyle/energy · **segment:** matcha maximalists · **format:** ASMR pour (1 of 7) ⭐ spark-ad candidate
 - **HOOK (0–1.5s):** dead silence, extreme macro of fingers on the sachet notch, one line of text: **"the sound the waitlist is waiting for."** then the tear — loud.
 
 **script / shot list**
@@ -82,7 +82,7 @@
 
 - **sound:** 100% sound design — tear, pour, liquid bloom, glass on counter. a barely-there ambient pad from 8s. no vocals, no beat.
 - **on-screen text:** (0s) hook line · (10s) "pour / swirl / glow" · (19s) "sold out. next pour soon." · (23s) "shroomé"
-- **caption:** we can't sell you one right now. we can still ruin your feed with the sound. #asmr #matchaasmr #matcha #oatmilk #morningritual #pourswirlglow
+- **caption:** we can't sell you one right now. we can still ruin your feed with the sound. #asmr #matchaasmr #matcha #oatmilk #cafeathome #pourswirlglow
 - **CTA:** get in line for the next pour → drinkshroome.com
 
 ---
@@ -95,7 +95,7 @@
 1. (0–1.5s) POV reaction shot — phone light on face, disbelief.
 2. (1.5–5s) screen record: tapping through drinkshroome.com → "SOLD OUT" on both flavors. dramatic zoom on the words.
 3. (5–9s) whip to friend across the table calmly sipping a bright green latte from a shroomé cup. she shrugs.
-4. (9–14s) rapid montage of the friend's ritual (tear, pour, swirl) shot like a flex — 3 fast cuts.
+4. (9–14s) rapid montage of the friend's fifteen seconds (tear, pour, swirl) shot like a flex — 3 fast cuts.
 5. (14–19s) back to POV face: typing into the waitlist field with aggressive determination. submit. exhale.
 6. (19–23s) both at the table now, sharing the latte with two straws. text on end card.
 
@@ -132,20 +132,20 @@
 **script / shot list**
 1. (0–1.5s) mirror shot, sachet held up, mock-solemn face.
 2. (1.5–6s) skincare steps, quick cuts. VO: "rationing behavior. i've been saving this strawberry one for a good day. today is a friday, which counts."
-3. (6–11s) kitchen: the ritual, shot soft and pink-toned — tear, pour into iced milk, the swirl blushing green through white.
+3. (6–11s) kitchen: the pour, shot soft and pink-toned — tear, pour into iced milk, the swirl blushing green through white.
 4. (11–16s) back at the mirror doing makeup with the drink in frame, sips between steps. VO: "the strawberry one tastes like a fruity, fresh matcha — not candy. we'll fight about this in the comments."
 5. (16–21s) outfit check, latte in hand, shroomé cup visible.
 6. (21–25s) last sip dramatization — clutches empty glass. text on end card.
 
 - **sound:** soft-girl GRWM archetype — dreamy, airy, light percussion. voiceover sits on top.
 - **on-screen text:** (0s) hook · (7s) "the last one." · (13s) "strawberry: bright, fruity, fresh" · (22s) "restock soon. i'll be first in line."
-- **caption:** rationing my own product like it's the regency era. waitlist is open so this never happens to you. #grwm #matchatok #matcha #strawberrymatcha #morningritual
+- **caption:** rationing my own product like it's the regency era. waitlist is open so this never happens to you. #grwm #matchatok #matcha #strawberrymatcha #cafeathome
 - **CTA:** drinkshroome.com — the next pour drops soon.
 
 ---
 
 ## day 6 — sat jul 25
-- **pillar:** lifestyle/energy · **segment:** ritual girlies · **format:** ASMR pour (2 of 7)
+- **pillar:** lifestyle/energy · **segment:** matcha maximalists · **format:** ASMR pour (2 of 7)
 - **HOOK (0–1.5s):** slow push-in on a sunlit kitchen counter, one sachet, one glass. text: **"no talking. just the swirl. saturday edition."**
 
 **script / shot list**
@@ -158,7 +158,7 @@
 
 - **sound:** rain-on-window ambience under real pour sounds. no music until a single warm piano note at the sip.
 - **on-screen text:** (0s) hook · (12s) "pour / swirl / glow" · (21s) "shroomé — waitlist open"
-- **caption:** warm milk version for the slow mornings. the swirl hits different with steam. #asmr #matchaasmr #slowmorning #matcha #morningritual
+- **caption:** hot version unlocked. the swirl hits different with steam. #asmr #matchaasmr #hotmatcha #matcha #cafeathome
 - **CTA:** be there for the restock → drinkshroome.com
 
 ---
@@ -197,7 +197,7 @@
 2. (1.5–7s) greenscreen over diagram text "mycelium grown on grain." VO: "most mushroom products use mycelium grown on grain — you're largely drinking the grain it grew on."
 3. (7–13s) cut to hands holding the sachet. VO: "shroomé uses dual-extracted lion's mane fruiting body — the actual mushroom — standardized to seventy percent or more beta-glucans."
 4. (13–18s) macro of back label, finger under "≥70% beta-glucan." VO: "beta-glucans are the compounds studied for immune support. if a brand won't print the percentage, ask why."
-5. (18–23s) the ritual as proof-of-life: tear, pour, swirl. VO: "and it's in a matcha latte, not a chalky brown mystery."
+5. (18–23s) the pour as proof-of-life: tear, pour, swirl. VO: "and it's in a matcha latte, not a chalky brown mystery."
 6. (23–26s) direct to camera: "read your labels. even ours." end card.
 
 - **sound:** exposé-editorial beat — restrained tension, one bass hit on "rice," resolves clean at the pour.
@@ -228,19 +228,19 @@
 ---
 
 ## day 10 — wed jul 29
-- **pillar:** lifestyle/energy · **segment:** ritual girlies · **format:** reply-to-comment (1 of 2)
+- **pillar:** lifestyle/energy · **segment:** matcha maximalists · **format:** reply-to-comment (1 of 2)
 - **HOOK (0–1.5s):** video-reply bubble on screen showing the comment "ok but does the strawberry one ACTUALLY taste like strawberry," founder mid-sip, eyebrows up: **"loaded question. let's settle it."**
 
 **script / shot list**
 1. (0–1.5s) comment bubble + hook, founder holding both sachets like a sommelier.
 2. (1.5–6s) strawberry pour into iced milk — the pink sachet, the green swirl. VO: "it's not candy strawberry. it's bright, fruity, fresh — the strawberry is a top note, the matcha is still the main character."
 3. (6–11s) taste test on camera, honest pause, describe like a wine person being self-aware about it.
-4. (11–16s) vanilla pour for contrast. VO: "vanilla is the warm one — floral, grounding, tastes like the cafe version of a deep breath."
+4. (11–16s) vanilla pour for contrast. VO: "vanilla is the warm one — floral, cozy, tastes like the cafe version of a deep breath."
 5. (16–21s) side-by-side glasses, pointing: "date-with-yourself flavor" / "sunday-morning flavor."
 6. (21–25s) "which team are you? wrong answers in the comments." end card.
 
 - **sound:** cozy talky vlog archetype — soft beat, conversational, ducks under VO.
-- **on-screen text:** (0s) the comment bubble · (4s) "strawberry: bright · fruity · fresh" · (13s) "vanilla: warm · floral · grounding" · (22s) "team strawb or team vanilla?"
+- **on-screen text:** (0s) the comment bubble · (4s) "strawberry: bright · fruity · fresh" · (13s) "vanilla: warm · floral · cozy" · (22s) "team strawb or team vanilla?"
 - **caption:** replying to the most-asked question in our comments. team strawberry or team vanilla — this decides your whole personality btw. #strawberrymatcha #matchatok #matcha #tastetest #vanillamatcha
 - **CTA:** pick your flavor now, pour it after the restock → drinkshroome.com
 
@@ -260,7 +260,7 @@
 
 - **sound:** glowy GRWM archetype — warm r&b-adjacent instrumental, soft claps.
 - **on-screen text:** (0s) hook · (8s) "2g grass-fed collagen. every sachet." · (13s) "supports skin health*" · (22s) "*see caption — shroomé"
-- **caption:** the glow step you drink. collagen peptides support skin health — 2g in every sachet, printed on the label. *these statements have not been evaluated by the fda. this product is not intended to diagnose, treat, cure, or prevent any disease.* #collagenlatte #grwm #glowup #matcha #skintok #morningritual
+- **caption:** the glow step you drink. collagen peptides support skin health — 2g in every sachet, printed on the label. *these statements have not been evaluated by the fda. this product is not intended to diagnose, treat, cure, or prevent any disease.* #collagenlatte #grwm #glowup #matcha #skintok #cafeathome
 - **CTA:** waitlist for the next pour → drinkshroome.com
 
 ---
@@ -298,13 +298,13 @@
 
 - **sound:** minimal focus-beat archetype — study-playlist energy, clean and unhurried.
 - **on-screen text:** (0s) hook · (4s) "caffeine + l-theanine" · (9s) "calm, focused energy" · (15s) "2:47pm. still fine." · (24s) "shroomé — waitlist open"
-- **caption:** ~60mg caffeine + l-theanine from ceremonial matcha = supports sustained focus and healthy energy levels. the 2pm version of you says thanks. *these statements have not been evaluated by the fda. this product is not intended to diagnose, treat, cure, or prevent any disease.* #quittingcoffee #matcha #ltheanine #focustok #matchalatte #morningritual
+- **caption:** ~60mg caffeine + l-theanine from ceremonial matcha = supports sustained focus and healthy energy levels. the 2pm version of you says thanks. *these statements have not been evaluated by the fda. this product is not intended to diagnose, treat, cure, or prevent any disease.* #quittingcoffee #matcha #ltheanine #focustok #matchalatte #cafeathome
 - **CTA:** the next pour drops soon → drinkshroome.com
 
 ---
 
 ## day 14 — sun aug 2
-- **pillar:** lifestyle/energy · **segment:** ritual girlies · **format:** ASMR pour (4 of 7) — macro slow-mo
+- **pillar:** lifestyle/energy · **segment:** matcha maximalists · **format:** ASMR pour (4 of 7) — macro slow-mo
 - **HOOK (0–1.5s):** black screen, then the pour erupts in 40%-speed macro. text: **"30ml of concentrate hitting oat milk at 40% speed. that's the video. that's all of it."**
 
 **script / shot list**
@@ -323,17 +323,17 @@
 ---
 ---
 
-# WEEK 3 — ritual & identity + UGC bait (aug 3–9)
+# WEEK 3 — pour & identity + UGC bait (aug 3–9)
 
 ---
 
 ## day 15 — mon aug 3
-- **pillar:** lifestyle/energy · **segment:** ritual girlies · **format:** day-in-my-life
-- **HOOK (0–1.5s):** face-down in pillow, one hand holding a sachet aloft, text: **"day in my life as someone whose entire personality is a 15-second ritual."**
+- **pillar:** lifestyle/energy · **segment:** matcha maximalists · **format:** day-in-my-life
+- **HOOK (0–1.5s):** face-down in pillow, one hand holding a sachet aloft, text: **"day in my life as someone whose entire personality is 15 seconds long."**
 
 **script / shot list**
 1. (0–1.5s) pillow hook, sachet raised like a torch.
-2. (1.5–6s) 7:04am: the ritual — tear, pour, swirl — shot identically to every ASMR day (repetition = brand).
+2. (1.5–6s) 7:04am: the fifteen seconds — tear, pour, swirl — shot identically to every ASMR day (repetition = brand).
 3. (6–11s) 8:30am: walking to work, shroomé cup in hand, headphones, main-character pacing.
 4. (11–16s) 12:15pm: desk lunch, still locked in; coworker's energy-drink can in soft-focus foreground for contrast (no brand visible).
 5. (16–21s) 6:40pm: gym bag open — the spare sachet in the side pocket makes a cameo but doesn't get used. text: "she's for tomorrow."
@@ -341,18 +341,18 @@
 
 - **sound:** day-in-life vlog archetype — warm, mid-tempo, one track the whole way through (continuity = calm).
 - **on-screen text:** timestamps per scene · (22s) "tomorrow's pour, staged tonight" · (25s) "shroomé"
-- **caption:** the ritual takes 15 seconds. thinking about the ritual takes all day. #dayinmylife #morningritual #matcha #matchatok #routinetok
-- **CTA:** get on the waitlist so your ritual can start too → drinkshroome.com
+- **caption:** the pour takes 15 seconds. thinking about the pour takes all day. #dayinmylife #cafeathome #matcha #matchatok #routinetok
+- **CTA:** get on the waitlist so your daily pour can start too → drinkshroome.com
 
 ---
 
 ## day 16 — tue aug 4
-- **pillar:** community · **segment:** ritual girlies · **format:** stitch/duet bait — COMMUNITY/DUET DAY
+- **pillar:** community · **segment:** matcha maximalists · **format:** stitch/duet bait — COMMUNITY/DUET DAY
 - **HOOK (0–1.5s):** direct to camera, holding the glass up like a toast: **"show me your morning pour. i'll go first."**
 
 **script / shot list**
 1. (0–1.5s) the toast hook, dead center framing (leave the left half of frame visually calm — duet-friendly composition).
-2. (1.5–7s) "mine takes fifteen seconds" — the ritual, full sequence, clean and unshowy.
+2. (1.5–7s) "mine takes fifteen seconds" — the pour, full sequence, clean and unshowy.
 3. (7–12s) "and i time it to the first song of my walking playlist." headphone tap, sip.
 4. (12–17s) "duet this with yours. coffee people welcome. tea people welcome. we don't judge, we recruit."
 5. (17–22s) three fast fake-outs of "other pours" (orange juice, drip coffee, water bottle) played straight — permission structure for anyone to join.
@@ -360,7 +360,7 @@
 
 - **sound:** open with clean room tone for duet-ability, then a bouncy communal beat. leave audio headroom — duetters will talk over it.
 - **on-screen text:** (0s) hook · (13s) "duet this 🫱" · (23s) "best pour gets a first-run relic + front of the waitlist"
-- **caption:** duet with your morning pour — any drink counts. our favorite gets one of the last first-run sachets in existence + a front-of-line spot for the restock. #duetthis #morningritual #matchatok #matcha #communitycheck
+- **caption:** duet with your morning pour — any drink counts. our favorite gets one of the last first-run sachets in existence + a front-of-line spot for the restock. #duetthis #cafeathome #matchatok #matcha #communitycheck
 - **CTA:** everyone else: drinkshroome.com, the next pour drops soon.
 
 ---
@@ -409,7 +409,7 @@
 
 **script / shot list**
 1. (0–1.5s) floor-sit hook. handheld, imperfect framing on purpose.
-2. (1.5–8s) VO over old photos/screen grabs: "i was the four-coffees-a-day person. loved the ritual, hated the spike-and-crash. every 'better' option was a powder that tasted like a chore."
+2. (1.5–8s) VO over old photos/screen grabs: "i was the four-coffees-a-day person. loved the habit, hated the spike-and-crash. every 'better' option was a powder that tasted like a chore."
 3. (8–14s) b-roll: early kitchen experiments — rows of test glasses, tasting spoons, notes (no powders in frame; show liquid test batches). VO: "so the brief became: cafe-grade, liquid, fifteen seconds, ingredients i'd defend line by line."
 4. (14–20s) the first-ever sachet prototype held next to the current one. VO: "eleven months between these two. the waitlist existing at all still doesn't feel real."
 5. (20–25s) founder pours one, swirl, sip, small private smile. "anyway. the next batch is for you. literally, it's already claimed."
@@ -417,7 +417,7 @@
 
 - **sound:** sentimental-but-not-sad archetype — warm acoustic, tape hiss, human.
 - **on-screen text:** (0s) hook · (10s) "the brief: 15 seconds, no compromises" · (16s) "prototype → now" · (26s) "shroomé — thank you"
-- **caption:** founder story, unabridged-ish. thank you for making a small idea sell out. the next pour is for you. #foundertok #smallbusiness #startup #matcha #morningritual
+- **caption:** founder story, unabridged-ish. thank you for making a small idea sell out. the next pour is for you. #foundertok #smallbusiness #startup #matcha #cafeathome
 - **CTA:** join the waitlist and be part of chapter two → drinkshroome.com
 
 ---
@@ -442,20 +442,20 @@
 ---
 
 ## day 21 — sun aug 9
-- **pillar:** lifestyle/energy · **segment:** ritual girlies · **format:** POV identity piece
+- **pillar:** lifestyle/energy · **segment:** matcha maximalists · **format:** POV identity piece
 - **HOOK (0–1.5s):** slow pan up from shroomé cup to a knowing look, text: **"pov: you're the friend who always smells faintly of vanilla matcha and allegedly has her life together."**
 
 **script / shot list**
 1. (0–1.5s) the pan-up hook.
 2. (1.5–6s) montage of "the friend" archetype: tidy tote bag (sachet peeking out), book with a bookmark, one (1) perfect glass of matcha.
 3. (6–11s) reality cuts: unmade bed, 47 open browser tabs, laughing — text: "allegedly."
-4. (11–16s) but the ritual is immaculate: tear, pour, swirl in golden light. text: "this part is real though."
+4. (11–16s) but the pour is immaculate: tear, pour, swirl in golden light. text: "this part is real though."
 5. (16–21s) handing a second glass to a friend on the couch — the recruitment moment, both flavors on the table.
 6. (21–25s) cheers clink. end card.
 
 - **sound:** it-girl montage archetype — breezy, strings + soft beat, a wink in it.
 - **on-screen text:** (0s) hook · (8s) "allegedly." · (13s) "this part is real though" · (22s) "shroomé — bring a friend to the waitlist"
-- **caption:** we can't give you her life. we can give you her drink (soon). #matchatok #matcha #thatgirl #morningritual #vanillamatcha
+- **caption:** we can't give you her life. we can give you her drink (soon). #matchatok #matcha #thatgirl #cafeathome #vanillamatcha
 - **CTA:** waitlist for two → drinkshroome.com
 
 ---
@@ -466,7 +466,7 @@
 ---
 
 ## day 22 — mon aug 10
-- **pillar:** community · **segment:** ritual girlies · **format:** greenscreen (milestone)
+- **pillar:** community · **segment:** matcha maximalists · **format:** greenscreen (milestone)
 - **HOOK (0–1.5s):** greenscreen over a blurred analytics dashboard, hands on head: **"the waitlist just did something we did not plan for."**
 
 **script / shot list**
@@ -491,7 +491,7 @@
 **script / shot list**
 1. (0–1.5s) the box-cutter hover hook.
 2. (1.5–6s) THE unboxing — tape rip ASMR, tissue paper, and the first fresh-run sachets in weeks. audible gasp allowed.
-3. (6–12s) inspection ritual played like a sneaker check: seal integrity, print alignment on the "shroomé" serif, the pink of the strawberry sachet against the cream vanilla.
+3. (6–12s) inspection played like a sneaker check: seal integrity, print alignment on the "shroomé" serif, the pink of the strawberry sachet against the cream vanilla.
 4. (12–18s) QC taste test: tear, pour, swirl, sip. long pause. slow nod. "yeah. yeah, that's it."
 5. (18–23s) lining up the sample sachets in a row, camera pushes down the line like a lineup of recruits.
 6. (23–26s) "the rest of the batch clears testing soon." end card.
@@ -512,7 +512,7 @@
 2. (1.5–5s) phone screen: notification banner — "shroomé: the next pour is live (waitlist early access)." thumb hovers.
 3. (5–9s) frantic-but-graceful checkout speedrun: flavor toggled to both, quantity up, confirm. text: "took 40 seconds."
 4. (9–14s) smash cut to a group chat lighting up: "IT'S LIVE" / "already got mine" / "wait what email" — the last text left on read.
-5. (14–19s) days-later cut: doorstep box, opening, the ritual — tear, pour, swirl — savored like a victory lap.
+5. (14–19s) days-later cut: doorstep box, opening, the first pour — tear, pour, swirl — savored like a victory lap.
 6. (19–24s) sip on the balcony, serene. text: "the list knew first."
 7. (24–26s) end card.
 
@@ -529,7 +529,7 @@
 
 **script / shot list**
 1. (0–1.5s) the spotlight hook — noir lighting, one sachet.
-2. (1.5–5s) slow hands, ceremonial care (ours, not tea-ceremony — no tools, just reverence). the tear, gentle.
+2. (1.5–5s) careful hands, collector's-item handling (sneaker-unboxing energy — no tools, just the good glass). the tear, gentle.
 3. (5–11s) the pour, shot like a farewell — slightly slower, the last drops coaxed out, sachet held up empty to the lamp.
 4. (11–17s) the swirl, one unbroken take, warm light bleeding back into the scene as the color blooms (lighting shift = emotional shift).
 5. (17–22s) sip. the empty sachet gets smoothed flat and set down like a keepsake.
@@ -586,21 +586,21 @@
 
 **script / shot list**
 1. (0–1.5s) mask + inbox-refresh hook.
-2. (1.5–6s) sunday-night reset montage: skincare, tidying the kitchen counter, setting out the glass for a morning that doesn't have its sachet yet. text: "the ritual is ready. the pour is pending."
+2. (1.5–6s) sunday-night reset montage: skincare, tidying the kitchen counter, setting out the glass for a morning that doesn't have its sachet yet. text: "the glass is ready. the pour is pending."
 3. (6–11s) scrolling own camera roll of old swirl videos, sighing theatrically.
 4. (11–16s) journaling bit: writing "week goals" — entry one just says "pour." close the journal.
 5. (16–21s) phone placed face-up on the nightstand, notifications ON, volume ON. tucking it in like a pet.
 6. (21–25s) lights out. the phone screen glows once in the dark (no, it's just a software update). end card.
 
 - **sound:** cozy night-routine archetype — soft keys, rain, one comedic record-scratch on the software-update fake-out.
-- **on-screen text:** (0s) hook · (4s) "the ritual is ready. the pour is pending." · (18s) "notifications: ON" · (23s) "soon. — shroomé"
+- **on-screen text:** (0s) hook · (4s) "the glass is ready. the pour is pending." · (18s) "notifications: ON" · (23s) "soon. — shroomé"
 - **caption:** sunday reset but the main task is inbox vigilance. notifications on. faith unwavering. #grwm #sundayreset #nightroutine #matchatok #restock
 - **CTA:** make the wait shorter — waitlist at drinkshroome.com
 
 ---
 
 ## day 29 — mon aug 17
-- **pillar:** community · **segment:** ritual girlies · **format:** ASMR pour (7 of 7) — the teaser
+- **pillar:** community · **segment:** matcha maximalists · **format:** ASMR pour (7 of 7) — the teaser
 - **HOOK (0–1.5s):** a fresh restock-run sachet (from the day-23 samples) placed down in frame with a soft thud, text: **"the next pour drops soon. this is what you're waiting for."**
 
 **script / shot list**
@@ -632,7 +632,7 @@
 
 - **sound:** full-circle archetype — the same warm lo-fi bed from day 1, deliberately. the month rhymes.
 - **on-screen text:** (0s) hook · running list "made ✓ tasted ✓ tested ⏳ email drafted ✓" · (24s) "the next pour drops soon" · (26s) "shroomé — drinkshroome.com"
-- **caption:** the recap, the receipts, and the toast. everything we know about the restock in 27 seconds — save it, send it to your group chat, and be on the list when the email goes out. #restock #matcha #matchatok #smallbusiness #waitlist #morningritual
+- **caption:** the recap, the receipts, and the toast. everything we know about the restock in 27 seconds — save it, send it to your group chat, and be on the list when the email goes out. #restock #matcha #matchatok #smallbusiness #waitlist #cafeathome
 - **CTA:** last call before the email: drinkshroome.com
 
 ---

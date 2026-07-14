@@ -51,7 +51,7 @@ const config: LPConfig = {
       },
       {
         title: "fifteen seconds, zero friction",
-        body: "flow states die in prep time. tear the sachet, pour into milk, one swirl — your entire pre-work ritual now takes less time than opening your task manager. same input, same dose, every single morning.",
+        body: "flow states die in prep time. tear the sachet, pour into milk, one swirl — your entire pre-work setup now takes less time than opening your task manager. same input, same dose, every single morning.",
       },
     ],
   },

@@ -26,7 +26,7 @@ Stage transitions: TOF and MOF run now (waitlist mode). The BOF pack (§3) is bu
 `SHR_[stage]_[segment]_[format]_[hook#]`
 
 - **stage:** `TOF` / `MOF` / `BOF` / `RTG` (BOF retarget)
-- **segment:** `RIT` (ritual) / `GLW` (glow) / `CLM` (calm) / `FCS` (focus) / `PUR` (pour) / `ALL` (list-wide BOF)
+- **segment:** `RIT` (the matcha maximalists — legacy code from the retired "ritual girlies" name; slug /lp/ritual unchanged) / `GLW` (glow) / `CLM` (calm) / `FCS` (focus) / `PUR` (pour) / `ALL` (list-wide BOF)
 - **format:** `IMG` (static), `CAR` (carousel), `VID` (Meta video/reel), `SPK` (TikTok spark-style vertical)
 - **hook#:** two digits, unique within segment+format
 
@@ -34,12 +34,12 @@ Example: `SHR_TOF_RIT_SPK_01`. Every ad below carries its code. UTMs: `utm_sourc
 
 ## 1.3 Testing matrix — the first 6 (launch flight, day 0)
 
-One ad set per segment (ABO, not CBO — we need clean per-segment reads), plus a second ad set on ritual (largest audience, cheapest CPMs, our best-proven organic format). Budget shown as % of daily test budget `[DAILY_TEST_BUDGET]` (recommend $250–300/day minimum for signal in 7 days).
+One ad set per segment (ABO, not CBO — we need clean per-segment reads), plus a second ad set on the matcha maximalists (largest audience, cheapest CPMs, our best-proven organic format). Budget shown as % of daily test budget `[DAILY_TEST_BUDGET]` (recommend $250–300/day minimum for signal in 7 days).
 
 | # | Ad code | Segment | Platform | Why it launches first | Budget |
 |---|---|---|---|---|---|
-| 1 | `SHR_TOF_RIT_SPK_01` | ritual | TikTok | the swirl is our single most thumb-stopping asset; pure-sensory has the broadest cold reach | 15% |
-| 2 | `SHR_TOF_RIT_VID_03` | ritual | Meta | cost-per-cup math — the strongest rational hook for the aesthetic audience | 10% |
+| 1 | `SHR_TOF_RIT_SPK_01` | maximalists | TikTok | the swirl is our single most thumb-stopping asset; pure-sensory has the broadest cold reach | 15% |
+| 2 | `SHR_TOF_RIT_VID_03` | maximalists | Meta | cost-per-cup math — the strongest rational hook for the aesthetic audience | 10% |
 | 3 | `SHR_TOF_GLW_VID_02` | glow | Meta | us-vs-them (scoop vs pour) — proven DTC format, biggest AOV segment | 17.5% |
 | 4 | `SHR_TOF_CLM_VID_02` | calm | Meta | the 2pm split-screen — highest-emotion hook, biggest switching audience | 20% |
 | 5 | `SHR_TOF_FCS_SPK_01` | focus | TikTok | the rice exposé — highest-shareability concept we own (per 30-day calendar data) | 20% |
@@ -79,7 +79,7 @@ Shared spec unless overridden: Meta = 4:5 feed + 9:16 reels/stories cuts; TikTok
 
 ---
 
-## SEGMENT 1 — the ritual girlies → /lp/ritual
+## SEGMENT 1 — the matcha maximalists → /lp/ritual (slug kept; segment renamed 2026-07-14)
 
 Culture cues for this feed: matcha-tok, romanticize-your-life voiceover essays, soft-launch aesthetic (the drink shot like a new relationship), "explaining my order" POVs, saved-video energy ("this is going in my morning-inspo folder"). Palette world: Soft Lavender → Blush gradients, Cream, Pink flavor moments, Lime CTA only.
 
@@ -101,7 +101,7 @@ Culture cues for this feed: matcha-tok, romanticize-your-life voiceover essays, 
 ### SHR_MOF_RIT_CAR_02 — "pour / swirl / glow" (sequence carousel)
 - **Format:** Meta carousel, 5 cards 1:1 — retargets 25% video viewers + LP bouncers
 - **Hook (first line):** the five prettiest seconds of your morning, frame by frame.
-- **Primary text:** you watched the swirl. here's the whole ritual: tear, pour, swirl, settle, sip — fifteen seconds, zero whisk, 2.5g of first-harvest ceremonial matcha. drop 001 sold out before it hit the site. drop access = the drop 002 link before the public, and the text list gets it 10 minutes earlier still.
+- **Primary text:** you watched the swirl. here's the whole move: tear, pour, swirl, settle, sip — fifteen seconds, zero whisk, 2.5g of first-harvest ceremonial matcha. drop 001 sold out before it hit the site. drop access = the drop 002 link before the public, and the text list gets it 10 minutes earlier still.
 - **Cards:** 1) fingers on the sachet notch, caption chip *tear* · 2) concentrate column entering milk, *pour* · 3) full ribbon bloom, *swirl* · 4) resolved sage latte, *glow* · 5) drop ledger card — Navy, Syne 700: "drop 001 — sold out ~~[DROP_001_COUNT] boxes~~ / drop 002 — limited run of [DROP_002_COUNT]" + Lime `get drop access` chip.
 - **Headline (per card):** pour / swirl / glow / drop 002 is limited
 - **Description:** no whisk. no powder. no line.
@@ -116,7 +116,7 @@ Culture cues for this feed: matcha-tok, romanticize-your-life voiceover essays, 
 - **Format:** Meta reels + 4:5 feed video, 22s
 - **Hook (0–1.5s, VO + text):** i did the math on my matcha order and now i can't unsee it.
 - **Primary text:** $8 a cup, 4 cups a week, is a $1,600-a-year situation. shroomé is café-grade ceremonial matcha — 2.5g per sachet, more than most cafés whisk into the order — for about $3 a pour, made prettier than the café makes it. drop 001 sold out; get access before drop 002 goes.
-- **Script / shot timing:** (0–1.5s) receipt macro, thumb tapping the $8 line, VO hook. (1.5–6s) gentle voiceover-essay math over café b-roll: "eight dollars. four times a week. i love her but she's a subscription." (6–13s) cut home: the real ritual — tear, pour, THE SWIRL (real master cut, ≥2s), golden light. VO: "2.5 grams of ceremonial matcha. about three dollars. and the swirl comes home with you." (13–18s) side-by-side text card: "café: $8 + the line / shroomé: ~$3 + your kitchen light." (18–22s) end-card, drop status line, Lime chip.
+- **Script / shot timing:** (0–1.5s) receipt macro, thumb tapping the $8 line, VO hook. (1.5–6s) gentle voiceover-essay math over café b-roll: "eight dollars. four times a week. i love her but she's a subscription." (6–13s) cut home: the real thing — tear, pour, THE SWIRL (real master cut, ≥2s), golden light. VO: "2.5 grams of ceremonial matcha. about three dollars. and the swirl comes home with you." (13–18s) side-by-side text card: "café: $8 + the line / shroomé: ~$3 + your kitchen light." (18–22s) end-card, drop status line, Lime chip.
 - **Headline:** your café order, at home, ~$3.
 - **Description:** drop 002 is a limited run. get access.
 - **CTA / destination:** `Sign Up` → /lp/ritual (`utm_content=SHR_TOF_RIT_VID_03`)
@@ -142,22 +142,22 @@ Culture cues for this feed: matcha-tok, romanticize-your-life voiceover essays, 
 ### SHR_TOF_RIT_SPK_02 — "explaining my order" (POV, culturally current)
 - **Format:** TikTok spark, 9:16, 24s — creator or founder-adjacent talent (real person, real product)
 - **Hook (0–1.5s):** to camera, holding the sachet like a boarding pass: **"explaining my matcha order to the barista i no longer have."**
-- **Script / shot timing:** (0–1.5s) hook, deadpan warmth. (1.5–7s) mock order voice: "hi, yes — iced ceremonial oat matcha, first harvest, shade-grown, extra pretty, no whisk anywhere near it, and can you make it in my kitchen in fifteen seconds. thank you." (7–14s) the ritual answers: tear → pour → swirl (real master insert), golden light. (14–19s) sip, small nod: "she understood the assignment. she IS the assignment." (19–24s) end-card + drop line.
+- **Script / shot timing:** (0–1.5s) hook, deadpan warmth. (1.5–7s) mock order voice: "hi, yes — iced ceremonial oat matcha, first harvest, shade-grown, extra pretty, no whisk anywhere near it, and can you make it in my kitchen in fifteen seconds. thank you." (7–14s) the pour answers: tear → pour → swirl (real master insert), golden light. (14–19s) sip, small nod: "she understood the assignment. she IS the assignment." (19–24s) end-card + drop line.
 - **On-screen text beats:** (0s) hook · (4s) "the order:" list appears line by line · (12s) "pour / swirl / glow" · (20s) "drop 002 — limited run · get drop access"
-- **Caption:** the barista is me and the tip is joining the access list. drop 001 sold out — 002 is a limited run. #matchatok #matcha #icedmatcha #morningritual
+- **Caption:** the barista is me and the tip is joining the access list. drop 001 sold out — 002 is a limited run. #matchatok #matcha #icedmatcha #cafeathome
 - **CTA / destination:** `Sign up` → /lp/ritual (`utm_content=SHR_TOF_RIT_SPK_02`)
-- **Visual spec — generate:** none for hero moments. Optional Firefly backplate for an insert card: "soft blush #FFE0EC gradient card with cream #FDF4EE border, warm light, subtle grain, no text" for the order-list overlay. Talent wardrobe: neutral warm tones; kitchen set per creative-direction ritual world (fluted glass, linen, claw clip in frame).
-- **Shoot it real:** iPhone front camera for hook (slightly too close = native), rear camera for ritual; window light only; order list as CapCut text preset in Syne.
-- **Compliance:** taste/ritual only. Ordering-language stays flavor/aesthetic — no function words. **Disclaimer: N.** Real talent may not claim health outcomes; this script contains none.
+- **Visual spec — generate:** none for hero moments. Optional Firefly backplate for an insert card: "soft blush #FFE0EC gradient card with cream #FDF4EE border, warm light, subtle grain, no text" for the order-list overlay. Talent wardrobe: warm tones with one loud accent; kitchen set per creative-direction maximalist world (fluted glass, color-blocked tray, claw clip in frame).
+- **Shoot it real:** iPhone front camera for hook (slightly too close = native), rear camera for the pour; window light only; order list as CapCut text preset in Syne.
+- **Compliance:** taste/aesthetic only. Ordering-language stays flavor/aesthetic — no function words. **Disclaimer: N.** Real talent may not claim health outcomes; this script contains none.
 
 ---
 
 ### SHR_MOF_RIT_SPK_03 — "10 minutes early is my personality" (SMS flex / waitlist FOMO)
 - **Format:** TikTok spark, 9:16, 20s — retargets engagers of RIT_SPK_01/02
 - **Hook (0–1.5s):** phone screen fills frame, a text notification sliding in, VO whisper: **"getting the drop link 10 minutes before everyone else is my new personality."**
-- **Script / shot timing:** (0–1.5s) lock screen, notification: "shroomé: early access is live." (1.5–6s) VO essay, soft: "drop 001 sold out while most people were still deciding. the text list didn't have to decide fast — it just got there first." (6–12s) slow ritual b-roll: sachet laid out the night before next to the glass, like an outfit (soft-launch aesthetic). (12–16s) the swirl, real master, one breath. (16–20s) end-card: "drop 002 — limited run of [DROP_002_COUNT] boxes. the text list gets the link 10 minutes early, and SHROOME30 replaces your 20% code — best code wins."
+- **Script / shot timing:** (0–1.5s) lock screen, notification: "shroomé: early access is live." (1.5–6s) VO essay, soft: "drop 001 sold out while most people were still deciding. the text list didn't have to decide fast — it just got there first." (6–12s) prep-flex b-roll: sachet laid out the night before next to the glass, like an outfit (soft-launch aesthetic). (12–16s) the swirl, real master, one breath. (16–20s) end-card: "drop 002 — limited run of [DROP_002_COUNT] boxes. the text list gets the link 10 minutes early, and SHROOME30 replaces your 20% code — best code wins."
 - **On-screen text beats:** (0s) hook · (7s) "staged tonight. poured tomorrow." · (13s) "text list = 10 minutes early" · (18s) "get drop access — shroomé"
-- **Caption:** the earliest possible version of on time. drop access is free; the text list just gets the door first. #matchatok #matcha #softlaunch #morningritual
+- **Caption:** the earliest possible version of on time. drop access is free; the text list just gets the door first. #matchatok #matcha #softlaunch #matchalatte
 - **CTA / destination:** `Sign up` → /lp/ritual (`utm_content=SHR_MOF_RIT_SPK_03`)
 - **Visual spec — generate (Runway, insert only):** "dreamy time-lapse of dawn light moving across a cream #FDF4EE wall, soft lavender #E8D5F0 shadows, warm, grain, no objects" as a 2s transition plate. Notification mock uses our real SMS copy (engagement-capture-flows §sms) — never a fabricated customer message.
 - **Shoot it real:** screen-record a staged notification on a real phone (airplane mode), film phone-in-hand in warm lamp light; nightstand flat-lay of sachet + glass.
@@ -255,7 +255,7 @@ Culture cues: skincare-tok routine logic, GRWM with a thesis, "morning shed" jok
 
 ## SEGMENT 3 — the coffee breakup → /lp/calm
 
-Culture cues: corporate-girlie 2pm content, voiceover essays over near-still footage, "unsettlingly calm" quiet humor, honest switch narratives (creator-only), group-chat screenshot storytelling. Palette world: Lavender fields, generous Cream air, clouds = soft landing, Navy grounding, no Pink. Motion: near-stillness as a flex.
+Culture cues: corporate-girlie 2pm content, voiceover essays over near-still footage, "unsettlingly calm" quiet humor, honest switch narratives (creator-only), group-chat screenshot storytelling. Palette world: Lavender fields, generous Cream air, clouds = soft landing, Navy anchor text, no Pink. Motion: near-stillness as a flex.
 
 **Segment compliance note (read twice):** highest-risk segment. NEVER "anxiety," "anxious," "withdrawal," "addiction," "cures," "treats," or sleep-outcome promises — in copy, VO, alt text, captions, or comments. Describe the *feeling* ("calm, steady energy," "no 2pm cliff"), never a condition. "No crash" is framed as caffeine-curve/experience language tied to caffeine + L-theanine. Claims used → FDA disclaimer.
 
@@ -305,7 +305,7 @@ Culture cues: corporate-girlie 2pm content, voiceover essays over near-still foo
 ### SHR_TOF_CLM_SPK_01 — "3pm and you feel… fine?" (unsettlingly calm POV)
 - **Format:** TikTok spark, 9:16, 20s
 - **Hook (0–1.5s):** locked-off office shot, subject typing steadily, clock reads 3:04, text: **"pov: it's 3pm and you feel… fine? suspiciously fine?"**
-- **Script / shot timing:** (0–1.5s) hook over the too-calm desk. (1.5–7s) VO, deadpan: "no third coffee. no bargaining with the vending machine. just… a person, doing tasks, at 3pm. unsettling." (7–13s) flashback grade shift to morning: the ritual — tear, pour, swirl (real master). VO: "sixty milligrams of caffeine plus the l-theanine matcha comes with. supports sustained focus. that's it. that's the plot twist." (13–17s) back to 3pm desk, one slow sip, tiny smug nod. (17–20s) end-card + disclaimer.
+- **Script / shot timing:** (0–1.5s) hook over the too-calm desk. (1.5–7s) VO, deadpan: "no third coffee. no bargaining with the vending machine. just… a person, doing tasks, at 3pm. unsettling." (7–13s) flashback grade shift to morning: the fifteen seconds — tear, pour, swirl (real master). VO: "sixty milligrams of caffeine plus the l-theanine matcha comes with. supports sustained focus. that's it. that's the plot twist." (13–17s) back to 3pm desk, one slow sip, tiny smug nod. (17–20s) end-card + disclaimer.
 - **On-screen text beats:** (0s) hook · (5s) "3:04pm. still upright." · (10s) "caffeine + l-theanine — calm, steady energy" · (14s) "supports sustained focus*" · (18s) "*see caption · get drop access"
 - **Caption:** the afternoon plot twist is that there isn't one. ~60mg caffeine + l-theanine from ceremonial matcha supports sustained focus and healthy energy levels. drop 001 sold out — access list hears first. *these statements have not been evaluated by the fda. this product is not intended to diagnose, treat, cure, or prevent any disease.* #matcha #focustok #corporatetok #matchalatte
 - **CTA / destination:** `Sign up` → /lp/calm (`utm_content=SHR_TOF_CLM_SPK_01`)
@@ -320,7 +320,7 @@ Culture cues: corporate-girlie 2pm content, voiceover essays over near-still foo
 - **Hook (0–1.5s):** black frame, one line of white serif text as the VO begins: **"a short essay about the 2pm cliff, read over the calmest video i own."**
 - **Script / shot timing:** (0–1.5s) hook card. (1.5–10s) VO essay over near-still windowsill footage (steam, curtain, houseplant shadow): "the cliff is not a personality flaw. it's a curve. coffee's caffeine goes up like a firework and comes down like one too." (10–18s) the napkin curve appears, hand-drawn line animating; VO: "matcha's caffeine — about sixty milligrams a sachet — arrives with l-theanine and takes the long way down. a plateau instead of a cliff. supports sustained focus through the part of the day meetings are made of." (18–25s) the swirl, real master, warm milk; VO: "shroomé is that curve, poured in fifteen seconds." (25–30s) end-card + disclaimer; VO: "essay over. the access list is open."
 - **On-screen text beats:** (0s) hook · (11s) "the spike vs the carry" under the curve · (20s) "pour / swirl / glow" · (26s) "drop 002 — limited · get drop access"
-- **Caption:** an essay, a napkin, and a curve. ~60mg caffeine + naturally occurring l-theanine — supports sustained focus and healthy energy levels. *these statements have not been evaluated by the fda. this product is not intended to diagnose, treat, cure, or prevent any disease.* #voiceoveressay #matcha #ltheanine #slowmorning
+- **Caption:** an essay, a napkin, and a curve. ~60mg caffeine + naturally occurring l-theanine — supports sustained focus and healthy energy levels. *these statements have not been evaluated by the fda. this product is not intended to diagnose, treat, cure, or prevent any disease.* #voiceoveressay #matcha #ltheanine #matchalatte
 - **CTA / destination:** `Sign up` → /lp/calm (`utm_content=SHR_TOF_CLM_SPK_02`)
 - **Visual spec — generate (Runway, ambience only):** "extreme slow drift across a warm windowsill at golden hour, lavender #E8D5F0 sky beyond, curtain barely breathing, houseplant shadow play on cream wall #FDF4EE, cinemagraph pace, stylized warmth" — steam, drink, swirl = REAL. VO: ElevenLabs "calm" segment voice or real VO artist; hushed, unhurried; disclose synthetic VO where platform rules require.
 - **Shoot it real:** one windowsill, three 10s locked shots (steam / curtain / shadow); read the essay into voice memos twice, pick the softer take.
@@ -331,7 +331,7 @@ Culture cues: corporate-girlie 2pm content, voiceover essays over near-still foo
 ### SHR_MOF_CLM_SPK_03 — "my group chat did not let me forget" (drop FOMO, screenshot storytelling)
 - **Format:** TikTok spark, 9:16, 22s — retargets calm engagers
 - **Hook (0–1.5s):** phone screen, a group chat scrolling (mocked, clearly ours), text: **"i missed drop 001. my group chat did not let me forget it."**
-- **Script / shot timing:** (0–1.5s) hook over chat scroll — bubbles read: "it's live" / "got mine" / "…zak?" (our own team names only; never fabricated customers). (1.5–8s) VO, wry: "drop 001 was [DROP_001_COUNT] boxes. it sold out to the access list before the site ever said buy. i was making toast." (8–14s) the ritual filmed like a memory: soft, warm, the swirl (real master). VO: "drop 002 is [DROP_002_COUNT] boxes. this time i'm on the list, and my phone gets the link ten minutes before the internet does." (14–18s) lock screen with our real SMS copy sliding in. (18–22s) end-card: "get drop access. the text list goes first."
+- **Script / shot timing:** (0–1.5s) hook over chat scroll — bubbles read: "it's live" / "got mine" / "…zak?" (our own team names only; never fabricated customers). (1.5–8s) VO, wry: "drop 001 was [DROP_001_COUNT] boxes. it sold out to the access list before the site ever said buy. i was making toast." (8–14s) the pour filmed like a memory: soft, warm, the swirl (real master). VO: "drop 002 is [DROP_002_COUNT] boxes. this time i'm on the list, and my phone gets the link ten minutes before the internet does." (14–18s) lock screen with our real SMS copy sliding in. (18–22s) end-card: "get drop access. the text list goes first."
 - **On-screen text beats:** (0s) hook · (5s) "drop 001: sold out ~~[DROP_001_COUNT] boxes~~" · (12s) "drop 002: [DROP_002_COUNT] — that's the run" · (19s) "text list = 10 min early · shroomé"
 - **Caption:** dramatization of a preventable tragedy. drop access is free; the text list gets the door 10 minutes early and SHROOME30 replaces the 20% code — best code wins. #dropculture #matcha #groupchat #waitlist
 - **CTA / destination:** `Sign up` → /lp/calm (`utm_content=SHR_MOF_CLM_SPK_03`)
@@ -592,7 +592,7 @@ Rules of engagement: these run ONLY once ops confirms `[DROP_002_DATE]` and the 
 ### SHR_RTG_ALL_VID_06 — "you joined for this exact moment" (waitlist non-openers, 2 of 2)
 - **Format:** Meta reels + TikTok, 9:16, 18s. Audience: same non-opener segment, sequenced after IMG_05 (T+36h).
 - **Hook (0–1.5s):** the swirl already mid-bloom, text: **"remember why you joined a waitlist for a drink? this. this is why."**
-- **Script / shot timing:** (0–1.5s) master swirl, no preamble. (1.5–8s) VO, warm: "months ago you handed us your email for a matcha you couldn't buy yet. that was the whole transaction. today it's buyable — [LIVE_BOXES_REMAINING] boxes of drop 002 left." (8–13s) the full ritual, unhurried: tear, pour, swirl, sip (real footage). (13–18s) end-card: "your access link is live. drop 002 closes at zero. shop now — shroomé."
+- **Script / shot timing:** (0–1.5s) master swirl, no preamble. (1.5–8s) VO, warm: "months ago you handed us your email for a matcha you couldn't buy yet. that was the whole transaction. today it's buyable — [LIVE_BOXES_REMAINING] boxes of drop 002 left." (8–13s) the full sequence: tear, pour, swirl, sip (real footage). (13–18s) end-card: "your access link is live. drop 002 closes at zero. shop now — shroomé."
 - **On-screen text beats:** (0s) hook · (6s) "drop 002: open · [LIVE_BOXES_REMAINING] left" · (15s) "shop drop 002 — shroomé"
 - **Primary text (Meta):** the list was step one. this is step two. drop 002 is open — [LIVE_BOXES_REMAINING] of [DROP_002_COUNT] boxes left, your code already applied at the link in your inbox. fifteen seconds to pour; considerably less to check out.
 - **CTA / destination:** `Shop Now` → /drop (`utm_content=SHR_RTG_ALL_VID_06`)
@@ -610,7 +610,7 @@ Rules of engagement: these run ONLY once ops confirms `[DROP_002_DATE]` and the 
 
 | Archetype | Who | Feeds | Segments served | Content DNA |
 |---|---|---|---|---|
-| **the ritual documentarian** | aesthetic morning creator, 10–100k, matcha-tok/romanticize-your-life native | TikTok, IG Reels | ritual, glow | golden light, unhurried hands, the swirl as the emotional peak; GRWM and shelf-pan formats; taste + beauty language only |
+| **the morning documentarian** | aesthetic morning creator, 10–100k, matcha-tok/main-character-morning native | TikTok, IG Reels | maximalists (RIT), glow | golden light, the swirl as the emotional peak; GRWM and shelf-pan formats with quick-cut energy; taste + beauty language only |
 | **the honest switcher** | ex-multiple-coffees-a-day narrator (often mom/office-coded), tells it like a diary, allergic to hype | TikTok, IG, YT Shorts | calm, pour | "i switched" experience narratives (REAL experience only), one-take makes, car-line and 2pm content; must carry "individual results may vary" on results-style content |
 | **the label reader** | wellness skeptic-optimizer, reads supplement facts on camera, deadpan, spreadsheet energy | YT Shorts, TikTok, X | focus (+ glow ingredient content) | label macros, jar demos, "3 numbers" checklists, receipts/COA content; compliant precision IS their voice |
 

@@ -24,7 +24,7 @@ Audiences → Lists & segments → Create list:
 
 ## 2. profile properties (15 min)
 
-Properties auto-create on first write — no schema UI needed. But pre-create via one test profile so segment builders can see them: Audiences → Profiles → Create profile → add each custom property from the schema table in `engagement-capture-flows.md §3` with a dummy value, exact keys: `referral_code`, `referred_by`, `referral_count` (number), `referral_credit` (number), `sms_opt_in` (boolean), `sms_consent_at` (datetime), `discount_tier`, `waitlist_position` (number), `flavor_pref`, `temp_pref`, `ritual_time`, `current_drink`, `pour_profile`, `quiz_completed_at` (datetime), `birthday` (date), `pour_list_joined` (boolean), `ugc_entry` (boolean), `ig_handle`.
+Properties auto-create on first write — no schema UI needed. But pre-create via one test profile so segment builders can see them: Audiences → Profiles → Create profile → add each custom property from the schema table in `engagement-capture-flows.md §3` with a dummy value, exact keys: `referral_code`, `referred_by`, `referral_count` (number), `referral_credit` (number), `sms_opt_in` (boolean), `sms_consent_at` (datetime), `discount_tier`, `waitlist_position` (number), `flavor_pref`, `temp_pref`, `pour_time`, `current_drink`, `pour_profile`, `quiz_completed_at` (datetime), `birthday` (date), `pour_list_joined` (boolean), `ugc_entry` (boolean), `ig_handle`.
 
 **Type discipline:** first write wins for type inference — make sure `referral_count` etc. are written as numbers by the webhook, never `"3"` strings, or segment math breaks.
 
@@ -86,7 +86,7 @@ Built as **scheduled campaigns**, not flows (one-time sends): T-1d 6:00pm code-d
 
 a) Quiz webhook:
 1. Typeform: 4 questions (strawberry/vanilla · hot/iced · morning/afternoon · current drink), hidden field `email` (pass via link: `?email={{ email }}` from Klaviyo emails using `{{ person.email }}`).
-2. New route `app/api/quiz/route.ts` (mirror the waitlist route's Klaviyo client): verify Typeform signature → profile-import upsert with `flavor_pref`, `temp_pref`, `ritual_time`, `current_drink`, `quiz_completed_at`, computed `pour_profile` (e.g. `${temp} ${flavor} ${ritual_time === 'morning' ? 'sunrise' : 'reset'}`), and `waitlist_position` −50 (floor at 1) → fire `Quiz Completed` event.
+2. New route `app/api/quiz/route.ts` (mirror the waitlist route's Klaviyo client): verify Typeform signature → profile-import upsert with `flavor_pref`, `temp_pref`, `pour_time`, `current_drink`, `quiz_completed_at`, computed `pour_profile` (e.g. `${temp} ${flavor} ${pour_time === 'morning' ? 'sunrise' : 'reset'}`), and `waitlist_position` −50 (floor at 1) → fire `Quiz Completed` event.
 3. Typeform → Connect → Webhooks → the Vercel URL.
 
 b) Referral counter (enables FLOW D — closes audit M2, where /api/referral's `properties.referred_by` filter doesn't work):

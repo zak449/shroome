@@ -43,14 +43,14 @@ Seed (DS-01 Daily Synbiotic) is the science-authority playbook: they sell *preci
 
 **Subscription-only — no decision fatigue.** You cannot one-time-purchase DS-01: **15% off the first shipment, then $49.99/month** (✅ DTC Patterns / HealthRX). No cadence matrix, no tier math — one product, one price, one rhythm. The refill model does the retention work.
 
-**The welcome-kit / refill ritual.** First shipment: branded reusable glass jar + glass travel vial in mushroom/cornstarch packaging; every subsequent shipment is a compostable biofilm refill (✅ Incrementum). This is the single smartest retention mechanic in DTC: the durable jar makes canceling feel like abandoning an object you own; the refill makes each renewal cheaper to ship, sustainable (brand story), and visually incomplete without the jar. Sustainability isn't CSR — it's the retention device.
+**The welcome-kit / refill loop.** First shipment: branded reusable glass jar + glass travel vial in mushroom/cornstarch packaging; every subsequent shipment is a compostable biofilm refill (✅ Incrementum). This is the single smartest retention mechanic in DTC: the durable jar makes canceling feel like abandoning an object you own; the refill makes each renewal cheaper to ship, sustainable (brand story), and visually incomplete without the jar. Sustainability isn't CSR — it's the retention device.
 
 **Affiliate rigor as brand armor.** Influencers must complete **SeedUniversity** — a 59-minute course on microbiome science, probiotic mechanisms, and FTC compliance — and **pass an exam before they may promote** (✅ Incrementum). Result: zero rogue claims, and the gate itself is PR ("the brand that makes influencers pass a science test"). They've since exported the model to retail: the Erewhon partnership pays the retailer as a lead-gen affiliate when in-store customers convert to subscriptions (✅ Modern Retail).
 
 **Retention loop mechanics** (✅/⚠ mixed): habit-milestone emails (66-day, ✅), education cadence in email (✅), community/digest content and a general "PhD tone" (⚠ inferred). Widely reported 30-day risk-free guarantee (⚠ inferred — not verified this pass; confirm before citing).
 
 ### 2b. The transferable thesis in one line
-**Make the label a spec sheet, gate the funnel with a quiz, sell only the ritual (refill subscription + durable first-order object), and force everyone who talks about you to pass your science test.**
+**Make the label a spec sheet, gate the funnel with a quiz, sell only the routine (refill subscription + durable first-order object), and force everyone who talks about you to pass your science test.**
 
 ---
 
@@ -67,7 +67,7 @@ Fairness note first: for a pre-revenue waitlist brand we are genuinely strong �
 | **Nurture** | Flows A–F fully written, ready to build; honest-tone emails | Habit framing, code cadence (⚠) | Education emails, 66-day habit milestone (✅) | 🟡 medium — copy exists; nothing teaches. No ingredient-education sequence à la Seed |
 | **Offer architecture** | $21 trial 6-pack, $36 core, $66/$126 bundles, founders 30% | $39 starter kit + free bottle + flavor packs w/ sub (✅) | Sub-only, 15% first month (✅) | 🟡 medium — we have SKUs, not a *kit*. No physical gift / no named starter offer for drop 002 |
 | **Checkout** | None (waitlist mode) | Shopify + sub widget (✅) | Sub-only checkout (✅) | ⬜ n/a until Shopify live — but sub-first PDP framing must be decided now |
-| **Post-purchase / unboxing** | Founders: 3 reorder codes, First Pour status | Water bottle = habit anchor (✅) | Glass jar + biofilm refill ritual (✅) | 🔴 high (for drop 002) — no durable object, no refill logic, no unboxing loop specced |
+| **Post-purchase / unboxing** | Founders: 3 reorder codes, First Pour status | Water bottle = habit anchor (✅) | Glass jar + biofilm refill loop (✅) | 🔴 high (for drop 002) — no durable object, no refill logic, no unboxing loop specced |
 | **Referral** | ✅ $5/$10/$15 capped credits + case-001 leaderboard, live link + share buttons | Free 8-ct sampler pack (✅) | Affiliate program w/ exam (✅) | 🟡 medium — cash credits are colder than product; post-signup share moment is one box on the homepage, not a page-takeover loop |
 | **Retention** | Sub matrix + drop allocation perk (unlaunched); price lock 12mo | Sub delta $55→$45 (✅) | Refill model, habit emails, sustainability story (✅) | 🟡 medium — architecture exists on paper; no habit-formation content, no refill/packaging story |
 | **Authority / social proof** | 3 testing badges, honest "no paid reviews yet" copy, access-list counter | Founder pedigree press (✅) | The entire brand (✅) | 🔴 high — we have zero evidence layer: no citations, no COA page, no press, no creator proof. "Doses on label" claim has nowhere to click |
@@ -79,7 +79,7 @@ Fairness note first: for a pre-revenue waitlist brand we are genuinely strong �
 Legend: effort S/M/L · **NOW** = buildable on the Next.js waitlist site today · **SHOPIFY** = needs the store live.
 
 ### ★ BUILD TODAY #1 — "find your pour" quiz → Klaviyo properties
-- **What:** 4-question quiz (flavor / temp / ritual time / current drink) as `/quiz`, posting to the existing waitlist API + Klaviyo (`flavor_pref`, `temp_pref`, `ritual_time`, `current_drink`, `pour_profile`), rewarding the specced "+50 spots" and a shareable "first pour profile" card. Wire as the post-signup step on all 5 LPs and Email 3's destination.
+- **What:** 4-question quiz (flavor / temp / pour time / current drink) as `/quiz`, posting to the existing waitlist API + Klaviyo (`flavor_pref`, `temp_pref`, `pour_time`, `current_drink`, `pour_profile`), rewarding the specced "+50 spots" and a shareable "first pour profile" card. Wire as the post-signup step on all 5 LPs and Email 3's destination.
 - **Steals:** Seed's quiz-gated onboarding ("Is DS-01 Right For You?").
 - **Impact:** turns every signup from an email into a segmented profile; unlocks the already-written FLOW C and flavor-segmented drop-day creative; quiz completers are the pre-committed cohort for drop 002.
 - **Effort:** S–M · **NOW** (everything downstream is already specced in engagement-capture-flows.md; this is the missing artifact).
@@ -112,7 +112,7 @@ Legend: effort S/M/L · **NOW** = buildable on the Next.js waitlist site today �
 - Micro-version of SeedUniversity: a 10-minute brief + quiz (claims rules from segment-strategy.md §compliance) every creator/affiliate must pass; certificate = flex content. Protects us in the highest-risk segment (calm/anxiety language). **Effort M · NOW to spec, ongoing to run.**
 
 ### 9. Post-purchase habit flow for drop 002
-- Day 0 unboxing ritual card, day 7 check-in, day 30 "your first 12 pours" recap, day 66 habit-milestone email (Seed verbatim steal), timed against sachets-remaining math to land reorder/subscribe nudge before they run dry. **Effort M · SHOPIFY** (write NOW, arm at launch).
+- Day 0 unboxing pour card, day 7 check-in, day 30 "your first 12 pours" recap, day 66 habit-milestone email (Seed verbatim steal), timed against sachets-remaining math to land reorder/subscribe nudge before they run dry. **Effort M · SHOPIFY** (write NOW, arm at launch).
 
 ### 10. Refill / packaging story for drop 003+
 - Longer-term: durable canister + lighter refill packs; sustainability narrative doing retention work. Seed's deepest moat, our furthest-out steal. **Effort L · SHOPIFY+ops.**
@@ -121,4 +121,4 @@ Legend: effort S/M/L · **NOW** = buildable on the Next.js waitlist site today �
 
 ## 5. bottom line
 
-Magna's funnel wins on **offer architecture** (starter kit + gift + sub-default pricing + dedicated LPs); Seed's wins on **authority and retention physics** (quiz, spec-sheet PDP, refill ritual, gated affiliates). Shroomé already matches both on ad→LP discipline and honest-scarcity mechanics — the funnel breaks in the middle (a /drop page that displays instead of persuades, a signup that captures no segmentation) and after the signup (a share moment that whispers). Items 1–3 fix exactly that, this week, without Shopify.
+Magna's funnel wins on **offer architecture** (starter kit + gift + sub-default pricing + dedicated LPs); Seed's wins on **authority and retention physics** (quiz, spec-sheet PDP, refill loop, gated affiliates). Shroomé already matches both on ad→LP discipline and honest-scarcity mechanics — the funnel breaks in the middle (a /drop page that displays instead of persuades, a signup that captures no segmentation) and after the signup (a share moment that whispers). Items 1–3 fix exactly that, this week, without Shopify.

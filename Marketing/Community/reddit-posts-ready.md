@@ -67,7 +67,7 @@ Matcha contains L-theanine, an amino acid that promotes alpha brain wave activit
 
 **Honest downsides:**
 
-- The ritual takes longer than pouring coffee (sifting, whisking, heating water to 175F)
+- The prep takes longer than pouring coffee (sifting, whisking, heating water to 175F)
 - Good ceremonial matcha is expensive ($0.75-1.50 per gram)
 - I still miss the taste of coffee sometimes
 - Social situations — everyone's grabbing coffee, you're the matcha person
@@ -134,7 +134,7 @@ Six months ago I stripped everything back to three things every morning. The res
 
 **Why this works better than complex stacks:**
 
-**Compliance.** I actually do this every single day. The ritual takes 4 minutes. When I had 6-8 supplements to take, I'd skip days constantly. Inconsistent dosing undermines even the best compounds.
+**Compliance.** I actually do this every single day. The routine takes 4 minutes. When I had 6-8 supplements to take, I'd skip days constantly. Inconsistent dosing undermines even the best compounds.
 
 **Cost.** My monthly spend dropped from $120 to about $45. Three ingredients. Done.
 

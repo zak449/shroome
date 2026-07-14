@@ -8,6 +8,20 @@
 
 ---
 
+## 2026-07-14 REPOSITIONING — the anti-earthy mandate (reads over everything below)
+
+Founder directive: the entire competitive set (Clevr, MUD\WTR, Ryze, the earthy-wellness aisle) is beige, linen, whisper. shroomé is the opposite lane: **energy**. Non-traditional, fun, internet-native, mixed-media. Our cultural neighbors are **Poppi / Starface / Graza** — never Aesop, never Celine, never a linen-draped "morning ritual" tableau.
+
+**Visual language (new default):**
+- **Mixed-media & collage.** Scrapbook-pop layering: torn-paper edges, taped photo corners, sticker elements, hand-drawn scribble annotations, editorial type × chaos energy. Photography stays real and warm (brand law), but it lives inside composed, layered frames — not floating in beige negative space.
+- **Sticker energy.** Reusable sticker/badge set (drop numbers, "sold out" stamp, flavor chips, Mé cameo marks) that pops onto footage and stills; these are brand furniture, not afterthoughts.
+- **Motion = kinetic.** Whip-pans, stop-motion sequences, sticker pops, hard beat-cuts, speed ramps. The ONE protected slow moment remains the swirl itself (see below) — everything around it moves. Retire "camera drifts" and "cinemagraph stillness" as segment defaults; they may survive only where the concept demands the contrast (e.g. /lp/calm's crash-vs-calm gag).
+- **Palette note.** Current color tokens (Cream/Navy/Lime/Pink/Lavender/Blush) stay until Bolden files land — but the DIRECTION is vivid, saturated, high-contrast application. Never beige, never tonal-on-tonal wash, never "quiet luxury" restraint as a goal.
+- **Banned visual clichés** (they belong to the competition): linen spreads, whisked bowls, bamboo anything, dawn-stillness tableaus, whisper-ASMR as a default register, hands-in-prayer wellness framing, "slow morning" set dressing.
+- **Copy-on-screen vocabulary follows the brand ban list:** never "ritual," "sacred," "mindful," "grounded," "earthy," "ceremony" as a vibe. "Ceremonial" appears only as the matcha grade ("ceremonial-grade" = a sourcing spec). Say "the 15 seconds," "the pour," "your daily pour," "café energy."
+
+---
+
 ## The swirl — signature brand asset (all segments)
 
 The pour/swirl is to shroomé what the pull-tab hiss is to soda: the ownable sensory moment. Dark green concentrate hits milk, blooms into ribbons, resolves into sage. We film it ONCE as a definitive master — macro lens, high frame rate (120–240fps), backlit through the glass, warm key — and cut every segment's version from that master so the swirl looks identical everywhere. Repetition builds the asset.
@@ -16,7 +30,7 @@ The pour/swirl is to shroomé what the pull-tab hiss is to soda: the ownable sen
 - The swirl always plays at least once per video, minimum 1.5 seconds, never sped past 2x
 - Swirl direction is always clockwise (consistency reads as intention)
 - Cuts land on the pour hitting the milk — sync the beat to first contact
-- "pour / swirl / glow" appears as a three-beat text rhythm wherever the ritual is shown
+- "pour / swirl / glow" appears as a three-beat text rhythm wherever the sequence is shown — it's an action sequence, never framed as a ritual
 - The drop ledger animation (drop 001 strikethrough → drop 002 pulse) uses the same easing curve as the swirl settle: fast in, long soft out. One motion personality everywhere.
 
 ---
@@ -39,20 +53,20 @@ The pour/swirl is to shroomé what the pull-tab hiss is to soda: the ownable sen
 
 ---
 
-## Segment 1 — the ritual girlies (/lp/ritual)
+## Segment 1 — the matcha maximalists (/lp/ritual — slug kept; segment renamed 2026-07-14)
 
-**Palette application:** Dreamy gradient world — Soft Lavender #E8D5F0 → Blush #FFE0EC fields, Cream surfaces, Pink #FFB7D1 flavor moments, Lime strictly as the CTA. The prettiest, most gradient-forward segment.
+**Palette application:** Dreamy gradient world turned up — Soft Lavender #E8D5F0 → Blush #FFE0EC fields at full saturation, Cream surfaces, Pink #FFB7D1 flavor moments, Lime strictly as the CTA. The prettiest, most gradient-forward segment — vivid, never washed-out.
 
-**Typography feel:** Instrument Serif italic doing maximum lifting — big, editorial, unhurried. Lowercase always. Type floats over negative space like a caption in a fashion editorial. Syne appears small and quiet (labels, timestamps).
+**Typography feel:** Instrument Serif italic doing maximum lifting — big, editorial, confident. Lowercase always. Type layers INTO the frame collage-style: over torn-paper shapes, on taped-in caption strips, wrapped around the glass. Syne appears as sticker-chip labels and timestamps.
 
-**Set & props:** Morning kitchen with character — fluted glassware, ribbed ceramics, linen, a tonal ceramic tray, warm window light with visible sun streaks. One "shroomé" cup. No clutter, but lived-in: keys, a claw clip, an open magazine. Never a whisk, never powder.
+**Set & props:** Morning kitchen with main-character energy — fluted glassware, ribbed ceramics, a color-blocked tray, warm window light with visible sun streaks. One "shroomé" cup. Lived-in and a little chaotic on purpose: keys, a claw clip, an open magazine, a phone mid-photo. Never a whisk, never powder, never linen-spread stillness.
 
-**Motion language:** Slow and liquid. Speed ramps INTO the swirl then let it breathe in real time. Camera drifts (slider feel), no whip-pans. Transitions dissolve on light flares.
+**Motion language:** Kinetic with one protected beat. Whip-pan or sticker-pop INTO the swirl, then let the swirl breathe in real time (the one slow moment — it earns it), then snap back to pace. Stop-motion prop shuffles, hard cuts on the tear sound, scribble annotations animating on.
 
 **Reference-style descriptions (for photographer/editor briefs):**
-1. *Golden-hour glass study* — backlit tall glass on a stone counter, pour mid-frame, sun flare kissing the rim, lavender-tinted shadow field; feels like a Celine still-life that happens to be breakfast.
-2. *Sunday-morning POV* — handheld-but-calm overhead of hands tearing the sachet on linen, oat milk carton and one strawberry in frame; diaristic, romanticize-your-life energy.
-3. *Cloud-room product float* — sachet suspended in a soft lavender-blush cloudscape with starburst glow, dreamlike but warm; the aspirational LP hero frame.
+1. *Golden-hour glass study, scrapbooked* — backlit tall glass on a stone counter, pour mid-frame, sun flare kissing the rim — then the frame gets collaged live: taped corners, a sticker "drop 002," a hand-scrawled "the 15 seconds." Editorial photo, zine treatment.
+2. *Main-character POV* — handheld overhead of hands tearing the sachet, oat milk carton and one strawberry in frame, phone propped mid-boomerang; diaristic, for-the-story energy, quick-cut not contemplative.
+3. *Cloud-room product float* — sachet suspended in a saturated lavender-blush cloudscape with starburst glow and sticker confetti at the edges; dreamlike but loud; the aspirational LP hero frame.
 
 ---
 
@@ -68,14 +82,14 @@ The pour/swirl is to shroomé what the pull-tab hiss is to soda: the ownable sen
 
 **Reference-style descriptions:**
 1. *Shelfie in motion* — locked-off vanity shelf; a hand enters, places the sachet between skincare steps like it belongs there; morning light sweep passes across the frame.
-2. *Glass-skin still-life* — macro of condensation on the iced strawberry latte beside dewy skin in soft focus; creamy highlights, zero clinical white; an Aesop ad that discovered color.
+2. *Glass-skin still-life* — macro of condensation on the iced strawberry latte beside dewy skin in soft focus; creamy highlights, zero clinical white; a Starface-era beauty ad that reads gorgeous instead of goofy.
 3. *The routine ends in the kitchen* — follow shot from bathroom mirror to kitchen counter, robe-and-claw-clip styling, ending on the pour; caption rhythm: "step 9: drink it."
 
 ---
 
 ## Segment 3 — the coffee breakup (/lp/calm)
 
-**Palette application:** The most Lavender segment — Lavender #D4B8E0 and Soft Lavender fields, generous Cream air, cloud imagery doing narrative work ("no crash" = soft landing). Navy for grounding text. Lime only on CTA. No Pink here — keep it serene.
+**Palette application:** The most Lavender segment — Lavender #D4B8E0 and Soft Lavender fields, generous Cream air, cloud imagery doing narrative work ("no crash" = soft landing). Navy for anchor text. Lime only on CTA. No Pink here — keep it steady.
 
 **Typography feel:** Quiet and roomy: smaller headlines than other segments, more whitespace, longer line-lengths set calmly. Instrument Serif italic reads like a deep exhale; Syne 400 body at generous line-height. Nothing shouts.
 
@@ -119,7 +133,7 @@ The pour/swirl is to shroomé what the pull-tab hiss is to soda: the ownable sen
 
 **Reference-style descriptions:**
 1. *The stopwatch take* — locked vertical one-shot on a kitchen counter, real-time timer burning in the corner, made one-handed, lid on at 0:14; the ad IS the proof.
-2. *Gate 34 latte* — candid-style travel frame: tray table, 1oz sachet beside a clear cup of oat milk, boarding pass as set dressing, warm terminal window light; caption: "TSA-approved ritual."
+2. *Gate 34 latte* — candid-style travel frame: tray table, 1oz sachet beside a clear cup of oat milk, boarding pass as set dressing, warm terminal window light; caption: "TSA-approved café energy."
 3. *School-run split* — split-screen: left, drive-through queue crawling; right, the pour happening in the same elapsed time, kid's backpack sliding into frame; ends on both "arriving" — one with 15 minutes back.
 
 ---

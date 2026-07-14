@@ -26,7 +26,7 @@ const config: LPConfig = {
   segment: "ritual",
   hero: {
     eyebrow: "POUR / SWIRL / GLOW",
-    headlineLines: ["ceremonial matcha,", "minus the ceremony."],
+    headlineLines: ["ceremonial-grade matcha,", "minus the ceremony."],
     subheadline:
       "the world's first ready-to-pour ceremonial matcha latte. tear the sachet, pour into your milk, watch it swirl. fifteen seconds to the drink you've been saving on your fyp.",
     background: "linear-gradient(160deg, var(--brand-tint-soft) 0%, var(--brand-tint-blush) 100%)",

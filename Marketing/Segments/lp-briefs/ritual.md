@@ -1,6 +1,7 @@
-# Ghost LP Brief — /lp/ritual (the ritual girlies)
+# Ghost LP Brief — /lp/ritual (the matcha maximalists)
 
-> Segment: aesthetic wellness / matcha ritual girlies · See `../segment-strategy.md` §1
+> SEGMENT RENAMED 2026-07-14: "the ritual girlies" → **"the matcha maximalists"** ("ritual" is banned brand-wide — the earthy competition owns it). The `/lp/ritual` URL slug is deployed and referenced by live ads/UTMs, so the SLUG STAYS; only the segment name and page copy change.
+> Segment: aesthetic wellness / the matcha maximalists · See `../segment-strategy.md` §1
 > Status: ready to build — all copy below is FINAL, implement verbatim
 > Conversion goal: drop-access signup (email → optional SMS early access). Single CTA, repeated 3x down-page. DROP MODEL: product ships in numbered, limited drops — see drop status module below.
 > HONESTY RULE (one line, non-negotiable): every scarcity statement on this page must be literally true — drop 001 genuinely sold out, drop sizes are real production run counts, countdowns run to real dates only.
@@ -29,7 +30,9 @@
 ## 1. Hero
 
 **Headline (H1, Instrument Serif italic):**
-> ceremonial matcha, minus the ceremony.
+> ceremonial-grade matcha, minus the ceremony.
+
+*(voice note: "ceremonial" is sanctioned here strictly as the matcha quality spec — it describes the leaf, never the mood.)*
 
 **Subheadline (Syne 400, max 420px wide):**
 > the world's first ready-to-pour ceremonial matcha latte. tear the sachet, pour into your milk, watch it swirl. fifteen seconds to the drink you've been saving on your fyp.

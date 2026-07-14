@@ -146,7 +146,7 @@ You do not need to be a tea expert to assess matcha quality. Use your senses:
 
 5. **Check the froth.** When whisked properly, ceremonial matcha produces a thick, creamy layer of micro-foam. Culinary grades tend to produce thin, bubbly, or uneven froth.
 
-## Why It Matters for Your Daily Ritual
+## Why It Matters for Your Daily Pour
 
 The grade of matcha you choose affects more than just taste. First-harvest, properly shade-grown ceremonial matcha delivers a higher concentration of **L-theanine**, which supports a state of calm, focused alertness without the crash associated with coffee.\* The elevated chlorophyll content gives it its distinctive color and contributes to its nutrient density. And the careful stone-grinding process preserves these compounds rather than degrading them through heat.
 
@@ -158,7 +158,7 @@ Now that you know what ceremonial grade actually means — first harvest, 21+ da
 
 At [shroomé](https://drinkshroome.com), we built our functional matcha around these exact standards: first-harvest ceremonial matcha from Japan's premier growing regions, shade-grown and stone-ground the way it has been done for centuries. Because if the foundation is not right, nothing you add to it matters.
 
-Choose your matcha carefully. Your daily ritual deserves it.
+Choose your matcha carefully. Your daily pour deserves it.
 
 ---
 
