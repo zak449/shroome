@@ -1,13 +1,15 @@
 "use client";
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 
 export default function ExitPopup() {
   const [show, setShow] = useState(false);
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const [step, setStep] = useState<"email" | "phone" | "done">("email");
+  const [step, setStep] = useState<"email" | "captcha" | "phone" | "done">("email");
   const [status, setStatus] = useState<"idle" | "loading" | "error">("idle");
   const [dismissed, setDismissed] = useState(false);
+  const captchaRef = useRef<HTMLDivElement>(null);
+  const widgetIdRef = useRef<string | null>(null);
 
   const handleMouseLeave = useCallback(
     (e: MouseEvent) => {
@@ -57,15 +59,20 @@ export default function ExitPopup() {
     document.removeEventListener("mouseleave", handleMouseLeave);
   };
 
-  const handleEmailSubmit = async (e: React.FormEvent) => {
+  const handleEmailSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!email || status === "loading") return;
+    if (!email || status === "loading" || step === "captcha") return;
+    setStatus("idle");
+    setStep("captcha");
+  };
+
+  const onTurnstileSuccess = useCallback(async (token: string) => {
     setStatus("loading");
     try {
       const res = await fetch("/api/waitlist", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email, turnstileToken: token }),
       });
       if (res.ok) {
         setStep("phone");
@@ -83,11 +90,47 @@ export default function ExitPopup() {
         document.removeEventListener("mouseleave", handleMouseLeave);
       } else {
         setStatus("error");
+        setStep("email");
       }
     } catch {
       setStatus("error");
+      setStep("email");
     }
-  };
+  }, [email, handleMouseLeave]);
+
+  // Load the Turnstile script and render the widget when the captcha step is
+  // active (the API rejects token-less signups when Turnstile is configured).
+  // Same pattern as app/refer/page.tsx — falls back to Cloudflare's always-pass
+  // test sitekey when NEXT_PUBLIC_TURNSTILE_SITE_KEY is unset (dev).
+  useEffect(() => {
+    if (step !== "captcha") return;
+    const renderWidget = () => {
+      if (!captchaRef.current || !window.turnstile) return;
+      if (widgetIdRef.current) {
+        try { window.turnstile.remove(widgetIdRef.current); } catch {}
+      }
+      widgetIdRef.current = window.turnstile.render(captchaRef.current, {
+        sitekey: (process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY && !process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY.startsWith("REPLACE")) ? process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY : "1x00000000000000000000AA",
+        callback: onTurnstileSuccess,
+        // Never submit an empty token (the API fails closed) — return to the
+        // email step; resubmitting renders a fresh widget with a fresh token.
+        "error-callback": () => {
+          setStatus("error");
+          setStep("email");
+        },
+        theme: "light",
+      });
+    };
+    if (window.turnstile) {
+      renderWidget();
+    } else {
+      const script = document.createElement("script");
+      script.src = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
+      script.async = true;
+      script.onload = renderWidget;
+      document.head.appendChild(script);
+    }
+  }, [step, onTurnstileSuccess]);
 
   const handlePhoneSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -268,6 +311,18 @@ export default function ExitPopup() {
               <button className="ep-no-thanks" onClick={dismiss}>
                 No thanks, I&apos;ll pay full price
               </button>
+            </>
+          ) : step === "captcha" ? (
+            <>
+              <div className="ep-emoji">🍵</div>
+              <h2 className="ep-title">one quick check&hellip;</h2>
+              <p className="ep-sub">Confirm you&apos;re human and your 20% off is locked in.</p>
+              <div ref={captchaRef} style={{ display: "flex", justifyContent: "center", minHeight: 65 }} />
+              {status === "loading" && (
+                <p style={{ fontSize: 12, marginTop: 8, fontFamily: "'Syne', sans-serif", color: "rgba(27,31,59,0.5)" }}>
+                  Submitting...
+                </p>
+              )}
             </>
           ) : step === "phone" ? (
             <>

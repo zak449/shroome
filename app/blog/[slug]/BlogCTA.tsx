@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback, FormEvent } from "react";
+import { useState, useEffect, useRef, useCallback, FormEvent } from "react";
 
 declare global {
   interface Window {
@@ -28,6 +28,12 @@ export default function BlogCTA() {
   const [showSticky, setShowSticky] = useState(false);
   const [dismissed, setDismissed] = useState(false);
 
+  /* ── Turnstile CAPTCHA (the API rejects token-less signups when configured) ── */
+  const [captchaTarget, setCaptchaTarget] = useState<"inline" | "sticky" | null>(null);
+  const inlineCaptchaRef = useRef<HTMLDivElement>(null);
+  const stickyCaptchaRef = useRef<HTMLDivElement>(null);
+  const widgetIdRef = useRef<string | null>(null);
+
   useEffect(() => {
     if (typeof window === "undefined") return;
     if (sessionStorage.getItem("blog-sticky-dismissed") === "1") {
@@ -51,20 +57,16 @@ export default function BlogCTA() {
     email: string,
     setStatus: (s: "idle" | "loading" | "success" | "error") => void,
     setError: (s: string) => void,
-    source: string
+    source: string,
+    turnstileToken: string
   ) {
-    if (!email || !email.includes("@")) {
-      setError("Please enter a valid email.");
-      setStatus("error");
-      return;
-    }
     setStatus("loading");
     setError("");
     try {
       const res = await fetch("/api/waitlist", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, turnstileToken: "" }),
+        body: JSON.stringify({ email, turnstileToken }),
       });
       if (!res.ok) {
         const data = await res.json().catch(() => ({}));
@@ -88,13 +90,78 @@ export default function BlogCTA() {
 
   const handleInlineSubmit = (e: FormEvent) => {
     e.preventDefault();
-    submitEmail(inlineEmail, setInlineStatus, setInlineError, 'blog_inline_cta');
+    if (!inlineEmail || !inlineEmail.includes("@")) {
+      setInlineError("Please enter a valid email.");
+      setInlineStatus("error");
+      return;
+    }
+    setInlineError("");
+    setInlineStatus("idle");
+    setCaptchaTarget("inline");
   };
 
   const handleStickySubmit = (e: FormEvent) => {
     e.preventDefault();
-    submitEmail(stickyEmail, setStickyStatus, setStickyError, 'blog_sticky_bar');
+    if (!stickyEmail || !stickyEmail.includes("@")) {
+      setStickyError("Please enter a valid email.");
+      setStickyStatus("error");
+      return;
+    }
+    setStickyError("");
+    setStickyStatus("idle");
+    setCaptchaTarget("sticky");
   };
+
+  const onTurnstileSuccess = useCallback((token: string) => {
+    if (captchaTarget === "inline") {
+      submitEmail(inlineEmail, setInlineStatus, setInlineError, "blog_inline_cta", token);
+    } else if (captchaTarget === "sticky") {
+      submitEmail(stickyEmail, setStickyStatus, setStickyError, "blog_sticky_bar", token);
+    }
+    setCaptchaTarget(null);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [captchaTarget, inlineEmail, stickyEmail]);
+
+  // Load the Turnstile script + render the widget into whichever form is
+  // awaiting verification. Same pattern as app/refer/page.tsx — falls back to
+  // Cloudflare's always-pass test sitekey when NEXT_PUBLIC_TURNSTILE_SITE_KEY
+  // is unset (dev), so the forms keep working without configuration.
+  useEffect(() => {
+    if (!captchaTarget) return;
+    const container = captchaTarget === "inline" ? inlineCaptchaRef.current : stickyCaptchaRef.current;
+    const renderWidget = () => {
+      if (!container || !window.turnstile) return;
+      if (widgetIdRef.current) {
+        try { window.turnstile.remove(widgetIdRef.current); } catch {}
+      }
+      widgetIdRef.current = window.turnstile.render(container, {
+        sitekey: (process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY && !process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY.startsWith("REPLACE")) ? process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY : "1x00000000000000000000AA",
+        callback: onTurnstileSuccess,
+        // Never submit an empty token (the API fails closed) — reset the form;
+        // resubmitting renders a fresh widget with a fresh token.
+        "error-callback": () => {
+          if (captchaTarget === "inline") {
+            setInlineError("Verification failed. Please try again.");
+            setInlineStatus("error");
+          } else {
+            setStickyError("Verification failed. Please try again.");
+            setStickyStatus("error");
+          }
+          setCaptchaTarget(null);
+        },
+        theme: "dark",
+      });
+    };
+    if (window.turnstile) {
+      renderWidget();
+    } else {
+      const script = document.createElement("script");
+      script.src = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
+      script.async = true;
+      script.onload = renderWidget;
+      document.head.appendChild(script);
+    }
+  }, [captchaTarget, onTurnstileSuccess]);
 
   const stickyVisible = showSticky && !dismissed;
 
@@ -199,6 +266,13 @@ export default function BlogCTA() {
                 <button onClick={() => setInlinePhoneDone(true)} style={{ background: "none", border: "none", color: "rgba(253,244,238,0.4)", fontSize: 11, fontFamily: "'Syne', sans-serif", cursor: "pointer", marginTop: 8, textDecoration: "underline" }}>Skip</button>
               </div>
             )
+          ) : captchaTarget === "inline" ? (
+            <div>
+              <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: 13, color: "rgba(253,244,238,0.55)", marginBottom: 10 }}>
+                One quick check&hellip;
+              </p>
+              <div ref={inlineCaptchaRef} style={{ display: "flex", justifyContent: "center", minHeight: 65 }} />
+            </div>
           ) : (
             <form
               onSubmit={handleInlineSubmit}
@@ -320,6 +394,13 @@ export default function BlogCTA() {
               <button onClick={() => setStickyPhoneDone(true)} style={{ background: "none", border: "none", color: "rgba(253,244,238,0.35)", fontSize: 10, cursor: "pointer", textDecoration: "underline", fontFamily: "'Syne', sans-serif" }}>Skip</button>
             </div>
           )
+        ) : captchaTarget === "sticky" ? (
+          <div style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap" as const, justifyContent: "center" }}>
+            <p style={{ fontFamily: "'Syne', sans-serif", fontSize: 12, color: "rgba(253,244,238,0.7)", fontWeight: 600, margin: 0, whiteSpace: "nowrap" as const }}>
+              One quick check&hellip;
+            </p>
+            <div ref={stickyCaptchaRef} style={{ display: "flex", justifyContent: "center", minHeight: 65 }} />
+          </div>
         ) : (
           <>
             <p

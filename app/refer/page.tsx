@@ -2,6 +2,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import Image from "next/image";
 import MobileNav from "../MobileNav";
+import { ACCESS_LIST_COUNT } from "../lib/drop-config";
 
 declare global {
   interface Window {
@@ -633,15 +634,17 @@ export default function ReferPage() {
         </section>
 
         {/* ═══ 4. SOCIAL PROOF ═══ */}
+        {/* Honesty rule: only real figures here — the shared "100+" access-list
+            count from app/lib/drop-config.ts and the fixed credit terms. */}
         <section className="ref-proof">
           <div className="ref-proof-stat">
-            <p className="ref-proof-num">247</p>
-            <p className="ref-proof-label">People in the referral program</p>
+            <p className="ref-proof-num">{ACCESS_LIST_COUNT}</p>
+            <p className="ref-proof-label">On the access list &mdash; growing daily</p>
           </div>
           <div className="ref-proof-divider" />
           <div className="ref-proof-stat">
-            <p className="ref-proof-num">34</p>
-            <p className="ref-proof-label">Most referrals this month</p>
+            <p className="ref-proof-num">$15</p>
+            <p className="ref-proof-label">Max credit &mdash; capped, no games</p>
           </div>
           <div className="ref-proof-divider" />
           <div className="ref-proof-stat">

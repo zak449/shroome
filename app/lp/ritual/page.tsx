@@ -94,7 +94,7 @@ const config: LPConfig = {
   ],
   final: {
     header: "drop 002 won't wait around.",
-    body: "drop 001 sold out. drop 002 is a limited run — get access now, and add your number if you want the link 10 minutes early (plus an extra 10% off). 20% off and free shipping are locked in either way.",
+    body: "drop 001 sold out. drop 002 is a limited run — get access now, and add your number if you want the link 10 minutes early (your code upgrades from 20% to 30% — best code wins). 20% off and free shipping are locked in either way.",
     microcopy: "no spam, ever. we text once per drop. that's the whole relationship.",
   },
 };

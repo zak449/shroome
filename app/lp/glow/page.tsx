@@ -96,7 +96,7 @@ const config: LPConfig = {
   ],
   final: {
     header: "glow is a habit. drop 002 is the start.",
-    body: `drop 001 sold out. drop 002 is ${DROP2_RUN} — get access now, add your number for the link 10 minutes early (plus an extra 10% off). 20% off and free shipping locked in either way.`,
+    body: `drop 001 sold out. drop 002 is ${DROP2_RUN} — get access now, add your number for the link 10 minutes early (your code upgrades from 20% to 30% — best code wins). 20% off and free shipping locked in either way.`,
     microcopy: "one text per drop. we'd rather show up rarely and matter.",
   },
 };

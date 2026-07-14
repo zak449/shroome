@@ -43,7 +43,8 @@ export async function POST(req: NextRequest) {
             "Your box is reserved. Ships June 15, 2026 — launch day. Includes 3 reorder codes at 30% off.",
         },
       },
-      // Allow promo codes so referral stacking works later
+      // Allow promo codes (a single best code — codes never stack per the
+      // CFO ruling; referral rewards are separate fixed account credits)
       allow_promotion_codes: true,
     });
 

@@ -33,6 +33,7 @@ export default function DropAccessForm({
   const [phone, setPhone] = useState("");
   const [step, setStep] = useState<"email" | "captcha" | "phone" | "done">("email");
   const [loading, setLoading] = useState(false);
+  const [captchaError, setCaptchaError] = useState("");
   const [referredBy, setReferredBy] = useState<string | null>(null);
   const captchaRef = useRef<HTMLDivElement>(null);
   const widgetIdRef = useRef<string | null>(null);
@@ -59,6 +60,7 @@ export default function DropAccessForm({
   const onTurnstileSuccess = useCallback(
     async (token: string) => {
       setLoading(true);
+      setCaptchaError("");
       try {
         const res = await fetch("/api/waitlist", {
           method: "POST",
@@ -68,6 +70,14 @@ export default function DropAccessForm({
         const data = await res.json();
         if (data.closed) {
           setStep("done");
+          setLoading(false);
+          return;
+        }
+        if (!res.ok) {
+          // e.g. CAPTCHA rejected server-side — back to the email step so a
+          // resubmit renders a fresh widget (and a fresh token).
+          setCaptchaError(data.error || "verification failed — please try again.");
+          setStep("email");
           setLoading(false);
           return;
         }
@@ -104,7 +114,12 @@ export default function DropAccessForm({
             ? process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY
             : "1x00000000000000000000AA",
         callback: onTurnstileSuccess,
-        "error-callback": () => { onTurnstileSuccess(""); },
+        // Never submit an empty token (the API fails closed) — return to the
+        // email step; resubmitting renders a fresh widget with a fresh token.
+        "error-callback": () => {
+          setCaptchaError("verification failed — please try again.");
+          setStep("email");
+        },
         theme: dark ? "dark" : "light",
       });
     };
@@ -190,7 +205,7 @@ export default function DropAccessForm({
           ✓ drop access locked in.
         </p>
         <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 600, fontSize: "0.82rem", color: faint, marginBottom: 12 }}>
-          the text list gets the drop link 10 minutes before everyone else — plus an extra 10% off.
+          the text list gets the drop link 10 minutes before everyone else — and your code upgrades from 20% to 30%. best code wins.
         </p>
         <form onSubmit={handlePhoneSubmit}>
           <input
@@ -298,6 +313,11 @@ export default function DropAccessForm({
           {loading ? "…" : `${buttonLabel} →`}
         </button>
       </form>
+      {captchaError && (
+        <p role="alert" style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.72rem", color: "#B3261E", marginTop: 10, fontWeight: 600 }}>
+          {captchaError}
+        </p>
+      )}
       {microcopy && (
         <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.72rem", color: faint, marginTop: 10 }}>
           {microcopy}

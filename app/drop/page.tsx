@@ -444,8 +444,8 @@ export default function DropPage() {
           <h2 className="dr-h2" style={{ color: "#FDF4EE", marginBottom: 16 }}>get drop 002 first.</h2>
           <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.9rem", color: "rgba(253,244,238,0.7)", lineHeight: 1.7, margin: "0 auto 32px", maxWidth: 500 }}>
             join the waitlist for the drop 002 link at open — add your number and it hits your
-            texts 10 minutes before everyone else, plus an extra 10% off. 20% off and free
-            shipping locked in either way.
+            texts 10 minutes before everyone else, and your code upgrades from 20% to 30%
+            (best code wins). 20% off and free shipping locked in either way.
           </p>
           <div style={{ display: "flex", justifyContent: "center" }}>
             <DropAccessForm source="drop" dark buttonLabel="get drop access" microcopy="one text per drop. no spam, ever." />
