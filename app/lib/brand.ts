@@ -25,6 +25,8 @@ export const BRAND = {
   domain: "drinkshroome.com",
   siteUrl: "https://www.drinkshroome.com",
   tagline: "Café Energy. Home Address.",
+  /** Provenance lockup — sourcing sections, PDP origin strips, packaging echo. */
+  provenance: "Grown in Kyoto, Made in California",
 
   colors: {
     /** Primary dark — text, dark sections, footer. (was "navy" #1B1F3B) */
