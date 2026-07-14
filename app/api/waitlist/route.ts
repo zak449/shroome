@@ -306,7 +306,11 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Waitlist is closed. We've launched! Visit drinkshroome.com to shop.", closed: true }, { status: 410 });
   }
 
-  const resend = new Resend(process.env.RESEND_API_KEY);
+  // Resend is optional: a missing/broken email provider must never lose the
+  // signup (Klaviyo + Sheets writes still happen below).
+  const resendKey = process.env.RESEND_API_KEY;
+  const resend = resendKey ? new Resend(resendKey) : null;
+  if (!resend) console.error("Waitlist: RESEND_API_KEY missing — welcome/admin emails skipped.");
 
   try {
     const { email, phone: rawPhone, turnstileToken, ref, source } = await req.json();
@@ -397,7 +401,7 @@ export async function POST(req: NextRequest) {
     // ─── 3. Send branded welcome email via Resend ────────────────────────
     // Only on the first, email-only call for a genuinely new profile —
     // repeat signups must not re-trigger the welcome email.
-    if (!phone && !isExistingProfile) {
+    if (!phone && !isExistingProfile && resend) {
       const welcome = welcomeEmail(email, referralCode);
       try {
         await resend.emails.send({
@@ -416,6 +420,7 @@ export async function POST(req: NextRequest) {
     const safeEmail = escapeHtml(email);
     const safePhone = phone ? escapeHtml(phone) : "";
     try {
+      if (!resend) throw new Error("Resend not configured");
       await resend.emails.send({
         from: "Shroomé Waitlist <hello@drinkshroome.com>",
         to: ["info@drinkshroome.com"],
