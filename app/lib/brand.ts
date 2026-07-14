@@ -29,32 +29,34 @@ export const BRAND = {
   provenance: "Grown in Kyoto, Made in California",
 
   colors: {
-    /** Primary dark — text, dark sections, footer. (was "navy" #1B1F3B) */
-    ink: "#1B1F3B",
-    /** Page background / light surfaces. (was "cream" #FDF4EE) */
-    canvas: "#FDF4EE",
-    /** Hero accent — CTAs, highlights, focus rings. (was "lime" #C8FF3A) */
-    accent: "#C8FF3A",
-    /** Text/icon color used ON accent surfaces. Currently same as ink. */
-    accentContrast: "#1B1F3B",
-    /** Deep companion to accent — link hovers, <em> emphasis on light bg. (was "matcha green" #2D4A2D) */
-    accentDeep: "#2D4A2D",
-    /** Warm pop — italic highlights, error/notice text. (was "coral" #FF7043) */
-    accentWarm: "#FF7043",
-    /** Softer warm pop used in email art direction. (was "peach" #E8936D) */
-    accentWarmSoft: "#E8936D",
-    /** Muted green — blog links, "Ingredients" category. (was "sage" #809463) */
-    accentMuted: "#809463",
-    /** Darker muted green — hover state of accentMuted. */
-    accentMutedDeep: "#5A7A3A",
-    /** Strawberry flavor tint. (was "pink" #FFB7D1) */
-    flavorStrawberry: "#FFB7D1",
-    /** Functional/vanilla flavor tint. (was "lavender" #D4B8E0) */
-    flavorFunctional: "#D4B8E0",
-    /** Soft supporting tint — calm gradients, email shell bg. (was "soft lavender" #E8D5F0) */
-    tintSoft: "#E8D5F0",
-    /** Blush supporting tint — gradient partner of flavorStrawberry. (was "blush" #FFE0EC) */
-    tintBlush: "#FFE0EC",
+    // Bolden identity system (guidelines p.20) — see Brand/bolden-identity-extraction.md §b.
+    /** Primary dark — text, dark sections, footer. Bolden "Green". */
+    ink: "#2D341A",
+    /** Page background / light surfaces. Bolden "Retro" off-white. */
+    canvas: "#FEFFF8",
+    /** Hero accent — Bolden "Matcha". Contrast is 3.9:1 on canvas: CTAs must
+     *  render large/bold text or invert (ink button + accentContrast text). */
+    accent: "#7A881F",
+    /** Text/icon color used ON accent surfaces. Bolden "Retro". */
+    accentContrast: "#FEFFF8",
+    /** Deep companion to accent — link hovers, <em> emphasis on light bg. Bolden "Green". */
+    accentDeep: "#2D341A",
+    /** Warm pop — italic highlights, error/notice text. Bolden "Mango". */
+    accentWarm: "#FA9427",
+    /** Softer warm pop used in email art direction. Bolden "Vanilla". */
+    accentWarmSoft: "#E4CB9F",
+    /** Muted green — blog links, "Ingredients" category. Bolden "Matcha". */
+    accentMuted: "#7A881F",
+    /** Darker muted green — hover state of accentMuted (derived ~70% Matcha). */
+    accentMutedDeep: "#5A6517",
+    /** Strawberry flavor tag. Bolden "Strawberry" (Pantone 212C). */
+    flavorStrawberry: "#FF6DC7",
+    /** Functional/vanilla flavor tag. Bolden "Vanilla" (Pantone 468C). */
+    flavorFunctional: "#E4CB9F",
+    /** Soft supporting tint — calm gradients, email shell bg. Bolden "Purple" (Pantone 263C). */
+    tintSoft: "#E3D5F7",
+    /** Blush supporting tint — gradient partner of flavorStrawberry (derived ~20% Strawberry). */
+    tintBlush: "#FFE2F4",
   },
 
   /**
@@ -62,13 +64,13 @@ export const BRAND = {
    * CSS consumes the mirrored `--brand-*-rgb` vars; JS contexts use alpha().
    */
   rgb: {
-    ink: "27,31,59",
-    canvas: "253,244,238",
-    accent: "200,255,58",
-    accentWarm: "255,112,67",
-    accentMuted: "128,148,99",
-    flavorStrawberry: "255,183,209",
-    flavorFunctional: "212,184,224",
+    ink: "45,52,26",
+    canvas: "254,255,248",
+    accent: "122,136,31",
+    accentWarm: "250,148,39",
+    accentMuted: "122,136,31",
+    flavorStrawberry: "255,109,199",
+    flavorFunctional: "228,203,159",
   },
 
   fonts: {
@@ -120,8 +122,8 @@ export const BRAND = {
 
   /** PWA manifest colors (app/manifest.ts). */
   manifest: {
-    backgroundColor: "#0A0A0A",
-    themeColor: "#0A0A0A",
+    backgroundColor: "#2D341A",
+    themeColor: "#2D341A",
   },
 } as const;
 
