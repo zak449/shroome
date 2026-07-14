@@ -1,0 +1,145 @@
+{
+  "sections": {
+    "hero": {
+      "type": "image-banner",
+      "blocks": {
+        "hero-heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "the first pour is gone.",
+            "heading_size": "h0"
+          }
+        },
+        "hero-text": {
+          "type": "text",
+          "settings": {
+            "text": "drop 001 — 500 boxes — sold out in 9 days. drop 002 is loading. the waitlist gets in first.",
+            "text_style": "body"
+          }
+        },
+        "hero-buttons": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "get drop access",
+            "button_link_1": "https://www.drinkshroome.com/drop",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": ["hero-heading", "hero-text", "hero-buttons"],
+      "settings": {
+        "image_overlay_opacity": 20,
+        "image_height": "large",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "scheme-2",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "stack-story": {
+      "type": "rich-text",
+      "blocks": {
+        "stack-heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "the matcha is already made.",
+            "heading_size": "h1"
+          }
+        },
+        "stack-text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>2.5g ceremonial matcha · 2g grass-fed collagen · 200mg lion's mane ≥70% beta-glucans · ~60mg caffeine — already liquid. pour, swirl, glow.</p>"
+          }
+        }
+      },
+      "block_order": ["stack-heading", "stack-text"],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-1",
+        "full_width": true,
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    },
+    "the-drop": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "drop 001 — the ledger",
+        "heading_size": "h1",
+        "collection": "the-drop",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": false,
+        "enable_desktop_slider": false,
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 48
+      }
+    },
+    "compliance": {
+      "type": "rich-text",
+      "blocks": {
+        "compliance-text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>"
+          }
+        }
+      },
+      "block_order": ["compliance-text"],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-1",
+        "full_width": true,
+        "padding_top": 8,
+        "padding_bottom": 24
+      }
+    },
+    "waitlist": {
+      "type": "newsletter",
+      "blocks": {
+        "waitlist-heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "the waitlist gets in first.",
+            "heading_size": "h1"
+          }
+        },
+        "waitlist-paragraph": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>drop 002 is loading. no fake timers, no \"only 3 left\" — drop sizes are real production runs, and the list hears first.</p>"
+          }
+        },
+        "waitlist-form": {
+          "type": "email_form",
+          "settings": {}
+        }
+      },
+      "block_order": ["waitlist-heading", "waitlist-paragraph", "waitlist-form"],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "full_width": true,
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    }
+  },
+  "order": ["hero", "stack-story", "the-drop", "compliance", "waitlist"]
+}
