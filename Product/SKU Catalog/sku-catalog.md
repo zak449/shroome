@@ -29,6 +29,8 @@ The canonical anchor is **$36.00 for the 12-pack ($3.00/serving)**. This price i
 
 Quantity always wins: every step up the pack ladder drops the per-serving price below $3.00.
 
+> **CFO post-launch review (binding):** with 30% launch discounts in the system, minimum-viable anchor math is $3.34/serving. After the 14-day launch window, either move the 12-pack anchor to **$40–42** or cap all future discounts at **22%**. Decision due end of launch month — see `discount-matrix.md` §6. Founders' $25.20 stays grandfathered either way.
+
 **Cafe justification:** a cafe matcha latte runs ~$7 (unit-economics guardrail: daily cafe spend $5–7). At $2.63–3.00/serving, shroomé is ~60% below cafe price while delivering a full ceremonial dose plus collagen and lion's mane — with subscription per-serving prices as low as $2.10.
 
 ---

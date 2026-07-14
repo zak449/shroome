@@ -63,7 +63,7 @@ Sanity checks (hold in every future price change):
 | Free shipping | ✅ every delivery (all subscriptions ship free; one-time orders ship free at $50+) | ✅ | ✅ priority processing |
 | Skip / pause / swap flavor anytime | ✅ | ✅ | ✅ |
 | Early flavor access (new flavors 1 week before public) | ✅ | ✅ | ✅ + input on flavor votes |
-| Refer-a-friend credit (see `discount-matrix.md`) | $10/referral | $15/referral | $15/referral |
+| Refer-a-friend credit (fixed ladder, see `discount-matrix.md`) | $5 / $10 / $15 credit at 1 / 3 / 5 referrals | same | same + free-sachet option |
 | Limited drops & merch | — | early access | first access + annual founders-style gift |
 | Price lock | 12 months | 12 months | 12 months |
 
@@ -94,9 +94,9 @@ GraphQL (Admin API 2025-07): `sellingPlanGroupCreate(input: {...}, resources: { 
 - Either way, the **matrix table above is the single source of truth**; app config must match it cell-for-cell.
 - Dunning: 3 retries over 7 days, then pause (not cancel). Surcharge-free flavor swap between vanilla/strawberry/variety within the same tier (same price, same plan).
 
-### C. Interplay with launch discount codes
+### C. Interplay with launch discount codes (CFO verdict 2026-07-14)
 
-SHROOME20 / SHROOME30 apply **on top of** selling-plan pricing but are limited to the **first payment** (`recurringCycleLimit: 1`). Worst-case first-order stack (SHROOME30 on 48/monthly) = $70.56 → $1.47/serving → ~39% margin, first order only — booked as acquisition cost. Full stacking rules and margin table: `discount-matrix.md`.
+SHROOME20 / SHROOME30 are **one-time-purchase only** (`appliesOnSubscription: false`, `combinesWith` all false) and are mutually exclusive with each other. They **never** stack on selling-plan pricing — the CFO's absolute cap is 30% off any single order, and subscription pricing (max 20%) is the standing offer while launch codes are the one-time offer. Waitlist pitch: "use your code once, or subscribe and save up to 20% forever — plus never miss a drop." Full stacking rules and margin table: `discount-matrix.md`.
 
 ### D. Klaviyo events
 
