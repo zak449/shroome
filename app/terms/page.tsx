@@ -293,7 +293,7 @@ export default function Terms() {
           <li>Promotional discount codes (20% off + free shipping) are subject to terms at the time of launch</li>
           <li>Discount codes are non-transferable and may have expiration dates</li>
           <li>We reserve the right to modify or cancel promotions at any time</li>
-          <li>The additional 10% phone discount is stackable with the base waitlist discount</li>
+          <li>Discount codes do not stack. The 30% phone code replaces the base 20% waitlist code &mdash; the best single code wins</li>
         </ul>
 
         <h2>SMS Terms</h2>

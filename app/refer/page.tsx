@@ -773,7 +773,8 @@ export default function ReferPage() {
           <div className="ref-final-inner">
             <h2 className="ref-final-title">start referring. get your link.</h2>
             <p className="ref-final-sub">
-              No cap on earnings. No expiration. Just share shroom&eacute; with people who deserve better matcha.
+              Fixed credits up to $15, applied automatically at checkout &mdash; and the top
+              referrer takes home a hand-numbered box from case 001.
             </p>
             <button className="ref-final-btn" onClick={scrollToForm}>
               Get Your Referral Link &uarr;

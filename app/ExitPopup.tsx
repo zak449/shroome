@@ -274,7 +274,7 @@ export default function ExitPopup() {
               <div className="ep-emoji">📱</div>
               <h2 className="ep-success-title">20% off locked in!</h2>
               <p className="ep-sub">
-                Want an <strong style={{ color: "#1B1F3B", fontWeight: 700 }}>extra 10% off</strong>? Add your number for a total of 30% off + free shipping at launch.
+                Add your number and your code upgrades to <strong style={{ color: "#1B1F3B", fontWeight: 700 }}>30% off + free shipping</strong> at launch. It replaces your 20% code &mdash; best code wins.
               </p>
               <form className="ep-form" onSubmit={handlePhoneSubmit}>
                 <input
