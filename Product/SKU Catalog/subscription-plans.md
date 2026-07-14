@@ -14,7 +14,8 @@ Two levers, one rule: **bigger quantity + tighter cadence = deeper discount.**
 - **Cadences:** every 2 weeks · every 30 days · every 60 days
 - **Quantity tiers:** 12 / 24 / 48 sachets per delivery
 - **Discount band:** 10% base subscribe & save → 20% max (capped), reached at 48/monthly per the unit-economics guardrail extension approved for launch
-- Applies to vanilla, strawberry, and variety variants alike (SHR-VAN/STR/VAR-12/-24/-48). The first pour kit (SHR-TRY-6) is one-time only.
+- Applies to vanilla, strawberry, and variety variants alike (SHR-BOX-VAN/STR-12/-24/-48, SHR-KIT-VAR-12, SHR-BOX-VAR-24/-48 — official SKUMaster codes). The first pour kit (SHR-KIT-VAR-06) is one-time only.
+- Physical fulfillment per `sku-catalog.md`: 24/48 tiers ship as multiples of the GTIN'd 12-count retail boxes (2× / 4×); variety = 1+1 or 2+2 VAN/STR boxes; the 12-count variety is 3PL-kitted from loose sachets.
 
 ## Discount Matrix
 
@@ -79,9 +80,9 @@ Because a selling plan's discount is fixed per plan (not per variant), quantity 
 
 | Group name (merchantCode) | Attached variants | Plans (name → billing/delivery → discount) |
 |---|---|---|
-| subscribe & save — 12 sachets (`shroome-sub-12`) | SHR-VAN-12, SHR-STR-12, SHR-VAR-12 | every 2 weeks → WEEK/2 → 15% · every 30 days → DAY/30 → 12% · every 60 days → DAY/60 → 10% |
-| subscribe & save — 24 sachets (`shroome-sub-24`) | SHR-VAN-24, SHR-STR-24, SHR-VAR-24 | every 2 weeks → WEEK/2 → 18% · every 30 days → DAY/30 → 15% · every 60 days → DAY/60 → 12% |
-| subscribe & save — 48 sachets (`shroome-sub-48`) | SHR-VAN-48, SHR-STR-48, SHR-VAR-48 | every 2 weeks → WEEK/2 → 20% · every 30 days → DAY/30 → 20% · every 60 days → DAY/60 → 15% |
+| subscribe & save — 12 sachets (`shroome-sub-12`) | SHR-BOX-VAN-12, SHR-BOX-STR-12, SHR-KIT-VAR-12 | every 2 weeks → WEEK/2 → 15% · every 30 days → DAY/30 → 12% · every 60 days → DAY/60 → 10% |
+| subscribe & save — 24 sachets (`shroome-sub-24`) | SHR-BOX-VAN-24, SHR-BOX-STR-24, SHR-BOX-VAR-24 | every 2 weeks → WEEK/2 → 18% · every 30 days → DAY/30 → 15% · every 60 days → DAY/60 → 12% |
+| subscribe & save — 48 sachets (`shroome-sub-48`) | SHR-BOX-VAN-48, SHR-BOX-STR-48, SHR-BOX-VAR-48 | every 2 weeks → WEEK/2 → 20% · every 30 days → DAY/30 → 20% · every 60 days → DAY/60 → 15% |
 
 Plan settings (all plans): `category: SUBSCRIPTION`, billing = delivery (no prepaid at launch), pricing policy `fixed` / `PERCENTAGE`, anchors: none (cycle starts at checkout). Group option label: `delivery every`; plan option values: `2 weeks` / `30 days` / `60 days`.
 

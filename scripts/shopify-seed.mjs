@@ -34,7 +34,11 @@
  *     Settings → Shipping. The script logs a reminder.
  *
  * Pricing source of truth: Product/SKU Catalog/sku-catalog.md
- * ($36/12-pack anchor). Keep this file in sync with the catalog docs.
+ * ($36/12-pack anchor). SKU codes + GS1 GTINs (prefix 860015741) per
+ * Product/SKU Catalog/SKUMaster.xlsx (SHR-[CATEGORY]-[FLAVOR]-[QTY]):
+ * 24/48 variants are online bundles of the GTIN'd 12-count retail boxes
+ * (barcode = 12-box UPC with x2/x4 notation); variety & first pour kit are
+ * DTC bundles/kits with no GTIN. Keep this file in sync with those docs.
  */
 
 const API_VERSION = "2025-07";
@@ -87,9 +91,9 @@ const CATALOG = [
         "ceremonial matcha + lion's mane + collagen in one vanilla sachet. pour, swirl, glow. from $2.10/serving on subscription. drop 002 coming soon.",
     },
     variants: [
-      { option: "12 sachets", sku: "SHR-VAN-12", price: "36.00", compareAtPrice: null, grams: 650 },
-      { option: "24 sachets", sku: "SHR-VAN-24", price: "66.00", compareAtPrice: "72.00", grams: 1250 },
-      { option: "48 sachets", sku: "SHR-VAN-48", price: "126.00", compareAtPrice: "144.00", grams: 2400 },
+      { option: "12 sachets", sku: "SHR-BOX-VAN-12", price: "36.00", compareAtPrice: null, grams: 650, barcode: "860015741318" },
+      { option: "24 sachets", sku: "SHR-BOX-VAN-24", price: "66.00", compareAtPrice: "72.00", grams: 1250, barcode: "860015741318 x2" }, // 2x 12-box — online bundle, no separate GTIN
+      { option: "48 sachets", sku: "SHR-BOX-VAN-48", price: "126.00", compareAtPrice: "144.00", grams: 2400, barcode: "860015741318 x4" }, // 4x 12-box
     ],
   },
   {
@@ -103,9 +107,9 @@ const CATALOG = [
         "ceremonial matcha + lion's mane + collagen in one strawberry sachet. pour, swirl, glow. from $2.10/serving on subscription. drop 002 coming soon.",
     },
     variants: [
-      { option: "12 sachets", sku: "SHR-STR-12", price: "36.00", compareAtPrice: null, grams: 650 },
-      { option: "24 sachets", sku: "SHR-STR-24", price: "66.00", compareAtPrice: "72.00", grams: 1250 },
-      { option: "48 sachets", sku: "SHR-STR-48", price: "126.00", compareAtPrice: "144.00", grams: 2400 },
+      { option: "12 sachets", sku: "SHR-BOX-STR-12", price: "36.00", compareAtPrice: null, grams: 650, barcode: "860015741332" },
+      { option: "24 sachets", sku: "SHR-BOX-STR-24", price: "66.00", compareAtPrice: "72.00", grams: 1250, barcode: "860015741332 x2" }, // 2x 12-box — online bundle, no separate GTIN
+      { option: "48 sachets", sku: "SHR-BOX-STR-48", price: "126.00", compareAtPrice: "144.00", grams: 2400, barcode: "860015741332 x4" }, // 4x 12-box
     ],
   },
   {
@@ -119,9 +123,10 @@ const CATALOG = [
         "half vanilla, half strawberry. ceremonial matcha + lion's mane + collagen. from $2.10/serving on subscription. drop 002 coming soon.",
     },
     variants: [
-      { option: "12 sachets (6 vanilla / 6 strawberry)", sku: "SHR-VAR-12", price: "36.00", compareAtPrice: null, grams: 650 },
-      { option: "24 sachets (12 vanilla / 12 strawberry)", sku: "SHR-VAR-24", price: "66.00", compareAtPrice: "72.00", grams: 1250 },
-      { option: "48 sachets (24 vanilla / 24 strawberry)", sku: "SHR-VAR-48", price: "126.00", compareAtPrice: "144.00", grams: 2400 },
+      // variety = DTC-only; no GTIN required (kit / bundle of GTIN'd boxes). Needs NEW GTIN if ever a physical retail box.
+      { option: "12 sachets (6 vanilla / 6 strawberry)", sku: "SHR-KIT-VAR-12", price: "36.00", compareAtPrice: null, grams: 650, barcode: null }, // 3PL-kitted loose sachets
+      { option: "24 sachets (12 vanilla / 12 strawberry)", sku: "SHR-BOX-VAR-24", price: "66.00", compareAtPrice: "72.00", grams: 1250, barcode: null }, // 1 VAN box + 1 STR box
+      { option: "48 sachets (24 vanilla / 24 strawberry)", sku: "SHR-BOX-VAR-48", price: "126.00", compareAtPrice: "144.00", grams: 2400, barcode: null }, // 2 + 2 boxes
     ],
   },
   {
@@ -135,7 +140,7 @@ const CATALOG = [
         "3 vanilla + 3 strawberry sachets of ceremonial matcha + lion's mane + collagen. $21. six mornings to find your flavor.",
     },
     variants: [
-      { option: "6 sachets (3 vanilla / 3 strawberry)", sku: "SHR-TRY-6", price: "21.00", compareAtPrice: null, grams: 350 },
+      { option: "6 sachets (3 vanilla / 3 strawberry)", sku: "SHR-KIT-VAR-06", price: "21.00", compareAtPrice: null, grams: 350, barcode: null }, // DTC-only kit — no GTIN needed unless retail
     ],
   },
 ];
@@ -147,7 +152,7 @@ const SELLING_PLAN_GROUPS = [
     merchantCode: "shroome-sub-12",
     name: "subscribe & save — 12 sachets",
     position: 1,
-    skus: ["SHR-VAN-12", "SHR-STR-12", "SHR-VAR-12"],
+    skus: ["SHR-BOX-VAN-12", "SHR-BOX-STR-12", "SHR-KIT-VAR-12"],
     plans: [
       { name: "every 2 weeks", option: "2 weeks", interval: "WEEK", intervalCount: 2, percentage: 15 },
       { name: "every 30 days", option: "30 days", interval: "DAY", intervalCount: 30, percentage: 12 },
@@ -158,7 +163,7 @@ const SELLING_PLAN_GROUPS = [
     merchantCode: "shroome-sub-24",
     name: "subscribe & save — 24 sachets",
     position: 2,
-    skus: ["SHR-VAN-24", "SHR-STR-24", "SHR-VAR-24"],
+    skus: ["SHR-BOX-VAN-24", "SHR-BOX-STR-24", "SHR-BOX-VAR-24"],
     plans: [
       { name: "every 2 weeks", option: "2 weeks", interval: "WEEK", intervalCount: 2, percentage: 18 },
       { name: "every 30 days", option: "30 days", interval: "DAY", intervalCount: 30, percentage: 15 },
@@ -169,7 +174,7 @@ const SELLING_PLAN_GROUPS = [
     merchantCode: "shroome-sub-48",
     name: "subscribe & save — 48 sachets",
     position: 3,
-    skus: ["SHR-VAN-48", "SHR-STR-48", "SHR-VAR-48"],
+    skus: ["SHR-BOX-VAN-48", "SHR-BOX-STR-48", "SHR-BOX-VAR-48"],
     plans: [
       { name: "every 2 weeks", option: "2 weeks", interval: "WEEK", intervalCount: 2, percentage: 20 },
       { name: "every 30 days", option: "30 days", interval: "DAY", intervalCount: 30, percentage: 20 },
@@ -283,7 +288,7 @@ async function ensureProduct(p, locationId) {
       sku: v.sku,
       price: v.price,
       compareAtPrice: v.compareAtPrice,
-      barcode: "PENDING-GS1", // real GTIN-12 dropped in when GS1 prefix lands
+      barcode: v.barcode ?? null, // real GS1 GTIN-12s (prefix 860015741) per SKUMaster.xlsx; null = DTC bundle/kit, no GTIN required
       taxable: true,
       inventoryPolicy: "DENY", // SOLD OUT until flip-live: never oversell
       inventoryItem: {
@@ -472,7 +477,7 @@ async function main() {
   log("\nMANUAL FOLLOW-UPS (not API-seedable):");
   log("  1. Settings → Shipping: add temporary $0 rate for orders ≥ $15 (launch → +14d), then revert to $50 free-shipping threshold.");
   log("  2. Import founders FP30-XXXX codes (12-pack only, fenced) — see Product/SKU Catalog/discount-matrix.md §2.");
-  log("  3. Replace PENDING-GS1 barcodes when the GS1 prefix lands.");
+  log("  3. Barcodes are live GS1 GTINs (SKUMaster.xlsx). Buy NEW GTINs only if variety/trial ever become physical retail boxes.");
   log("  4. Verify SOLD OUT rendering + back-in-stock waitlist form on all 4 product pages.");
   log("==========================================");
 }

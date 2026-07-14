@@ -47,7 +47,7 @@ Founders pre-ordered on drinkshroome.com/founders at a price that is **locked an
 
 Fencing rules (CFO — the tier is contribution-negative if it leaks):
 - **Capped cohort:** the founders list is frozen at Shopify migration (Stripe + Klaviyo export). No new members, ever.
-- **12-pack only:** founders codes (`FP30-XXXX`, 3 per founder, single-use) are restricted to the 12-pack variants (SHR-VAN-12 / SHR-STR-12 / SHR-VAR-12). Not valid on 24/48-packs, the trial kit, or subscriptions.
+- **12-pack only:** founders codes (`FP30-XXXX`, 3 per founder, single-use) are restricted to the 12-pack variants (SHR-BOX-VAN-12 / SHR-BOX-STR-12 / SHR-KIT-VAR-12 — official SKUMaster codes). Not valid on 24/48-packs, the first pour kit, or subscriptions.
 - **No codes on top:** nothing applies over $25.20 — no SHROOME codes, no referral credits, no sub pricing. `combinesWith` all false, one code per order. 30% remains the absolute system-wide discount cap.
 - Grandfathered price: $25.20 survives any future price change ("your price is locked at checkout. it never goes up for you").
 - Implementation: customer-specific codes imported at store setup — **not** created by the seed script.

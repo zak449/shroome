@@ -22,6 +22,17 @@ function unsub(email: string) {
   return `${BRAND.siteUrl}/unsubscribe?email=${encodeURIComponent(email)}`;
 }
 
+// RFC 8058 one-click unsubscribe headers — required by Gmail/Yahoo bulk-sender
+// rules. Pass to every marketing send via Resend's `headers` option.
+// The https URL points at /api/unsubscribe, which handles the one-click POST
+// (and GET redirects to the /unsubscribe page for non-RFC-8058 clients).
+export function unsubHeaders(email: string): Record<string, string> {
+  return {
+    "List-Unsubscribe": `<${BRAND.siteUrl}/api/unsubscribe?email=${encodeURIComponent(email)}>, <mailto:unsubscribe@drinkshroome.com?subject=unsubscribe>`,
+    "List-Unsubscribe-Post": "List-Unsubscribe=One-Click",
+  };
+}
+
 const SERIF = "Georgia,'Times New Roman',Times,serif";
 const SANS = "'Helvetica Neue',Helvetica,Arial,sans-serif";
 
@@ -40,7 +51,9 @@ function emailShell(content: string, email: string) {
         ${content}
         <tr><td align="center" style="padding:20px 24px 32px;background-color:${BRAND.softLav};">
           <p style="margin:0 0 4px;font-size:10px;color:${BRAND.navy};opacity:0.25;">\u00a9 ${new Date().getFullYear()} shroome</p>
-          <a href="${unsub(email)}" style="font-size:10px;color:${BRAND.navy};opacity:0.2;text-decoration:underline;">unsubscribe</a>
+          ${/* TODO: insert full street address before first commercial send \u2014 CAN-SPAM requires a valid physical postal address */""}
+          <p style="margin:0 0 6px;font-size:10px;color:${BRAND.navy};opacity:0.25;">SHROOM\u00c9 \u00b7 Z Squared Beverages LLC \u00b7 Los Angeles, CA</p>
+          <a href="${unsub(email)}" style="font-size:10px;color:${BRAND.navy};opacity:0.3;text-decoration:underline;">unsubscribe</a>
         </td></tr>
       </table>
     </td></tr>

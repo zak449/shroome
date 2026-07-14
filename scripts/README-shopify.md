@@ -39,7 +39,8 @@ The script is **idempotent** — it looks up each product by handle, each sellin
 
 ## 3. Verify (5 minutes)
 
-- Admin → Products: 4 products, 10 variants, prices $21/$36/$66/$126, barcodes `PENDING-GS1`, inventory 0 / "deny" → storefront shows **sold out**
+- Admin → Products: 4 products, 10 variants, prices $21/$36/$66/$126, inventory 0 / "deny" → storefront shows **sold out**
+- Barcodes (real GS1 GTINs per `Product/SKU Catalog/SKUMaster.xlsx`): SHR-BOX-VAN-12 = `860015741318`, SHR-BOX-STR-12 = `860015741332`; 24/48 variants show the 12-box UPC with `x2`/`x4` notation (online bundles — no separate GTIN); variety + first pour kit have blank barcodes (DTC-only, no GTIN needed unless retail)
 - Product page → Purchase options: the right subscribe & save group per pack size (12→10–15%, 24→12–18%, 48→15–20%)
 - Discounts: SHROOME20 & SHROOME30, active launch → +14 days, "one use per customer", **can't combine with other discounts**
 - Test checkout preview: applying SHROOME30 after SHROOME20 must replace it, never stack; codes must not apply to subscription orders
@@ -50,7 +51,7 @@ The script is **idempotent** — it looks up each product by handle, each sellin
 |---|---|---|
 | 1 | Launch free shipping: temporary **$0 rate for orders ≥ $15**, launch → +14 days, then revert to the standing **$50 threshold** (CFO). Rate-level, not a discount — the codes combine with nothing. | Settings → Shipping and delivery |
 | 2 | Import **founders codes** (`FP30-XXXX`, 3 per founder, 12-pack variants only, fenced cohort) from the Stripe/Klaviyo founders export | Discounts (bulk) / Klaviyo coupon sync — spec in `Product/SKU Catalog/discount-matrix.md` §2 |
-| 3 | Replace `PENDING-GS1` barcodes with real GTIN-12s when the GS1 prefix is purchased | Products bulk editor + `sku-catalog.md` + this script's `CATALOG` |
+| 3 | Buy NEW GTINs only if variety packs / first pour kit ever become physical retail boxes (DTC bundles need none) — see `sku-catalog.md` Barcode Plan | GS1 US portal + `SKUMaster.xlsx` |
 | 4 | Install **Loop** (or ReCharge) — Loop picks up the native selling plan groups automatically; config spec in `subscription-plans.md` §B | Apps |
 | 5 | Theme: sold-out state → back-in-stock/waitlist form (Klaviyo), drop countdown + live "boxes remaining" bar per `sku-catalog.md` Drop Strategy | Theme editor |
 | 6 | Flip-live on drop day: receive inventory at the 3PL location — nothing else changes | Products → Inventory |
