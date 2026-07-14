@@ -10,8 +10,8 @@
 
 | Line Item | Cost per Sachet | Notes |
 |---|---|---|
-| Ceremonial matcha (2g) | $[____] | Source: [vendor]. Price per kg: $[____]. Yield: ~500 sachets/kg |
-| Mushroom extract (200mg) | $[____] | Source: [vendor]. 70%+ beta-glucan verified. Price per kg: $[____] |
+| Ceremonial matcha (2.5g) | $[____] | Source: [vendor]. Price per kg: $[____]. Yield: ~400 sachets/kg |
+| Lion's mane extract (200mg) | $[____] | Source: [vendor]. Organic fruiting-body extract (do not cite a beta-glucan % until supplier CoA). Price per kg: $[____] |
 | Collagen peptides (2g) | $[____] | Source: [vendor]. Grass-fed bovine. Price per kg: $[____] |
 | Flavoring (vanilla/strawberry) | $[____] | Natural flavoring. Price per kg: $[____] |
 | Sachet packaging (foil pouch) | $[____] | Includes printing. MOQ: [____] units. Vendor: [____] |
