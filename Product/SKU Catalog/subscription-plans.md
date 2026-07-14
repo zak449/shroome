@@ -55,8 +55,11 @@ Sanity checks (hold in every future price change):
 
 ## Perks Ladder
 
+**#1 value-add — guaranteed drop allocation.** shroomé sells in numbered limited drops (see `sku-catalog.md` → Drop Strategy), and drops sell out. Subscribers **never miss a drop**: every active subscription's units are reserved out of each production run *before* the public window opens. One-time buyers refresh the drop page; subscribers get theirs automatically. Lead every subscription pitch (PDP widget, sold-out states, drop-alert emails) with this.
+
 | Perk | 12-tier | 24-tier | 48-tier ("inner circle") |
 |---|---|---|---|
+| **Guaranteed drop allocation — never miss a drop** | ✅ reserved every cycle | ✅ | ✅ reserved first |
 | Free shipping | ✅ every delivery (all subscriptions ship free; one-time orders ship free at $50+) | ✅ | ✅ priority processing |
 | Skip / pause / swap flavor anytime | ✅ | ✅ | ✅ |
 | Early flavor access (new flavors 1 week before public) | ✅ | ✅ | ✅ + input on flavor votes |

@@ -2,7 +2,8 @@
 
 > Segment: aesthetic wellness / matcha ritual girlies · See `../segment-strategy.md` §1
 > Status: ready to build — all copy below is FINAL, implement verbatim
-> Conversion goal: waitlist email signup (single CTA, repeated 3x down-page)
+> Conversion goal: drop-access signup (email → optional SMS early access). Single CTA, repeated 3x down-page. DROP MODEL: product ships in numbered, limited drops — see drop status module below.
+> HONESTY RULE (one line, non-negotiable): every scarcity statement on this page must be literally true — drop 001 genuinely sold out, drop sizes are real production run counts, countdowns run to real dates only.
 > Fonts per brand system: H1/H2 Instrument Serif 400 *italic*, everything else Syne. Background Cream #FDF4EE unless noted. All display copy lowercase.
 
 ---
@@ -19,8 +20,8 @@
 
 ## OG / ad click-through metadata
 
-- **OG title:** `shroomé — the prettiest 15 seconds of your morning`
-- **OG description:** `ready-to-pour ceremonial matcha latte. no whisk, no powder — just pour, swirl, glow. first run sold out. join the waitlist for the next pour.`
+- **OG title:** `shroomé — drop 002 is coming. the prettiest 15 seconds of your morning`
+- **OG description:** `ready-to-pour ceremonial matcha latte. no whisk, no powder — just pour, swirl, glow. drop 001 sold out. get access to drop 002 before it goes.`
 - **OG image:** the swirl mid-bloom in a glass of oat milk, warm morning light, sachet leaning against the glass (real product photography only)
 
 ---
@@ -37,8 +38,21 @@
 
 **Hero visual direction:** Full-bleed dreamy gradient (Soft Lavender → Blush) with soft cloud texture at 30–40% opacity. Right side: real photograph of dark green concentrate mid-pour into a tall glass of oat milk, the plume swirling — shot through the glass, backlit, starburst glow. Vanilla sachet propped at base of glass, label legible. NO whisks, NO powder, NO bamboo. Motion version: 3-second seamless loop of the swirl.
 
-**Hero CTA button (Lime, Navy text):** `join the waitlist`
-**Under-button microcopy (Syne 400, 13px):** first run sold out. next pour drops soon.
+**Hero CTA button (Lime, Navy text):** `get drop access`
+**Under-button microcopy (Syne 400, 13px):** drop 001 sold out. drop 002 is a limited run.
+
+---
+
+## 1b. Drop status module (sits directly under the hero CTA — this page's urgency engine)
+
+Two-row "drop ledger," Syne 700, Navy strip cards on the hero gradient:
+
+> **drop 001** — sold out ~~[X₁] boxes~~ *(struck through; "sold out" stamped in Pink #FFB7D1)*
+> **drop 002** — [date window from ops] · limited run of **[X₂] boxes** *(pulsing Lime dot, live state)*
+
+- **Countdown spec:** once ops confirms the drop 002 date, render a live countdown (`dd : hh : mm`, Syne 700 tabular numerals, Navy on Cream chip). Before the date is confirmed, render instead: *"next drop: soon. the access list gets the date first."* Never run a timer to a fake or movable date.
+- **Quantity spec:** [X₁]/[X₂] must be the actual production run counts from ops — pull from a config value, not hardcoded copy. If we wouldn't publish the number in an investor update, we don't publish it here.
+- **SMS early-access step:** after email submit, step 2 offers phone: *"the text list gets the drop link 10 minutes before everyone else — plus an extra 10% off."* Skippable in one tap; email-only members still get drop access at public open.
 
 ---
 
@@ -72,12 +86,12 @@ Strip footnote (13px): no added sugar. no artificial sweeteners. no proprietary 
 
 ## 4. Social proof section (Cream background)
 
-Header (H2): *the first run is already gone.*
+Header (H2): *drop 001 is already gone.*
 Body copy:
-> we made a first production run. the waitlist drank it before it ever hit the site. no paid reviews to show you yet — just a sold-out shelf and a growing list of people waiting on the next pour.
+> we made [X₁] boxes. the access list drank them before drop 001 ever hit the site. no paid reviews to show you yet — just a sold-out ledger and a line forming for drop 002.
 
 Proof elements (do not fabricate):
-- Live waitlist counter pulled from the same source as drinkshroome.com homepage (style: "**[live count]** people on the waitlist")
+- Live access-list counter pulled from the same source as drinkshroome.com homepage (style: "**[live count]** people holding drop access")
 - Ingredient stat badges as proof-of-substance: "third-party tested for beta-glucan content" · "heavy-metals tested" · "made in a GMP-certified facility"
 - NO testimonials, NO star ratings, NO "as seen in" (no verified press placements at this time — if a real placement lands, add logo here and nowhere else)
 
@@ -95,16 +109,16 @@ a: tear the sachet, pour the 1oz concentrate into 6–8oz of your milk of choice
 a: vanilla is warm and floral — like your favorite oat latte grew up. strawberry is bright and fresh — matcha's summer self. both finish clean, zero chalkiness.
 
 **q: when can i actually buy it?**
-a: our first run sold out. the waitlist gets first access (plus 20% off and free shipping) when the next pour drops. that's the honest answer — join and you're at the front.
+a: drop 001 sold out. drop 002 is a limited run of [X₂] boxes — drop access members get the link first, and the text list gets it 10 minutes before everyone. that's the honest answer: real runs, real dates, no fake timers.
 
 ---
 
 ## 6. Final CTA section (Navy #1B1F3B background, Cream text)
 
-Header (H2, Cream, Instrument Serif italic): *the next pour is coming.*
-Body (Cream, 70% opacity): first run sold out. join the waitlist and you're first in line — 20% off and free shipping locked in when we're back.
-CTA button (Lime, Navy text): `join the waitlist`
-Microcopy under field: no spam, ever. two emails a week, max — and only when we have something worth saying.
+Header (H2, Cream, Instrument Serif italic): *drop 002 won't wait around.*
+Body (Cream, 70% opacity): drop 001 sold out. drop 002 is a limited run — get access now, and add your number if you want the link 10 minutes early (plus an extra 10% off). 20% off and free shipping are locked in either way.
+CTA button (Lime, Navy text): `get drop access`
+Microcopy under field: no spam, ever. we text once per drop. that's the whole relationship.
 
 ---
 
@@ -118,7 +132,9 @@ Plus standard footer: © 2026 shroomé · ZSQUARED INC · privacy · terms · co
 
 ## Build notes for engineering
 
-- Single conversion event: waitlist signup → `/api/waitlist` (same endpoint as homepage), append `utm_campaign=lp-ritual`
-- CTA appears exactly 3 times: hero, post-FAQ, final section. No nav, no exit links except footer legal — this is a ghost page
+- Single conversion event: drop-access signup → `/api/waitlist` (same endpoint as homepage; email step, then optional phone step for SMS early access), append `utm_campaign=lp-ritual`
+- CTA appears exactly 3 times: hero, post-FAQ, final section. No nav, no exit links except footer legal — this is a ghost page built for impulse: one decision, zero browsing detours
+- Drop numbers [X₁]/[X₂] and drop 002 date come from a shared config (ops-owned) — never hardcode; honesty rule applies
+- SMS opt-in requires TCPA-compliant consent language at the phone field ("msg & data rates may apply, reply STOP to opt out") — one text per drop, that's the promise
 - Swirl loop video ≤ 2MB, autoplay muted, `prefers-reduced-motion` fallback to still
 - Mobile-first; hero type clamps per brand type scale

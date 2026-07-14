@@ -2,7 +2,8 @@
 
 > Segment: anxious-coffee quitters wanting calm energy · See `../segment-strategy.md` §3
 > Status: ready to build — all copy below is FINAL, implement verbatim
-> Conversion goal: waitlist email signup (single CTA, repeated 3x down-page)
+> Conversion goal: drop-access signup (email → optional SMS early access). Single CTA, repeated 3x down-page. DROP MODEL: numbered, limited drops — see drop status module below.
+> HONESTY RULE: every scarcity statement must be literally true — drop 001 genuinely sold out, drop sizes are real production run counts, countdowns run to real dates only.
 > Fonts: H1/H2 Instrument Serif 400 *italic*, everything else Syne. All display copy lowercase.
 > COMPLIANCE (read twice): this page discusses energy and focus — structure/function language ONLY. Never "anxiety," "withdrawal," "addiction," "cures," or sleep-outcome promises anywhere on this page, including alt text and meta tags. FDA disclaimer in footer + under benefit blocks.
 
@@ -20,7 +21,7 @@
 ## OG / ad click-through metadata
 
 - **OG title:** `shroomé — break up with the crash, not with caffeine`
-- **OG description:** `~60mg caffeine + matcha's natural l-theanine for calm, steady energy. a ready-to-pour ceremonial matcha latte. first run sold out — join the waitlist.`
+- **OG description:** `~60mg caffeine + matcha's natural l-theanine for calm, steady energy. a ready-to-pour ceremonial matcha latte. drop 001 sold out — get access to drop 002.`
 - **OG image:** glass of finished matcha latte on a windowsill, soft morning clouds outside, sachet beside it — stillness with warmth (real photography only)
 
 ---
@@ -37,8 +38,21 @@
 
 **Hero visual direction:** The calmest hero in the set. Soft lavender-blush gradient with dreamy clouds at 40% opacity. Real photograph: hands cradling a warm mug (mug must read "shroomé" per image rules) by a bright window, steam catching light. Secondary element: vanilla sachet on the sill. Stillness, warmth, exhale. Motion version: nearly-still cinemagraph — only the steam moves.
 
-**Hero CTA button (Lime, Navy text):** `join the waitlist`
-**Under-button microcopy:** first run sold out. next pour drops soon.
+**Hero CTA button (Lime, Navy text):** `get drop access`
+**Under-button microcopy:** drop 001 sold out. drop 002 is a limited run.
+
+---
+
+## 1b. Drop status module (directly under hero CTA — keep it quiet on this page: urgency stated plainly, not shouted)
+
+Drop ledger, Syne 700, Navy strip cards on the lavender-cloud hero:
+
+> **drop 001** — sold out ~~[X₁] boxes~~ *("sold out" stamp in Lavender #D4B8E0)*
+> **drop 002** — [date window from ops] · limited run of **[X₂] boxes** *(pulsing Lime dot)*
+
+- **Countdown spec:** live `dd : hh : mm` (Syne 700 tabular numerals, Navy on Cream chip) once ops confirms the drop 002 date; until then: *"next drop: soon. the access list gets the date first."* This page's audience is escaping jittery pressure — the countdown is calm and factual, no flashing, no red.
+- **Quantity spec:** [X₁]/[X₂] = real production run counts from shared ops config. Never inflated.
+- **SMS early-access step:** after email submit, offer phone: *"the text list gets the drop link 10 minutes before everyone else — plus an extra 10% off."* One-tap skippable.
 
 ---
 
@@ -82,12 +96,12 @@ Strip footnote (13px): no added sugar, no artificial anything, no proprietary bl
 
 ## 5. Social proof section (Cream background)
 
-Header (H2): *the first run didn't survive the waitlist.*
+Header (H2): *drop 001 didn't survive the access list.*
 Body copy:
-> we're not going to show you a fake wall of five-star reviews — we're pre-launch and the first production run already sold out. what we can show you: a fully disclosed label, third-party testing, and the line forming for the next pour.
+> we're not going to show you a fake wall of five-star reviews — we're pre-launch and drop 001 ([X₁] boxes) already sold out. what we can show you: a fully disclosed label, third-party testing, and the line forming for drop 002.
 
 Proof elements (do not fabricate):
-- Live waitlist counter (same source as homepage)
+- Live access-list counter (same source as homepage): "**[live count]** people holding drop access"
 - Substance badges: "third-party tested for beta-glucan content" · "heavy-metals screened" · "GMP-certified facility"
 - NO testimonials, NO switch-story quotes until real customers exist post-launch (then only compliant ones), NO "as seen in" unless a placement is real
 
@@ -105,16 +119,16 @@ a: coffee's caffeine tends to hit fast and drop hard. matcha's caffeine arrives 
 a: no — that's culinary-grade matcha's reputation, and we don't use it. first-harvest ceremonial matcha is smooth and naturally sweet, finished with madagascar vanilla or real strawberry.
 
 **q: when can i buy it?**
-a: the first run sold out. join the waitlist and you get first access to the next pour, with 20% off and free shipping locked in. that's the whole pitch — no countdown clock, just an honest queue.
+a: drop 001 sold out. drop 002 is a limited run of [X₂] boxes — drop-access members get the link at open, and the text list gets it 10 minutes early. real runs, real dates, nothing manufactured.
 
 ---
 
 ## 7. Final CTA section (Navy background, Cream text)
 
-Header (H2, Instrument Serif italic): *your last crash is behind you.*
-Body: first run sold out. the waitlist gets the next pour first — 20% off and free shipping included.
-CTA button (Lime, Navy text): `join the waitlist`
-Microcopy: two emails a week max. all signal.
+Header (H2, Instrument Serif italic): *your last crash is behind you. drop 002 is ahead.*
+Body: drop 001 sold out. drop 002 is limited — get access now, add your number for the link 10 minutes early (plus an extra 10% off). 20% off and free shipping locked in either way.
+CTA button (Lime, Navy text): `get drop access`
+Microcopy: one text per drop. two emails a week max. all signal.
 
 ---
 
@@ -128,7 +142,9 @@ Microcopy: two emails a week max. all signal.
 
 ## Build notes for engineering
 
-- Waitlist signup → `/api/waitlist`, `utm_campaign=lp-calm`
-- CTA 3x: hero, post-FAQ, final. Ghost page — no nav, no exit links except footer legal
+- Drop-access signup → `/api/waitlist` (email step, then optional phone step for SMS early access), `utm_campaign=lp-calm`
+- CTA 3x: hero, post-FAQ, final. Ghost page — no nav, no exit links except footer legal; one decision, zero browsing detours
+- Drop numbers [X₁]/[X₂] and drop 002 date from shared ops config; honesty rule applies. On THIS page keep urgency visually quiet — factual countdown, no flashing states
+- SMS opt-in carries TCPA consent language ("msg & data rates may apply, reply STOP to opt out"); cadence promise = one text per drop
 - The curve graphic is this page's shareable asset — build as inline SVG so it stays crisp; include the "illustrative" caption, it is a compliance requirement
 - Audit ALL copy, alt text, and meta for banned words before ship: anxiety, anxious, withdrawal, addiction, cure, treat, sleep (as an outcome), healthier-than

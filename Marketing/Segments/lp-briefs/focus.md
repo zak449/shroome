@@ -2,7 +2,8 @@
 
 > Segment: focus / lion's-mane brain performance · See `../segment-strategy.md` §4
 > Status: ready to build — all copy below is FINAL, implement verbatim
-> Conversion goal: waitlist email signup (single CTA, repeated 3x down-page)
+> Conversion goal: drop-access signup (email → optional SMS early access). Single CTA, repeated 3x down-page. DROP MODEL: numbered, limited drops — see drop status module below.
+> HONESTY RULE: every scarcity statement must be literally true — drop 001 genuinely sold out, drop sizes are real production run counts, countdowns run to real dates only. (This audience will fact-check us. Good.)
 > Fonts: H1/H2 Instrument Serif 400 *italic*, everything else Syne — this page leans hardest on Syne 700 for its spec-sheet energy. All display copy lowercase.
 > COMPLIANCE: "supports sustained focus" and "supports immune function" are the ONLY function claims permitted. No memory/brain-boost/NGF/cognition-protection language anywhere. No drug comparisons, ever. FDA disclaimer footer + under benefit blocks.
 
@@ -20,8 +21,8 @@
 
 ## OG / ad click-through metadata
 
-- **OG title:** `shroomé — read the label. that's the pitch.`
-- **OG description:** `200mg lion's mane fruiting-body extract at ≥70% beta-glucans, third-party tested. ceremonial matcha with l-theanine for sustained focus. first run sold out — join the waitlist.`
+- **OG title:** `shroomé — read the label. that's the pitch. (drop 002)`
+- **OG description:** `200mg lion's mane fruiting-body extract at ≥70% beta-glucans, third-party tested. ceremonial matcha with l-theanine for sustained focus. drop 001 sold out — get access to drop 002.`
 - **OG image:** macro shot of the sachet back label, beta-glucan line crisply in focus, Lime underline treatment (real photography of the real label only)
 
 ---

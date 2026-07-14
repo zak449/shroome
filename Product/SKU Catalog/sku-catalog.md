@@ -76,6 +76,36 @@ Launch state for every variant: inventory tracked by Shopify, **quantity 0, inve
 
 ---
 
+## Drop Strategy — Numbered Limited Drops
+
+Sales run as numbered, limited drops: **DROP 001 (founders/first pour) — sold out. DROP 002 — next.** Scarcity is honest: a drop's size equals the real production run received at the 3PL, never an artificial cap.
+
+### How a drop works in Shopify
+
+1. **Fixed inventory allocation per drop.** When a production run lands, set each variant's available quantity to its drop allocation (e.g. DROP 002 = 1,000 × 12-packs split across flavors). Inventory policy stays **`deny`** — when allocation hits 0, the drop is sold out and stays sold out. No overselling, no backorders.
+2. **Subscriber reservation first.** Before opening to the public, deduct the units needed to fulfill all active subscription cycles falling within the drop window and hold them (separate 3PL bin / Shopify location or a simple reserved-quantity spreadsheet at launch scale). **Subscribers never compete with the drop.**
+3. **Drop opening.** Two supported mechanics — pick per drop:
+   - *Scheduled publish:* products unpublished (or Drop page hidden) until drop time; use Shopify's scheduled theme publish or `publishedAt` flip via API at T-0.
+   - *Password-page drop:* store password page ON until T-0 (heavier — blocks whole storefront; best for the first public drop moment only).
+4. **Klaviyo drop-alert flow.** SMS list gets the live link **10 minutes before** email/public ("your number gets you in first" — reinforces the +10% SMS value prop). Sequence: T-10min SMS → T-0 email + social + site public. Track `drop_open`, `drop_sellout` events for GA4/Klaviyo.
+5. **Sold out state.** Variants at 0/deny render SOLD OUT; one-click waitlist (back-in-stock form → Klaviyo `drop_waitlist` list, seeded with drop number) becomes the CTA. Waitlist is the priority audience for the next drop's T-10 window.
+
+### Per-drop identification: metafields, NOT SKU suffixes
+
+Keep the 10 SKUs stable. Tag drops with a product/variant **metafield** (`shroome.drop_number: "002"`) and an order tag at checkout (`drop-002`) for reporting. **Do not** mint per-drop SKUs (SHR-VAN-12-D002) unless an operational system (3PL lot separation, co-packer traceability) literally requires it — lot/best-by codes already handle traceability at the 3PL. SKU proliferation breaks subscriptions (contracts pin to variant IDs), reviews, and analytics history.
+
+### Impulse mechanics (on-site, per drop)
+
+- **Countdown timer** to drop open (pre-drop) — honest: counts to a real scheduled time.
+- **Live "boxes remaining" bar** during the drop — driven by real Shopify inventory levels (theme app block or storefront API poll), never a fake decrement.
+- **One-click waitlist** on sellout (email prefilled for known Klaviyo profiles).
+
+### Subscriptions are the pressure release
+
+The #1 subscription value-add: **subscribers never miss a drop — their allocation is reserved before the public window opens.** Drop scarcity creates the urgency; "subscribe and never refresh a drop page again" converts it. Merchandise this on every sold-out state and in the drop-alert emails. (Detail in `subscription-plans.md` perks ladder.)
+
+---
+
 ## UPC / Barcode Plan
 
 Real UPCs are **not yet located in Drive** — no GS1 certificate or spreadsheet found as of 2026-07-14. Until the GS1 Company Prefix is purchased:
