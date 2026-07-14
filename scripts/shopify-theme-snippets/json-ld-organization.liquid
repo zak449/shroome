@@ -1,0 +1,84 @@
+{% comment %}
+  ============================================================================
+  json-ld-organization.liquid — ZSQUARED INC / shroomé Organization + WebSite
+  schema. Parity with app/layout.tsx (organizationSchema + websiteSchema).
+
+  INSTALL:
+    In layout/theme.liquid inside <head>, on EVERY page (it replaces Dawn's
+    thin Organization block):
+      {% render 'json-ld-organization' %}
+    Then remove/comment Dawn's own Organization + WebSite ld+json in
+    snippets/structured-data.liquid (Dawn 15+) or layout/theme.liquid
+    (older Dawn) to avoid duplicate entities.
+
+  Values are intentionally hardcoded — they are legal/brand facts, not
+  merchandising data. Update here if the entity or socials change.
+  ============================================================================
+{% endcomment %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "ZSQUARED INC",
+  "brand": { "@type": "Brand", "name": "shroomé" },
+  "alternateName": ["Shroome", "Shroomé", "drinkshroome", "drink shroome"],
+  "url": "https://www.drinkshroome.com",
+  "logo": "https://www.drinkshroome.com/cdn/shop/files/logo-mark.png",
+  "description": "shroomé is the world's first ready-to-pour ceremonial matcha latte — combining 2.5g ceremonial-grade matcha, 200mg organic mushroom extracts (70%+ beta-glucans via fruiting body extraction), and 2g grass-fed collagen peptides in a single-serve sachet.",
+  "foundingDate": "2025",
+  "founder": {
+    "@type": "Person",
+    "name": "Zachary Kaufman",
+    "jobTitle": "Founder & CEO"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressRegion": "CA",
+    "addressCountry": "US"
+  },
+  "sameAs": [
+    "https://tiktok.com/@drinkshroome",
+    "https://instagram.com/drinkshroome",
+    "https://youtube.com/@drinkshroome"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "hello@drinkshroome.com",
+    "contactType": "customer service",
+    "availableLanguage": "English"
+  },
+  "knowsAbout": [
+    "Ceremonial Matcha",
+    "Beta-Glucans",
+    "Functional Mushroom Extracts",
+    "Collagen Peptides",
+    "Functional Beverages",
+    "L-Theanine"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "shroomé",
+  "alternateName": ["drinkshroome", "Shroomé", "Shroome"],
+  "url": "https://www.drinkshroome.com",
+  "description": "The world's first ready-to-pour ceremonial matcha latte with organic mushroom extracts and grass-fed collagen.",
+  "publisher": { "@type": "Organization", "name": "ZSQUARED INC" },
+  "inLanguage": "en-US",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": { "@type": "EntryPoint", "urlTemplate": "https://www.drinkshroome.com/search?q={search_term_string}" },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+{% comment %}
+  NOTE on logo URL: after uploading logo-mark.png to Shopify Files, replace the
+  "logo" value with the real CDN URL ({{ 'logo-mark.png' | file_url }} resolves
+  it at render time if you prefer):
+    "logo": {{ 'logo-mark.png' | file_url | prepend: 'https:' | json }},
+  The SearchAction block is a Shopify-native upgrade (site search exists now);
+  harmless addition, remove if strict 1:1 parity is preferred.
+{% endcomment %}

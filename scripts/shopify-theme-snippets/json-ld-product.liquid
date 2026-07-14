@@ -1,0 +1,147 @@
+{% comment %}
+  ============================================================================
+  json-ld-product.liquid — shroomé full Product schema (parity with
+  app/flavors/vanilla/page.tsx, app/flavors/strawberry/page.tsx, app/page.tsx)
+
+  INSTALL:
+    In layout/theme.liquid inside <head>:
+      {%- if request.page_type == 'product' -%}
+        {% render 'json-ld-product', product: product %}
+      {%- endif -%}
+    Then DISABLE Dawn's built-in product structured data so schema isn't
+    emitted twice: in snippets/structured-data.liquid (Dawn 15+) or
+    sections/main-product.liquid (older Dawn), remove/comment the
+    `application/ld+json` Product block.
+
+  METAFIELDS CONSUMED (Settings → Custom data → Products; see migration kit §2):
+    custom.rating_value     decimal   e.g. 5        (vanilla today: 5)
+    custom.rating_count     integer   e.g. 8        (vanilla 8, strawberry 6, variety 12)
+    custom.mpn              text      e.g. SHROOME-VAN-V1
+    custom.caffeine         text      e.g. ~60mg per sachet
+    custom.beta_glucan      text      e.g. 70%+ (1,3 and 1,6 linked)
+    custom.matcha_grade     text      e.g. Ceremonial (first harvest, shade-grown)
+    custom.collagen_source  text      e.g. Grass-fed bovine, hydrolyzed peptides
+    custom.servings         integer   e.g. 12
+    custom.preorder         boolean   true until launch inventory arrives
+    custom.review_author    text      e.g. Early Taster
+    custom.review_date      date      e.g. 2026-02-15
+    custom.review_body      text
+    custom.review_rating    integer   e.g. 5
+
+  AVAILABILITY SWITCH (PreOrder → InStock):
+    custom.preorder == true      → https://schema.org/PreOrder   (today's state)
+    else product.available       → https://schema.org/InStock
+    else                         → https://schema.org/SoldOut
+    Launch-day flip = set custom.preorder false + receive inventory. No code edit.
+  ============================================================================
+{% endcomment %}
+
+{%- liquid
+  assign variant = product.selected_or_first_available_variant
+  assign mf = product.metafields.custom
+
+  if mf.preorder == true
+    assign availability = 'https://schema.org/PreOrder'
+  elsif product.available
+    assign availability = 'https://schema.org/InStock'
+  else
+    assign availability = 'https://schema.org/SoldOut'
+  endif
+
+  assign price_valid_until = '2027-12-31'
+-%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": {{ product.title | json }},
+  "description": {{ product.description | strip_html | strip | json }},
+  "brand": { "@type": "Brand", "name": "shroomé" },
+  "manufacturer": { "@type": "Organization", "name": "ZSQUARED INC" },
+  "category": "Functional Beverages",
+  "url": {{ shop.url | append: product.url | split: '?' | first | json }},
+  "image": [
+    {%- for image in product.images limit: 3 -%}
+      {{ image | image_url: width: 1200 | prepend: 'https:' | json }}{%- unless forloop.last -%},{%- endunless -%}
+    {%- endfor -%}
+  ],
+  "sku": {{ variant.sku | default: product.id | json }},
+  {%- if mf.mpn != blank -%}
+  "mpn": {{ mf.mpn.value | json }},
+  {%- endif -%}
+  "material": "Ceremonial Matcha, Organic Mushroom Beta-Glucan Extracts, Grass-Fed Collagen Peptides",
+  "additionalProperty": [
+    {%- if mf.caffeine != blank -%}
+    { "@type": "PropertyValue", "name": "Caffeine Content", "value": {{ mf.caffeine.value | json }} },
+    {%- endif -%}
+    {%- if mf.beta_glucan != blank -%}
+    { "@type": "PropertyValue", "name": "Beta-Glucan Concentration", "value": {{ mf.beta_glucan.value | json }} },
+    {%- endif -%}
+    {%- if mf.matcha_grade != blank -%}
+    { "@type": "PropertyValue", "name": "Matcha Grade", "value": {{ mf.matcha_grade.value | json }} },
+    {%- endif -%}
+    {%- if mf.collagen_source != blank -%}
+    { "@type": "PropertyValue", "name": "Collagen Source", "value": {{ mf.collagen_source.value | json }} },
+    {%- endif -%}
+    {%- if mf.servings != blank -%}
+    { "@type": "PropertyValue", "name": "Servings Per Box", "value": {{ mf.servings.value | json }} },
+    {%- endif -%}
+    { "@type": "PropertyValue", "name": "Prep Time", "value": "15 seconds" }
+  ],
+  "offers": {
+    "@type": "Offer",
+    "availability": "{{ availability }}",
+    "itemCondition": "https://schema.org/NewCondition",
+    "price": {{ variant.price | money_without_currency | remove: ',' | json }},
+    "priceCurrency": {{ cart.currency.iso_code | json }},
+    "priceValidUntil": "{{ price_valid_until }}",
+    "url": {{ shop.url | append: variant.url | split: '?' | first | json }},
+    "seller": { "@type": "Organization", "name": "ZSQUARED INC" },
+    "hasMerchantReturnPolicy": {
+      "@type": "MerchantReturnPolicy",
+      "applicableCountry": "US",
+      "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+      "merchantReturnDays": 30,
+      "returnMethod": "https://schema.org/ReturnByMail",
+      "returnFees": "https://schema.org/FreeReturn"
+    },
+    "shippingDetails": {
+      "@type": "OfferShippingDetails",
+      "shippingRate": { "@type": "MonetaryAmount", "value": "0", "currency": "USD" },
+      "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "US" },
+      "deliveryTime": {
+        "@type": "ShippingDeliveryTime",
+        "handlingTime": { "@type": "QuantitativeValue", "minValue": 1, "maxValue": 3, "unitCode": "DAY" },
+        "transitTime": { "@type": "QuantitativeValue", "minValue": 3, "maxValue": 7, "unitCode": "DAY" }
+      }
+    }
+  }
+  {%- if mf.rating_value != blank and mf.rating_count != blank -%}
+  ,
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": {{ mf.rating_value.value | json }},
+    "reviewCount": {{ mf.rating_count.value | json }},
+    "bestRating": "5",
+    "worstRating": "1"
+  }
+  {%- endif -%}
+  {%- if mf.review_body != blank -%}
+  ,
+  "review": [
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": {{ mf.review_author.value | default: 'Early Taster' | json }} },
+      "datePublished": {{ mf.review_date.value | default: '2026-02-15' | json }},
+      "reviewBody": {{ mf.review_body.value | json }},
+      "reviewRating": { "@type": "Rating", "ratingValue": {{ mf.review_rating.value | default: 5 | json }}, "bestRating": "5" }
+    }
+  ]
+  {%- endif -%}
+}
+</script>
+{% comment %}
+  NOTE: once a review app (Judge.me / Loox) provides real ratings, either
+  switch custom.rating_* to app-synced values or remove aggregateRating here
+  and let the app's schema own it — never emit two aggregateRating blocks.
+{% endcomment %}

@@ -6,7 +6,7 @@
 > **Canonical host:** `https://www.drinkshroome.com` (non-www 301s to www — must be preserved on Shopify)
 > **GA4 property:** `G-60FPK4E1PF` — **KEEP IT. Do not create a new property.**
 > **Companion files:**
-> - `Product/SKU Catalog/shopify-redirects.csv` — Shopify URL-redirect import (54 rows)
+> - `Product/SKU Catalog/shopify-redirects.csv` — Shopify URL-redirect import (53 rows)
 > - `scripts/shopify-theme-snippets/` — production Liquid snippets + install README
 > - `Product/SKU Catalog/sku-catalog.md` + `scripts/shopify-seed.mjs` — catalog source of truth (handles: `shroome-vanilla`, `shroome-strawberry`, `shroome-variety-pack`, `shroome-first-pour-kit`)
 
@@ -153,7 +153,7 @@ All custom snippets in `scripts/shopify-theme-snippets/` read these metafields �
 - We hold (or should hold) a **Domain property** for `drinkshroome.com` (DNS-verified). A domain property **survives the host/CMS change untouched** — DNS TXT verification is independent of Vercel. Verify TODAY (pre-cutover) that the DNS TXT record `google-site-verification=...` lives at the DNS zone (Cloudflare/registrar), NOT as a Vercel-managed record that dies with the project. If verification is currently meta-tag or file based on Vercel, add the DNS TXT method NOW.
 - **Sitemap:** Shopify auto-generates `/sitemap.xml` (index → products/pages/blogs children). On cutover day, in GSC: remove nothing, just **submit `https://www.drinkshroome.com/sitemap.xml` again** (same URL — contents change, path doesn't; Next.js served the same path). Also submit to Bing Webmaster Tools.
 - **Robots parity:** Shopify's default robots.txt disallows `/checkout`, `/cart`, `/account`, `/search` etc. Our current disallows (`/api/`, `/dashboard/`, `/unsubscribe/`) are covered by redirects + Shopify defaults; add `/pages/unsubscribe` via `robots.txt.liquid` template or the page `seo.hidden` metafield (noindex).
-- **Coverage monitoring during cutover:** GSC → Indexing → Pages, daily for 14 days. Expect: "Page with redirect" count rising (good — that's the 54 redirects being consumed), "Crawled – currently not indexed" transient spikes, and re-crawl of the 48 canonical URLs. Use URL Inspection → Request indexing for the top 10 URLs on day 0.
+- **Coverage monitoring during cutover:** GSC → Indexing → Pages, daily for 14 days. Expect: "Page with redirect" count rising (good — that's the 53 redirects being consumed), "Crawled – currently not indexed" transient spikes, and re-crawl of the 48 canonical URLs. Use URL Inspection → Request indexing for the top 10 URLs on day 0.
 - **Expected crawl dip:** a 5–15% impression dip for 1–3 weeks is normal on a same-domain replatform with clean 301s. Escalate only if: (a) clicks down >25% at day 14, (b) any of the top-10 URLs shows "Not indexed" at day 7, or (c) rich results (FAQ/Recipe/Product) drop out of the Enhancements reports — that means a schema snippet isn't rendering.
 - Keep the GA4 ↔ GSC link intact (it links to the property — untouched).
 
@@ -175,7 +175,7 @@ All three apps read Shopify's Customer Privacy consent state — one banner gove
 
 **T-7 to T-1 (prep):**
 1. Theme complete on `*.myshopify.com` preview: all snippets from `scripts/shopify-theme-snippets/` installed per its README; metafields populated per §2; both blogs (`journal`, `recipes`) fully populated with matching slugs and original publish dates.
-2. Import `Product/SKU Catalog/shopify-redirects.csv` (Settings → Navigation → URL redirects → Import). Verify count = 54.
+2. Import `Product/SKU Catalog/shopify-redirects.csv` (Settings → Navigation → URL redirects → Import). Verify count = 53.
 3. Channel apps installed and connected (Google & YouTube → `G-60FPK4E1PF`, Meta, TikTok). Test on preview domain with GA4 DebugView.
 4. Confirm GSC domain-property DNS TXT record is registrar-level (§4). Lower DNS TTL to 300s.
 5. Shopify domains: add `drinkshroome.com` + `www.drinkshroome.com`; set **`www.drinkshroome.com` as primary** → Shopify then 301s non-www → www automatically (parity with today's `next.config.ts` host redirect).
@@ -228,7 +228,7 @@ exit $FAIL
 | Organic clicks / impressions (site total) | GSC Performance | export final 28-day window from Vercel era on T-1 | clicks −25% at day 14 |
 | Rankings: "ready to pour matcha", "matcha latte with collagen", "strawberry matcha latte", "vanilla matcha latte", "mushroom matcha", brand terms (shroomé / drinkshroome) | GSC queries + rank tracker | capture T-1 | any top-10 term drops >5 positions for >7 days |
 | Indexed pages | GSC Pages report | 48 | <40 indexed at day 21 |
-| "Page with redirect" count | GSC | 0 | should rise toward ~54 then plateau — if 0 after day 7, redirects aren't being crawled |
+| "Page with redirect" count | GSC | 0 | should rise toward ~53 then plateau — if 0 after day 7, redirects aren't being crawled |
 | Rich result eligibility (Product, FAQ, Recipe, Breadcrumb) | GSC Enhancements + weekly Rich Results Test on top 5 | all valid | any type drops to 0 valid items |
 | 404s | Shopify admin → Analytics → top online store searches/404 report + GSC Not found | ~0 | any 404 with >5 hits/week → add redirect |
 | GA4 daily users & sessions | GA4 (same property — direct comparability) | T-30→T-1 average | −20% WoW beyond seasonal |

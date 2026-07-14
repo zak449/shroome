@@ -1,0 +1,115 @@
+{% comment %}
+  ============================================================================
+  json-ld-faq.liquid — FAQPage schema for /pages/faq
+  Parity with app/faq/page.tsx (all 15 real Q&As, HTML stripped, 4 categories:
+  The Product / Ingredients & Safety / Energy & Caffeine / How to Pour).
+
+  INSTALL:
+    In layout/theme.liquid inside <head>:
+      {%- if request.page_type == 'page' and page.handle == 'faq' -%}
+        {% render 'json-ld-faq' %}
+      {%- endif -%}
+    Dawn emits NO FAQPage schema natively (its FAQ via collapsible rows is
+    plain HTML) — this snippet is the only source; no dedupe needed.
+
+  KEEPING CONTENT IN SYNC: the visible FAQ page content must contain these
+  same Q&As (Google requires markup to match on-page content). If you later
+  move FAQ content to metaobjects, refactor this to loop
+  shop.metaobjects.faq.values and delete the hardcoded list.
+
+  Also emits the FAQ BreadcrumbList (Home → FAQ), parity with the current page.
+  ============================================================================
+{% endcomment %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What makes shroomé ceremonial grade?",
+      "acceptedAnswer": { "@type": "Answer", "text": "shroomé uses first-harvest, shade-grown ceremonial matcha — the highest grade available. Unlike culinary-grade matcha (which most competitors use), ceremonial grade delivers the highest EGCG antioxidant concentration, the cleanest L-theanine profile, and vivid green color. It's pre-blended into a ready-to-pour liquid concentrate so you get café-quality matcha with zero prep." }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the difference between shroomé and matcha powder?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Every matcha product on the market is a powder. Powder requires hot water, a frother, time, and cleanup. shroomé is the world's first ready-to-pour ceremonial matcha latte. It's already blended, already emulsified, already perfect. Tear it open. Pour it in. Done. Plus, shroomé stacks three benefits in one sachet: 2.5g ceremonial matcha, 2g grass-fed collagen, and real mushroom extracts." }
+    },
+    {
+      "@type": "Question",
+      "name": "What flavors does shroomé come in?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Vanilla and Strawberry. Both use real ingredients — real vanilla bean extract and real freeze-dried strawberry. Zero artificial sweeteners or flavoring. Both are designed to pour over oat milk, hot or iced." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does shroomé taste like mushrooms?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Not even a little. shroomé uses beta glucan 1/3 and 1/6 polysaccharides — the specific bioactive compounds extracted from mushroom cell walls — not raw mushroom powder. At 70%+ beta glucan concentration (which is extremely high for the category), these compounds are tasteless when formulated into the liquid matrix. What you actually taste is smooth, naturally sweet ceremonial matcha with the silky mouthfeel of collagen. Most people say it tastes better than the $7 matcha latte from their local café — and it takes 15 seconds instead of 15 minutes." }
+    },
+    {
+      "@type": "Question",
+      "name": "How many servings per box?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Each box contains 12 single-serve sachets. Each sachet is one full matcha latte serving — just tear, pour over milk, and you're done. Subscribe for 20% off + free shipping on every box." }
+    },
+    {
+      "@type": "Question",
+      "name": "What mushrooms are in shroomé?",
+      "acceptedAnswer": { "@type": "Answer", "text": "shroomé contains organic mushroom extracts standardized to 70%+ beta glucan 1/3 and 1/6 polysaccharides — the specific bioactive compounds responsible for immune modulation and sustained focus. Most mushroom products on the market use low-potency mycelium-on-grain with beta glucan levels under 30%. shroomé's 70%+ concentration is among the highest in the functional food space. These are not psychoactive or psychedelic — they're food-grade, clinically studied compounds." }
+    },
+    {
+      "@type": "Question",
+      "name": "What's in the collagen and why is it included?",
+      "acceptedAnswer": { "@type": "Answer", "text": "shroomé includes 2g of grass-fed collagen peptides pre-dissolved into the liquid — meaning optimal absorption, zero clumping, and no chalky aftertaste. Collagen supports skin, hair, nails, and gut health. Most people buy collagen separately. shroomé puts matcha + collagen + mushrooms into one pour." }
+    },
+    {
+      "@type": "Question",
+      "name": "Are there any psychoactive or psychedelic ingredients?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Zero. shroomé contains functional mushroom extracts — not psilocybin, not \"magic mushrooms.\" These are food-grade compounds that are legal, non-intoxicating, and clinically studied. You'll feel focused and energized, never altered." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is shroomé vegan or gluten-free?",
+      "acceptedAnswer": { "@type": "Answer", "text": "shroomé is gluten-free, soy-free, and contains no artificial sweeteners, fillers, or preservatives. Note: shroomé contains grass-fed collagen (bovine-sourced), so it is not vegan. It fits cleanly into keto, paleo, and Whole30 lifestyles." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is shroomé safe to drink every day?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes — shroomé is designed for daily use. Ceremonial matcha, collagen peptides, and mushroom extracts all have long safety track records. If you're pregnant, nursing, or on medication, check with your healthcare provider first." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does shroomé contain caffeine?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes — each sachet contains approximately 60mg of naturally occurring caffeine from ceremonial matcha, roughly half a cup of coffee. But the difference is matcha's L-theanine creates smooth, sustained energy — focused alertness for 4–6 hours without the spike, jitters, or crash. Café energy without the cortisol rollercoaster." }
+    },
+    {
+      "@type": "Question",
+      "name": "How does shroomé compare to coffee?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Coffee gives you a fast spike that crashes hard. shroomé delivers smooth, sustained energy thanks to matcha's natural L-theanine — calm focus without sedation. Most people describe it as 4–6 hours of clean, even alertness. No jitters. No crash. No 2pm wall. Café energy. Home address." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I make a shroomé matcha latte?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Fill your glass with ice (or warm your mug), add 6–8 oz of your milk of choice, then tear open the sachet and pour shroomé in last. Give it a swirl with your hand, a straw, or a spoon — no frother, no whisk, no mess. A full café-quality matcha latte in under 15 seconds." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I pour shroomé over oat milk?",
+      "acceptedAnswer": { "@type": "Answer", "text": "That's exactly how it's designed. shroomé is a liquid concentrate — just tear it open, pour over ice, and top with oat milk (or any milk). No frother, no whisk, no clumps. Barista-style oat milk gives the best texture, but almond, coconut, cashew, or dairy all work. Hot or iced — just pour and go." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I drink shroomé iced?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Absolutely — shroomé was built for iced. Because it's already a liquid concentrate (not powder), it blends perfectly over ice with zero clumping. Pour over a full glass of ice, top with cold milk, done. No need to pre-dissolve in warm water like you would with powder matcha." }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.drinkshroome.com" },
+    { "@type": "ListItem", "position": 2, "name": "FAQ", "item": "https://www.drinkshroome.com/pages/faq" }
+  ]
+}
+</script>

@@ -1,0 +1,127 @@
+{% comment %}
+  ============================================================================
+  meta-tags-override.liquid — title / description / canonical parity
+  Fixes the places where Dawn defaults DIFFER from the current Next.js site.
+
+  INSTALL:
+    In layout/theme.liquid <head>, REPLACE this default block:
+        <title>...</title>
+        {% if page_description %}<meta name="description" ...>{% endif %}
+        <link rel="canonical" href="{{ canonical_url }}">
+    with:
+        {% render 'meta-tags-override' %}
+    Keep Dawn's {% render 'meta-tags' %} (OG/Twitter) AFTER it — this snippet
+    also patches the og:title/og:description via the same computed values.
+
+  WHY DAWN DEFAULTS AREN'T ENOUGH (deltas vs. the Next.js site):
+   1. Title suffixing — Dawn renders "Page Title – Shop Name". Our titles
+      already embed the brand with em-dashes and taglines
+      (e.g. "shroomé — Café Energy. Home Address.",
+      "Vanilla — shroomé | Ready-to-Pour Vanilla Matcha Latte").
+      Fix: per-resource custom.seo_title metafield wins verbatim; no suffix.
+   2. Homepage description — Dawn uses the shop description; ours must stay:
+      "Ceremonial matcha meets functional mushrooms. 2.5g. One sachet. ..."
+   3. Canonical host — canonical_url must always be https://www.drinkshroome.com
+      (set www as PRIMARY domain in Settings → Domains; this snippet also
+      hard-rewrites any *.myshopify.com canonical so preview/permalink crawls
+      never leak the wrong host).
+   4. Param-stripping — Shopify's canonical_url already strips ?variant &
+      pagination params on products; we additionally guard ?ref= referral
+      links (used by the /refer program) by never echoing query strings.
+   5. Keywords meta — the Next.js site emits meta keywords. Carried for parity
+      via custom.seo_keywords (harmless; drop later if desired).
+
+  METAFIELDS (definition on Products, Pages, Articles, Blogs, Collections):
+    custom.seo_title        single line text   — exact <title> to render
+    custom.seo_description  multi-line text    — exact meta description
+    custom.seo_keywords     single line text   — comma-separated (optional)
+  Shopify's native "Search engine listing" fields (page_title/meta_description)
+  are the fallback, then resource title/excerpt.
+
+  POPULATE from Marketing/SEO/shopify-migration-seo-kit.md §1 (exact values
+  extracted from the Next.js app there).
+  ============================================================================
+{% endcomment %}
+
+{%- liquid
+  assign canonical_host = 'https://www.drinkshroome.com'
+
+  # ── resolve the resource-level metafield holder ──
+  assign mf = nil
+  case request.page_type
+    when 'product'
+      assign mf = product.metafields.custom
+    when 'page'
+      assign mf = page.metafields.custom
+    when 'article'
+      assign mf = article.metafields.custom
+    when 'blog'
+      assign mf = blog.metafields.custom
+    when 'collection'
+      assign mf = collection.metafields.custom
+  endcase
+
+  # ── TITLE ──
+  assign computed_title = nil
+  if mf and mf.seo_title != blank
+    assign computed_title = mf.seo_title.value
+  elsif request.page_type == 'index'
+    assign computed_title = 'shroomé — Café Energy. Home Address.'
+  elsif page_title != blank
+    assign computed_title = page_title
+    unless page_title contains 'shroomé'
+      assign computed_title = page_title | append: ' — shroomé'
+    endunless
+  else
+    assign computed_title = shop.name
+  endif
+
+  # ── DESCRIPTION ──
+  assign computed_description = nil
+  if mf and mf.seo_description != blank
+    assign computed_description = mf.seo_description.value
+  elsif request.page_type == 'index'
+    assign computed_description = 'Ceremonial matcha meets functional mushrooms. 2.5g. One sachet. Pour over your latte base and feel the shift. Join the pre-launch list for 20% off + free shipping on your first order.'
+  elsif page_description != blank
+    assign computed_description = page_description
+  endif
+
+  # ── CANONICAL: force primary host, never a myshopify or non-www leak ──
+  assign computed_canonical = canonical_url
+  assign parts = canonical_url | split: '/'
+  assign current_host_part = parts[2]
+  assign wrong_host = 'https://' | append: current_host_part
+  assign computed_canonical = computed_canonical | replace_first: wrong_host, canonical_host
+-%}
+
+<title>{{ computed_title | escape }}</title>
+{%- if computed_description != blank -%}
+<meta name="description" content="{{ computed_description | strip_html | strip_newlines | truncate: 320 | escape }}">
+{%- endif -%}
+{%- if mf and mf.seo_keywords != blank -%}
+<meta name="keywords" content="{{ mf.seo_keywords.value | escape }}">
+{%- endif -%}
+<link rel="canonical" href="{{ computed_canonical }}">
+
+{% comment %} OG/Twitter parity overrides — render AFTER Dawn's meta-tags or
+   remove the matching tags from snippets/meta-tags.liquid to avoid duplicates.
+   Duplicated og: tags: crawlers take the FIRST occurrence, so if you keep
+   Dawn's snippet, render THIS one first. {% endcomment %}
+<meta property="og:site_name" content="shroomé">
+<meta property="og:url" content="{{ computed_canonical }}">
+<meta property="og:title" content="{{ computed_title | escape }}">
+{%- if computed_description != blank -%}
+<meta property="og:description" content="{{ computed_description | strip_html | strip_newlines | truncate: 320 | escape }}">
+{%- endif -%}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ computed_title | escape }}">
+{%- if computed_description != blank -%}
+<meta name="twitter:description" content="{{ computed_description | strip_html | strip_newlines | truncate: 200 | escape }}">
+{%- endif -%}
+
+{%- comment -%} noindex parity: /pages/unsubscribe was robots-disallowed on the
+old site. Prefer the native toggle (page metafield seo.hidden = 1), or keep
+this fallback: {%- endcomment -%}
+{%- if request.page_type == 'page' and page.handle == 'unsubscribe' -%}
+<meta name="robots" content="noindex, nofollow">
+{%- endif -%}

@@ -1,0 +1,175 @@
+{% comment %}
+  ============================================================================
+  ga4-tracking.liquid — shroomé GA4 continuity snippet
+  Property: G-60FPK4E1PF  (EXISTING property — never create a new one)
+
+  INSTALL: {% render 'ga4-tracking' %} just before </head> in layout/theme.liquid.
+
+  WHEN TO USE WHICH INSTALL PATH — read this before enabling:
+
+  1) Google & YouTube channel app (RECOMMENDED, install it first):
+     The app injects gtag.js + `config G-60FPK4E1PF` on the storefront AND on
+     checkout/thank-you pages (theme code cannot reach checkout). It owns
+     page_view, view_item, add_to_cart, begin_checkout, purchase and
+     Consent Mode wiring via Shopify Customer Privacy.
+     -> With the app installed, THIS snippet only adds the CUSTOM events the
+        app doesn't know about (sign_up, generate_lead, share,
+        select_promotion, section_view, scroll_depth, engaged_time).
+        The guard below detects the app's gtag and will NOT bootstrap a second
+        tag or fire a second `config` (which would double-count page_view).
+
+  2) No channel app (temporary/dev only):
+     The guard finds no gtag and bootstraps gtag.js + config itself, so
+     analytics never goes dark. You will be missing checkout events until the
+     channel app is installed — do not ship launch this way.
+
+  Continuity contract (event names + params match the Next.js site exactly —
+  see app/page.tsx, app/welcome/page.tsx, app/refer/page.tsx,
+  app/ExitPopup.tsx, app/blog/[slug]/BlogCTA.tsx):
+    sign_up          { method, event_category:'engagement', event_label }
+    generate_lead    { currency:'USD', value:5.00 }
+    share            { method, content_type:'referral' }
+    select_promotion { promotion_name }
+    section_view     { section_name, time_to_section }
+    scroll_depth     { percent_scrolled: 25|50|75|100 }
+    engaged_time     { seconds: 30|60|120|300 }
+  ============================================================================
+{% endcomment %}
+
+<script>
+(function () {
+  var GA4_ID = 'G-60FPK4E1PF';
+
+  /* ── Double-install guard ──────────────────────────────────────────────
+     If the Google & YouTube channel app (or any prior integration) already
+     defined gtag/dataLayer with a config for our ID, we reuse it and skip
+     bootstrap + config entirely. */
+  window.dataLayer = window.dataLayer || [];
+  var alreadyConfigured = window.dataLayer.some(function (row) {
+    try { return row[0] === 'config' && String(row[1]).indexOf(GA4_ID) === 0; }
+    catch (e) { return false; }
+  }) || !!document.querySelector('script[src*="googletagmanager.com/gtag/js?id=' + GA4_ID + '"]');
+
+  if (typeof window.gtag !== 'function') {
+    window.gtag = function () { window.dataLayer.push(arguments); };
+  }
+
+  if (!alreadyConfigured) {
+    /* Consent Mode v2 defaults — ONLY when we bootstrap ourselves.
+       When the channel app is installed, Shopify Customer Privacy owns
+       consent signals and we must not override them. */
+    window.gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied',
+      wait_for_update: 500,
+      region: ['EEA', 'GB', 'CH'] /* denied-by-default only where required */
+    });
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA4_ID;
+    document.head.appendChild(s);
+    window.gtag('js', new Date());
+    window.gtag('config', GA4_ID);
+    /* Grant consent when the Shopify cookie banner reports acceptance */
+    if (window.Shopify && window.Shopify.customerPrivacy) {
+      document.addEventListener('visitorConsentCollected', function (e) {
+        var c = e.detail || {};
+        window.gtag('consent', 'update', {
+          analytics_storage: c.analyticsAllowed ? 'granted' : 'denied',
+          ad_storage: c.marketingAllowed ? 'granted' : 'denied',
+          ad_user_data: c.marketingAllowed ? 'granted' : 'denied',
+          ad_personalization: c.marketingAllowed ? 'granted' : 'denied'
+        });
+      });
+    }
+  }
+
+  var track = function (name, params) { window.gtag('event', name, params || {}); };
+
+  /* ── 1. Waitlist / newsletter capture → sign_up + generate_lead ────────
+     Binds to any form that posts to /contact#contact_form with
+     form_type=customer (Dawn newsletter block, footer signup, Klaviyo
+     embeds that submit a customer form). Preserves the Next.js params. */
+  function bindWaitlistForms() {
+    document.querySelectorAll('form[action*="/contact"]').forEach(function (form) {
+      var typeInput = form.querySelector('input[name="form_type"]');
+      if (!typeInput || typeInput.value !== 'customer' || form.dataset.ga4Bound) return;
+      form.dataset.ga4Bound = '1';
+      form.addEventListener('submit', function () {
+        var label = form.closest('[data-ga4-label]')
+          ? form.closest('[data-ga4-label]').getAttribute('data-ga4-label')
+          : (location.pathname === '/' ? 'homepage' : location.pathname.replace(/^\//, '').replace(/\//g, '_'));
+        track('sign_up', { method: 'waitlist', event_category: 'engagement', event_label: label });
+        track('generate_lead', { currency: 'USD', value: 5.00 });
+      });
+    });
+  }
+  /* Klaviyo onsite forms (popup/embed) — same events, exit_popup parity */
+  window._klOnsite = window._klOnsite || [];
+  window._klOnsite.push(['openForm', function(){}]); /* ensure Klaviyo queue exists */
+  window.addEventListener('klaviyoForms', function (e) {
+    if (e.detail && e.detail.type === 'submit') {
+      var label = e.detail.metaData && e.detail.metaData.$source === 'popup' ? 'exit_popup' : 'klaviyo_form';
+      track('sign_up', { method: 'waitlist', event_category: 'engagement', event_label: label });
+      track('generate_lead', { currency: 'USD', value: 5.00 });
+    }
+  });
+
+  /* ── 2. Nav promo CTA → select_promotion (parity: nav_cta_waitlist) ────
+     Add data-ga4-promo="nav_cta_waitlist" to the header CTA link in the
+     theme; mobile drawer CTA gets data-ga4-promo="mobile_nav_cta_waitlist". */
+  document.addEventListener('click', function (e) {
+    var promo = e.target.closest('[data-ga4-promo]');
+    if (promo) track('select_promotion', { promotion_name: promo.getAttribute('data-ga4-promo') });
+    var share = e.target.closest('[data-ga4-share]');
+    if (share) track('share', { method: share.getAttribute('data-ga4-share'), content_type: 'referral' });
+  });
+
+  /* ── 3. section_view — parity with homepage IntersectionObserver ─────── */
+  var sessionStart = Date.now();
+  var seen = {};
+  function bindSections() {
+    if (!('IntersectionObserver' in window)) return;
+    var obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        var id = entry.target.id;
+        if (entry.isIntersecting && !seen[id]) {
+          seen[id] = true;
+          track('section_view', {
+            section_name: id,
+            time_to_section: Math.round((Date.now() - sessionStart) / 1000)
+          });
+        }
+      });
+    }, { threshold: 0.3 });
+    document.querySelectorAll('section[id], .shopify-section[id]').forEach(function (s) { obs.observe(s); });
+  }
+
+  /* ── 4. scroll_depth — 25/50/75/100 milestones (parity) ──────────────── */
+  var milestones = { 25: false, 50: false, 75: false, 100: false };
+  window.addEventListener('scroll', function () {
+    var denom = document.body.scrollHeight - window.innerHeight;
+    if (denom <= 0) return;
+    var pct = Math.round((window.scrollY / denom) * 100);
+    [25, 50, 75, 100].forEach(function (m) {
+      if (pct >= m && !milestones[m]) {
+        milestones[m] = true;
+        track('scroll_depth', { percent_scrolled: m });
+      }
+    });
+  }, { passive: true });
+
+  /* ── 5. engaged_time — 30/60/120/300s timers (parity) ─────────────────── */
+  [30, 60, 120, 300].forEach(function (sec) {
+    setTimeout(function () { track('engaged_time', { seconds: sec }); }, sec * 1000);
+  });
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function () { bindWaitlistForms(); bindSections(); });
+  } else { bindWaitlistForms(); bindSections(); }
+  /* Re-bind after Shopify section re-renders in the editor / dynamic loads */
+  document.addEventListener('shopify:section:load', bindWaitlistForms);
+})();
+</script>
