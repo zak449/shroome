@@ -1,60 +1,120 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import Image from "next/image";
 import MobileNav from "../MobileNav";
 
 declare global {
   interface Window {
+    turnstile?: {
+      render: (container: string | HTMLElement, options: Record<string, unknown>) => string;
+      remove: (widgetId: string) => void;
+    };
     gtag?: (...args: unknown[]) => void;
   }
 }
 
+// CFO ruling 2026-07-14: referral rewards are FIXED credits — $5 / $10 / $15
+// at 1 / 3 / 5 referrals (hard cap), plus the case-001 leaderboard prize.
 const tiers = [
-  { count: 3, label: "3 Friends", reward: "Free sachet sampler pack", color: "#C8FF3A" },
-  { count: 5, label: "5 Friends", reward: "Free box (12 sachets)", color: "#C8FF3A" },
-  { count: 10, label: "10 Friends", reward: "Free box + exclusive merch drop", color: "#FFB7D1" },
-  { count: 25, label: "25 Friends", reward: "Founding Member status + lifetime 20% off", color: "#FFB7D1" },
-  { count: 50, label: "50 Friends", reward: "VIP — early access to every new flavor + free boxes for life", color: "#D4B8E0" },
+  { count: "1", label: "friend", reward: "$5 credit on your account", color: "#C8FF3A" },
+  { count: "3", label: "friends", reward: "$10 total credit", color: "#C8FF3A" },
+  { count: "5", label: "friends", reward: "$15 total credit — that’s the cap", color: "#FFB7D1" },
+  { count: "#1", label: "top ref", reward: "Case 001 — our top referrer takes home a hand-numbered box from the very first case", color: "#D4B8E0" },
 ];
 
 const faqs = [
-  { q: "Is there a limit?", a: "No limit. Refer 100 friends, earn $500." },
-  { q: "When do I get my credit?", a: "Instantly when your friend\u2019s order ships." },
+  { q: "Is there a limit?", a: "Credits cap at $15 (5 friends) \u2014 we\u2019re a small-batch brand, not a pyramid. After that you\u2019re playing for the leaderboard: our top referrer gets a hand-numbered box from case 001." },
+  { q: "When do I get my credit?", a: "Credits are applied automatically at checkout on drop day \u2014 $5 for your 1st friend, $10 total at 3, $15 total at 5." },
   { q: "Can I share on social media?", a: "Yes! Your link works everywhere." },
 ];
 
 export default function ReferPage() {
   const [email, setEmail] = useState("");
-  const [step, setStep] = useState<"enter" | "loading" | "done">("enter");
+  const [step, setStep] = useState<"enter" | "captcha" | "loading" | "done">("enter");
   const [referralCode, setReferralCode] = useState("");
-  const [referralCount, setReferralCount] = useState(0);
+  // null = live count unavailable (we hide the tally rather than show a false 0)
+  const [referralCount, setReferralCount] = useState<number | null>(null);
   const [copied, setCopied] = useState(false);
+  const [error, setError] = useState("");
+  const captchaRef = useRef<HTMLDivElement>(null);
+  const widgetIdRef = useRef<string | null>(null);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!email.trim() || step === "loading") return;
+    if (!email.trim() || step === "loading" || step === "captcha") return;
+    setError("");
+    setStep("captcha");
+  };
+
+  const onTurnstileSuccess = useCallback(async (token: string) => {
     setStep("loading");
     try {
       const res = await fetch("/api/waitlist", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, turnstileToken: "refer-page" }),
+        body: JSON.stringify({ email, turnstileToken: token }),
       });
       const data = await res.json();
-      if (data.referralCode) setReferralCode(data.referralCode);
-      if (data.referralCount) setReferralCount(data.referralCount);
+      if (!res.ok) {
+        setError(data.error || "Something went wrong. Please try again.");
+        setStep("enter");
+        return;
+      }
+      if (data.referralCode) {
+        setReferralCode(data.referralCode);
+        // Live referral tally — only shown when the stats backend can report
+        // a real number (see /api/referral); otherwise we hide it.
+        try {
+          const statsRes = await fetch(`/api/referral?code=${encodeURIComponent(data.referralCode)}`);
+          const stats = await statsRes.json();
+          setReferralCount(typeof stats?.referralCount === "number" ? stats.referralCount : null);
+        } catch {
+          setReferralCount(null);
+        }
+      }
       window.gtag?.("event", "sign_up", { method: "waitlist", event_label: "refer_page" });
       window.gtag?.("event", "generate_lead", { currency: "USD", value: 5.0 });
+      setStep("done");
     } catch {
-      /* silently handle */
+      setError("Something went wrong. Please try again.");
+      setStep("enter");
     }
-    setStep("done");
-  };
+  }, [email]);
+
+  // Load the Turnstile script and render the widget when the captcha step is
+  // active (the API rejects token-less signups when Turnstile is configured).
+  useEffect(() => {
+    if (step !== "captcha") return;
+    const renderWidget = () => {
+      if (!captchaRef.current || !window.turnstile) return;
+      if (widgetIdRef.current) {
+        try { window.turnstile.remove(widgetIdRef.current); } catch {}
+      }
+      widgetIdRef.current = window.turnstile.render(captchaRef.current, {
+        sitekey: (process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY && !process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY.startsWith("REPLACE")) ? process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY : "1x00000000000000000000AA",
+        callback: onTurnstileSuccess,
+        "error-callback": () => {
+          setError("Verification failed. Please try again.");
+          setStep("enter");
+        },
+        theme: "light",
+      });
+    };
+    if (window.turnstile) {
+      renderWidget();
+    } else {
+      const script = document.createElement("script");
+      script.src = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
+      script.async = true;
+      script.onload = renderWidget;
+      document.head.appendChild(script);
+    }
+  }, [step, onTurnstileSuccess]);
 
   const referralLink = referralCode ? `https://www.drinkshroome.com?ref=${referralCode}` : "";
 
   const shareMsg = referralLink
-    ? `I just found the cleanest matcha ever \u2014 shroom\u00e9 is ceremonial matcha + mushrooms + collagen in one sachet. Use my link for $5 off: ${referralLink}`
+    ? `I just found the cleanest matcha ever \u2014 shroom\u00e9 is ceremonial matcha + mushrooms + collagen in one sachet. Use my link to lock in 20% off + free shipping at launch: ${referralLink}`
     : "";
 
   const copyLink = () => {
@@ -88,7 +148,7 @@ export default function ReferPage() {
         break;
       case "email":
         window.open(
-          `mailto:?subject=${encodeURIComponent("You need to try this matcha \u2014 $5 off")}&body=${msg}`,
+          `mailto:?subject=${encodeURIComponent("You need to try this matcha \u2014 20% off")}&body=${msg}`,
           "_blank"
         );
         break;
@@ -500,12 +560,12 @@ export default function ReferPage() {
           <div className="ref-hero-inner">
             <p className="ref-hero-tag">Referral Program</p>
             <h1>
-              Give $5, Get $5.<br />
-              <span className="lime">Everyone wins.</span>
+              Refer friends.<br />
+              <span className="lime">Earn matcha money.</span>
             </h1>
             <p className="ref-hero-sub">
-              Share shroom&eacute; with friends. They get $5 off their first box.
-              You get $5 credit for every friend who orders. No limit.
+              Share shroom&eacute; with friends. They lock in 20% off + free shipping.
+              You earn fixed credits: $5 for your 1st friend, $10 total at 3, $15 total at 5.
             </p>
             <button className="ref-hero-cta" onClick={scrollToForm}>
               Get Your Referral Link &darr;
@@ -517,7 +577,7 @@ export default function ReferPage() {
         <section className="ref-how">
           <div className="ref-how-inner">
             <h2 className="ref-how-title">how it works</h2>
-            <p className="ref-how-sub">Three steps. Zero friction. Unlimited rewards.</p>
+            <p className="ref-how-sub">Three steps. Zero friction. Fixed credits &mdash; no games.</p>
             <div className="ref-steps">
               <div className="ref-step">
                 <p className="ref-step-num">Step 01</p>
@@ -531,19 +591,19 @@ export default function ReferPage() {
               <div className="ref-step">
                 <p className="ref-step-num">Step 02</p>
                 <div className="ref-step-icon">2</div>
-                <p className="ref-step-title">Friend gets $5 off</p>
+                <p className="ref-step-title">Friend locks in 20% off</p>
                 <p className="ref-step-desc">
-                  Their first box ships with your code applied.
-                  They save, you earn. Simple.
+                  They join the list through your link and lock in
+                  20% off + free shipping at launch. They save, you earn.
                 </p>
               </div>
               <div className="ref-step">
                 <p className="ref-step-num">Step 03</p>
                 <div className="ref-step-icon">3</div>
-                <p className="ref-step-title">You earn $5 credit</p>
+                <p className="ref-step-title">You earn credit</p>
                 <p className="ref-step-desc">
-                  Stacks with every friend. No cap. Refer 10 friends,
-                  that&apos;s $50. Refer 100, that&apos;s $500.
+                  $5 for your 1st friend, $10 total at 3, $15 total at 5.
+                  Applied automatically at checkout on drop day.
                 </p>
               </div>
             </div>
@@ -552,17 +612,17 @@ export default function ReferPage() {
 
         {/* ═══ 3. REWARD TIERS ═══ */}
         <section className="ref-tiers">
-          <h2 className="ref-tiers-title">unlock bigger rewards</h2>
-          <p className="ref-tiers-sub">The more friends you refer, the better it gets.</p>
+          <h2 className="ref-tiers-title">the credit ladder</h2>
+          <p className="ref-tiers-sub">Fixed credits at 1, 3, and 5 friends &mdash; plus one prize money can&apos;t buy.</p>
           <div className="ref-tier-ladder">
             {tiers.map((tier, i) => (
               <div
                 key={tier.count}
-                className={`ref-tier${i === 3 ? " ref-tier-founder" : ""}${i === 4 ? " ref-tier-vip" : ""}`}
+                className={`ref-tier${i === 3 ? " ref-tier-vip" : ""}`}
               >
                 <div className="ref-tier-badge" style={i < 3 ? { background: tier.color } : undefined}>
                   <span className="ref-tier-badge-num">{tier.count}</span>
-                  friends
+                  {tier.label}
                 </div>
                 <div className="ref-tier-content">
                   <p className="ref-tier-reward">{tier.reward}</p>
@@ -599,25 +659,39 @@ export default function ReferPage() {
                 <p className="ref-share-sub">
                   Enter your email to generate your unique link. Already on the list? We&apos;ll find your existing code.
                 </p>
-                <form className="ref-form" onSubmit={handleSubmit}>
-                  <input
-                    className="ref-input"
-                    type="email"
-                    placeholder="your@email.com"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                    aria-label="Email address"
-                  />
-                  <button className="ref-btn" type="submit" disabled={step === "loading"}>
-                    {step === "loading" ? "Generating..." : "Get My Link"}
-                  </button>
-                </form>
+                {step === "captcha" ? (
+                  <div>
+                    <p style={{ fontSize: 13, color: "rgba(27,31,59,0.5)", marginBottom: 12 }}>
+                      One quick check&hellip;
+                    </p>
+                    <div ref={captchaRef} style={{ display: "flex", justifyContent: "center" }} />
+                  </div>
+                ) : (
+                  <form className="ref-form" onSubmit={handleSubmit}>
+                    <input
+                      className="ref-input"
+                      type="email"
+                      placeholder="your@email.com"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      required
+                      aria-label="Email address"
+                    />
+                    <button className="ref-btn" type="submit" disabled={step === "loading"}>
+                      {step === "loading" ? "Generating..." : "Get My Link"}
+                    </button>
+                  </form>
+                )}
+                {error && (
+                  <p style={{ color: "#B3261E", fontSize: 13, marginTop: 12 }} role="alert">
+                    {error}
+                  </p>
+                )}
               </>
             ) : (
               <div className="ref-panel">
                 <h2 className="ref-panel-title">you&apos;re in. now share it.</h2>
-                <p className="ref-panel-sub">Every friend who orders = $5 credit for you. Start sharing.</p>
+                <p className="ref-panel-sub">$5 for your 1st friend, $10 total at 3, $15 total at 5 &mdash; plus a shot at case 001.</p>
 
                 {referralCode && (
                   <>
@@ -654,17 +728,26 @@ export default function ReferPage() {
                       </button>
                     </div>
 
-                    {/* Progress dots */}
-                    <div className="ref-progress">
-                      {[0, 1, 2, 3, 4].map((i) => (
-                        <div key={i} className={`ref-dot ${i < referralCount ? "ref-dot-filled" : ""}`}>
-                          {i < referralCount ? "\u2713" : i + 1}
-                        </div>
-                      ))}
-                      <span style={{ fontSize: 13, color: "rgba(27,31,59,0.5)", fontWeight: 600, marginLeft: 4 }}>
-                        {referralCount} friend{referralCount !== 1 ? "s" : ""} referred
-                      </span>
-                    </div>
+                    {/* Progress dots \u2014 only when a real live count is available.
+                        When the stats backend can't report one, say so honestly
+                        instead of showing a false 0. */}
+                    {referralCount !== null ? (
+                      <div className="ref-progress">
+                        {[0, 1, 2, 3, 4].map((i) => (
+                          <div key={i} className={`ref-dot ${i < referralCount ? "ref-dot-filled" : ""}`}>
+                            {i < referralCount ? "\u2713" : i + 1}
+                          </div>
+                        ))}
+                        <span style={{ fontSize: 13, color: "rgba(27,31,59,0.5)", fontWeight: 600, marginLeft: 4 }}>
+                          {referralCount} friend{referralCount !== 1 ? "s" : ""} referred
+                        </span>
+                      </div>
+                    ) : (
+                      <p style={{ marginTop: 24, fontSize: 13, color: "rgba(27,31,59,0.5)", fontWeight: 600 }}>
+                        Every signup through your link is recorded &mdash; we&apos;ll confirm your
+                        referral total (and your credit) before drop day.
+                      </p>
+                    )}
                   </>
                 )}
               </div>

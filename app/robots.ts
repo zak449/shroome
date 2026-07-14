@@ -5,7 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: ["/api/", "/dashboard/", "/unsubscribe/"],
+      disallow: ["/api/", "/dashboard/", "/unsubscribe/", "/lp/"],
     },
     sitemap: "https://www.drinkshroome.com/sitemap.xml",
   };

@@ -437,6 +437,7 @@ export default function Home() {
             { label: "FAQ", id: "faq", href: "/faq" },
             { label: "Blog", id: "blog", href: "/blog" },
             { label: "Recipes", id: "recipes", href: "/recipes" },
+            { label: "The Drop", id: "drop", href: "/drop" },
           ].map((l) => (
             <button
               key={l.id}
@@ -523,6 +524,7 @@ export default function Home() {
             { label: "FAQ", id: "faq", href: "/faq" },
             { label: "Blog", id: "blog", href: "/blog" },
             { label: "Recipes", id: "recipes", href: "/recipes" },
+            { label: "The Drop", id: "drop", href: "/drop" },
           ].map((l) => (
             <button
               key={l.id}

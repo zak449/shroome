@@ -8,6 +8,11 @@ export default function StickyCTA() {
 
   useEffect(() => {
     if (typeof window === "undefined") return;
+    // Ghost landing pages (/lp/*) are single-CTA — no cross-site CTA bar there
+    if (window.location.pathname.startsWith("/lp")) {
+      setDismissed(true);
+      return;
+    }
     if (sessionStorage.getItem("shroome_sticky_cta_dismissed") === "1") {
       setDismissed(true);
       return;

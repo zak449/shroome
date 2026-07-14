@@ -25,6 +25,11 @@ export default function ExitPopup() {
   );
 
   useEffect(() => {
+    // Ghost landing pages (/lp/*) run their own single-CTA flow — no popup there
+    if (window.location.pathname.startsWith("/lp")) {
+      setDismissed(true);
+      return;
+    }
     // Don't show if already signed up or dismissed this session
     if (
       sessionStorage.getItem("shroome_exit_popup_dismissed") ||
