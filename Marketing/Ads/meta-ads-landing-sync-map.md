@@ -1,0 +1,58 @@
+# meta ads ↔ landing page sync map
+
+> Date: 2026-07-14 · Owner: Ad↔LP Sync agent
+> Scope: every Meta/TikTok-trafficked ad category in `ad-creative-library-v1.md` + `mof-promo-creative-pack.md`, audited against its destination page in `app/`. Checks: headline continuity, offer continuity, voice (no "ritual"/earthy — Poppi/Starface/Graza test), UTM/ad-code alignment, and the 2026-07-14 value decisions (gels = real $18 SKU SHR-EYG-06; keychain = one-time anchor drop, 100 units @ $15 on drop-002 day, then earned-only forever).
+> **Nothing tracking-related was touched:** all slugs (`/lp/ritual` stays `/lp/ritual` — legacy slug, segment renamed to "the matcha maximalists"), UTM pattern (`utm_source={meta|tiktok}&utm_medium=paid&utm_campaign=lp-{slug}&utm_content={ad_code}`), and ad codes are preserved exactly.
+
+---
+
+## 1. Sync table
+
+| # | Ad category (codes) | Meta objective | Destination URL | UTM / ad code | Message-match verdict | Fix applied |
+|---|---|---|---|---|---|---|
+| 1 | TOF prospecting — matcha maximalists (`SHR_TOF_RIT_IMG_01/VID_03/SPK_01/SPK_02`) | Leads (drop-access signup) | `/lp/ritual` | `utm_campaign=lp-ritual`, `utm_content={ad_code}` | ✅ MATCH — ad headline "ceremonial matcha, minus the ceremony" = LP h1; drop ledger, 20→30 code mechanic, and "pour/swirl/glow" all mirrored; no "ritual" in customer copy (slug only) | none needed |
+| 2 | TOF prospecting — glow (`SHR_TOF_GLW_IMG_01/VID_02/SPK_01/SPK_02`) | Leads | `/lp/glow` | `lp-glow` + ad code | ✅ MATCH — "the beauty step you drink" = LP h1; claims + FDA disclaimer mirrored (LP `disclaimer: true`) | none needed |
+| 3 | TOF prospecting — calm (`SHR_TOF_CLM_IMG_01/VID_02/SPK_01/SPK_02`) | Leads | `/lp/calm` | `lp-calm` + ad code | ✅ MATCH — "break up with the crash. keep the energy." = LP h1; napkin-curve ad ↔ LP `curve: true` section incl. the mandatory "illustrative" caption; banned-word sweep clean | none needed |
+| 4 | TOF prospecting — focus (`SHR_TOF_FCS_IMG_01/VID_02/SPK_01/SPK_02`) | Leads | `/lp/focus` | `lp-focus` + ad code | ✅ MATCH — "we'd rather show you the label than the ad" = LP h1; 200mg/≥70%/2.5g callouts identical; dark-mode ledger matches spec-sheet ad world | none needed |
+| 5 | TOF prospecting — pour (`SHR_TOF_PUR_IMG_01/VID_02/SPK_01/SPK_02`) | Leads | `/lp/pour` | `lp-pour` + ad code | ✅ MATCH — "the café line was the only ingredient we removed" = LP h1; 15-sec/TSA/1oz facts identical | none needed |
+| 6 | MOF retargeting — drink ads, all segments (`SHR_MOF_RIT_CAR_02/SPK_03`, `GLW_CAR_03/SPK_03`, `CLM_VID_03/SPK_03`, `FCS_CAR_03/SPK_03`, `PUR_VID_03/SPK_03`) | Leads (retarget LP visitors/engagers) | same segment LP (UTM-matched) | `lp-{slug}` + ad code | ✅ MATCH — SMS mechanic in ads ("10 min early, SHROOME30 replaces the 20 — best code wins, never 'stack'") is verbatim on every LP final CTA + DropAccessForm phone step | none needed |
+| 7 | MOF promo — keychain six (`SHR_MOF_RIT_SPK_04`, `ALL_SPK_01`, `FCS_IMG_02`, `ALL_VID_07`, `ALL_SPK_02`, `RIT_VID_04`) | Leads / SMS opt-in / referral starts | `/lp/ritual`, `/lp/focus`, `/lp/pour` (+ `/refer` via `start referring` end-card chip) | `lp-{slug}` + ad code (unchanged) | ❌ MISMATCH ×3 — (a) ads promised "3 referrals = mé" but `/refer` showed only a $10 credit at 3; (b) `ALL_VID_07` promises "mé rides in your first box" at SMS opt-in but the LP phone step never mentioned her; (c) pack absolutes "never for sale, no price, ever" now false under the $15 anchor-drop decision | (a) `/refer` ladder, hero, step-03, FAQ + post-signup panel now carry the keychain at 3 (no dollar figure pre-anchor — "earned, not bought"); (b) DropAccessForm phone step now says "your first box comes with her: the mé keychain"; (c) pack §0.2 rewritten, new §0.6 value-claim rules, `FCS_IMG_02` re-premised as "price: $15, once", all "not for sale" absolutes swapped to "earned, not bought" / "sold once. never again", `-PA` post-anchor variant rules added |
+| 8 | MOF promo — eye-gel six (`SHR_MOF_GLW_VID_03/SPK_04/IMG_02/SPK_05`, `FCS_SPK_04`, `CLM_SPK_04`) | Leads / sub intent | `/lp/glow`, `/lp/focus`, `/lp/calm` | `lp-{slug}` + ad code (unchanged) | ❌ MISMATCH — ads said "not sold separately / never sold", now false (gels are a live $18 SKU); no "$18 value" anywhere; `/refer` showed a $15 credit at 5 instead of the gels the ads promise | "$18 value" propagated through all six gels ads (end-cards, captions, primary text); "never sold" retired pack-wide (§0.6); `/refer` tier 5 now includes "a box of our under-eye gels ($18 value), free"; cosmetic lexicon (appearance-only language) verified intact in every cut |
+| 9 | BOF drop conversion (`SHR_BOF_ALL_VID_01/IMG_02/VID_03/VID_04`) | Sales (drop window) | `/drop` | ad code per unit (unchanged) | ⚠️ PARTIAL — mechanics (real ledger, live counter, SMS exclusion) all mirrored on `/drop`; but the drop-day GWP promised in gels ads ("free with $66+ on drop day") had zero presence on `/drop` | `/drop` lineup section now carries "drop-day bonus: orders $66+ during the open window include our under-eye gels, free ($18 value)" — $66 = the 24-pack, matching P7 |
+| 10 | RTG waitlist non-openers (`SHR_RTG_ALL_IMG_05/VID_06`) | Sales (re-engage) | `/drop` | ad code (unchanged) | ✅ MATCH — conditional 20/30 code copy runs as two ad-set variants per pack rules; inbox-subject mechanic is email-side, no LP dependency | none needed |
+| 11 | Sub-intent tease (`SHR_MOF_GLW_IMG_02` → plan-picker at open) | Sub intent | `/lp/glow` now, `/drop` sub matrix at open | `lp-glow` + ad code | ⚠️ PARTIAL — ad promises "gels every 3rd delivery, 24/48 tiers" + first-box keychain (P5 "your first box comes with her"), but `/drop`'s subscription teaser mentioned neither perk | `/drop` sub teaser now reads: "your first box comes with her — the mé keychain, earned, not bought — and every 3rd delivery on the 24 & 48 plans includes our under-eye gels, free ($18 value)" |
+| 12 | Referral flywheel (end-card `start referring` chips on keychain cuts) | Referral starts | `/refer` | gtag `event_label: refer_page` (no paid UTM of its own) | ❌ MISMATCH — see row 7(a) | `/refer` fixed as above; credits kept (committed copy) with items added on top — see gap G4 |
+
+**Voice audit (all rows):** zero instances of "ritual"/earthy/beige in customer-facing landing copy (`/lp/ritual` is slug-only, documented as legacy in library §1.2); vanilla is "warm, floral" everywhere; provenance token untouched in `app/lib/brand.ts` ("Grown in Kyoto, Made in California"); lowercase display copy holds on every LP.
+
+---
+
+## 2. Value-claim rules now encoded (where they live)
+
+| Rule | Ad pack | Site |
+|---|---|---|
+| Gels "$18 value" — legal immediately (real SKU price) | `mof-promo-creative-pack.md` §0.2, §0.6, all six gels ads | `/refer` (tier 5, FAQ, hero, panel), `/drop` (GWP banner + sub teaser) |
+| Keychain "$15 value" — legal ONLY after the drop-002 anchor drop (100 @ $15) actually sells | §0.6: `-PA` post-anchor re-cut flag; pre-anchor = "free gift" / "comes with her" / "earned, not bought" | `/refer` + DropAccessForm carry no dollar figure on the keychain; code comments in both files document the post-anchor unlock |
+| No "never for sale / no price, ever" absolutes | retired pack-wide; honest superlative is "sold once. never again." | n/a (site never carried them) |
+
+---
+
+## 3. Gaps needing a founder decision
+
+- **G1 — no SMS-first module on `/lp/pour`.** `SHR_MOF_ALL_VID_07` routes to "/lp/pour SMS-first module", but every LP collects email first, phone second (DropAccessForm). The audience is *already on the waitlist*, so the email step is dead weight for them. Decide: build a phone-first variant (e.g. `/lp/pour?sms=1`) or re-point the ad's CTA copy.
+- **G2 — no quiz page.** P2 ("find your pour" quiz keychain draw, 100/drop) is referenced in the promo plan, but `app/` has no `/quiz` route. No ads currently point there, so it's a roadmap gap, not a traffic leak.
+- **G3 — no landing surface for the keychain anchor drop itself.** The one-time 100-unit $15 authenticated drop on drop-002 day has no PDP/section anywhere in `app/`. If it sells on `/drop`, that page needs an authenticated-drop module (and ops must confirm sell-through before any `-PA` "$15 value" re-cut trafficks).
+- **G4 — referral ladder economics.** Ads promise items at 3/5; committed public copy promised credits at 3/5. Interim fix keeps **both** on `/refer` (credits + keychain at 3, credits + gels at 5 → +$1.50/+$3.25 per milestone vs credits-only). The P3/P4 swap (items *replace* credits) is still pending CFO sign-off on `discount-matrix.md` §4 — if he signs, `/refer` tier copy shrinks to items-only for post-launch cohorts.
+- **G5 — `/refer` has no paid-UTM instrumentation.** Keychain cuts route referral intent there via the end-card chip, but signups log as generic `refer_page` — per-ad referral-start attribution (the primary metric for `RIT_SPK_04`/`FCS_IMG_02`) isn't measurable. Consider `utm_content` passthrough on the chip link.
+- **G6 — gels copy blockers unchanged.** `[PAIRS_OR_SINGLES]` + INCI verification still gate any "6 uses"/ingredient gels copy (pack §0.4, promo plan §6). The $18 decision does not unblock these.
+- **G7 — ops config for the anchor drop.** §0.6 assumes "100 / $15 / drop-002 day" will exist in ops config like drop counts do; `app/lib/drop-config.ts` has no keychain-anchor fields yet.
+
+---
+
+## 4. Files touched by this sync
+
+- `Marketing/Ads/mof-promo-creative-pack.md` — §0.2 rewritten, §0.5 updated, §0.6 added, `FCS_IMG_02` re-premised, value/absolute fixes across all 12 ads, pre-flight checklist line added.
+- `app/refer/page.tsx` — tiers, hero sub, step 03, FAQ, post-signup panel.
+- `app/lp/DropAccessForm.tsx` — phone-step value prop (+ lockstep comment).
+- `app/drop/page.tsx` — drop-day GWP banner, subscription gift perks.
+- `Marketing/Ads/ad-creative-library-v1.md` — **no changes needed** (clean on voice, offer, and UTM; promo items never appear in it).

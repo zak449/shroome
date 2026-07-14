@@ -24,8 +24,8 @@ CFO ruling (2026-07-14, binding): **fixed rewards beat percentage discounts** �
 | Packaging | poly bag with logo print, **barcode on back = GTIN 860015741349** |
 | Production | 1,000pc test run now; 10,000pc/month bulk capacity; **assorted colors** (→ colorway mechanic, §4) |
 | Landed cost | **ASSUMPTION TO VERIFY: ~$1.20–2.00/unit** (planning midpoint **$1.50**; includes freight/duty at test-run scale — bulk should land lower) |
-| Perceived value | **$12–15** — enamel-pin/charm market comps. Internal number only; in customer copy the value framing is "**not for sale**," never a dollar figure |
-| Pricing rule | **the keychain never gets a price. ever.** No storefront listing, no "value $15!" badges. It cannot be bought, only earned or gifted → pure status object. (SHR-KCH-01 exists in Shopify at $0, hidden — §5) |
+| Perceived value | **$15** — established by the one-time anchor drop (below), not by comps alone. Post-anchor, "$15 value" is a legally-real claim backed by actual transaction history |
+| Pricing rule | **the one-time anchor (APPROVED 2026-07-14).** Mé is sold exactly ONCE: 100 units of the first colorway ("case 001") at $15 on drop-002 day, then earned-only forever — "mé was for sale once. never again. now you earn her." The product page stays live at $15, permanently sold out, with "how to earn her" replacing the buy button — a price anchor and a lore page in one. **LIVE in Shopify as a DRAFT** (`gid://shopify/Product/10300264677652`, SKU SHR-KCH-01, barcode 860015741349, inventory pre-loaded 100) — flip to ACTIVE on drop-002 day. No "value $15" badges in customer copy until the anchor drop has actually sold (see creative pack §0.6: pre-anchor = "free gift"/"comes with her"; post-anchor `-PA` re-cuts may say "$15 value") |
 
 ### SHR-EYG-06 — under-eye gels, box of 6 (GTIN 860015741363)
 
@@ -34,7 +34,7 @@ CFO ruling (2026-07-14, binding): **fixed rewards beat percentage discounts** �
 | Contents | under-eye gel patches, box of 6, **30ml total**. ⚠️ **CONFIRM: 6 pairs vs 6 singles** before any "X uses" copy ships |
 | Formula | collagen-story adjacent (topical). ⚠️ **VERIFY INCI before any ingredient copy** — all creative assumes topical collagen/hydrating actives; if the final formula differs, copy changes, positioning doesn't |
 | Landed cost | **ASSUMPTION TO VERIFY: ~$2.50–4.00/box** (planning midpoint **$3.25**) |
-| Perceived value | **$18/box** — patch-market comps (Wander Beauty, Patchology run $3–5/pair). Unlike the keychain, gels **may become a sellable $18 SKU later** (GTIN is ready); at launch: **"not sold separately (yet)"** |
+| Perceived value | **$18/box** — patch-market comps (Wander Beauty, Patchology run $3–5/pair). **NOW A LIVE RETAIL SKU (APPROVED 2026-07-14):** ACTIVE in Shopify at $18 (`gid://shopify/Product/10300264612116`, SKU SHR-EYG-06, barcode 860015741363, inventory tracked — load stock on receipt). Selling it makes every "$18 value" gift claim FTC-safe, opens the second product line (drink the collagen, wear the collagen), and turns the every-3rd-box sub perk into found money |
 | Positioning | **"the glow you drink, now the glow you wear"** — bridges the 2g-collagen-per-sachet story from ingestible to topical. It makes the beauty claim tangible without adding a single new claim to the drink |
 | Compliance | gels are a **cosmetic**, not a supplement: appearance/structure language only — "hydrates," "cools," "refreshes the look of tired under-eyes," "skin feels smoother." **NEVER** "treats/reduces puffiness or dark circles" (medical), "erases wrinkles," "boosts collagen production." Full lexicon in the creative pack |
 

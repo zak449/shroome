@@ -17,15 +17,21 @@ declare global {
 
 // CFO ruling 2026-07-14: referral rewards are FIXED credits — $5 / $10 / $15
 // at 1 / 3 / 5 referrals (hard cap), plus the case-001 leaderboard prize.
+// Promo add (founder-approved 2026-07-14, mirrors the MOF ad pack + P3/P4 in
+// Product/SKU Catalog/promo-value-add-plan.md): the Mé keychain rides at 3,
+// the under-eye gels ($18 value — real $18 SKU, SHR-EYG-06) at 5.
+// Keychain value language: "$15 value" only AFTER the one-time drop-002
+// anchor drop (100 units @ $15) actually happens — until then, no dollar
+// figure on the keychain here. It stays "earned, not bought."
 const tiers = [
   { count: "1", label: "friend", reward: "$5 credit on your account", color: "var(--brand-accent)" },
-  { count: "3", label: "friends", reward: "$10 total credit", color: "var(--brand-accent)" },
-  { count: "5", label: "friends", reward: "$15 total credit — that’s the cap", color: "var(--brand-flavor-strawberry)" },
+  { count: "3", label: "friends", reward: "$10 total credit + the Mé keychain — this drop’s colorway, tucked into your next box. Earned, not bought.", color: "var(--brand-accent)" },
+  { count: "5", label: "friends", reward: "$15 total credit — that’s the cap — plus a box of our under-eye gels ($18 value), free", color: "var(--brand-flavor-strawberry)" },
   { count: "#1", label: "top ref", reward: "Case 001 — our top referrer takes home a hand-numbered box from the very first case", color: "var(--brand-flavor-functional)" },
 ];
 
 const faqs = [
-  { q: "Is there a limit?", a: "Credits cap at $15 (5 friends) \u2014 we\u2019re a small-batch brand, not a pyramid. After that you\u2019re playing for the leaderboard: our top referrer gets a hand-numbered box from case 001." },
+  { q: "Is there a limit?", a: "Credits cap at $15 (5 friends) \u2014 we\u2019re a small-batch brand, not a pyramid. The gifts don\u2019t count against the cap: the M\u00e9 keychain arrives at 3 and our under-eye gels ($18 value) at 5. After that you\u2019re playing for the leaderboard: our top referrer gets a hand-numbered box from case 001." },
   { q: "When do I get my credit?", a: "Credits are applied automatically at checkout on drop day \u2014 $5 for your 1st friend, $10 total at 3, $15 total at 5." },
   { q: "Can I share on social media?", a: "Yes! Your link works everywhere." },
 ];
@@ -567,7 +573,9 @@ export default function ReferPage() {
             </h1>
             <p className="ref-hero-sub">
               Share shroom&eacute; with friends. They lock in 20% off + free shipping.
-              You earn fixed credits: $5 for your 1st friend, $10 total at 3, $15 total at 5.
+              You earn fixed credits — $5 for your 1st friend, $10 total at 3, $15 total at 5 —
+              plus gifts money can&apos;t buy: the M&eacute; keychain at 3, and our under-eye
+              gels ($18 value) at 5.
             </p>
             <button className="ref-hero-cta" onClick={scrollToForm}>
               Get Your Referral Link &darr;
@@ -602,10 +610,11 @@ export default function ReferPage() {
               <div className="ref-step">
                 <p className="ref-step-num">Step 03</p>
                 <div className="ref-step-icon">3</div>
-                <p className="ref-step-title">You earn credit</p>
+                <p className="ref-step-title">You earn credit — and her</p>
                 <p className="ref-step-desc">
-                  $5 for your 1st friend, $10 total at 3, $15 total at 5.
-                  Applied automatically at checkout on drop day.
+                  $5 for your 1st friend, $10 total at 3, $15 total at 5 —
+                  applied automatically at checkout on drop day. At 3, the M&eacute;
+                  keychain rides in your next box; at 5, the under-eye gels ($18 value).
                 </p>
               </div>
             </div>
@@ -695,7 +704,7 @@ export default function ReferPage() {
             ) : (
               <div className="ref-panel">
                 <h2 className="ref-panel-title">you&apos;re in. now share it.</h2>
-                <p className="ref-panel-sub">$5 for your 1st friend, $10 total at 3, $15 total at 5 &mdash; plus a shot at case 001.</p>
+                <p className="ref-panel-sub">$5 for your 1st friend, $10 total at 3, $15 total at 5 &mdash; plus the M&eacute; keychain at 3, the under-eye gels ($18 value) at 5, and a shot at case 001.</p>
 
                 {referralCode && (
                   <>

@@ -204,8 +204,13 @@ export default function DropAccessForm({
         <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 700, fontSize: "0.85rem", color: strong, marginBottom: 4 }}>
           ✓ drop access locked in.
         </p>
+        {/* Text-list value prop — must stay in lockstep with the MOF ad pack
+            (SHR_MOF_ALL_VID_07 promises "mé rides in your first box").
+            Keychain value language: no "$15 value" here until the one-time
+            drop-002 anchor drop (100 units @ $15) has happened — pre-anchor
+            she's "earned, not bought" / "comes with her" only. */}
         <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 600, fontSize: "0.82rem", color: faint, marginBottom: 12 }}>
-          the text list gets the drop link 10 minutes before everyone else — and your code upgrades from 20% to 30%. best code wins.
+          the text list gets the drop link 10 minutes before everyone else, your code upgrades from 20% to 30% (best code wins) — and your first box comes with her: the mé keychain, earned, not bought.
         </p>
         <form onSubmit={handlePhoneSubmit}>
           <input

@@ -330,6 +330,12 @@ export default function DropPage() {
           <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.88rem", color: "rgba(var(--brand-ink-rgb),0.6)", marginTop: 10 }}>
             every box from drop 001 is gone. drop 002 brings them back — waitlist first.
           </p>
+          {/* Drop-day GWP (P7, promo-value-add-plan) — mirrors the gels ads'
+              "free with $66+ on drop day" promise. $18 is the gels' real SKU
+              price (SHR-EYG-06), so the value claim is honest. */}
+          <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.8rem", fontWeight: 600, color: "var(--brand-ink)", background: "rgba(var(--brand-accent-rgb),0.35)", display: "inline-block", padding: "6px 14px", marginTop: 14 }}>
+            drop-day bonus: orders $66+ during the open window include our under-eye gels, free ($18 value).
+          </p>
         </div>
         <div className="dr-grid">
           {products.map((p) => (
@@ -368,6 +374,8 @@ export default function DropPage() {
           <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.88rem", color: "rgba(var(--brand-ink-rgb),0.65)", marginTop: 10, maxWidth: 560, marginLeft: "auto", marginRight: "auto", lineHeight: 1.6 }}>
             every active subscription&apos;s boxes are reserved out of each production run before
             the public window opens — allocation reserved, 10–20% off, skip or pause anytime.
+            your first box comes with her — the mé keychain, earned, not bought — and every 3rd
+            delivery on the 24 &amp; 48 plans includes our under-eye gels, free ($18 value).
           </p>
           <p style={{ fontFamily: "var(--brand-font-mono)", fontSize: "0.68rem", letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--brand-ink)", background: "var(--brand-accent)", display: "inline-block", padding: "6px 14px", marginTop: 16 }}>
             opens with drop 002
