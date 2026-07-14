@@ -148,16 +148,16 @@ Preview URL (works for unpublished themes):
 
 Eyeball checklist:
 
-- [ ] Announcement bar: lime (`#C8FF3A`) bar, ink text, "drop 001 sold out — drop 002
+- [ ] Announcement bar: matcha (`#7A881F`) bar, retro (`#FEFFF8`) text, "drop 001 sold out — drop 002
       loading. waitlist gets in first →", whole bar links to drinkshroome.com.
 - [ ] Hero: ink text box on banner, "the first pour is gone." in the serif display
-      font, lime "get drop access" button → `https://www.drinkshroome.com/drop`.
+      font, green (`#2D341A`) "get drop access" button → `https://www.drinkshroome.com/drop`.
       (No hero image was set — Dawn shows its placeholder art. Upload a brand image in
       the theme editor when the hero asset lands; the copy/settings survive.)
-- [ ] Stack story rich-text on canvas `#FDF4EE`.
+- [ ] Stack story rich-text on canvas `#FEFFF8`.
 - [ ] Featured collection: 4 product cards, each with automatic "Sold out" badge.
 - [ ] FDA disclaimer rich-text present above the footer sections.
-- [ ] Newsletter section: ink background, canvas text, lime submit button; a test
+- [ ] Newsletter section: ink background, canvas text, matcha submit button; a test
       submit creates a Shopify customer with `accepts_marketing` (Klaviyo app syncs).
 - [ ] Fonts: headings render Instrument Serif, body renders Archivo. If headings fall
       back to a default serif, the `instrument_serif_n4` handle didn't resolve — open

@@ -5,16 +5,17 @@
 > Conversion goal: drop-access signup (email → optional SMS early access). Single CTA, repeated 3x down-page. DROP MODEL: numbered, limited drops — see drop status module below.
 > HONESTY RULE: every scarcity statement must be literally true — drop 001 genuinely sold out, drop sizes are real production run counts, countdowns run to real dates only.
 > Fonts: H1/H2 Instrument Serif 400 *italic*, everything else Syne. All display copy lowercase.
+> Canon target faces are Tarnac (slab — titles/tags; flavor tags in Tarnac Bold + flavor color) + Tarnac Sans (supporting) by Sharp Type; web license not yet purchased, so Instrument Serif/Syne are the interim OFL stand-ins.
 > COMPLIANCE: this page runs nearly claim-free (speed + taste + convenience). Only permitted function claim: "supports healthy energy levels." Never any pregnancy/nursing safety statement, never child-directed framing. FDA disclaimer in footer.
 
 ---
 
 ## Accent color plan (this page)
 
-- **Page base:** Cream #FDF4EE, Navy #1B1F3B text — the fastest-feeling page in the set; high contrast, short sections, big type
-- **Hero:** Cream with an Energy gradient sweep (Lime #C8FF3A → Cream #FDF4EE) used sparingly as a motion streak behind the pour — this is the one LP where Lime appears beyond the CTA, as a speed cue (fills only, never text)
-- **Flavor moments:** Pink #FFB7D1 chip for strawberry, Cream/vanilla chip with Navy rule for vanilla
-- **CTA:** Lime button, Navy text — keep the Lime streak and Pink chips in separate sections (anti-pattern: Pink + Lime adjacency)
+- **Page base:** Retro #FEFFF8, Green #2D341A text — the fastest-feeling page in the set; high contrast, short sections, big type
+- **Hero:** Retro with an Energy gradient sweep (Matcha #7A881F → Retro #FEFFF8) used sparingly as a motion streak behind the pour — this is the one LP where Matcha appears beyond the CTA, as a speed cue (fills only, never text)
+- **Flavor moments:** Strawberry #FF6DC7 chip for strawberry, Retro/vanilla chip with Green rule for vanilla
+- **CTA:** Green button, Retro text (Bolden CTA inversion) — keep the Matcha streak and Strawberry chips in separate sections (anti-pattern: Strawberry + Matcha adjacency)
 
 ---
 
@@ -36,27 +37,27 @@
 
 **Eyebrow (Syne 700, uppercase):** 15 SECONDS · NO WHISK · NO BLENDER · NO LINE
 
-**Hero visual direction:** Real photograph, kinetic: mid-pour into a glass of cold oat milk, shot at a slight angle, keys/phone/tote in soft-focus foreground — the "about to leave" tableau. Lime-to-Cream energy gradient streaks behind the pour as a speed cue. Motion version: single unbroken 5-second real-time clip — tear, pour, swirl, lid on. No cuts; the honesty of one take IS the ad.
+**Hero visual direction:** Real photograph, kinetic: mid-pour into a glass of cold oat milk, shot at a slight angle, keys/phone/tote in soft-focus foreground — the "about to leave" tableau. Matcha-to-Retro energy gradient streaks behind the pour as a speed cue. Motion version: single unbroken 5-second real-time clip — tear, pour, swirl, lid on. No cuts; the honesty of one take IS the ad.
 
-**Hero CTA button (Lime, Navy text):** `get drop access`
+**Hero CTA button (Green #2D341A surface, Retro #FEFFF8 text — Bolden CTA inversion):** `get drop access`
 **Under-button microcopy (Syne 400, 13px):** drop 001 sold out. drop 002 is a limited run.
 
 ---
 
 ## 1b. Drop status module (directly under hero CTA)
 
-Drop ledger, Syne 700, Navy strip cards:
+Drop ledger, Syne 700, Green strip cards:
 
-> **drop 001** — sold out ~~[X₁] boxes~~ *("sold out" stamp in Pink #FFB7D1)*
-> **drop 002** — [date window from ops] · limited run of **[X₂] boxes** *(pulsing Lime dot)*
+> **drop 001** — sold out ~~[X₁] boxes~~ *("sold out" stamp in Strawberry #FF6DC7)*
+> **drop 002** — [date window from ops] · limited run of **[X₂] boxes** *(pulsing Matcha dot)*
 
-- **Countdown spec:** live `dd : hh : mm` (Syne 700 tabular numerals, Navy on Cream chip) once ops confirms the drop 002 date; until then: *"next drop: soon. the access list gets the date first."* Never run a timer to an unconfirmed or movable date.
+- **Countdown spec:** live `dd : hh : mm` (Syne 700 tabular numerals, Green on Retro chip) once ops confirms the drop 002 date; until then: *"next drop: soon. the access list gets the date first."* Never run a timer to an unconfirmed or movable date.
 - **Quantity spec:** [X₁]/[X₂] = real production run counts from the shared ops config — never inflated, never hardcoded in copy.
 - **SMS early-access step:** after email submit, offer phone: *"the text list gets the drop link 10 minutes before everyone else — plus an extra 10% off."* This segment lives on their phone in line at school pickup — SMS-first framing works hardest here. One-tap skippable.
 
 ---
 
-## 2. Benefit blocks (3-up; Cream cards, Navy rules, big numerals)
+## 2. Benefit blocks (3-up; Retro cards, Green rules, big numerals)
 
 **Block 1 — title:** *fifteen seconds, timed honestly*
 **Body:** tear the sachet, pour the concentrate into 6–8oz of milk, one swirl — done before the toast pops. no whisk to wash, no blender to unclog, no powder dusting your counter at 6:45am.
@@ -69,7 +70,7 @@ Drop ledger, Syne 700, Navy strip cards:
 
 ---
 
-## 3. Ingredient / science strip (Lavender #D4B8E0 band, Navy text)
+## 3. Ingredient / science strip (Purple #E3D5F7 band, Green text)
 
 Strip header (H2): *small sachet. full label.*
 
@@ -77,14 +78,14 @@ Strip header (H2): *small sachet. full label.*
 |---|---|
 | 2.5g | ceremonial matcha — first harvest, shade-grown |
 | 2g | grass-fed collagen peptides |
-| 200mg | lion's mane fruiting-body extract — ≥70% beta-glucans |
+| 200mg | organic lion's mane fruiting-body extract |
 | ~60mg | caffeine — supports healthy energy levels, no 2pm cliff |
 
-Strip footnote (13px): no added sugar, no artificial sweeteners, no proprietary blends. every dose printed on the sachet. 1 fl oz (30ml) per sachet.
+Strip footnote (13px): no artificial sweeteners, no proprietary blends — sweetened with organic agave. every dose printed on the sachet. 1 fl oz (30ml) per sachet.
 
 ---
 
-## 4. Social proof section (Cream background)
+## 4. Social proof section (Retro background)
 
 Header (H2): *drop 001 moved faster than you do.*
 Body copy:
@@ -92,7 +93,7 @@ Body copy:
 
 Proof elements (do not fabricate):
 - Live access-list counter (same source as homepage): "**[live count]** people holding drop access"
-- Substance badges: "third-party tested for beta-glucan content" · "heavy-metals screened" · "GMP-certified facility"
+- Substance badges: "third-party tested for purity" · "heavy-metals screened" · "GMP-certified facility"
 - NO testimonials, NO fake ratings, NO "as seen in" unless a press placement is real at build time
 
 ---
@@ -113,11 +114,11 @@ a: we produce in numbered, limited runs. drop 001 ([X₁] boxes) sold out; drop 
 
 ---
 
-## 6. Final CTA section (Navy background, Cream text)
+## 6. Final CTA section (Green background, Retro text)
 
 Header (H2, Instrument Serif italic): *you have fifteen seconds. that's all this takes.*
 Body: drop 001 sold out. drop 002 is a limited run of [X₂] boxes — get access now, add your number for the 10-minute head start (plus an extra 10% off). 20% off and free shipping locked in either way.
-CTA button (Lime, Navy text): `get drop access`
+CTA button (Green surface, Retro text): `get drop access`
 Microcopy: one text per drop. that's the entire notification load — promise.
 
 ---

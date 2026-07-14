@@ -283,7 +283,7 @@ export default function WelcomePage() {
           }}
         >
           {[
-            "70%+ Beta-Glucans",
+            "200mg Lion's Mane",
             "Ceremonial Grade",
             "Grass-Fed Collagen",
             "Zero Crash",
@@ -313,7 +313,7 @@ export default function WelcomePage() {
               {
                 label: "Real Mushrooms",
                 accent: C.flavorFunctional,
-                body: "200mg fruiting body extracts standardized to 70%+ beta-glucan concentration. Not mycelium-on-grain.",
+                body: "200mg organic lion's mane extract per sachet. Real fruiting-body extract — not mycelium-on-grain.",
               },
               {
                 label: "Ceremonial Matcha",

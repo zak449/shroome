@@ -67,7 +67,7 @@ export default function Terms() {
         .tos-ticker{background:var(--brand-ink);padding:10px 0;overflow:hidden;white-space:nowrap}
         .tos-ticker-track{display:inline-flex;animation:tosTick 28s linear infinite}
         .tos-ticker-item{font-family:var(--brand-font-mono);font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;padding:0 28px;color:rgba(var(--brand-canvas-rgb),.75)}
-        .tos-ticker-item em{color:var(--brand-accent);font-style:normal;font-weight:500}
+        .tos-ticker-item em{color:var(--brand-accent-warm);font-style:normal;font-weight:500}
         @keyframes tosTick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
         /* ── NAV ─── */
@@ -157,7 +157,7 @@ export default function Terms() {
 
         /* ── CTA SECTION ─── */
         .tos-cta{background:var(--brand-ink);padding:64px 7%;text-align:center;position:relative;overflow:hidden}
-        .tos-cta-tag{font-family:var(--brand-font-mono);font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--brand-accent);margin-bottom:16px}
+        .tos-cta-tag{font-family:var(--brand-font-mono);font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--brand-tint-soft);margin-bottom:16px}
         .tos-cta h2{
           font-family:var(--brand-font-display);
           font-size:clamp(30px,4vw,48px);font-weight:400;font-style:italic;
@@ -166,7 +166,7 @@ export default function Terms() {
         .tos-cta h2 em{font-style:italic;color:var(--brand-accent-warm)}
         .tos-cta-sub{font-size:14px;color:rgba(var(--brand-canvas-rgb),.5);margin-bottom:28px;font-weight:400}
         .tos-btn-cta{
-          display:inline-block;background:var(--brand-accent);color:var(--brand-ink);border:none;
+          display:inline-block;background:var(--brand-accent);color:var(--brand-accent-contrast);border:none;
           padding:14px 36px;font-family:var(--brand-font-body);
           font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
           cursor:pointer;transition:background .2s,transform .2s;text-decoration:none

@@ -17,7 +17,7 @@ The product is designed for health-conscious consumers who currently spend $5-7 
 
 **A Different Approach to Functional Beverages**
 
-Unlike traditional matcha powders that require whisks, frothers, or elaborate preparation, shroomé sachets are designed for convenience: tear, pour, stir. The formulation prioritizes ingredient transparency with no proprietary blends, no artificial sweeteners, no artificial colors, and no preservatives.
+Unlike traditional matcha powders that require whisks, frothers, or elaborate preparation, shroomé sachets are ready-to-pour liquid concentrates designed for convenience: tear, pour, swirl. The formulation prioritizes ingredient transparency with no proprietary blends, no artificial sweeteners, and no artificial colors.
 
 "We are not a supplement company that happens to taste okay. We are a drink brand that happens to be functional," said Zachary Kaufman, founder and CEO of ZSQUARED INC.
 

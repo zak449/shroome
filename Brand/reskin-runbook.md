@@ -20,19 +20,19 @@ Edit **both** `app/lib/brand.ts` (`colors` + `rgb`) and `app/globals.css` (`:roo
 
 | Token (brand.ts / CSS var) | Current value | Old name | Likely new value |
 |---|---|---|---|
-| `ink` / `--brand-ink` | `#1B1F3B` | navy | deep dark brownish-green |
-| `canvas` / `--brand-canvas` | `#FDF4EE` | cream | cream/off-white |
-| `accent` / `--brand-accent` | `#C8FF3A` | lime | TBD |
-| `accentContrast` / `--brand-accent-contrast` | `#1B1F3B` | — | text color ON accent surfaces (see note below) |
+| `ink` / `--brand-ink` | `#2D341A` | navy | deep dark brownish-green |
+| `canvas` / `--brand-canvas` | `#FEFFF8` | cream | cream/off-white |
+| `accent` / `--brand-accent` | `#7A881F` | lime | TBD |
+| `accentContrast` / `--brand-accent-contrast` | `#2D341A` | — | text color ON accent surfaces (see note below) |
 | `accentDeep` / `--brand-accent-deep` | `#2D4A2D` | matcha green | TBD (link hovers, `<em>`) |
-| `accentWarm` / `--brand-accent-warm` | `#FF7043` | coral | TBD (highlights + error text) |
-| `accentWarmSoft` / `--brand-accent-warm-soft` | `#E8936D` | peach | TBD (email art) |
-| `accentMuted` / `--brand-accent-muted` | `#809463` | sage | TBD (blog links) |
+| `accentWarm` / `--brand-accent-warm` | `#FA9427` | coral | TBD (highlights + error text) |
+| `accentWarmSoft` / `--brand-accent-warm-soft` | `#E4CB9F` | peach | TBD (email art) |
+| `accentMuted` / `--brand-accent-muted` | `#7A881F` | sage | TBD (blog links) |
 | `accentMutedDeep` / `--brand-accent-muted-deep` | `#5A7A3A` | — | TBD (blog link hover) |
-| `flavorStrawberry` / `--brand-flavor-strawberry` | `#FFB7D1` | pink | flavor tint — may stay |
-| `flavorFunctional` / `--brand-flavor-functional` | `#D4B8E0` | lavender | flavor tint — may stay |
-| `tintSoft` / `--brand-tint-soft` | `#E8D5F0` | soft lavender | TBD |
-| `tintBlush` / `--brand-tint-blush` | `#FFE0EC` | blush | TBD |
+| `flavorStrawberry` / `--brand-flavor-strawberry` | `#FF6DC7` | pink | flavor tint — may stay |
+| `flavorFunctional` / `--brand-flavor-functional` | `#E3D5F7` | lavender | flavor tint — may stay |
+| `tintSoft` / `--brand-tint-soft` | `#E3D5F7` | soft lavender | TBD |
+| `tintBlush` / `--brand-tint-blush` | `#FFE2F4` | blush | TBD |
 
 **Also update the RGB triplets** (`BRAND.rgb` and every `--brand-*-rgb` var) — they must match the hexes above; they feed all `rgba(var(--brand-*-rgb), α)` translucency.
 
@@ -46,6 +46,8 @@ Edit **both** `app/lib/brand.ts` (`colors` + `rgb`) and `app/globals.css` (`:roo
 - `manifest` colors `#0A0A0A` — tokenized as `BRAND.manifest.*`; set to new ink or keep near-black.
 
 ## Step 2 — Update typography tokens
+
+**Canon target (per `Brand/bolden-identity-extraction.md`):** Tarnac (slab — titles/tags; flavor tags in Tarnac Bold + flavor color) + Tarnac Sans (supporting) by Sharp Type. Web license is **NOT yet purchased** — interim faces stay Instrument Serif (display) / Syne (body) until it is. Do not swap the font tokens to Tarnac until the license lands and WOFF2/TTF are self-hosted.
 
 If type changes, edit in **both files**:
 - `brand.ts`: `fonts.display / body / mono` (full stacks), `fonts.displayName / bodyName / monoName` (bare names — used by OG renderers + SVG attrs), `fonts.googleFontsHref` (the `<link>` in `app/layout.tsx` reads this).
@@ -103,7 +105,7 @@ Checklist (keyed from the old Brand Asset Refresh SOP):
 1. `node scripts/check-brand-sync.mjs` — token mirror in sync.
 2. `npx next build` — must pass clean (99 routes as of 2026-07-14).
 3. Grep guard — **no old hexes may survive** (swap in the OLD values being retired):
-   `grep -rni "#1B1F3B\|#FDF4EE\|#C8FF3A\|#FFB7D1\|#D4B8E0\|#E8D5F0\|#FFE0EC" app/ --include="*.ts*" --include="*.css"` → only `brand.ts` + `globals.css` (until Step 1 replaces them, after which: zero).
+   `grep -rni "#2D341A\|#FEFFF8\|#7A881F\|#FF6DC7\|#E3D5F7\|#E3D5F7\|#FFE2F4" app/ --include="*.ts*" --include="*.css"` → only `brand.ts` + `globals.css` (until Step 1 replaces them, after which: zero).
 4. Smoke-test emails render literal hex: see `app/api/preview-email` output — no `var(--` may appear in email HTML.
 
 ## Step 8 — Visual QA (contrast re-verification — REQUIRED, hues are changing)

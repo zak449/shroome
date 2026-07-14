@@ -10,8 +10,8 @@ contains the `header` section with the store's live nav/logo settings).
 - Text: `drop 001 sold out — drop 002 loading. waitlist gets in first →`
 - Link: `https://www.drinkshroome.com` (Dawn `url` settings accept full external URLs;
   the whole bar becomes a link when `link` is set on the block)
-- Color scheme: `scheme-3` (accent lime `#C8FF3A` bg / ink text — defined in
-  `settings_data.patch.json`). If scheme-3 was not applied, fall back to `"scheme-2"`
+- Color scheme: `scheme-3` (accent matcha `#7A881F` bg / retro `#FEFFF8` text — defined
+  in `settings_data.patch.json`). If scheme-3 was not applied, fall back to `"scheme-2"`
   (ink bg / canvas text).
 
 ## Merge procedure

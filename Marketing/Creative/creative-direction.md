@@ -4,7 +4,7 @@
 > Owner: Creative Director
 > Scope: paid social + ghost LP visuals for the five segments (`../Segments/segment-strategy.md`)
 > System sources: `Brand/Color & Typography/brand-colors.md`, `Brand/Photography & Image Direction/image-guidelines.md`
-> Non-negotiables inherited from the brand system: real sachets only (never generated, never redrawn) · no powders, whisks, or ceremony props · liquid concentrate is the product · warm light always · Cream never white, Navy never black · cups/mugs on camera must read "shroomé."
+> Non-negotiables inherited from the brand system: real sachets only (never generated, never redrawn) · no powders, whisks, or ceremony props · liquid concentrate is the product · warm light always · Retro never white, Green never black · cups/mugs on camera must read "shroomé."
 
 ---
 
@@ -16,9 +16,22 @@ Founder directive: the entire competitive set (Clevr, MUD\WTR, Ryze, the earthy-
 - **Mixed-media & collage.** Scrapbook-pop layering: torn-paper edges, taped photo corners, sticker elements, hand-drawn scribble annotations, editorial type × chaos energy. Photography stays real and warm (brand law), but it lives inside composed, layered frames — not floating in beige negative space.
 - **Sticker energy.** Reusable sticker/badge set (drop numbers, "sold out" stamp, flavor chips, Mé cameo marks) that pops onto footage and stills; these are brand furniture, not afterthoughts.
 - **Motion = kinetic.** Whip-pans, stop-motion sequences, sticker pops, hard beat-cuts, speed ramps. The ONE protected slow moment remains the swirl itself (see below) — everything around it moves. Retire "camera drifts" and "cinemagraph stillness" as segment defaults; they may survive only where the concept demands the contrast (e.g. /lp/calm's crash-vs-calm gag).
-- **Palette note.** Current color tokens (Cream/Navy/Lime/Pink/Lavender/Blush) stay until Bolden files land — but the DIRECTION is vivid, saturated, high-contrast application. Never beige, never tonal-on-tonal wash, never "quiet luxury" restraint as a goal.
+- **Palette note.** The Bolden system is canon (per `Brand/bolden-identity-extraction.md`): Green `#2D341A` · Retro `#FEFFF8` · Matcha `#7A881F` (accent — CTAs invert to Green surface with Retro text) · Purple `#E3D5F7` · Strawberry `#FF6DC7` · Vanilla `#E4CB9F` · Mango `#FA9427` · Chocolate `#956A3C` (future flavor). Use Bolden's color names in all direction. The DIRECTION is vivid, saturated, high-contrast application. Never beige, never tonal-on-tonal wash, never "quiet luxury" restraint as a goal.
 - **Banned visual clichés** (they belong to the competition): linen spreads, whisked bowls, bamboo anything, dawn-stillness tableaus, whisper-ASMR as a default register, hands-in-prayer wellness framing, "slow morning" set dressing.
 - **Copy-on-screen vocabulary follows the brand ban list:** never "ritual," "sacred," "mindful," "grounded," "earthy," "ceremony" as a vibe. "Ceremonial" appears only as the matcha grade ("ceremonial-grade" = a sourcing spec). Say "the 15 seconds," "the pour," "your daily pour," "café energy."
+- **Typography note.** Canon target faces are **Tarnac** (slab — titles, tags, key messages; flavor tags set in Tarnac Bold + the flavor color) and **Tarnac Sans** (supporting text) by Sharp Type. Web licenses are NOT yet purchased — all "Instrument Serif" / "Syne" specs in this doc are the interim OFL stack until they are. On purchase, Tarnac replaces Instrument Serif roles and Tarnac Sans replaces Syne roles one-for-one.
+
+---
+
+## Mé — character rules (all segments, per Bolden canon)
+
+Mé is a sheep with a mushroom face — the sheep = grass-fed collagen, the mushroom face = the functional mushrooms. When Mé appears in any cut, still, or sticker set:
+
+- **Never:** stretch or compress, outline, rotate, recolor off-palette, or add drop shadows/effects. The mark stays solid and unchanged.
+- **Encouraged:** expressive character poses (walking, tumbling, jumping, pouring, holding a cup); pattern fills masked *inside* the sheep silhouette; a subtle, low-intensity "sheep wool" grain texture on graphic elements.
+- Prioritize placement on Green or Purple institutional backgrounds; approved palette colorways only.
+- **Pun canon (approved copy around Mé):** "Get sheep done" · "Sheep happens" · "Matcha for mé? the answer is always." · "nice to matcha you".
+- **Pack lines available to creative:** "Pour. Swirl. Go." · "Your whole morning stack. One pour." · "Energy · Clarity · Skin · Immunity" · "rip & pour".
 
 ---
 
@@ -38,24 +51,24 @@ The pour/swirl is to shroomé what the pull-tab hiss is to soda: the ownable sen
 ## Shared brand watermark & end-card spec (all segments, every cut)
 
 **Watermark (persistent):**
-- Wordmark "shroomé" — lowercase, Instrument Serif italic, Cream #FDF4EE at 85% opacity
+- Wordmark "shroomé" — lowercase, Instrument Serif italic, Retro #FEFFF8 at 85% opacity
 - Position: bottom-left safe zone, 24px margin at 1080-wide; never over the swirl
-- On light/cream footage: Navy #1B1F3B at 70% instead
+- On light/Retro footage: Green #2D341A at 70% instead
 
 **End-card (final 2.5s of every video, built once as a CapCut/Premiere template):**
-1. Background: Navy #1B1F3B, subtle grain, faint cloud texture at 8%
-2. Real sachet packshot (vanilla default; strawberry on Pink-led cuts), starburst glow behind
-3. Line 1 (Instrument Serif italic, Cream): *pour / swirl / glow*
-4. Line 2 (Syne 700, Cream): drop status, live-updated per flight: "drop 001 — sold out. drop 002 — limited run."
-5. CTA chip: Lime #C8FF3A pill, Navy text, Syne 700: `get drop access`
-6. Legal (when the cut contains a structure/function claim): FDA disclaimer, Syne 400, 60% Cream, minimum legible size — designed into the template, not stickered on
+1. Background: Green #2D341A, subtle grain, faint cloud texture at 8%
+2. Real sachet packshot (vanilla default; strawberry on Strawberry-led cuts), starburst glow behind
+3. Line 1 (Instrument Serif italic, Retro): *pour / swirl / glow*
+4. Line 2 (Syne 700, Retro): drop status, live-updated per flight: "drop 001 — sold out. drop 002 — limited run."
+5. CTA chip: Green #2D341A pill, Retro #FEFFF8 text (Bolden CTA inversion — Matcha stays accent-only), Syne 700: `get drop access`
+6. Legal (when the cut contains a structure/function claim): FDA disclaimer, Syne 400, 60% Retro, minimum legible size — designed into the template, not stickered on
 - Audio: the pour sound resolves under the end-card — our sonic logo until we commission one
 
 ---
 
 ## Segment 1 — the matcha maximalists (/lp/ritual — slug kept; segment renamed 2026-07-14)
 
-**Palette application:** Dreamy gradient world turned up — Soft Lavender #E8D5F0 → Blush #FFE0EC fields at full saturation, Cream surfaces, Pink #FFB7D1 flavor moments, Lime strictly as the CTA. The prettiest, most gradient-forward segment — vivid, never washed-out.
+**Palette application:** Dreamy gradient world turned up — Purple #E3D5F7 → Strawberry tint #FFE2F4 fields at full saturation, Retro surfaces, Strawberry #FF6DC7 flavor moments, the inverted Green/Retro CTA strictly as the CTA. The prettiest, most gradient-forward segment — vivid, never washed-out.
 
 **Typography feel:** Instrument Serif italic doing maximum lifting — big, editorial, confident. Lowercase always. Type layers INTO the frame collage-style: over torn-paper shapes, on taped-in caption strips, wrapped around the glass. Syne appears as sticker-chip labels and timestamps.
 
@@ -66,13 +79,13 @@ The pour/swirl is to shroomé what the pull-tab hiss is to soda: the ownable sen
 **Reference-style descriptions (for photographer/editor briefs):**
 1. *Golden-hour glass study, scrapbooked* — backlit tall glass on a stone counter, pour mid-frame, sun flare kissing the rim — then the frame gets collaged live: taped corners, a sticker "drop 002," a hand-scrawled "the 15 seconds." Editorial photo, zine treatment.
 2. *Main-character POV* — handheld overhead of hands tearing the sachet, oat milk carton and one strawberry in frame, phone propped mid-boomerang; diaristic, for-the-story energy, quick-cut not contemplative.
-3. *Cloud-room product float* — sachet suspended in a saturated lavender-blush cloudscape with starburst glow and sticker confetti at the edges; dreamlike but loud; the aspirational LP hero frame.
+3. *Cloud-room product float* — sachet suspended in a saturated purple-and-strawberry-tint cloudscape with starburst glow and sticker confetti at the edges; dreamlike but loud; the aspirational LP hero frame.
 
 ---
 
 ## Segment 2 — the glow getters (/lp/glow)
 
-**Palette application:** Blush #FFE0EC leads (beauty tint), Pink #FFB7D1 for strawberry accents, Soft Lavender for science moments, Cream surfaces. Lime only on CTA, always buffered from Pink by Cream. The pinkest segment by design.
+**Palette application:** Strawberry tint #FFE2F4 leads (beauty tint), Strawberry #FF6DC7 for strawberry accents, Purple for science moments, Retro surfaces. CTAs inverted Green/Retro only, always buffered from Strawberry by Retro. The pinkest segment by design.
 
 **Typography feel:** Beauty-editorial: Instrument Serif italic headlines at vanity-mirror scale, Syne 400 in refined small caps for ingredient callouts — reads like the back of a premium serum, warmed up.
 
@@ -89,7 +102,7 @@ The pour/swirl is to shroomé what the pull-tab hiss is to soda: the ownable sen
 
 ## Segment 3 — the coffee breakup (/lp/calm)
 
-**Palette application:** The most Lavender segment — Lavender #D4B8E0 and Soft Lavender fields, generous Cream air, cloud imagery doing narrative work ("no crash" = soft landing). Navy for anchor text. Lime only on CTA. No Pink here — keep it steady.
+**Palette application:** The most Purple segment — Purple #E3D5F7 and Purple fields, generous Retro air, cloud imagery doing narrative work ("no crash" = soft landing). Green for anchor text. CTAs inverted Green/Retro only. No Strawberry here — keep it steady.
 
 **Typography feel:** Quiet and roomy: smaller headlines than other segments, more whitespace, longer line-lengths set calmly. Instrument Serif italic reads like a deep exhale; Syne 400 body at generous line-height. Nothing shouts.
 
@@ -98,32 +111,32 @@ The pour/swirl is to shroomé what the pull-tab hiss is to soda: the ownable sen
 **Motion language:** Near-stillness as a flex. Cinemagraph energy — only steam, only the swirl, only a curtain moves. Long holds (3s+). The before/after format cuts from handheld-jittery (coffee) to locked-off (shroomé); the camera itself performs the crash and the calm.
 
 **Reference-style descriptions:**
-1. *The 3pm window* — wide, sun-drenched desk scene, subject typing steadily, matcha glass catching light; overlaid caffeine curve drawn in thin Navy line settling into a lavender plateau.
-2. *Steam study* — macro of steam curling off a shroomé mug against a lavender-cloud window; ASMR-quiet; the entire ad is one shot and one sentence.
+1. *The 3pm window* — wide, sun-drenched desk scene, subject typing steadily, matcha glass catching light; overlaid caffeine curve drawn in thin Green line settling into a purple plateau.
+2. *Steam study* — macro of steam curling off a shroomé mug against a purple-cloud window; ASMR-quiet; the entire ad is one shot and one sentence.
 3. *Breakup still-life* — a French press pushed to the frame's far edge in soft blur, sachet and finished latte sharp in warm foreground light; gentle, wry, no villain music.
 
 ---
 
 ## Segment 4 — the deep workers (/lp/focus)
 
-**Palette application:** Navy #1B1F3B leads (the only dark-mode segment), Cream type, Lime #C8FF3A as data-highlighter strokes under numbers, Lavender for the ingredient/functional band. Feels like a beautifully typeset spec sheet, not a gamer aesthetic.
+**Palette application:** Green #2D341A leads (the only dark-mode segment), Retro type, Matcha #7A881F as data-highlighter strokes under numbers, Purple for the ingredient/functional band. Feels like a beautifully typeset spec sheet, not a gamer aesthetic.
 
-**Typography feel:** Syne 700 finally leads — tabular, confident, engineered; big numerals (200mg / ≥70% / 2.5g) as the visual heroes. Instrument Serif italic appears once per piece as the human counterpoint. Monospaced-feeling tables, hairline Navy rules.
+**Typography feel:** Syne 700 finally leads — tabular, confident, engineered; big numerals (200mg / ≥70% / 2.5g) as the visual heroes. Instrument Serif italic appears once per piece as the human counterpoint. Monospaced-feeling tables, hairline Green rules.
 
 **Set & props:** The focused desk at golden hour — matte laptop (logo taped), mechanical keyboard, paper notebook with real handwriting, the sachet propped against a "shroomé" glass. Label macro shots are a prop category of their own: the back of the sachet lit like product jewelry. No RGB, no energy-drink chaos, no brain imagery.
 
 **Motion language:** Precise and metronomic. Hard cuts on the beat, insert-shot rhythm (label / pour / keystroke / label), one slow 180° orbit around the sachet as the "spec reveal." Timers and counters animate with tabular digits — the drop countdown belongs to this world natively.
 
 **Reference-style descriptions:**
-1. *The label as hero* — macro rack-focus across the sachet's back panel, beta-glucan line snapping sharp, Lime underline animating beneath "≥70%"; lit like a watch ad, read like a datasheet.
+1. *The label as hero* — macro rack-focus across the sachet's back panel, beta-glucan line snapping sharp, Matcha underline animating beneath "≥70%"; lit like a watch ad, read like a datasheet.
 2. *Deep-work timelapse* — locked-off desk from first pour to closed laptop, light moving across the wall, the glass emptying in steps; caption: "one pour. one block."
-3. *Receipts, beautifully* — lab report pages fanned on Navy felt beside the sachet, overhead, raking warm light; transparency styled as luxury print collateral.
+3. *Receipts, beautifully* — lab report pages fanned on Green felt beside the sachet, overhead, raking warm light; transparency styled as luxury print collateral.
 
 ---
 
 ## Segment 5 — the fifteen-second crowd (/lp/pour)
 
-**Palette application:** Cream base with kinetic Lime-to-Cream energy-gradient streaks (the one segment where Lime escapes the CTA, as motion trails only, never text), Navy type at high contrast, Pink strictly for the strawberry flavor chip. Brightest, fastest palette read.
+**Palette application:** Retro base with kinetic Matcha-to-Retro energy-gradient streaks (the one segment where Matcha escapes the CTA, as motion trails only, never text), Green type at high contrast, Strawberry strictly for the strawberry flavor chip. Brightest, fastest palette read.
 
 **Typography feel:** Big, punchy Syne 700 — numbers and countdowns ("15 SECONDS," "0 CLEANUP") at poster scale; Instrument Serif italic reserved for the wry one-liner headline. Captions auto-styled large for sound-off viewing (this segment watches muted, in line, at pickup).
 

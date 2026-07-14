@@ -27,13 +27,12 @@ shroome is a **young energy brand**. Every image should feel like it belongs in 
 - Clinical / laboratory aesthetics
 - Any cup/glass without "shroomé" branding — if a cup appears, it must say "shroomé"
 
-### Sachet Design Reference (LOCKED — do not deviate)
-- **Vanilla sachet:** Cream/off-white with dark green serif "shroomé" text, vanilla flower icon, "pour / swirl / glow" tagline, 1 fl oz | 30 mL
-- **Strawberry sachet:** Soft pink (#FFB7D1) with dark green serif "shroomé" text, strawberry icon, same layout as vanilla
-- Both sachets list: ceremonial matcha, grass-fed collagen, mushroom beta glucans
-- Source files: `sachet-vanilla.png` and `sachet-strawberry.png` on drinkshroome.com
+### Sachet Design Reference (LOCKED — Bolden R02, do not deviate)
+- **Format:** bottle-shaped "rip & pour" liquid sachet, 64×140mm, Retro off-white (#FEFFF8) stock
+- **Front (both flavors):** "rip & pour" at the tear cap → flavor pill tag (STRAWBERRY in Strawberry #FF6DC7 / VANILLA in Vanilla #E4CB9F) → "LIQUID CEREMONIAL MATCHA LATTE" → large Green (#2D341A) `shroomé` wordmark → cloud stamp "With Lion's Mane Mushroom + Collagen" → Mé standing on the radial sunburst mound (Green/flavor-color/Matcha rays, lilac center) → 30ml (1 fl oz)
+- **Source of truth:** `Brand/Bolden Delivery/01_Sachet-2/VANILLA_SACHET_R02.pdf` + `STRAWBERRY_SACHET_R02.pdf`; web renders `public/sachet-vanilla.png`, `public/sachet-strawberry.png`, `public/sachets-both.png` are extracted from these files
 - NEVER create, illustrate, or AI-generate alternative sachet designs
-- When sachets appear in lifestyle photography, they must match these exact designs or use the actual product image overlaid
+- When sachets appear in lifestyle photography, they must match the R02 artwork exactly or use the actual product image overlaid
 
 ### The Product Inside
 - Each sachet contains **1 fl oz (30 mL) of dark green liquid concentrate**

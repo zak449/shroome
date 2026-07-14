@@ -3,12 +3,13 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import Image from "next/image";
 import Script from "next/script";
 import ExitPopup from "./ExitPopup";
+import { BRAND } from "./lib/brand";
 
 const productSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "shroomé Ceremonial Matcha Latte",
-  "description": "The world's first ready-to-pour ceremonial matcha latte. 2.5g ceremonial-grade matcha, 200mg organic mushroom extracts standardized to 70%+ beta-glucan concentration via fruiting body extraction, and 2g grass-fed collagen peptides. No powder, no frother — tear, pour, done in 15 seconds.",
+  "description": "The world's first ready-to-pour ceremonial matcha latte. 2.5g ceremonial-grade matcha, 200mg organic lion's mane extract, and 2g grass-fed collagen peptides. No powder, no frother — tear, pour, done in 15 seconds.",
   "brand": { "@type": "Brand", "name": "shroomé" },
   "manufacturer": { "@type": "Organization", "name": "ZSQUARED INC" },
   "category": "Functional Beverages",
@@ -832,7 +833,7 @@ export default function Home() {
                           </div>
                           <button
                             onClick={copyReferralLink}
-                            style={{ padding: "10px 20px", border: "none", background: copied ? "var(--brand-ink)" : "var(--brand-accent)", color: copied ? "var(--brand-accent)" : "var(--brand-ink)", fontFamily: "var(--brand-font-body)", fontWeight: 800, fontSize: "0.7rem", letterSpacing: "0.08em", textTransform: "uppercase", cursor: "pointer", whiteSpace: "nowrap", transition: "all 0.2s" }}
+                            style={{ padding: "10px 20px", border: "none", background: copied ? "var(--brand-accent)" : "var(--brand-ink)", color: "var(--brand-accent-contrast)", fontFamily: "var(--brand-font-body)", fontWeight: 800, fontSize: "0.7rem", letterSpacing: "0.08em", textTransform: "uppercase", cursor: "pointer", whiteSpace: "nowrap", transition: "all 0.2s" }}
                           >
                             {copied ? "Copied!" : "Copy"}
                           </button>
@@ -855,7 +856,7 @@ export default function Home() {
                         <div style={{ marginTop: 14, display: "flex", alignItems: "center", gap: 8 }}>
                           <div style={{ display: "flex", gap: 4 }}>
                             {[0, 1, 2].map((i) => (
-                              <div key={i} style={{ width: 28, height: 28, borderRadius: "50%", border: "2px solid var(--brand-ink)", background: i < referralCount ? "var(--brand-accent)" : "transparent", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.65rem", fontWeight: 700, color: i < referralCount ? "var(--brand-ink)" : "rgba(var(--brand-ink-rgb),0.3)", fontFamily: "var(--brand-font-body)", transition: "all 0.3s" }}>
+                              <div key={i} style={{ width: 28, height: 28, borderRadius: "50%", border: "2px solid var(--brand-ink)", background: i < referralCount ? "var(--brand-ink)" : "transparent", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.65rem", fontWeight: 700, color: i < referralCount ? "var(--brand-accent-contrast)" : "rgba(var(--brand-ink-rgb),0.3)", fontFamily: "var(--brand-font-body)", transition: "all 0.3s" }}>
                                 {i < referralCount ? "✓" : ""}
                               </div>
                             ))}
@@ -1057,7 +1058,7 @@ export default function Home() {
             zIndex: 2,
           }}
         >
-          <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 700, fontSize: "0.65rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--brand-accent)", marginBottom: 8 }}>Flavors</p>
+          <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 700, fontSize: "0.65rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--brand-tint-soft)", marginBottom: 8 }}>Flavors</p>
           <p style={{ fontFamily: "var(--brand-font-display)", fontStyle: "italic", fontSize: "0.95rem", lineHeight: 1.5 }}>Vanilla<br />Strawberry</p>
         </div>
       </section>
@@ -1120,7 +1121,7 @@ export default function Home() {
 
         <div style={{ position: "relative", zIndex: 1, maxWidth: 1000, margin: "0 auto" }}>
           <div {...anim("flavor-head")}>
-            <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 700, fontSize: "0.65rem", letterSpacing: "0.25em", textTransform: "uppercase", color: "var(--brand-accent)", marginBottom: 16 }}>
+            <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 700, fontSize: "0.65rem", letterSpacing: "0.25em", textTransform: "uppercase", color: "var(--brand-tint-soft)", marginBottom: 16 }}>
               2 Flavors
             </p>
             <h2 style={{ fontFamily: "var(--brand-font-display)", fontSize: "clamp(2rem, 5vw, 3.5rem)", lineHeight: 1.05, marginBottom: 8 }}>
@@ -1203,9 +1204,9 @@ export default function Home() {
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 24 }}>
             {[
-              { name: "Ceremonial Matcha", dose: "2.5g", detail: "First-harvest, shade-grown. ~60mg caffeine. Not culinary grade — the real thing.", color: "var(--brand-accent)", bg: "var(--brand-ink)" },
+              { name: "Ceremonial Matcha", dose: "2.5g", detail: "First-harvest, shade-grown. ~60mg caffeine. Not culinary grade — the real thing.", color: "var(--brand-tint-soft)", bg: "var(--brand-ink)" },
               { name: "Organic Mushroom Extracts", dose: "200mg", detail: "70%+ beta-glucan purity — the active compound behind immune and focus benefits. Industry average: 15–30%. No mycelium-on-grain filler. No underdosing.", color: "var(--brand-flavor-strawberry)", bg: "var(--brand-ink)" },
-              { name: "Grass-Fed Collagen", dose: "2g", detail: "Pre-dissolved bioavailable peptides for skin, hair, nails, and gut.", color: "var(--brand-accent)", bg: "var(--brand-ink)" },
+              { name: "Grass-Fed Collagen", dose: "2g", detail: "Pre-dissolved bioavailable peptides for skin, hair, nails, and gut.", color: "var(--brand-tint-soft)", bg: "var(--brand-ink)" },
             ].map((item, i) => (
               <div
                 key={item.name}
@@ -1250,7 +1251,7 @@ export default function Home() {
                   <tr>
                     <th style={{ textAlign: "left", padding: "14px 14px", borderBottom: "1px solid rgba(var(--brand-canvas-rgb),0.08)", color: "rgba(var(--brand-canvas-rgb),0.35)", fontWeight: 600, fontSize: "0.72rem", letterSpacing: "0.08em", textTransform: "uppercase" }}></th>
                     {["shroomé", "Clevr", "RYZE", "MatchaKo", "Café"].map((b) => (
-                      <th key={b} style={{ textAlign: "center", padding: "14px 10px", borderBottom: "1px solid rgba(var(--brand-canvas-rgb),0.08)", color: b === "shroomé" ? "var(--brand-accent)" : "rgba(var(--brand-canvas-rgb),0.35)", fontWeight: 700, fontSize: "0.72rem", letterSpacing: "0.08em", textTransform: "uppercase" }}>{b}</th>
+                      <th key={b} style={{ textAlign: "center", padding: "14px 10px", borderBottom: "1px solid rgba(var(--brand-canvas-rgb),0.08)", color: b === "shroomé" ? "var(--brand-accent-contrast)" : "rgba(var(--brand-canvas-rgb),0.35)", fontWeight: 700, fontSize: "0.72rem", letterSpacing: "0.08em", textTransform: "uppercase" }}>{b}</th>
                     ))}
                   </tr>
                 </thead>
@@ -1287,7 +1288,7 @@ export default function Home() {
         <div className="blob-b" style={{ position: "absolute", top: "5%", left: "8%", width: "12vw", height: "12vw", background: "var(--brand-flavor-functional)", opacity: 0.08, pointerEvents: "none" }} />
         <div style={{ maxWidth: 900, margin: "0 auto", textAlign: "center" }}>
           <div {...anim("how-head")}>
-            <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 600, fontSize: "0.68rem", letterSpacing: "0.25em", textTransform: "uppercase", color: "var(--brand-accent)", marginBottom: 16 }}>
+            <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 600, fontSize: "0.68rem", letterSpacing: "0.25em", textTransform: "uppercase", color: "var(--brand-tint-soft)", marginBottom: 16 }}>
               How it works
             </p>
             <h2 style={{ fontFamily: "var(--brand-font-display)", fontStyle: "italic", fontSize: "clamp(2rem, 4.5vw, 3rem)", color: "var(--brand-canvas)", lineHeight: 1.1, marginBottom: 64 }}>
@@ -1302,7 +1303,7 @@ export default function Home() {
               { num: "03", title: "Hit", desc: "Stir once. 30 seconds to café-grade matcha latte. No blender, no whisk, no mess." },
             ].map((step, i) => (
               <div key={step.num} {...anim(`step-${i}`, i * 0.12)}>
-                <p style={{ fontFamily: "var(--brand-font-mono)", fontSize: "0.7rem", letterSpacing: "0.15em", color: "var(--brand-accent)", marginBottom: 14 }}>{step.num}</p>
+                <p style={{ fontFamily: "var(--brand-font-mono)", fontSize: "0.7rem", letterSpacing: "0.15em", color: "var(--brand-tint-soft)", marginBottom: 14 }}>{step.num}</p>
                 <h3 style={{ fontFamily: "var(--brand-font-display)", fontStyle: "italic", fontSize: "1.6rem", color: "var(--brand-canvas)", marginBottom: 10 }}>{step.title}</h3>
                 <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.85rem", color: "rgba(var(--brand-canvas-rgb),0.45)", lineHeight: 1.65 }}>{step.desc}</p>
               </div>
@@ -1357,7 +1358,7 @@ export default function Home() {
                 <p style={{ fontFamily: "var(--brand-font-display)", fontStyle: "italic", fontSize: "1.05rem", color: "var(--brand-canvas)", lineHeight: 1.55, marginBottom: 20 }}>
                   &ldquo;{t.quote}&rdquo;
                 </p>
-                <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 700, fontSize: "0.75rem", color: "var(--brand-accent)" }}>{t.name}</p>
+                <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 700, fontSize: "0.75rem", color: "var(--brand-tint-soft)" }}>{t.name}</p>
                 <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.68rem", color: "rgba(var(--brand-canvas-rgb),0.4)" }}>{t.loc} · Early tester</p>
               </div>
             ))}
@@ -1422,7 +1423,7 @@ export default function Home() {
                     </div>
                     <button
                       onClick={copyReferralLink}
-                      style={{ padding: "10px 20px", border: "none", background: copied ? "var(--brand-ink)" : "var(--brand-accent)", color: copied ? "var(--brand-accent)" : "var(--brand-ink)", fontFamily: "var(--brand-font-body)", fontWeight: 800, fontSize: "0.7rem", letterSpacing: "0.08em", textTransform: "uppercase", cursor: "pointer", whiteSpace: "nowrap", transition: "all 0.2s" }}
+                      style={{ padding: "10px 20px", border: "none", background: copied ? "var(--brand-accent)" : "var(--brand-ink)", color: "var(--brand-accent-contrast)", fontFamily: "var(--brand-font-body)", fontWeight: 800, fontSize: "0.7rem", letterSpacing: "0.08em", textTransform: "uppercase", cursor: "pointer", whiteSpace: "nowrap", transition: "all 0.2s" }}
                     >
                       {copied ? "Copied!" : "Copy"}
                     </button>
@@ -1445,7 +1446,7 @@ export default function Home() {
                   <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
                     <div style={{ display: "flex", gap: 4 }}>
                       {[0, 1, 2].map((i) => (
-                        <div key={i} style={{ width: 28, height: 28, borderRadius: "50%", border: "2px solid var(--brand-ink)", background: i < referralCount ? "var(--brand-accent)" : "transparent", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.65rem", fontWeight: 700, color: i < referralCount ? "var(--brand-ink)" : "rgba(var(--brand-ink-rgb),0.3)", fontFamily: "var(--brand-font-body)", transition: "all 0.3s" }}>
+                        <div key={i} style={{ width: 28, height: 28, borderRadius: "50%", border: "2px solid var(--brand-ink)", background: i < referralCount ? "var(--brand-ink)" : "transparent", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.65rem", fontWeight: 700, color: i < referralCount ? "var(--brand-accent-contrast)" : "rgba(var(--brand-ink-rgb),0.3)", fontFamily: "var(--brand-font-body)", transition: "all 0.3s" }}>
                           {i < referralCount ? "✓" : ""}
                         </div>
                       ))}
@@ -1482,7 +1483,7 @@ export default function Home() {
                   placeholder="(555) 123-4567"
                   style={{ flex: "1 1 240px", padding: "15px 20px", border: "2px solid var(--brand-ink)", background: "rgba(255,255,255,0.5)", color: "var(--brand-ink)", fontFamily: "var(--brand-font-body)", fontSize: "0.95rem", fontWeight: 500, minWidth: 0 }}
                 />
-                <button type="submit" disabled={loading} style={{ padding: "15px 28px", border: "none", background: "var(--brand-ink)", color: "var(--brand-accent)", fontFamily: "var(--brand-font-body)", fontWeight: 800, fontSize: "0.75rem", letterSpacing: "0.12em", textTransform: "uppercase", cursor: loading ? "wait" : "pointer", whiteSpace: "nowrap" }}>
+                <button type="submit" disabled={loading} style={{ padding: "15px 28px", border: "none", background: "var(--brand-ink)", color: "var(--brand-accent-contrast)", fontFamily: "var(--brand-font-body)", fontWeight: 800, fontSize: "0.75rem", letterSpacing: "0.12em", textTransform: "uppercase", cursor: loading ? "wait" : "pointer", whiteSpace: "nowrap" }}>
                   {loading ? "…" : "Add phone →"}
                 </button>
               </form>
@@ -1503,7 +1504,7 @@ export default function Home() {
                 placeholder="your@email.com"
                 style={{ flex: "1 1 240px", padding: "15px 20px", border: "2px solid var(--brand-ink)", background: "rgba(255,255,255,0.5)", color: "var(--brand-ink)", fontFamily: "var(--brand-font-body)", fontSize: "0.95rem", fontWeight: 500, minWidth: 0 }}
               />
-              <button type="submit" disabled={loading} style={{ padding: "15px 28px", border: "none", background: "var(--brand-ink)", color: "var(--brand-accent)", fontFamily: "var(--brand-font-body)", fontWeight: 800, fontSize: "0.75rem", letterSpacing: "0.12em", textTransform: "uppercase", cursor: loading ? "wait" : "pointer", whiteSpace: "nowrap" }}>
+              <button type="submit" disabled={loading} style={{ padding: "15px 28px", border: "none", background: "var(--brand-ink)", color: "var(--brand-accent-contrast)", fontFamily: "var(--brand-font-body)", fontWeight: 800, fontSize: "0.75rem", letterSpacing: "0.12em", textTransform: "uppercase", cursor: loading ? "wait" : "pointer", whiteSpace: "nowrap" }}>
                 {loading ? "…" : "Get launch updates →"}
               </button>
             </form>
@@ -1527,6 +1528,9 @@ export default function Home() {
               </a>
             ))}
           </div>
+          <p style={{ fontFamily: "var(--brand-font-mono)", fontSize: "0.62rem", color: "rgba(var(--brand-ink-rgb),0.4)", letterSpacing: "0.14em", textTransform: "uppercase", marginBottom: 10 }}>
+            {BRAND.provenance}
+          </p>
           <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.68rem", color: "rgba(var(--brand-ink-rgb),0.3)", letterSpacing: "0.08em" }}>
             © 2026 shroomé · hello@drinkshroome.com
           </p>

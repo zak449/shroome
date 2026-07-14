@@ -24,8 +24,8 @@ declare global {
 // anchor drop (100 units @ $15) actually happens — until then, no dollar
 // figure on the keychain here. It stays "earned, not bought."
 const tiers = [
-  { count: "1", label: "friend", reward: "$5 credit on your account", color: "var(--brand-accent)" },
-  { count: "3", label: "friends", reward: "$10 total credit + the Mé keychain — this drop’s colorway, tucked into your next box. Earned, not bought.", color: "var(--brand-accent)" },
+  { count: "1", label: "friend", reward: "$5 credit on your account", color: "var(--brand-tint-soft)" },
+  { count: "3", label: "friends", reward: "$10 total credit + the Mé keychain — this drop’s colorway, tucked into your next box. Earned, not bought.", color: "var(--brand-tint-soft)" },
   { count: "5", label: "friends", reward: "$15 total credit — that’s the cap — plus a box of our under-eye gels ($18 value), free", color: "var(--brand-flavor-strawberry)" },
   { count: "#1", label: "top ref", reward: "Case 001 — our top referrer takes home a hand-numbered box from the very first case", color: "var(--brand-flavor-functional)" },
 ];
@@ -216,7 +216,7 @@ export default function ReferPage() {
           font-size:12px;font-weight:700;letter-spacing:.06em;
           text-transform:uppercase;cursor:pointer;transition:background .2s;text-decoration:none
         }
-        .ref-nav-cta:hover{background:#2a2e4f}
+        .ref-nav-cta:hover{background:var(--brand-accent-muted-deep)}
 
         /* ── HERO ── */
         .ref-hero{
@@ -251,7 +251,7 @@ export default function ReferPage() {
         }
         .ref-hero-cta{
           display:inline-block;
-          background:var(--brand-accent);color:var(--brand-ink);
+          background:var(--brand-ink);color:var(--brand-accent-contrast);
           padding:18px 40px;border:none;
           font-family:var(--brand-font-body);
           font-size:14px;font-weight:800;letter-spacing:.08em;
@@ -274,11 +274,11 @@ export default function ReferPage() {
         .ref-step{flex:1;min-width:220px;max-width:260px;text-align:center}
         .ref-step-num{
           font-family:var(--brand-font-mono);font-size:14px;font-weight:700;
-          letter-spacing:.12em;color:var(--brand-accent);margin-bottom:16px
+          letter-spacing:.12em;color:var(--brand-tint-soft);margin-bottom:16px
         }
         .ref-step-icon{
           width:56px;height:56px;border-radius:50%;
-          background:var(--brand-accent);color:var(--brand-ink);
+          background:var(--brand-accent);color:var(--brand-accent-contrast);
           font-weight:900;font-size:22px;
           display:flex;align-items:center;justify-content:center;
           margin:0 auto 18px;
@@ -326,9 +326,9 @@ export default function ReferPage() {
           padding:20px 24px;text-align:left
         }
         .ref-tier-reward{font-size:15px;font-weight:600;color:var(--brand-ink);line-height:1.4}
-        .ref-tier-vip .ref-tier-badge{background:var(--brand-ink);color:var(--brand-accent)}
+        .ref-tier-vip .ref-tier-badge{background:var(--brand-ink);color:var(--brand-accent-contrast)}
         .ref-tier-vip .ref-tier-reward{color:var(--brand-ink);font-weight:800}
-        .ref-tier-founder .ref-tier-badge{background:var(--brand-accent-deep);color:var(--brand-accent)}
+        .ref-tier-founder .ref-tier-badge{background:var(--brand-accent-deep);color:var(--brand-accent-contrast)}
 
         /* ── SOCIAL PROOF ── */
         .ref-proof{
@@ -371,13 +371,13 @@ export default function ReferPage() {
         }
         .ref-input:focus{border-color:var(--brand-accent)}
         .ref-btn{
-          padding:16px 28px;background:var(--brand-accent);color:var(--brand-ink);
+          padding:16px 28px;background:var(--brand-ink);color:var(--brand-accent-contrast);
           border:2px solid var(--brand-ink);
           font-size:13px;font-weight:800;letter-spacing:.06em;
           text-transform:uppercase;cursor:pointer;white-space:nowrap;
           font-family:var(--brand-font-body);transition:all .2s
         }
-        .ref-btn:hover{background:#b8ef2a;transform:translateY(-1px)}
+        .ref-btn:hover{background:var(--brand-accent-muted-deep);transform:translateY(-1px)}
         .ref-btn:disabled{opacity:0.5;cursor:not-allowed;transform:none}
 
         /* ── SHARE PANEL (post-submit) ── */
@@ -398,12 +398,12 @@ export default function ReferPage() {
           color:var(--brand-ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap
         }
         .ref-copy-btn{
-          padding:14px 22px;border:2px solid var(--brand-ink);background:var(--brand-accent);
-          color:var(--brand-ink);font-weight:800;font-size:12px;letter-spacing:.06em;
+          padding:14px 22px;border:2px solid var(--brand-ink);background:var(--brand-ink);
+          color:var(--brand-accent-contrast);font-weight:800;font-size:12px;letter-spacing:.06em;
           text-transform:uppercase;cursor:pointer;font-family:var(--brand-font-body);
           transition:all .2s;white-space:nowrap
         }
-        .ref-copy-btn:hover{background:#b8ef2a}
+        .ref-copy-btn:hover{background:var(--brand-accent-muted-deep)}
 
         .ref-msg-box{
           background:#fff;border:2px solid rgba(var(--brand-ink-rgb),0.1);
@@ -430,8 +430,8 @@ export default function ReferPage() {
           transition:all .2s
         }
         .ref-channel:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(var(--brand-ink-rgb),0.1)}
-        .ref-channel-imessage{background:var(--brand-accent)}
-        .ref-channel-whatsapp{background:var(--brand-accent)}
+        .ref-channel-imessage{background:rgba(var(--brand-accent-rgb),0.35)}
+        .ref-channel-whatsapp{background:rgba(var(--brand-accent-rgb),0.35)}
         .ref-channel-twitter{background:var(--brand-canvas)}
         .ref-channel-instagram{background:var(--brand-flavor-strawberry)}
         .ref-channel-email{background:var(--brand-flavor-functional)}
@@ -447,7 +447,7 @@ export default function ReferPage() {
           font-size:13px;font-weight:700;transition:all .3s;
           font-family:var(--brand-font-mono)
         }
-        .ref-dot-filled{background:var(--brand-accent);border-color:var(--brand-accent)}
+        .ref-dot-filled{background:var(--brand-ink);border-color:var(--brand-ink);color:var(--brand-accent-contrast)}
 
         /* ── FAQ ── */
         .ref-faq{
@@ -488,7 +488,7 @@ export default function ReferPage() {
         }
         .ref-final-btn{
           display:inline-block;
-          background:var(--brand-accent);color:var(--brand-ink);
+          background:var(--brand-ink);color:var(--brand-accent-contrast);
           padding:18px 44px;border:2px solid var(--brand-ink);
           font-family:var(--brand-font-body);
           font-size:14px;font-weight:800;letter-spacing:.08em;

@@ -74,7 +74,7 @@ const CLAIMS =
   "<ul><li>supports sustained focus*</li><li>supports healthy energy levels*</li><li>supports immune function*</li><li>supports skin health*</li><li>provides antioxidant support*</li></ul>";
 
 const DOSE =
-  "<p>every 1oz sachet: 2.5g organic ceremonial matcha (~60mg caffeine + naturally occurring l-theanine), 2g grass-fed collagen peptides, and 200mg organic lion's mane extract standardized to 70%+ beta-glucans. no added sugar. no artificial sweeteners. no proprietary blends — every ingredient and dose on the label.</p>";
+  "<p>every 1oz sachet: 2.5g organic ceremonial matcha (about 60mg caffeine + naturally occurring l-theanine), 2g grass-fed collagen peptides, and 200mg organic lion's mane extract. no artificial sweeteners. no proprietary blends — every ingredient and dose on the label.</p>";
 
 const DROP =
   "<p>sold in numbered limited drops. drop 001 sold out. subscribers never miss a drop — their boxes are reserved before each drop opens.</p>";

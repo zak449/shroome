@@ -5,16 +5,17 @@
 > Status: ready to build — all copy below is FINAL, implement verbatim
 > Conversion goal: drop-access signup (email → optional SMS early access). Single CTA, repeated 3x down-page. DROP MODEL: product ships in numbered, limited drops — see drop status module below.
 > HONESTY RULE (one line, non-negotiable): every scarcity statement on this page must be literally true — drop 001 genuinely sold out, drop sizes are real production run counts, countdowns run to real dates only.
-> Fonts per brand system: H1/H2 Instrument Serif 400 *italic*, everything else Syne. Background Cream #FDF4EE unless noted. All display copy lowercase.
+> Fonts per brand system: H1/H2 Instrument Serif 400 *italic*, everything else Syne. Background Retro #FEFFF8 unless noted. All display copy lowercase.
+> Canon target faces are Tarnac (slab — titles/tags; flavor tags in Tarnac Bold + flavor color) + Tarnac Sans (supporting) by Sharp Type; web license not yet purchased, so Instrument Serif/Syne are the interim OFL stand-ins.
 
 ---
 
 ## Accent color plan (this page)
 
-- **Page base:** Cream #FDF4EE, Navy #1B1F3B text
-- **Hero wash:** Dreamy gradient — Soft Lavender #E8D5F0 → Blush #FFE0EC with cloud imagery (per image-guidelines)
-- **Section accents:** Pink #FFB7D1 for flavor moments, Lavender #D4B8E0 for the ingredient strip
-- **CTA (all instances):** Lime #C8FF3A button, Navy text — never place Lime adjacent to Pink blocks (anti-pattern); buffer with Cream
+- **Page base:** Retro #FEFFF8, Green #2D341A text
+- **Hero wash:** Dreamy gradient — Purple #E3D5F7 → Strawberry tint #FFE2F4 with cloud imagery (per image-guidelines)
+- **Section accents:** Strawberry #FF6DC7 for flavor moments, Purple #E3D5F7 for the ingredient strip
+- **CTA (all instances):** Green #2D341A button, Retro #FEFFF8 text (Bolden CTA inversion) — never place Matcha adjacent to Strawberry blocks (anti-pattern); buffer with Retro
 - Max two accents per section, per brand rules
 
 ---
@@ -39,27 +40,27 @@
 
 **Eyebrow (Syne 700, uppercase, letter-spaced):** POUR / SWIRL / GLOW
 
-**Hero visual direction:** Full-bleed dreamy gradient (Soft Lavender → Blush) with soft cloud texture at 30–40% opacity. Right side: real photograph of dark green concentrate mid-pour into a tall glass of oat milk, the plume swirling — shot through the glass, backlit, starburst glow. Vanilla sachet propped at base of glass, label legible. NO whisks, NO powder, NO bamboo. Motion version: 3-second seamless loop of the swirl.
+**Hero visual direction:** Full-bleed dreamy gradient (Purple → Strawberry tint) with soft cloud texture at 30–40% opacity. Right side: real photograph of dark green concentrate mid-pour into a tall glass of oat milk, the plume swirling — shot through the glass, backlit, starburst glow. Vanilla sachet propped at base of glass, label legible. NO whisks, NO powder, NO bamboo. Motion version: 3-second seamless loop of the swirl.
 
-**Hero CTA button (Lime, Navy text):** `get drop access`
+**Hero CTA button (Green #2D341A surface, Retro #FEFFF8 text — Bolden CTA inversion):** `get drop access`
 **Under-button microcopy (Syne 400, 13px):** drop 001 sold out. drop 002 is a limited run.
 
 ---
 
 ## 1b. Drop status module (sits directly under the hero CTA — this page's urgency engine)
 
-Two-row "drop ledger," Syne 700, Navy strip cards on the hero gradient:
+Two-row "drop ledger," Syne 700, Green strip cards on the hero gradient:
 
-> **drop 001** — sold out ~~[X₁] boxes~~ *(struck through; "sold out" stamped in Pink #FFB7D1)*
-> **drop 002** — [date window from ops] · limited run of **[X₂] boxes** *(pulsing Lime dot, live state)*
+> **drop 001** — sold out ~~[X₁] boxes~~ *(struck through; "sold out" stamped in Strawberry #FF6DC7)*
+> **drop 002** — [date window from ops] · limited run of **[X₂] boxes** *(pulsing Matcha dot, live state)*
 
-- **Countdown spec:** once ops confirms the drop 002 date, render a live countdown (`dd : hh : mm`, Syne 700 tabular numerals, Navy on Cream chip). Before the date is confirmed, render instead: *"next drop: soon. the access list gets the date first."* Never run a timer to a fake or movable date.
+- **Countdown spec:** once ops confirms the drop 002 date, render a live countdown (`dd : hh : mm`, Syne 700 tabular numerals, Green on Retro chip). Before the date is confirmed, render instead: *"next drop: soon. the access list gets the date first."* Never run a timer to a fake or movable date.
 - **Quantity spec:** [X₁]/[X₂] must be the actual production run counts from ops — pull from a config value, not hardcoded copy. If we wouldn't publish the number in an investor update, we don't publish it here.
 - **SMS early-access step:** after email submit, step 2 offers phone: *"the text list gets the drop link 10 minutes before everyone else — plus an extra 10% off."* Skippable in one tap; email-only members still get drop access at public open.
 
 ---
 
-## 2. Benefit blocks (3-up on desktop, stacked mobile; Cream cards on Blush section background)
+## 2. Benefit blocks (3-up on desktop, stacked mobile; Retro cards on Strawberry tint section background)
 
 **Block 1 — title:** *the swirl is the whole show*
 **Body:** dark green concentrate hits your milk and blooms into ribbons before settling into a perfect sage latte. it's the moment every matcha video is chasing — and now it's the entire recipe.
@@ -72,22 +73,22 @@ Two-row "drop ledger," Syne 700, Navy strip cards on the hero gradient:
 
 ---
 
-## 3. Ingredient / science strip (Lavender #D4B8E0 band, Navy text, 4 stat tiles)
+## 3. Ingredient / science strip (Purple #E3D5F7 band, Green text, 4 stat tiles)
 
 Strip header (H2, Instrument Serif italic): *what's in the pour*
 
 | Stat | Label |
 |---|---|
-| 2.5g | ceremonial matcha — first harvest, shade-grown |
-| 2g | grass-fed collagen peptides |
-| 200mg | lion's mane extract, ≥70% beta-glucans |
 | ~60mg | caffeine, with matcha's natural l-theanine |
+| 2.5g | ceremonial matcha — first harvest, shade-grown |
+| 200mg | organic lion's mane extract |
+| 2g | grass-fed collagen peptides |
 
-Strip footnote (13px): no added sugar. no artificial sweeteners. no proprietary blends. two flavors: vanilla & strawberry.
+Strip footnote (13px): no artificial sweeteners. no proprietary blends. two flavors: vanilla & strawberry.
 
 ---
 
-## 4. Social proof section (Cream background)
+## 4. Social proof section (Retro background)
 
 Header (H2): *drop 001 is already gone.*
 Body copy:
@@ -95,7 +96,7 @@ Body copy:
 
 Proof elements (do not fabricate):
 - Live access-list counter pulled from the same source as drinkshroome.com homepage (style: "**[live count]** people holding drop access")
-- Ingredient stat badges as proof-of-substance: "third-party tested for beta-glucan content" · "heavy-metals tested" · "made in a GMP-certified facility"
+- Ingredient stat badges as proof-of-substance: "third-party tested for purity" · "heavy-metals tested" · "made in a GMP-certified facility"
 - NO testimonials, NO star ratings, NO "as seen in" (no verified press placements at this time — if a real placement lands, add logo here and nowhere else)
 
 ---
@@ -116,16 +117,16 @@ a: drop 001 sold out. drop 002 is a limited run of [X₂] boxes — drop access 
 
 ---
 
-## 6. Final CTA section (Navy #1B1F3B background, Cream text)
+## 6. Final CTA section (Green #2D341A background, Retro text)
 
-Header (H2, Cream, Instrument Serif italic): *drop 002 won't wait around.*
-Body (Cream, 70% opacity): drop 001 sold out. drop 002 is a limited run — get access now, and add your number if you want the link 10 minutes early (plus an extra 10% off). 20% off and free shipping are locked in either way.
-CTA button (Lime, Navy text): `get drop access`
+Header (H2, Retro, Instrument Serif italic): *drop 002 won't wait around.*
+Body (Retro, 70% opacity): drop 001 sold out. drop 002 is a limited run — get access now, and add your number if you want the link 10 minutes early (plus an extra 10% off). 20% off and free shipping are locked in either way.
+CTA button (Green surface, Retro text): `get drop access`
 Microcopy under field: no spam, ever. we text once per drop. that's the whole relationship.
 
 ---
 
-## 7. Footer disclaimer (every LP, verbatim, legible — 12px minimum, Navy 60% on Cream)
+## 7. Footer disclaimer (every LP, verbatim, legible — 12px minimum, Green 60% on Retro)
 
 > These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.
 

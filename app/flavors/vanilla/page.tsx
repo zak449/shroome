@@ -60,7 +60,7 @@ const productSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "shroomé Vanilla Matcha Latte",
-  "description": "shroomé Vanilla — ceremonial matcha meets real vanilla bean extract, functional mushroom extracts standardized to 70%+ beta-glucan concentration, and grass-fed collagen peptides. One sachet, 15 seconds, zero compromise.",
+  "description": "shroomé Vanilla — ceremonial matcha meets real vanilla bean extract, 200mg organic lion's mane extract, and grass-fed collagen peptides. Grown in Kyoto, made in California. One sachet, 15 seconds, zero compromise.",
   "brand": { "@type": "Brand", "name": "shroomé" },
   "manufacturer": { "@type": "Organization", "name": "ZSQUARED INC" },
   "category": "Functional Beverages",
@@ -119,11 +119,11 @@ const productSchema = {
 const ingredients = [
   {
     name: "Ceremonial Matcha",
-    detail: "2g first-harvest, shade-grown ceremonial grade",
+    detail: "2.5g first-harvest, shade-grown ceremonial grade",
   },
   {
-    name: "Mushroom Extracts",
-    detail: "Organic, 70%+ beta-glucan concentration",
+    name: "Lion's Mane Extract",
+    detail: "200mg organic lion's mane extract",
   },
   {
     name: "Grass-Fed Collagen",
@@ -176,7 +176,7 @@ export default function VanillaFlavorPage() {
         .vf-ticker{background:var(--brand-ink);padding:10px 0;overflow:hidden;white-space:nowrap}
         .vf-ticker-track{display:inline-flex;animation:vfTick 28s linear infinite}
         .vf-ticker-item{font-family:var(--brand-font-mono);font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;padding:0 28px;color:rgba(var(--brand-canvas-rgb),.75)}
-        .vf-ticker-item em{color:var(--brand-accent);font-style:normal;font-weight:500}
+        .vf-ticker-item em{color:var(--brand-accent-warm);font-style:normal;font-weight:500}
         @keyframes vfTick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
         /* ── NAV ── */
@@ -418,6 +418,30 @@ export default function VanillaFlavorPage() {
           </ul>
         </div>
 
+        {/* ── ORIGIN STRIP ── */}
+        <div
+          style={{
+            maxWidth: 720,
+            margin: "0 auto",
+            padding: "0 6% 56px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: 12,
+            fontFamily: "var(--brand-font-mono)",
+            fontSize: 11,
+            fontWeight: 500,
+            letterSpacing: ".16em",
+            textTransform: "uppercase",
+            color: "rgba(var(--brand-ink-rgb),0.55)",
+            textAlign: "center",
+          }}
+        >
+          <span aria-hidden style={{ color: "var(--brand-accent)" }}>&#10022;</span>
+          {BRAND.provenance}
+          <span aria-hidden style={{ color: "var(--brand-accent)" }}>&#10022;</span>
+        </div>
+
         {/* ── RECIPES WITH THIS FLAVOR ── */}
         <div className="vf-recipes">
           <h2 className="vf-label">Recipes with Vanilla</h2>
@@ -441,7 +465,7 @@ export default function VanillaFlavorPage() {
             <a href="/privacy">Privacy Policy</a> &middot;{" "}
             <a href="/terms">Terms of Service</a>
           </div>
-          <div className="vf-footer-bot">@drinkshroome</div>
+          <div className="vf-footer-bot">{BRAND.provenance} &middot; @drinkshroome</div>
         </footer>
       </div>
     </>

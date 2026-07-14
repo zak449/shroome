@@ -267,7 +267,7 @@ export default function LPShell({ config }: { config: LPConfig }) {
         .lp-faq-q{width:100%;background:none;border:none;padding:20px 0;text-align:left;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:var(--brand-font-body);font-size:0.95rem;font-weight:700;color:var(--brand-ink);gap:16px}
         .lp-faq-q span{font-size:20px;flex-shrink:0;transition:transform .2s}
         .lp-faq-a{font-family:var(--brand-font-body);font-size:0.88rem;color:rgba(var(--brand-ink-rgb),0.65);line-height:1.7;padding:0 0 20px;margin:0;max-width:640px}
-        .lp-cta-btn{display:inline-block;background:var(--brand-accent);color:var(--brand-ink);border:none;padding:16px 36px;font-family:var(--brand-font-body);font-weight:800;font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer}
+        .lp-cta-btn{display:inline-block;background:var(--brand-accent);color:var(--brand-accent-contrast);border:none;padding:16px 36px;font-family:var(--brand-font-body);font-weight:800;font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer}
         .lp-hero-grid{display:flex;align-items:center;gap:48px;flex-wrap:wrap;max-width:1120px;margin:0 auto;position:relative;z-index:1}
         .lp-data-callout{font-family:var(--brand-font-body);font-weight:700;font-size:clamp(1.4rem,3vw,2rem);color:var(--brand-canvas);position:relative;display:inline-block;padding:0 4px}
         .lp-data-callout::after{content:'';position:absolute;left:0;right:0;bottom:2px;height:10px;background:var(--brand-accent);z-index:-1}

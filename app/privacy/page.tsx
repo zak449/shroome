@@ -67,7 +67,7 @@ export default function Privacy() {
         .pp-ticker{background:var(--brand-ink);padding:10px 0;overflow:hidden;white-space:nowrap}
         .pp-ticker-track{display:inline-flex;animation:ppTick 28s linear infinite}
         .pp-ticker-item{font-family:var(--brand-font-mono);font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;padding:0 28px;color:rgba(var(--brand-canvas-rgb),.75)}
-        .pp-ticker-item em{color:var(--brand-accent);font-style:normal;font-weight:500}
+        .pp-ticker-item em{color:var(--brand-accent-warm);font-style:normal;font-weight:500}
         @keyframes ppTick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
         /* ── NAV ─── */
@@ -157,7 +157,7 @@ export default function Privacy() {
 
         /* ── CTA SECTION ─── */
         .pp-cta{background:var(--brand-ink);padding:64px 7%;text-align:center;position:relative;overflow:hidden}
-        .pp-cta-tag{font-family:var(--brand-font-mono);font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--brand-accent);margin-bottom:16px}
+        .pp-cta-tag{font-family:var(--brand-font-mono);font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--brand-tint-soft);margin-bottom:16px}
         .pp-cta h2{
           font-family:var(--brand-font-display);
           font-size:clamp(30px,4vw,48px);font-weight:400;font-style:italic;
@@ -166,7 +166,7 @@ export default function Privacy() {
         .pp-cta h2 em{font-style:italic;color:var(--brand-accent-warm)}
         .pp-cta-sub{font-size:14px;color:rgba(var(--brand-canvas-rgb),.5);margin-bottom:28px;font-weight:400}
         .pp-btn-cta{
-          display:inline-block;background:var(--brand-accent);color:var(--brand-ink);border:none;
+          display:inline-block;background:var(--brand-accent);color:var(--brand-accent-contrast);border:none;
           padding:14px 36px;font-family:var(--brand-font-body);
           font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
           cursor:pointer;transition:background .2s,transform .2s;text-decoration:none

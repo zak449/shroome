@@ -5,16 +5,17 @@
 > Conversion goal: drop-access signup (email → optional SMS early access). Single CTA, repeated 3x down-page. DROP MODEL: numbered, limited drops — see drop status module below.
 > HONESTY RULE: every scarcity statement must be literally true — drop 001 genuinely sold out, drop sizes are real production run counts, countdowns run to real dates only.
 > Fonts: H1/H2 Instrument Serif 400 *italic*, everything else Syne. All display copy lowercase.
+> Canon target faces are Tarnac (slab — titles/tags; flavor tags in Tarnac Bold + flavor color) + Tarnac Sans (supporting) by Sharp Type; web license not yet purchased, so Instrument Serif/Syne are the interim OFL stand-ins.
 > COMPLIANCE: this page carries structure/function claims ("supports skin health," "supports gut health," "antioxidant support") — FDA disclaimer is mandatory in footer AND echoed as small text directly beneath the benefit blocks.
 
 ---
 
 ## Accent color plan (this page)
 
-- **Page base:** Cream #FDF4EE, Navy #1B1F3B text
-- **Hero wash:** Blush #FFE0EC background (the beauty tint) with soft cloud texture; Pink #FFB7D1 for the strawberry flavor callout
-- **Ingredient strip:** Soft Lavender #E8D5F0 band (the "whisper" version — keeps the science feeling gentle)
-- **CTA (all instances):** Lime #C8FF3A button, Navy text. Keep CTAs on Cream or Navy zones, never directly on Pink (anti-pattern: Pink + Lime vibrate)
+- **Page base:** Retro #FEFFF8, Green #2D341A text
+- **Hero wash:** Strawberry tint #FFE2F4 background (the beauty tint) with soft cloud texture; Strawberry #FF6DC7 for the strawberry flavor callout
+- **Ingredient strip:** Purple #E3D5F7 band (the "whisper" version — keeps the science feeling gentle)
+- **CTA (all instances):** Green #2D341A button, Retro #FEFFF8 text (Bolden CTA inversion). Keep CTAs on Retro or Green zones, never directly on Strawberry (anti-pattern: Strawberry + Matcha vibrate)
 
 ---
 
@@ -36,19 +37,19 @@
 
 **Eyebrow (Syne 700, uppercase):** COLLAGEN + CEREMONIAL MATCHA + LION'S MANE
 
-**Hero visual direction:** Blush background, soft starburst glow behind product. Real photograph: strawberry sachet leaning against a glass of blush-pink-topped iced matcha latte on warm stone. Styling nods to a beauty shelf — one architectural skincare bottle out of focus, no brand visible. Light is creamy, never clinical. NO powder, NO whisk, no lab imagery.
+**Hero visual direction:** Strawberry tint background, soft starburst glow behind product. Real photograph: strawberry sachet leaning against a glass of blush-pink-topped iced matcha latte on warm stone. Styling nods to a beauty shelf — one architectural skincare bottle out of focus, no brand visible. Light is creamy, never clinical. NO powder, NO whisk, no lab imagery.
 
-**Hero CTA button (Lime, Navy text):** `get drop access`
+**Hero CTA button (Green #2D341A surface, Retro #FEFFF8 text — Bolden CTA inversion):** `get drop access`
 **Under-button microcopy:** drop 001 sold out. drop 002 is a limited run.
 
 ---
 
 ## 1b. Drop status module (directly under hero CTA)
 
-Drop ledger, Syne 700, Navy strip cards on the Blush hero:
+Drop ledger, Syne 700, Green strip cards on the Strawberry tint hero:
 
-> **drop 001** — sold out ~~[X₁] boxes~~ *("sold out" stamp in Lavender #D4B8E0 — do not use Pink stamp on this page's Pink-adjacent hero)*
-> **drop 002** — [date window from ops] · limited run of **[X₂] boxes** *(pulsing Lime dot)*
+> **drop 001** — sold out ~~[X₁] boxes~~ *("sold out" stamp in Purple #E3D5F7 — do not use Strawberry stamp on this page's Strawberry-adjacent hero)*
+> **drop 002** — [date window from ops] · limited run of **[X₂] boxes** *(pulsing Matcha dot)*
 
 - **Countdown spec:** live `dd : hh : mm` countdown (Syne 700 tabular numerals) once the drop 002 date is confirmed by ops; until then: *"next drop: soon. the access list gets the date first."* No timers to unconfirmed dates.
 - **Quantity spec:** [X₁]/[X₂] = real production run counts from shared ops config; never inflated, never hardcoded.
@@ -56,7 +57,7 @@ Drop ledger, Syne 700, Navy strip cards on the Blush hero:
 
 ---
 
-## 2. Benefit blocks (3-up; Cream cards on Blush section)
+## 2. Benefit blocks (3-up; Retro cards on Strawberry tint section)
 
 **Block 1 — title:** *skin support, disguised as a latte*
 **Body:** every sachet carries 2g of grass-fed, hydrolyzed collagen peptides — types I and III, the ones that support skin health and gut health. it dissolves completely into the pour, so the only texture you notice is creamy.
@@ -67,11 +68,11 @@ Drop ledger, Syne 700, Navy strip cards on the Blush hero:
 **Block 3 — title:** *the routine you'll actually keep*
 **Body:** collagen only works if you take it, and scoops get skipped. this is a fifteen-second pour that tastes like vanilla or strawberry — consistency stops being discipline and starts being the best part of your morning.
 
-**Small text directly under blocks (12px, Navy 60%):** These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.
+**Small text directly under blocks (12px, Green 60%):** These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.
 
 ---
 
-## 3. Ingredient / science strip (Soft Lavender #E8D5F0 band, Navy text)
+## 3. Ingredient / science strip (Purple #E3D5F7 band, Green text)
 
 Strip header (H2): *read it like an ingredient list — because it is one*
 
@@ -79,14 +80,14 @@ Strip header (H2): *read it like an ingredient list — because it is one*
 |---|---|
 | 2g | grass-fed collagen peptides — hydrolyzed, low molecular weight, types I & III |
 | 2.5g | ceremonial matcha — antioxidant support, naturally occurring l-theanine |
-| 200mg | lion's mane fruiting-body extract — ≥70% beta-glucans, third-party tested |
-| 0g | added sugar. zero artificial sweeteners, colors, or proprietary blends |
+| 200mg | organic lion's mane fruiting-body extract — third-party tested |
+| ~60mg | caffeine from ceremonial matcha, with naturally occurring l-theanine |
 
-Strip footnote (13px): grass-fed, pasture-raised bovine collagen. no soy, no dairy. every dose printed on the sachet.
+Strip footnote (13px): grass-fed, pasture-raised bovine collagen. no soy, no dairy (made with coconut milk powder — tree-nut cross-contact). no artificial sweeteners, colors, or proprietary blends. every dose printed on the sachet.
 
 ---
 
-## 4. Social proof section (Cream background)
+## 4. Social proof section (Retro background)
 
 Header (H2): *drop 001 sold out before we could brag.*
 Body copy:
@@ -108,18 +109,18 @@ a: it's a daily maintenance dose of hydrolyzed, low-molecular-weight peptides �
 a: no. hydrolyzed peptides dissolve clean into the concentrate. you taste madagascar vanilla or real strawberry over smooth ceremonial matcha — nothing chalky, nothing "supplement-y."
 
 **q: is it clean?**
-a: grass-fed, pasture-raised bovine collagen, organic lion's mane fruiting-body extract, ceremonial matcha. no added sugar, no artificial sweeteners, no dyes, no proprietary blends. every dose is on the label.
+a: grass-fed, pasture-raised bovine collagen, organic lion's mane fruiting-body extract, ceremonial matcha, sweetened with organic agave. no artificial sweeteners, no dyes, no proprietary blends. every dose is on the label.
 
 **q: it's sold out — how do drops work?**
 a: we produce in numbered, limited runs. drop 001 ([X₁] boxes) sold out; drop 002 is [X₂] boxes. access members get the link at open, the text list gets it 10 minutes early. real runs, real dates — we don't do fake countdowns.
 
 ---
 
-## 6. Final CTA section (Navy background, Cream text)
+## 6. Final CTA section (Green background, Retro text)
 
 Header (H2, Instrument Serif italic): *glow is a habit. drop 002 is the start.*
 Body: drop 001 sold out. drop 002 is a limited run of [X₂] boxes — get access now, add your number for the link 10 minutes early (plus an extra 10% off). 20% off and free shipping locked in either way.
-CTA button (Lime, Navy text): `get drop access`
+CTA button (Green surface, Retro text): `get drop access`
 Microcopy: one text per drop. we'd rather show up rarely and matter.
 
 ---
@@ -139,4 +140,4 @@ Microcopy: one text per drop. we'd rather show up rarely and matter.
 - Drop numbers [X₁]/[X₂] and drop 002 date from shared ops config; honesty rule applies
 - SMS opt-in carries TCPA consent language ("msg & data rates may apply, reply STOP to opt out"); cadence promise = one text per drop
 - Disclaimer appears TWICE on this page (under benefit blocks + footer) — non-negotiable
-- Strawberry-flavor imagery leads here (Pink association), vanilla secondary
+- Strawberry-flavor imagery leads here (Strawberry association), vanilla secondary

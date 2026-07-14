@@ -3,7 +3,8 @@
 > Date: 2026-07-14 · Owner: Promo & MOF Creative Strategist
 > Extends: `ad-creative-library-v1.md` (architecture, naming, kill/scale rules, end-card, honesty rule — ALL inherited). Offer logic: `Product/SKU Catalog/promo-value-add-plan.md`. Visual system: `../Creative/creative-direction.md` · AI boundaries: `../Creative/ai-toolstack.md`.
 > Job of this pack: middle-funnel retargeting built AROUND the promo items — audiences who visited LPs or joined the waitlist but haven't taken the next action (SMS opt-in, referral start, sub intent). These ads sell the *ladder*, not the drink; the drink ads already exist.
-> Palette: Navy `#1B1F3B` · Cream `#FDF4EE` · Lime `#C8FF3A` · Pink `#FFB7D1` · Lavender `#D4B8E0` · Soft Lavender `#E8D5F0` · Blush `#FFE0EC`.
+> Palette (Bolden canon): Green `#2D341A` · Retro `#FEFFF8` · Matcha `#7A881F` (accent — CTAs invert to Green surface / Retro text) · Purple `#E3D5F7` · Strawberry `#FF6DC7` · Vanilla `#E4CB9F` · Mango `#FA9427` · Chocolate `#956A3C` (future flavor). Strawberry-tint `#FFE2F4` is a derived pale tint.
+> Typography: canon target Tarnac + Tarnac Sans (Sharp Type); web license not yet purchased — "Instrument Serif" / "Syne" below are the interim OFL stack.
 
 ---
 
@@ -41,7 +42,7 @@ The founder is uploading **Bolden render/art files** for both items to Drive. Un
 
 ## 0.5 Shared MOF end-card variant
 
-Library end-card, two changes for this pack: line 2 becomes the earn line — "**earned, not bought.**" (keychain cuts, pre-anchor) or "**the gift in box 3 ($18 value)**" (gels cuts) above the drop-status line; CTA chip stays Lime `get drop access` (keychain referral cuts may use `start referring` when the destination is /refer). Post-anchor keychain cuts (§0.6) swap line 2 to "**sold once. earned only ever since. ($15 value)**". Everything else (packshot, pour/swirl/glow, disclaimer slot) unchanged.
+Library end-card, two changes for this pack: line 2 becomes the earn line — "**earned, not bought.**" (keychain cuts, pre-anchor) or "**the gift in box 3 ($18 value)**" (gels cuts) above the drop-status line; CTA chip stays the inverted Green-surface `get drop access` (Retro text) (keychain referral cuts may use `start referring` when the destination is /refer). Post-anchor keychain cuts (§0.6) swap line 2 to "**sold once. earned only ever since. ($15 value)**". Everything else (packshot, pour/swirl/glow, disclaimer slot) unchanged.
 
 ## 0.6 Value-claim rules — the $15 / $18 decision (founder-approved 2026-07-14)
 
@@ -61,23 +62,23 @@ Library end-card, two changes for this pack: line 2 becomes the earn line — "*
 ### SHR_MOF_RIT_SPK_04 — "she's on my keys now" (charm macro, soft-launch)
 - **Format:** TikTok spark, 9:16, 18s — retargets /lp/ritual visitors (30d non-signup) + RIT engagers
 - **Hook (0–1.5s):** extreme macro, keys lifting off a linen tray in golden light, the little sheep charm swinging into focus: **"you can't buy her. i had to earn her."**
-- **Script / shot timing:** (0–1.5s) macro hook, charm catching light. (1.5–6s) VO, soft-launch energy: "no link. no price tag on mine. she comes in the first box if you're on the text list — or at three referrals if your group chat loves you." (6–11s) the charm clipped to a tote strap, then a belt loop, one beat each — worn like jewelry, not merch. (11–14s) the pour answers: tear → pour → swirl (REAL master insert, ≥1.5s) with the keys resting beside the glass. (14–18s) MOF end-card: "earned, not bought." + drop line + Lime chip.
+- **Script / shot timing:** (0–1.5s) macro hook, charm catching light. (1.5–6s) VO, soft-launch energy: "no link. no price tag on mine. she comes in the first box if you're on the text list — or at three referrals if your group chat loves you." (6–11s) the charm clipped to a tote strap, then a belt loop, one beat each — worn like jewelry, not merch. (11–14s) the pour answers: tear → pour → swirl (REAL master insert, ≥1.5s) with the keys resting beside the glass. (14–18s) MOF end-card: "earned, not bought." + drop line + Green/Retro CTA chip.
 - **On-screen text beats:** (0s) hook · (4s) "earned, not bought." · (8s) "3 referrals = mé" · (15s) "get drop access — shroomé"
 - **Caption:** she's 45 millimeters of pvc and she touches a shopping cart exactly once — 100 of her, $15, drop 002 day. after that it's text-list first boxes or three referrals, forever. #matchatok #keychain #softlaunch #dropculture
 - **CTA / destination:** `Sign up` → /lp/ritual (`utm_content=SHR_MOF_RIT_SPK_04`)
-- **Visual spec — generate (Firefly/Photoshop composite + Runway img2video):** base = `[RENDER: keychain hero]` cutout. Scene prompt (plate only): "sun-drenched morning still life on cream #FDF4EE linen, brass house keys and a claw clip, soft lavender #E8D5F0 shadow field, golden backlight with gentle flare, shallow depth of field, editorial macro product photography, 9:16, fine film grain, empty space center for composite." Composite the charm at true scale (45×40mm ≈ two key-heads wide — scale against the keys), **glossy soft-PVC specular highlights along the molded color edges, 5mm thickness visible at the rim, top loop + small chain to the 40×12mm wordmark tag hanging below**. Motion: Runway image-to-video parallax push (see §4). Real footage for: hands, tote/belt-loop wear shots (use an actual sample as soon as the test run lands — until then these two beats are cut and the ad runs 15s render-only).
+- **Visual spec — generate (Firefly/Photoshop composite + Runway img2video):** base = `[RENDER: keychain hero]` cutout. Scene prompt (plate only): "sun-drenched morning still life on warm off-white #FEFFF8 linen, brass house keys and a claw clip, soft purple #E3D5F7 shadow field, golden backlight with gentle flare, shallow depth of field, editorial macro product photography, 9:16, fine film grain, empty space center for composite." Composite the charm at true scale (45×40mm ≈ two key-heads wide — scale against the keys), **glossy soft-PVC specular highlights along the molded color edges, 5mm thickness visible at the rim, top loop + small chain to the 40×12mm wordmark tag hanging below**. Motion: Runway image-to-video parallax push (see §4). Real footage for: hands, tote/belt-loop wear shots (use an actual sample as soon as the test run lands — until then these two beats are cut and the ad runs 15s render-only).
 - **Compliance:** no claims. "earned" mechanics must match live referral config. Anchor-drop line (100 / $15 / drop-002 day) from ops config; "$15 value" only in `-PA` post-anchor re-cuts (§0.6). **Disclaimer: N.**
 
 ---
 
 ### SHR_MOF_ALL_SPK_01 — "the colorway drop" (stop-motion lineup)
 - **Format:** TikTok spark + Meta reels, 9:16, 15s — retargets engaged social (IG/TT 180d)
-- **Hook (0–1.5s):** empty cream seamless, then keychains hop into frame one by one, stop-motion, each landing with a soft click: **"the sachet has flavors. mé has colorways."**
+- **Hook (0–1.5s):** empty Retro seamless, then keychains hop into frame one by one, stop-motion, each landing with a soft click: **"the sachet has flavors. mé has colorways."**
 - **Script / shot timing:** (0–1.5s) first charm lands, hook text. (1.5–7s) stop-motion lineup builds — one colorway per beat, name-chips appearing under each ("drop 002 — [COLORWAY_NAME]" on the live one, others greyed "gone" / "not yet"). (7–11s) all but the current colorway slide off; it rotates once (turntable move). VO: "one colorway per drop. when the drop closes, so does she." (11–15s) end-card: "drop 002 colorway — in first boxes for the text list. earned, not bought."
 - **On-screen text beats:** (0s) hook · (5s) colorway name-chips · (9s) "one per drop. then gone." · (13s) "get drop access — shroomé"
 - **Caption:** collecting a sheep is not a personality trait but it's about to be mine. one colorway per drop, earned not bought. #stopmotion #keychain #dropculture #matcha
 - **CTA / destination:** `Sign up` → /lp/ritual as default LP for untagged engagers (`utm_content=SHR_MOF_ALL_SPK_01`)
-- **Visual spec — generate:** base = `[RENDER: keychain colorways]` (the assorted-colors sheet). If Bolden supplies per-color renders: build the stop-motion from stills — each colorway cut out, dropped onto a Firefly plate: "warm cream #FDF4EE seamless studio sweep, soft top-light, gentle shadow pool under each object position, 9:16, fine grain, empty." 12fps stop-motion cadence assembled in CapCut (deliberately handmade, not smooth interpolation). Turntable beat: Runway image-to-video orbit on the hero colorway (§4). Colorway names/counts from ops config — **honesty rule: only render colorways the factory actually confirmed.**
+- **Visual spec — generate:** base = `[RENDER: keychain colorways]` (the assorted-colors sheet). If Bolden supplies per-color renders: build the stop-motion from stills — each colorway cut out, dropped onto a Firefly plate: "warm off-white #FEFFF8 seamless studio sweep, soft top-light, gentle shadow pool under each object position, 9:16, fine grain, empty." 12fps stop-motion cadence assembled in CapCut (deliberately handmade, not smooth interpolation). Turntable beat: Runway image-to-video orbit on the hero colorway (§4). Colorway names/counts from ops config — **honesty rule: only render colorways the factory actually confirmed.**
 - **Compliance:** no claims; colorway scarcity lines must be literally true. "$15 value" only in `-PA` post-anchor re-cuts (§0.6). **Disclaimer: N.**
 
 ---
@@ -89,7 +90,7 @@ Library end-card, two changes for this pack: line 2 becomes the earn line — "*
 - **Headline:** msrp: $15. once.
 - **Description:** 100 units on drop day. then earned only.
 - **CTA / destination:** `Sign Up` → /lp/focus (`utm_content=SHR_MOF_FCS_IMG_02`)
-- **Visual spec — generate (Firefly plate + composite):** plate: "deep navy #1B1F3B studio field, subtle film grain, faint warm rim-light from upper left, premium watch-advertisement lighting, completely empty, 4:5." Composite `[RENDER: keychain hero]` centered on a small riser shadow, rim-lit so the PVC gloss reads. Beside it, a Syne 700 Cream spec table, hairline Navy rules, Lime underline strokes: `material — soft pvc` / `size — 45×40mm` / `run — one colorway per drop` / `price — $15 · once · 100 units`. The one-time price row is the ad. Instrument Serif italic footer: *sold once is the spec.*
+- **Visual spec — generate (Firefly plate + composite):** plate: "deep forest green #2D341A studio field, subtle film grain, faint warm rim-light from upper left, premium watch-advertisement lighting, completely empty, 4:5." Composite `[RENDER: keychain hero]` centered on a small riser shadow, rim-lit so the PVC gloss reads. Beside it, a Syne 700 Retro spec table, hairline Green rules, Matcha underline strokes: `material — soft pvc` / `size — 45×40mm` / `run — one colorway per drop` / `price — $15 · once · 100 units`. The one-time price row is the ad. Instrument Serif italic footer: *sold once is the spec.*
 - **Compliance:** no claims; referral threshold + drop counts + anchor-drop numbers (100 / $15 / drop-002 day) from config. Post-anchor `-PA` re-cut: price row becomes `price — $15, retired` and "$15 value" is allowed (§0.6). **Disclaimer: N.**
 
 ---
@@ -108,12 +109,12 @@ Library end-card, two changes for this pack: line 2 becomes the earn line — "*
 
 ### SHR_MOF_ALL_SPK_02 — "which colorway are you" (duet-bait)
 - **Format:** TikTok spark, 9:16, 13s — engaged social (commenters/sharers 180d); organic-first, spark the winner
-- **Hook (0–1.5s):** four charms in a 2×2 grid on cream, camera slowly zooming, text: **"which mé are you? wrong answers get duetted."**
+- **Hook (0–1.5s):** four charms in a 2×2 grid on Retro, camera slowly zooming, text: **"which mé are you? wrong answers get duetted."**
 - **Script / shot timing:** (0–1.5s) grid + hook. (1.5–8s) each colorway gets a one-beat zodiac-style caption chip, deadpan VO: "[COLORWAY_1]: journals at golden hour. [COLORWAY_2]: 14 tabs open, thriving. [COLORWAY_3]: replies 'omw' from bed. [COLORWAY_4]: has never missed a drop." (8–11s) grid collapses to the current drop colorway, pulse. (11–13s) end-card: "one of these ships in drop 002 first boxes. earned, not bought. get drop access."
 - **On-screen text beats:** (0s) hook · (2–8s) caption chips · (12s) "get drop access — shroomé"
 - **Caption:** assigning you a sheep based on vibes alone. duet with your pick — the correct answer is whichever one you actually earn. #whichoneareyou #duetthis #keychain #matcha
 - **CTA / destination:** `Sign up` → /lp/ritual (`utm_content=SHR_MOF_ALL_SPK_02`)
-- **Visual spec — generate:** 2×2 grid built from `[RENDER: keychain colorways]` cutouts on a Firefly plate: "soft blush #FFE0EC to cream #FDF4EE gradient field, even beauty light, four gentle shadow pools in a grid, 9:16, fine grain, empty." Zoom = post move, not regeneration. Caption chips Syne 700 Navy on Cream pills. Only factory-confirmed colorways appear (honesty rule).
+- **Visual spec — generate:** 2×2 grid built from `[RENDER: keychain colorways]` cutouts on a Firefly plate: "soft pale strawberry-blush #FFE2F4 to warm off-white #FEFFF8 gradient field, even beauty light, four gentle shadow pools in a grid, 9:16, fine grain, empty." Zoom = post move, not regeneration. Caption chips Syne 700 Green on Retro pills. Only factory-confirmed colorways appear (honesty rule).
 - **Compliance:** no claims. Personality captions are jokes, not testimonials. **Disclaimer: N.**
 
 ---
@@ -125,7 +126,7 @@ Library end-card, two changes for this pack: line 2 becomes the earn line — "*
 - **On-screen text beats:** (0s) "who is mé?" · (10s) "mé. as in shroo-mé." · (17s) "not merch. a receipt." · (24s) "get drop access — shroomé"
 - **Caption:** lore drop: the sheep has a name and a no-purchase policy. mé arrives in text-list first boxes or at three referrals. #brandlore #mascot #matcha #keychain
 - **CTA / destination:** `Sign up` → /lp/ritual (`utm_content=SHR_MOF_RIT_VID_04`)
-- **Visual spec — generate:** stills built on `[RENDER: keychain hero]` + `[RENDER: keychain tag detail]` over Firefly plates: "warm evening desk, cream #FDF4EE notebook paper texture, soft lavender #E8D5F0 lamp shadow, intimate macro depth, 9:16, heavy fine grain, empty center." Runway parallax on each still (§4), 3s+ holds — calm-segment pacing in maximalist clothes. Mug/steam/swirl = REAL. VO: ElevenLabs RIT-segment voice or founder-adjacent read; **never a founder voice clone.** Lore stays product-true: name, accent, softness — no fabricated origin dates, no fake "since" claims.
+- **Visual spec — generate:** stills built on `[RENDER: keychain hero]` + `[RENDER: keychain tag detail]` over Firefly plates: "warm evening desk, warm off-white #FEFFF8 notebook paper texture, soft purple #E3D5F7 lamp shadow, intimate macro depth, 9:16, heavy fine grain, empty center." Runway parallax on each still (§4), 3s+ holds — calm-segment pacing in maximalist clothes. Mug/steam/swirl = REAL. VO: ElevenLabs RIT-segment voice or founder-adjacent read; **never a founder voice clone.** Lore stays product-true: name, accent, softness — no fabricated origin dates, no fake "since" claims.
 - **Compliance:** no claims. Lore is framing, not fact-claims about provenance. "you can't buy her" is literally true only pre-anchor; the `-PA` post-anchor re-cut swaps it to "you could buy her exactly once. that day is gone." (§0.6). **Disclaimer: N.**
 
 ---
@@ -141,7 +142,7 @@ Library end-card, two changes for this pack: line 2 becomes the earn line — "*
 - **On-screen text beats:** (0s) hook · (5s) "2g collagen — every sachet" · (11s) "cools. hydrates. 15 minutes." · (21s) "$18 value, earned free — get drop access"
 - **Caption:** the collagen story finally has a matching accessory. inside: 2g grass-fed collagen peptides — supports skin health. outside: a cooling under-eye gel for the look of more sleep. an $18 box — free at five referrals or over $66 on drop day. *these statements have not been evaluated by the fda. this product is not intended to diagnose, treat, cure, or prevent any disease.* #skintok #collagen #eyepatches #matcha
 - **CTA / destination:** `Sign Up` → /lp/glow (`utm_content=SHR_MOF_GLW_VID_03`)
-- **Visual spec — generate:** gels-box beauty still: composite `[RENDER: gels box]` onto Firefly plate: "warm marble vanity in blush #FFE0EC morning light, mirror edge catching light upper right, dewy soft-focus atmosphere, creamy highlights, fine grain, empty center-right, 4:5, beauty editorial, never clinical white." Patch-on-skin, hands, sip = REAL humans only (§0.3 hard rule). Swirl = real master. Match-cut sync built in CapCut.
+- **Visual spec — generate:** gels-box beauty still: composite `[RENDER: gels box]` onto Firefly plate: "warm marble vanity in pale strawberry-blush #FFE2F4 morning light, mirror edge catching light upper right, dewy soft-focus atmosphere, creamy highlights, fine grain, empty center-right, 4:5, beauty editorial, never clinical white." Patch-on-skin, hands, sip = REAL humans only (§0.3 hard rule). Swirl = real master. Match-cut sync built in CapCut.
 - **Compliance:** two lanes, kept apart: drink claim "collagen supports skin health" (supplement) → **Disclaimer: Y**; gel language cosmetic-only per §0.4. Never suggest the gels deliver collagen into skin. Earn mechanics from live config.
 
 ---
@@ -153,7 +154,7 @@ Library end-card, two changes for this pack: line 2 becomes the earn line — "*
 - **On-screen text beats:** (0s) hook · (4s) "pour." · (6s) "patch." · (9s) "15:00" · (19s) "get drop access — shroomé"
 - **Caption:** the intermission is the routine. gels cool + hydrate while the matcha does the drinking part. an $18 box you can also just earn — referrals or every 3rd sub box. #grwm #matchalatte #eyepatches #matcha
 - **CTA / destination:** `Sign up` → /lp/glow (`utm_content=SHR_MOF_GLW_SPK_04`)
-- **Visual spec:** all REAL footage (patch application + consumption = real humans, real product — book this only after gel samples land; until then this ad is queued, not trafficked). Blush grade, vanity-kitchen crossover set per creative-direction glow world. `[RENDER: gels box]` may appear only as a shelf insert if the real box isn't printed yet.
+- **Visual spec:** all REAL footage (patch application + consumption = real humans, real product — book this only after gel samples land; until then this ad is queued, not trafficked). Strawberry tint grade, vanity-kitchen crossover set per creative-direction glow world. `[RENDER: gels box]` may appear only as a shelf insert if the real box isn't printed yet.
 - **Compliance:** cosmetic sensory language only ("cool," "hydrate"). No claims about the drink in this cut → **Disclaimer: N** (if a "supports skin health" line gets added in edit, flip to Y). Creator passes the pour test + claims quiz; no results promises, no timelines.
 
 ---
@@ -165,7 +166,7 @@ Library end-card, two changes for this pack: line 2 becomes the earn line — "*
 - **Headline:** box 3 has a plus-one.
 - **Description:** gels every 3rd delivery, 24/48 tiers — $18 value, free.
 - **CTA / destination:** `Sign Up` → /lp/glow (`utm_content=SHR_MOF_GLW_IMG_02`)
-- **Visual spec — generate:** three retail boxes in a row on a Firefly plate ("soft lavender #E8D5F0 gradient field, warm light sweep left to right, three gentle shadow pools, fine grain, 4:5, empty") — boxes 1 and 2 are REAL packshots; box 3 sits slightly open with the gels box (`[RENDER: gels box]`) peeking out, a Blush ribbon of light on it. Syne 700 Navy chips under each: "box 1" / "box 2" / "box 3 ✧". Instrument Serif italic headline across top: *the gift in box 3.*
+- **Visual spec — generate:** three retail boxes in a row on a Firefly plate ("soft purple #E3D5F7 gradient field, warm light sweep left to right, three gentle shadow pools, fine grain, 4:5, empty") — boxes 1 and 2 are REAL packshots; box 3 sits slightly open with the gels box (`[RENDER: gels box]`) peeking out, a Strawberry tint ribbon of light on it. Syne 700 Green chips under each: "box 1" / "box 2" / "box 3 ✧". Instrument Serif italic headline across top: *the gift in box 3.*
 - **Compliance:** perk mechanics must match Loop config (every 3rd, 24/48 only) before traffic. Cosmetic adjectives only. **Disclaimer: N.**
 
 ---
@@ -177,19 +178,19 @@ Library end-card, two changes for this pack: line 2 becomes the earn line — "*
 - **On-screen text beats:** (0s) hook · (10s) "the glow you drink →" · (13s) "→ now the glow you wear" · (25s) "get drop access — shroomé"
 - **Caption:** grwm with a 15-minute cooling intermission. the gels are $18 if you buy them — mine show up free in every third subscription box like a well-behaved plot twist. #grwm #skintok #eyepatches #matcha *2g collagen per sachet — collagen supports skin health. these statements have not been evaluated by the fda. this product is not intended to diagnose, treat, cure, or prevent any disease.*
 - **CTA / destination:** `Sign up` → /lp/glow (`utm_content=SHR_MOF_GLW_SPK_05`)
-- **Visual spec:** all REAL (creator, application, consumption). Requires: gel samples + a real or printed gels box + keychain sample for the Easter egg — this is the pack's "everything has landed" flagship; queue last. Blush/cream grade, no clinical white.
+- **Visual spec:** all REAL (creator, application, consumption). Requires: gel samples + a real or printed gels box + keychain sample for the Easter egg — this is the pack's "everything has landed" flagship; queue last. Strawberry tint/Retro grade, no clinical white.
 - **Compliance:** the caption's collagen line is a supplement claim → **Disclaimer: Y (caption)**. On-camera gel language stays sensory ("cooling"). "came free in my third box" must be literally true for the creator (seed her sub) — no fabricated experience.
 
 ---
 
 ### SHR_MOF_FCS_SPK_04 — "what these don't do" (ingredient honesty, deadpan)
 - **Format:** TikTok spark, 9:16, 24s — retargets /lp/focus visitors + FCS engagers (the label-reader audience); works for GLW skeptics as a dupe test
-- **Hook (0–1.5s):** the gels box on navy, label toward camera, deadpan VO: **"an under-eye gel ad with a list of things this gel will not do. lawyers, look away."**
+- **Hook (0–1.5s):** the gels box on green, label toward camera, deadpan VO: **"an under-eye gel ad with a list of things this gel will not do. lawyers, look away."**
 - **Script / shot timing:** (0–1.5s) hook. (1.5–9s) the NOT list types on like a changelog, one line per beat: "will not erase wrinkles. will not 'de-puff' you medically. will not rebuild your collagen. will not replace sleep." (9–16s) turn: "here's what it does do, because it's a cosmetic and we read the rules: cools. hydrates. refreshes the look of tired under-eyes for about fifteen quiet minutes." Real patch-on-skin beat. (16–20s) "and the drink it matches prints every dose on the sachet. same brand, same policy: say less, mean all of it." Label macro (REAL sachet). (20–24s) end-card: "$18 if you buy them. free at five referrals. never oversold. get drop access."
 - **On-screen text beats:** (0s) hook · (2–9s) the NOT list · (11s) "cools. hydrates. refreshes the look." · (21s) "get drop access — shroomé"
 - **Caption:** honesty as a skincare step. the gels cool, hydrate, and refresh the look of tired under-eyes — that's the whole claim, on purpose. $18 on their own — free at 5 referrals or over $66 on drop day. #ingredienthonesty #skintok #readthelabel #eyepatches
 - **CTA / destination:** `Sign up` → /lp/focus (`utm_content=SHR_MOF_FCS_SPK_04`)
-- **Visual spec — generate:** box-on-navy still from `[RENDER: gels box]` on Firefly plate: "deep navy #1B1F3B studio field, warm rim light, subtle grain, premium spec-sheet minimalism, 9:16, empty." NOT-list in monospaced-feel Syne, Lavender strikethrough stamps; the do-list gets Lime underline strokes. Patch-on-skin + sachet label macro = REAL.
+- **Visual spec — generate:** box-on-green still from `[RENDER: gels box]` on Firefly plate: "deep forest green #2D341A studio field, warm rim light, subtle grain, premium spec-sheet minimalism, 9:16, empty." NOT-list in monospaced-feel Syne, Purple strikethrough stamps; the do-list gets Matcha underline strokes. Patch-on-skin + sachet label macro = REAL.
 - **Compliance:** the ad's engine is §0.4 itself — the NOT list must exactly mirror the banned list (legal reviews final cut). No drink claims → **Disclaimer: N.** ⚠️ blocked on INCI + `[PAIRS_OR_SINGLES]` before any "6 uses" variant.
 
 ---
@@ -201,7 +202,7 @@ Library end-card, two changes for this pack: line 2 becomes the earn line — "*
 - **On-screen text beats:** (0s) hook · (5s) "cool. hydrate. 15 min." · (9s) "caffeine + l-theanine — calm, steady energy" · (16s) "get drop access — shroomé"
 - **Caption:** the 9:43 protocol: patches for the look of sleep, matcha for the feel of focus. ~60mg caffeine + l-theanine supports sustained focus and healthy energy levels. gels: an $18 box, earned free. *these statements have not been evaluated by the fda. this product is not intended to diagnose, treat, cure, or prevent any disease.* #corporatetok #wfh #eyepatches #matcha
 - **CTA / destination:** `Sign up` → /lp/calm (`utm_content=SHR_MOF_CLM_SPK_04`)
-- **Visual spec:** REAL desk, real person, real patches, real pour — calm-world grade (lavender lift, near-stillness, locked-off). Optional Firefly window plate per CLM_VID_03 spec. Gels box insert from `[RENDER: gels box]` until printed boxes exist.
+- **Visual spec:** REAL desk, real person, real patches, real pour — calm-world grade (purple lift, near-stillness, locked-off). Optional Firefly window plate per CLM_VID_03 spec. Gels box insert from `[RENDER: gels box]` until printed boxes exist.
 - **Compliance:** drink claims "supports sustained focus / healthy energy levels" → **Disclaimer: Y.** Gel language cosmetic-sensory only; "the look of sleep" stays appearance-framed — never "fixes tired eyes," never sleep-outcome promises (calm segment banned-word sweep applies, incl. alt text).
 
 ---

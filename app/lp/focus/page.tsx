@@ -5,12 +5,12 @@ import { X1_BOXES, DROP2_RUN } from "../../lib/drop-config";
 export const metadata: Metadata = {
   title: "shroomé — read the label. that's the pitch. (drop 002)",
   description:
-    "200mg lion's mane fruiting-body extract at ≥70% beta-glucans, third-party tested. ceremonial matcha with l-theanine for sustained focus. drop 001 sold out — get access to drop 002.",
+    "200mg organic lion's mane fruiting-body extract, third-party tested. ceremonial matcha with l-theanine for sustained focus. drop 001 sold out — get access to drop 002.",
   robots: { index: false, follow: false },
   openGraph: {
     title: "shroomé — read the label. that's the pitch. (drop 002)",
     description:
-      "200mg lion's mane fruiting-body extract at ≥70% beta-glucans, third-party tested. ceremonial matcha with l-theanine for sustained focus. drop 001 sold out — get access to drop 002.",
+      "200mg organic lion's mane fruiting-body extract, third-party tested. ceremonial matcha with l-theanine for sustained focus. drop 001 sold out — get access to drop 002.",
     siteName: "shroomé",
     type: "website",
   },
@@ -18,20 +18,20 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "shroomé — read the label. that's the pitch. (drop 002)",
     description:
-      "200mg lion's mane fruiting-body extract at ≥70% beta-glucans, third-party tested. ceremonial matcha with l-theanine for sustained focus. drop 001 sold out — get access to drop 002.",
+      "200mg organic lion's mane fruiting-body extract, third-party tested. ceremonial matcha with l-theanine for sustained focus. drop 001 sold out — get access to drop 002.",
   },
 };
 
 const config: LPConfig = {
   segment: "focus",
   hero: {
-    eyebrow: "FRUITING BODY · ≥70% BETA-GLUCANS · DOSES ON THE LABEL",
+    eyebrow: "FRUITING BODY · 200MG LION'S MANE · DOSES ON THE LABEL",
     headlineLines: ["we'd rather show you", "the label than the ad."],
     subheadline:
-      "200mg of organic lion's mane — real fruiting body, hot-water extracted, standardized to ≥70% beta-glucans and third-party tested. plus 2.5g of ceremonial matcha whose caffeine + naturally occurring l-theanine support sustained focus. every dose disclosed. nothing proprietary. pour it in fifteen seconds and get to work.",
+      "200mg of organic lion's mane — real fruiting body, hot-water extracted, third-party tested. plus 2.5g of ceremonial matcha whose caffeine + naturally occurring l-theanine support sustained focus. every dose disclosed. nothing proprietary. pour it in fifteen seconds and get to work.",
     background: "var(--brand-ink)",
     dark: true,
-    dataCallouts: ["200mg", "≥70%", "2.5g"],
+    dataCallouts: ["200mg", "2.5g", "2g"],
     sachets: "vanilla",
   },
   stampColor: "var(--brand-flavor-functional)",
@@ -43,7 +43,7 @@ const config: LPConfig = {
     items: [
       {
         title: "fruiting body, not filler",
-        body: "most lion's mane products are mycelium grown on grain — which means you're largely paying for starch. ours is hot-water-extracted fruiting body standardized to ≥70% beta-glucans, where typical mushroom supplements land between 15 and 30 percent.",
+        body: "most lion's mane products are mycelium grown on grain — which means you're largely paying for starch. ours is hot-water-extracted fruiting body: the actual mushroom, concentrated, not diluted with grain.",
       },
       {
         title: "the focus pairing that started it all",
@@ -59,20 +59,20 @@ const config: LPConfig = {
     header: "the spec sheet",
     bg: "var(--brand-flavor-functional)",
     stats: [
+      { stat: "60mg", label: "caffeine from ceremonial matcha — naturally paired with l-theanine (printed on pack)" },
+      { stat: "2.5g", label: "ceremonial matcha — first harvest, shade-grown" },
       { stat: "200mg", label: "organic lion's mane — fruiting body, hot-water extracted" },
-      { stat: "≥70%", label: "beta-glucan content — third-party verified (typical market range: 15–30%)" },
-      { stat: "2.5g", label: "ceremonial matcha — first harvest, shade-grown, ~60mg caffeine + natural l-theanine" },
       { stat: "2g", label: "grass-fed collagen peptides — disclosed like everything else" },
     ],
     footnote:
-      "beta-glucans support immune function. no proprietary blends — if it's in the sachet, it's on the label with a number next to it. heavy-metals and microbial tested; made in a GMP-certified facility.",
+      "lion's mane extract supports immune function. no proprietary blends — if it's in the sachet, it's on the label with a number next to it. heavy-metals and microbial tested; made in a GMP-certified facility.",
   },
   proof: {
     header: "proof, in order of what actually matters.",
     body: `we're pre-launch, so we won't perform a review wall for you. here's what we have instead: third-party test results, a label with no hiding places, and a drop 001 (${X1_BOXES} boxes) that sold out to the access list before the site ever said “buy.”`,
     counterLabel: "people in the queue for drop 002",
     badges: [
-      "third-party tested — beta-glucan content",
+      "third-party tested — purity & potency",
       "heavy-metals screened (As, Pb, Cd, Hg)",
       "microbial tested",
       "GMP-certified facility",
@@ -81,7 +81,7 @@ const config: LPConfig = {
   faqs: [
     {
       q: "200mg seems low next to 1g+ mushroom products.",
-      a: "compare actives, not grams. 200mg at ≥70% beta-glucans delivers ~140mg of beta-glucans; a 1g mycelium-on-grain serving at 20% delivers ~200mg of everything-including-starch, often far less in actual beta-glucans. concentration is the honest metric, and we print ours.",
+      a: "compare source and form, not just grams. a big number on a mycelium-on-grain product is mostly the grain it grew on — starch, not mushroom. ours is 200mg of hot-water-extracted fruiting body: the actual mushroom, concentrated. we print exactly what's in the sachet, and we'll publish the extract's assay the moment the supplier CoA is in hand.",
     },
     {
       q: "fruiting body or mycelium?",

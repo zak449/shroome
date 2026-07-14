@@ -78,7 +78,7 @@ export default function RecipesPage() {
         .rec-ticker{background:var(--brand-ink);padding:10px 0;overflow:hidden;white-space:nowrap}
         .rec-ticker-track{display:inline-flex;animation:recTick 28s linear infinite}
         .rec-ticker-item{font-family:var(--brand-font-mono);font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;padding:0 28px;color:rgba(var(--brand-canvas-rgb),.75)}
-        .rec-ticker-item em{color:var(--brand-accent);font-style:normal;font-weight:500}
+        .rec-ticker-item em{color:var(--brand-accent-warm);font-style:normal;font-weight:500}
         @keyframes recTick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
         /* ── NAV ── */
@@ -237,7 +237,7 @@ export default function RecipesPage() {
         }
         .rec-cta-tag{
           font-family:var(--brand-font-mono);font-size:11px;font-weight:500;
-          letter-spacing:.2em;text-transform:uppercase;color:var(--brand-accent);
+          letter-spacing:.2em;text-transform:uppercase;color:var(--brand-tint-soft);
           margin-bottom:20px;position:relative
         }
         .rec-cta h2{
@@ -252,7 +252,7 @@ export default function RecipesPage() {
         }
         .rec-btn-cta{
           display:inline-block;
-          background:var(--brand-accent);color:var(--brand-ink);
+          background:var(--brand-accent);color:var(--brand-accent-contrast);
           padding:16px 40px;
           font-family:var(--brand-font-body);font-size:13px;font-weight:700;
           letter-spacing:.1em;text-transform:uppercase;
@@ -273,7 +273,7 @@ export default function RecipesPage() {
           font-family:var(--brand-font-mono);font-size:11px;font-weight:500;
           letter-spacing:.12em;text-transform:uppercase;transition:color .2s
         }
-        .rec-footer-top a:hover{color:var(--brand-accent)}
+        .rec-footer-top a:hover{color:var(--brand-accent-warm)}
         .rec-footer-mid{line-height:1.8}
         .rec-footer-mid a{color:rgba(var(--brand-canvas-rgb),0.5);text-decoration:none;transition:color .2s}
         .rec-footer-mid a:hover{color:var(--brand-canvas)}

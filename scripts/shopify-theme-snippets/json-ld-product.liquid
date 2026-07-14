@@ -18,7 +18,7 @@
     custom.rating_count     integer   e.g. 8        (vanilla 8, strawberry 6, variety 12)
     custom.mpn              text      e.g. SHROOME-VAN-V1
     custom.caffeine         text      e.g. ~60mg per sachet
-    custom.beta_glucan      text      e.g. 70%+ (1,3 and 1,6 linked)
+    custom.beta_glucan      text      LEAVE BLANK until a supplier CoA substantiates a % — do NOT seed "70%+" (unsubstantiated per 2026-07 claims audit)
     custom.matcha_grade     text      e.g. Ceremonial (first harvest, shade-grown)
     custom.collagen_source  text      e.g. Grass-fed bovine, hydrolyzed peptides
     custom.servings         integer   e.g. 12
@@ -69,7 +69,7 @@
   {%- if mf.mpn != blank -%}
   "mpn": {{ mf.mpn.value | json }},
   {%- endif -%}
-  "material": "Ceremonial Matcha, Organic Mushroom Beta-Glucan Extracts, Grass-Fed Collagen Peptides",
+  "material": "Ceremonial Matcha, Organic Lion's Mane Extract, Grass-Fed Collagen Peptides",
   "additionalProperty": [
     {%- if mf.caffeine != blank -%}
     { "@type": "PropertyValue", "name": "Caffeine Content", "value": {{ mf.caffeine.value | json }} },

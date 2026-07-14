@@ -59,11 +59,11 @@ const config: LPConfig = {
     stats: [
       { stat: "2g", label: "grass-fed collagen peptides — hydrolyzed, low molecular weight, types I & III" },
       { stat: "2.5g", label: "ceremonial matcha — antioxidant support, naturally occurring l-theanine" },
-      { stat: "200mg", label: "lion's mane fruiting-body extract — ≥70% beta-glucans, third-party tested" },
-      { stat: "0g", label: "added sugar. zero artificial sweeteners, colors, or proprietary blends" },
+      { stat: "200mg", label: "organic lion's mane fruiting-body extract — third-party tested" },
+      { stat: "~60mg", label: "caffeine from ceremonial matcha, with naturally occurring l-theanine" },
     ],
     footnote:
-      "grass-fed, pasture-raised bovine collagen. no soy, no dairy. every dose printed on the sachet.",
+      "grass-fed, pasture-raised bovine collagen. no soy, no dairy (made with coconut milk powder — tree-nut cross-contact). no artificial sweeteners, colors, or proprietary blends. every dose printed on the sachet.",
   },
   proof: {
     header: "drop 001 sold out before we could brag.",
@@ -87,7 +87,7 @@ const config: LPConfig = {
     },
     {
       q: "is it clean?",
-      a: "grass-fed, pasture-raised bovine collagen, organic lion's mane fruiting-body extract, ceremonial matcha. no added sugar, no artificial sweeteners, no dyes, no proprietary blends. every dose is on the label.",
+      a: "grass-fed, pasture-raised bovine collagen, organic lion's mane fruiting-body extract, ceremonial matcha, sweetened with organic agave. no artificial sweeteners, no dyes, no proprietary blends. every dose is on the label.",
     },
     {
       q: "it's sold out — how do drops work?",

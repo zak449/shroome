@@ -5,17 +5,18 @@
 > Conversion goal: drop-access signup (email → optional SMS early access). Single CTA, repeated 3x down-page. DROP MODEL: numbered, limited drops — see drop status module below.
 > HONESTY RULE: every scarcity statement must be literally true — drop 001 genuinely sold out, drop sizes are real production run counts, countdowns run to real dates only. (This audience will fact-check us. Good.)
 > Fonts: H1/H2 Instrument Serif 400 *italic*, everything else Syne — this page leans hardest on Syne 700 for its spec-sheet energy. All display copy lowercase.
+> Canon target faces are Tarnac (slab — titles/tags; flavor tags in Tarnac Bold + flavor color) + Tarnac Sans (supporting) by Sharp Type; web license not yet purchased, so Instrument Serif/Syne are the interim OFL stand-ins.
 > COMPLIANCE: "supports sustained focus" and "supports immune function" are the ONLY function claims permitted. No memory/brain-boost/NGF/cognition-protection language anywhere. No drug comparisons, ever. FDA disclaimer footer + under benefit blocks.
 
 ---
 
 ## Accent color plan (this page)
 
-- **Page base:** Cream #FDF4EE, Navy #1B1F3B — the most Navy-forward page in the set; it should feel like a beautifully typeset spec sheet
-- **Hero:** Navy #1B1F3B background (dark-mode hero — unique to this LP), Cream text, Lime data highlights
-- **Ingredient strip:** Lavender #D4B8E0 band (functional-ingredient association per brand system)
-- **Data callouts:** Lime #C8FF3A used as highlighter strokes under key numbers (fills only, never Lime text)
-- **CTA:** Lime button, Navy text
+- **Page base:** Retro #FEFFF8, Green #2D341A — the most Green-forward page in the set; it should feel like a beautifully typeset spec sheet
+- **Hero:** Green #2D341A background (dark-mode hero — unique to this LP), Retro text, Matcha data highlights
+- **Ingredient strip:** Purple #E3D5F7 band (functional-ingredient association per brand system)
+- **Data callouts:** Matcha #7A881F used as highlighter strokes under key numbers (fills only, never Matcha text)
+- **CTA:** Green button, Retro text (Bolden CTA inversion)
 
 ---
 
@@ -23,41 +24,41 @@
 
 - **OG title:** `shroomé — read the label. that's the pitch. (drop 002)`
 - **OG description:** `200mg lion's mane fruiting-body extract at ≥70% beta-glucans, third-party tested. ceremonial matcha with l-theanine for sustained focus. drop 001 sold out — get access to drop 002.`
-- **OG image:** macro shot of the sachet back label, beta-glucan line crisply in focus, Lime underline treatment (real photography of the real label only)
+- **OG image:** macro shot of the sachet back label, beta-glucan line crisply in focus, Matcha underline treatment (real photography of the real label only)
 
 ---
 
-## 1. Hero (Navy background, Cream text)
+## 1. Hero (Green background, Retro text)
 
-**Headline (H1, Instrument Serif italic, Cream):**
+**Headline (H1, Instrument Serif italic, Retro):**
 > we'd rather show you the label than the ad.
 
-**Subheadline (Syne 400, Cream at 80%):**
+**Subheadline (Syne 400, Retro at 80%):**
 > 200mg of organic lion's mane — real fruiting body, hot-water extracted, standardized to ≥70% beta-glucans and third-party tested. plus 2.5g of ceremonial matcha whose caffeine + naturally occurring l-theanine support sustained focus. every dose disclosed. nothing proprietary. pour it in fifteen seconds and get to work.
 
-**Eyebrow (Syne 700, uppercase, Lime dot bullet):** FRUITING BODY · ≥70% BETA-GLUCANS · DOSES ON THE LABEL
+**Eyebrow (Syne 700, uppercase, Matcha dot bullet):** FRUITING BODY · ≥70% BETA-GLUCANS · DOSES ON THE LABEL
 
-**Hero visual direction:** Navy field, dramatic starburst rim-light on a single vanilla sachet, angled, back label toward camera with the beta-glucan line legible. Three key figures set beside it in Syne 700 with Lime underline strokes: `200mg` / `≥70%` / `2.5g`. Clean, confident, zero clutter. No lab coats, no brains, no neuron illustrations.
+**Hero visual direction:** Green field, dramatic starburst rim-light on a single vanilla sachet, angled, back label toward camera with the beta-glucan line legible. Three key figures set beside it in Syne 700 with Matcha underline strokes: `200mg` / `≥70%` / `2.5g`. Clean, confident, zero clutter. No lab coats, no brains, no neuron illustrations.
 
-**Hero CTA button (Lime, Navy text):** `get drop access`
-**Under-button microcopy (Cream 60%):** drop 001 sold out. drop 002 is a limited run.
+**Hero CTA button (Green #2D341A surface, Retro #FEFFF8 text — Bolden CTA inversion):** `get drop access`
+**Under-button microcopy (Retro 60%):** drop 001 sold out. drop 002 is a limited run.
 
 ---
 
 ## 1b. Drop status module (directly under hero CTA — style it like a changelog/release ledger; this audience reads it as versioning)
 
-Drop ledger, Syne 700, Cream strip cards on the Navy hero:
+Drop ledger, Syne 700, Retro strip cards on the Green hero:
 
-> **drop 001** — sold out ~~[X₁] boxes~~ *("sold out" stamp in Lavender #D4B8E0)*
-> **drop 002** — [date window from ops] · limited run of **[X₂] boxes** *(pulsing Lime dot)*
+> **drop 001** — sold out ~~[X₁] boxes~~ *("sold out" stamp in Purple #E3D5F7)*
+> **drop 002** — [date window from ops] · limited run of **[X₂] boxes** *(pulsing Matcha dot)*
 
-- **Countdown spec:** live `dd : hh : mm` (Syne 700 tabular numerals, Lime underline stroke) once ops confirms the drop 002 date; until then: *"next drop: soon. the access list gets the date first."* No timers to unconfirmed dates — this crowd screenshots receipts.
+- **Countdown spec:** live `dd : hh : mm` (Syne 700 tabular numerals, Matcha underline stroke) once ops confirms the drop 002 date; until then: *"next drop: soon. the access list gets the date first."* No timers to unconfirmed dates — this crowd screenshots receipts.
 - **Quantity spec:** [X₁]/[X₂] = real production run counts from shared ops config. Publish exactly what ops manufactures.
 - **SMS early-access step:** after email submit, offer phone: *"the text list gets the drop link 10 minutes before everyone else — plus an extra 10% off."* One-tap skippable.
 
 ---
 
-## 2. Benefit blocks (3-up; Navy-bordered Cream cards on Cream, spec-sheet styling)
+## 2. Benefit blocks (3-up; Green-bordered Retro cards on Retro, spec-sheet styling)
 
 **Block 1 — title:** *fruiting body, not filler*
 **Body:** most lion's mane products are mycelium grown on grain — which means you're largely paying for starch. ours is hot-water-extracted fruiting body standardized to ≥70% beta-glucans, where typical mushroom supplements land between 15 and 30 percent.
@@ -68,11 +69,11 @@ Drop ledger, Syne 700, Cream strip cards on the Navy hero:
 **Block 3 — title:** *fifteen seconds, zero friction*
 **Body:** flow states die in prep time. tear the sachet, pour into milk, one swirl — your entire pre-work setup now takes less time than opening your task manager. same input, same dose, every single morning.
 
-**Small text directly under blocks (12px, Navy 60%):** These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.
+**Small text directly under blocks (12px, Green 60%):** These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.
 
 ---
 
-## 3. Ingredient / science strip (Lavender band — styled as a supplement-facts homage, monospaced-feel table borders, Navy rules)
+## 3. Ingredient / science strip (Purple band — styled as a supplement-facts homage, monospaced-feel table borders, Green rules)
 
 Strip header (H2): *the spec sheet*
 
@@ -87,7 +88,7 @@ Strip footnote (13px): beta-glucans support immune function. no proprietary blen
 
 ---
 
-## 4. Social proof section (Cream background)
+## 4. Social proof section (Retro background)
 
 Header (H2): *proof, in order of what actually matters.*
 Body copy:
@@ -116,11 +117,11 @@ a: we ship in numbered, limited drops — real production runs, published counts
 
 ---
 
-## 6. Final CTA section (Navy background, Cream text)
+## 6. Final CTA section (Green background, Retro text)
 
 Header (H2, Instrument Serif italic): *the label already convinced you. the drop won't wait.*
 Body: drop 001 sold out. drop 002 is a limited run of [X₂] boxes — get access now, add your number for the 10-minute head start (plus an extra 10% off).
-CTA button (Lime, Navy text): `get drop access`
+CTA button (Green surface, Retro text): `get drop access`
 Microcopy: one text per drop. we email like we label — only when there's something worth reading.
 
 ---

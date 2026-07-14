@@ -60,18 +60,18 @@ const config: LPConfig = {
     stats: [
       { stat: "~60mg", label: "caffeine — about half an espresso shot" },
       { stat: "2.5g", label: "ceremonial matcha — naturally occurring l-theanine, supports sustained focus" },
-      { stat: "200mg", label: "lion's mane fruiting-body extract — ≥70% beta-glucans" },
+      { stat: "200mg", label: "organic lion's mane fruiting-body extract" },
       { stat: "2g", label: "grass-fed collagen peptides — along for the ride" },
     ],
     footnote:
-      "no added sugar, no artificial anything, no proprietary blends. every dose printed on the sachet.",
+      "no artificial sweeteners, no proprietary blends — sweetened with organic agave. every dose printed on the sachet.",
   },
   proof: {
     header: "drop 001 didn't survive the access list.",
     body: `we're not going to show you a fake wall of five-star reviews — we're pre-launch and drop 001 (${X1_BOXES} boxes) already sold out. what we can show you: a fully disclosed label, third-party testing, and the line forming for drop 002.`,
     counterLabel: "people holding drop access",
     badges: [
-      "third-party tested for beta-glucan content",
+      "third-party tested for purity",
       "heavy-metals screened",
       "GMP-certified facility",
     ],

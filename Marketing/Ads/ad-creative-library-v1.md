@@ -3,7 +3,8 @@
 > Date: 2026-07-14 · Owner: Performance Creative Lead
 > State: DROP MODEL. drop 001 sold out; every ad drives **drop-access signups** to the segment ghost LPs. SMS opt-in = 10-minute early access + SHROOME30 (replaces SHROOME20 — **best code wins, never say "stacks"**).
 > Sources of truth: `../Segments/segment-strategy.md` (segments + claims), `../Segments/lp-briefs/*.md` (ad→LP congruence), `../Creative/creative-direction.md` (visual system), `../Creative/ai-toolstack.md` (what AI may and may not touch), `Product/Compliance & Claims/claims-guidelines.md` (claims), `../Strategy/funnel-teardown-2026-07.md` (funnel thesis).
-> Palette: Navy `#1B1F3B` · Cream `#FDF4EE` · Lime `#C8FF3A` · Pink `#FFB7D1` · Lavender `#D4B8E0` · Soft Lavender `#E8D5F0` · Blush `#FFE0EC`.
+> Palette (Bolden canon): Green `#2D341A` · Retro `#FEFFF8` · Matcha `#7A881F` (accent — CTAs invert to Green surface / Retro text) · Purple `#E3D5F7` · Strawberry `#FF6DC7` · Vanilla `#E4CB9F` · Mango `#FA9427` · Chocolate `#956A3C` (future flavor). Strawberry-tint `#FFE2F4` is a derived pale tint for soft fields.
+> Typography: canon target is Tarnac (slab — titles/tags; flavor tags in Tarnac Bold + flavor color) + Tarnac Sans (supporting) by Sharp Type; web license not yet purchased, so all "Instrument Serif" / "Syne" specs below are the interim OFL stack.
 > **Honesty rule (inherited, non-negotiable):** every scarcity statement in every ad must be literally true. Box counts, dates, and live counters come from the ops config — placeholders in this doc: `[DROP_002_COUNT]`, `[DROP_001_COUNT]`, `[DROP_002_DATE]`, `[LIVE_LIST_COUNT]`, `[LIVE_BOXES_REMAINING]`. If ops can't feed a real number, the line is cut, not faked.
 > **AI production rule (inherited):** the sachet, the label, the hero swirl, testimonials, and the founder are NEVER AI-generated. Generation prompts below produce **backgrounds, sets, and stylized b-roll only**; the real sachet photography (`sachet-vanilla.png` / `sachet-strawberry.png`) and the real master swirl footage are composited/cut in. AI-actor (Arcads/HeyGen) variants deliver premises and facts only — never "I tried it."
 
@@ -75,13 +76,13 @@ One ad set per segment (ABO, not CBO — we need clean per-segment reads), plus 
 
 # 2. THE ADS — 30 (6 per segment: 3 Meta + 3 TikTok)
 
-Shared spec unless overridden: Meta = 4:5 feed + 9:16 reels/stories cuts; TikTok = 9:16, 15–30s, spark-ad via brand or whitelisted handle. Every video ends on the shared end-card (creative-direction §end-card): real sachet packshot on Navy, "pour / swirl / glow," drop-status line, Lime `get drop access` chip, FDA disclaimer baked into the template when the cut carries a claim. The swirl plays ≥1.5s, clockwise, never sped past 2×, always cut from the real master.
+Shared spec unless overridden: Meta = 4:5 feed + 9:16 reels/stories cuts; TikTok = 9:16, 15–30s, spark-ad via brand or whitelisted handle. Every video ends on the shared end-card (creative-direction §end-card): real sachet packshot on Green, "pour / swirl / glow," drop-status line, Green-surface `get drop access` chip (Retro text), FDA disclaimer baked into the template when the cut carries a claim. The swirl plays ≥1.5s, clockwise, never sped past 2×, always cut from the real master.
 
 ---
 
 ## SEGMENT 1 — the matcha maximalists → /lp/ritual (slug kept; segment renamed 2026-07-14)
 
-Culture cues for this feed: matcha-tok, romanticize-your-life voiceover essays, soft-launch aesthetic (the drink shot like a new relationship), "explaining my order" POVs, saved-video energy ("this is going in my morning-inspo folder"). Palette world: Soft Lavender → Blush gradients, Cream, Pink flavor moments, Lime CTA only.
+Culture cues for this feed: matcha-tok, romanticize-your-life voiceover essays, soft-launch aesthetic (the drink shot like a new relationship), "explaining my order" POVs, saved-video energy ("this is going in my morning-inspo folder"). Palette world: Purple → Strawberry tint gradients, Retro, Strawberry flavor moments, Green/Retro CTA only.
 
 ---
 
@@ -92,7 +93,7 @@ Culture cues for this feed: matcha-tok, romanticize-your-life voiceover essays, 
 - **Headline:** ceremonial matcha, minus the ceremony.
 - **Description:** drop 001 sold out. get access to drop 002.
 - **CTA / destination:** `Sign Up` → /lp/ritual (`utm_content=SHR_TOF_RIT_IMG_01`)
-- **Visual spec — generate (Firefly Image 4 / MJ v7, background plate only):** "dreamy vertical gradient field, soft lavender #E8D5F0 melting into blush #FFE0EC, soft stylized cloud texture at 35% opacity, warm golden morning light from upper right, subtle film grain, gentle starburst glow center-right, empty stone countertop edge in warm cream #FDF4EE at bottom third, no objects, no text, editorial still-life lighting, 4:5" — then composite: REAL photograph of the mid-pour swirl glass (backlit, plume blooming) center-right, REAL vanilla sachet leaning at glass base, wordmark "shroomé" bottom-left Cream 85%. Headline set in Instrument Serif italic Navy across upper negative space: *ceremonial matcha, minus the ceremony.* Lime chip: `get drop access`.
+- **Visual spec — generate (Firefly Image 4 / MJ v7, background plate only):** "dreamy vertical gradient field, soft purple #E3D5F7 melting into pale strawberry-blush #FFE2F4, soft stylized cloud texture at 35% opacity, warm golden morning light from upper right, subtle film grain, gentle starburst glow center-right, empty stone countertop edge in warm off-white #FEFFF8 at bottom third, no objects, no text, editorial still-life lighting, 4:5" — then composite: REAL photograph of the mid-pour swirl glass (backlit, plume blooming) center-right, REAL vanilla sachet leaning at glass base, wordmark "shroomé" bottom-left Retro 85%. Headline set in Instrument Serif italic Green across upper negative space: *ceremonial matcha, minus the ceremony.* Green/Retro CTA chip: `get drop access`.
 - **Shoot it real (iPhone fallback):** golden hour, kitchen counter near a window. Tall clear glass, cold oat milk, pour the concentrate on 0.5× lens ~30cm away, burst mode through the bloom; sachet propped against glass; shoot 20 frames, pick the ribbon moment. Lock exposure on the glass highlight; warm white balance.
 - **Compliance:** taste/aesthetic/convenience only — no structure/function claims. **Disclaimer: N.** Scarcity lines pull from ops config.
 
@@ -102,11 +103,11 @@ Culture cues for this feed: matcha-tok, romanticize-your-life voiceover essays, 
 - **Format:** Meta carousel, 5 cards 1:1 — retargets 25% video viewers + LP bouncers
 - **Hook (first line):** the five prettiest seconds of your morning, frame by frame.
 - **Primary text:** you watched the swirl. here's the whole move: tear, pour, swirl, settle, sip — fifteen seconds, zero whisk, 2.5g of first-harvest ceremonial matcha. drop 001 sold out before it hit the site. drop access = the drop 002 link before the public, and the text list gets it 10 minutes earlier still.
-- **Cards:** 1) fingers on the sachet notch, caption chip *tear* · 2) concentrate column entering milk, *pour* · 3) full ribbon bloom, *swirl* · 4) resolved sage latte, *glow* · 5) drop ledger card — Navy, Syne 700: "drop 001 — sold out ~~[DROP_001_COUNT] boxes~~ / drop 002 — limited run of [DROP_002_COUNT]" + Lime `get drop access` chip.
+- **Cards:** 1) fingers on the sachet notch, caption chip *tear* · 2) concentrate column entering milk, *pour* · 3) full ribbon bloom, *swirl* · 4) resolved sage latte, *glow* · 5) drop ledger card — Green, Syne 700: "drop 001 — sold out ~~[DROP_001_COUNT] boxes~~ / drop 002 — limited run of [DROP_002_COUNT]" + Green-surface `get drop access` chip (Retro text).
 - **Headline (per card):** pour / swirl / glow / drop 002 is limited
 - **Description:** no whisk. no powder. no line.
 - **CTA / destination:** `Sign Up` → /lp/ritual (`utm_content=SHR_MOF_RIT_CAR_02`)
-- **Visual spec — generate:** none — cards 1–4 are frame-grabs from the REAL master swirl footage (creative-direction: one master, five worlds), graded warm, Blush vignette. Card 5 built from the end-card template.
+- **Visual spec — generate:** none — cards 1–4 are frame-grabs from the REAL master swirl footage (creative-direction: one master, five worlds), graded warm, Strawberry tint vignette. Card 5 built from the end-card template.
 - **Shoot it real:** if master grabs unavailable: tripod overhead + side angle, 4K60, one pour, pull 4 stills at 0s/2s/5s/12s.
 - **Compliance:** claim-free. **Disclaimer: N.**
 
@@ -116,11 +117,11 @@ Culture cues for this feed: matcha-tok, romanticize-your-life voiceover essays, 
 - **Format:** Meta reels + 4:5 feed video, 22s
 - **Hook (0–1.5s, VO + text):** i did the math on my matcha order and now i can't unsee it.
 - **Primary text:** $8 a cup, 4 cups a week, is a $1,600-a-year situation. shroomé is café-grade ceremonial matcha — 2.5g per sachet, more than most cafés whisk into the order — for about $3 a pour, made prettier than the café makes it. drop 001 sold out; get access before drop 002 goes.
-- **Script / shot timing:** (0–1.5s) receipt macro, thumb tapping the $8 line, VO hook. (1.5–6s) gentle voiceover-essay math over café b-roll: "eight dollars. four times a week. i love her but she's a subscription." (6–13s) cut home: the real thing — tear, pour, THE SWIRL (real master cut, ≥2s), golden light. VO: "2.5 grams of ceremonial matcha. about three dollars. and the swirl comes home with you." (13–18s) side-by-side text card: "café: $8 + the line / shroomé: ~$3 + your kitchen light." (18–22s) end-card, drop status line, Lime chip.
+- **Script / shot timing:** (0–1.5s) receipt macro, thumb tapping the $8 line, VO hook. (1.5–6s) gentle voiceover-essay math over café b-roll: "eight dollars. four times a week. i love her but she's a subscription." (6–13s) cut home: the real thing — tear, pour, THE SWIRL (real master cut, ≥2s), golden light. VO: "2.5 grams of ceremonial matcha. about three dollars. and the swirl comes home with you." (13–18s) side-by-side text card: "café: $8 + the line / shroomé: ~$3 + your kitchen light." (18–22s) end-card, drop status line, Green/Retro CTA chip.
 - **Headline:** your café order, at home, ~$3.
 - **Description:** drop 002 is a limited run. get access.
 - **CTA / destination:** `Sign Up` → /lp/ritual (`utm_content=SHR_TOF_RIT_VID_03`)
-- **Visual spec — generate (Runway Gen-4, b-roll only):** "warm café interior, morning light through large windows, soft focus queue of anonymous customers, creamy highlights, cinematic 24fps, gentle push-in, no readable branding, no faces in focus" — stylized filler only; every product/pour frame is real footage. Text cards in Syne 700 Navy on Cream.
+- **Visual spec — generate (Runway Gen-4, b-roll only):** "warm café interior, morning light through large windows, soft focus queue of anonymous customers, creamy highlights, cinematic 24fps, gentle push-in, no readable branding, no faces in focus" — stylized filler only; every product/pour frame is real footage. Text cards in Syne 700 Green on Retro.
 - **Shoot it real:** iPhone: (1) your actual café receipt on a table, overhead; (2) kitchen pour sequence per RIT_IMG_01 setup, video 4K30; (3) caption cards in CapCut brand template.
 - **Compliance:** price/taste/convenience claims only; per-cup figure must match real drop-002 pricing from ops (`[PRICE_PER_SACHET]` ≈ $3 — verify before traffic). **Disclaimer: N.**
 
@@ -129,11 +130,11 @@ Culture cues for this feed: matcha-tok, romanticize-your-life voiceover essays, 
 ### SHR_TOF_RIT_SPK_01 — "listen" (ASMR sensory dare) ⭐ launch-six
 - **Format:** TikTok spark, 9:16, 21s
 - **Hook (0–1.5s):** dead silence, extreme macro of fingers on the sachet notch, one word of text: **"listen."**
-- **Script / shot timing:** (0–1.5s) macro grip, silence, hook text. (1.5–3s) THE TEAR — amplified, nothing else. (3–8s) overhead: dark green concentrate streams into iced oat milk, unbroken. (8–14s) through-the-glass: the swirl, real master footage, ribbons curling, no cuts. (14–18s) one slow clockwise hand-swirl; streaks resolve to sage. (18–21s) hard cut to end-card: sachet packshot, "drop 001 — sold out. drop 002 — limited run." Lime `get drop access` chip. Pour sound resolves under the card.
+- **Script / shot timing:** (0–1.5s) macro grip, silence, hook text. (1.5–3s) THE TEAR — amplified, nothing else. (3–8s) overhead: dark green concentrate streams into iced oat milk, unbroken. (8–14s) through-the-glass: the swirl, real master footage, ribbons curling, no cuts. (14–18s) one slow clockwise hand-swirl; streaks resolve to sage. (18–21s) hard cut to end-card: sachet packshot, "drop 001 — sold out. drop 002 — limited run." Green-surface `get drop access` chip (Retro text). Pour sound resolves under the card.
 - **On-screen text beats:** (0s) "listen." · (10s) "pour / swirl / glow" · (16s) "drop 001: sold out." · (19s) "shroomé — get drop access"
 - **Caption:** we can't sell you one right now. we can still ruin your feed with the sound. drop access = the drop 002 link first. #asmr #matchaasmr #matcha #pourswirlglow
 - **CTA / destination:** `Sign up` → /lp/ritual (`utm_content=SHR_TOF_RIT_SPK_01`)
-- **Visual spec:** 100% REAL footage (ai-toolstack hard rule: the taste-credibility pour is never generated). Sound design: tear, pour, bloom, glass-on-counter; barely-there pad from 8s. Warm grade, Blush lift in highlights.
+- **Visual spec:** 100% REAL footage (ai-toolstack hard rule: the taste-credibility pour is never generated). Sound design: tear, pour, bloom, glass-on-counter; barely-there pad from 8s. Warm grade, Strawberry tint lift in highlights.
 - **Shoot it real:** iPhone 4K60 + a $20 clip mic taped near the glass; dim room, one warm window; macro mode for the tear; overhead phone mount for the pour; do 5 takes, use the crispest tear.
 - **Compliance:** claim-free by design. **Disclaimer: N.**
 
@@ -146,7 +147,7 @@ Culture cues for this feed: matcha-tok, romanticize-your-life voiceover essays, 
 - **On-screen text beats:** (0s) hook · (4s) "the order:" list appears line by line · (12s) "pour / swirl / glow" · (20s) "drop 002 — limited run · get drop access"
 - **Caption:** the barista is me and the tip is joining the access list. drop 001 sold out — 002 is a limited run. #matchatok #matcha #icedmatcha #cafeathome
 - **CTA / destination:** `Sign up` → /lp/ritual (`utm_content=SHR_TOF_RIT_SPK_02`)
-- **Visual spec — generate:** none for hero moments. Optional Firefly backplate for an insert card: "soft blush #FFE0EC gradient card with cream #FDF4EE border, warm light, subtle grain, no text" for the order-list overlay. Talent wardrobe: warm tones with one loud accent; kitchen set per creative-direction maximalist world (fluted glass, color-blocked tray, claw clip in frame).
+- **Visual spec — generate:** none for hero moments. Optional Firefly backplate for an insert card: "soft pale strawberry-blush #FFE2F4 gradient card with warm off-white #FEFFF8 border, warm light, subtle grain, no text" for the order-list overlay. Talent wardrobe: warm tones with one loud accent; kitchen set per creative-direction maximalist world (fluted glass, color-blocked tray, claw clip in frame).
 - **Shoot it real:** iPhone front camera for hook (slightly too close = native), rear camera for the pour; window light only; order list as CapCut text preset in Syne.
 - **Compliance:** taste/aesthetic only. Ordering-language stays flavor/aesthetic — no function words. **Disclaimer: N.** Real talent may not claim health outcomes; this script contains none.
 
@@ -159,7 +160,7 @@ Culture cues for this feed: matcha-tok, romanticize-your-life voiceover essays, 
 - **On-screen text beats:** (0s) hook · (7s) "staged tonight. poured tomorrow." · (13s) "text list = 10 minutes early" · (18s) "get drop access — shroomé"
 - **Caption:** the earliest possible version of on time. drop access is free; the text list just gets the door first. #matchatok #matcha #softlaunch #matchalatte
 - **CTA / destination:** `Sign up` → /lp/ritual (`utm_content=SHR_MOF_RIT_SPK_03`)
-- **Visual spec — generate (Runway, insert only):** "dreamy time-lapse of dawn light moving across a cream #FDF4EE wall, soft lavender #E8D5F0 shadows, warm, grain, no objects" as a 2s transition plate. Notification mock uses our real SMS copy (engagement-capture-flows §sms) — never a fabricated customer message.
+- **Visual spec — generate (Runway, insert only):** "dreamy time-lapse of dawn light moving across a warm off-white #FEFFF8 wall, soft purple #E3D5F7 shadows, warm, grain, no objects" as a 2s transition plate. Notification mock uses our real SMS copy (engagement-capture-flows §sms) — never a fabricated customer message.
 - **Shoot it real:** screen-record a staged notification on a real phone (airplane mode), film phone-in-hand in warm lamp light; nightstand flat-lay of sachet + glass.
 - **Compliance:** offer mechanics only. SHROOME30 phrasing per email-flow rule: "replaces your 20% code — best code wins." **Never "stack." Disclaimer: N.**
 
@@ -167,7 +168,7 @@ Culture cues for this feed: matcha-tok, romanticize-your-life voiceover essays, 
 
 ## SEGMENT 2 — the glow getters → /lp/glow
 
-Culture cues: skincare-tok routine logic, GRWM with a thesis, "morning shed" jokes retired — use routine-stacking logic and deinfluencing counter-positioning instead; vanity flat-lays, shelfie pans, match-cut serum-to-pour. Palette world: Blush leads, Pink strawberry accents, Soft Lavender science moments; Lime CTA buffered by Cream (never adjacent to Pink).
+Culture cues: skincare-tok routine logic, GRWM with a thesis, "morning shed" jokes retired — use routine-stacking logic and deinfluencing counter-positioning instead; vanity flat-lays, shelfie pans, match-cut serum-to-pour. Palette world: Strawberry tint leads, Strawberry strawberry accents, Purple science moments; the Green/Retro CTA buffered by Retro (never adjacent to Strawberry).
 
 **Segment compliance note:** most ads here carry "supports skin health" / "provides antioxidant support" → FDA disclaimer in caption AND end-card. Never before/after skin, never timelines, never "anti-aging."
 
@@ -180,7 +181,7 @@ Culture cues: skincare-tok routine logic, GRWM with a thesis, "morning shed" jok
 - **Headline:** the beauty step you drink.
 - **Description:** 2g grass-fed collagen. every pour. drop 002 is limited.
 - **CTA / destination:** `Sign Up` → /lp/glow (`utm_content=SHR_TOF_GLW_IMG_01`)
-- **Visual spec — generate (Firefly, set plate only):** "warm marble vanity surface in soft blush #FFE0EC morning light, one architectural frosted-glass skincare bottle out of focus at frame left with no label, mirror edge catching warm light upper right, creamy highlights, dewy soft-focus atmosphere, subtle grain, empty space center-right, 4:5, beauty editorial lighting, never clinical white" — composite the REAL strawberry sachet leaning against a REAL glass of blush-topped iced matcha center-right. Type: Instrument Serif italic Navy headline, Syne small-caps ingredient line "2g grass-fed collagen · 2.5g ceremonial matcha," Lime chip on Cream buffer.
+- **Visual spec — generate (Firefly, set plate only):** "warm marble vanity surface in soft pale strawberry-blush #FFE2F4 morning light, one architectural frosted-glass skincare bottle out of focus at frame left with no label, mirror edge catching warm light upper right, creamy highlights, dewy soft-focus atmosphere, subtle grain, empty space center-right, 4:5, beauty editorial lighting, never clinical white" — composite the REAL strawberry sachet leaning against a REAL glass of blush-topped iced matcha center-right. Type: Instrument Serif italic Green headline, Syne small-caps ingredient line "2g grass-fed collagen · 2.5g ceremonial matcha," Green/Retro CTA chip on Retro buffer.
 - **Shoot it real:** bathroom counter, morning window; borrow one unbranded skincare bottle for depth; iced strawberry pour in a short glass; shoot 0.5× at counter height, focus on sachet label.
 - **Compliance:** claims: "supports skin health," "provides antioxidant support." **Disclaimer: Y (caption + on-image small text).**
 
@@ -194,8 +195,8 @@ Culture cues: skincare-tok routine logic, GRWM with a thesis, "morning shed" jok
 - **Headline:** collagen without the scoop.
 - **Description:** 2g in every pour. drop 002 is limited — get access.
 - **CTA / destination:** `Sign Up` → /lp/glow (`utm_content=SHR_TOF_GLW_VID_02`)
-- **Visual spec — generate (Runway, stylized insert only):** "macro slow motion of a single golden serum drop falling through warm blush-tinted light #FFE0EC, creamy bokeh, 120fps feel, luxurious, no product, no text" for the match-cut half; the concentrate half is REAL master footage. Chore montage shot real with unbranded props.
-- **Shoot it real:** buy one generic collagen tub, peel label; kitchen + vanity locations; serum-drop shot with any dropper bottle against a blush card; match the cut on motion in CapCut.
+- **Visual spec — generate (Runway, stylized insert only):** "macro slow motion of a single golden serum drop falling through warm strawberry-tint light #FFE2F4, creamy bokeh, 120fps feel, luxurious, no product, no text" for the match-cut half; the concentrate half is REAL master footage. Chore montage shot real with unbranded props.
+- **Shoot it real:** buy one generic collagen tub, peel label; kitchen + vanity locations; serum-drop shot with any dropper bottle against a strawberry-tint card; match the cut on motion in CapCut.
 - **Compliance:** claims: "supports skin health." No competitor names, no before/after, no timeline. **Disclaimer: Y.**
 
 ---
@@ -203,13 +204,13 @@ Culture cues: skincare-tok routine logic, GRWM with a thesis, "morning shed" jok
 ### SHR_MOF_GLW_CAR_03 — "read the label" (ingredient receipt carousel)
 - **Format:** Meta carousel, 4 cards 1:1 — retargets GLW video viewers + LP bouncers
 - **Hook (first line):** beauty from a sachet sounds fake until you read the label.
-- **Primary text:** so here's the label. 2g grass-fed hydrolyzed collagen peptides (types I & III). 2.5g first-harvest ceremonial matcha — antioxidant support included. 200mg lion's mane fruiting-body extract, ≥70% beta-glucans, third-party tested. 0g added sugar. no proprietary blends, nothing hidden. drop 001 sold out — get drop access before 002 goes. *These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.*
-- **Cards:** 1) REAL label macro, "2g grass-fed collagen — types I & III" · 2) "2.5g ceremonial matcha — antioxidant support" over swirl still · 3) "0g added sugar. 0 proprietary blends." on Soft Lavender card · 4) drop ledger + Lime chip.
+- **Primary text:** so here's the label. 2g grass-fed hydrolyzed collagen peptides (types I & III). 2.5g first-harvest ceremonial matcha — antioxidant support included. 200mg lion's mane fruiting-body extract, ≥70% beta-glucans, third-party tested. no proprietary blends, nothing hidden. drop 001 sold out — get drop access before 002 goes. *These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.*
+- **Cards:** 1) REAL label macro, "2g grass-fed collagen — types I & III" · 2) "2.5g ceremonial matcha — antioxidant support" over swirl still · 3) "0 proprietary blends. nothing hidden." on Purple card · 4) drop ledger + Green/Retro CTA chip.
 - **Headline (rotating):** doses on the label / not one more scoop / drop 002 is limited
 - **Description:** every dose printed on the sachet.
 - **CTA / destination:** `Sign Up` → /lp/glow (`utm_content=SHR_MOF_GLW_CAR_03`)
-- **Visual spec:** card 1 is REAL macro photography of the actual sachet back panel (never generated, never retouched on-label — ai-toolstack rule 2); cards 2–3 use Firefly plates: "soft lavender #E8D5F0 gradient card, warm light sweep, fine grain, empty, 1:1" with Syne 700 Navy figures set large; card 4 from end-card template.
-- **Shoot it real:** label macro: iPhone macro mode, sachet flat on cream linen, window light at 45°, no flash.
+- **Visual spec:** card 1 is REAL macro photography of the actual sachet back panel (never generated, never retouched on-label — ai-toolstack rule 2); cards 2–3 use Firefly plates: "soft purple #E3D5F7 gradient card, warm light sweep, fine grain, empty, 1:1" with Syne 700 Green figures set large; card 4 from end-card template.
+- **Shoot it real:** label macro: iPhone macro mode, sachet flat on Retro linen, window light at 45°, no flash.
 - **Compliance:** claims: "provides antioxidant support" (+ factual dose statements). **Disclaimer: Y.**
 
 ---
@@ -217,11 +218,11 @@ Culture cues: skincare-tok routine logic, GRWM with a thesis, "morning shed" jok
 ### SHR_TOF_GLW_SPK_01 — "step 9: drink it" (GRWM routine)
 - **Format:** TikTok spark, 9:16, 28s — real creator (archetype 1, §4)
 - **Hook (0–1.5s):** tapping the sachet against the bathroom mirror: **"my routine has one step you've never seen — because it lives in the kitchen."**
-- **Script / shot timing:** (0–1.5s) mirror hook. (1.5–8s) routine speedrun, one beat per action: cleanser, serum, SPF — tactile close-ups, no brand labels. (8–10s) walk-follow from mirror to kitchen (the signature follow shot, robe + claw clip). (10–17s) tear → pour → swirl in blush light; VO: "2 grams of grass-fed collagen peptides, dissolved into a matcha latte. collagen supports skin health — and this version i actually remember to take." (17–23s) sip at the counter, "step 9: drink it" text lands. (23–28s) end-card with disclaimer.
+- **Script / shot timing:** (0–1.5s) mirror hook. (1.5–8s) routine speedrun, one beat per action: cleanser, serum, SPF — tactile close-ups, no brand labels. (8–10s) walk-follow from mirror to kitchen (the signature follow shot, robe + claw clip). (10–17s) tear → pour → swirl in strawberry-tint light; VO: "2 grams of grass-fed collagen peptides, dissolved into a matcha latte. collagen supports skin health — and this version i actually remember to take." (17–23s) sip at the counter, "step 9: drink it" text lands. (23–28s) end-card with disclaimer.
 - **On-screen text beats:** (0s) hook · (3s) step counter "1… 2… 3…" ticking up · (12s) "2g grass-fed collagen — every sachet" · (15s) "supports skin health*" · (24s) "*see caption · drop 002 — limited · get drop access"
 - **Caption:** the routine finally has a step i crave. collagen peptides support skin health — 2g in every sachet, printed on the label. drop 001 sold out; access list hears about 002 first. *these statements have not been evaluated by the fda. this product is not intended to diagnose, treat, cure, or prevent any disease.* #grwm #skintok #collagenlatte #matcha
 - **CTA / destination:** `Sign up` → /lp/glow (`utm_content=SHR_TOF_GLW_SPK_01`)
-- **Visual spec:** all real footage (consumption + person on camera = real, always). Grade: blush lift, creamy highlights, zero clinical white. Match creative-direction glow world (marble, mirror edge, one architectural bottle).
+- **Visual spec:** all real footage (consumption + person on camera = real, always). Grade: strawberry-tint lift, creamy highlights, zero clinical white. Match creative-direction glow world (marble, mirror edge, one architectural bottle).
 - **Shoot it real:** iPhone on small tripod for mirror + counter; follow shot handheld at chest height; morning light only.
 - **Compliance:** claims: "supports skin health." Creator must be real, #ad disclosed, briefed per §4 — **no visible-results promises, no timelines.** **Disclaimer: Y (caption + end-card).**
 
@@ -230,11 +231,11 @@ Culture cues: skincare-tok routine logic, GRWM with a thesis, "morning shed" jok
 ### SHR_TOF_GLW_SPK_02 — "i'm not telling you to buy it" (deinfluencing counter-position)
 - **Format:** TikTok spark, 9:16, 22s
 - **Hook (0–1.5s):** to camera, hands up, sachet nowhere in sight: **"i'm not going to tell you to buy this. you literally can't."**
-- **Script / shot timing:** (0–1.5s) hook, deadpan. (1.5–7s) "deinfluencing hat on: most ingestible beauty is a tub you abandon and a blend that won't tell you what's inside. delete, delete." (7–13s) turn: "influencing hat back on: this one prints every dose on the sachet — 2 grams of grass-fed collagen, 2.5 grams of ceremonial matcha — and it sold out before i could even be annoying about it." reveal the sachet. (13–18s) the swirl, real master, blush grade. (18–22s) end-card: "drop 002 — limited run of [DROP_002_COUNT] boxes. access list first."
+- **Script / shot timing:** (0–1.5s) hook, deadpan. (1.5–7s) "deinfluencing hat on: most ingestible beauty is a tub you abandon and a blend that won't tell you what's inside. delete, delete." (7–13s) turn: "influencing hat back on: this one prints every dose on the sachet — 2 grams of grass-fed collagen, 2.5 grams of ceremonial matcha — and it sold out before i could even be annoying about it." reveal the sachet. (13–18s) the swirl, real master, strawberry-tint grade. (18–22s) end-card: "drop 002 — limited run of [DROP_002_COUNT] boxes. access list first."
 - **On-screen text beats:** (0s) hook · (4s) "deinfluencing:" strikethroughs over "mystery blends" / "the scoop era" · (10s) "every dose on the label" · (19s) "sold out is the review — get drop access"
 - **Caption:** deinfluencing you into a waitlist, which is a new one even for me. doses on the label, receipts on the page. drop 002 is a real limited run. #deinfluencing #skintok #matcha #cleanlabel
 - **CTA / destination:** `Sign up` → /lp/glow (`utm_content=SHR_TOF_GLW_SPK_02`)
-- **Visual spec:** real talent, real sachet. Backdrop: warm cream wall, one blush card in frame for palette. Text strikethroughs in Syne, Pink #FFB7D1 stamp energy per glow accent plan.
+- **Visual spec:** real talent, real sachet. Backdrop: warm Retro wall, one strawberry-tint card in frame for palette. Text strikethroughs in Syne, Strawberry #FF6DC7 stamp energy per glow accent plan.
 - **Shoot it real:** front-camera monologue in window light, cutaway inserts on rear camera; CapCut brand template for strikethrough beats.
 - **Compliance:** dose statements are factual; keep the deinfluencing half generic (no competitor names, no category-wide disease implications). This cut carries **no** structure/function claim → **Disclaimer: N** (keep it that way in edits; if "supports skin health" gets added, flip to Y).
 
@@ -243,11 +244,11 @@ Culture cues: skincare-tok routine logic, GRWM with a thesis, "morning shed" jok
 ### SHR_MOF_GLW_SPK_03 — "the shelf pan" (ASMR shelfie + drop ledger)
 - **Format:** TikTok spark, 9:16, 18s — retargets glow engagers
 - **Hook (0–1.5s):** slow locked-off pan across a vanity shelf, text: **"everything on this shelf restocks. one thing on it drops."**
-- **Script / shot timing:** (0–1.5s) shelf pan begins, hook text. (1.5–7s) the pan continues past skincare (labels away), lands on the strawberry sachet leaning against a small glass — a hand places it there mid-pan (shelfie-in-motion per creative-direction). (7–13s) match-cut to the pour + swirl, blush-graded, ≥2s real master. (13–18s) end-card: drop ledger — "drop 001 — sold out ~~[DROP_001_COUNT] boxes~~ / drop 002 — limited run of [DROP_002_COUNT]" + "the text list gets the link 10 minutes early."
+- **Script / shot timing:** (0–1.5s) shelf pan begins, hook text. (1.5–7s) the pan continues past skincare (labels away), lands on the strawberry sachet leaning against a small glass — a hand places it there mid-pan (shelfie-in-motion per creative-direction). (7–13s) match-cut to the pour + swirl, strawberry-tint-graded, ≥2s real master. (13–18s) end-card: drop ledger — "drop 001 — sold out ~~[DROP_001_COUNT] boxes~~ / drop 002 — limited run of [DROP_002_COUNT]" + "the text list gets the link 10 minutes early."
 - **On-screen text beats:** (0s) hook · (8s) "the step you drink" · (14s) "drop 002 — get access first"
 - **Caption:** it restocks like a sneaker and sells out like one too. drop access is free — the text list just walks in 10 minutes early. #shelfie #skintok #matcha #dropculture
 - **CTA / destination:** `Sign up` → /lp/glow (`utm_content=SHR_MOF_GLW_SPK_03`)
-- **Visual spec:** real shelf, real sachet, real pour. Light sweep across frame (move a warm lamp on a slider or slow handheld). Ledger card from end-card template, Lavender "sold out" stamp per glow LP accent plan (not Pink on Pink).
+- **Visual spec:** real shelf, real sachet, real pour. Light sweep across frame (move a warm lamp on a slider or slow handheld). Ledger card from end-card template, Purple "sold out" stamp per glow LP accent plan (not Strawberry on Strawberry).
 - **Shoot it real:** stack books under the phone for the locked shot; slide a warm desk lamp for the light sweep; one take, 3 attempts.
 - **Compliance:** claim-free (drop mechanics + aesthetics). **Disclaimer: N.**
 
@@ -255,7 +256,7 @@ Culture cues: skincare-tok routine logic, GRWM with a thesis, "morning shed" jok
 
 ## SEGMENT 3 — the coffee breakup → /lp/calm
 
-Culture cues: corporate-girlie 2pm content, voiceover essays over near-still footage, "unsettlingly calm" quiet humor, honest switch narratives (creator-only), group-chat screenshot storytelling. Palette world: Lavender fields, generous Cream air, clouds = soft landing, Navy anchor text, no Pink. Motion: near-stillness as a flex.
+Culture cues: corporate-girlie 2pm content, voiceover essays over near-still footage, "unsettlingly calm" quiet humor, honest switch narratives (creator-only), group-chat screenshot storytelling. Palette world: Purple fields, generous Retro air, clouds = soft landing, Green anchor text, no Strawberry. Motion: near-stillness as a flex.
 
 **Segment compliance note (read twice):** highest-risk segment. NEVER "anxiety," "anxious," "withdrawal," "addiction," "cures," "treats," or sleep-outcome promises — in copy, VO, alt text, captions, or comments. Describe the *feeling* ("calm, steady energy," "no 2pm cliff"), never a condition. "No crash" is framed as caffeine-curve/experience language tied to caffeine + L-theanine. Claims used → FDA disclaimer.
 
@@ -268,7 +269,7 @@ Culture cues: corporate-girlie 2pm content, voiceover essays over near-still foo
 - **Headline:** break up with the crash. keep the energy.
 - **Description:** ~60mg caffeine + l-theanine. drop 002 is limited.
 - **CTA / destination:** `Sign Up` → /lp/calm (`utm_content=SHR_TOF_CLM_IMG_01`)
-- **Visual spec — generate (Firefly, plate only):** "warm café napkin and cream ceramic saucer on a pale cream #FDF4EE table, soft lavender #D4B8E0 window shadow falling across, morning light, shallow depth, fine grain, empty napkin surface, 4:5" — overlay the curve as clean Navy line art drawn on the napkin: coffee line spiking then cliff-dropping (labeled *the 2pm cliff*), shroomé line rising gently into a long Lavender-filled plateau (labeled *the carry*). Composite REAL vanilla sachet + finished latte glass at frame edge. Small caption: "illustrative of typical caffeine + l-theanine absorption character, not a measured clinical result."
+- **Visual spec — generate (Firefly, plate only):** "warm café napkin and cream ceramic saucer on a pale warm off-white #FEFFF8 table, soft purple #E3D5F7 window shadow falling across, morning light, shallow depth, fine grain, empty napkin surface, 4:5" — overlay the curve as clean Green line art drawn on the napkin: coffee line spiking then cliff-dropping (labeled *the 2pm cliff*), shroomé line rising gently into a long Purple-filled plateau (labeled *the carry*). Composite REAL vanilla sachet + finished latte glass at frame edge. Small caption: "illustrative of typical caffeine + l-theanine absorption character, not a measured clinical result."
 - **Shoot it real:** actual napkin + fine-liner pen, draw the two curves by hand (imperfect = credible), overhead iPhone shot beside the real latte.
 - **Compliance:** claims: "supports sustained focus," "supports healthy energy levels." Curve carries the "illustrative" caption (mandatory, mirrors LP). **Disclaimer: Y.** Banned-word audit before traffic.
 
@@ -278,11 +279,11 @@ Culture cues: corporate-girlie 2pm content, voiceover essays over near-still foo
 - **Format:** Meta reels + 4:5, 26s
 - **Hook (0–1.5s):** split screen, both sides showing the same desk at 2:00pm, text: **"2pm on coffee vs 2pm on matcha. same person. same deadline."**
 - **Primary text:** left: the spike already left the building. right: ~60mg of caffeine that arrived with matcha's naturally occurring l-theanine — a smooth curve that supports sustained focus into the afternoon instead of billing you for the morning. shroomé is a ceremonial matcha latte you pour in fifteen seconds. drop 001 sold out — get access to drop 002. *These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.*
-- **Script / shot timing:** (0–1.5s) split opens, hook text. (1.5–8s) LEFT: handheld-jittery camera, third coffee cup, restless desk chaos — the camera performs the crash (no acted "symptoms," just filmic restlessness). RIGHT: locked-off, sunlit, steady typing, one glass of matcha catching light. (8–14s) right side takes over full frame; the pour + swirl (real master) as VO: "sixty milligrams, plus the l-theanine matcha grew itself. calm, steady energy — that's the whole trick." (14–20s) thin Navy curve animates across the bottom: spike-and-cliff vs the lavender plateau. (20–26s) end-card with disclaimer.
+- **Script / shot timing:** (0–1.5s) split opens, hook text. (1.5–8s) LEFT: handheld-jittery camera, third coffee cup, restless desk chaos — the camera performs the crash (no acted "symptoms," just filmic restlessness). RIGHT: locked-off, sunlit, steady typing, one glass of matcha catching light. (8–14s) right side takes over full frame; the pour + swirl (real master) as VO: "sixty milligrams, plus the l-theanine matcha grew itself. calm, steady energy — that's the whole trick." (14–20s) thin Green curve animates across the bottom: spike-and-cliff vs the purple plateau. (20–26s) end-card with disclaimer.
 - **Headline:** the 2pm cliff is optional.
 - **Description:** calm, steady energy. drop 002 is limited — get access.
 - **CTA / destination:** `Sign Up` → /lp/calm (`utm_content=SHR_TOF_CLM_VID_02`)
-- **Visual spec — generate (Runway, right-side ambience only):** "sun-drenched calm home office, dust motes in warm light, lavender-tinted #E8D5F0 wall shadows, locked-off wide, nothing moves but a curtain, cinematic, no people close-up" as establishing plate; typing hands, drink, pour = REAL footage. Curve animation: Navy line on Cream, Lavender fill, easing per creative-direction (fast in, long soft out).
+- **Visual spec — generate (Runway, right-side ambience only):** "sun-drenched calm home office, dust motes in warm light, purple-tinted #E3D5F7 wall shadows, locked-off wide, nothing moves but a curtain, cinematic, no people close-up" as establishing plate; typing hands, drink, pour = REAL footage. Curve animation: Green line on Retro, Purple fill, easing per creative-direction (fast in, long soft out).
 - **Shoot it real:** same desk, two lighting setups; handheld for left (walk in place while filming), tripod for right; clock insert at 2:00 both times.
 - **Compliance:** claims: "supports sustained focus" (+ caffeine-curve experience framing). The left side shows restlessness, not a health condition — no words like "anxious" anywhere including alt text. **Disclaimer: Y.**
 
@@ -296,7 +297,7 @@ Culture cues: corporate-girlie 2pm content, voiceover essays over near-still foo
 - **Headline:** the switch that doesn't feel like one.
 - **Description:** calm, steady energy. get drop access.
 - **CTA / destination:** `Sign Up` → /lp/calm (`utm_content=SHR_MOF_CLM_VID_03`)
-- **Visual spec — generate (Firefly still → Runway loop, background only):** "soft lavender #D4B8E0 clouds outside a bright window, warm interior sill, morning haze, almost imperceptible cloud drift, dreamy, stylized, no product" as the window plate; mug (reading "shroomé"), steam, hands, swirl = REAL. Long holds, no music — room tone + one warm piano note.
+- **Visual spec — generate (Firefly still → Runway loop, background only):** "soft purple #E3D5F7 clouds outside a bright window, warm interior sill, morning haze, almost imperceptible cloud drift, dreamy, stylized, no product" as the window plate; mug (reading "shroomé"), steam, hands, swirl = REAL. Long holds, no music — room tone + one warm piano note.
 - **Shoot it real:** warm mug by a real window, backlight the steam (dark background behind steam, light from the side), iPhone 4K30 locked; 10-second holds.
 - **Compliance:** claims: "supports healthy energy levels." First-person line is brand voice about product design, not a testimonial of results — keep it exactly as written. **Disclaimer: Y.**
 
@@ -309,7 +310,7 @@ Culture cues: corporate-girlie 2pm content, voiceover essays over near-still foo
 - **On-screen text beats:** (0s) hook · (5s) "3:04pm. still upright." · (10s) "caffeine + l-theanine — calm, steady energy" · (14s) "supports sustained focus*" · (18s) "*see caption · get drop access"
 - **Caption:** the afternoon plot twist is that there isn't one. ~60mg caffeine + l-theanine from ceremonial matcha supports sustained focus and healthy energy levels. drop 001 sold out — access list hears first. *these statements have not been evaluated by the fda. this product is not intended to diagnose, treat, cure, or prevent any disease.* #matcha #focustok #corporatetok #matchalatte
 - **CTA / destination:** `Sign up` → /lp/calm (`utm_content=SHR_TOF_CLM_SPK_01`)
-- **Visual spec:** real desk, real person, real pour. Grade: 3pm scenes warm and steady; morning flashback slightly lifted lavender. No red-eyed "before" acting — restraint is the joke.
+- **Visual spec:** real desk, real person, real pour. Grade: 3pm scenes warm and steady; morning flashback slightly lifted purple. No red-eyed "before" acting — restraint is the joke.
 - **Shoot it real:** office corner or tidy home desk, iPhone on tripod at eye level; clock prop; two wardrobe-identical setups.
 - **Compliance:** claims: "supports sustained focus," "supports healthy energy levels." Humor never names a condition. **Disclaimer: Y.**
 
@@ -322,7 +323,7 @@ Culture cues: corporate-girlie 2pm content, voiceover essays over near-still foo
 - **On-screen text beats:** (0s) hook · (11s) "the spike vs the carry" under the curve · (20s) "pour / swirl / glow" · (26s) "drop 002 — limited · get drop access"
 - **Caption:** an essay, a napkin, and a curve. ~60mg caffeine + naturally occurring l-theanine — supports sustained focus and healthy energy levels. *these statements have not been evaluated by the fda. this product is not intended to diagnose, treat, cure, or prevent any disease.* #voiceoveressay #matcha #ltheanine #matchalatte
 - **CTA / destination:** `Sign up` → /lp/calm (`utm_content=SHR_TOF_CLM_SPK_02`)
-- **Visual spec — generate (Runway, ambience only):** "extreme slow drift across a warm windowsill at golden hour, lavender #E8D5F0 sky beyond, curtain barely breathing, houseplant shadow play on cream wall #FDF4EE, cinemagraph pace, stylized warmth" — steam, drink, swirl = REAL. VO: ElevenLabs "calm" segment voice or real VO artist; hushed, unhurried; disclose synthetic VO where platform rules require.
+- **Visual spec — generate (Runway, ambience only):** "extreme slow drift across a warm windowsill at golden hour, purple #E3D5F7 sky beyond, curtain barely breathing, houseplant shadow play on Retro wall #FEFFF8, cinemagraph pace, stylized warmth" — steam, drink, swirl = REAL. VO: ElevenLabs "calm" segment voice or real VO artist; hushed, unhurried; disclose synthetic VO where platform rules require.
 - **Shoot it real:** one windowsill, three 10s locked shots (steam / curtain / shadow); read the essay into voice memos twice, pick the softer take.
 - **Compliance:** claims: "supports sustained focus," "supports healthy energy levels" + illustrative-curve caption on the graphic. **Disclaimer: Y.** Essay never mentions any condition.
 
@@ -335,7 +336,7 @@ Culture cues: corporate-girlie 2pm content, voiceover essays over near-still foo
 - **On-screen text beats:** (0s) hook · (5s) "drop 001: sold out ~~[DROP_001_COUNT] boxes~~" · (12s) "drop 002: [DROP_002_COUNT] — that's the run" · (19s) "text list = 10 min early · shroomé"
 - **Caption:** dramatization of a preventable tragedy. drop access is free; the text list gets the door 10 minutes early and SHROOME30 replaces the 20% code — best code wins. #dropculture #matcha #groupchat #waitlist
 - **CTA / destination:** `Sign up` → /lp/calm (`utm_content=SHR_MOF_CLM_SPK_03`)
-- **Visual spec:** chat mock built in-house with team-member names (honesty rule: it's a dramatization and the caption says so; no invented customer praise). Warm lamp-lit phone-in-hand shots; lavender grade.
+- **Visual spec:** chat mock built in-house with team-member names (honesty rule: it's a dramatization and the caption says so; no invented customer praise). Warm lamp-lit phone-in-hand shots; purple grade.
 - **Shoot it real:** screen-record a real (staged, internal) group thread; film phone over shoulder in evening lamp light.
 - **Compliance:** drop mechanics only, all numbers from ops config. No claims → **Disclaimer: N.** "dramatization" stays in caption.
 
@@ -343,7 +344,7 @@ Culture cues: corporate-girlie 2pm content, voiceover essays over near-still foo
 
 ## SEGMENT 4 — the deep workers → /lp/focus
 
-Culture cues: spec-sheet/changelog aesthetics, "read the label like a term sheet," keyboard-groupbuy and limited-run hardware culture, Huberman-adjacent skepticism (met with receipts, not vibes), desk-setup content. Palette world: Navy leads (only dark-mode segment), Cream type, Lime data-highlighter strokes under numerals, Lavender functional band. No RGB, no brains, no gamer chaos.
+Culture cues: spec-sheet/changelog aesthetics, "read the label like a term sheet," keyboard-groupbuy and limited-run hardware culture, Huberman-adjacent skepticism (met with receipts, not vibes), desk-setup content. Palette world: Green leads (only dark-mode segment), Retro type, Matcha data-highlighter strokes under numerals, Purple functional band. No RGB, no brains, no gamer chaos.
 
 **Segment compliance note:** only "supports sustained focus" and "supports immune function" (beta-glucans). Never memory/brain-boost/NGF/cognitive-decline/drug comparisons. Compliant language IS the flex.
 
@@ -356,7 +357,7 @@ Culture cues: spec-sheet/changelog aesthetics, "read the label like a term sheet
 - **Headline:** read the label. that's the pitch.
 - **Description:** ≥70% beta-glucans, third-party tested. get drop access.
 - **CTA / destination:** `Sign Up` → /lp/focus (`utm_content=SHR_TOF_FCS_IMG_01`)
-- **Visual spec — generate (Firefly, backdrop only):** "deep navy #1B1F3B studio field, subtle film grain, faint warm starburst rim-light from upper left, soft vignette, completely empty, premium watch-advertisement lighting, 4:5" — composite the REAL vanilla sachet angled with back label toward camera (label line legible), rim-lit. Beside it, Syne 700 Cream figures at poster scale: `200mg` / `≥70%` / `2.5g`, each with a Lime #C8FF3A underline stroke. One Instrument Serif italic line beneath: *we'd rather show you the label than the ad.*
+- **Visual spec — generate (Firefly, backdrop only):** "deep forest green #2D341A studio field, subtle film grain, faint warm starburst rim-light from upper left, soft vignette, completely empty, premium watch-advertisement lighting, 4:5" — composite the REAL vanilla sachet angled with back label toward camera (label line legible), rim-lit. Beside it, Syne 700 Retro figures at poster scale: `200mg` / `≥70%` / `2.5g`, each with a Matcha #7A881F underline stroke. One Instrument Serif italic line beneath: *we'd rather show you the label than the ad.*
 - **Shoot it real:** black poster board sweep, one warm lamp raking from behind-left, sachet on a small riser; iPhone portrait mode off (keep label sharp), expose for the label.
 - **Compliance:** claims: "supports sustained focus" + factual spec statements. Comparative "typical market range 15–30%" allowed if used (approved comparative), no competitor names. **Disclaimer: Y.**
 
@@ -366,11 +367,11 @@ Culture cues: spec-sheet/changelog aesthetics, "read the label like a term sheet
 - **Format:** Meta reels + 4:5, 28s
 - **Hook (0–1.5s, to camera):** **"the 3 numbers to check before you buy any mushroom product. most brands print zero of them."**
 - **Primary text:** number one: beta-glucan percentage — ours is ≥70%, third-party tested; typical mushroom supplements land between 15 and 30. number two: fruiting body or mycelium — ours is fruiting body, hot-water extracted, no grain filler. number three: the actual dose — 200mg, printed on the sachet next to everything else. beta-glucans support immune function; matcha's caffeine + l-theanine support sustained focus. drop 002 is a published run of [DROP_002_COUNT] boxes. *These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.*
-- **Script / shot timing:** (0–1.5s) hook, desk setting, Navy backdrop. (1.5–8s) "number one" — label macro insert, Lime underline animates beneath "≥70% beta-glucans." (8–15s) "number two" — two clear jars prop demo: one mostly rice grains, one small dark extract; finger taps the extract jar. (15–21s) "number three" — full label pan; VO: "if a brand won't print the number, that is the number." (21–25s) the pour + swirl as proof-of-life (real master), desk POV. (25–28s) end-card + disclaimer.
+- **Script / shot timing:** (0–1.5s) hook, desk setting, Green backdrop. (1.5–8s) "number one" — label macro insert, Matcha underline animates beneath "≥70% beta-glucans." (8–15s) "number two" — two clear jars prop demo: one mostly rice grains, one small dark extract; finger taps the extract jar. (15–21s) "number three" — full label pan; VO: "if a brand won't print the number, that is the number." (21–25s) the pour + swirl as proof-of-life (real master), desk POV. (25–28s) end-card + disclaimer.
 - **Headline:** check the numbers. we print ours.
 - **Description:** 200mg · ≥70% beta-glucans · third-party tested.
 - **CTA / destination:** `Sign Up` → /lp/focus (`utm_content=SHR_TOF_FCS_VID_02`)
-- **Visual spec:** label shots = REAL macro of the real sachet (never generated). Jar demo shot real. Backdrop plate optional Firefly: "matte navy #1B1F3B tabletop, warm golden hour rake light, fine grain, empty, overhead." Numerals in Syne 700 tabular, Lime strokes.
+- **Visual spec:** label shots = REAL macro of the real sachet (never generated). Jar demo shot real. Backdrop plate optional Firefly: "matte deep green #2D341A tabletop, warm golden hour rake light, fine grain, empty, overhead." Numerals in Syne 700 tabular, Matcha strokes.
 - **Shoot it real:** two mason jars, dry rice + a shot of cold brew standing in for extract (never presented as our product — it's a category demo); label macro per GLW_CAR_03 method.
 - **Compliance:** claims: "supports immune function," "supports sustained focus," approved comparative on beta-glucan range. No competitor names on screen. **Disclaimer: Y.**
 
@@ -380,12 +381,12 @@ Culture cues: spec-sheet/changelog aesthetics, "read the label like a term sheet
 - **Format:** Meta carousel, 5 cards 1:1 — retargets focus engagers + LP bouncers
 - **Hook (first line):** we publish our drop sizes like we publish our doses. here's the changelog.
 - **Primary text:** drop 001 — [DROP_001_COUNT] boxes, sold out. drop 002 — [DROP_002_COUNT] boxes, window: [DROP_002_DATE]. inside every sachet, unchanged: 200mg lion's mane fruiting body (≥70% beta-glucans, third-party tested), 2.5g ceremonial matcha (~60mg caffeine + naturally occurring l-theanine — supports sustained focus), 2g grass-fed collagen, 0 proprietary blends. access list gets the link first; the text list gets it 10 minutes earlier. *These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.*
-- **Cards:** 1) Navy changelog card: "v001 — sold out ~~[DROP_001_COUNT]~~ / v002 — [DROP_002_COUNT] · [DROP_002_DATE]" in monospaced-feel Syne · 2) REAL label macro, Lime underline on ≥70% · 3) "third-party tested" card — REAL lab-report b-roll still on Navy felt (real documents or the card is cut) · 4) the swirl still, "fifteen seconds. zero friction." · 5) Lime CTA card: `get drop access`.
+- **Cards:** 1) Green changelog card: "v001 — sold out ~~[DROP_001_COUNT]~~ / v002 — [DROP_002_COUNT] · [DROP_002_DATE]" in monospaced-feel Syne · 2) REAL label macro, Matcha underline on ≥70% · 3) "third-party tested" card — REAL lab-report b-roll still on Green felt (real documents or the card is cut) · 4) the swirl still, "fifteen seconds. zero friction." · 5) Green/Retro CTA card: `get drop access`.
 - **Headline:** doses published. drops published.
 - **Description:** the spec sheet you can drink.
 - **CTA / destination:** `Sign Up` → /lp/focus (`utm_content=SHR_MOF_FCS_CAR_03`)
-- **Visual spec:** cards 1/5 from templates; card 2 real macro; card 3 REAL COA pages fanned on Navy felt, overhead, warm raking light (ai-toolstack rule 6: real trust artifacts or nothing); card 4 master grab.
-- **Shoot it real:** print the actual COAs, navy fabric from a craft store, overhead shot in window light.
+- **Visual spec:** cards 1/5 from templates; card 2 real macro; card 3 REAL COA pages fanned on Green felt, overhead, warm raking light (ai-toolstack rule 6: real trust artifacts or nothing); card 4 master grab.
+- **Shoot it real:** print the actual COAs, green fabric from a craft store, overhead shot in window light.
 - **Compliance:** claims: "supports sustained focus" + factual specs. Card 3 ships ONLY with real lab documents. **Disclaimer: Y.**
 
 ---
@@ -393,11 +394,11 @@ Culture cues: spec-sheet/changelog aesthetics, "read the label like a term sheet
 ### SHR_TOF_FCS_SPK_01 — "mostly rice" (greenscreen exposé) ⭐ launch-six
 - **Format:** TikTok spark, 9:16, 26s
 - **Hook (0–1.5s):** greenscreen over a photo of plain white rice, arms crossed, deadpan: **"your mushroom latte is mostly rice. mine has receipts."**
-- **Script / shot timing:** (0–1.5s) hook over rice image. (1.5–7s) greenscreen over the phrase "mycelium grown on grain": "most mushroom products count the grain their mushroom grew on. you're largely drinking the substrate." (7–13s) cut to hands + sachet: "shroomé is lion's mane fruiting body — the actual mushroom — hot-water extracted, standardized to seventy percent or more beta-glucans. third-party tested." (13–18s) REAL label macro, finger under the line; Lime underline animates. "beta-glucans support immune function. if a brand won't print the percentage, ask why." (18–23s) tear → pour → swirl (real master): "and it lives in a matcha latte, not a chalky brown mystery." (23–26s) to camera: "read your labels. even ours." end-card + disclaimer.
+- **Script / shot timing:** (0–1.5s) hook over rice image. (1.5–7s) greenscreen over the phrase "mycelium grown on grain": "most mushroom products count the grain their mushroom grew on. you're largely drinking the substrate." (7–13s) cut to hands + sachet: "shroomé is lion's mane fruiting body — the actual mushroom — hot-water extracted, standardized to seventy percent or more beta-glucans. third-party tested." (13–18s) REAL label macro, finger under the line; Matcha underline animates. "beta-glucans support immune function. if a brand won't print the percentage, ask why." (18–23s) tear → pour → swirl (real master): "and it lives in a matcha latte, not a chalky brown mystery." (23–26s) to camera: "read your labels. even ours." end-card + disclaimer.
 - **On-screen text beats:** (0s) hook · (4s) "mycelium on grain = mostly grain" · (9s) "fruiting body = the actual mushroom" · (15s) "≥70% beta-glucans. printed." · (24s) "drop 002 — [DROP_002_COUNT] boxes · get drop access"
 - **Caption:** the mushroom industry has a rice problem. ours is fruiting body at ≥70% beta-glucans — printed on the label, tested by a third party. beta-glucans support immune function. *these statements have not been evaluated by the fda. this product is not intended to diagnose, treat, cure, or prevent any disease.* #lionsmane #betaglucans #readthelabel #supplementtok #matcha
 - **CTA / destination:** `Sign up` → /lp/focus (`utm_content=SHR_TOF_FCS_SPK_01`)
-- **Visual spec:** real talent greenscreen (TikTok native effect), generic rice/diagram images (never a competitor's product or name). Label + pour = real. Navy end-card, Lime data strokes.
+- **Visual spec:** real talent greenscreen (TikTok native effect), generic rice/diagram images (never a competitor's product or name). Label + pour = real. Green end-card, Matcha data strokes.
 - **Shoot it real:** TikTok in-app greenscreen, window light on face; label macro + pour on rear camera; assemble in CapCut brand template (focus variant).
 - **Compliance:** claims: "supports immune function." Category critique stays generic — no brand names, no disease language. **Disclaimer: Y.**
 
@@ -407,7 +408,7 @@ Culture cues: spec-sheet/changelog aesthetics, "read the label like a term sheet
 - **Format:** TikTok spark, 9:16, 20s
 - **Hook (0–1.5s):** overhead desk, a forearm sweeps six unbranded supplement bottles out of frame, one sachet remains, text: **"i put my entire morning stack on one label."**
 - **Script / shot timing:** (0–1.5s) the sweep, hook text. (1.5–8s) VO, precise and calm: "the stack was five bottles, two mysteries, and a proprietary blend i couldn't audit. the replacement is one sachet that publishes everything." (8–13s) spec reveal: slow 180° orbit around the sachet (creative-direction focus motion), numerals landing one by one: 200mg / ≥70% / 2.5g / ~60mg. (13–17s) pour + swirl at the desk, laptop open, "one pour. one block." (17–20s) end-card + disclaimer.
-- **On-screen text beats:** (0s) hook · (9s) numerals with Lime strokes, one per beat · (14s) "one pour. one block." · (18s) "drop 002 — get drop access"
+- **On-screen text beats:** (0s) hook · (9s) numerals with Matcha strokes, one per beat · (14s) "one pour. one block." · (18s) "drop 002 — get drop access"
 - **Caption:** audit-friendly mornings. 200mg lion's mane fruiting body (≥70% beta-glucans, third-party tested) + ceremonial matcha's caffeine + l-theanine — supports sustained focus. every dose on the label. *these statements have not been evaluated by the fda. this product is not intended to diagnose, treat, cure, or prevent any disease.* #deskSetup #nootropics #lionsmane #deepwork #matcha
 - **CTA / destination:** `Sign up` → /lp/focus (`utm_content=SHR_TOF_FCS_SPK_02`)
 - **Visual spec:** real desk, unbranded/blank-label bottles (tape over labels), real sachet on a small turntable for the orbit. Golden-hour rake, matte laptop, mechanical keyboard in frame, no RGB.
@@ -423,7 +424,7 @@ Culture cues: spec-sheet/changelog aesthetics, "read the label like a term sheet
 - **On-screen text beats:** (0s) hook · (9s) the changelog card · (17s) "get drop access · shroomé"
 - **Caption:** we publish drop sizes like we publish doses. v002 is [DROP_002_COUNT] boxes and the access list hears first. matcha's caffeine + l-theanine supports sustained focus — that's the claim, here's the label. *these statements have not been evaluated by the fda. this product is not intended to diagnose, treat, cure, or prevent any disease.* #groupbuy #dropculture #deskSetup #lionsmane
 - **CTA / destination:** `Sign up` → /lp/focus (`utm_content=SHR_MOF_FCS_SPK_03`)
-- **Visual spec:** real desk world; changelog card in monospaced-feel Syne on Navy, Lavender "sold out" stamp, Lime pulse dot on v002 — drop assets follow brand motion easing, never red-urgency styling.
+- **Visual spec:** real desk world; changelog card in monospaced-feel Syne on Green, Purple "sold out" stamp, Matcha pulse dot on v002 — drop assets follow brand motion easing, never red-urgency styling.
 - **Shoot it real:** desk at golden hour, keyboard + sachet, slow push by walking the phone forward on a slider (or two hands, elbows tucked).
 - **Compliance:** claim: "supports sustained focus" (in hook + caption). All counts/dates from ops config. **Disclaimer: Y.**
 
@@ -431,7 +432,7 @@ Culture cues: spec-sheet/changelog aesthetics, "read the label like a term sheet
 
 ## SEGMENT 5 — the fifteen-second crowd → /lp/pour
 
-Culture cues: momtok honesty, car-line/school-pickup content, bag-dump ("what's in my bag") formats, real-time challenges, airport-tray-table content. This segment watches muted — captions carry everything. Palette world: Cream base, Lime-to-Cream motion streaks (the one segment where Lime escapes the CTA, fills only), Navy type at poster scale, Pink strictly the strawberry chip.
+Culture cues: momtok honesty, car-line/school-pickup content, bag-dump ("what's in my bag") formats, real-time challenges, airport-tray-table content. This segment watches muted — captions carry everything. Palette world: Retro base, Matcha-to-Retro motion streaks (the one segment where Matcha escapes the CTA, fills only), Green type at poster scale, Strawberry strictly the strawberry chip.
 
 **Segment compliance note:** runs nearly claim-free (speed/taste/convenience). Only permitted claim: "supports healthy energy levels." NEVER pregnancy/nursing safety statements, never child-directed framing, no pregnancy interest targeting.
 
@@ -444,7 +445,7 @@ Culture cues: momtok honesty, car-line/school-pickup content, bag-dump ("what's 
 - **Headline:** 15 seconds. no whisk. no line.
 - **Description:** drop 002 is limited — get access first.
 - **CTA / destination:** `Sign Up` → /lp/pour (`utm_content=SHR_TOF_PUR_IMG_01`)
-- **Visual spec — generate (Firefly, plate only):** "bright warm kitchen counter at 6:45am, cream #FDF4EE surface, kinetic lime #C8FF3A to cream gradient streak sweeping diagonally behind the action area as an abstract speed cue, keys and a canvas tote soft-focus in foreground, morning-rush warmth, fine grain, energetic but premium, empty center, 4:5" — composite REAL mid-pour photo (one-handed, into a to-go cup reading "shroomé"). Poster-scale Syne 700 Navy: "15 SECONDS." Instrument Serif italic one-liner beneath: *the café line was the only ingredient we removed.* Lime chip CTA.
+- **Visual spec — generate (Firefly, plate only):** "bright warm kitchen counter at 6:45am, warm off-white #FEFFF8 surface, kinetic matcha green #7A881F to cream gradient streak sweeping diagonally behind the action area as an abstract speed cue, keys and a canvas tote soft-focus in foreground, morning-rush warmth, fine grain, energetic but premium, empty center, 4:5" — composite REAL mid-pour photo (one-handed, into a to-go cup reading "shroomé"). Poster-scale Syne 700 Green: "15 SECONDS." Instrument Serif italic one-liner beneath: *the café line was the only ingredient we removed.* Green/Retro CTA chip.
 - **Shoot it real:** entryway counter, keys + tote staged, one-handed pour into a to-go cup, second person shoots burst on 0.5×; morning window light.
 - **Compliance:** speed/taste/convenience only; "$8 order" is a market-price reference, not a competitor claim. **Disclaimer: N.**
 
@@ -485,7 +486,7 @@ Culture cues: momtok honesty, car-line/school-pickup content, bag-dump ("what's 
 - **On-screen text beats:** (0s) hook · (7s) "no cuts. that's the point." · (15s) "0:15" freeze · (18s) "the toast: still cooking" · (22s) "get drop access — shroomé"
 - **Caption:** one take, one hand, one very slow toaster. drop 002 is a limited run — the access list gets the link first, texts get it 10 minutes earlier. #realtime #matcha #momtok #nocuts #matchalatte
 - **CTA / destination:** `Sign up` → /lp/pour (`utm_content=SHR_TOF_PUR_SPK_01`)
-- **Visual spec:** 100% real, single take (non-negotiable — the honesty of one take IS the ad). Stopwatch physically in frame (phone timer propped). Bright cream kitchen, high-contrast Navy captions sized for sound-off.
+- **Visual spec:** 100% real, single take (non-negotiable — the honesty of one take IS the ad). Stopwatch physically in frame (phone timer propped). Bright Retro kitchen, high-contrast Green captions sized for sound-off.
 - **Shoot it real:** this ad is already the iPhone version. Tripod, 4K30, five attempts, use the one where the swirl behaves.
 - **Compliance:** claim-free. **Disclaimer: N.**
 
@@ -519,7 +520,7 @@ Culture cues: momtok honesty, car-line/school-pickup content, bag-dump ("what's 
 
 # 3. BOF DROP-CONVERSION PACK — for when drop 002 opens
 
-Rules of engagement: these run ONLY once ops confirms `[DROP_002_DATE]` and the counts are live in config. Countdown ads render real clocks to the real open time. "Boxes left" ads pull `[LIVE_BOXES_REMAINING]` from the same counter the site uses — if the feed breaks, the ad pauses. Audiences: drop-access list (customer-list match + LP converters); SMS members are EXCLUDED from "add your number" messaging and suppressed from ads 3's join-framing variant. Destination: `/drop` (live store). All six use the shared end-card with the drop ledger in its live state. Scarcity dresses in brand — Navy/Lime/Lavender, never generic red urgency.
+Rules of engagement: these run ONLY once ops confirms `[DROP_002_DATE]` and the counts are live in config. Countdown ads render real clocks to the real open time. "Boxes left" ads pull `[LIVE_BOXES_REMAINING]` from the same counter the site uses — if the feed breaks, the ad pauses. Audiences: drop-access list (customer-list match + LP converters); SMS members are EXCLUDED from "add your number" messaging and suppressed from ads 3's join-framing variant. Destination: `/drop` (live store). All six use the shared end-card with the drop ledger in its live state. Scarcity dresses in brand — Green/Matcha/Purple, never generic red urgency.
 
 ---
 
@@ -527,11 +528,11 @@ Rules of engagement: these run ONLY once ops confirms `[DROP_002_DATE]` and the 
 - **Format:** Meta + TikTok, 9:16/4:5, 15s. Flight: T-72h → open.
 - **Hook (0–1.5s):** the drop ledger fills the frame, the countdown digits tick once: **"drop 002 opens in [dd:hh:mm]. the clock is real — that's the whole point."**
 - **Primary text (Meta):** we don't do fake timers, so believe this one. drop 002 — [DROP_002_COUNT] boxes, a real production run — opens [DROP_002_DATE]. you're on the access list: the link comes to you at open. want it 10 minutes before everyone? add your number — SHROOME30 replaces your 20% code. best code wins.
-- **Script / shot timing (TikTok):** (0–1.5s) ledger + ticking clock. (1.5–7s) VO: "no resetting timers, no theater. [DROP_002_COUNT] boxes. one date. we published both." (7–12s) the swirl, real master — one breath of desire in a mechanics ad. (12–15s) end-card, live countdown burned in, Lime `shop drop 002` chip (BOF CTA variant).
+- **Script / shot timing (TikTok):** (0–1.5s) ledger + ticking clock. (1.5–7s) VO: "no resetting timers, no theater. [DROP_002_COUNT] boxes. one date. we published both." (7–12s) the swirl, real master — one breath of desire in a mechanics ad. (12–15s) end-card, live countdown burned in, Green-surface `shop drop 002` chip (Retro text) (BOF CTA variant).
 - **On-screen text beats:** (0s) hook + live clock · (8s) "[DROP_002_COUNT] boxes. that's the run." · (13s) "texts go 10 min early — shroomé"
 - **Headline / description (Meta):** drop 002 opens [DROP_002_DATE]. / [DROP_002_COUNT] boxes. real run, real clock.
 - **CTA / destination:** `Shop Now` → /drop (`utm_content=SHR_BOF_ALL_VID_01`)
-- **Visual spec:** countdown in Syne 700 tabular numerals, Navy on Cream chip, brand easing (fast in, long soft out — same curve as the swirl settle). Dynamic time overlay via platform countdown sticker (TikTok) / rendered daily cuts (Meta).
+- **Visual spec:** countdown in Syne 700 tabular numerals, Green on Retro chip, brand easing (fast in, long soft out — same curve as the swirl settle). Dynamic time overlay via platform countdown sticker (TikTok) / rendered daily cuts (Meta).
 - **Shoot it real:** the ledger is a motion-graphics asset; only the swirl insert is footage (master).
 - **Compliance:** scarcity = facts from config. No product claims → **Disclaimer: N.** Code line phrasing locked ("replaces… best code wins").
 
@@ -544,8 +545,8 @@ Rules of engagement: these run ONLY once ops confirms `[DROP_002_DATE]` and the 
 - **Headline:** drop 002 — limited run of [DROP_002_COUNT].
 - **Description:** when it's gone, it's a number, not a tactic.
 - **CTA / destination:** `Shop Now` → /drop (`utm_content=SHR_BOF_ALL_IMG_02`)
-- **Visual spec — generate (Firefly, backdrop only):** "deep navy #1B1F3B field, faint cloud texture at 8%, subtle grain, warm starburst glow low center, empty, 4:5" — composite REAL packshot (vanilla + strawberry pair), above them Syne 700 Cream at poster scale: "[DROP_002_COUNT] boxes." with a Lime underline stroke; Instrument Serif italic beneath: *that's the run.* Drop ledger strip at bottom, Lavender "sold out" stamp on 001.
-- **Shoot it real:** two-sachet packshot on navy card, single warm lamp, slight top-down angle.
+- **Visual spec — generate (Firefly, backdrop only):** "deep forest green #2D341A field, faint cloud texture at 8%, subtle grain, warm starburst glow low center, empty, 4:5" — composite REAL packshot (vanilla + strawberry pair), above them Syne 700 Retro at poster scale: "[DROP_002_COUNT] boxes." with a Matcha underline stroke; Instrument Serif italic beneath: *that's the run.* Drop ledger strip at bottom, Purple "sold out" stamp on 001.
+- **Shoot it real:** two-sachet packshot on green card, single warm lamp, slight top-down angle.
 - **Compliance:** the count MUST equal the actual production run (honesty rule / investor-update test). No claims → **Disclaimer: N.**
 
 ---
@@ -570,7 +571,7 @@ Rules of engagement: these run ONLY once ops confirms `[DROP_002_DATE]` and the 
 - **On-screen text beats:** (0s) live counter · (7s) "drop 001: sold out. you remember." · (10s) "shop drop 002 — shroomé"
 - **Primary text (Meta):** the counter on this ad is the counter on the site. [LIVE_BOXES_REMAINING] of [DROP_002_COUNT] boxes remain in drop 002. when they're gone we start production on 003 and this becomes a screenshot.
 - **CTA / destination:** `Shop Now` → /drop (`utm_content=SHR_BOF_ALL_VID_04`)
-- **Visual spec:** counter in Syne 700 tabular, Navy on Cream, Lime pulse dot; refreshed via daily re-render (Meta) / countdown-adjacent live sticker where supported. No red, no klaxons — the calm of a true number is the flex.
+- **Visual spec:** counter in Syne 700 tabular, Green on Retro, Matcha pulse dot; refreshed via daily re-render (Meta) / countdown-adjacent live sticker where supported. No red, no klaxons — the calm of a true number is the flex.
 - **Shoot it real:** motion-graphics + master swirl insert only.
 - **Compliance:** THE honesty-rule ad. Number must be live and reconciled with ops; if we wouldn't publish it in an investor update, the ad doesn't run. No claims → **Disclaimer: N.**
 
@@ -583,7 +584,7 @@ Rules of engagement: these run ONLY once ops confirms `[DROP_002_DATE]` and the 
 - **Headline:** drop 002 is open. you have the link.
 - **Description:** check your inbox — or just tap here.
 - **CTA / destination:** `Shop Now` → /drop (`utm_content=SHR_RTG_ALL_IMG_05`)
-- **Visual spec — generate (Firefly, plate only):** "warm morning nightstand scene, cream #FDF4EE linen, soft lavender #E8D5F0 dawn light through a window, a phone face-up glowing softly (screen blank), fine grain, calm, 4:5" — composite a rendered notification card in-frame using our REAL email subject line, plus the small sachet packshot in a corner card. Never render a fake customer conversation.
+- **Visual spec — generate (Firefly, plate only):** "warm morning nightstand scene, warm off-white #FEFFF8 linen, soft purple #E3D5F7 dawn light through a window, a phone face-up glowing softly (screen blank), fine grain, calm, 4:5" — composite a rendered notification card in-frame using our REAL email subject line, plus the small sachet packshot in a corner card. Never render a fake customer conversation.
 - **Shoot it real:** phone on a nightstand at dawn, staged notification, one warm lamp.
 - **Compliance:** offer states must match the user's actual tier logic (20 vs 30 copy is conditional by segment sync — run as two ad-set variants, never claim both). No claims → **Disclaimer: N.**
 
@@ -649,5 +650,5 @@ No creator posts, and no spark code is accepted, until they pass BOTH gates:
 - [ ] SHROOME30 phrasing: "replaces your 20% code — best code wins." the word "stack" does not appear
 - [ ] sachet/label/swirl/consumption/founder = real footage; AI assets are backgrounds/inserts only, filenames tagged `-aigen`, platform AI-disclosure toggles set where synthetic humans/VO appear
 - [ ] lowercase display copy; wordmark "shroomé"; warm grade passes the image-guidelines warmth check
-- [ ] end-card: packshot, "pour / swirl / glow," live drop-status line, Lime CTA chip
+- [ ] end-card: packshot, "pour / swirl / glow," live drop-status line, Green/Retro CTA chip
 - [ ] UTM: `utm_campaign=lp-{slug}`, `utm_content={ad_code}` → Klaviyo segment mapping intact

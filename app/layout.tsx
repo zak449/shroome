@@ -58,7 +58,7 @@ const organizationSchema = {
   "alternateName": ["Shroome", "Shroomé", "drinkshroome", "drink shroome"],
   "url": "https://www.drinkshroome.com",
   "logo": "https://www.drinkshroome.com/logo-mark.png",
-  "description": "shroomé is the world's first ready-to-pour ceremonial matcha latte — combining 2.5g ceremonial-grade matcha, 200mg organic mushroom extracts (70%+ beta-glucans via fruiting body extraction), and 2g grass-fed collagen peptides in a single-serve sachet.",
+  "description": "shroomé is the world's first ready-to-pour ceremonial matcha latte — combining 2.5g ceremonial-grade matcha, 200mg organic lion's mane extract, and 2g grass-fed collagen peptides in a single-serve sachet. Grown in Kyoto, made in California.",
   "foundingDate": "2025",
   "founder": {
     "@type": "Person",

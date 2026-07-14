@@ -12,9 +12,9 @@
 
 Organic ceremonial matcha latte concentrate in 1oz / 30ml single-serve sachets. GS1 net content: sachet **1 oz (28 g)**; retail box **12 oz (336 g)**.
 
-Per sachet: 2.5g organic ceremonial matcha (~60mg caffeine, naturally occurring l-theanine), 2g grass-fed collagen peptides, 200mg organic lion's mane extract (≥70% beta-glucans). No added sugar, no artificial sweeteners, no proprietary blends.
+Per sachet: 2.5g organic ceremonial matcha (about 60mg caffeine, naturally occurring l-theanine), 2g grass-fed collagen peptides, 200mg organic lion's mane extract. No artificial sweeteners, no proprietary blends. Sweetened with organic agave (8g added sugars, 35 cal).
 
-> ⚠️ **Formulation flag:** `Product/Formulation/ingredients-overview.md` lists matcha at 2g/sachet; current spec (this catalog, site copy) uses **2.5g**. Product Lead to reconcile before Supplement Facts panel goes to print.
+> ⚠️ **Claims flag:** Do **not** state a lion's mane beta-glucan % (e.g. "≥70% beta-glucans") or "200mg beta-glucans" until a supplier CoA is on file — the delivered formulation sheet (V2, 6/18/2026) does not document it. Do **not** claim "no added sugar" or "no preservatives": organic agave is the largest ingredient after water (8g added sugars) and the formula contains the Prolong 2.0 shelf-life system. Caffeine (~60mg) and matcha origin are printed on pack but not yet backed by supplier CoAs. Matcha is confirmed at **2.5g** on formulation sheet V2 (`Product/Formulation/ingredients-overview.md` reconciled to 2.5g).
 
 Flavors: **Vanilla (VAN)** — warm, floral, latte-like — and **Strawberry (STR)** — bright, fruity, smoothie-like. Reserved flavor codes in SKUMaster: MNG, BRY, CHO, LMN, MCH.
 
@@ -190,8 +190,8 @@ DTC shipping cartons (3PL) do not need retail barcodes; Code-128 SKU labels are 
 
 Per `Product/Compliance & Claims/claims-guidelines.md` — structure/function only:
 
-- ✅ "supports sustained focus", "supports healthy energy levels", "supports immune function", "supports skin health", "supports gut health", "provides antioxidant support", "70%+ beta-glucan content"
-- ❌ "boosts immunity", "cures/treats/prevents", "clinically proven", disease or drug-alternative claims
+- ✅ "supports sustained focus", "supports healthy energy levels", "supports immune function", "supports skin health", "supports gut health", "provides antioxidant support", "200mg organic lion's mane extract"
+- ❌ "boosts immunity", "cures/treats/prevents", "clinically proven", disease or drug-alternative claims, **"≥70% beta-glucans" / "200mg beta-glucans"** (unsubstantiated — no supplier CoA), **"no added sugar" / "sugar-free"** (8g added sugars from agave), **"no preservatives"** (contains Prolong 2.0)
 - FDA disclaimer required on every product page / Body HTML: *"These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease."*
 
 Brand voice: lowercase, café-energy-meets-gen-z (2026-07-14 repositioning: energetic, never earthy). Signature action sequence: **pour / swirl / glow**.

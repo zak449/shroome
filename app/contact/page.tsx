@@ -46,7 +46,7 @@ export default function Contact() {
         .contact-social-heading{font-family:var(--brand-font-display);font-size:28px;font-weight:400;font-style:italic;color:var(--brand-ink);margin:0 0 20px;text-align:center}
         .contact-social-links{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
         .contact-social-link{font-family:var(--brand-font-mono);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--brand-ink);text-decoration:none;padding:10px 20px;border-radius:8px;border:1.5px solid rgba(var(--brand-ink-rgb),0.12);transition:all .2s}
-        .contact-social-link:hover{background:var(--brand-ink);color:var(--brand-accent);border-color:var(--brand-ink)}
+        .contact-social-link:hover{background:var(--brand-ink);color:var(--brand-accent-contrast);border-color:var(--brand-ink)}
 
         .contact-footer{background:var(--brand-flavor-functional);padding:32px 5%;text-align:center}
         .contact-footer p{font-family:var(--brand-font-mono);font-size:10px;color:var(--brand-ink);opacity:.35;margin:0}

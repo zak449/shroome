@@ -26,7 +26,7 @@ const benefits = [
     num: "01",
     title: "30% Off — Locked",
     desc: "$25.20 instead of $36. Your price is locked at checkout. It never goes up for you.",
-    color: "var(--brand-accent)",
+    color: "var(--brand-tint-soft)",
   },
   {
     num: "02",
@@ -44,7 +44,7 @@ const benefits = [
     num: "04",
     title: "3 Reorder Codes",
     desc: "You get 3 × 30% off codes to use any time — on your next orders or gift to friends.",
-    color: "var(--brand-accent)",
+    color: "var(--brand-tint-soft)",
   },
   {
     num: "05",
@@ -80,7 +80,7 @@ const creditTiers = [
     unit: "total credit",
     amt: 15,
     desc: "Five referrals = $15 total. That's the cap — no games.",
-    color: "var(--brand-accent)",
+    color: "var(--brand-tint-soft)",
     highlight: true,
   },
   {
@@ -89,7 +89,7 @@ const creditTiers = [
     unit: "leaderboard prize",
     amt: 15,
     desc: "Our top referrer takes home a hand-numbered box from the very first case.",
-    color: "var(--brand-accent)",
+    color: "var(--brand-tint-soft)",
   },
 ];
 
@@ -156,7 +156,7 @@ export default function Founders() {
         .fb-ticker{background:var(--brand-ink);padding:10px 0;overflow:hidden;white-space:nowrap}
         .fb-ticker-track{display:inline-flex;animation:fbTick 28s linear infinite}
         .fb-ticker-item{font-family:var(--brand-font-mono);font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;padding:0 28px;color:rgba(var(--brand-canvas-rgb),.75)}
-        .fb-ticker-item em{color:var(--brand-accent);font-style:normal;font-weight:500}
+        .fb-ticker-item em{color:var(--brand-accent-warm);font-style:normal;font-weight:500}
         @keyframes fbTick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
         .fb-nav{position:sticky;top:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 5%;height:60px;background:rgba(var(--brand-flavor-strawberry-rgb),0.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(var(--brand-ink-rgb),0.06)}
@@ -167,7 +167,7 @@ export default function Founders() {
         @media(max-width:768px){.fb-nav-links{display:none !important}.fb-nav-cta{display:none !important}}
         .fb-nav-links a{background:none;border:none;cursor:pointer;font-family:var(--brand-font-body);font-size:11.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--brand-ink);opacity:.7;text-decoration:none;padding:6px 10px;border-radius:6px;transition:opacity .2s}
         .fb-nav-links a:hover{opacity:1}
-        .fb-nav-cta{font-family:var(--brand-font-mono);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;background:var(--brand-ink);color:var(--brand-accent);border:none;padding:10px 22px;border-radius:6px;cursor:pointer;text-decoration:none;transition:transform .15s}
+        .fb-nav-cta{font-family:var(--brand-font-mono);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;background:var(--brand-ink);color:var(--brand-accent-contrast);border:none;padding:10px 22px;border-radius:6px;cursor:pointer;text-decoration:none;transition:transform .15s}
         .fb-nav-cta:hover{transform:scale(1.03)}
 
         .fb-hero{position:relative;background:url('/email-clouds-bg.jpg') center/cover no-repeat var(--brand-flavor-strawberry);min-height:480px;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden}
@@ -184,7 +184,7 @@ export default function Founders() {
         .fb-hero-price-new{font-family:var(--brand-font-mono);font-size:18px;font-weight:700;color:var(--brand-ink);opacity:.6}
         .fb-hero-price-old{font-family:var(--brand-font-mono);font-size:16px;color:var(--brand-ink);opacity:.3;text-decoration:line-through}
         .fb-hero-price-label{font-family:var(--brand-font-mono);font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--brand-ink);opacity:.35}
-        .fb-hero-cta{display:inline-block;padding:16px 48px;border-radius:8px;background:var(--brand-ink);color:var(--brand-accent);font-family:var(--brand-font-mono);font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border:none;cursor:pointer;transition:transform .15s;text-decoration:none}
+        .fb-hero-cta{display:inline-block;padding:16px 48px;border-radius:8px;background:var(--brand-ink);color:var(--brand-accent-contrast);font-family:var(--brand-font-mono);font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border:none;cursor:pointer;transition:transform .15s;text-decoration:none}
         .fb-hero-cta:hover{transform:scale(1.03)}
         .fb-hero-trust{font-family:var(--brand-font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--brand-ink);opacity:.35;margin-top:14px}
 
@@ -208,7 +208,7 @@ export default function Founders() {
         .fb-testimonials-heading{font-family:var(--brand-font-display);font-size:clamp(28px,4vw,40px);font-weight:400;font-style:italic;color:var(--brand-canvas);text-align:center;margin:0 0 40px}
         .fb-testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;max-width:900px;margin:0 auto}
         .fb-testimonial{background:rgba(var(--brand-canvas-rgb),0.05);border:1px solid rgba(var(--brand-canvas-rgb),0.08);border-radius:12px;padding:28px 24px}
-        .fb-testimonial-stars{color:var(--brand-accent);font-size:14px;margin:0 0 12px;letter-spacing:2px}
+        .fb-testimonial-stars{color:var(--brand-accent-warm);font-size:14px;margin:0 0 12px;letter-spacing:2px}
         .fb-testimonial-body{font-family:var(--brand-font-body);font-size:14px;color:rgba(var(--brand-canvas-rgb),0.75);line-height:1.65;margin:0 0 16px;font-style:italic}
         .fb-testimonial-author{font-family:var(--brand-font-mono);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(var(--brand-canvas-rgb),0.3)}
 
@@ -217,7 +217,7 @@ export default function Founders() {
         .fb-stack-sub{font-family:var(--brand-font-body);font-size:14px;color:var(--brand-ink);opacity:.55;text-align:center;margin:0 0 36px}
         .fb-stack-tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;max-width:860px;margin:0 auto}
         .fb-stack-tier{background:#fff;border-radius:12px;padding:24px 20px;border:2px solid transparent;position:relative;overflow:hidden;transition:transform .2s}
-        .fb-stack-tier.highlight{border-color:var(--brand-accent);background:#F9FFE8}
+        .fb-stack-tier.highlight{border-color:var(--brand-accent);background:rgba(var(--brand-accent-rgb),0.08)}
         .fb-stack-tier:hover{transform:translateY(-2px)}
         .fb-stack-tier-label{font-family:var(--brand-font-mono);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brand-ink);opacity:.5;margin:0 0 8px}
         .fb-stack-tier-discount{font-family:var(--brand-font-display);font-size:38px;font-weight:400;font-style:italic;color:var(--brand-ink);line-height:1;margin:0 0 2px}
@@ -225,7 +225,7 @@ export default function Founders() {
         .fb-stack-tier-bar-bg{height:4px;background:rgba(var(--brand-ink-rgb),0.08);border-radius:2px;margin:0 0 10px}
         .fb-stack-tier-bar-fill{height:100%;border-radius:2px}
         .fb-stack-tier-desc{font-family:var(--brand-font-body);font-size:12px;color:var(--brand-ink);opacity:.5;margin:0}
-        .fb-stack-tier-badge{position:absolute;top:12px;right:12px;background:var(--brand-accent);color:var(--brand-ink);font-family:var(--brand-font-mono);font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 8px;border-radius:20px}
+        .fb-stack-tier-badge{position:absolute;top:12px;right:12px;background:var(--brand-ink);color:var(--brand-accent-contrast);font-family:var(--brand-font-mono);font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 8px;border-radius:20px}
         .fb-stack-note{text-align:center;margin:24px 0 0;font-family:var(--brand-font-body);font-size:12px;color:var(--brand-ink);opacity:.4}
         .fb-stack-note a{color:var(--brand-ink);opacity:1;font-weight:600}
 
@@ -237,7 +237,7 @@ export default function Founders() {
         .fb-preorder-price{display:inline-flex;align-items:baseline;gap:10px;margin-bottom:32px}
         .fb-preorder-price-new{font-family:var(--brand-font-mono);font-size:20px;font-weight:700;color:rgba(var(--brand-canvas-rgb),0.5);line-height:1}
         .fb-preorder-price-old{font-family:var(--brand-font-mono);font-size:18px;color:rgba(var(--brand-canvas-rgb),0.2);text-decoration:line-through;line-height:1}
-        .fb-preorder-btn{display:inline-block;padding:18px 56px;border-radius:8px;border:none;background:var(--brand-accent);color:var(--brand-ink);font-family:var(--brand-font-mono);font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:transform .15s;text-decoration:none}
+        .fb-preorder-btn{display:inline-block;padding:18px 56px;border-radius:8px;border:none;background:var(--brand-accent);color:var(--brand-accent-contrast);font-family:var(--brand-font-mono);font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:transform .15s;text-decoration:none}
         .fb-preorder-btn:hover{transform:scale(1.03)}
         .fb-preorder-trust{font-family:var(--brand-font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:rgba(var(--brand-canvas-rgb),0.25);margin-top:16px}
 

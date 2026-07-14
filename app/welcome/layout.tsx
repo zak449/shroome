@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "shroomé — The Matcha Latte That Replaced Our Coffee",
   description:
-    "2.5g ceremonial matcha, functional mushroom extracts (70%+ beta-glucans), and grass-fed collagen peptides in one sachet. The coffee alternative that actually works. Join the waitlist for 20% off + free shipping.",
+    "2.5g ceremonial matcha, 200mg organic lion's mane extract, and grass-fed collagen peptides in one sachet. The coffee alternative that actually works. Join the waitlist for 20% off + free shipping.",
   keywords: [
     "matcha latte",
     "coffee alternative",

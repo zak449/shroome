@@ -115,7 +115,7 @@ Her morning drink quietly becomes a beauty step — grass-fed collagen + antioxi
 |---|---|
 | "2g of collagen isn't enough" | 2g of low-molecular-weight hydrolyzed peptides (Type I & III) as a *daily maintenance dose* — the dose you'll actually take every day beats the scoop you skip |
 | "Collagen drinks taste chalky" | it's a matcha latte first; the collagen is hydrolyzed and dissolved — you taste vanilla or strawberry, not supplement |
-| "Is it clean?" | grass-fed, pasture-raised bovine; no added sugar, no artificial sweeteners, no proprietary blends |
+| "Is it clean?" | grass-fed, pasture-raised bovine; sweetened with organic agave; no artificial sweeteners, no proprietary blends |
 
 ### Key message hierarchy
 1. Your matcha latte is now a beauty step — 2g grass-fed collagen in every pour
@@ -292,7 +292,7 @@ The good drink — actually good, café-good — made one-handed in 15 seconds, 
 9. **drop hook:** "drop 001 sold out faster than my kids' cereal. I'm not missing 002." (mom-humor, drop ledger overlay)
 
 ### Compliant claim language
-- **DO:** speed/convenience/taste claims (unregulated — this segment's ads can run nearly claim-free) · "supports healthy energy levels" if energy is invoked · "~60mg caffeine" (parents ask; be factual) · "no added sugar" (factual)
+- **DO:** speed/convenience/taste claims (unregulated — this segment's ads can run nearly claim-free) · "supports healthy energy levels" if energy is invoked · "about 60mg caffeine" (parents ask; be factual) · "no artificial sweeteners" (factual — do NOT say "no added sugar": 8g added sugars from agave)
 - **DON'T:** "the healthiest choice for busy moms" (health-outcome framing) · "safe during pregnancy/nursing" (never — direct to physician; do not target pregnancy interests) · "kids love it" or any child-marketing angle (18+ product positioning) · "guaranteed to replace your coffee run"
 - Lowest compliance-risk segment if kept to convenience + taste. Watch creator briefs for accidental pregnancy/nursing safety statements — that's the landmine here.
 

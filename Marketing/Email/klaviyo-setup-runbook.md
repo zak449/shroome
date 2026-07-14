@@ -109,7 +109,7 @@ c) Birthday capture: Klaviyo form (popup or embed on /welcome) with only the bir
 ## 7. RCS registration (start today — 2-4 week carrier approval)
 
 1. Prereq: SMS is fully provisioned first — toll-free number verified (Settings → Text messaging → verification status; if not submitted: company info + opt-in screenshot of the site's consent language + sample messages — use SMS 1 from the copy doc).
-2. Settings → Text messaging → **Sender info / RCS** → Register brand: legal name ZSQUARED INC, brand name "shroomé", logo (224×224 PNG from `Brand/Logo & Marks/`), banner 1440×448, brand color #1B1F3B, contact `info@drinkshroome.com`, privacy + terms URLs (drinkshroome.com/privacy, /terms).
+2. Settings → Text messaging → **Sender info / RCS** → Register brand: legal name ZSQUARED INC, brand name "shroomé", logo (224×224 PNG from `Brand/Logo & Marks/`), banner 1440×448, brand color #2D341A, contact `info@drinkshroome.com`, privacy + terms URLs (drinkshroome.com/privacy, /terms).
 3. Submit for carrier verification. Status shows per-carrier; Android users get branded blue-bubble sender once approved. iOS falls back to SMS automatically — never assume RCS features (rich cards) in critical sends; SMS 7 must work as plain text.
 4. When brand refresh lands, update logo/banner here (already in launch-roadmap Brand Asset Refresh SOP §4).
 

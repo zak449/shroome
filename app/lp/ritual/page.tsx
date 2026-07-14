@@ -56,20 +56,20 @@ const config: LPConfig = {
     header: "what's in the pour",
     bg: "var(--brand-flavor-functional)",
     stats: [
-      { stat: "2.5g", label: "ceremonial matcha — first harvest, shade-grown" },
-      { stat: "2g", label: "grass-fed collagen peptides" },
-      { stat: "200mg", label: "lion's mane extract, ≥70% beta-glucans" },
       { stat: "~60mg", label: "caffeine, with matcha's natural l-theanine" },
+      { stat: "2.5g", label: "ceremonial matcha — first harvest, shade-grown" },
+      { stat: "200mg", label: "organic lion's mane extract" },
+      { stat: "2g", label: "grass-fed collagen peptides" },
     ],
     footnote:
-      "no added sugar. no artificial sweeteners. no proprietary blends. two flavors: vanilla & strawberry.",
+      "no artificial sweeteners. no proprietary blends. two flavors: vanilla & strawberry.",
   },
   proof: {
     header: "drop 001 is already gone.",
     body: `we made ${X1_BOXES} boxes. the access list drank them before drop 001 ever hit the site. no paid reviews to show you yet — just a sold-out ledger and a line forming for drop 002.`,
     counterLabel: "people holding drop access",
     badges: [
-      "third-party tested for beta-glucan content",
+      "third-party tested for purity",
       "heavy-metals tested",
       "made in a GMP-certified facility",
     ],

@@ -26,7 +26,7 @@
 
 **What it's for:** concepting, not finals. Generate set-design directions (stone counters, morning light angles, prop palettes), lighting studies for the starburst look, and layout comps for LP heroes before we book the photographer.
 
-**Why it fits the segments:** each of the five LPs needs a distinct set feel (vanity marble for /lp/glow, Navy spec-sheet minimalism for /lp/focus, kinetic doorway rush for /lp/pour). Iterating those worlds in Firefly costs hours, not shoot days — then the photographer executes the winning direction for real.
+**Why it fits the segments:** each of the five LPs needs a distinct set feel (vanity marble for /lp/glow, Green spec-sheet minimalism for /lp/focus, kinetic doorway rush for /lp/pour). Iterating those worlds in Firefly costs hours, not shoot days — then the photographer executes the winning direction for real.
 
 **Workflow note:** generate WITHOUT any sachet in frame (use a gray placeholder block for scale). Composite the real `sachet-vanilla.png` / `sachet-strawberry.png` product photography over comps for internal review only. **Hard flag, per image-guidelines and the launch roadmap: AI packshots are a bridge for concepting; every public-facing product image must be real photography of the real sachets, and the roadmap task "replace AI product images with real product photography" applies to any AI remnants on the site too.** Firefly is the default because its training-data indemnification keeps commercial risk low; Midjourney v7 is for wilder set exploration.
 
@@ -34,11 +34,11 @@
 
 ## 2. Backgrounds & textures — Adobe Firefly (with Photoshop generative fill)
 
-**What it's for:** the dreamy cloud plates, lavender/blush gradient environments, and grain textures the brand system already approves for backgrounds (image-guidelines explicitly allows generated imagery for backgrounds only).
+**What it's for:** the dreamy cloud plates, purple/strawberry-tint gradient environments, and grain textures the brand system already approves for backgrounds (image-guidelines explicitly allows generated imagery for backgrounds only).
 
 **Why it fits the segments:** /lp/calm lives on clouds ("no crash" made visible); /lp/ritual (the matcha-maximalist page — slug kept, segment renamed) needs saturated-surreal gradient skies plus collage/scrapbook texture plates (torn-paper edges, tape, sticker sheets). Generating tinted plates in brand hexes beats stock every time.
 
-**Workflow note:** always tint to palette (Lavender #D4B8E0, Blush #FFE0EC, Soft Lavender #E8D5F0), add grain per creative-direction, and keep clouds clearly stylized — never photoreal weather that could read as a location claim. File naming: `bg-cloud-[palette]-[nn].png` into `Assets/Backgrounds/`.
+**Workflow note:** always tint to palette (Purple #E3D5F7, Strawberry tint #FFE2F4, Purple #E3D5F7), add grain per creative-direction, and keep clouds clearly stylized — never photoreal weather that could read as a location claim. File naming: `bg-cloud-[palette]-[nn].png` into `Assets/Backgrounds/`.
 
 ---
 

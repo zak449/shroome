@@ -84,11 +84,12 @@ Our emails are a conversation, not a sales pitch. Every touchpoint should make t
 ### Layout
 - Single column, mobile-first
 - Max width: 600px
-- Background: Cream (#FDF4EE)
-- Text: Navy (#1B1F3B)
-- CTA buttons: Lime (#C8FF3A) background, Navy text
+- Background: Retro (#FEFFF8)
+- Text: Green (#2D341A)
+- CTA buttons: Green (#2D341A) background, Retro (#FEFFF8) text — Bolden CTA inversion; Matcha (#7A881F) is accent-only
 
 ### Typography
+- Canon target faces are Tarnac (slab — titles/tags) + Tarnac Sans (supporting) by Sharp Type; web license not yet purchased, so Instrument Serif/Syne remain the interim stand-ins. Email uses web-safe fallbacks regardless (Georgia / system-ui).
 - Headings: Instrument Serif italic (fallback: Georgia)
 - Body: Syne (fallback: system-ui, sans-serif)
 - Body size: 16px minimum

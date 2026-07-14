@@ -25,7 +25,7 @@ const faqData = [
       },
       {
         q: "Does shroomé taste like mushrooms?",
-        a: `Not even a little. shroomé uses <strong>beta glucan 1/3 and 1/6 polysaccharides</strong> — the specific bioactive compounds extracted from mushroom cell walls — not raw mushroom powder. At <strong>70%+ beta glucan concentration</strong> (which is extremely high for the category), these compounds are tasteless when formulated into the liquid matrix. What you actually taste is smooth, naturally sweet ceremonial matcha with the silky mouthfeel of collagen. Most people say it tastes better than the $7 matcha latte from their local café — and it takes <strong>15 seconds instead of 15 minutes.</strong>`,
+        a: `Not even a little. shroomé uses a concentrated <strong>organic lion's mane extract</strong> — 200mg per sachet — not raw mushroom powder. In the liquid matrix it's effectively tasteless. What you actually taste is smooth, naturally sweet ceremonial matcha with the silky mouthfeel of collagen. Most people say it tastes better than the $7 matcha latte from their local café — and it takes <strong>15 seconds instead of 15 minutes.</strong>`,
       },
       {
         q: "How many servings per box?",
@@ -39,7 +39,7 @@ const faqData = [
     items: [
       {
         q: "What mushrooms are in shroomé?",
-        a: `shroomé contains organic mushroom extracts standardized to <strong>70%+ beta glucan 1/3 and 1/6 polysaccharides</strong> — the specific bioactive compounds responsible for immune modulation and sustained focus. Most mushroom products on the market use low-potency mycelium-on-grain with beta glucan levels under 30%. shroomé's 70%+ concentration is among the highest in the functional food space. These are not psychoactive or psychedelic — they're <strong>food-grade, clinically studied compounds.</strong>`,
+        a: `shroomé contains <strong>200mg of organic lion's mane extract</strong> per sachet — a concentrated extract, not low-potency mycelium-on-grain. Lion's mane is studied in the context of immune function and focus, within structure/function limits. These are not psychoactive or psychedelic — they're <strong>food-grade compounds.</strong>`,
       },
       {
         q: "What's in the collagen and why is it included?",
@@ -51,7 +51,7 @@ const faqData = [
       },
       {
         q: "Is shroomé vegan or gluten-free?",
-        a: `shroomé is gluten-free, soy-free, and contains no artificial sweeteners, fillers, or preservatives. <strong>Note:</strong> shroomé contains grass-fed collagen (bovine-sourced), so it is not vegan. It fits cleanly into keto, paleo, and Whole30 lifestyles.`,
+        a: `shroomé is gluten-free, soy-free, and dairy-free, with no artificial sweeteners or fillers. <strong>Allergen note:</strong> made with coconut milk powder (coconut is classified as a tree nut), so it carries a tree-nut cross-contact warning. shroomé contains grass-fed collagen (bovine-sourced), so it is not vegan.`,
       },
       {
         q: "Is shroomé safe to drink every day?",
@@ -192,7 +192,7 @@ export default function FAQ() {
         .faq-ticker{background:var(--brand-ink);padding:10px 0;overflow:hidden;white-space:nowrap}
         .faq-ticker-track{display:inline-flex;animation:faqTick 28s linear infinite}
         .faq-ticker-item{font-family:var(--brand-font-mono);font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;padding:0 28px;color:rgba(var(--brand-canvas-rgb),.75)}
-        .faq-ticker-item em{color:var(--brand-accent);font-style:normal;font-weight:500}
+        .faq-ticker-item em{color:var(--brand-accent-warm);font-style:normal;font-weight:500}
         @keyframes faqTick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
         /* ── NAV ─── */
@@ -305,7 +305,7 @@ export default function FAQ() {
 
         /* ── CTA SECTION ─── */
         .faq-cta{background:var(--brand-ink);padding:64px 7%;text-align:center;position:relative;overflow:hidden}
-        .faq-cta-tag{font-family:var(--brand-font-mono);font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--brand-accent);margin-bottom:16px}
+        .faq-cta-tag{font-family:var(--brand-font-mono);font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--brand-tint-soft);margin-bottom:16px}
         .faq-cta h2{
           font-family:var(--brand-font-display);
           font-size:clamp(30px,4vw,48px);font-weight:400;font-style:italic;
@@ -314,7 +314,7 @@ export default function FAQ() {
         .faq-cta h2 em{font-style:italic;color:var(--brand-accent-warm)}
         .faq-cta-sub{font-size:14px;color:rgba(var(--brand-canvas-rgb),.5);margin-bottom:28px;font-weight:400}
         .faq-btn-cta{
-          display:inline-block;background:var(--brand-accent);color:var(--brand-ink);border:none;
+          display:inline-block;background:var(--brand-accent);color:var(--brand-accent-contrast);border:none;
           padding:14px 36px;font-family:var(--brand-font-body);
           font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
           cursor:pointer;transition:background .2s,transform .2s;text-decoration:none
@@ -475,10 +475,13 @@ export default function FAQ() {
           <br />
           <em>Try it risk-free.</em>
         </h2>
-        <p className="faq-cta-sub">20% off + free shipping. Tear. Pour. Done.</p>
+        <p className="faq-cta-sub">20% off + free shipping. Pour. Swirl. Go.</p>
         <a href="/" className="faq-btn-cta">
           Join the Waitlist &rarr;
         </a>
+        <p style={{ marginTop: 18, fontFamily: "var(--brand-font-display)", fontStyle: "italic", fontSize: "1.05rem", color: "rgba(var(--brand-ink-rgb),0.5)" }}>
+          nice to matcha you.
+        </p>
       </section>
 
       {/* ═══ FOOTER ═══ */}
@@ -492,7 +495,7 @@ export default function FAQ() {
           © 2026 shroomé · hello@drinkshroome.com ·{" "}
           <a href="/privacy">Privacy Policy</a> · <a href="/terms">Terms of Service</a>
         </div>
-        <div className="faq-footer-bot">@drinkshroome</div>
+        <div className="faq-footer-bot">Grown in Kyoto, Made in California · @drinkshroome</div>
       </footer>
       </div>
     </>

@@ -80,7 +80,7 @@
   overflow: visible;
   padding: 12px 24px;
   background: var(--brand-ink);
-  color: var(--brand-accent);
+  color: var(--brand-accent-contrast);
   font-family: var(--brand-font-body);
   font-size: 14px;
   font-weight: 700;
@@ -130,7 +130,7 @@ body {
 .delay-650 { animation-delay: 0.65s; opacity: 0; }
 
 /* ── Comparison checkmarks ── */
-.chk-y { background: rgba(var(--brand-accent-rgb),0.25); color: var(--brand-accent); }
+.chk-y { background: rgba(var(--brand-accent-rgb),0.25); color: var(--brand-accent-contrast); }
 .chk-n { background: rgba(var(--brand-canvas-rgb),0.07); color: rgba(var(--brand-canvas-rgb),0.22); }
 .chk-y-light { background: rgba(var(--brand-accent-muted-rgb),0.15); color: var(--brand-accent-muted-deep); }
 .chk-n-light { background: rgba(var(--brand-ink-rgb),0.04); color: rgba(var(--brand-ink-rgb),0.18); }

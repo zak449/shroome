@@ -58,18 +58,18 @@ const config: LPConfig = {
     stats: [
       { stat: "2.5g", label: "ceremonial matcha — first harvest, shade-grown" },
       { stat: "2g", label: "grass-fed collagen peptides" },
-      { stat: "200mg", label: "lion's mane fruiting-body extract — ≥70% beta-glucans" },
+      { stat: "200mg", label: "organic lion's mane fruiting-body extract" },
       { stat: "~60mg", label: "caffeine — supports healthy energy levels, no 2pm cliff" },
     ],
     footnote:
-      "no added sugar, no artificial sweeteners, no proprietary blends. every dose printed on the sachet. 1 fl oz (30ml) per sachet.",
+      "no artificial sweeteners, no proprietary blends — sweetened with organic agave. every dose printed on the sachet. 1 fl oz (30ml) per sachet.",
   },
   proof: {
     header: "drop 001 moved faster than you do.",
     body: `we made ${X1_BOXES} boxes for drop 001. the access list cleared them before the site ever opened to the public. no review wall yet — just a sold-out ledger, a fully disclosed label, and drop 002 on the way.`,
     counterLabel: "people holding drop access",
     badges: [
-      "third-party tested for beta-glucan content",
+      "third-party tested for purity",
       "heavy-metals screened",
       "GMP-certified facility",
     ],

@@ -67,7 +67,8 @@ Companion docs:
    - `shroome-vanilla`: rating 5 / count 8, mpn `SHROOME-VAN-V1`, review dated 2026-02-15
    - `shroome-strawberry`: rating 5 / count 6, mpn `SHROOME-STR-V1`, review dated 2026-02-20
    - `shroome-variety-pack`: rating 5 / count 12, mpn `SHROOME-V1`
-   - all: caffeine `~60mg per sachet`, beta_glucan `70%+ (1,3 and 1,6 linked)`,
+   - all: caffeine `about 60mg per sachet`, **leave `beta_glucan` blank** (unsubstantiated
+     until a supplier CoA — do not seed "70%+" per 2026-07 claims audit),
      matcha_grade `Ceremonial (first harvest, shade-grown)`,
      collagen_source `Grass-fed bovine, hydrolyzed peptides`, servings `12`,
      `preorder = true` (flip to false at launch — this switches schema

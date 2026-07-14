@@ -205,7 +205,7 @@ export default function BlogCTA() {
               fontWeight: 500,
               letterSpacing: ".2em",
               textTransform: "uppercase" as const,
-              color: "var(--brand-accent)",
+              color: "var(--brand-tint-soft)",
               marginBottom: 14,
             }}
           >
@@ -245,12 +245,12 @@ export default function BlogCTA() {
 
           {inlineStatus === "success" ? (
             inlinePhoneDone ? (
-              <p style={{ fontFamily: "var(--brand-font-body)", fontSize: 15, fontWeight: 600, color: "var(--brand-accent)" }}>
+              <p style={{ fontFamily: "var(--brand-font-body)", fontSize: 15, fontWeight: 600, color: "var(--brand-tint-soft)" }}>
                 You&rsquo;re all set! Check your email{inlinePhone ? " — we'll text you too" : ""}. &#10003;
               </p>
             ) : (
               <div>
-                <p style={{ fontFamily: "var(--brand-font-body)", fontSize: 13, fontWeight: 600, color: "var(--brand-accent)", marginBottom: 10 }}>
+                <p style={{ fontFamily: "var(--brand-font-body)", fontSize: 13, fontWeight: 600, color: "var(--brand-tint-soft)", marginBottom: 10 }}>
                   &#10003; 20% off locked in! Add your number to upgrade to 30% (replaces your 20% code):
                 </p>
                 <form onSubmit={async (e) => {
@@ -261,7 +261,7 @@ export default function BlogCTA() {
                   setInlinePhoneDone(true);
                 }} style={{ display: "flex", gap: 0, maxWidth: 380, margin: "0 auto", flexWrap: "wrap" as const, justifyContent: "center" }}>
                   <input type="tel" placeholder="(555) 123-4567" value={inlinePhone} onChange={(e) => setInlinePhone(e.target.value)} required style={{ flex: "1 1 200px", padding: "12px 14px", fontFamily: "var(--brand-font-body)", fontSize: 13, color: "var(--brand-ink)", background: "var(--brand-canvas)", border: "2px solid transparent", outline: "none" }} />
-                  <button type="submit" style={{ padding: "12px 20px", background: "var(--brand-accent)", color: "var(--brand-ink)", border: "none", fontFamily: "var(--brand-font-body)", fontWeight: 800, fontSize: 12, letterSpacing: "0.06em", textTransform: "uppercase" as const, cursor: "pointer" }}>Upgrade it</button>
+                  <button type="submit" style={{ padding: "12px 20px", background: "var(--brand-accent)", color: "var(--brand-accent-contrast)", border: "none", fontFamily: "var(--brand-font-body)", fontWeight: 800, fontSize: 12, letterSpacing: "0.06em", textTransform: "uppercase" as const, cursor: "pointer" }}>Upgrade it</button>
                 </form>
                 <button onClick={() => setInlinePhoneDone(true)} style={{ background: "none", border: "none", color: "rgba(var(--brand-canvas-rgb),0.4)", fontSize: 11, fontFamily: "var(--brand-font-body)", cursor: "pointer", marginTop: 8, textDecoration: "underline" }}>Skip</button>
               </div>
@@ -321,7 +321,7 @@ export default function BlogCTA() {
                   fontWeight: 700,
                   letterSpacing: ".08em",
                   textTransform: "uppercase" as const,
-                  color: "var(--brand-ink)",
+                  color: "var(--brand-accent-contrast)",
                   background: "var(--brand-accent)",
                   border: "none",
                   cursor: inlineStatus === "loading" ? "wait" : "pointer",
@@ -375,12 +375,12 @@ export default function BlogCTA() {
       >
         {stickyStatus === "success" ? (
           stickyPhoneDone ? (
-            <p style={{ fontFamily: "var(--brand-font-body)", fontSize: 13, fontWeight: 600, color: "var(--brand-accent)", margin: 0 }}>
+            <p style={{ fontFamily: "var(--brand-font-body)", fontSize: 13, fontWeight: 600, color: "var(--brand-tint-soft)", margin: 0 }}>
               You&rsquo;re all set! &#10003;
             </p>
           ) : (
             <div style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap" as const, justifyContent: "center" }}>
-              <p style={{ fontFamily: "var(--brand-font-body)", fontSize: 12, color: "var(--brand-accent)", fontWeight: 600, margin: 0, whiteSpace: "nowrap" as const }}>&#10003; 20% locked! Add phone for 30%:</p>
+              <p style={{ fontFamily: "var(--brand-font-body)", fontSize: 12, color: "var(--brand-tint-soft)", fontWeight: 600, margin: 0, whiteSpace: "nowrap" as const }}>&#10003; 20% locked! Add phone for 30%:</p>
               <form onSubmit={async (e) => {
                 e.preventDefault();
                 if (!stickyPhone.trim()) return;
@@ -452,7 +452,7 @@ export default function BlogCTA() {
                   fontFamily: "var(--brand-font-body)",
                   fontSize: 12,
                   fontWeight: 700,
-                  color: "var(--brand-ink)",
+                  color: "var(--brand-accent-contrast)",
                   background: "var(--brand-accent)",
                   border: "none",
                   cursor: stickyStatus === "loading" ? "wait" : "pointer",

@@ -112,7 +112,7 @@ Global suppressions on every flow: unsubscribed/suppressed profiles, `WAITLIST_C
 
 ## 4. READY-TO-PASTE EMAIL COPY (6)
 
-Merge tags are Klaviyo syntax. All body copy is final; layout blocks in [brackets] map to the existing `emails.ts` design system (navy/lime/lavender canvas).
+Merge tags are Klaviyo syntax. All body copy is final; layout blocks in [brackets] map to the existing `emails.ts` design system (green/matcha/purple canvas).
 
 ---
 
@@ -121,7 +121,7 @@ Merge tags are Klaviyo syntax. All body copy is final; layout blocks in [bracket
 **subject:** you're in. here's your number.
 **preview:** waitlist #{{ person|lookup:'waitlist_position' }} — plus your code promise and your personal link inside.
 
-> [hero: navy, lime "YOU'RE IN" eyebrow]
+> [hero: green, matcha "YOU'RE IN" eyebrow]
 >
 > **waitlist #{{ person|lookup:'waitlist_position' }}.**
 > that's you. locked in for DROP 002.
@@ -133,7 +133,7 @@ Merge tags are Klaviyo syntax. All body copy is final; layout blocks in [bracket
 > **2 — drops open to the list first.** DROP 001 sold out. the list heard first. that's the whole model.
 >
 > **3 — your link moves you up.**
-> [navy code block] **drinkshroome.com?ref={{ person|lookup:'referral_code' }}**
+> [green code block] **drinkshroome.com?ref={{ person|lookup:'referral_code' }}**
 > every friend who joins through your link = credit on your account: **$5 for your 1st, $10 total at 3, $15 total at 5.** real dollars, applied at checkout, no games.
 >
 > one more thing: people on our text list get the doors opened **10 minutes early** on drop day, and their code upgrades from 20 to 30. more on that tomorrow — or skip the wait: [button: GET EARLY ACCESS →] (links to /welcome phone step)
@@ -156,7 +156,7 @@ Merge tags are Klaviyo syntax. All body copy is final; layout blocks in [bracket
 >
 > and there's a second thing. add your number and your code upgrades:
 >
-> [lime card] **SHROOME20 → SHROOME30**
+> [matcha card] **SHROOME20 → SHROOME30**
 > 30% off + free shipping. to be clear: **it replaces your 20% code — your best code wins.** we don't do stacking math, we just give you the bigger number.
 >
 > [button: ADD MY NUMBER →]
@@ -197,7 +197,7 @@ Merge tags are Klaviyo syntax. All body copy is final; layout blocks in [bracket
 
 > your link has been sitting in your welcome email doing nothing. let's fix that.
 >
-> [navy code block] **drinkshroome.com?ref={{ person|lookup:'referral_code' }}**
+> [green code block] **drinkshroome.com?ref={{ person|lookup:'referral_code' }}**
 >
 > the ladder — fixed credits, straight to your account:
 >

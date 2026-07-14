@@ -84,13 +84,13 @@ export function welcomeEmail(email: string, referralCode?: string) {
               <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
                 <tr>
                   <td style="font-size:22px;font-family:${SERIF};font-style:italic;color:#fff;font-weight:400;">shroom\u00e9</td>
-                  <td align="right"><span style="font-size:9px;letter-spacing:2px;text-transform:uppercase;color:${EMAIL.accent};font-weight:700;">PRE-LAUNCH</span></td>
+                  <td align="right"><span style="font-size:9px;letter-spacing:2px;text-transform:uppercase;color:${EMAIL.tintSoft};font-weight:700;">PRE-LAUNCH</span></td>
                 </tr>
               </table>
             </td></tr>
             <tr><td style="padding:300px 0 0;"></td></tr>
             <tr><td style="padding:0 36px 8px;text-align:center;">
-              <p style="margin:0 0 10px;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:${EMAIL.accent};font-weight:700;">\u2726 YOU\u2019RE IN \u2726</p>
+              <p style="margin:0 0 10px;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:${EMAIL.tintSoft};font-weight:700;">\u2726 YOU\u2019RE IN \u2726</p>
               <h1 style="margin:0;font-size:42px;color:#fff;font-weight:400;line-height:1.05;font-family:${SERIF};">
                 Caf\u00e9 energy.<br/><span style="font-style:italic;color:${EMAIL.accent};">Home address.</span>
               </h1>
@@ -103,11 +103,11 @@ export function welcomeEmail(email: string, referralCode?: string) {
             <tr><td style="padding:0 36px 28px;text-align:center;">
               <table role="presentation" cellpadding="0" cellspacing="0" style="margin:0 auto;">
                 <tr>
-                  <td style="background:${alpha("accent",0.15)};border-radius:20px;padding:5px 13px;border:1px solid ${alpha("accent",0.25)};"><span style="font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:${EMAIL.accent};">20% OFF</span></td>
+                  <td style="background:${alpha("accent",0.15)};border-radius:20px;padding:5px 13px;border:1px solid ${alpha("accent",0.25)};"><span style="font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:${EMAIL.tintSoft};">20% OFF</span></td>
                   <td style="width:6px;"></td>
-                  <td style="background:${alpha("accent",0.15)};border-radius:20px;padding:5px 13px;border:1px solid ${alpha("accent",0.25)};"><span style="font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:${EMAIL.accent};">FREE SHIPPING</span></td>
+                  <td style="background:${alpha("accent",0.15)};border-radius:20px;padding:5px 13px;border:1px solid ${alpha("accent",0.25)};"><span style="font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:${EMAIL.tintSoft};">FREE SHIPPING</span></td>
                   <td style="width:6px;"></td>
-                  <td style="background:${alpha("accent",0.15)};border-radius:20px;padding:5px 13px;border:1px solid ${alpha("accent",0.25)};"><span style="font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:${EMAIL.accent};">EARLY ACCESS</span></td>
+                  <td style="background:${alpha("accent",0.15)};border-radius:20px;padding:5px 13px;border:1px solid ${alpha("accent",0.25)};"><span style="font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:${EMAIL.tintSoft};">EARLY ACCESS</span></td>
                 </tr>
               </table>
             </td></tr>
@@ -138,7 +138,7 @@ export function welcomeEmail(email: string, referralCode?: string) {
 
     <!-- ═══ REFERRAL SECTION — accent block ═══════════════════════ -->
     ${referralCode ? `
-    <tr><td style="padding:0;background-color:${EMAIL.accent};">
+    <tr><td style="padding:0;background-color:${EMAIL.tintSoft};">
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
         <tr><td style="padding:36px 40px 12px;text-align:center;">
           <p style="margin:0 0 6px;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:${EMAIL.ink};opacity:0.5;font-weight:600;">SHARE THE LOVE</p>
@@ -153,7 +153,7 @@ export function welcomeEmail(email: string, referralCode?: string) {
           <table role="presentation" cellpadding="0" cellspacing="0" style="margin:0 auto;">
             <tr><td style="background:${EMAIL.ink};border-radius:8px;padding:16px 32px;">
               <p style="margin:0;font-size:11px;color:rgba(255,255,255,0.5);letter-spacing:1px;text-transform:uppercase;font-weight:600;">Your referral link</p>
-              <a href="https://www.drinkshroome.com?ref=${referralCode}" style="font-size:18px;font-weight:700;color:${EMAIL.accent};text-decoration:none;letter-spacing:0.5px;font-family:${SANS};">
+              <a href="https://www.drinkshroome.com?ref=${referralCode}" style="font-size:18px;font-weight:700;color:${EMAIL.canvas};text-decoration:none;letter-spacing:0.5px;font-family:${SANS};">
                 drinkshroome.com?ref=${referralCode}
               </a>
             </td></tr>
@@ -202,9 +202,9 @@ export function welcomeEmail(email: string, referralCode?: string) {
             <tr><td style="background-color:rgba(255,255,255,0.06);border-radius:12px;padding:20px 24px;border:1px solid rgba(255,255,255,0.06);">
               <p style="margin:0;">
                 <span style="font-size:36px;font-weight:300;color:${EMAIL.accent};font-family:${SERIF};font-style:italic;">200mg</span>
-                <span style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-left:12px;"> ORGANIC MUSHROOM EXTRACTS</span>
+                <span style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-left:12px;"> ORGANIC LION'S MANE EXTRACT</span>
               </p>
-              <p style="margin:8px 0 0;font-size:13px;color:rgba(255,255,255,0.4);line-height:1.4;">70%+ beta-glucan (1/3, 1/6) purity. Immune activation, sustained focus, no crash. Most brands: 15\u201330%.</p>
+              <p style="margin:8px 0 0;font-size:13px;color:rgba(255,255,255,0.4);line-height:1.4;">Real fruiting-body extract \u2014 the mushroom, not the grain it grows on. Supports immune function and sustained focus.</p>
             </td></tr>
           </table>
         </td></tr>
@@ -237,12 +237,12 @@ export function welcomeEmail(email: string, referralCode?: string) {
     <tr><td style="padding:20px 36px;background-color:${EMAIL.ink};">
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
         <tr><td style="background-color:${EMAIL.accent};border-radius:16px;padding:32px 24px;text-align:center;">
-          <p style="margin:0;font-size:72px;font-weight:800;color:${EMAIL.ink};line-height:1;letter-spacing:-3px;">70%+</p>
-          <p style="margin:6px 0 0;font-size:13px;font-weight:700;color:${EMAIL.ink};letter-spacing:1.5px;text-transform:uppercase;">
-            BETA-GLUCAN (1/3, 1/6) CONCENTRATION
+          <p style="margin:0;font-size:72px;font-weight:800;color:${EMAIL.canvas};line-height:1;letter-spacing:-3px;">200mg</p>
+          <p style="margin:6px 0 0;font-size:13px;font-weight:700;color:${EMAIL.canvas};letter-spacing:1.5px;text-transform:uppercase;">
+            ORGANIC LION'S MANE EXTRACT
           </p>
-          <p style="margin:8px 0 0;font-size:12px;color:${EMAIL.ink};opacity:0.6;">
-            The highest you can get. Most brands: 15\u201330%.
+          <p style="margin:8px 0 0;font-size:12px;color:${EMAIL.canvas};opacity:0.6;">
+            Fruiting body, hot-water extracted. Not mycelium-on-grain filler.
           </p>
         </td></tr>
       </table>
@@ -266,13 +266,13 @@ export function welcomeEmail(email: string, referralCode?: string) {
         <tr>
           <td style="padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
             <p style="margin:0;font-size:16px;font-weight:700;color:#fff;">Focus that lasts all day.</p>
-            <p style="margin:4px 0 0;font-size:13px;color:rgba(255,255,255,0.4);">Lion\u2019s mane beta-glucans + 60mg matcha caffeine + L-theanine.</p>
+            <p style="margin:4px 0 0;font-size:13px;color:rgba(255,255,255,0.4);">Lion\u2019s mane extract + 60mg matcha caffeine + L-theanine.</p>
           </td>
         </tr>
         <tr>
           <td style="padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
             <p style="margin:0;font-size:16px;font-weight:700;color:#fff;">No 2pm crash.</p>
-            <p style="margin:4px 0 0;font-size:13px;color:rgba(255,255,255,0.4);">Reishi beta-glucans regulate cortisol. Energy up, anxiety down.</p>
+            <p style="margin:4px 0 0;font-size:13px;color:rgba(255,255,255,0.4);">Matcha's L-theanine smooths the caffeine curve. Energy up, jitters down.</p>
           </td>
         </tr>
         <tr>
@@ -306,7 +306,7 @@ export function welcomeEmail(email: string, referralCode?: string) {
               </p>
               <table role="presentation" cellpadding="0" cellspacing="0" style="margin:0 auto;">
                 <tr><td style="background:${G};border-radius:50px;padding:14px 48px;">
-                  <a href="${EMAIL.siteUrl}" style="color:${EMAIL.accent};font-size:12px;font-weight:700;text-decoration:none;letter-spacing:2px;text-transform:uppercase;">
+                  <a href="${EMAIL.siteUrl}" style="color:${EMAIL.canvas};font-size:12px;font-weight:700;text-decoration:none;letter-spacing:2px;text-transform:uppercase;">
                     EXPLORE SHROOM\u00c9 \u2192
                   </a>
                 </td></tr>
@@ -381,7 +381,7 @@ export function sachetEmail(email: string) {
             pour \u00b7 swirl \u00b7 <span style="color:${EMAIL.accentWarmSoft};">glow</span>
           </p>
           <p style="margin:8px 0 0;font-size:11px;color:${EMAIL.accentDeep};opacity:0.5;letter-spacing:1px;text-transform:uppercase;font-weight:600;">
-            ceremonial matcha \u00b7 collagen \u00b7 mushroom beta-glucans
+            ceremonial matcha \u00b7 collagen \u00b7 lion's mane extract
           </p>
         </td></tr>
       </table>
@@ -394,7 +394,7 @@ export function sachetEmail(email: string) {
         It\u2019s not the mushroom.
       </p>
       <p style="margin:0;font-size:26px;color:${EMAIL.accent};font-weight:700;font-family:${SANS};line-height:1.15;">
-        It\u2019s the beta-glucan inside it.
+        It\u2019s how it\u2019s extracted.
       </p>
     </td></tr>
 
@@ -402,12 +402,12 @@ export function sachetEmail(email: string) {
     <tr><td style="padding:24px 28px;background-color:${EMAIL.ink};">
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
         <tr><td style="background-color:${EMAIL.accent};border-radius:16px;padding:36px 24px;text-align:center;">
-          <p style="margin:0;font-size:80px;font-weight:800;color:${EMAIL.ink};line-height:1;letter-spacing:-3px;">70%+</p>
-          <p style="margin:8px 0 0;font-size:12px;font-weight:700;color:${EMAIL.ink};letter-spacing:1.5px;text-transform:uppercase;">
-            BETA-GLUCAN (1,3 AND 1,6) CONCENTRATION
+          <p style="margin:0;font-size:80px;font-weight:800;color:${EMAIL.canvas};line-height:1;letter-spacing:-3px;">200mg</p>
+          <p style="margin:8px 0 0;font-size:12px;font-weight:700;color:${EMAIL.canvas};letter-spacing:1.5px;text-transform:uppercase;">
+            ORGANIC LION'S MANE EXTRACT
           </p>
-          <p style="margin:10px 0 0;font-size:13px;color:${EMAIL.ink};opacity:0.55;line-height:1.5;">
-            The highest commercially available. Most supplements: 15\u201330%.
+          <p style="margin:10px 0 0;font-size:13px;color:${EMAIL.canvas};opacity:0.55;line-height:1.5;">
+            Real fruiting-body extract, hot-water extracted. Not mycelium-on-grain filler.
           </p>
         </td></tr>
       </table>
@@ -419,12 +419,12 @@ export function sachetEmail(email: string) {
         <tr>
           <td width="48%" style="background:rgba(255,255,255,0.04);border-radius:12px;padding:20px 16px;text-align:center;vertical-align:top;border:1px solid rgba(255,255,255,0.06);">
             <p style="margin:0 0 6px;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.3);font-weight:700;">THEM</p>
-            <p style="margin:0 0 8px;font-size:28px;font-weight:800;color:rgba(255,255,255,0.2);line-height:1;">15\u201330%</p>
-            <p style="margin:0;font-size:11px;color:rgba(255,255,255,0.25);line-height:1.4;">Mycelium on grain.<br/>Mostly rice starch.<br/>Untested.</p>
+            <p style="margin:0 0 8px;font-size:24px;font-weight:800;color:rgba(255,255,255,0.2);line-height:1;">MYCELIUM</p>
+            <p style="margin:0;font-size:11px;color:rgba(255,255,255,0.25);line-height:1.4;">Grown on grain.<br/>Mostly rice starch.<br/>Untested.</p>
           </td>
           <td width="4%"></td>
           <td width="48%" style="background:${alpha("accent",0.08)};border-radius:12px;padding:20px 16px;text-align:center;vertical-align:top;border:1px solid ${alpha("accent",0.15)};">
-            <p style="margin:0 0 6px;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:${EMAIL.accent};font-weight:700;">SHROOM\u00c9</p>
+            <p style="margin:0 0 6px;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:${EMAIL.tintSoft};font-weight:700;">SHROOM\u00c9</p>
             <p style="margin:0 0 8px;font-size:28px;font-weight:800;color:${EMAIL.accent};line-height:1;">70%+</p>
             <p style="margin:0;font-size:11px;color:rgba(255,255,255,0.5);line-height:1.4;">Fruiting body extract.<br/>Hot water extracted.<br/>Third-party verified.</p>
           </td>
@@ -475,7 +475,7 @@ export function sachetEmail(email: string) {
               </p>
               <table role="presentation" cellpadding="0" cellspacing="0" style="margin:0 auto;">
                 <tr><td style="background:${EMAIL.accent};border-radius:50px;padding:14px 48px;">
-                  <a href="${EMAIL.siteUrl}" style="color:${EMAIL.ink};font-size:12px;font-weight:700;text-decoration:none;letter-spacing:2px;text-transform:uppercase;">
+                  <a href="${EMAIL.siteUrl}" style="color:${EMAIL.canvas};font-size:12px;font-weight:700;text-decoration:none;letter-spacing:2px;text-transform:uppercase;">
                     EXPLORE SHROOM\u00c9 \u2192
                   </a>
                 </td></tr>

@@ -41,7 +41,7 @@ export default function StickyCTA() {
           left: 0;
           right: 0;
           z-index: 150;
-          background: var(--brand-accent);
+          background: var(--brand-ink);
           padding: 12px 16px;
           display: flex;
           align-items: center;
@@ -58,7 +58,7 @@ export default function StickyCTA() {
           font-family: var(--brand-font-body);
           font-size: 14px;
           font-weight: 800;
-          color: var(--brand-ink);
+          color: var(--brand-accent-contrast);
           text-decoration: none;
           letter-spacing: 0.02em;
           white-space: nowrap;
@@ -70,7 +70,7 @@ export default function StickyCTA() {
           transform: translateY(-50%);
           background: none;
           border: none;
-          color: rgba(var(--brand-ink-rgb), 0.4);
+          color: rgba(var(--brand-canvas-rgb), 0.5);
           font-size: 18px;
           line-height: 1;
           cursor: pointer;
@@ -78,7 +78,7 @@ export default function StickyCTA() {
           transition: color 0.2s;
         }
         .sticky-cta-dismiss:hover {
-          color: var(--brand-ink);
+          color: var(--brand-canvas);
         }
         /* Only show on mobile */
         @media (min-width: 769px) {

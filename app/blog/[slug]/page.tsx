@@ -330,7 +330,7 @@ export default async function BlogPost({
 
         /* ── CTA ── */
         .post-cta{background:var(--brand-ink);padding:64px 7%;text-align:center;position:relative;overflow:hidden}
-        .post-cta-tag{font-family:var(--brand-font-mono);font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--brand-accent);margin-bottom:16px}
+        .post-cta-tag{font-family:var(--brand-font-mono);font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--brand-tint-soft);margin-bottom:16px}
         .post-cta h2{
           font-family:var(--brand-font-display);
           font-size:clamp(28px,4vw,44px);font-weight:400;font-style:italic;
@@ -339,7 +339,7 @@ export default async function BlogPost({
         .post-cta h2 em{font-style:italic;color:var(--brand-accent-warm)}
         .post-cta-sub{font-size:14px;color:rgba(var(--brand-canvas-rgb),.5);margin-bottom:28px;font-weight:400}
         .post-btn-cta{
-          display:inline-block;background:var(--brand-accent);color:var(--brand-ink);border:none;
+          display:inline-block;background:var(--brand-accent);color:var(--brand-accent-contrast);border:none;
           padding:14px 36px;font-family:var(--brand-font-body);
           font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
           cursor:pointer;transition:background .2s,transform .2s;text-decoration:none

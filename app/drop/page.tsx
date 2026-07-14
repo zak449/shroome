@@ -69,7 +69,7 @@ const vanillaSchema = {
   "@type": "Product",
   name: "shroomé Vanilla Matcha Latte Concentrate — 12 Sachets",
   description:
-    "Ready-to-pour ceremonial matcha latte concentrate, vanilla. 2.5g ceremonial matcha, 2g grass-fed collagen peptides, 200mg lion's mane extract (≥70% beta-glucans) per 1oz sachet. Box of 12. Sold in numbered, limited drops.",
+    "Ready-to-pour ceremonial matcha latte concentrate, vanilla. 2.5g ceremonial matcha, 2g grass-fed collagen peptides, 200mg organic lion's mane extract per 1oz sachet. Box of 12. Sold in numbered, limited drops.",
   brand: { "@type": "Brand", name: "shroomé" },
   manufacturer: { "@type": "Organization", name: "ZSQUARED INC" },
   category: "Functional Beverages",
@@ -85,7 +85,7 @@ const strawberrySchema = {
   "@type": "Product",
   name: "shroomé Strawberry Matcha Latte Concentrate — 12 Sachets",
   description:
-    "Ready-to-pour ceremonial matcha latte concentrate, strawberry. 2.5g ceremonial matcha, 2g grass-fed collagen peptides, 200mg lion's mane extract (≥70% beta-glucans) per 1oz sachet. Box of 12. Sold in numbered, limited drops.",
+    "Ready-to-pour ceremonial matcha latte concentrate, strawberry. 2.5g ceremonial matcha, 2g grass-fed collagen peptides, 200mg organic lion's mane extract per 1oz sachet. Box of 12. Sold in numbered, limited drops.",
   brand: { "@type": "Brand", name: "shroomé" },
   manufacturer: { "@type": "Organization", name: "ZSQUARED INC" },
   category: "Functional Beverages",
@@ -209,7 +209,7 @@ export default function DropPage() {
         @media(max-width:768px){.dr-nav-links{display:none !important}.dr-nav-cta{display:none !important}}
         .dr-nav-links a{font-family:var(--brand-font-body);font-size:11.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--brand-ink);opacity:.7;text-decoration:none;padding:6px 10px;transition:opacity .2s}
         .dr-nav-links a:hover{opacity:1}
-        .dr-nav-cta{font-family:var(--brand-font-mono);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;background:var(--brand-ink);color:var(--brand-accent);padding:10px 22px;border-radius:6px;text-decoration:none;transition:transform .15s}
+        .dr-nav-cta{font-family:var(--brand-font-mono);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;background:var(--brand-ink);color:var(--brand-accent-contrast);padding:10px 22px;border-radius:6px;text-decoration:none;transition:transform .15s}
         .dr-nav-cta:hover{transform:scale(1.03)}
 
         .dr-h1{font-family:var(--brand-font-display);font-style:italic;font-weight:400;font-size:clamp(2.4rem,6vw,4rem);line-height:1.05;margin:0 0 18px;color:var(--brand-canvas)}
@@ -230,7 +230,7 @@ export default function DropPage() {
         .dr-compare{font-family:var(--brand-font-mono);font-size:0.9rem;color:rgba(var(--brand-ink-rgb),0.35);text-decoration:line-through}
         .dr-per{font-family:var(--brand-font-mono);font-size:0.68rem;color:rgba(var(--brand-ink-rgb),0.5);margin:0 0 4px}
         .dr-sub-from{font-family:var(--brand-font-body);font-size:0.7rem;font-weight:600;color:var(--brand-ink);background:rgba(var(--brand-accent-rgb),0.35);display:inline-block;padding:4px 8px;margin:6px 0 14px}
-        .dr-card-btn{margin-top:auto;display:block;text-align:center;background:var(--brand-accent);color:var(--brand-ink);font-family:var(--brand-font-body);font-weight:800;font-size:0.7rem;letter-spacing:.1em;text-transform:uppercase;padding:14px 12px;text-decoration:none}
+        .dr-card-btn{margin-top:auto;display:block;text-align:center;background:var(--brand-ink);color:var(--brand-accent-contrast);font-family:var(--brand-font-body);font-weight:800;font-size:0.7rem;letter-spacing:.1em;text-transform:uppercase;padding:14px 12px;text-decoration:none}
 
         .dr-table-wrap{max-width:900px;margin:0 auto;overflow-x:auto}
         .dr-table{width:100%;border-collapse:collapse;min-width:560px}
@@ -291,7 +291,7 @@ export default function DropPage() {
           }}
         />
         <div style={{ position: "relative", maxWidth: 760, margin: "0 auto" }}>
-          <p className="dr-eyebrow" style={{ color: "var(--brand-accent)" }}>numbered · limited · honest</p>
+          <p className="dr-eyebrow" style={{ color: "var(--brand-tint-soft)" }}>numbered · limited · honest</p>
           <h1 className="dr-h1">
             drop 001 — sold out in {DROP_001.soldOutInDays} days.
           </h1>
@@ -304,7 +304,7 @@ export default function DropPage() {
             style={{
               display: "inline-block",
               background: "var(--brand-accent)",
-              color: "var(--brand-ink)",
+              color: "var(--brand-accent-contrast)",
               fontFamily: "var(--brand-font-body)",
               fontWeight: 800,
               fontSize: "0.78rem",
@@ -377,7 +377,7 @@ export default function DropPage() {
             your first box comes with her — the mé keychain, earned, not bought — and every 3rd
             delivery on the 24 &amp; 48 plans includes our under-eye gels, free ($18 value).
           </p>
-          <p style={{ fontFamily: "var(--brand-font-mono)", fontSize: "0.68rem", letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--brand-ink)", background: "var(--brand-accent)", display: "inline-block", padding: "6px 14px", marginTop: 16 }}>
+          <p style={{ fontFamily: "var(--brand-font-mono)", fontSize: "0.68rem", letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--brand-ink)", background: "rgba(var(--brand-accent-rgb),0.35)", display: "inline-block", padding: "6px 14px", marginTop: 16 }}>
             opens with drop 002
           </p>
         </div>

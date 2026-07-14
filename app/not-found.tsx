@@ -113,9 +113,9 @@ export default function NotFound() {
         }
         .nf-link-secondary:hover{border-color:var(--brand-ink);transform:translateY(-2px)}
         .nf-link-accent{
-          background:var(--brand-accent);color:var(--brand-ink);
+          background:var(--brand-ink);color:var(--brand-accent-contrast);
         }
-        .nf-link-accent:hover{background:#d4ff5a;transform:translateY(-2px)}
+        .nf-link-accent:hover{background:var(--brand-accent-muted-deep);transform:translateY(-2px)}
 
         @keyframes nfFadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
 

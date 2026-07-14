@@ -244,9 +244,9 @@ export default function Dashboard() {
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-sm font-semibold transition-colors"
-              style={{ color: "var(--brand-accent)" }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = "#d4ff6a")}
-              onMouseLeave={(e) => (e.currentTarget.style.color = "var(--brand-accent)")}
+              style={{ color: "var(--brand-tint-soft)" }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "var(--brand-canvas)")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "var(--brand-tint-soft)")}
             >
               View full analytics in Google Analytics
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -365,7 +365,7 @@ function QuickAction({
     >
       <div
         className="w-9 h-9 rounded-lg flex items-center justify-center"
-        style={{ background: "rgba(var(--brand-accent-rgb),0.1)", color: "var(--brand-accent)" }}
+        style={{ background: "rgba(var(--brand-accent-rgb),0.1)", color: "var(--brand-tint-soft)" }}
       >
         {icon}
       </div>

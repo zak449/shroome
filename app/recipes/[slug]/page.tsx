@@ -142,7 +142,7 @@ export default async function RecipeDetailPage({
         .rd-ticker{background:var(--brand-ink);padding:10px 0;overflow:hidden;white-space:nowrap}
         .rd-ticker-track{display:inline-flex;animation:rdTick 28s linear infinite}
         .rd-ticker-item{font-family:var(--brand-font-mono);font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;padding:0 28px;color:rgba(var(--brand-canvas-rgb),.75)}
-        .rd-ticker-item em{color:var(--brand-accent);font-style:normal;font-weight:500}
+        .rd-ticker-item em{color:var(--brand-accent-warm);font-style:normal;font-weight:500}
         @keyframes rdTick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
         /* ── NAV ── */
@@ -399,7 +399,7 @@ export default async function RecipeDetailPage({
           font-family:var(--brand-font-mono);font-size:11px;font-weight:500;
           letter-spacing:.12em;text-transform:uppercase;transition:color .2s
         }
-        .rd-footer-top a:hover{color:var(--brand-accent)}
+        .rd-footer-top a:hover{color:var(--brand-accent-warm)}
         .rd-footer-mid{line-height:1.8}
         .rd-footer-mid a{color:rgba(var(--brand-canvas-rgb),0.5);text-decoration:none;transition:color .2s}
         .rd-footer-mid a:hover{color:var(--brand-canvas)}

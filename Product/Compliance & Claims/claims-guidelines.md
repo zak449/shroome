@@ -26,7 +26,7 @@ Structure/function claims describe the role of an ingredient in supporting the b
 
 | Claim | Ingredient Basis |
 |---|---|
-| "Supports immune function" | Mushroom beta-glucans |
+| "Supports immune function" | Organic lion's mane extract |
 | "Supports sustained focus" | Matcha (caffeine + L-theanine) |
 | "Supports healthy energy levels" | Matcha (caffeine) |
 | "Supports skin health" | Collagen peptides |
@@ -88,19 +88,31 @@ Any claim that positions the product as an alternative to medication is a drug c
 | "Clinically proven" | "Ingredients studied for [function]" (only if true) |
 | "Superfood" | Acceptable but use sparingly — it has no regulatory definition |
 
-### Beta-Glucan Claims
+### Lion's Mane / Beta-Glucan Claims
 
-Our 70%+ beta-glucan content is a key differentiator, but claims must stay within structure/function boundaries:
+> ⚠️ **Substantiation gap (2026-07 audit).** The delivered formulation sheet (Strawberry V2, 6/18/2026) documents **200mg of lion's mane *extract*** per sachet but does **not** document a beta-glucan percentage. Until Immulink provides a spec sheet / CoA, do **not** state a beta-glucan % or a mg-of-beta-glucans figure. Note that "200mg beta-glucans" is inaccurate on its face — 200mg is the extract, and if it were 70% BG the actual beta-glucans would be ≈140mg.
 
-**Allowed:**
-- "Contains 70%+ beta-glucan content from organic mushroom extracts"
-- "Beta-glucans support immune function"
-- "Higher beta-glucan concentration than typical mushroom supplements"
+**Allowed now:**
+- "Contains 200mg organic lion's mane extract"
+- "Lion's mane extract supports immune function" (structure/function)
+- "Fruiting-body / hot-water-extracted" only if the supplier spec confirms it
 
-**Not allowed:**
+**Not allowed until a supplier CoA is on file:**
+- "≥70% beta-glucans" / "70%+ beta-glucan content"
+- "200mg beta-glucans"
+- "standardized to [X]% beta-glucans"
+
+**Never allowed:**
 - "Beta-glucans fight disease"
 - "Beta-glucans cure [anything]"
 - "Clinically proven beta-glucan formula" (unless we run our own clinical trial)
+
+### Sugar & Preservative Claims — PROHIBITED
+
+The formula is sweetened with organic agave (10g = 8g added sugars, 35 cal — the largest ingredient after water) and contains the Prolong 2.0 shelf-life system. Therefore:
+- **Never** claim "no added sugar", "sugar-free", "zero sugar", or "no sugar".
+- **Never** claim "no preservatives" or "preservative-free".
+- Accurate framing: "no artificial sweeteners", "sweetened with organic agave".
 
 ---
 
@@ -132,7 +144,7 @@ Our 70%+ beta-glucan content is a key differentiator, but claims must stay withi
 ## Competitor Comparison Rules
 
 - Never name competitors in claims comparisons
-- "Higher beta-glucan content than typical mushroom supplements" is acceptable
+- Beta-glucan comparison claims are on hold until a supplier CoA substantiates our beta-glucan content
 - "Better than [Brand X]" is not acceptable
 - Comparative claims must be substantiated with data
 - Focus on what shroome IS rather than what competitors are NOT

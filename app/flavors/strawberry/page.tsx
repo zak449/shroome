@@ -60,7 +60,7 @@ const productSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "shroomé Strawberry Matcha Latte",
-  "description": "shroomé Strawberry — ceremonial matcha meets real freeze-dried strawberry, functional mushroom extracts standardized to 70%+ beta-glucan concentration, and grass-fed collagen peptides. One sachet, 15 seconds, zero compromise.",
+  "description": "shroomé Strawberry — ceremonial matcha meets real freeze-dried strawberry, 200mg organic lion's mane extract, and grass-fed collagen peptides. Grown in Kyoto, made in California. One sachet, 15 seconds, zero compromise.",
   "brand": { "@type": "Brand", "name": "shroomé" },
   "manufacturer": { "@type": "Organization", "name": "ZSQUARED INC" },
   "category": "Functional Beverages",
@@ -119,11 +119,11 @@ const productSchema = {
 const ingredients = [
   {
     name: "Ceremonial Matcha",
-    detail: "2g first-harvest, shade-grown ceremonial grade",
+    detail: "2.5g first-harvest, shade-grown ceremonial grade",
   },
   {
-    name: "Mushroom Extracts",
-    detail: "Organic, 70%+ beta-glucan concentration",
+    name: "Lion's Mane Extract",
+    detail: "200mg organic lion's mane extract",
   },
   {
     name: "Grass-Fed Collagen",
@@ -181,7 +181,7 @@ export default function StrawberryFlavorPage() {
         .sf-ticker{background:var(--brand-ink);padding:10px 0;overflow:hidden;white-space:nowrap}
         .sf-ticker-track{display:inline-flex;animation:sfTick 28s linear infinite}
         .sf-ticker-item{font-family:var(--brand-font-mono);font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;padding:0 28px;color:rgba(var(--brand-canvas-rgb),.75)}
-        .sf-ticker-item em{color:var(--brand-accent);font-style:normal;font-weight:500}
+        .sf-ticker-item em{color:var(--brand-accent-warm);font-style:normal;font-weight:500}
         @keyframes sfTick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
         /* ── NAV ── */
@@ -422,6 +422,30 @@ export default function StrawberryFlavorPage() {
           </ul>
         </div>
 
+        {/* ── ORIGIN STRIP ── */}
+        <div
+          style={{
+            maxWidth: 720,
+            margin: "0 auto",
+            padding: "0 6% 56px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: 12,
+            fontFamily: "var(--brand-font-mono)",
+            fontSize: 11,
+            fontWeight: 500,
+            letterSpacing: ".16em",
+            textTransform: "uppercase",
+            color: "rgba(var(--brand-ink-rgb),0.55)",
+            textAlign: "center",
+          }}
+        >
+          <span aria-hidden style={{ color: "var(--brand-accent)" }}>&#10022;</span>
+          {BRAND.provenance}
+          <span aria-hidden style={{ color: "var(--brand-accent)" }}>&#10022;</span>
+        </div>
+
         {/* ── RECIPES WITH THIS FLAVOR ── */}
         <div className="sf-recipes">
           <h2 className="sf-label">Recipes with Strawberry</h2>
@@ -445,7 +469,7 @@ export default function StrawberryFlavorPage() {
             <a href="/privacy">Privacy Policy</a> &middot;{" "}
             <a href="/terms">Terms of Service</a>
           </div>
-          <div className="sf-footer-bot">@drinkshroome</div>
+          <div className="sf-footer-bot">{BRAND.provenance} &middot; @drinkshroome</div>
         </footer>
       </div>
     </>
