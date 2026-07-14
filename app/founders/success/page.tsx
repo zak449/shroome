@@ -59,7 +59,7 @@ export default function FoundersSuccess() {
         <div className="fs-details">
           <div className="fs-detail">
             <span className="fs-detail-label">Discount</span>
-            <span className="fs-detail-val">25% off locked</span>
+            <span className="fs-detail-val">30% off locked</span>
           </div>
           <div className="fs-detail">
             <span className="fs-detail-label">Ships</span>
@@ -72,7 +72,7 @@ export default function FoundersSuccess() {
         </div>
 
         <div className="fs-ctas">
-          <a href="/refer" className="fs-cta-primary">Stack More Discount — Refer Friends →</a>
+          <a href="/refer" className="fs-cta-primary">Refer Friends — Earn Up to $15 Credit →</a>
           <a href="/" className="fs-cta-secondary">Back to shroomé</a>
         </div>
       </div>

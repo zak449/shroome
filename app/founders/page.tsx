@@ -54,39 +54,42 @@ const benefits = [
   },
 ];
 
-const discountTiers = [
+// CFO ruling 2026-07-14: referral rewards are FIXED account credits —
+// $5 / $10 / $15 at 1 / 3 / 5 referrals (hard cap), plus the case-001
+// leaderboard prize. Your First Pour price never changes.
+const creditTiers = [
   {
-    label: "First Pour",
-    discount: "30% off",
-    price: "$25.20",
-    pct: 30,
-    desc: "Base pre-order discount. Just for being here.",
-    color: "#C8FF3A",
-  },
-  {
-    label: "+ 1 Referral",
-    discount: "33% off",
-    price: "$24.12",
-    pct: 33,
-    desc: "Refer one friend, stack 3% more.",
+    label: "1 Referral",
+    reward: "$5",
+    unit: "account credit",
+    amt: 5,
+    desc: "Refer one friend, earn a $5 credit toward future drops.",
     color: "#FFB7D1",
   },
   {
-    label: "+ 3 Referrals",
-    discount: "36% off",
-    price: "$23.04",
-    pct: 36,
-    desc: "Three referrals = VIP tier.",
+    label: "3 Referrals",
+    reward: "$10",
+    unit: "total credit",
+    amt: 10,
+    desc: "Three referrals = $10 in total credit.",
     color: "#D4B8E0",
   },
   {
-    label: "+ 5 Referrals",
-    discount: "40% off",
-    price: "$21.60",
-    pct: 40,
-    desc: "Max stack. Our deepest discount ever.",
+    label: "5 Referrals",
+    reward: "$15",
+    unit: "total credit",
+    amt: 15,
+    desc: "Five referrals = $15 total. That's the cap — no games.",
     color: "#C8FF3A",
     highlight: true,
+  },
+  {
+    label: "Top Referrer",
+    reward: "Case 001",
+    unit: "leaderboard prize",
+    amt: 15,
+    desc: "Our top referrer takes home a hand-numbered box from the very first case.",
+    color: "#C8FF3A",
   },
 ];
 
@@ -104,8 +107,8 @@ const faqs = [
     a: "First Pour orders ship June 15, 2026 — launch day. You'll get a tracking email the moment your box leaves the warehouse.",
   },
   {
-    q: "Can I stack my referral discount?",
-    a: "Yes. Your 30% First Pour discount stacks with referral bonuses. Refer 1 friend for 33% off, 3 friends for 36%, 5 friends for 40% — our deepest discount ever. Share your referral link from the Referral page after checkout.",
+    q: "Do referrals change my First Pour price?",
+    a: "No — referral rewards are account credits applied to future drops, and your First Pour price stays locked at $25.20. You earn a $5 credit for your 1st referral, $10 total at 3, and $15 total at 5 — that's the cap. Our top referrer also takes home a hand-numbered box from case 001. Share your referral link from the Referral page after checkout.",
   },
   {
     q: "What if you don't ship?",
@@ -391,25 +394,26 @@ export default function Founders() {
         </div>
       </section>
 
-      {/* STACKING DISCOUNT */}
+      {/* REFERRAL CREDIT LADDER */}
       <section className="fb-stack">
-        <h2 className="fb-stack-heading">Stack your discount.</h2>
-        <p className="fb-stack-sub">Refer friends after checkout to stack up to 40% off future orders.</p>
+        <h2 className="fb-stack-heading">Earn credit for sharing.</h2>
+        <p className="fb-stack-sub">Refer friends after checkout — fixed credits at 1, 3, and 5 referrals, applied to future drops. Your First Pour price stays locked.</p>
         <div className="fb-stack-tiers">
-          {discountTiers.map((tier) => (
+          {creditTiers.map((tier) => (
             <div className={`fb-stack-tier${tier.highlight ? " highlight" : ""}`} key={tier.label}>
-              {tier.highlight && <span className="fb-stack-tier-badge">Max Stack</span>}
+              {tier.highlight && <span className="fb-stack-tier-badge">The Cap</span>}
               <div className="fb-stack-tier-label">{tier.label}</div>
-              <div className="fb-stack-tier-discount">{tier.discount}</div>
-              <div className="fb-stack-tier-price">{tier.price} / box</div>
+              <div className="fb-stack-tier-discount">{tier.reward}</div>
+              <div className="fb-stack-tier-price">{tier.unit}</div>
               <div className="fb-stack-tier-bar-bg">
-                <div className="fb-stack-tier-bar-fill" style={{ width: `${(tier.pct / 40) * 100}%`, background: tier.color }} />
+                <div className="fb-stack-tier-bar-fill" style={{ width: `${(tier.amt / 15) * 100}%`, background: tier.color }} />
               </div>
               <p className="fb-stack-tier-desc">{tier.desc}</p>
             </div>
           ))}
         </div>
         <p className="fb-stack-note">
+          Already shared your link? Anything you earned under the old ladder is honored.
           You&apos;ll get your referral link after checkout. <a href="/refer">Learn how referrals work →</a>
         </p>
       </section>

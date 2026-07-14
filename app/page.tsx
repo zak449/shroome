@@ -96,6 +96,7 @@ export default function Home() {
   const [phone, setPhone] = useState("");
   const [step, setStep] = useState<"email" | "captcha" | "phone" | "done">("email");
   const [loading, setLoading] = useState(false);
+  const [captchaError, setCaptchaError] = useState("");
   const captchaRef = useRef<HTMLDivElement>(null);
   const widgetIdRef = useRef<string | null>(null);
   const [visible, setVisible] = useState<Record<string, boolean>>({});
@@ -207,6 +208,7 @@ export default function Home() {
 
   const onTurnstileSuccess = useCallback(async (token: string) => {
     setLoading(true);
+    setCaptchaError("");
     try {
       const res = await fetch("/api/waitlist", {
         method: "POST",
@@ -216,6 +218,14 @@ export default function Home() {
       const data = await res.json();
       if (data.closed) {
         setStep("done");
+        setLoading(false);
+        return;
+      }
+      if (!res.ok) {
+        // e.g. CAPTCHA rejected server-side — back to the email step so a
+        // resubmit renders a fresh widget (and a fresh token).
+        setCaptchaError(data.error || "Verification failed. Please try again.");
+        setStep("email");
         setLoading(false);
         return;
       }
@@ -245,7 +255,12 @@ export default function Home() {
       widgetIdRef.current = window.turnstile.render(captchaRef.current, {
         sitekey: (process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY && !process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY.startsWith("REPLACE")) ? process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY : "1x00000000000000000000AA",
         callback: onTurnstileSuccess,
-        "error-callback": () => { onTurnstileSuccess(""); },
+        // Never submit an empty token (the API fails closed) — return to the
+        // email step; resubmitting renders a fresh widget with a fresh token.
+        "error-callback": () => {
+          setCaptchaError("Verification failed. Please try again.");
+          setStep("email");
+        },
         theme: "light",
       });
     };
@@ -806,10 +821,10 @@ export default function Home() {
                     {referralCode && (
                       <div style={{ marginTop: 16, padding: "20px", background: "rgba(27,31,59,0.07)", borderRadius: 8 }}>
                         <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 700, fontSize: "0.78rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "#1B1F3B", marginBottom: 8 }}>
-                          Refer 3 friends → extra 10% off
+                          Refer friends → earn up to $15 credit
                         </p>
                         <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.75rem", color: "rgba(27,31,59,0.5)", marginBottom: 12 }}>
-                          Stackable with your existing discount. Share your link:
+                          $5 credit at 1 friend, $10 at 3, $15 at 5 — applied at checkout on drop day. Share your link:
                         </p>
                         <div style={{ display: "flex", gap: 8, alignItems: "center", marginBottom: 12, flexWrap: "wrap" }}>
                           <div style={{ flex: "1 1 200px", background: "#fff", border: "2px solid #1B1F3B", padding: "10px 14px", fontFamily: "'DM Mono', monospace", fontSize: "0.78rem", color: "#1B1F3B", minWidth: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
@@ -873,7 +888,7 @@ export default function Home() {
                 ) : step === "phone" ? (
                   <>
                     <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 600, fontSize: "0.82rem", color: "#2D4A2D", marginBottom: 12 }}>
-                      ✓ 20% off + free shipping locked in! Add your number for an extra 10% off code.
+                      ✓ 20% off + free shipping locked in! Add your number and your code upgrades from 20% to 30% — best code wins.
                     </p>
                     <input
                       type="tel"
@@ -968,8 +983,13 @@ export default function Home() {
                     >
                       {loading ? "…" : "Get launch updates →"}
                     </button>
+                    {captchaError && (
+                      <p role="alert" style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.72rem", color: "#B3261E", marginTop: 10, fontWeight: 600 }}>
+                        {captchaError}
+                      </p>
+                    )}
                     <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.72rem", color: "rgba(27,31,59,0.45)", marginTop: 10 }}>
-                      No spam. Add your phone for an extra 10% off code at launch.
+                      No spam. Add your phone and your code upgrades from 20% to 30% at launch — best code wins.
                     </p>
                     <p style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.65rem", color: "rgba(27,31,59,0.35)", marginTop: 8, letterSpacing: "0.03em" }}>
                       Join 100+ early adopters
@@ -1381,7 +1401,7 @@ export default function Home() {
             Get 20% off at launch.
           </h2>
           <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.88rem", color: "rgba(27,31,59,0.5)", lineHeight: 1.6, marginBottom: 24 }}>
-            Join the waitlist for 20% off + free shipping on your first box. Add your phone for an extra 10% off code.
+            Join the waitlist for 20% off + free shipping on your first box. Add your phone and your code upgrades from 20% to 30% — best code wins.
           </p>
           {step === "done" ? (
             <div>
@@ -1391,10 +1411,10 @@ export default function Home() {
               {referralCode && (
                 <div style={{ marginTop: 16, padding: "24px", background: "rgba(27,31,59,0.08)", borderRadius: 12, textAlign: "left" }}>
                   <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 700, fontSize: "0.78rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "#1B1F3B", marginBottom: 8 }}>
-                    Refer 3 friends → extra 10% off
+                    Refer friends → earn up to $15 credit
                   </p>
                   <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.75rem", color: "rgba(27,31,59,0.5)", marginBottom: 14 }}>
-                    Stackable with your existing discount. Share your link:
+                    $5 credit at 1 friend, $10 at 3, $15 at 5 — applied at checkout on drop day. Share your link:
                   </p>
                   <div style={{ display: "flex", gap: 8, alignItems: "center", marginBottom: 14, flexWrap: "wrap" }}>
                     <div style={{ flex: "1 1 200px", background: "rgba(255,255,255,0.6)", border: "2px solid #1B1F3B", padding: "10px 14px", fontFamily: "'DM Mono', monospace", fontSize: "0.78rem", color: "#1B1F3B", minWidth: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
@@ -1452,7 +1472,7 @@ export default function Home() {
           ) : step === "phone" ? (
             <div>
               <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 600, fontSize: "0.88rem", color: "#1B1F3B", marginBottom: 14 }}>
-                ✓ 20% off + free shipping locked in! Add your number for an extra 10% off code.
+                ✓ 20% off + free shipping locked in! Add your number and your code upgrades from 20% to 30% — best code wins.
               </p>
               <form onSubmit={handlePhoneSubmit} style={{ display: "flex", gap: 8, flexWrap: "wrap", justifyContent: "center" }}>
                 <input
@@ -1487,6 +1507,11 @@ export default function Home() {
                 {loading ? "…" : "Get launch updates →"}
               </button>
             </form>
+          )}
+          {captchaError && step === "email" && (
+            <p role="alert" style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.72rem", color: "#B3261E", marginTop: 10, fontWeight: 600 }}>
+              {captchaError}
+            </p>
           )}
         </div>
 
