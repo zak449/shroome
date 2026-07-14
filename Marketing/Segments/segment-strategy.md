@@ -2,14 +2,21 @@
 
 > Last updated: July 2026
 > Owner: Marketing Director
-> Status: Pre-launch (waitlist mode — site reads SOLD OUT; all LPs convert to waitlist signups)
+> Status: Pre-launch, DROP MODEL (founder directive, July 2026) — product ships in numbered, limited drops, streetwear-style. Drop 001 sold out; all LPs sell access to drop 002.
 > Companion docs: `lp-briefs/` (one ghost LP per segment), `../Creative/creative-direction.md`, `../Creative/ai-toolstack.md`
 
 ---
 
 ## How to use this document
 
-Five segments. Five landing pages. One product. Every paid social dollar maps to exactly one segment, one LP, and one message hierarchy. Creative can flex; the segment → LP pairing does not. All traffic converts to the same action: **join the waitlist** (first run sold out — scarcity is real, so we say it plainly, never manufacture it).
+Five segments. Five landing pages. One product. Every paid social dollar maps to exactly one segment, one LP, and one message hierarchy. Creative can flex; the segment → LP pairing does not. All traffic converts to the same action: **get drop access** (email signup; optional SMS opt-in = early access, the text list gets each drop link 10 minutes before the public, plus an extra 10% off).
+
+### The drop model (applies to every LP)
+- Framing everywhere: **"drop 001 — sold out." / "drop 002 — [date window] · limited run of [X] boxes."**
+- Each LP carries a drop-status ledger + countdown module directly under the hero CTA (full spec in each brief). Countdown renders only once ops confirms a real date.
+- Box counts per drop are published and must equal actual production runs.
+- **The honesty rule (one line, memorize it): scarcity claims must be true — drop 001 genuinely sold out, drop sizes are real production runs, countdowns run to real dates only.**
+- The goal is impulse-buy energy through a single low-friction CTA and zero browsing detours — urgency from facts, never from theater.
 
 **Product facts every segment shares (memorize):** 1oz/30ml ready-to-pour liquid sachet · 2.5g ceremonial matcha · 2g grass-fed collagen peptides · 200mg organic lion's mane fruiting-body extract at ≥70% beta-glucans · ~60mg caffeine (+ naturally occurring L-theanine) · no powder, no whisk, no blender · flavors: vanilla & strawberry · ritual: pour / swirl / glow.
 
@@ -38,7 +45,7 @@ Five segments. Five landing pages. One product. Every paid social dollar maps to
 - **Psychographics:** Aesthetic-first. Their morning drink is content — the glass, the light, the swirl. Follow matcha-tok, "that girl" routines, romanticize-your-life culture. Brand loyalty flows from how a product looks and feels in their hands, then from taste, then from function. Quiet-luxury aspirational (Aesop on the shelf, Celine on the moodboard, Poppi in the fridge).
 
 ### Platforms
-TikTok (primary — Spark Ads on matcha-tok style creative), Instagram Reels + Stories, Pinterest (idea pins: "matcha at home"). Meta Advantage+ lookalikes seeded off waitlist.
+TikTok (primary — Spark Ads on matcha-tok style creative), Instagram Reels + Stories, Pinterest (idea pins: "matcha at home"). Meta Advantage+ lookalikes seeded off the drop-access list.
 
 ### Pains
 - Home matcha is a whole production: whisk, sift, clump, disappoint
@@ -54,14 +61,14 @@ A morning that looks like the videos she saves — golden light, a slow green sw
 |---|---|
 | "Concentrate can't taste like real ceremonial matcha" | 2.5g first-harvest, shade-grown ceremonial — more real matcha than most cafés use |
 | "Is this just another aesthetic brand with a pretty pouch" | full doses printed on the sachet; nothing hidden |
-| "It's sold out, why should I care" | first run sold out = social proof; waitlist gets first access to the next pour |
+| "It's sold out, why should I care" | drop 001 sold out = social proof; drop access gets you the drop 002 link at open, the text list 10 minutes early |
 
 ### Key message hierarchy
 1. **The swirl** — the most beautiful moment in matcha, now the easiest (hero visual, always)
 2. Ceremonial without the ceremony — first-harvest, shade-grown, zero whisk
 3. Actually tastes like the café order (smooth, never bitter)
 4. It's also functional (collagen + lion's mane) — mention, don't lead
-5. Sold out; join the waitlist for the next pour
+5. Drop 001 sold out; get drop access before 002 goes
 
 ### Hook angles (test all, kill fast)
 1. "the matcha girlies were right about everything except the whisk" (text-on-swirl ASMR)
@@ -71,6 +78,8 @@ A morning that looks like the videos she saves — golden light, a slow green sw
 5. "ceremonial matcha has a dress code. we removed it." (deadpan, whisk in trash — playful)
 6. "things in my kitchen that just make sense: the sachet edition" (trend format)
 7. carousel: 5 stills of the swirl in sequence, caption "pour / swirl / glow"
+8. **drop hook:** "matcha girlies discovered drop culture and honestly? it's giving sold out" (drop 001 ledger screenshot → swirl)
+9. **drop hook:** "getting the text 10 minutes before everyone else is my new personality" (phone screen → pour, SMS early-access flex)
 
 ### Compliant claim language
 - **DO:** "ceremonial-grade, first-harvest matcha" · "smooth, never bitter" · "provides antioxidant support" · "supports healthy energy levels" · taste/aesthetic/convenience claims are unregulated — lean on them hard here
@@ -111,7 +120,7 @@ Her morning drink quietly becomes a beauty step — grass-fed collagen + antioxi
 2. Beauty is a health outcome: collagen supports skin health; matcha provides antioxidant support
 3. Doses on the label (Type I & III, hydrolyzed, low molecular weight — science that doesn't sound like science)
 4. Tastes like a treat, works like a routine
-5. First run sold out — waitlist for the next pour
+5. Drop 001 sold out — get drop access before 002 goes
 
 ### Hook angles
 1. "my skincare routine has 9 steps. this one you drink." (vanity flat-lay → pour)
@@ -121,6 +130,8 @@ Her morning drink quietly becomes a beauty step — grass-fed collagen + antioxi
 5. "I put my collagen IN my matcha so I never skip either" (routine-stacking logic)
 6. AM routine ASMR: cleanser → serum → SPF → *pour / swirl / glow*
 7. "beauty from a sachet sounds fake until you read the label" (label macro shot)
+8. **drop hook:** "it restocks like a sneaker and sells out like one too. drop 002 incoming" (drop ledger over vanity flat-lay)
+9. **drop hook:** "my skincare doesn't sell out. my matcha does." (deadpan, drop 001 strikethrough on screen)
 
 ### Compliant claim language
 - **DO:** "supports skin health" · "supports gut health" · "2g grass-fed hydrolyzed collagen peptides" · "provides antioxidant support" · "Type I & III collagen" (factual) · "bioavailable peptides" (factual, substantiated)
@@ -161,7 +172,7 @@ Steady, calm alertness from wake-up through the afternoon — no crash, no jitte
 2. The caffeine curve story: coffee spikes, matcha sustains (visualize it)
 3. Supports sustained focus and healthy energy levels — structure/function framing, always
 4. Tastes like an upgrade, not a compromise
-5. Sold out first run — join the waitlist before the next pour
+5. Drop 001 sold out — drop access is the queue for 002
 
 ### Hook angles
 1. "day 14 without coffee and I owe it all to a sachet" (journal format, honest tone)
@@ -171,6 +182,8 @@ Steady, calm alertness from wake-up through the afternoon — no crash, no jitte
 5. "POV: it's 3pm and you feel… fine?" (quiet, unsettlingly calm office shot)
 6. "what 60mg of caffeine + L-theanine actually feels like" (green-screen explainer)
 7. "my heart isn't racing and I don't know what to do with all this peace" (self-aware humor)
+8. **drop hook:** "the only thing I want dropping is the next run — not my energy at 2pm" (drop 002 card → calm desk shot)
+9. **drop hook:** "I missed drop 001. my group chat did not let me forget it." (screenshot-style storytelling, get-the-text CTA)
 
 ### Compliant claim language
 - **DO:** "supports healthy energy levels" · "supports sustained focus" · "no crash" as a caffeine-curve/experience statement tied to caffeine + L-theanine · "~60mg caffeine" (factual) · personal-experience creator content with "individual results may vary"
@@ -211,7 +224,7 @@ A single, honest, spec-sheet-clean drink that anchors a locked-in morning work b
 2. Caffeine + L-theanine (~60mg + naturally occurring theanine): supports sustained focus
 3. No proprietary blends, no fairy-dusting — every dose disclosed
 4. 15-second prep = zero friction before deep work
-5. First run sold out — waitlist is the queue
+5. Drop 001 sold out ([X] boxes, published) — drop access is the queue for 002
 
 ### Hook angles
 1. "your lion's mane gummy is mostly rice. here's the number they don't print." (label exposé)
@@ -221,6 +234,8 @@ A single, honest, spec-sheet-clean drink that anchors a locked-in morning work b
 5. "my 4-hour deep work block starts with a 15-second pour" (desk POV timelapse)
 6. "fruiting body vs mycelium, explained in one pour" (green-screen + b-roll)
 7. "we third-party test so you don't have to trust us" (receipts energy, lab report b-roll)
+8. **drop hook:** "we publish our drop sizes like we publish our doses. [X] boxes. that's the run." (changelog/spec-sheet aesthetic)
+9. **drop hook:** "drop 001: sold out. same energy as a limited keyboard groupbuy, except it supports sustained focus" (niche-culture wink)
 
 ### Compliant claim language
 - **DO:** "supports sustained focus" · "supports immune function" (beta-glucans) · "200mg lion's mane fruiting-body extract" · "≥70% beta-glucan content, third-party tested" · "higher beta-glucan concentration than typical mushroom supplements" (approved comparative)
@@ -261,7 +276,7 @@ The good drink — actually good, café-good — made one-handed in 15 seconds, 
 2. Café-grade, not compromise-grade: 2.5g ceremonial matcha in every sachet
 3. Goes where you go — 1oz, TSA-friendly, desk drawer, diaper bag, carry-on
 4. Quietly functional: collagen + lion's mane along for the ride
-5. First run sold out — waitlist for the next pour
+5. Drop 001 sold out — text list gets drop 002 ten minutes early
 
 ### Hook angles
 1. "the drive-through line vs my kitchen counter" (side-by-side timer)
@@ -271,6 +286,8 @@ The good drink — actually good, café-good — made one-handed in 15 seconds, 
 5. "things I keep in my bag as a mom of two: the load-bearing sachet" (bag-dump format)
 6. "your commute order, minus the commute" (car cupholder pour, cold oat milk)
 7. real-time challenge: "latte before the toast pops" (unedited single take)
+8. **drop hook:** "I don't have time to camp a drop. the text list does it for me — 10 minutes early, done at school pickup" (phone-first, one-handed)
+9. **drop hook:** "drop 001 sold out faster than my kids' cereal. I'm not missing 002." (mom-humor, drop ledger overlay)
 
 ### Compliant claim language
 - **DO:** speed/convenience/taste claims (unregulated — this segment's ads can run nearly claim-free) · "supports healthy energy levels" if energy is invoked · "~60mg caffeine" (parents ask; be factual) · "no added sugar" (factual)
@@ -282,8 +299,9 @@ The good drink — actually good, café-good — made one-handed in 15 seconds, 
 ## Cross-segment operating rules
 
 1. **One segment per ad set.** Never blend messages; the algorithm and the copy both get muddy.
-2. **Honest scarcity only.** "first run sold out. next pour drops soon." is true — say it exactly like that. No fake countdown timers, no "only 12 left" theater. (Email keeps its no-urgency rule per `../Email/email-strategy.md`; paid LPs may state real sold-out status because it is a fact, not a tactic.)
+2. **Honest scarcity only — the drop-model version.** "drop 001 — sold out. drop 002 — limited run of [X] boxes." is true; say it exactly like that. Countdowns run only to ops-confirmed dates; published box counts equal actual production runs; no "only 12 left" theater, no resetting timers. (Email keeps its no-urgency rule per `../Email/email-strategy.md`; paid LPs may state drop facts because they are facts, not tactics. SMS = one text per drop, sent 10 minutes before public open.)
 3. **Disclaimer discipline.** Any ad or LP with a structure/function claim carries: *"These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease."*
 4. **Creator content** = FTC #ad disclosure + "individual results may vary" on experience narratives + no disease language, contractually.
-5. **Measurement:** each LP fires the same waitlist event with a `segment` UTM (`utm_campaign=lp-ritual` etc.) so Klaviyo can segment welcome flows by entry story.
-6. **Naming:** brand renders as "shroomé" in display copy, lowercase always; URLs and UTMs use plain "shroome."
+5. **Measurement:** each LP fires the same drop-access event (existing `/api/waitlist` endpoint) with a `segment` UTM (`utm_campaign=lp-ritual` etc.) so Klaviyo can segment welcome flows by entry story; SMS opt-ins tagged separately for the 10-minute-early send.
+6. **Naming:** brand renders as "shroomé" in display copy, lowercase always; URLs and UTMs use plain "shroome." Drops are numbered with three digits: drop 001, drop 002, …
+7. **Single CTA everywhere: `get drop access`.** No secondary CTAs, no nav, no browsing detours on any ghost LP — one page, one decision.

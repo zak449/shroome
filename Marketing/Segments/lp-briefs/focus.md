@@ -39,8 +39,21 @@
 
 **Hero visual direction:** Navy field, dramatic starburst rim-light on a single vanilla sachet, angled, back label toward camera with the beta-glucan line legible. Three key figures set beside it in Syne 700 with Lime underline strokes: `200mg` / `≥70%` / `2.5g`. Clean, confident, zero clutter. No lab coats, no brains, no neuron illustrations.
 
-**Hero CTA button (Lime, Navy text):** `join the waitlist`
-**Under-button microcopy (Cream 60%):** first run sold out. next pour drops soon.
+**Hero CTA button (Lime, Navy text):** `get drop access`
+**Under-button microcopy (Cream 60%):** drop 001 sold out. drop 002 is a limited run.
+
+---
+
+## 1b. Drop status module (directly under hero CTA — style it like a changelog/release ledger; this audience reads it as versioning)
+
+Drop ledger, Syne 700, Cream strip cards on the Navy hero:
+
+> **drop 001** — sold out ~~[X₁] boxes~~ *("sold out" stamp in Lavender #D4B8E0)*
+> **drop 002** — [date window from ops] · limited run of **[X₂] boxes** *(pulsing Lime dot)*
+
+- **Countdown spec:** live `dd : hh : mm` (Syne 700 tabular numerals, Lime underline stroke) once ops confirms the drop 002 date; until then: *"next drop: soon. the access list gets the date first."* No timers to unconfirmed dates — this crowd screenshots receipts.
+- **Quantity spec:** [X₁]/[X₂] = real production run counts from shared ops config. Publish exactly what ops manufactures.
+- **SMS early-access step:** after email submit, offer phone: *"the text list gets the drop link 10 minutes before everyone else — plus an extra 10% off."* One-tap skippable.
 
 ---
 
@@ -78,10 +91,10 @@ Strip footnote (13px): beta-glucans support immune function. no proprietary blen
 
 Header (H2): *proof, in order of what actually matters.*
 Body copy:
-> we're pre-launch, so we won't perform a review wall for you. here's what we have instead: third-party test results, a label with no hiding places, and a first run that sold out to the waitlist before the site ever said "buy."
+> we're pre-launch, so we won't perform a review wall for you. here's what we have instead: third-party test results, a label with no hiding places, and a drop 001 ([X₁] boxes) that sold out to the access list before the site ever said "buy."
 
 Proof elements (do not fabricate):
-- Live waitlist counter (same source as homepage): "**[live count]** people in the queue"
+- Live access-list counter (same source as homepage): "**[live count]** people in the queue for drop 002"
 - Verification badges: "third-party tested — beta-glucan content" · "heavy-metals screened (As, Pb, Cd, Hg)" · "microbial tested" · "GMP-certified facility"
 - Optional (only if produced for real): link/thumbnail to actual lab certificate of analysis — this audience will click it. NO testimonials, NO fake ratings, NO "as seen in" unless the placement is real.
 
@@ -99,16 +112,16 @@ a: fruiting body — the actual mushroom, hot-water extracted, which is the trad
 a: ~60mg per sachet from ceremonial matcha, with naturally occurring l-theanine (~30–40mg). enough to support sustained focus for a morning block; light enough to have a second in the afternoon if that's your style.
 
 **q: it's sold out. what's the move?**
-a: waitlist. the first production run is gone, the next one goes to the list first — with 20% off and free shipping locked in. no drops without notice, no games.
+a: we ship in numbered, limited drops — real production runs, published counts. drop 001 ([X₁] boxes) is gone; drop 002 is [X₂] boxes. get drop access and you're in at open; add your number and the link hits your texts 10 minutes before the public. 20% off and free shipping locked in.
 
 ---
 
 ## 6. Final CTA section (Navy background, Cream text)
 
-Header (H2, Instrument Serif italic): *the label already convinced you.*
-Body: first run sold out. join the waitlist for first access to the next pour — 20% off and free shipping included.
-CTA button (Lime, Navy text): `join the waitlist`
-Microcopy: we email like we label — only when there's something worth reading.
+Header (H2, Instrument Serif italic): *the label already convinced you. the drop won't wait.*
+Body: drop 001 sold out. drop 002 is a limited run of [X₂] boxes — get access now, add your number for the 10-minute head start (plus an extra 10% off).
+CTA button (Lime, Navy text): `get drop access`
+Microcopy: one text per drop. we email like we label — only when there's something worth reading.
 
 ---
 
@@ -122,7 +135,9 @@ Microcopy: we email like we label — only when there's something worth reading.
 
 ## Build notes for engineering
 
-- Waitlist signup → `/api/waitlist`, `utm_campaign=lp-focus`
-- CTA 3x: hero, post-FAQ, final. Ghost page — no nav/exit links except footer legal
+- Drop-access signup → `/api/waitlist` (email step, then optional phone step for SMS early access), `utm_campaign=lp-focus`
+- CTA 3x: hero, post-FAQ, final. Ghost page — no nav/exit links except footer legal; one decision, zero browsing detours
+- Drop numbers [X₁]/[X₂] and drop 002 date from shared ops config; honesty rule applies — this audience WILL verify
+- SMS opt-in carries TCPA consent language ("msg & data rates may apply, reply STOP to opt out"); cadence promise = one text per drop
 - Hero label macro must be REAL product photography of the actual sachet (image-guidelines hard rule: never AI-generate or recreate the sachet)
 - Pre-ship copy audit for banned terms: memory, brain boost, cognition, neuro-, NGF, Adderall/any drug name, clinically proven, prevents
