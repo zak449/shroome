@@ -1,9 +1,27 @@
 import { NextRequest, NextResponse } from "next/server";
 
 // ─── Referral stats lookup ──────────────────────────────────────────────────
-// GET /api/referral?code=XXXXXX
-// Queries Klaviyo for profiles whose `referred_by` property matches the code.
-// Returns { code, referralCount }.
+// GET /api/referral?code=XXXXXX → { code, referralCount: number|null, live: boolean }
+//
+// APPROACH (2026-07-14 audit, finding M2):
+// The previous implementation filtered Klaviyo /api/profiles on
+// properties.referred_by — an UNSUPPORTED filter (custom properties.* fields
+// are not filterable), so it 400'd and every user saw a count of 0 forever.
+// There is no supported Klaviyo query that aggregates "profiles whose
+// referred_by equals X" cheaply, so we do the simplest thing that never lies:
+//
+// 1. Conversion tracking (source of truth): the waitlist route now fires a
+//    "Referral Converted" Klaviyo event on every referred signup with the
+//    referrer's code in the event properties — segments/flows in the Klaviyo
+//    dashboard credit referrers from that metric.
+// 2. Live counts (optional): every signup row in the Google Sheet already
+//    carries referred_by. Set REFERRAL_STATS_URL to an Apps Script web-app GET
+//    endpoint that tallies the sheet and responds to
+//    `<REFERRAL_STATS_URL>?code=XXXXXX` with JSON `{ "count": <number> }`.
+//    When configured and healthy, we return that live count.
+// 3. Graceful degradation: when the endpoint is not configured or fails, we
+//    return referralCount: null / live: false — the /refer page then hides the
+//    live tally instead of showing a false "0 friends referred".
 
 export async function GET(req: NextRequest) {
   const code = req.nextUrl.searchParams.get("code");
@@ -13,37 +31,31 @@ export async function GET(req: NextRequest) {
   }
 
   const upperCode = code.toUpperCase();
-  const apiKey = process.env.KLAVIYO_API_KEY;
+  const statsUrl = process.env.REFERRAL_STATS_URL;
 
-  if (!apiKey) {
-    // Klaviyo not configured — return 0 so the UI still works
-    return NextResponse.json({ code: upperCode, referralCount: 0 });
+  if (!statsUrl) {
+    // No live-count backend configured — report "no live count" honestly.
+    return NextResponse.json({ code: upperCode, referralCount: null, live: false });
   }
 
-  const headers = {
-    Authorization: `Klaviyo-API-Key ${apiKey}`,
-    "Content-Type": "application/json",
-    revision: "2024-10-15",
-  };
-
   try {
-    // Use Klaviyo's profile filter to count profiles where referred_by == code
-    const filterParam = `equals(properties.referred_by,"${upperCode}")`;
-    const url = `https://a.klaviyo.com/api/profiles/?filter=${encodeURIComponent(filterParam)}&fields[profile]=email`;
-
-    const res = await fetch(url, { method: "GET", headers });
+    const res = await fetch(`${statsUrl}${statsUrl.includes("?") ? "&" : "?"}code=${encodeURIComponent(upperCode)}`, {
+      // Apps Script web apps respond via redirect; follow it.
+      redirect: "follow",
+      cache: "no-store",
+    });
 
     if (!res.ok) {
-      console.error("Klaviyo referral lookup error:", res.status, await res.text());
-      return NextResponse.json({ code: upperCode, referralCount: 0 });
+      console.error("Referral stats endpoint error:", res.status, await res.text());
+      return NextResponse.json({ code: upperCode, referralCount: null, live: false });
     }
 
     const data = await res.json();
-    const referralCount = data?.data?.length ?? 0;
+    const count = typeof data?.count === "number" && data.count >= 0 ? data.count : null;
 
-    return NextResponse.json({ code: upperCode, referralCount });
+    return NextResponse.json({ code: upperCode, referralCount: count, live: count !== null });
   } catch (err) {
     console.error("Referral lookup error:", err);
-    return NextResponse.json({ code: upperCode, referralCount: 0 });
+    return NextResponse.json({ code: upperCode, referralCount: null, live: false });
   }
 }

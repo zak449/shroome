@@ -148,7 +148,7 @@ function UnsubscribeFlow() {
               one quick thing...
             </h1>
             <p style={{ fontSize: 15, opacity: 0.6, margin: "0 0 24px", lineHeight: 1.6 }}>
-              help us improve — why are you leaving?
+              help us improve — why are you leaving? <span style={{ opacity: 0.7 }}>(optional)</span>
             </p>
 
             <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
@@ -174,24 +174,25 @@ function UnsubscribeFlow() {
               ))}
             </div>
 
+            {/* CAN-SPAM: opt-out may not be conditioned on giving a reason —
+                the confirm button is always enabled, reason or not. */}
             <button
               onClick={handleUnsubscribe}
-              disabled={!reason}
               style={{
                 marginTop: 24,
                 padding: "14px 32px",
-                background: reason ? "#1B1F3B" : "rgba(27,31,59,0.2)",
+                background: "#1B1F3B",
                 color: "#fff",
                 border: "none",
                 borderRadius: 50,
                 fontSize: 14,
                 fontWeight: 600,
-                cursor: reason ? "pointer" : "not-allowed",
+                cursor: "pointer",
                 width: "100%",
                 fontFamily: "inherit",
               }}
             >
-              Confirm unsubscribe
+              {reason ? "Confirm unsubscribe" : "Skip & unsubscribe"}
             </button>
           </div>
         )}
