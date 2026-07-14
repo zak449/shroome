@@ -13,7 +13,7 @@
 - **Economics are frozen.** Prices ($21/$36/$66/$126), the 9-cell subscription matrix (10–20%), SHROOME20/30 mechanics, $5/$10/$15 referral credits, keychain/gels placements — all decided in the companion docs. This blueprint wraps STORY around those mechanics; it changes zero numbers.
 - **Compliance baseline (every page):** structure/function claims only, from the approved list in `claims-guidelines.md` — *supports sustained focus · supports healthy energy levels · supports immune function · supports skin health · supports gut health · provides antioxidant support*. FDA disclaimer on every page carrying a claim. No disease language, no "clinically proven," no competitor names in claims. Evidence sections cite ingredient research **categories** ("caffeine + L-theanine have been studied together for attention and alertness"), never disease outcomes.
 - **Formulation flag (unresolved upstream):** site copy uses **2.5g ceremonial matcha** per current spec (`sku-catalog.md`); `ingredients-overview.md` says 2g. Product Lead reconciles before the Supplement Facts panel prints. All matcha-gram copy below is written once, in one component constant (`MATCHA_G`), so a change is one edit.
-- **Two Brand-DNA adaptations, applied everywhere:** (1) the DNA doc describes a ready-to-pour **bottle**; the shipping product is a **1oz/30ml liquid concentrate sachet** — every "crack the cap" beat becomes "tear the sachet," and the counter-object role the bottle was meant to play transfers to the **box + the Mé keychain**. (2) The March-2026 `image-guidelines.md` "young energy brand" vibe section is superseded by the Bolden direction (quiet luxury, editorial, considered — Aesop/Celine, never supplement-brand); its **hard product rules stand as law**: no powders ever, no whisks, real sachet designs only, dark-green liquid pouring into milk is the hero visual, branded cups only.
+- **Two Brand-DNA adaptations, applied everywhere:** (1) the DNA doc describes a ready-to-pour **bottle**; the shipping product is a **1oz/30ml liquid concentrate sachet** — every "crack the cap" beat becomes "tear the sachet," and the counter-object role the bottle was meant to play transfers to the **box + the Mé keychain**. (2) The March-2026 `image-guidelines.md` "young energy brand" vibe section is superseded by the 2026-07-14 repositioning direction (mixed-media energy: collage, scrapbook-pop, sticker layers, editorial × chaos — the Poppi/Starface/Graza cultural lane, never Aesop/Celine, never beige wellness, never supplement-brand); its **hard product rules stand as law**: no powders ever, no whisks, real sachet designs only, dark-green liquid pouring into milk is the hero visual, branded cups only.
 
 ---
 
@@ -21,9 +21,9 @@
 
 ## The story the whole site tells
 
-Somewhere between the café you love and the morning you actually have, there's a gap. The café has the ceremonial matcha, the good light, the drink that tastes like someone cared. Home has you — at 6:52am, with fifteen available seconds. Every wellness brand tries to close that gap by giving you *more to do*: a whisk, a frother, a scoop, a protocol. shroomé closes it by having already done it. Inside a one-ounce sachet is the finished thing — ceremonial matcha already made liquid, grass-fed collagen already dissolved, lion's mane already extracted and verified. You tear it, you pour it, the dark green swirls through the milk, and for a second your kitchen looks like the videos you save. That's the whole ritual: **pour, swirl, glow.** The luxury isn't another step. The luxury is that there are no steps left.
+Somewhere between the café you love and the morning you actually have, there's a gap. The café has the ceremonial matcha, the good light, the drink that tastes like someone cared. Home has you — at 6:52am, with fifteen available seconds. Every wellness brand tries to close that gap by giving you *more to do*: a whisk, a frother, a scoop, a protocol. shroomé closes it by having already done it. Inside a one-ounce sachet is the finished thing — ceremonial matcha already made liquid, grass-fed collagen already dissolved, lion's mane already extracted and verified. You tear it, you pour it, the dark green swirls through the milk, and for a second your kitchen looks like the videos you save. That's the whole move: **pour, swirl, glow.** The luxury isn't another step. The luxury is that there are no steps left.
 
-The site tells this arc in order, on every page: **the promise** (café energy, home address) → **the proof it's wanted** (drop 001, 500 boxes, gone in 9 days — real numbers, published) → **the proof it's real** (three ingredients, doses on the label, receipts one tap deep) → **the ritual** (the pour, demonstrated) → **the world** (Mé, the drops, the objects you can't buy) → **the door** (get drop access). Information density of Seed. Offer clarity of Magna. Voice of shroomé.
+The site tells this arc in order, on every page: **the promise** (café energy, home address) → **the proof it's wanted** (drop 001, 500 boxes, gone in 9 days — real numbers, published) → **the proof it's real** (three ingredients, doses on the label, receipts one tap deep) → **the pour** (the fifteen seconds, demonstrated) → **the world** (Mé, the drops, the objects you can't buy) → **the door** (get drop access). Information density of Seed. Offer clarity of Magna. Voice of shroomé.
 
 The commercial architecture underneath never changes: numbered drops with honest scarcity, a waitlist that pays you for data and referrals, subscriptions whose hero perk is *never missing a drop*, and gifts that are earned objects, never discounts. The story's job is to make those mechanics feel like a world instead of a funnel.
 
@@ -35,8 +35,8 @@ The commercial architecture underneath never changes: numbered drops with honest
 4. She never speaks, never sells, and never appears next to a price — Mé shows up at moments of *arrival*, not moments of persuasion: the welcome email, the bottom of a long page, the inside of the box, the 404 where you're lost and she isn't.
 5. Her one physical form is the keychain — cream sheep, deep brownish-green wordmark tag — which cannot be bought at any price, only earned or gifted, one colorway per drop, gone when the drop closes.
 6. She is drawn small and used sparingly, like a luxury house motif — an Hermès horse, not a cereal-box tiger; if Mé appears more than twice on a page, the page is wrong.
-7. Her temperament is the brand's tone ceiling: nothing shroomé publishes may be more anxious, more urgent, or louder than a sheep at rest.
-8. Canon is closed: no speech bubbles, no animated antics, no seasonal costumes, no "Mé says…" — she exists so the brand has something it refuses to make noisy.
+7. Her temperament is the brand's anxiety ceiling: shroomé gets to be loud, fast, and fun — but nothing it publishes may ever be more anxious, more urgent, or more desperate than a sheep at rest.
+8. Canon is closed: no speech bubbles, no animated antics, no seasonal costumes, no "Mé says…" — she exists so the brand has something it refuses to make desperate: shroomé can be loud and fun, but never anxious.
 
 **Usage rules for builders and writers:** Mé renders at small scale (≤120px marks in UI; the /me page hero is the single sanctioned large rendering). Never adjacent to CTAs, prices, or discount codes. Sanctioned placements: /me page, one homepage "Mé moment" section, footer corner mark, 404, welcome email sign-off, keychain/collectible contexts, packaging insert. Everything else needs Brand approval.
 
@@ -49,7 +49,7 @@ drinkshroome.com
 │
 ├─ /                    HOMEPAGE — the full story arc, rewritten (§3.1)
 ├─ /drop                THE DROP — PDP-grade sold-out storefront + ledger (§3.2)
-├─ /ritual              NEW — education hub: how to pour, the library, sourcing, glossary (§3.3)
+├─ /pour                NEW — education hub ("the pour guide"): how to pour, the science library, sourcing, glossary (§3.3)
 │    └─ (curates existing /blog posts + /recipes into learning paths — no URL moves)
 ├─ /me                  NEW — the lore page: who is Mé, the keychain, case 001, leaderboard (§3.4)
 ├─ /quiz                NEW — "find your pour" 4-question onboarding (§3.6)
@@ -57,20 +57,23 @@ drinkshroome.com
 ├─ /flavors/strawberry  REFRESH — re-narrated to story voice (§3.5)
 │
 ├─ /lp/{ritual,glow,calm,focus,pour}   KEEP — ghost LPs, single-CTA discipline (funnel-teardown
+│                                      NOTE: /lp/ritual is a deployed URL slug referenced by live
+│                                      ads — the SLUG stays; the segment is renamed "the matcha
+│                                      maximalists" and the copy inside is rewritten (§4 sweep).
 │                                      calls this our strongest stage). Only change: post-signup
 │                                      step routes into /quiz, and voice-guide sweep (§4).
 ├─ /founders            KEEP — grandfathered; add "first pour club" framing pass only
 ├─ /refer               KEEP — copy already corrected to $5/$10/$15 cap; add /me cross-link
-├─ /blog, /recipes      KEEP — URLs untouched (SEO); surfaced through /ritual learning paths
+├─ /blog, /recipes      KEEP — URLs untouched (SEO); surfaced through /pour learning paths
 ├─ /faq, /welcome, /contact, /privacy, /terms, /unsubscribe, /404   KEEP — voice sweep only
 │
-└─ NAV (global, post-reinvention):  the drop · the ritual · flavors · who is mé · faq
+└─ NAV (global, post-reinvention):  the drop · the pour · flavors · who is mé · faq
    CTA (persistent, right-aligned): get drop access
    Footer (all pages): FDA disclaimer · privacy · terms · hello@drinkshroome.com ·
    [ASSET: Mé footer mark — 48×48px cream sheep, single color, bottom-right corner, 40% opacity]
 ```
 
-Navigation rule: ghost LPs keep **zero nav** (one page, one decision — unchanged). Every other page gets the 5-item nav above. "who is mé" in the nav is deliberate — a nav item that sells nothing is itself the quiet-luxury signal.
+Navigation rule: ghost LPs keep **zero nav** (one page, one decision — unchanged). Every other page gets the 5-item nav above. "who is mé" in the nav is deliberate — a nav item that sells nothing is itself the flex: confidence, not clutter.
 
 ---
 
@@ -82,7 +85,7 @@ Legend used in every section block: **[layout]** = layout intent for engineers �
 
 ## 3.1 HOMEPAGE — `/` (full rewrite of `app/page.tsx`)
 
-**Purpose:** tell the entire narrative spine in one scroll and convert every reader into drop access (email → SMS upgrade → quiz). It must satisfy three readers at once: the ritual girlie who converts on the swirl, the label-reader who converts on the evidence layer, and the deal-brain who converts on the offer math.
+**Purpose:** tell the entire narrative spine in one scroll and convert every reader into drop access (email → SMS upgrade → quiz). It must satisfy three readers at once: the matcha maximalist who converts on the swirl, the label-reader who converts on the evidence layer, and the deal-brain who converts on the offer math.
 **Replaces:** the current 1,552-line page (marquee → hero → flavor picker → ingredients → comparison → how-it-works → testimonials → CTA). Sections below are the new canonical order. Keep: analytics scaffolding (section-view, scroll-depth, time-on-site trackers, referral detection), `ExitPopup`, `StickyCTA`, `MobileNav` — re-skin, don't rebuild.
 **Page-level conversion furniture:** sticky nav CTA `get drop access` · mobile sticky bottom bar appears after 60% scroll (STEAL: Magna sticky-ATC pattern, adapted to waitlist mode) · exit-intent popup keeps existing offer logic, copy updated in §H below.
 
@@ -94,8 +97,8 @@ Legend used in every section block: **[layout]** = layout intent for engineers �
 (interpolate from `DROP_001.boxes`, `DROP_001.soldOutInDays`; when `DROP_002.openDate` is set, append `· drop 002 opens [date]`)
 **STEAL:** Magna's always-on offer clarity — the top pixel of the site already states the offer and its honesty.
 
-### H-2 · HERO — the ritual promise
-**[layout]** full-viewport. Left 55%: copy stack. Right 45%: `[ASSET: hero — 15-second pour loop, 1080×1350 video (webm+mp4, <2MB, autoplay muted loop): hand tears cream sachet, dark-green liquid pours into glass of milk, swirl blooms, no cuts, morning window light, editorial and unhurried — the Aesop version of a TikTok]`. Fallback: existing `lifestyle-hero.png` until asset lands. Mobile: video first, copy overlaid on lower third scrim.
+### H-2 · HERO — the fifteen-second promise
+**[layout]** full-viewport. Left 55%: copy stack. Right 45%: `[ASSET: hero — 15-second pour loop, 1080×1350 video (webm+mp4, <2MB, autoplay muted loop): hand tears cream sachet, dark-green liquid pours into glass of milk, swirl blooms, no cuts, morning window light, kinetic and confident — a TikTok that got an editorial budget]`. Fallback: existing `lifestyle-hero.png` until asset lands. Mobile: video first, copy overlaid on lower third scrim.
 **Eyebrow (mono, uppercase — the one sanctioned caps register):** `CEREMONIAL MATCHA · COLLAGEN · LION'S MANE — IN LIQUID`
 **H1 (display, lowercase):**
 > café energy. home address.
@@ -125,9 +128,9 @@ Legend used in every section block: **[layout]** = layout intent for engineers �
 **Steps:**
 > **01 — tear.** any sachet, any counter, one hand.
 > **02 — pour.** into hot water, iced oat, whatever you're loyal to.
-> **03 — swirl.** watch the green move through the milk. that's it. that's the ceremony.
-**Section link:** `see every way to pour it →` (→ /ritual)
-**STEAL:** Seed — the "mechanism before benefit" instinct, translated: explain *what the format is* before claiming anything. **CONVERSION:** the /ritual link starts the education loop that returns as trust.
+> **03 — swirl.** watch the green move through the milk. that's it. that's the whole show.
+**Section link:** `see every way to pour it →` (→ /pour)
+**STEAL:** Seed — the "mechanism before benefit" instinct, translated: explain *what the format is* before claiming anything. **CONVERSION:** the /pour link starts the education loop that returns as trust.
 
 ### H-5 · THE STACK — Seed-grade ingredient education
 **[layout]** the densest section on the site, and proudly so. Ink background ("the label section" — dark, spec-sheet formality). Three ingredient modules stacked vertically; each module: left — `[ASSET: macro ingredient photo, 900×600 — matcha: wet stone-ground paste texture, not powder; collagen: liquid pour ribbon; lion's mane: the mushroom whole, studio-lit like an object, not a forest floor]`; right — spec header + three-line summary + **expandable accordion** ("read the receipts") with dose / why this form / source integrity / research category / deep-dive links. Accordions closed by default; analytics event on open.
@@ -145,7 +148,7 @@ Summary lines:
 Accordion "read the receipts":
 > **the dose.** 2.5g per sachet — a genuine ceremonial serving. plenty of "matcha-powered" products run 1–2g of culinary grade and hope you don't ask.
 > **why this form.** shade-growing (21+ days under cover) raises L-theanine and chlorophyll; first-harvest leaves are the sweetest and least bitter; stone-grinding keeps particles fine enough to stay silky in liquid. that's why it's smooth, never lawn.
-> **why liquid.** matcha is a suspension, not a solution — the reason powder clumps at 6am. ours is already in suspension. the whisk was never the ritual; it was the obstacle.
+> **why liquid.** matcha is a suspension, not a solution — the reason powder clumps at 6am. ours is already in suspension. the whisk was never the point; it was the obstacle.
 > **the research category.** caffeine and L-theanine have been studied together for attention and alertness — the "calm focus" pairing matcha is known for. we make no promises beyond the label: supports sustained focus, supports healthy energy levels.
 > links: `what makes matcha ceremonial grade →` (blog) · `the caffeine + L-theanine curve →` (blog) · `how much caffeine is in matcha →` (blog)
 
@@ -176,7 +179,7 @@ Accordion:
 **Section footer (mono, small):** FDA disclaimer, full text, legible — this section makes structure/function claims.
 **STEAL:** Seed — label as spec sheet, mechanism-first education, evidence one tap deep; Magna — every hero claim has a canonical place to be explained (the accordion + blog links). **CONVERSION:** this section converts the skeptic segments (glow getters reading doses, deep workers reading beta-glucan %) that the swirl alone never will.
 
-### H-6 · RITUAL DEMONSTRATION — pour / swirl / glow
+### H-6 · THE POUR, DEMONSTRATED — pour / swirl / glow
 **[layout]** full-bleed, canvas. Three vertical panels (stacked on mobile), each a looping video tile with a display-italic word overlaid. `[ASSET: 3 loop videos, 720×900 each, <1.5MB — "pour": sachet into hot water, steam; "swirl": green blooming through iced oat milk, the hero shot; "glow": person at a sunlit table, first sip, unposed]`
 **H2 (above panels):**
 > pour. swirl. glow.
@@ -185,7 +188,7 @@ Accordion:
 > **swirl** — the fifteen-second show. no tools were harmed because no tools were used.
 > **glow** — collagen for skin, matcha for energy, lion's mane for focus. supports the things your morning is actually for.*
 **Footnote:** `*supports skin health, healthy energy levels, and sustained focus. see the label — and the FDA disclaimer below.`
-**Section link:** `nine recipes, one sachet →` (→ /recipes via /ritual)
+**Section link:** `nine recipes, one sachet →` (→ /recipes via /pour)
 **STEAL:** nobody — liquid format theater is ours alone. Powder brands cannot shoot this section.
 
 ### H-7 · THE MÉ MOMENT — lore introduction
@@ -259,7 +262,7 @@ Accordion:
 ### H-12 · FOOTER
 **[layout]** ink background. Wordmark, nav links, legal links, contact, FDA disclaimer full-text, `[ASSET: Mé footer mark — 48×48, single-color, 40% opacity, bottom-right]`.
 **Sign-off line (above legal):**
-> café energy. home address. — the ritual is ready. just pour.
+> café energy. home address. — the matcha is already made. just pour.
 **Legal:** `© 2026 shroomé · ZSQUARED INC` · privacy · terms · `hello@drinkshroome.com` · FDA disclaimer.
 
 ---
@@ -278,12 +281,12 @@ Accordion:
 **CTA:** `get drop access →` · **Status microcopy:** `● drop 002 — allocation TBA. the access list gets the date first.` (config)
 
 ### D-2 · WHAT YOU GET — box contents visualization
-**[layout]** canvas. Large exploded flat-lay `[ASSET: box-contents flat-lay, 1600×1000 — open 12-count box, sachets fanned (6 vanilla, 6 strawberry for variety shot), ritual insert card, everything on cream linen, editorial top-down]` with numbered hotspot labels; list mirrors below on mobile.
+**[layout]** canvas. Large exploded flat-lay `[ASSET: box-contents flat-lay, 1600×1000 — open 12-count box, sachets fanned (6 vanilla, 6 strawberry for variety shot), pour-card insert, everything on a color-blocked graphic surface with sticker-note callouts, editorial top-down]` with numbered hotspot labels; list mirrors below on mobile.
 **H2:** `what's in the box.`
 **Hotspot labels:**
 > **01 — twelve sachets.** 1oz each. the matcha already made. (`MATCHA_G`g ceremonial matcha · 2g collagen · 200mg lion's mane per sachet — printed right there on the foil.)
 > **02 — the box.** it lives on the counter, not in a cabinet. that's a design decision, not an accident.
-> **03 — the ritual card.** hot, iced, oat — three pours, fifteen seconds each, illustrated.
+> **03 — the pour card.** hot, iced, oat — three pours, fifteen seconds each, illustrated.
 > **04 — sometimes, more.** some boxes arrive with something extra in them. the text list knows things.
 (Label 04 is the sanctioned P1 keychain *tease* — never explicit, per promo-value-add-plan doctrine: the surprise stays a surprise.)
 **STEAL:** Magna — the starter-kit "what you get" anatomy; perceived-value padding without touching price.
@@ -322,7 +325,7 @@ Accordion:
 **STEAL:** Seed — the label as spec sheet, evidence at the point of sale.
 
 ### D-6 · THE OBJECTS — earned, never sold
-**[layout]** two-card row, tint-soft background. Card 1: keychain `[ASSET: Mé keychain photo, 900×900 — soft-PVC cream sheep charm + wordmark tag on poly bag, product-shot on linen]`. Card 2: eye gels `[ASSET: gels box render, 900×900]`.
+**[layout]** two-card row, tint-soft background. Card 1: keychain `[ASSET: Mé keychain photo, 900×900 — soft-PVC cream sheep charm + wordmark tag on poly bag, product-shot on a color-pop backdrop]`. Card 2: eye gels `[ASSET: gels box render, 900×900]`.
 **H2:** `some things here can't be bought.`
 **Card 1 — the mé keychain:**
 > one colorway per drop, gone when the drop closes. not for sale — no exceptions, no price, ever. three converted referrals earns you one; the top 100 referrers each drop get theirs from a numbered case. proof you're inside, not merch.
@@ -356,15 +359,15 @@ Reuse homepage H-10 module (two-step + takeover) with `source="drop"`.
 
 ---
 
-## 3.3 THE RITUAL — `/ritual` (NEW — the education hub)
+## 3.3 THE POUR GUIDE — `/pour` (NEW — the education hub; formerly specced as /ritual, renamed 2026-07-14)
 
 **Purpose:** the Seed-style authority layer. One canonical home for "how" and "why" — where ad claims, PDP accordions, and email curriculum all resolve. Curates the existing 27 blog posts and 9 recipes into learning paths **without moving any URL** (SEO preserved; this page is a curation layer, not a migration).
-**Voice register:** this is the sentence-case page. Education voice: warm, precise, Seed-calm. Display headlines stay lowercase; body text drops the playfulness a notch.
+**Voice register:** this is the sentence-case page. Education voice: warm, precise, Seed-grade rigor with our energy — the smart friend who talks fast, never a meditation app. Display headlines stay lowercase; body text keeps its pulse.
 **Conversion:** soft. One CTA at top nav + one closing capture module. The page converts by making every other page more believable.
 
 ### R-1 · HERO
-**[layout]** canvas, editorial, text-led. `[ASSET: quiet hero image, 1600×700 — morning table, latte in branded glass, open book energy, no people or one out-of-focus figure]`
-**Eyebrow:** `THE RITUAL — HOW, AND WHY`
+**[layout]** canvas, editorial, text-led. `[ASSET: hero image, 1600×700 — morning table, latte in branded glass, collage treatment (taped photo corners, torn-paper edge, one sticker annotation), no people or one out-of-focus figure]`
+**Eyebrow:** `THE POUR GUIDE — HOW, AND WHY`
 **H1:** `everything we know, in one place.`
 **Subhead:**
 > How to pour it, what's actually in it, where it comes from, and what the research categories really say — written the way we'd explain it to a smart friend, with receipts one tap deep.
@@ -400,8 +403,8 @@ Reuse homepage H-10 module (two-step + takeover) with `source="drop"`.
 **Body:**
 > our matcha is first-harvest (ichiban-cha), grown under cover for at least 21 days — the shading that concentrates L-theanine and turns the leaves that impossible green — then stone-ground the slow way. most functional brands use culinary grade because ceremonial is expensive. it is. that's the point of it.
 > the collagen is grass-fed, pasture-raised bovine, hydrolyzed for absorption. the lion's mane is organic fruiting body, hot-water extracted, verified at ≥70% beta-glucans by a third party. and the finished concentrate is made in a GMP-certified facility, tested for heavy metals and microbials before it's allowed anywhere near a sachet.
-> we honor where all of this comes from by refusing to gatekeep it. the ritual is precious. the preparation is not.
-**STEAL:** Seed — supply-chain-as-story; our "ceremonial without the ceremony" pillar does the differentiating.
+> we honor where all of this comes from by refusing to gatekeep it. ceremonial is a grade, not a performance: the leaf gets the reverence, you get the fifteen seconds.
+**STEAL:** Seed — supply-chain-as-story; our "ceremonial-grade without the ceremony" pillar does the differentiating — "ceremonial" describes the leaf (a sourcing/quality spec), never the vibe.
 
 ### R-5 · GLOSSARY
 **[layout]** two-column definition list, anchor-linkable terms (ads and emails can deep-link `#beta-glucans`).
@@ -424,7 +427,7 @@ Terms (12, final copy):
 ### R-6 · CLOSING CAPTURE
 **H2:** `smarter already. now get in line.`
 **Body:** `the list gets every drop first — and our emails teach before they sell. that's a promise, and you can grade us on it.`
-Standard capture module (`source="ritual"`).
+Standard capture module (`source="pour"`).
 
 ---
 
@@ -450,7 +453,7 @@ Standard capture module (`source="ritual"`).
 > you'll meet her in exactly the places you'd hope: at the bottom of a long page, in the corner of a welcome email, on the 404 when you're lost and she isn't. and, if you're one of the people who brings friends into this — on your keys.
 
 ### M-3 · THE KEYCHAIN — the object
-**[layout]** product-shot treatment for a thing with no buy button. `[ASSET: keychain hero photo, 1400×900 — charm + wordmark tag, macro, linen]` + spec column (mono).
+**[layout]** product-shot treatment for a thing with no buy button. `[ASSET: keychain hero photo, 1400×900 — charm + wordmark tag, macro, color-blocked backdrop]` + spec column (mono).
 **H2:** `the keychain. not for sale.`
 **Spec column:**
 > `mé charm — 45×40mm, soft touch` / `wordmark tag — 40×12mm` / `one colorway per drop` / `count published, like everything here` / `price — there isn't one. ever.`
@@ -490,7 +493,7 @@ Standard capture module (`source="ritual"`).
 **VANILLA — identity: "the home address."**
 **Hero H1:** `vanilla. the one that feels like staying in.`
 **Hero body:**
-> warm, floral, quietly sweet — madagascar vanilla over that deep matcha umami, with a creamy finish that behaves exactly like the oat-milk latte you'd have ordered. this is the home-address pour: slow morning, good light, nowhere to be.
+> warm, floral, quietly sweet — madagascar vanilla over that deep matcha umami, with a creamy finish that behaves exactly like the oat-milk latte you'd have ordered. this is the home-address pour: good light, big mug, main character before 8am.
 **Who it's for line:** `for the oat latte loyalists, the chai-curious, and anyone whose favorite chair is load-bearing.`
 **Recipes carousel header:** `three ways to pour vanilla →`
 
@@ -508,7 +511,7 @@ Standard capture module (`source="ritual"`).
 ## 3.6 THE QUIZ — `/quiz` · "find your pour" (NEW — spec)
 
 **Purpose:** Seed's quiz-gated onboarding, sized to us: turn every signup from an email into a segmented profile, feed Klaviyo, reward with waitlist position, and mint a shareable identity artifact (the pour profile card). Funnel-teardown Build-Today #1 — everything downstream (FLOW C, properties, +50 spots) is already specced; this is the missing artifact.
-**Placement:** (1) post-signup takeover button on every capture module (home, /drop, /ritual, flavors, all 5 LPs); (2) standalone `/quiz` for email 3 & SMS 3 links; (3) `/welcome` step 3. Known-profile visits skip straight to questions (email pre-filled); cold visits capture email on the result screen — the quiz doubles as a capture device (STEAL: Seed — quiz as universal LP).
+**Placement:** (1) post-signup takeover button on every capture module (home, /drop, /pour, flavors, all 5 LPs); (2) standalone `/quiz` for email 3 & SMS 3 links; (3) `/welcome` step 3. Known-profile visits skip straight to questions (email pre-filled); cold visits capture email on the result screen — the quiz doubles as a capture device (STEAL: Seed — quiz as universal LP).
 **Mechanics (frozen upstream):** completion → webhook sets Klaviyo properties + `quiz_completed_at`, jumps waitlist −50 spots, enters the per-drop 100-keychain draw (P2), triggers FLOW C profile email. One completion per profile; retakes update properties but never re-reward.
 
 **Intro screen:**
@@ -527,8 +530,8 @@ Standard capture module (`source="ritual"`).
 > ○ hot — steam, mug, both hands (`hot`)
 > ○ iced — glass, clink, the swirl in full view (`iced`)
 
-**Q3 — the hour** (`ritual_time`)
-> **when does the ritual happen?**
+**Q3 — the hour** (`pour_time`)
+> **when does the pour happen?**
 > ○ morning — it starts the day (`morning`)
 > ○ afternoon — it rescues the day (`afternoon`)
 
@@ -561,20 +564,26 @@ Standard capture module (`source="ritual"`).
 
 **Two registers, one brand.**
 - **Display voice (headlines, CTAs, marquee, product cards, Mé contexts):** all lowercase, always — including sentence starts and "i". Periods end even fragments. `café energy. home address.`
-- **Education voice (/ritual body, accordion internals, blog, email curriculum):** sentence case, full punctuation, Seed-calm precision. Warm, never clinical. Display headlines above education body stay lowercase.
+- **Education voice (/pour body, accordion internals, blog, email curriculum):** sentence case, full punctuation, Seed-grade precision with our pulse. Warm, never clinical, never beige. Display headlines above education body stay lowercase.
 - **The one caps register:** mono eyebrow/spec labels (`THE STACK — EVERY DOSE ON THE LABEL`, `SOLD OUT` stamps, `NUMBERED · LIMITED · HONEST`). Caps mean *ledger*, never *excitement*. Never a caps headline, never caps for urgency.
 - **Brand renders "shroomé"** lowercase everywhere in display copy; "shroome" only in URLs/UTMs. Drops are three digits: drop 001, drop 002.
 
-**Sentence rhythms.** Short declaratives land the point; one long sentence per block earns the short one that follows ("the luxury isn't another step. the luxury is that there are no steps left."). Numbers stated plainly, mid-sentence, no exclamation ("500 boxes. gone in 9 days."). Self-aware asides in parentheses, max one per section. Questions only in FAQ and quiz. Nothing shroomé publishes is louder than a sheep at rest — if a line needs an exclamation point to work, it doesn't work. Zero exclamation points site-wide (grep-enforceable).
+**Sentence rhythms.** Short declaratives land the point; one long sentence per block earns the short one that follows ("the luxury isn't another step. the luxury is that there are no steps left."). Numbers stated plainly, mid-sentence, no exclamation ("500 boxes. gone in 9 days."). Self-aware asides in parentheses, max one per section. Questions only in FAQ and quiz. The energy is confidence, not panic — if a line needs an exclamation point to work, it doesn't work. Zero exclamation points site-wide (grep-enforceable).
 
-**10 banned phrases** (supplement-brand clichés — auto-fail in review):
+**Banned list A — supplement-brand clichés** (auto-fail in review):
 1. "unlock your potential" 2. "hack your morning" (or biohack-anything) 3. "elevate your routine" 4. "wellness journey" 5. "clean energy" as a claim 6. "superfood-packed" 7. "clinically proven" (also a compliance fail) 8. "treat yourself" 9. "game-changer" 10. "self-care essential"
 Also banned by register: "girlboss/bestie" address, hustle vocabulary (grind, crush, optimize-your-AM), and any "limited time only!" urgency theater.
 
-**10 signature phrases** (use these; they're the house accent):
-1. "café energy. home address." 2. "pour / swirl / glow" 3. "the matcha is already made." 4. "ceremonial without the ceremony" 5. "doses on the label" / "read the receipts" 6. "effortless is the luxury" 7. "the list hears first" 8. "honest scarcity — the boring kind" 9. "earned, gifted, gone" (the objects) 10. "science that doesn't sound like science"
+**Banned list B — earthy-wellness vocabulary** (2026-07-14 repositioning; founder directive — auto-fail in review). The whole category is beige, linen, and whispering. We are not. Never use:
+1. **"ritual"** — in any form: morning ritual, daily ritual, ritual-anything. It's the category's most exhausted word and it isn't ours.
+2. **"ceremony" / "ceremonial" as a vibe word** — the ONE sanctioned use is **ceremonial-GRADE matcha**, a sourcing/quality spec about the leaf (first-harvest, shade-grown, stone-ground). It describes what we buy, never how you should feel.
+3. **"sacred"** 4. **"mindful" / "mindfulness-speak"** ("be present," "intention," "practice") 5. **"grounded" / "grounding"** 6. **"earthy"** (as a virtue; fine only as a flavor defect we don't have) 7. **"slow morning" / slow-living framing** 8. whisper-wellness set dressing in copy: linen, candles, dawn stillness, "quiet moments."
+Replacement vocabulary that is ours: **"the 15 seconds" · "the pour" · "your daily pour" · "the swap" · "café energy" · "routine" (sparingly, functional only)** — written naturally, never thesaurus-swapped one-for-one.
 
-**The copy test (from Brand DNA, still law):** if a line could live on a Clevr/Graza/Poppi post, we're close. If it sounds like a GNC label or a 2018 wellness blog, rewrite. New second test: *would you read it aloud next to a sleeping sheep without feeling ridiculous?*
+**Signature phrases** (use these; they're the house accent):
+1. "café energy. home address." 2. "pour / swirl / glow" 3. "the matcha is already made." 4. "ceremonial-grade without the ceremony" (sourcing-integrity only: "ceremonial" = the leaf's spec, never the vibe) 5. "doses on the label" / "read the receipts" 6. "effortless is the luxury" 7. "the list hears first" 8. "honest scarcity — the boring kind" 9. "earned, gifted, gone" (the objects) 10. "science that doesn't sound like science" 11. "the 15 seconds" 12. "your daily pour" 13. "the swap"
+
+**The copy test (updated 2026-07-14):** if a line could live on a Poppi/Starface/Graza post, we're close. If it sounds like a GNC label, a 2018 wellness blog, or a beige matcha brand's linen-draped morning — rewrite. Second test: *would it survive being screenshotted onto someone's story?* Third test, still law: *would you read it aloud next to a sleeping sheep without feeling ridiculous?* (Fun passes. Frantic doesn't.)
 
 ---
 
@@ -584,8 +593,8 @@ Also banned by register: "girlboss/bestie" address, hustle vocabulary (grind, cr
 
 | Magna move | Where we now match it |
 |---|---|
-| One hero claim, owned completely | H-2: "the first ready-to-pour ceremonial matcha latte concentrate," backed by /ritual as the canonical education page |
-| Education page behind the ad claim | /ritual (R-3 library + R-4 sourcing); every claim on ads/PDP has a deep-linkable home (glossary anchors) |
+| One hero claim, owned completely | H-2: "the first ready-to-pour ceremonial matcha latte concentrate," backed by /pour as the canonical education page |
+| Education page behind the ad claim | /pour (R-3 library + R-4 sourcing); every claim on ads/PDP has a deep-linkable home (glossary anchors) |
 | Starter kit as conversion offer | first pour kit leads the /drop lineup (D-3), previewed on home (H-9) |
 | Physical gift as offer instrument | D-6 objects module + sub first-box keychain line (P5) — gift-not-discount doctrine intact |
 | Subscription-first price architecture | sub-from price on every product card; 9-cell matrix on /drop; "founders price earned back" narrative |
@@ -597,7 +606,7 @@ Also banned by register: "girlboss/bestie" address, hustle vocabulary (grind, cr
 
 | Seed move | Where we now match it |
 |---|---|
-| Education-first authority | /ritual hub; H-5 stack modules with mechanism-before-benefit ordering |
+| Education-first authority | /pour hub; H-5 stack modules with mechanism-before-benefit ordering |
 | Label as spec sheet | H-5/D-5 receipts accordions: dose, form, source, research category, per ingredient |
 | Quiz-gated onboarding | /quiz "find your pour" — capture, segmentation, commitment escalation, pre-segmented Klaviyo profiles |
 | Ingredient evidence depth w/ compliance discipline | research-category citations only, FDA disclaimer placement map, banned-phrase list |
@@ -626,7 +635,7 @@ Also banned by register: "girlboss/bestie" address, hustle vocabulary (grind, cr
 | Item | Effort | Depends on |
 |---|---|---|
 | /drop upgrade to §3.2 (shared `<StackReceipts />`, comparison table, sticky CTA, D-2 flat-lay, D-6 objects) | M–L | D-2/D-6 photos (placeholder blocks OK); COA slot needs ops docs — render honestly empty |
-| /ritual build (§3.3) — curation layer over existing posts/recipes | M | R-1/R-2 photography (can ship text-led) |
+| /pour build (§3.3) — curation layer over existing posts/recipes | M | R-1/R-2 photography (can ship text-led) |
 | Email curriculum reuse of H-5 copy (Emails 7–10, funnel item 7) | S | no |
 
 **Phase 2 — week 3–4**
@@ -640,7 +649,7 @@ Also banned by register: "girlboss/bestie" address, hustle vocabulary (grind, cr
 Sub widget copy (D-7 teaser line), P7 GWP drop-day banner, live boxes-remaining bar, first-pour-kit checkout — mechanics per `sku-catalog.md`/`promo-value-add-plan.md`; all copy above is final and waiting.
 
 **Dependency summary:** buildable-now = everything structural + all copy. Asset-gated = hero/section video loops (6), photography (8 slots), Mé illustration set (hero, footer mark, 404, divider glyph), keychain/gels product shots, share-card template. **No phase blocks on assets except /me.**
-**Engineering notes:** build H-5 accordions once as `<StackReceipts />` (home + /drop). Keep `MATCHA_G` a single constant pending the 2g/2.5g reconciliation. All drop numbers stay interpolated from `drop-config.ts` — hardcoding a count is a review-blocking offense. FDA disclaimer components: full-text on home (H-5 footer + footer), /drop (D-5 + footer), /ritual (footer), flavors (existing), LPs (existing); /me carries no claims and needs none — keep it that way.
+**Engineering notes:** build H-5 accordions once as `<StackReceipts />` (home + /drop). Keep `MATCHA_G` a single constant pending the 2g/2.5g reconciliation. All drop numbers stay interpolated from `drop-config.ts` — hardcoding a count is a review-blocking offense. FDA disclaimer components: full-text on home (H-5 footer + footer), /drop (D-5 + footer), /pour (footer), flavors (existing), LPs (existing); /me carries no claims and needs none — keep it that way.
 
 ---
 *end of blueprint — copy final · assets pending · economics untouched*

@@ -18,7 +18,7 @@ Five segments. Five landing pages. One product. Every paid social dollar maps to
 - **The honesty rule (one line, memorize it): scarcity claims must be true — drop 001 genuinely sold out, drop sizes are real production runs, countdowns run to real dates only.**
 - The goal is impulse-buy energy through a single low-friction CTA and zero browsing detours — urgency from facts, never from theater.
 
-**Product facts every segment shares (memorize):** 1oz/30ml ready-to-pour liquid sachet · 2.5g ceremonial matcha · 2g grass-fed collagen peptides · 200mg organic lion's mane fruiting-body extract at ≥70% beta-glucans · ~60mg caffeine (+ naturally occurring L-theanine) · no powder, no whisk, no blender · flavors: vanilla & strawberry · ritual: pour / swirl / glow.
+**Product facts every segment shares (memorize):** 1oz/30ml ready-to-pour liquid sachet · 2.5g ceremonial matcha · 2g grass-fed collagen peptides · 200mg organic lion's mane fruiting-body extract at ≥70% beta-glucans · ~60mg caffeine (+ naturally occurring L-theanine) · no powder, no whisk, no blender · flavors: vanilla & strawberry · the move: pour / swirl / glow.
 
 **Compliance baseline for ALL segments:** structure/function claims only, FDA disclaimer wherever claims appear, no disease/drug claims, no "clinically proven," no competitor names. Full rules: `Product/Compliance & Claims/claims-guidelines.md`.
 
@@ -28,7 +28,7 @@ Five segments. Five landing pages. One product. Every paid social dollar maps to
 
 | # | Segment | LP slug | One-line positioning |
 |---|---|---|---|
-| 1 | the ritual girlies | `/lp/ritual` | the prettiest 15 seconds of your morning — ceremonial matcha without the ceremony |
+| 1 | the matcha maximalists (renamed from "the ritual girlies," 2026-07-14 — LP slug unchanged) | `/lp/ritual` | the prettiest 15 seconds of your morning — ceremonial-grade matcha, zero ceremony |
 | 2 | the glow getters | `/lp/glow` | your matcha latte is now a beauty step — collagen + antioxidants in one pour |
 | 3 | the coffee breakup | `/lp/calm` | break up with the crash — calm, steady energy from matcha's caffeine + L-theanine |
 | 4 | the deep workers | `/lp/focus` | pour-over for your brain — lion's mane + matcha for locked-in focus, doses on the label |
@@ -36,13 +36,15 @@ Five segments. Five landing pages. One product. Every paid social dollar maps to
 
 ---
 
-## Segment 1 — the ritual girlies (aesthetic wellness)
+## Segment 1 — the matcha maximalists (aesthetic wellness)
 
-**LP slug:** `/lp/ritual`
+> RENAMED 2026-07-14 (was "the ritual girlies") — the word "ritual" is banned brand-wide; the earthy competition owns it and we don't want it. Same audience, new frame: she's not performing a quiet morning, she's the main character of a loud one.
+
+**LP slug:** `/lp/ritual` — KEEP. The slug is deployed and referenced by live ads/UTMs; it does not change. Only the segment name and on-page copy change.
 
 ### Who they are
 - **Demographics:** Women 18–28, urban/suburban, students + early-career creatives, $30–75k HHI, heavy TikTok/IG/Pinterest use, already buy $7 café matchas 3–5x/week
-- **Psychographics:** Aesthetic-first. Their morning drink is content — the glass, the light, the swirl. Follow matcha-tok, "that girl" routines, romanticize-your-life culture. Brand loyalty flows from how a product looks and feels in their hands, then from taste, then from function. Quiet-luxury aspirational (Aesop on the shelf, Celine on the moodboard, Poppi in the fridge).
+- **Psychographics:** Aesthetic-first. Their morning drink is content — the glass, the light, the swirl. Follow matcha-tok, "that girl" routines, romanticize-your-life culture. Brand loyalty flows from how a product looks and feels in their hands, then from taste, then from function. Internet-native taste: Poppi in the fridge, Starface on the shelf, Graza on the counter — brands that are fun on main, not beige on a linen napkin.
 
 ### Platforms
 TikTok (primary — Spark Ads on matcha-tok style creative), Instagram Reels + Stories, Pinterest (idea pins: "matcha at home"). Meta Advantage+ lookalikes seeded off the drop-access list.
@@ -65,7 +67,7 @@ A morning that looks like the videos she saves — golden light, a slow green sw
 
 ### Key message hierarchy
 1. **The swirl** — the most beautiful moment in matcha, now the easiest (hero visual, always)
-2. Ceremonial without the ceremony — first-harvest, shade-grown, zero whisk
+2. Ceremonial-grade without the ceremony — a sourcing spec, never a vibe: first-harvest, shade-grown, zero whisk
 3. Actually tastes like the café order (smooth, never bitter)
 4. It's also functional (collagen + lion's mane) — mention, don't lead
 5. Drop 001 sold out; get drop access before 002 goes
@@ -84,7 +86,7 @@ A morning that looks like the videos she saves — golden light, a slow green sw
 ### Compliant claim language
 - **DO:** "ceremonial-grade, first-harvest matcha" · "smooth, never bitter" · "provides antioxidant support" · "supports healthy energy levels" · taste/aesthetic/convenience claims are unregulated — lean on them hard here
 - **DON'T:** "detoxifies" · "the healthiest way to start your day" (implied superiority/health outcome) · "better than [café/brand]" · any implication matcha treats anxiety or any condition
-- Include FDA disclaimer on LP + in ad caption only if a structure/function claim appears in that specific ad. Pure taste/ritual ads need no disclaimer — keep most ads in this segment claim-free by design.
+- Include FDA disclaimer on LP + in ad caption only if a structure/function claim appears in that specific ad. Pure taste/aesthetic ads need no disclaimer — keep most ads in this segment claim-free by design.
 
 ---
 
@@ -250,7 +252,7 @@ A single, honest, spec-sheet-clean drink that anchors a locked-in morning work b
 
 ### Who they are
 - **Demographics:** Women and men 26–45, skew female; commuters, new parents (especially moms), frequent travelers, nurses/teachers/shift workers; $45–120k HHI; Instagram + Facebook heavier than TikTok (our most Meta-native segment)
-- **Psychographics:** Zero patience for routines that demand anything. The drive-through line is their current "ritual" and they resent it. They want the nice thing without the nice-thing overhead. Convenience isn't laziness to them — it's logistics. Effortless is the luxury.
+- **Psychographics:** Zero patience for routines that demand anything. The drive-through line is their current daily pour and they resent every minute of it. They want the nice thing without the nice-thing overhead. Convenience isn't laziness to them — it's logistics. Effortless is the luxury.
 
 ### Platforms
 Instagram Reels + Facebook (primary — parents live here), TikTok (momtok, commuter POVs), Pinterest (lunchbox/travel prep boards). Strong fit for Advantage+ broad with UGC-style creative.
