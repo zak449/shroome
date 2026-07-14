@@ -29,13 +29,13 @@ const config: LPConfig = {
     headlineLines: ["ceremonial matcha,", "minus the ceremony."],
     subheadline:
       "the world's first ready-to-pour ceremonial matcha latte. tear the sachet, pour into your milk, watch it swirl. fifteen seconds to the drink you've been saving on your fyp.",
-    background: "linear-gradient(160deg, #E8D5F0 0%, #FFE0EC 100%)",
+    background: "linear-gradient(160deg, var(--brand-tint-soft) 0%, var(--brand-tint-blush) 100%)",
     cloudOpacity: 0.35,
     sachets: "both",
   },
-  stampColor: "#FFB7D1",
+  stampColor: "var(--brand-flavor-strawberry)",
   benefits: {
-    sectionBg: "#FFE0EC",
+    sectionBg: "var(--brand-tint-blush)",
     cardStyle: "soft",
     items: [
       {
@@ -54,7 +54,7 @@ const config: LPConfig = {
   },
   strip: {
     header: "what's in the pour",
-    bg: "#D4B8E0",
+    bg: "var(--brand-flavor-functional)",
     stats: [
       { stat: "2.5g", label: "ceremonial matcha — first harvest, shade-grown" },
       { stat: "2g", label: "grass-fed collagen peptides" },

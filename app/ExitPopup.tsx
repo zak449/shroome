@@ -163,58 +163,58 @@ export default function ExitPopup() {
       <style>{`
         .ep-overlay {
           position: fixed; inset: 0; z-index: 9999;
-          background: rgba(27, 31, 59, 0.6);
+          background: rgba(var(--brand-ink-rgb), 0.6);
           backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
           display: flex; align-items: center; justify-content: center;
           padding: 20px;
           animation: epFadeIn 0.3s ease;
         }
         .ep-card {
-          background: #FDF4EE;
+          background: var(--brand-canvas);
           max-width: 440px; width: 100%;
           border-radius: 20px;
           padding: 48px 36px 40px;
           position: relative;
           text-align: center;
           animation: epSlideUp 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-          box-shadow: 0 24px 80px rgba(27, 31, 59, 0.25);
+          box-shadow: 0 24px 80px rgba(var(--brand-ink-rgb), 0.25);
         }
         .ep-close {
           position: absolute; top: 16px; right: 16px;
           background: none; border: none; cursor: pointer;
-          font-size: 20px; color: rgba(27, 31, 59, 0.3);
+          font-size: 20px; color: rgba(var(--brand-ink-rgb), 0.3);
           width: 36px; height: 36px; display: flex;
           align-items: center; justify-content: center;
           border-radius: 50%; transition: all 0.2s;
         }
-        .ep-close:hover { background: rgba(27, 31, 59, 0.06); color: #1B1F3B; }
+        .ep-close:hover { background: rgba(var(--brand-ink-rgb), 0.06); color: var(--brand-ink); }
         .ep-emoji { font-size: 40px; margin-bottom: 16px; }
         .ep-title {
-          font-family: 'Instrument Serif', Georgia, serif;
+          font-family: var(--brand-font-display);
           font-size: 32px; font-weight: 400; font-style: italic;
-          color: #1B1F3B; margin: 0 0 8px; line-height: 1.1;
+          color: var(--brand-ink); margin: 0 0 8px; line-height: 1.1;
         }
-        .ep-title em { color: #FF7043; font-style: italic; }
+        .ep-title em { color: var(--brand-accent-warm); font-style: italic; }
         .ep-sub {
-          font-family: 'Syne', system-ui, sans-serif;
-          font-size: 14px; color: rgba(27, 31, 59, 0.6);
+          font-family: var(--brand-font-body);
+          font-size: 14px; color: rgba(var(--brand-ink-rgb), 0.6);
           line-height: 1.6; margin: 0 0 24px; font-weight: 400;
         }
         .ep-form { display: flex; gap: 8px; }
         .ep-input {
           flex: 1; padding: 14px 16px;
-          border: 1px solid rgba(27, 31, 59, 0.12);
+          border: 1px solid rgba(var(--brand-ink-rgb), 0.12);
           border-radius: 10px; font-size: 14px;
-          font-family: 'Syne', system-ui, sans-serif;
-          background: #fff; color: #1B1F3B;
+          font-family: var(--brand-font-body);
+          background: #fff; color: var(--brand-ink);
           outline: none; transition: border-color 0.2s;
         }
-        .ep-input:focus { border-color: #C8FF3A; }
-        .ep-input::placeholder { color: rgba(27, 31, 59, 0.35); }
+        .ep-input:focus { border-color: var(--brand-accent); }
+        .ep-input::placeholder { color: rgba(var(--brand-ink-rgb), 0.35); }
         .ep-btn {
-          padding: 14px 24px; background: #1B1F3B; color: #FDF4EE;
+          padding: 14px 24px; background: var(--brand-ink); color: var(--brand-canvas);
           border: none; border-radius: 10px; font-size: 13px;
-          font-family: 'Syne', system-ui, sans-serif;
+          font-family: var(--brand-font-body);
           font-weight: 700; letter-spacing: 0.04em;
           text-transform: uppercase; cursor: pointer;
           white-space: nowrap; transition: all 0.2s;
@@ -226,24 +226,24 @@ export default function ExitPopup() {
           margin-top: 20px;
         }
         .ep-perk {
-          font-family: 'DM Mono', monospace;
+          font-family: var(--brand-font-mono);
           font-size: 10px; letter-spacing: 0.08em;
-          text-transform: uppercase; color: rgba(27, 31, 59, 0.45);
+          text-transform: uppercase; color: rgba(var(--brand-ink-rgb), 0.45);
         }
         .ep-success-title {
-          font-family: 'Instrument Serif', Georgia, serif;
+          font-family: var(--brand-font-display);
           font-size: 28px; font-weight: 400; font-style: italic;
-          color: #2D4A2D; margin: 0 0 8px;
+          color: var(--brand-accent-deep); margin: 0 0 8px;
         }
         .ep-success-sub {
-          font-family: 'Syne', system-ui, sans-serif;
-          font-size: 14px; color: rgba(27, 31, 59, 0.6);
+          font-family: var(--brand-font-body);
+          font-size: 14px; color: rgba(var(--brand-ink-rgb), 0.6);
           line-height: 1.6; margin: 0 0 20px;
         }
         .ep-success-btn {
-          padding: 12px 28px; background: #C8FF3A; color: #1B1F3B;
+          padding: 12px 28px; background: var(--brand-accent); color: var(--brand-ink);
           border: none; border-radius: 10px; font-size: 12px;
-          font-family: 'Syne', system-ui, sans-serif;
+          font-family: var(--brand-font-body);
           font-weight: 700; letter-spacing: 0.06em;
           text-transform: uppercase; cursor: pointer;
           transition: all 0.2s;
@@ -251,12 +251,12 @@ export default function ExitPopup() {
         .ep-success-btn:hover { background: #d4ff5a; }
         .ep-no-thanks {
           display: block; margin-top: 16px;
-          font-family: 'Syne', system-ui, sans-serif;
-          font-size: 12px; color: rgba(27, 31, 59, 0.35);
+          font-family: var(--brand-font-body);
+          font-size: 12px; color: rgba(var(--brand-ink-rgb), 0.35);
           background: none; border: none; cursor: pointer;
           text-decoration: underline; transition: color 0.2s;
         }
-        .ep-no-thanks:hover { color: rgba(27, 31, 59, 0.6); }
+        .ep-no-thanks:hover { color: rgba(var(--brand-ink-rgb), 0.6); }
         @keyframes epFadeIn { from { opacity: 0; } to { opacity: 1; } }
         @keyframes epSlideUp { from { opacity: 0; transform: translateY(20px) scale(0.97); } to { opacity: 1; transform: translateY(0) scale(1); } }
         @media (max-width: 500px) {
@@ -281,7 +281,7 @@ export default function ExitPopup() {
                 wait — don&apos;t leave without your <em>20% off.</em>
               </h2>
               <p className="ep-sub">
-                Get <strong style={{ color: "#1B1F3B", fontWeight: 700 }}>20% off + free shipping</strong> on the
+                Get <strong style={{ color: "var(--brand-ink)", fontWeight: 700 }}>20% off + free shipping</strong> on the
                 world&apos;s first ready-to-pour ceremonial matcha latte. Only for early access members.
               </p>
               <form className="ep-form" onSubmit={handleEmailSubmit}>
@@ -299,7 +299,7 @@ export default function ExitPopup() {
                 </button>
               </form>
               {status === "error" && (
-                <p style={{ color: "#FF7043", fontSize: 12, marginTop: 8, fontFamily: "'Syne', sans-serif" }}>
+                <p style={{ color: "var(--brand-accent-warm)", fontSize: 12, marginTop: 8, fontFamily: "var(--brand-font-body)" }}>
                   Something went wrong. Try again.
                 </p>
               )}
@@ -319,7 +319,7 @@ export default function ExitPopup() {
               <p className="ep-sub">Confirm you&apos;re human and your 20% off is locked in.</p>
               <div ref={captchaRef} style={{ display: "flex", justifyContent: "center", minHeight: 65 }} />
               {status === "loading" && (
-                <p style={{ fontSize: 12, marginTop: 8, fontFamily: "'Syne', sans-serif", color: "rgba(27,31,59,0.5)" }}>
+                <p style={{ fontSize: 12, marginTop: 8, fontFamily: "var(--brand-font-body)", color: "rgba(var(--brand-ink-rgb),0.5)" }}>
                   Submitting...
                 </p>
               )}
@@ -329,7 +329,7 @@ export default function ExitPopup() {
               <div className="ep-emoji">📱</div>
               <h2 className="ep-success-title">20% off locked in!</h2>
               <p className="ep-sub">
-                Add your number and your code upgrades to <strong style={{ color: "#1B1F3B", fontWeight: 700 }}>30% off + free shipping</strong> at launch. It replaces your 20% code &mdash; best code wins.
+                Add your number and your code upgrades to <strong style={{ color: "var(--brand-ink)", fontWeight: 700 }}>30% off + free shipping</strong> at launch. It replaces your 20% code &mdash; best code wins.
               </p>
               <form className="ep-form" onSubmit={handlePhoneSubmit}>
                 <input

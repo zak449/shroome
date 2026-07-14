@@ -1,3 +1,5 @@
+import { BRAND } from "@/app/lib/brand";
+
 export interface Recipe {
   id: string;
   name: string;
@@ -28,9 +30,9 @@ export const recipes: Recipe[] = [
     prepTime: "PT15S",
     prepLabel: "15 sec",
     totalTime: "PT1M",
-    color: "#C8FF3A",
+    color: BRAND.colors.accent,
     imageBg: "#D9585B",
-    textColor: "#1B1F3B",
+    textColor: BRAND.colors.ink,
     ingredients: ["1 shroomé original sachet", "6-8 oz oat milk", "Ice"],
     steps: [
       "Fill a tall glass with ice and pour in oat milk about three-quarters full.",
@@ -50,9 +52,9 @@ export const recipes: Recipe[] = [
     prepTime: "PT1M",
     prepLabel: "1 min",
     totalTime: "PT2M",
-    color: "#FFB7D1",
+    color: BRAND.colors.flavorStrawberry,
     imageBg: "#E8C820",
-    textColor: "#1B1F3B",
+    textColor: BRAND.colors.ink,
     ingredients: [
       "1 shroomé vanilla sachet",
       "1 frozen banana",
@@ -77,9 +79,9 @@ export const recipes: Recipe[] = [
     prepTime: "PT30S",
     prepLabel: "30 sec",
     totalTime: "PT1M",
-    color: "#D4B8E0",
+    color: BRAND.colors.flavorFunctional,
     imageBg: "#E8956A",
-    textColor: "#1B1F3B",
+    textColor: BRAND.colors.ink,
     ingredients: [
       "1 shroomé strawberry sachet",
       "6-8 oz milk of choice",
@@ -103,9 +105,9 @@ export const recipes: Recipe[] = [
     prepTime: "PT15S",
     prepLabel: "15 sec",
     totalTime: "PT30S",
-    color: "#1B1F3B",
+    color: BRAND.colors.ink,
     imageBg: "#9B8ACA",
-    textColor: "#FDF4EE",
+    textColor: BRAND.colors.canvas,
     ingredients: [
       "1 shroomé original sachet",
       "1 scoop vanilla ice cream (or coconut ice cream)",
@@ -127,9 +129,9 @@ export const recipes: Recipe[] = [
     prepTime: "PT1M",
     prepLabel: "1 min",
     totalTime: "PT2M",
-    color: "#C8FF3A",
+    color: BRAND.colors.accent,
     imageBg: "#4DD9A5",
-    textColor: "#1B1F3B",
+    textColor: BRAND.colors.ink,
     ingredients: [
       "1 shroomé original sachet",
       "1 scoop vanilla or unflavored protein powder",
@@ -155,9 +157,9 @@ export const recipes: Recipe[] = [
     prepTime: "PT1M",
     prepLabel: "1 min",
     totalTime: "PT2M",
-    color: "#FFB7D1",
+    color: BRAND.colors.flavorStrawberry,
     imageBg: "#1565C0",
-    textColor: "#1B1F3B",
+    textColor: BRAND.colors.ink,
     ingredients: [
       "1 shroomé original sachet",
       "6-8 oz oat milk",
@@ -181,9 +183,9 @@ export const recipes: Recipe[] = [
     prepTime: "PT15S",
     prepLabel: "15 sec",
     totalTime: "PT30S",
-    color: "#D4B8E0",
+    color: BRAND.colors.flavorFunctional,
     imageBg: "#E87830",
-    textColor: "#1B1F3B",
+    textColor: BRAND.colors.ink,
     ingredients: [
       "1 shroomé strawberry sachet",
       "8 oz cold water",
@@ -210,9 +212,9 @@ export const recipes: Recipe[] = [
     prepTime: "PT15S",
     prepLabel: "15 sec",
     totalTime: "PT30S",
-    color: "#1B1F3B",
+    color: BRAND.colors.ink,
     imageBg: "#3BBFA0",
-    textColor: "#FDF4EE",
+    textColor: BRAND.colors.canvas,
     ingredients: [
       "1 shroomé original sachet",
       "8 oz cold coconut water",
@@ -238,9 +240,9 @@ export const recipes: Recipe[] = [
     prepTime: "PT15S",
     prepLabel: "15 sec",
     totalTime: "PT30S",
-    color: "#C8FF3A",
+    color: BRAND.colors.accent,
     imageBg: "#D65A50",
-    textColor: "#1B1F3B",
+    textColor: BRAND.colors.ink,
     ingredients: [
       "1 shroomé original sachet",
       "6 oz sparkling water",

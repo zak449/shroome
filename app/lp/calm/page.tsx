@@ -29,14 +29,14 @@ const config: LPConfig = {
     headlineLines: ["break up with the crash.", "keep the energy."],
     subheadline:
       "shroomé is a ready-to-pour ceremonial matcha latte with ~60mg of caffeine and matcha's naturally occurring l-theanine — energy that arrives smooth, stays steady, and leaves quietly. no 2pm cliff. no jitters. no apology tour.",
-    background: "linear-gradient(155deg, #E8D5F0 0%, #E8D5F0 55%, #FFE0EC 100%)",
+    background: "linear-gradient(155deg, var(--brand-tint-soft) 0%, var(--brand-tint-soft) 55%, var(--brand-tint-blush) 100%)",
     cloudOpacity: 0.4,
     sachets: "vanilla",
   },
-  stampColor: "#D4B8E0",
+  stampColor: "var(--brand-flavor-functional)",
   curve: true,
   benefits: {
-    sectionBg: "#E8D5F0",
+    sectionBg: "var(--brand-tint-soft)",
     cardStyle: "soft",
     disclaimer: true,
     items: [
@@ -56,7 +56,7 @@ const config: LPConfig = {
   },
   strip: {
     header: "what's doing the work",
-    bg: "#D4B8E0",
+    bg: "var(--brand-flavor-functional)",
     stats: [
       { stat: "~60mg", label: "caffeine — about half an espresso shot" },
       { stat: "2.5g", label: "ceremonial matcha — naturally occurring l-theanine, supports sustained focus" },

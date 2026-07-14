@@ -29,15 +29,15 @@ const config: LPConfig = {
     headlineLines: ["we'd rather show you", "the label than the ad."],
     subheadline:
       "200mg of organic lion's mane — real fruiting body, hot-water extracted, standardized to ≥70% beta-glucans and third-party tested. plus 2.5g of ceremonial matcha whose caffeine + naturally occurring l-theanine support sustained focus. every dose disclosed. nothing proprietary. pour it in fifteen seconds and get to work.",
-    background: "#1B1F3B",
+    background: "var(--brand-ink)",
     dark: true,
     dataCallouts: ["200mg", "≥70%", "2.5g"],
     sachets: "vanilla",
   },
-  stampColor: "#D4B8E0",
+  stampColor: "var(--brand-flavor-functional)",
   ledgerLight: true,
   benefits: {
-    sectionBg: "#FDF4EE",
+    sectionBg: "var(--brand-canvas)",
     cardStyle: "spec",
     disclaimer: true,
     items: [
@@ -57,7 +57,7 @@ const config: LPConfig = {
   },
   strip: {
     header: "the spec sheet",
-    bg: "#D4B8E0",
+    bg: "var(--brand-flavor-functional)",
     stats: [
       { stat: "200mg", label: "organic lion's mane — fruiting body, hot-water extracted" },
       { stat: "≥70%", label: "beta-glucan content — third-party verified (typical market range: 15–30%)" },

@@ -29,13 +29,13 @@ const config: LPConfig = {
     headlineLines: ["the beauty step", "you drink."],
     subheadline:
       "2g of grass-fed collagen peptides folded into a ceremonial matcha latte you'll actually crave. skin-health support that doesn't taste like a supplement — because it isn't one more scoop, shake, or chore.",
-    background: "#FFE0EC",
+    background: "var(--brand-tint-blush)",
     cloudOpacity: 0.28,
     sachets: "strawberry",
   },
-  stampColor: "#D4B8E0",
+  stampColor: "var(--brand-flavor-functional)",
   benefits: {
-    sectionBg: "#FFE0EC",
+    sectionBg: "var(--brand-tint-blush)",
     cardStyle: "soft",
     disclaimer: true,
     items: [
@@ -55,7 +55,7 @@ const config: LPConfig = {
   },
   strip: {
     header: "read it like an ingredient list — because it is one",
-    bg: "#E8D5F0",
+    bg: "var(--brand-tint-soft)",
     stats: [
       { stat: "2g", label: "grass-fed collagen peptides — hydrolyzed, low molecular weight, types I & III" },
       { stat: "2.5g", label: "ceremonial matcha — antioxidant support, naturally occurring l-theanine" },

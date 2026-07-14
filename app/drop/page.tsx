@@ -107,7 +107,7 @@ const products = [
     perServing: "$3.00 / serving",
     compareAt: null,
     subFrom: "$30.60 with subscription",
-    accent: "#D4B8E0",
+    accent: "var(--brand-flavor-functional)",
     image: "/sachet-vanilla.png",
   },
   {
@@ -118,7 +118,7 @@ const products = [
     perServing: "$3.00 / serving",
     compareAt: null,
     subFrom: "$30.60 with subscription",
-    accent: "#FFB7D1",
+    accent: "var(--brand-flavor-strawberry)",
     image: "/sachet-strawberry.png",
   },
   {
@@ -129,7 +129,7 @@ const products = [
     perServing: "$2.75 / serving",
     compareAt: "$72",
     subFrom: "$54.12 with subscription",
-    accent: "#E8D5F0",
+    accent: "var(--brand-tint-soft)",
     image: "/sachets-both.png",
   },
   {
@@ -140,7 +140,7 @@ const products = [
     perServing: "$2.63 / serving",
     compareAt: "$144",
     subFrom: "$100.80 with subscription",
-    accent: "#C8FF3A",
+    accent: "var(--brand-accent)",
     image: "/sachets-both.png",
   },
   {
@@ -151,7 +151,7 @@ const products = [
     perServing: "$3.50 / serving",
     compareAt: null,
     subFrom: null,
-    accent: "#FFE0EC",
+    accent: "var(--brand-tint-blush)",
     image: "/sachets-both.png",
   },
 ];
@@ -202,55 +202,55 @@ export default function DropPage() {
       />
 
       <style>{`
-        .dr-nav{position:sticky;top:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 5%;height:60px;background:rgba(255,183,209,0.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(27,31,59,0.06)}
-        .dr-nav-logo{display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B1F3B}
-        .dr-nav-logo span{font-family:'Instrument Serif',Georgia,serif;font-size:22px;font-style:italic;color:#1B1F3B}
+        .dr-nav{position:sticky;top:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 5%;height:60px;background:rgba(var(--brand-flavor-strawberry-rgb),0.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(var(--brand-ink-rgb),0.06)}
+        .dr-nav-logo{display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--brand-ink)}
+        .dr-nav-logo span{font-family:var(--brand-font-display);font-size:22px;font-style:italic;color:var(--brand-ink)}
         .dr-nav-links{display:flex;gap:8px}
         @media(max-width:768px){.dr-nav-links{display:none !important}.dr-nav-cta{display:none !important}}
-        .dr-nav-links a{font-family:'Syne',system-ui,sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#1B1F3B;opacity:.7;text-decoration:none;padding:6px 10px;transition:opacity .2s}
+        .dr-nav-links a{font-family:var(--brand-font-body);font-size:11.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--brand-ink);opacity:.7;text-decoration:none;padding:6px 10px;transition:opacity .2s}
         .dr-nav-links a:hover{opacity:1}
-        .dr-nav-cta{font-family:'DM Mono',monospace;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;background:#1B1F3B;color:#C8FF3A;padding:10px 22px;border-radius:6px;text-decoration:none;transition:transform .15s}
+        .dr-nav-cta{font-family:var(--brand-font-mono);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;background:var(--brand-ink);color:var(--brand-accent);padding:10px 22px;border-radius:6px;text-decoration:none;transition:transform .15s}
         .dr-nav-cta:hover{transform:scale(1.03)}
 
-        .dr-h1{font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-weight:400;font-size:clamp(2.4rem,6vw,4rem);line-height:1.05;margin:0 0 18px;color:#FDF4EE}
-        .dr-h2{font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-weight:400;font-size:clamp(1.7rem,4vw,2.5rem);line-height:1.15;margin:0;color:#1B1F3B}
-        .dr-eyebrow{font-family:'DM Mono',monospace;font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;margin:0 0 18px}
+        .dr-h1{font-family:var(--brand-font-display);font-style:italic;font-weight:400;font-size:clamp(2.4rem,6vw,4rem);line-height:1.05;margin:0 0 18px;color:var(--brand-canvas)}
+        .dr-h2{font-family:var(--brand-font-display);font-style:italic;font-weight:400;font-size:clamp(1.7rem,4vw,2.5rem);line-height:1.15;margin:0;color:var(--brand-ink)}
+        .dr-eyebrow{font-family:var(--brand-font-mono);font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;margin:0 0 18px}
 
         .dr-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;max-width:1120px;margin:0 auto}
-        .dr-card{background:#fff;border:1px solid rgba(27,31,59,0.08);border-radius:12px;overflow:hidden;position:relative;display:flex;flex-direction:column}
+        .dr-card{background:#fff;border:1px solid rgba(var(--brand-ink-rgb),0.08);border-radius:12px;overflow:hidden;position:relative;display:flex;flex-direction:column}
         .dr-card-img{position:relative;padding:28px 20px 12px;display:flex;justify-content:center;align-items:center;min-height:190px}
         .dr-card-img img{filter:grayscale(0.15) opacity(0.9)}
-        .dr-soldout{position:absolute;top:16px;left:50%;transform:translateX(-50%) rotate(-6deg);background:#1B1F3B;color:#FDF4EE;font-family:'Syne',system-ui,sans-serif;font-weight:800;font-size:0.82rem;letter-spacing:.16em;text-transform:uppercase;padding:8px 18px;z-index:2}
+        .dr-soldout{position:absolute;top:16px;left:50%;transform:translateX(-50%) rotate(-6deg);background:var(--brand-ink);color:var(--brand-canvas);font-family:var(--brand-font-body);font-weight:800;font-size:0.82rem;letter-spacing:.16em;text-transform:uppercase;padding:8px 18px;z-index:2}
         .dr-card-body{padding:8px 22px 24px;display:flex;flex-direction:column;flex:1}
-        .dr-card-sku{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(27,31,59,0.35);margin:0 0 6px}
-        .dr-card h3{font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-weight:400;font-size:1.35rem;color:#1B1F3B;margin:0 0 4px}
-        .dr-card-desc{font-family:'Syne',system-ui,sans-serif;font-size:0.78rem;color:rgba(27,31,59,0.55);line-height:1.5;margin:0 0 14px}
+        .dr-card-sku{font-family:var(--brand-font-mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(var(--brand-ink-rgb),0.35);margin:0 0 6px}
+        .dr-card h3{font-family:var(--brand-font-display);font-style:italic;font-weight:400;font-size:1.35rem;color:var(--brand-ink);margin:0 0 4px}
+        .dr-card-desc{font-family:var(--brand-font-body);font-size:0.78rem;color:rgba(var(--brand-ink-rgb),0.55);line-height:1.5;margin:0 0 14px}
         .dr-price-row{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;margin:0 0 2px}
-        .dr-price{font-family:'DM Mono',monospace;font-size:1.4rem;font-weight:500;color:#1B1F3B}
-        .dr-compare{font-family:'DM Mono',monospace;font-size:0.9rem;color:rgba(27,31,59,0.35);text-decoration:line-through}
-        .dr-per{font-family:'DM Mono',monospace;font-size:0.68rem;color:rgba(27,31,59,0.5);margin:0 0 4px}
-        .dr-sub-from{font-family:'Syne',system-ui,sans-serif;font-size:0.7rem;font-weight:600;color:#1B1F3B;background:rgba(200,255,58,0.35);display:inline-block;padding:4px 8px;margin:6px 0 14px}
-        .dr-card-btn{margin-top:auto;display:block;text-align:center;background:#C8FF3A;color:#1B1F3B;font-family:'Syne',system-ui,sans-serif;font-weight:800;font-size:0.7rem;letter-spacing:.1em;text-transform:uppercase;padding:14px 12px;text-decoration:none}
+        .dr-price{font-family:var(--brand-font-mono);font-size:1.4rem;font-weight:500;color:var(--brand-ink)}
+        .dr-compare{font-family:var(--brand-font-mono);font-size:0.9rem;color:rgba(var(--brand-ink-rgb),0.35);text-decoration:line-through}
+        .dr-per{font-family:var(--brand-font-mono);font-size:0.68rem;color:rgba(var(--brand-ink-rgb),0.5);margin:0 0 4px}
+        .dr-sub-from{font-family:var(--brand-font-body);font-size:0.7rem;font-weight:600;color:var(--brand-ink);background:rgba(var(--brand-accent-rgb),0.35);display:inline-block;padding:4px 8px;margin:6px 0 14px}
+        .dr-card-btn{margin-top:auto;display:block;text-align:center;background:var(--brand-accent);color:var(--brand-ink);font-family:var(--brand-font-body);font-weight:800;font-size:0.7rem;letter-spacing:.1em;text-transform:uppercase;padding:14px 12px;text-decoration:none}
 
         .dr-table-wrap{max-width:900px;margin:0 auto;overflow-x:auto}
         .dr-table{width:100%;border-collapse:collapse;min-width:560px}
-        .dr-table th,.dr-table td{border:1px solid rgba(27,31,59,0.15);padding:14px 16px;text-align:left}
-        .dr-table th{font-family:'Syne',system-ui,sans-serif;font-weight:700;font-size:0.7rem;letter-spacing:.1em;text-transform:uppercase;color:#1B1F3B;background:rgba(212,184,224,0.35)}
-        .dr-table td{font-family:'DM Mono',monospace;font-size:0.8rem;color:#1B1F3B;background:#FDF4EE}
+        .dr-table th,.dr-table td{border:1px solid rgba(var(--brand-ink-rgb),0.15);padding:14px 16px;text-align:left}
+        .dr-table th{font-family:var(--brand-font-body);font-weight:700;font-size:0.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--brand-ink);background:rgba(var(--brand-flavor-functional-rgb),0.35)}
+        .dr-table td{font-family:var(--brand-font-mono);font-size:0.8rem;color:var(--brand-ink);background:var(--brand-canvas)}
         .dr-cell-pct{font-weight:700;display:block}
-        .dr-cell-sub{font-size:0.68rem;color:rgba(27,31,59,0.5);display:block;margin-top:2px}
+        .dr-cell-sub{font-size:0.68rem;color:rgba(var(--brand-ink-rgb),0.5);display:block;margin-top:2px}
 
         .dr-ledger{max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
-        .dr-ledger-row{display:flex;align-items:center;justify-content:space-between;gap:12px;background:#1B1F3B;color:#FDF4EE;padding:18px 22px;flex-wrap:wrap}
-        .dr-ledger-num{font-family:'Syne',system-ui,sans-serif;font-weight:700;font-size:0.85rem;letter-spacing:.12em;text-transform:uppercase;display:inline-flex;align-items:center;gap:10px}
-        .dr-ledger-detail{font-family:'DM Mono',monospace;font-size:0.78rem;color:rgba(253,244,238,0.75)}
-        .dr-ledger-stamp{font-family:'Syne',system-ui,sans-serif;font-weight:800;font-size:0.62rem;letter-spacing:.12em;text-transform:uppercase;color:#1B1F3B;background:#FFB7D1;padding:4px 10px;transform:rotate(-2deg)}
-        .dr-dot{width:8px;height:8px;border-radius:50%;background:#C8FF3A;display:inline-block;animation:drPulse 1.8s ease-in-out infinite}
-        @keyframes drPulse{0%,100%{box-shadow:0 0 0 0 rgba(200,255,58,0.6)}50%{box-shadow:0 0 0 6px rgba(200,255,58,0)}}
+        .dr-ledger-row{display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--brand-ink);color:var(--brand-canvas);padding:18px 22px;flex-wrap:wrap}
+        .dr-ledger-num{font-family:var(--brand-font-body);font-weight:700;font-size:0.85rem;letter-spacing:.12em;text-transform:uppercase;display:inline-flex;align-items:center;gap:10px}
+        .dr-ledger-detail{font-family:var(--brand-font-mono);font-size:0.78rem;color:rgba(var(--brand-canvas-rgb),0.75)}
+        .dr-ledger-stamp{font-family:var(--brand-font-body);font-weight:800;font-size:0.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--brand-ink);background:var(--brand-flavor-strawberry);padding:4px 10px;transform:rotate(-2deg)}
+        .dr-dot{width:8px;height:8px;border-radius:50%;background:var(--brand-accent);display:inline-block;animation:drPulse 1.8s ease-in-out infinite}
+        @keyframes drPulse{0%,100%{box-shadow:0 0 0 0 rgba(var(--brand-accent-rgb),0.6)}50%{box-shadow:0 0 0 6px rgba(var(--brand-accent-rgb),0)}}
         @media(prefers-reduced-motion:reduce){.dr-dot{animation:none}}
 
-        .dr-footer{background:#D4B8E0;padding:40px 5%;text-align:center}
-        .dr-footer a{font-family:'Syne',system-ui,sans-serif;font-size:11px;color:#1B1F3B;opacity:.5;text-decoration:none;margin:0 8px}
+        .dr-footer{background:var(--brand-flavor-functional);padding:40px 5%;text-align:center}
+        .dr-footer a{font-family:var(--brand-font-body);font-size:11px;color:var(--brand-ink);opacity:.5;text-decoration:none;margin:0 8px}
         .dr-footer a:hover{opacity:1}
       `}</style>
 
@@ -280,22 +280,22 @@ export default function DropPage() {
       </nav>
 
       {/* ── HERO ── */}
-      <section style={{ background: "#1B1F3B", padding: "88px 24px", textAlign: "center", position: "relative", overflow: "hidden" }}>
+      <section style={{ background: "var(--brand-ink)", padding: "88px 24px", textAlign: "center", position: "relative", overflow: "hidden" }}>
         <div
           aria-hidden="true"
           style={{
             position: "absolute",
             inset: "-30%",
-            background: "radial-gradient(ellipse 50% 40% at 50% 45%, rgba(212,184,224,0.22) 0%, transparent 70%)",
+            background: "radial-gradient(ellipse 50% 40% at 50% 45%, rgba(var(--brand-flavor-functional-rgb),0.22) 0%, transparent 70%)",
             pointerEvents: "none",
           }}
         />
         <div style={{ position: "relative", maxWidth: 760, margin: "0 auto" }}>
-          <p className="dr-eyebrow" style={{ color: "#C8FF3A" }}>numbered · limited · honest</p>
+          <p className="dr-eyebrow" style={{ color: "var(--brand-accent)" }}>numbered · limited · honest</p>
           <h1 className="dr-h1">
             drop 001 — sold out in {DROP_001.soldOutInDays} days.
           </h1>
-          <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.95rem", color: "rgba(253,244,238,0.7)", lineHeight: 1.7, maxWidth: 520, margin: "0 auto 32px" }}>
+          <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.95rem", color: "rgba(var(--brand-canvas-rgb),0.7)", lineHeight: 1.7, maxWidth: 520, margin: "0 auto 32px" }}>
             shroomé ships in numbered, limited drops — real production runs, published counts.
             drop 002 is next: same label, same fifteen seconds. the waitlist gets the link first.
           </p>
@@ -303,9 +303,9 @@ export default function DropPage() {
             href="#waitlist"
             style={{
               display: "inline-block",
-              background: "#C8FF3A",
-              color: "#1B1F3B",
-              fontFamily: "'Syne', system-ui, sans-serif",
+              background: "var(--brand-accent)",
+              color: "var(--brand-ink)",
+              fontFamily: "var(--brand-font-body)",
               fontWeight: 800,
               fontSize: "0.78rem",
               letterSpacing: "0.1em",
@@ -316,7 +316,7 @@ export default function DropPage() {
           >
             get drop access →
           </a>
-          <p style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.68rem", color: "rgba(253,244,238,0.45)", marginTop: 14 }}>
+          <p style={{ fontFamily: "var(--brand-font-mono)", fontSize: "0.68rem", color: "rgba(var(--brand-canvas-rgb),0.45)", marginTop: 14 }}>
             <span className="dr-dot" style={{ marginRight: 8, verticalAlign: "middle" }} aria-hidden="true" />
             drop 002 — {DROP_002.openDate ? "date confirmed" : DROP2_SOON_LINE}
           </p>
@@ -324,10 +324,10 @@ export default function DropPage() {
       </section>
 
       {/* ── PRODUCT GRID ── */}
-      <section style={{ background: "#FDF4EE", padding: "80px 24px" }}>
+      <section style={{ background: "var(--brand-canvas)", padding: "80px 24px" }}>
         <div style={{ maxWidth: 1120, margin: "0 auto 36px", textAlign: "center" }}>
           <h2 className="dr-h2">the lineup.</h2>
-          <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.88rem", color: "rgba(27,31,59,0.6)", marginTop: 10 }}>
+          <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.88rem", color: "rgba(var(--brand-ink-rgb),0.6)", marginTop: 10 }}>
             every box from drop 001 is gone. drop 002 brings them back — waitlist first.
           </p>
         </div>
@@ -362,14 +362,14 @@ export default function DropPage() {
       </section>
 
       {/* ── SUBSCRIPTION TEASER ── */}
-      <section style={{ background: "#E8D5F0", padding: "80px 24px" }}>
+      <section style={{ background: "var(--brand-tint-soft)", padding: "80px 24px" }}>
         <div style={{ maxWidth: 900, margin: "0 auto 32px", textAlign: "center" }}>
           <h2 className="dr-h2">subscribers never miss a drop.</h2>
-          <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.88rem", color: "rgba(27,31,59,0.65)", marginTop: 10, maxWidth: 560, marginLeft: "auto", marginRight: "auto", lineHeight: 1.6 }}>
+          <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.88rem", color: "rgba(var(--brand-ink-rgb),0.65)", marginTop: 10, maxWidth: 560, marginLeft: "auto", marginRight: "auto", lineHeight: 1.6 }}>
             every active subscription&apos;s boxes are reserved out of each production run before
             the public window opens — allocation reserved, 10–20% off, skip or pause anytime.
           </p>
-          <p style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.68rem", letterSpacing: "0.14em", textTransform: "uppercase", color: "#1B1F3B", background: "#C8FF3A", display: "inline-block", padding: "6px 14px", marginTop: 16 }}>
+          <p style={{ fontFamily: "var(--brand-font-mono)", fontSize: "0.68rem", letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--brand-ink)", background: "var(--brand-accent)", display: "inline-block", padding: "6px 14px", marginTop: 16 }}>
             opens with drop 002
           </p>
         </div>
@@ -404,13 +404,13 @@ export default function DropPage() {
             </tbody>
           </table>
         </div>
-        <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.75rem", color: "rgba(27,31,59,0.55)", textAlign: "center", marginTop: 18 }}>
+        <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.75rem", color: "rgba(var(--brand-ink-rgb),0.55)", textAlign: "center", marginTop: 18 }}>
           bigger quantity + tighter cadence = deeper discount. all subscriptions ship free.
         </p>
       </section>
 
       {/* ── DROP LEDGER ── */}
-      <section style={{ background: "#FDF4EE", padding: "80px 24px" }}>
+      <section style={{ background: "var(--brand-canvas)", padding: "80px 24px" }}>
         <div style={{ textAlign: "center", marginBottom: 32 }}>
           <h2 className="dr-h2">the ledger.</h2>
         </div>
@@ -431,7 +431,7 @@ export default function DropPage() {
             <span className="dr-ledger-detail">waitlist gets first access</span>
           </div>
         </div>
-        <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.8rem", color: "rgba(27,31,59,0.6)", textAlign: "center", maxWidth: 520, margin: "24px auto 0", lineHeight: 1.6 }}>
+        <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.8rem", color: "rgba(var(--brand-ink-rgb),0.6)", textAlign: "center", maxWidth: 520, margin: "24px auto 0", lineHeight: 1.6 }}>
           scarcity here is the boring kind: a drop&apos;s size equals the production run we actually
           received — never an artificial cap, never a fake timer. when it&apos;s gone, it&apos;s gone
           until the next run.
@@ -439,10 +439,10 @@ export default function DropPage() {
       </section>
 
       {/* ── WAITLIST ── */}
-      <section id="waitlist" style={{ background: "#1B1F3B", padding: "88px 24px" }}>
+      <section id="waitlist" style={{ background: "var(--brand-ink)", padding: "88px 24px" }}>
         <div style={{ maxWidth: 640, margin: "0 auto", textAlign: "center" }}>
-          <h2 className="dr-h2" style={{ color: "#FDF4EE", marginBottom: 16 }}>get drop 002 first.</h2>
-          <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.9rem", color: "rgba(253,244,238,0.7)", lineHeight: 1.7, margin: "0 auto 32px", maxWidth: 500 }}>
+          <h2 className="dr-h2" style={{ color: "var(--brand-canvas)", marginBottom: 16 }}>get drop 002 first.</h2>
+          <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.9rem", color: "rgba(var(--brand-canvas-rgb),0.7)", lineHeight: 1.7, margin: "0 auto 32px", maxWidth: 500 }}>
             join the waitlist for the drop 002 link at open — add your number and it hits your
             texts 10 minutes before everyone else, and your code upgrades from 20% to 30%
             (best code wins). 20% off and free shipping locked in either way.
@@ -455,7 +455,7 @@ export default function DropPage() {
 
       {/* ── FOOTER ── */}
       <footer className="dr-footer">
-        <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "12px", color: "rgba(27,31,59,0.65)", maxWidth: 620, margin: "0 auto 20px", lineHeight: 1.6 }}>
+        <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "12px", color: "rgba(var(--brand-ink-rgb),0.65)", maxWidth: 620, margin: "0 auto 20px", lineHeight: 1.6 }}>
           {FDA_DISCLAIMER}
         </p>
         <div style={{ marginBottom: 12 }}>
@@ -463,7 +463,7 @@ export default function DropPage() {
           <a href="/terms">Terms of Service</a>
           <a href="mailto:hello@drinkshroome.com">hello@drinkshroome.com</a>
         </div>
-        <p style={{ fontFamily: "'DM Mono', monospace", fontSize: "10px", color: "rgba(27,31,59,0.4)", margin: 0 }}>
+        <p style={{ fontFamily: "var(--brand-font-mono)", fontSize: "10px", color: "rgba(var(--brand-ink-rgb),0.4)", margin: 0 }}>
           © 2026 shroomé · ZSQUARED INC
         </p>
       </footer>

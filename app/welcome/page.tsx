@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import Image from "next/image";
 import MobileNav from "../MobileNav";
+import { BRAND } from "../lib/brand";
 
 declare global {
   interface Window {
@@ -10,22 +11,25 @@ declare global {
   }
 }
 
-/* ── Color tokens ─────────────────────────────────── */
+/* ── Color tokens ─────────────────────────────────────────────────────────
+   Literal hexes from BRAND (not CSS vars): this page builds 8-digit
+   hex-alpha colors via template concatenation (e.g. `${C.canvas}20`),
+   which requires real hex literals. */
 const C = {
-  cream: "#FDF4EE",
-  navy: "#1B1F3B",
-  lime: "#C8FF3A",
-  pink: "#FFB7D1",
-  lavender: "#D4B8E0",
+  canvas: BRAND.colors.canvas,
+  ink: BRAND.colors.ink,
+  accent: BRAND.colors.accent,
+  flavorStrawberry: BRAND.colors.flavorStrawberry,
+  flavorFunctional: BRAND.colors.flavorFunctional,
   white: "#FFFFFF",
   muted: "#7A7A8E",
 } as const;
 
 /* ── Font stacks ──────────────────────────────────── */
 const F = {
-  heading: "'Instrument Serif', Georgia, serif",
-  body: "'Syne', system-ui, sans-serif",
-  mono: "'DM Mono', 'SF Mono', monospace",
+  heading: BRAND.fonts.display,
+  body: BRAND.fonts.body,
+  mono: BRAND.fonts.mono,
 } as const;
 
 /* ── Shared styles ────────────────────────────────── */
@@ -108,7 +112,7 @@ export default function WelcomePage() {
   }, [step, status, onTurnstileSuccess]);
 
   return (
-    <div style={{ background: C.cream, color: C.navy, minHeight: "100vh" }}>
+    <div style={{ background: C.canvas, color: C.ink, minHeight: "100vh" }}>
       <style>{`@media(max-width:768px){.wel-nav-cta{display:none !important}}`}</style>
       {/* ── NAV ────────────────────────────────────── */}
       <nav
@@ -130,7 +134,7 @@ export default function WelcomePage() {
             alignItems: "center",
             gap: 10,
             textDecoration: "none",
-            color: C.navy,
+            color: C.ink,
           }}
         >
           <Image
@@ -158,8 +162,8 @@ export default function WelcomePage() {
             fontFamily: F.body,
             fontSize: 14,
             fontWeight: 600,
-            background: C.navy,
-            color: C.cream,
+            background: C.ink,
+            color: C.canvas,
             padding: "10px 22px",
             borderRadius: 100,
             textDecoration: "none",
@@ -210,9 +214,9 @@ export default function WelcomePage() {
               width: 8,
               height: 8,
               borderRadius: "50%",
-              background: C.lime,
+              background: C.accent,
               display: "inline-block",
-              boxShadow: `0 0 6px ${C.lime}`,
+              boxShadow: `0 0 6px ${C.accent}`,
             }}
           />
           You found us
@@ -232,7 +236,7 @@ export default function WelcomePage() {
           }}
         >
           The matcha latte that{" "}
-          <em style={{ fontStyle: "italic", color: C.navy }}>
+          <em style={{ fontStyle: "italic", color: C.ink }}>
             replaced our coffee.
           </em>
         </h1>
@@ -257,8 +261,8 @@ export default function WelcomePage() {
       {/* ── SOCIAL PROOF STRIP ─────────────────────── */}
       <div
         style={{
-          borderTop: `1px solid ${C.navy}12`,
-          borderBottom: `1px solid ${C.navy}12`,
+          borderTop: `1px solid ${C.ink}12`,
+          borderBottom: `1px solid ${C.ink}12`,
           padding: "18px 0",
           overflow: "hidden",
         }}
@@ -288,7 +292,7 @@ export default function WelcomePage() {
               key={item}
               style={{ display: "flex", alignItems: "center", gap: 10 }}
             >
-              <span style={{ color: C.lime, fontSize: 14 }}>&#10022;</span>
+              <span style={{ color: C.accent, fontSize: 14 }}>&#10022;</span>
               {item}
             </span>
           ))}
@@ -308,17 +312,17 @@ export default function WelcomePage() {
             [
               {
                 label: "Real Mushrooms",
-                accent: C.lavender,
+                accent: C.flavorFunctional,
                 body: "200mg fruiting body extracts standardized to 70%+ beta-glucan concentration. Not mycelium-on-grain.",
               },
               {
                 label: "Ceremonial Matcha",
-                accent: C.lime,
+                accent: C.accent,
                 body: "First-harvest, shade-grown 21+ days, stone-ground. ~60mg caffeine + natural L-theanine.",
               },
               {
                 label: "Collagen Peptides",
-                accent: C.pink,
+                accent: C.flavorStrawberry,
                 body: "2g grass-fed bovine, hydrolyzed for absorption. Types I & III for skin, joints, gut.",
               },
             ] as const
@@ -329,7 +333,7 @@ export default function WelcomePage() {
                 background: C.white,
                 borderRadius: 16,
                 padding: "40px 32px",
-                border: `1px solid ${C.navy}08`,
+                border: `1px solid ${C.ink}08`,
               }}
             >
               <span
@@ -351,7 +355,7 @@ export default function WelcomePage() {
                   fontFamily: F.body,
                   fontSize: 15,
                   lineHeight: 1.7,
-                  color: C.navy,
+                  color: C.ink,
                   marginTop: 20,
                   marginBottom: 0,
                 }}
@@ -406,7 +410,7 @@ export default function WelcomePage() {
                   fontStyle: "italic",
                   fontSize: 48,
                   lineHeight: 1,
-                  color: C.navy,
+                  color: C.ink,
                   marginBottom: 12,
                 }}
               >
@@ -431,7 +435,7 @@ export default function WelcomePage() {
       <section
         id="signup"
         style={{
-          background: C.navy,
+          background: C.ink,
           padding: "80px 24px",
         }}
       >
@@ -447,7 +451,7 @@ export default function WelcomePage() {
               fontFamily: F.heading,
               fontStyle: "italic",
               fontSize: "clamp(28px, 5vw, 40px)",
-              color: C.cream,
+              color: C.canvas,
               lineHeight: 1.15,
               marginBottom: 12,
               fontWeight: 400,
@@ -460,7 +464,7 @@ export default function WelcomePage() {
             style={{
               fontFamily: F.body,
               fontSize: 14,
-              color: `${C.cream}99`,
+              color: `${C.canvas}99`,
               marginBottom: 36,
             }}
           >
@@ -472,7 +476,7 @@ export default function WelcomePage() {
               style={{
                 fontFamily: F.body,
                 fontSize: 16,
-                color: C.lime,
+                color: C.accent,
                 fontWeight: 600,
                 padding: "16px 0",
               }}
@@ -485,7 +489,7 @@ export default function WelcomePage() {
                 style={{
                   fontFamily: F.body,
                   fontSize: 13,
-                  color: `${C.cream}99`,
+                  color: `${C.canvas}99`,
                   marginBottom: 12,
                 }}
               >
@@ -493,7 +497,7 @@ export default function WelcomePage() {
               </p>
               <div ref={captchaRef} style={{ display: "flex", justifyContent: "center", minHeight: 65 }} />
               {status === "loading" && (
-                <p style={{ fontFamily: F.body, fontSize: 13, color: `${C.cream}99`, marginTop: 12 }}>
+                <p style={{ fontFamily: F.body, fontSize: 13, color: `${C.canvas}99`, marginTop: 12 }}>
                   Joining...
                 </p>
               )}
@@ -522,9 +526,9 @@ export default function WelcomePage() {
                   fontSize: 15,
                   padding: "14px 20px",
                   borderRadius: 100,
-                  border: `1px solid ${C.cream}20`,
-                  background: `${C.cream}10`,
-                  color: C.cream,
+                  border: `1px solid ${C.canvas}20`,
+                  background: `${C.canvas}10`,
+                  color: C.canvas,
                   outline: "none",
                 }}
               />
@@ -538,8 +542,8 @@ export default function WelcomePage() {
                   padding: "14px 28px",
                   borderRadius: 100,
                   border: "none",
-                  background: C.lime,
-                  color: C.navy,
+                  background: C.accent,
+                  color: C.ink,
                   cursor: status === "loading" ? "wait" : "pointer",
                   opacity: status === "loading" ? 0.6 : 1,
                   transition: "opacity .2s",
@@ -556,7 +560,7 @@ export default function WelcomePage() {
               style={{
                 fontFamily: F.body,
                 fontSize: 13,
-                color: C.pink,
+                color: C.flavorStrawberry,
                 marginTop: 16,
               }}
             >

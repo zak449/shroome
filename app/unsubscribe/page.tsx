@@ -44,13 +44,13 @@ function UnsubscribeFlow() {
     <div
       style={{
         minHeight: "100vh",
-        background: "#FDF4EE",
+        background: "var(--brand-canvas)",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
         padding: "40px 20px",
-        fontFamily: "'Syne', system-ui, sans-serif",
-        color: "#1B1F3B",
+        fontFamily: "var(--brand-font-body)",
+        color: "var(--brand-ink)",
       }}
     >
       <div style={{ maxWidth: 480, width: "100%", textAlign: "center" }}>
@@ -65,7 +65,7 @@ function UnsubscribeFlow() {
             <h1
               style={{
                 fontSize: 28,
-                fontFamily: "'Instrument Serif', Georgia, serif",
+                fontFamily: "var(--brand-font-display)",
                 fontStyle: "italic",
                 fontWeight: 400,
                 margin: "0 0 12px",
@@ -87,7 +87,7 @@ function UnsubscribeFlow() {
                   borderRadius: 8,
                   display: "inline-block",
                   margin: "0 0 24px",
-                  border: "1px solid rgba(27,31,59,0.1)",
+                  border: "1px solid rgba(var(--brand-ink-rgb),0.1)",
                 }}
               >
                 {email}
@@ -99,7 +99,7 @@ function UnsubscribeFlow() {
                 onClick={() => setStep("reason")}
                 style={{
                   padding: "14px 32px",
-                  background: "#1B1F3B",
+                  background: "var(--brand-ink)",
                   color: "#fff",
                   border: "none",
                   borderRadius: 50,
@@ -115,8 +115,8 @@ function UnsubscribeFlow() {
                 href="https://www.drinkshroome.com"
                 style={{
                   padding: "14px 32px",
-                  background: "#C8FF3A",
-                  color: "#1B1F3B",
+                  background: "var(--brand-accent)",
+                  color: "var(--brand-ink)",
                   border: "none",
                   borderRadius: 50,
                   fontSize: 14,
@@ -139,7 +139,7 @@ function UnsubscribeFlow() {
             <h1
               style={{
                 fontSize: 28,
-                fontFamily: "'Instrument Serif', Georgia, serif",
+                fontFamily: "var(--brand-font-display)",
                 fontStyle: "italic",
                 fontWeight: 400,
                 margin: "0 0 12px",
@@ -158,9 +158,9 @@ function UnsubscribeFlow() {
                   onClick={() => setReason(r)}
                   style={{
                     padding: "12px 20px",
-                    background: reason === r ? "#1B1F3B" : "#fff",
-                    color: reason === r ? "#fff" : "#1B1F3B",
-                    border: "1px solid rgba(27,31,59,0.15)",
+                    background: reason === r ? "var(--brand-ink)" : "#fff",
+                    color: reason === r ? "#fff" : "var(--brand-ink)",
+                    border: "1px solid rgba(var(--brand-ink-rgb),0.15)",
                     borderRadius: 10,
                     fontSize: 14,
                     cursor: "pointer",
@@ -181,7 +181,7 @@ function UnsubscribeFlow() {
               style={{
                 marginTop: 24,
                 padding: "14px 32px",
-                background: "#1B1F3B",
+                background: "var(--brand-ink)",
                 color: "#fff",
                 border: "none",
                 borderRadius: 50,
@@ -212,7 +212,7 @@ function UnsubscribeFlow() {
             <h1
               style={{
                 fontSize: 28,
-                fontFamily: "'Instrument Serif', Georgia, serif",
+                fontFamily: "var(--brand-font-display)",
                 fontStyle: "italic",
                 fontWeight: 400,
                 margin: "0 0 12px",
@@ -228,8 +228,8 @@ function UnsubscribeFlow() {
               href="https://www.drinkshroome.com"
               style={{
                 padding: "14px 32px",
-                background: "#C8FF3A",
-                color: "#1B1F3B",
+                background: "var(--brand-accent)",
+                color: "var(--brand-ink)",
                 border: "none",
                 borderRadius: 50,
                 fontSize: 14,
@@ -253,8 +253,8 @@ export default function UnsubscribePage() {
   return (
     <Suspense
       fallback={
-        <div style={{ minHeight: "100vh", background: "#FDF4EE", display: "flex", alignItems: "center", justifyContent: "center" }}>
-          <p style={{ fontFamily: "system-ui", color: "#1B1F3B", opacity: 0.5 }}>Loading...</p>
+        <div style={{ minHeight: "100vh", background: "var(--brand-canvas)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+          <p style={{ fontFamily: "system-ui", color: "var(--brand-ink)", opacity: 0.5 }}>Loading...</p>
         </div>
       }
     >

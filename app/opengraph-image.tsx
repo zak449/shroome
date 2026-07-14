@@ -1,4 +1,5 @@
 import { ImageResponse } from "next/og";
+import { BRAND } from "./lib/brand";
 
 import { readFile } from "fs/promises";
 import { join } from "path";
@@ -9,9 +10,9 @@ export const contentType = "image/png";
 
 export default async function Image() {
   const fontsDir = join(process.cwd(), "app/fonts");
-  const instrumentSerifItalic = await readFile(join(fontsDir, "InstrumentSerif-Italic.ttf"));
-  const instrumentSerifRegular = await readFile(join(fontsDir, "InstrumentSerif-Regular.ttf"));
-  const syne = await readFile(join(fontsDir, "Syne-Bold.ttf"));
+  const instrumentSerifItalic = await readFile(join(fontsDir, BRAND.fonts.files.displayItalic));
+  const instrumentSerifRegular = await readFile(join(fontsDir, BRAND.fonts.files.displayRegular));
+  const syne = await readFile(join(fontsDir, BRAND.fonts.files.bodyBold));
 
   return new ImageResponse(
     (
@@ -22,13 +23,13 @@ export default async function Image() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
-          background: "#FFB7D1",
+          background: BRAND.colors.flavorStrawberry,
           padding: "60px 80px",
           position: "relative",
           overflow: "hidden",
         }}
       >
-        {/* Lavender blob */}
+        {/* Flavor-tint blob */}
         <div
           style={{
             position: "absolute",
@@ -37,12 +38,12 @@ export default async function Image() {
             width: "500px",
             height: "500px",
             borderRadius: "50%",
-            background: "#D4B8E0",
+            background: BRAND.colors.flavorFunctional,
             opacity: 0.7,
           }}
         />
 
-        {/* Pink blob bottom */}
+        {/* Blush blob bottom */}
         <div
           style={{
             position: "absolute",
@@ -58,10 +59,10 @@ export default async function Image() {
         {/* Brand */}
         <p
           style={{
-            fontFamily: "'Instrument Serif'",
+            fontFamily: BRAND.fonts.displayName,
             fontStyle: "italic",
             fontSize: "38px",
-            color: "#1B1F3B",
+            color: BRAND.colors.ink,
             marginBottom: "30px",
           }}
         >
@@ -75,17 +76,17 @@ export default async function Image() {
               width: "10px",
               height: "10px",
               borderRadius: "50%",
-              background: "#C8FF3A",
+              background: BRAND.colors.accent,
             }}
           />
           <p
             style={{
-              fontFamily: "'Syne'",
+              fontFamily: BRAND.fonts.bodyName,
               fontWeight: 700,
               fontSize: "14px",
               letterSpacing: "0.18em",
               textTransform: "uppercase",
-              color: "#2D4A2D",
+              color: BRAND.colors.accentDeep,
             }}
           >
             Pre-launch · 20% off + free shipping
@@ -95,9 +96,9 @@ export default async function Image() {
         {/* Headline */}
         <h1
           style={{
-            fontFamily: "'Instrument Serif'",
+            fontFamily: BRAND.fonts.displayName,
             fontSize: "82px",
-            color: "#2D4A2D",
+            color: BRAND.colors.accentDeep,
             lineHeight: 1.05,
             margin: "0 0 4px",
           }}
@@ -106,9 +107,9 @@ export default async function Image() {
         </h1>
         <h1
           style={{
-            fontFamily: "'Instrument Serif'",
+            fontFamily: BRAND.fonts.displayName,
             fontSize: "82px",
-            color: "#2D4A2D",
+            color: BRAND.colors.accentDeep,
             lineHeight: 1.05,
             margin: "0 0 4px",
           }}
@@ -117,10 +118,10 @@ export default async function Image() {
         </h1>
         <h1
           style={{
-            fontFamily: "'Instrument Serif'",
+            fontFamily: BRAND.fonts.displayName,
             fontStyle: "italic",
             fontSize: "82px",
-            color: "#FF7043",
+            color: BRAND.colors.accentWarm,
             lineHeight: 1.05,
             margin: "0",
           }}
@@ -136,7 +137,7 @@ export default async function Image() {
             left: 0,
             right: 0,
             height: "50px",
-            background: "#1B1F3B",
+            background: BRAND.colors.ink,
             display: "flex",
             alignItems: "center",
             padding: "0 80px",
@@ -144,10 +145,10 @@ export default async function Image() {
         >
           <p
             style={{
-              fontFamily: "'Syne'",
+              fontFamily: BRAND.fonts.bodyName,
               fontWeight: 700,
               fontSize: "16px",
-              color: "#FDF4EE",
+              color: BRAND.colors.canvas,
               letterSpacing: "0.05em",
             }}
           >
@@ -160,19 +161,19 @@ export default async function Image() {
       ...size,
       fonts: [
         {
-          name: "Instrument Serif",
+          name: BRAND.fonts.displayName,
           data: instrumentSerifRegular,
           style: "normal",
           weight: 400,
         },
         {
-          name: "Instrument Serif",
+          name: BRAND.fonts.displayName,
           data: instrumentSerifItalic,
           style: "italic",
           weight: 400,
         },
         {
-          name: "Syne",
+          name: BRAND.fonts.bodyName,
           data: syne,
           style: "normal",
           weight: 700,

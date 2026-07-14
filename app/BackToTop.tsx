@@ -24,8 +24,8 @@ export default function BackToTop() {
         width: 44,
         height: 44,
         borderRadius: "50%",
-        background: "#1B1F3B",
-        color: "#FDF4EE",
+        background: "var(--brand-ink)",
+        color: "var(--brand-canvas)",
         border: "none",
         cursor: "pointer",
         display: "flex",
@@ -42,7 +42,7 @@ export default function BackToTop() {
         (e.currentTarget as HTMLButtonElement).style.background = "#2E3358";
       }}
       onMouseLeave={(e) => {
-        (e.currentTarget as HTMLButtonElement).style.background = "#1B1F3B";
+        (e.currentTarget as HTMLButtonElement).style.background = "var(--brand-ink)";
       }}
     >
       ↑

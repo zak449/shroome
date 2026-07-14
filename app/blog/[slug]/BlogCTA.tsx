@@ -179,7 +179,7 @@ export default function BlogCTA() {
       >
         <div
           style={{
-            background: "#1B1F3B",
+            background: "var(--brand-ink)",
             padding: "48px 36px",
             textAlign: "center",
             position: "relative",
@@ -194,18 +194,18 @@ export default function BlogCTA() {
               left: 0,
               right: 0,
               height: 3,
-              background: "linear-gradient(90deg, #C8FF3A 0%, #FF7043 50%, #D4B8E0 100%)",
+              background: "linear-gradient(90deg, var(--brand-accent) 0%, var(--brand-accent-warm) 50%, var(--brand-flavor-functional) 100%)",
             }}
           />
 
           <p
             style={{
-              fontFamily: "'DM Mono', monospace",
+              fontFamily: "var(--brand-font-mono)",
               fontSize: 11,
               fontWeight: 500,
               letterSpacing: ".2em",
               textTransform: "uppercase" as const,
-              color: "#C8FF3A",
+              color: "var(--brand-accent)",
               marginBottom: 14,
             }}
           >
@@ -214,11 +214,11 @@ export default function BlogCTA() {
 
           <h3
             style={{
-              fontFamily: "'Instrument Serif', Georgia, serif",
+              fontFamily: "var(--brand-font-display)",
               fontSize: "clamp(24px, 4vw, 32px)",
               fontWeight: 400,
               fontStyle: "italic",
-              color: "#FDF4EE",
+              color: "var(--brand-canvas)",
               lineHeight: 1.15,
               marginBottom: 12,
             }}
@@ -228,9 +228,9 @@ export default function BlogCTA() {
 
           <p
             style={{
-              fontFamily: "'Syne', system-ui, sans-serif",
+              fontFamily: "var(--brand-font-body)",
               fontSize: 14,
-              color: "rgba(253,244,238,0.55)",
+              color: "rgba(var(--brand-canvas-rgb),0.55)",
               lineHeight: 1.6,
               marginBottom: 28,
               fontWeight: 400,
@@ -245,12 +245,12 @@ export default function BlogCTA() {
 
           {inlineStatus === "success" ? (
             inlinePhoneDone ? (
-              <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: 15, fontWeight: 600, color: "#C8FF3A" }}>
+              <p style={{ fontFamily: "var(--brand-font-body)", fontSize: 15, fontWeight: 600, color: "var(--brand-accent)" }}>
                 You&rsquo;re all set! Check your email{inlinePhone ? " — we'll text you too" : ""}. &#10003;
               </p>
             ) : (
               <div>
-                <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: 13, fontWeight: 600, color: "#C8FF3A", marginBottom: 10 }}>
+                <p style={{ fontFamily: "var(--brand-font-body)", fontSize: 13, fontWeight: 600, color: "var(--brand-accent)", marginBottom: 10 }}>
                   &#10003; 20% off locked in! Add your number to upgrade to 30% (replaces your 20% code):
                 </p>
                 <form onSubmit={async (e) => {
@@ -260,15 +260,15 @@ export default function BlogCTA() {
                   window.gtag?.("event", "sign_up", { method: "waitlist_phone", event_label: "blog_inline_cta_phone" });
                   setInlinePhoneDone(true);
                 }} style={{ display: "flex", gap: 0, maxWidth: 380, margin: "0 auto", flexWrap: "wrap" as const, justifyContent: "center" }}>
-                  <input type="tel" placeholder="(555) 123-4567" value={inlinePhone} onChange={(e) => setInlinePhone(e.target.value)} required style={{ flex: "1 1 200px", padding: "12px 14px", fontFamily: "'Syne', sans-serif", fontSize: 13, color: "#1B1F3B", background: "#FDF4EE", border: "2px solid transparent", outline: "none" }} />
-                  <button type="submit" style={{ padding: "12px 20px", background: "#C8FF3A", color: "#1B1F3B", border: "none", fontFamily: "'Syne', sans-serif", fontWeight: 800, fontSize: 12, letterSpacing: "0.06em", textTransform: "uppercase" as const, cursor: "pointer" }}>Upgrade it</button>
+                  <input type="tel" placeholder="(555) 123-4567" value={inlinePhone} onChange={(e) => setInlinePhone(e.target.value)} required style={{ flex: "1 1 200px", padding: "12px 14px", fontFamily: "var(--brand-font-body)", fontSize: 13, color: "var(--brand-ink)", background: "var(--brand-canvas)", border: "2px solid transparent", outline: "none" }} />
+                  <button type="submit" style={{ padding: "12px 20px", background: "var(--brand-accent)", color: "var(--brand-ink)", border: "none", fontFamily: "var(--brand-font-body)", fontWeight: 800, fontSize: 12, letterSpacing: "0.06em", textTransform: "uppercase" as const, cursor: "pointer" }}>Upgrade it</button>
                 </form>
-                <button onClick={() => setInlinePhoneDone(true)} style={{ background: "none", border: "none", color: "rgba(253,244,238,0.4)", fontSize: 11, fontFamily: "'Syne', sans-serif", cursor: "pointer", marginTop: 8, textDecoration: "underline" }}>Skip</button>
+                <button onClick={() => setInlinePhoneDone(true)} style={{ background: "none", border: "none", color: "rgba(var(--brand-canvas-rgb),0.4)", fontSize: 11, fontFamily: "var(--brand-font-body)", cursor: "pointer", marginTop: 8, textDecoration: "underline" }}>Skip</button>
               </div>
             )
           ) : captchaTarget === "inline" ? (
             <div>
-              <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: 13, color: "rgba(253,244,238,0.55)", marginBottom: 10 }}>
+              <p style={{ fontFamily: "var(--brand-font-body)", fontSize: 13, color: "rgba(var(--brand-canvas-rgb),0.55)", marginBottom: 10 }}>
                 One quick check&hellip;
               </p>
               <div ref={inlineCaptchaRef} style={{ display: "flex", justifyContent: "center", minHeight: 65 }} />
@@ -301,11 +301,11 @@ export default function BlogCTA() {
                   flex: "1 1 220px",
                   minWidth: 0,
                   padding: "13px 16px",
-                  fontFamily: "'Syne', system-ui, sans-serif",
+                  fontFamily: "var(--brand-font-body)",
                   fontSize: 13,
                   fontWeight: 400,
-                  color: "#1B1F3B",
-                  background: "#FDF4EE",
+                  color: "var(--brand-ink)",
+                  background: "var(--brand-canvas)",
                   border: "2px solid transparent",
                   borderRight: "none",
                   outline: "none",
@@ -316,13 +316,13 @@ export default function BlogCTA() {
                 disabled={inlineStatus === "loading"}
                 style={{
                   padding: "13px 24px",
-                  fontFamily: "'Syne', system-ui, sans-serif",
+                  fontFamily: "var(--brand-font-body)",
                   fontSize: 12,
                   fontWeight: 700,
                   letterSpacing: ".08em",
                   textTransform: "uppercase" as const,
-                  color: "#1B1F3B",
-                  background: "#C8FF3A",
+                  color: "var(--brand-ink)",
+                  background: "var(--brand-accent)",
                   border: "none",
                   cursor: inlineStatus === "loading" ? "wait" : "pointer",
                   opacity: inlineStatus === "loading" ? 0.7 : 1,
@@ -338,9 +338,9 @@ export default function BlogCTA() {
           {inlineStatus === "error" && inlineError && (
             <p
               style={{
-                fontFamily: "'Syne', system-ui, sans-serif",
+                fontFamily: "var(--brand-font-body)",
                 fontSize: 12,
-                color: "#FF7043",
+                color: "var(--brand-accent-warm)",
                 marginTop: 10,
               }}
             >
@@ -360,8 +360,8 @@ export default function BlogCTA() {
           left: 0,
           right: 0,
           zIndex: 9999,
-          background: "#1B1F3B",
-          borderTop: "1px solid rgba(200,255,58,0.15)",
+          background: "var(--brand-ink)",
+          borderTop: "1px solid rgba(var(--brand-accent-rgb),0.15)",
           padding: "10px 5%",
           display: "flex",
           alignItems: "center",
@@ -375,12 +375,12 @@ export default function BlogCTA() {
       >
         {stickyStatus === "success" ? (
           stickyPhoneDone ? (
-            <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: 13, fontWeight: 600, color: "#C8FF3A", margin: 0 }}>
+            <p style={{ fontFamily: "var(--brand-font-body)", fontSize: 13, fontWeight: 600, color: "var(--brand-accent)", margin: 0 }}>
               You&rsquo;re all set! &#10003;
             </p>
           ) : (
             <div style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap" as const, justifyContent: "center" }}>
-              <p style={{ fontFamily: "'Syne', sans-serif", fontSize: 12, color: "#C8FF3A", fontWeight: 600, margin: 0, whiteSpace: "nowrap" as const }}>&#10003; 20% locked! Add phone for 30%:</p>
+              <p style={{ fontFamily: "var(--brand-font-body)", fontSize: 12, color: "var(--brand-accent)", fontWeight: 600, margin: 0, whiteSpace: "nowrap" as const }}>&#10003; 20% locked! Add phone for 30%:</p>
               <form onSubmit={async (e) => {
                 e.preventDefault();
                 if (!stickyPhone.trim()) return;
@@ -388,15 +388,15 @@ export default function BlogCTA() {
                 window.gtag?.("event", "sign_up", { method: "waitlist_phone", event_label: "blog_sticky_bar_phone" });
                 setStickyPhoneDone(true);
               }} style={{ display: "flex", gap: 0 }}>
-                <input type="tel" placeholder="(555) 123-4567" value={stickyPhone} onChange={(e) => setStickyPhone(e.target.value)} required style={{ padding: "8px 12px", fontSize: 12, fontFamily: "'Syne', sans-serif", border: "none", background: "rgba(253,244,238,0.15)", color: "#FDF4EE", outline: "none", width: 130 }} />
-                <button type="submit" style={{ padding: "8px 14px", background: "#C8FF3A", color: "#1B1F3B", border: "none", fontFamily: "'Syne', sans-serif", fontWeight: 800, fontSize: 10, letterSpacing: "0.06em", textTransform: "uppercase" as const, cursor: "pointer" }}>Add</button>
+                <input type="tel" placeholder="(555) 123-4567" value={stickyPhone} onChange={(e) => setStickyPhone(e.target.value)} required style={{ padding: "8px 12px", fontSize: 12, fontFamily: "var(--brand-font-body)", border: "none", background: "rgba(var(--brand-canvas-rgb),0.15)", color: "var(--brand-canvas)", outline: "none", width: 130 }} />
+                <button type="submit" style={{ padding: "8px 14px", background: "var(--brand-accent)", color: "var(--brand-ink)", border: "none", fontFamily: "var(--brand-font-body)", fontWeight: 800, fontSize: 10, letterSpacing: "0.06em", textTransform: "uppercase" as const, cursor: "pointer" }}>Add</button>
               </form>
-              <button onClick={() => setStickyPhoneDone(true)} style={{ background: "none", border: "none", color: "rgba(253,244,238,0.35)", fontSize: 10, cursor: "pointer", textDecoration: "underline", fontFamily: "'Syne', sans-serif" }}>Skip</button>
+              <button onClick={() => setStickyPhoneDone(true)} style={{ background: "none", border: "none", color: "rgba(var(--brand-canvas-rgb),0.35)", fontSize: 10, cursor: "pointer", textDecoration: "underline", fontFamily: "var(--brand-font-body)" }}>Skip</button>
             </div>
           )
         ) : captchaTarget === "sticky" ? (
           <div style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap" as const, justifyContent: "center" }}>
-            <p style={{ fontFamily: "'Syne', sans-serif", fontSize: 12, color: "rgba(253,244,238,0.7)", fontWeight: 600, margin: 0, whiteSpace: "nowrap" as const }}>
+            <p style={{ fontFamily: "var(--brand-font-body)", fontSize: 12, color: "rgba(var(--brand-canvas-rgb),0.7)", fontWeight: 600, margin: 0, whiteSpace: "nowrap" as const }}>
               One quick check&hellip;
             </p>
             <div ref={stickyCaptchaRef} style={{ display: "flex", justifyContent: "center", minHeight: 65 }} />
@@ -405,9 +405,9 @@ export default function BlogCTA() {
           <>
             <p
               style={{
-                fontFamily: "'Syne', system-ui, sans-serif",
+                fontFamily: "var(--brand-font-body)",
                 fontSize: 13,
-                color: "#FDF4EE",
+                color: "var(--brand-canvas)",
                 margin: 0,
                 fontWeight: 400,
                 whiteSpace: "nowrap" as const,
@@ -435,11 +435,11 @@ export default function BlogCTA() {
                 style={{
                   width: 180,
                   padding: "8px 12px",
-                  fontFamily: "'Syne', system-ui, sans-serif",
+                  fontFamily: "var(--brand-font-body)",
                   fontSize: 12,
                   fontWeight: 400,
-                  color: "#1B1F3B",
-                  background: "rgba(253,244,238,0.92)",
+                  color: "var(--brand-ink)",
+                  background: "rgba(var(--brand-canvas-rgb),0.92)",
                   border: "none",
                   outline: "none",
                 }}
@@ -449,11 +449,11 @@ export default function BlogCTA() {
                 disabled={stickyStatus === "loading"}
                 style={{
                   padding: "8px 16px",
-                  fontFamily: "'Syne', system-ui, sans-serif",
+                  fontFamily: "var(--brand-font-body)",
                   fontSize: 12,
                   fontWeight: 700,
-                  color: "#1B1F3B",
-                  background: "#C8FF3A",
+                  color: "var(--brand-ink)",
+                  background: "var(--brand-accent)",
                   border: "none",
                   cursor: stickyStatus === "loading" ? "wait" : "pointer",
                   opacity: stickyStatus === "loading" ? 0.7 : 1,
@@ -468,9 +468,9 @@ export default function BlogCTA() {
             {stickyStatus === "error" && stickyError && (
               <p
                 style={{
-                  fontFamily: "'Syne', system-ui, sans-serif",
+                  fontFamily: "var(--brand-font-body)",
                   fontSize: 11,
-                  color: "#FF7043",
+                  color: "var(--brand-accent-warm)",
                   margin: 0,
                 }}
               >
@@ -491,15 +491,15 @@ export default function BlogCTA() {
             transform: "translateY(-50%)",
             background: "none",
             border: "none",
-            color: "rgba(253,244,238,0.5)",
+            color: "rgba(var(--brand-canvas-rgb),0.5)",
             fontSize: 20,
             lineHeight: 1,
             cursor: "pointer",
             padding: "4px 6px",
             transition: "color .2s",
           }}
-          onMouseEnter={(e) => (e.currentTarget.style.color = "#FDF4EE")}
-          onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(253,244,238,0.5)")}
+          onMouseEnter={(e) => (e.currentTarget.style.color = "var(--brand-canvas)")}
+          onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(var(--brand-canvas-rgb),0.5)")}
         >
           &#10005;
         </button>

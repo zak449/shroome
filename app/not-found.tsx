@@ -1,3 +1,4 @@
+import { BRAND, svgHex } from "@/app/lib/brand";
 import Image from "next/image";
 import MobileNav from "./MobileNav";
 
@@ -9,16 +10,16 @@ export default function NotFound() {
         .nf-page{
           min-height:100vh;display:flex;flex-direction:column;
           background:
-            radial-gradient(ellipse 120% 80% at 20% 10%, rgba(212,184,224,0.35) 0%, transparent 50%),
-            radial-gradient(ellipse 100% 70% at 80% 85%, rgba(200,255,58,0.12) 0%, transparent 50%),
-            radial-gradient(ellipse 60% 50% at 60% 40%, rgba(255,183,209,0.2) 0%, transparent 50%),
+            radial-gradient(ellipse 120% 80% at 20% 10%, rgba(var(--brand-flavor-functional-rgb),0.35) 0%, transparent 50%),
+            radial-gradient(ellipse 100% 70% at 80% 85%, rgba(var(--brand-accent-rgb),0.12) 0%, transparent 50%),
+            radial-gradient(ellipse 60% 50% at 60% 40%, rgba(var(--brand-flavor-strawberry-rgb),0.2) 0%, transparent 50%),
             linear-gradient(180deg, #F0E4D8 0%, #EDE0D4 30%, #E8D8CC 60%, #F0E4D8 100%);
           background-attachment:fixed;
           position:relative
         }
         .nf-page::before{
           content:'';position:fixed;inset:0;pointer-events:none;z-index:-1;
-          background-image:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%231B1F3B' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+          background-image:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='${svgHex(BRAND.colors.ink)}' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
           opacity:0.6
         }
 
@@ -27,28 +28,28 @@ export default function NotFound() {
           position:sticky;top:0;z-index:200;
           display:flex;align-items:center;justify-content:space-between;
           padding:0 5%;height:60px;
-          background:rgba(255,183,209,0.85);
+          background:rgba(var(--brand-flavor-strawberry-rgb),0.85);
           backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
-          border-bottom:1px solid rgba(27,31,59,0.06)
+          border-bottom:1px solid rgba(var(--brand-ink-rgb),0.06)
         }
         .nf-nav-logo{
           display:flex;align-items:center;gap:8px;
-          text-decoration:none;color:#1B1F3B
+          text-decoration:none;color:var(--brand-ink)
         }
         .nf-nav-logo img{width:32px;height:32px;border-radius:6px}
-        .nf-nav-logo span{font-family:'Instrument Serif',Georgia,serif;font-size:22px;font-weight:400;font-style:italic;color:#1B1F3B}
+        .nf-nav-logo span{font-family:var(--brand-font-display);font-size:22px;font-weight:400;font-style:italic;color:var(--brand-ink)}
         .nf-nav-links{display:flex;gap:8px}
         @media(max-width:768px){.nf-nav-links{display:none !important}.nf-nav-cta{display:none !important}}
         .nf-nav-links a{
           background:none;border:none;cursor:pointer;
-          font-family:'Syne',system-ui,sans-serif;font-size:11.5px;font-weight:600;
-          letter-spacing:.08em;text-transform:uppercase;color:#1B1F3B;
+          font-family:var(--brand-font-body);font-size:11.5px;font-weight:600;
+          letter-spacing:.08em;text-transform:uppercase;color:var(--brand-ink);
           padding:8px 14px;transition:color .2s;text-decoration:none
         }
-        .nf-nav-links a:hover{color:#2D4A2D}
+        .nf-nav-links a:hover{color:var(--brand-accent-deep)}
         .nf-nav-cta{
-          background:#1B1F3B;color:#FDF4EE;border:none;
-          padding:10px 20px;font-family:'Syne',system-ui,sans-serif;
+          background:var(--brand-ink);color:var(--brand-canvas);border:none;
+          padding:10px 20px;font-family:var(--brand-font-body);
           font-size:12px;font-weight:700;letter-spacing:.06em;
           text-transform:uppercase;cursor:pointer;transition:background .2s;text-decoration:none
         }
@@ -60,31 +61,31 @@ export default function NotFound() {
           padding:80px 6%;text-align:center;position:relative;overflow:hidden
         }
         .nf-blob{position:absolute;border-radius:50%;pointer-events:none;opacity:.35}
-        .nf-blob-a{width:360px;height:360px;top:-100px;right:8%;background:#D4B8E0}
-        .nf-blob-b{width:240px;height:240px;bottom:-80px;left:5%;background:#FFB7D1;opacity:.25}
-        .nf-blob-c{width:180px;height:180px;top:40%;left:60%;background:#C8FF3A;opacity:.12}
+        .nf-blob-a{width:360px;height:360px;top:-100px;right:8%;background:var(--brand-flavor-functional)}
+        .nf-blob-b{width:240px;height:240px;bottom:-80px;left:5%;background:var(--brand-flavor-strawberry);opacity:.25}
+        .nf-blob-c{width:180px;height:180px;top:40%;left:60%;background:var(--brand-accent);opacity:.12}
 
         .nf-tag{
           display:inline-flex;align-items:center;gap:8px;
-          font-family:'DM Mono',monospace;font-size:11px;font-weight:500;
-          letter-spacing:.18em;text-transform:uppercase;color:rgba(27,31,59,0.5);
+          font-family:var(--brand-font-mono);font-size:11px;font-weight:500;
+          letter-spacing:.18em;text-transform:uppercase;color:rgba(var(--brand-ink-rgb),0.5);
           margin-bottom:28px;
           opacity:0;animation:nfFadeUp .7s .1s forwards
         }
-        .nf-tag::before{content:'';width:6px;height:6px;border-radius:50%;background:#C8FF3A;flex-shrink:0}
+        .nf-tag::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--brand-accent);flex-shrink:0}
 
         .nf-heading{
-          font-family:'Instrument Serif',Georgia,serif;
+          font-family:var(--brand-font-display);
           font-size:clamp(40px,6vw,72px);font-weight:400;font-style:italic;
           line-height:1.05;letter-spacing:-.02em;
-          color:#1B1F3B;margin:0 0 20px;
+          color:var(--brand-ink);margin:0 0 20px;
           opacity:0;animation:nfFadeUp .8s .2s forwards
         }
 
         .nf-sub{
-          font-family:'Syne',system-ui,sans-serif;
+          font-family:var(--brand-font-body);
           font-size:clamp(15px,1.8vw,18px);font-weight:400;
-          color:rgba(27,31,59,0.6);line-height:1.7;
+          color:rgba(var(--brand-ink-rgb),0.6);line-height:1.7;
           max-width:460px;margin:0 0 40px;
           opacity:0;animation:nfFadeUp .8s .35s forwards
         }
@@ -96,40 +97,40 @@ export default function NotFound() {
         .nf-link{
           display:inline-block;
           padding:14px 32px;
-          font-family:'Syne',system-ui,sans-serif;
+          font-family:var(--brand-font-body);
           font-size:12px;font-weight:700;letter-spacing:.08em;
           text-transform:uppercase;text-decoration:none;
           transition:background .2s,transform .2s,color .2s;
           cursor:pointer
         }
         .nf-link-primary{
-          background:#1B1F3B;color:#FDF4EE;
+          background:var(--brand-ink);color:var(--brand-canvas);
         }
         .nf-link-primary:hover{background:#2a2e4f;transform:translateY(-2px)}
         .nf-link-secondary{
-          background:transparent;color:#1B1F3B;
-          border:1.5px solid rgba(27,31,59,0.2);
+          background:transparent;color:var(--brand-ink);
+          border:1.5px solid rgba(var(--brand-ink-rgb),0.2);
         }
-        .nf-link-secondary:hover{border-color:#1B1F3B;transform:translateY(-2px)}
-        .nf-link-lime{
-          background:#C8FF3A;color:#1B1F3B;
+        .nf-link-secondary:hover{border-color:var(--brand-ink);transform:translateY(-2px)}
+        .nf-link-accent{
+          background:var(--brand-accent);color:var(--brand-ink);
         }
-        .nf-link-lime:hover{background:#d4ff5a;transform:translateY(-2px)}
+        .nf-link-accent:hover{background:#d4ff5a;transform:translateY(-2px)}
 
         @keyframes nfFadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
 
         /* ── FOOTER ── */
-        .nf-footer{background:#D4B8E0;padding:32px 6%;text-align:center;border-top:1px solid rgba(27,31,59,0.06)}
+        .nf-footer{background:var(--brand-flavor-functional);padding:32px 6%;text-align:center;border-top:1px solid rgba(var(--brand-ink-rgb),0.06)}
         .nf-footer-top{display:flex;justify-content:center;gap:24px;margin-bottom:16px}
         .nf-footer-top a{
-          font-family:'DM Mono',monospace;font-size:11px;font-weight:500;
-          letter-spacing:.12em;text-transform:uppercase;color:#1B1F3B;text-decoration:none;transition:color .2s
+          font-family:var(--brand-font-mono);font-size:11px;font-weight:500;
+          letter-spacing:.12em;text-transform:uppercase;color:var(--brand-ink);text-decoration:none;transition:color .2s
         }
-        .nf-footer-top a:hover{color:#2D4A2D}
-        .nf-footer-mid{font-size:12px;color:rgba(27,31,59,0.45);margin-bottom:8px}
-        .nf-footer-mid a{color:rgba(27,31,59,0.45);text-decoration:underline;transition:color .2s}
-        .nf-footer-mid a:hover{color:#1B1F3B}
-        .nf-footer-bot{font-family:'DM Mono',monospace;font-size:10px;color:rgba(27,31,59,0.45);letter-spacing:.08em}
+        .nf-footer-top a:hover{color:var(--brand-accent-deep)}
+        .nf-footer-mid{font-size:12px;color:rgba(var(--brand-ink-rgb),0.45);margin-bottom:8px}
+        .nf-footer-mid a{color:rgba(var(--brand-ink-rgb),0.45);text-decoration:underline;transition:color .2s}
+        .nf-footer-mid a:hover{color:var(--brand-ink)}
+        .nf-footer-bot{font-family:var(--brand-font-mono);font-size:10px;color:rgba(var(--brand-ink-rgb),0.45);letter-spacing:.08em}
 
         /* ── RESPONSIVE ── */
         @media(max-width:640px){
@@ -191,7 +192,7 @@ export default function NotFound() {
           <div className="nf-links">
             <a href="/recipes" className="nf-link nf-link-primary">Browse Recipes &rarr;</a>
             <a href="/" className="nf-link nf-link-secondary">Back to Home &rarr;</a>
-            <a href="/blog" className="nf-link nf-link-lime">Read the Blog &rarr;</a>
+            <a href="/blog" className="nf-link nf-link-accent">Read the Blog &rarr;</a>
           </div>
         </section>
 

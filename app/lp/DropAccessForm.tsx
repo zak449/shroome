@@ -15,7 +15,7 @@ declare global {
 interface DropAccessFormProps {
   /** e.g. "lp-ritual" — sent as `source` in the waitlist POST + gtag label. */
   source: string;
-  /** Render on a dark (Navy) background. */
+  /** Render on a dark (ink) background. */
   dark?: boolean;
   /** Button label — defaults to the drop CTA. */
   buttonLabel?: string;
@@ -165,17 +165,17 @@ export default function DropAccessForm({
     });
   };
 
-  const strong = dark ? "#FDF4EE" : "#1B1F3B";
-  const faint = dark ? "rgba(253,244,238,0.6)" : "rgba(27,31,59,0.6)";
-  const fainter = dark ? "rgba(253,244,238,0.4)" : "rgba(27,31,59,0.4)";
+  const strong = dark ? "var(--brand-canvas)" : "var(--brand-ink)";
+  const faint = dark ? "rgba(var(--brand-canvas-rgb),0.6)" : "rgba(var(--brand-ink-rgb),0.6)";
+  const fainter = dark ? "rgba(var(--brand-canvas-rgb),0.4)" : "rgba(var(--brand-ink-rgb),0.4)";
 
   if (step === "done") {
     return (
       <div style={{ maxWidth: 440 }}>
-        <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 700, fontSize: "1rem", color: strong, margin: 0 }}>
+        <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 700, fontSize: "1rem", color: strong, margin: 0 }}>
           ✓ you&apos;re in. drop access locked — 20% off + free shipping.
         </p>
-        <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.78rem", color: faint, marginTop: 8 }}>
+        <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.78rem", color: faint, marginTop: 8 }}>
           we&apos;ll send the drop 002 link the moment it&apos;s live.
         </p>
       </div>
@@ -185,12 +185,12 @@ export default function DropAccessForm({
   if (step === "captcha") {
     return (
       <div style={{ maxWidth: 440 }}>
-        <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 600, fontSize: "0.82rem", color: strong, marginBottom: 14 }}>
+        <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 600, fontSize: "0.82rem", color: strong, marginBottom: 14 }}>
           quick verification for {email}
         </p>
         <div ref={captchaRef} style={{ marginBottom: 8 }} />
         {loading && (
-          <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.72rem", color: fainter }}>
+          <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.72rem", color: fainter }}>
             submitting...
           </p>
         )}
@@ -201,10 +201,10 @@ export default function DropAccessForm({
   if (step === "phone") {
     return (
       <div style={{ maxWidth: 440 }}>
-        <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 700, fontSize: "0.85rem", color: strong, marginBottom: 4 }}>
+        <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 700, fontSize: "0.85rem", color: strong, marginBottom: 4 }}>
           ✓ drop access locked in.
         </p>
-        <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 600, fontSize: "0.82rem", color: faint, marginBottom: 12 }}>
+        <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 600, fontSize: "0.82rem", color: faint, marginBottom: 12 }}>
           the text list gets the drop link 10 minutes before everyone else — and your code upgrades from 20% to 30%. best code wins.
         </p>
         <form onSubmit={handlePhoneSubmit}>
@@ -217,10 +217,10 @@ export default function DropAccessForm({
             style={{
               width: "100%",
               padding: "16px 20px",
-              border: "2px solid #1B1F3B",
+              border: "2px solid var(--brand-ink)",
               background: "#fff",
-              color: "#1B1F3B",
-              fontFamily: "'Syne', system-ui, sans-serif",
+              color: "var(--brand-ink)",
+              fontFamily: "var(--brand-font-body)",
               fontSize: "0.95rem",
               fontWeight: 500,
               marginBottom: 10,
@@ -233,9 +233,9 @@ export default function DropAccessForm({
               style={{
                 padding: "16px 32px",
                 border: "none",
-                background: "#C8FF3A",
-                color: "#1B1F3B",
-                fontFamily: "'Syne', system-ui, sans-serif",
+                background: "var(--brand-accent)",
+                color: "var(--brand-ink)",
+                fontFamily: "var(--brand-font-body)",
                 fontWeight: 800,
                 fontSize: "0.78rem",
                 letterSpacing: "0.1em",
@@ -253,7 +253,7 @@ export default function DropAccessForm({
                 border: "none",
                 background: "transparent",
                 color: fainter,
-                fontFamily: "'Syne', system-ui, sans-serif",
+                fontFamily: "var(--brand-font-body)",
                 fontWeight: 600,
                 fontSize: "0.72rem",
                 cursor: "pointer",
@@ -264,7 +264,7 @@ export default function DropAccessForm({
             </button>
           </div>
         </form>
-        <p style={{ margin: "8px 0 0", fontSize: "0.6rem", color: fainter, lineHeight: 1.4, maxWidth: 400, fontFamily: "'Syne', system-ui, sans-serif" }}>
+        <p style={{ margin: "8px 0 0", fontSize: "0.6rem", color: fainter, lineHeight: 1.4, maxWidth: 400, fontFamily: "var(--brand-font-body)" }}>
           by providing your phone number, you agree to receive marketing texts from shroomé — one text per drop. msg &amp; data rates may apply. reply STOP to opt out.
         </p>
       </div>
@@ -285,10 +285,10 @@ export default function DropAccessForm({
             flex: "1 1 220px",
             minWidth: 0,
             padding: "16px 20px",
-            border: "2px solid #1B1F3B",
+            border: "2px solid var(--brand-ink)",
             background: "#fff",
-            color: "#1B1F3B",
-            fontFamily: "'Syne', system-ui, sans-serif",
+            color: "var(--brand-ink)",
+            fontFamily: "var(--brand-font-body)",
             fontSize: "0.95rem",
             fontWeight: 500,
           }}
@@ -299,9 +299,9 @@ export default function DropAccessForm({
           style={{
             padding: "16px 28px",
             border: "none",
-            background: "#C8FF3A",
-            color: "#1B1F3B",
-            fontFamily: "'Syne', system-ui, sans-serif",
+            background: "var(--brand-accent)",
+            color: "var(--brand-ink)",
+            fontFamily: "var(--brand-font-body)",
             fontWeight: 800,
             fontSize: "0.78rem",
             letterSpacing: "0.1em",
@@ -314,12 +314,12 @@ export default function DropAccessForm({
         </button>
       </form>
       {captchaError && (
-        <p role="alert" style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.72rem", color: "#B3261E", marginTop: 10, fontWeight: 600 }}>
+        <p role="alert" style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.72rem", color: "#B3261E", marginTop: 10, fontWeight: 600 }}>
           {captchaError}
         </p>
       )}
       {microcopy && (
-        <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.72rem", color: faint, marginTop: 10 }}>
+        <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.72rem", color: faint, marginTop: 10 }}>
           {microcopy}
         </p>
       )}

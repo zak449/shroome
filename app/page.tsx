@@ -384,7 +384,7 @@ export default function Home() {
       {/* ════════════════════ MARQUEE TOP BAR ════════════════════ */}
       <div
         style={{
-          background: "#1B1F3B",
+          background: "var(--brand-ink)",
           padding: "10px 0",
           overflow: "hidden",
           position: "relative",
@@ -398,11 +398,11 @@ export default function Home() {
               <span
                 key={i}
                 style={{
-                  fontFamily: "'Syne', system-ui, sans-serif",
+                  fontFamily: "var(--brand-font-body)",
                   fontWeight: 600,
                   fontSize: "0.65rem",
                   letterSpacing: "0.18em",
-                  color: i % 2 === 0 ? "#C8FF3A" : "rgba(200,255,58,0.4)",
+                  color: i % 2 === 0 ? "var(--brand-accent)" : "rgba(var(--brand-accent-rgb),0.4)",
                   padding: "0 64px",
                   whiteSpace: "nowrap",
                 }}
@@ -421,10 +421,10 @@ export default function Home() {
           position: "sticky",
           top: 0,
           zIndex: 99,
-          background: "rgba(255,183,209,0.85)",
+          background: "rgba(var(--brand-flavor-strawberry-rgb),0.85)",
           backdropFilter: "blur(16px)",
           WebkitBackdropFilter: "blur(16px)",
-          borderBottom: "1px solid rgba(27,31,59,0.08)",
+          borderBottom: "1px solid rgba(var(--brand-ink-rgb),0.08)",
           padding: "14px 32px",
           display: "flex",
           alignItems: "center",
@@ -435,10 +435,10 @@ export default function Home() {
           <Image src="/logo-mark.png" width={32} height={32} alt="shroomé S" style={{ borderRadius: 6 }} priority />
           <span
             style={{
-              fontFamily: "'Instrument Serif', Georgia, serif",
+              fontFamily: "var(--brand-font-display)",
               fontStyle: "italic",
               fontSize: "1.3rem",
-              color: "#1B1F3B",
+              color: "var(--brand-ink)",
             }}
           >
             shroomé
@@ -460,12 +460,12 @@ export default function Home() {
               style={{
                 background: "none",
                 border: "none",
-                fontFamily: "'Syne', system-ui, sans-serif",
+                fontFamily: "var(--brand-font-body)",
                 fontWeight: 600,
                 fontSize: "0.72rem",
                 letterSpacing: "0.08em",
                 textTransform: "uppercase",
-                color: "#1B1F3B",
+                color: "var(--brand-ink)",
                 cursor: "pointer",
                 display: "none",
               }}
@@ -478,11 +478,11 @@ export default function Home() {
             onClick={() => { scrollTo("cta"); window.gtag?.("event", "select_promotion", { promotion_name: "nav_cta_waitlist" }); }}
             className="nav-cta-btn"
             style={{
-              background: "#1B1F3B",
-              color: "#FDF4EE",
+              background: "var(--brand-ink)",
+              color: "var(--brand-canvas)",
               border: "none",
               padding: "10px 22px",
-              fontFamily: "'Syne', system-ui, sans-serif",
+              fontFamily: "var(--brand-font-body)",
               fontWeight: 800,
               fontSize: "0.68rem",
               letterSpacing: "0.1em",
@@ -504,7 +504,7 @@ export default function Home() {
             background: "none",
             border: "none",
             fontSize: "1.6rem",
-            color: "#1B1F3B",
+            color: "var(--brand-ink)",
             cursor: "pointer",
             padding: "4px 8px",
             lineHeight: 1,
@@ -521,7 +521,7 @@ export default function Home() {
             top: "100%",
             left: 0,
             right: 0,
-            background: "#FDF4EE",
+            background: "var(--brand-canvas)",
             maxHeight: menuOpen ? 400 : 0,
             overflow: "hidden",
             transition: "max-height 0.35s ease",
@@ -529,7 +529,7 @@ export default function Home() {
             flexDirection: "column",
             alignItems: "center",
             gap: 0,
-            boxShadow: menuOpen ? "0 8px 32px rgba(27,31,59,0.10)" : "none",
+            boxShadow: menuOpen ? "0 8px 32px rgba(var(--brand-ink-rgb),0.10)" : "none",
           }}
         >
           {[
@@ -554,15 +554,15 @@ export default function Home() {
               style={{
                 background: "none",
                 border: "none",
-                borderBottom: "1px solid rgba(27,31,59,0.08)",
+                borderBottom: "1px solid rgba(var(--brand-ink-rgb),0.08)",
                 width: "100%",
                 padding: "16px 24px",
-                fontFamily: "'Syne', system-ui, sans-serif",
+                fontFamily: "var(--brand-font-body)",
                 fontWeight: 600,
                 fontSize: "0.78rem",
                 letterSpacing: "0.1em",
                 textTransform: "uppercase" as const,
-                color: "#1B1F3B",
+                color: "var(--brand-ink)",
                 cursor: "pointer",
                 textAlign: "center",
               }}
@@ -577,13 +577,13 @@ export default function Home() {
               window.gtag?.("event", "select_promotion", { promotion_name: "mobile_nav_cta_waitlist" });
             }}
             style={{
-              background: "#C8FF3A",
-              color: "#1B1F3B",
+              background: "var(--brand-accent)",
+              color: "var(--brand-ink)",
               border: "none",
               width: "calc(100% - 48px)",
               margin: "16px 24px",
               padding: "14px 22px",
-              fontFamily: "'Syne', system-ui, sans-serif",
+              fontFamily: "var(--brand-font-body)",
               fontWeight: 800,
               fontSize: "0.72rem",
               letterSpacing: "0.1em",
@@ -596,11 +596,11 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* ════════════════════ HERO — PINK WITH CLOUD BACKGROUND ════════════════════ */}
+      {/* ════════════════════ HERO — FLAVOR-TINT WITH CLOUD BACKGROUND ════════════════════ */}
       <section
         style={{
           minHeight: "100vh",
-          background: "#FFB7D1",
+          background: "var(--brand-flavor-strawberry)",
           position: "relative",
           overflow: "hidden",
           padding: "80px 24px 100px",
@@ -620,12 +620,12 @@ export default function Home() {
             pointerEvents: "none",
           }}
         />
-        {/* Pink overlay to blend clouds with brand */}
+        {/* Flavor-tint overlay to blend clouds with brand */}
         <div
           style={{
             position: "absolute",
             inset: 0,
-            background: "linear-gradient(180deg, rgba(255,183,209,0.5) 0%, rgba(255,183,209,0.2) 40%, rgba(253,244,238,0.4) 100%)",
+            background: "linear-gradient(180deg, rgba(var(--brand-flavor-strawberry-rgb),0.5) 0%, rgba(var(--brand-flavor-strawberry-rgb),0.2) 40%, rgba(var(--brand-canvas-rgb),0.4) 100%)",
             pointerEvents: "none",
           }}
         />
@@ -638,7 +638,7 @@ export default function Home() {
             right: "-10%",
             width: "62vw",
             height: "62vw",
-            background: "#D4B8E0",
+            background: "var(--brand-flavor-functional)",
             opacity: 0.7,
             pointerEvents: "none",
           }}
@@ -651,7 +651,7 @@ export default function Home() {
             left: "-8%",
             width: "20vw",
             height: "20vw",
-            background: "#C8FF3A",
+            background: "var(--brand-accent)",
             opacity: 0.15,
             pointerEvents: "none",
           }}
@@ -664,7 +664,7 @@ export default function Home() {
             left: "15%",
             width: "18vw",
             height: "18vw",
-            background: "#FF7043",
+            background: "var(--brand-accent-warm)",
             opacity: 0.18,
             pointerEvents: "none",
           }}
@@ -677,7 +677,7 @@ export default function Home() {
             right: "5%",
             width: "22vw",
             height: "22vw",
-            background: "#FDF4EE",
+            background: "var(--brand-canvas)",
             opacity: 0.12,
             pointerEvents: "none",
           }}
@@ -690,7 +690,7 @@ export default function Home() {
             left: "-8%",
             width: "20vw",
             height: "20vw",
-            background: "#FFB7D1",
+            background: "var(--brand-flavor-strawberry)",
             opacity: 0.25,
             pointerEvents: "none",
           }}
@@ -703,14 +703,14 @@ export default function Home() {
               <div
                 className="fade-up"
                 style={{
-                  background: "#C8FF3A",
+                  background: "var(--brand-accent)",
                   padding: "10px 16px",
                   marginBottom: 16,
                   display: "inline-block",
                   opacity: 0,
                 }}
               >
-                <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 700, fontSize: "0.72rem", color: "#1B1F3B", margin: 0 }}>
+                <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 700, fontSize: "0.72rem", color: "var(--brand-ink)", margin: 0 }}>
                   You were referred by a friend! You both get extra perks.
                 </p>
               </div>
@@ -719,26 +719,26 @@ export default function Home() {
             <p
               className="fade-up"
               style={{
-                fontFamily: "'Syne', system-ui, sans-serif",
+                fontFamily: "var(--brand-font-body)",
                 fontWeight: 700,
                 fontSize: "0.7rem",
                 letterSpacing: "0.18em",
                 textTransform: "uppercase",
-                color: "#2D4A2D",
+                color: "var(--brand-accent-deep)",
                 marginBottom: 20,
                 opacity: 0,
               }}
             >
-              <span style={{ display: "inline-block", width: 8, height: 8, borderRadius: "50%", background: "#C8FF3A", marginRight: 10, verticalAlign: "middle" }} />
+              <span style={{ display: "inline-block", width: 8, height: 8, borderRadius: "50%", background: "var(--brand-accent)", marginRight: 10, verticalAlign: "middle" }} />
               Join the pre-launch list · 20% off + free shipping
             </p>
 
             <h1
               className="fade-up delay-100"
               style={{
-                fontFamily: "'Instrument Serif', Georgia, serif",
+                fontFamily: "var(--brand-font-display)",
                 fontSize: "clamp(2.6rem, 5.5vw, 4.2rem)",
-                color: "#2D4A2D",
+                color: "var(--brand-accent-deep)",
                 lineHeight: 1.05,
                 marginBottom: 8,
                 opacity: 0,
@@ -748,15 +748,15 @@ export default function Home() {
               <br />
               Home address.
               <br />
-              <span style={{ fontStyle: "italic", color: "#FF7043" }}>No crash.</span>
+              <span style={{ fontStyle: "italic", color: "var(--brand-accent-warm)" }}>No crash.</span>
             </h1>
 
             <p
               className="fade-up delay-200"
               style={{
-                fontFamily: "'Syne', system-ui, sans-serif",
+                fontFamily: "var(--brand-font-body)",
                 fontSize: "0.95rem",
-                color: "rgba(27,31,59,0.7)",
+                color: "rgba(var(--brand-ink-rgb),0.7)",
                 lineHeight: 1.65,
                 maxWidth: 420,
                 margin: "24px 0",
@@ -770,12 +770,12 @@ export default function Home() {
             <p
               className="fade-up delay-350"
               style={{
-                fontFamily: "'Syne', system-ui, sans-serif",
+                fontFamily: "var(--brand-font-body)",
                 fontWeight: 700,
                 fontSize: "0.68rem",
                 letterSpacing: "0.15em",
                 textTransform: "uppercase",
-                color: "#2D4A2D",
+                color: "var(--brand-accent-deep)",
                 marginBottom: 24,
                 opacity: 0,
               }}
@@ -786,15 +786,15 @@ export default function Home() {
             {/* Ingredient pills */}
             <div className="fade-up delay-350" style={{ display: "flex", gap: 10, flexWrap: "wrap", marginBottom: 28, opacity: 0 }}>
               {[
-                { label: "Clean Energy", bg: "rgba(255,112,67,0.2)", color: "#1B1F3B" },
-                { label: "Zero Crash", bg: "rgba(212,184,224,0.35)", color: "#1B1F3B" },
-                { label: "Ready to Pour", bg: "rgba(200,255,58,0.3)", color: "#1B1F3B" },
-                { label: "15 Seconds", bg: "rgba(27,31,59,0.12)", color: "#1B1F3B" },
+                { label: "Clean Energy", bg: "rgba(var(--brand-accent-warm-rgb),0.2)", color: "var(--brand-ink)" },
+                { label: "Zero Crash", bg: "rgba(var(--brand-flavor-functional-rgb),0.35)", color: "var(--brand-ink)" },
+                { label: "Ready to Pour", bg: "rgba(var(--brand-accent-rgb),0.3)", color: "var(--brand-ink)" },
+                { label: "15 Seconds", bg: "rgba(var(--brand-ink-rgb),0.12)", color: "var(--brand-ink)" },
               ].map((p) => (
                 <span
                   key={p.label}
                   style={{
-                    fontFamily: "'Syne', system-ui, sans-serif",
+                    fontFamily: "var(--brand-font-body)",
                     fontWeight: 700,
                     fontSize: "0.65rem",
                     letterSpacing: "0.08em",
@@ -815,38 +815,38 @@ export default function Home() {
               <div style={{ flex: "1 1 260px" }}>
                 {step === "done" ? (
                   <div>
-                    <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 700, fontSize: "1rem", color: "#2D4A2D", marginBottom: referralCode ? 16 : 0 }}>
+                    <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 700, fontSize: "1rem", color: "var(--brand-accent-deep)", marginBottom: referralCode ? 16 : 0 }}>
                       ✓ You&apos;re on the list — 20% off + free shipping locked in.
                     </p>
                     {referralCode && (
-                      <div style={{ marginTop: 16, padding: "20px", background: "rgba(27,31,59,0.07)", borderRadius: 8 }}>
-                        <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 700, fontSize: "0.78rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "#1B1F3B", marginBottom: 8 }}>
+                      <div style={{ marginTop: 16, padding: "20px", background: "rgba(var(--brand-ink-rgb),0.07)", borderRadius: 8 }}>
+                        <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 700, fontSize: "0.78rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--brand-ink)", marginBottom: 8 }}>
                           Refer friends → earn up to $15 credit
                         </p>
-                        <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.75rem", color: "rgba(27,31,59,0.5)", marginBottom: 12 }}>
+                        <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.75rem", color: "rgba(var(--brand-ink-rgb),0.5)", marginBottom: 12 }}>
                           $5 credit at 1 friend, $10 at 3, $15 at 5 — applied at checkout on drop day. Share your link:
                         </p>
                         <div style={{ display: "flex", gap: 8, alignItems: "center", marginBottom: 12, flexWrap: "wrap" }}>
-                          <div style={{ flex: "1 1 200px", background: "#fff", border: "2px solid #1B1F3B", padding: "10px 14px", fontFamily: "'DM Mono', monospace", fontSize: "0.78rem", color: "#1B1F3B", minWidth: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                          <div style={{ flex: "1 1 200px", background: "#fff", border: "2px solid var(--brand-ink)", padding: "10px 14px", fontFamily: "var(--brand-font-mono)", fontSize: "0.78rem", color: "var(--brand-ink)", minWidth: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
                             drinkshroome.com?ref={referralCode}
                           </div>
                           <button
                             onClick={copyReferralLink}
-                            style={{ padding: "10px 20px", border: "none", background: copied ? "#1B1F3B" : "#C8FF3A", color: copied ? "#C8FF3A" : "#1B1F3B", fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 800, fontSize: "0.7rem", letterSpacing: "0.08em", textTransform: "uppercase", cursor: "pointer", whiteSpace: "nowrap", transition: "all 0.2s" }}
+                            style={{ padding: "10px 20px", border: "none", background: copied ? "var(--brand-ink)" : "var(--brand-accent)", color: copied ? "var(--brand-accent)" : "var(--brand-ink)", fontFamily: "var(--brand-font-body)", fontWeight: 800, fontSize: "0.7rem", letterSpacing: "0.08em", textTransform: "uppercase", cursor: "pointer", whiteSpace: "nowrap", transition: "all 0.2s" }}
                           >
                             {copied ? "Copied!" : "Copy"}
                           </button>
                         </div>
                         <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
                           {[
-                            { label: "Share on Instagram", platform: "instagram", bg: "#D4B8E0" },
-                            { label: "Share on TikTok", platform: "tiktok", bg: "#FFB7D1" },
-                            { label: "Text a friend", platform: "text", bg: "#C8FF3A" },
+                            { label: "Share on Instagram", platform: "instagram", bg: "var(--brand-flavor-functional)" },
+                            { label: "Share on TikTok", platform: "tiktok", bg: "var(--brand-flavor-strawberry)" },
+                            { label: "Text a friend", platform: "text", bg: "var(--brand-accent)" },
                           ].map((s) => (
                             <button
                               key={s.platform}
                               onClick={() => shareOnPlatform(s.platform)}
-                              style={{ padding: "8px 14px", border: "none", background: s.bg, color: "#1B1F3B", fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 700, fontSize: "0.65rem", letterSpacing: "0.06em", textTransform: "uppercase", cursor: "pointer", borderRadius: 2 }}
+                              style={{ padding: "8px 14px", border: "none", background: s.bg, color: "var(--brand-ink)", fontFamily: "var(--brand-font-body)", fontWeight: 700, fontSize: "0.65rem", letterSpacing: "0.06em", textTransform: "uppercase", cursor: "pointer", borderRadius: 2 }}
                             >
                               {s.label}
                             </button>
@@ -855,18 +855,18 @@ export default function Home() {
                         <div style={{ marginTop: 14, display: "flex", alignItems: "center", gap: 8 }}>
                           <div style={{ display: "flex", gap: 4 }}>
                             {[0, 1, 2].map((i) => (
-                              <div key={i} style={{ width: 28, height: 28, borderRadius: "50%", border: "2px solid #1B1F3B", background: i < referralCount ? "#C8FF3A" : "transparent", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.65rem", fontWeight: 700, color: i < referralCount ? "#1B1F3B" : "rgba(27,31,59,0.3)", fontFamily: "'Syne', system-ui, sans-serif", transition: "all 0.3s" }}>
+                              <div key={i} style={{ width: 28, height: 28, borderRadius: "50%", border: "2px solid var(--brand-ink)", background: i < referralCount ? "var(--brand-accent)" : "transparent", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.65rem", fontWeight: 700, color: i < referralCount ? "var(--brand-ink)" : "rgba(var(--brand-ink-rgb),0.3)", fontFamily: "var(--brand-font-body)", transition: "all 0.3s" }}>
                                 {i < referralCount ? "✓" : ""}
                               </div>
                             ))}
                           </div>
-                          <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.72rem", color: "rgba(27,31,59,0.5)", fontWeight: 600 }}>
+                          <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.72rem", color: "rgba(var(--brand-ink-rgb),0.5)", fontWeight: 600 }}>
                             {referralCount}/3 friends joined
                           </p>
                         </div>
                         <a
                           href="/refer"
-                          style={{ display: "inline-block", marginTop: 14, fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.06em", textTransform: "uppercase" as const, color: "#1B1F3B", textDecoration: "underline", opacity: 0.5 }}
+                          style={{ display: "inline-block", marginTop: 14, fontFamily: "var(--brand-font-body)", fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.06em", textTransform: "uppercase" as const, color: "var(--brand-ink)", textDecoration: "underline", opacity: 0.5 }}
                         >
                           Share &amp; track referrals →
                         </a>
@@ -875,19 +875,19 @@ export default function Home() {
                   </div>
                 ) : step === "captcha" ? (
                   <div>
-                    <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 600, fontSize: "0.82rem", color: "#2D4A2D", marginBottom: 14 }}>
+                    <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 600, fontSize: "0.82rem", color: "var(--brand-accent-deep)", marginBottom: 14 }}>
                       Quick verification for {email}
                     </p>
                     <div ref={captchaRef} style={{ marginBottom: 8 }} />
                     {loading && (
-                      <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.72rem", color: "rgba(27,31,59,0.45)" }}>
+                      <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.72rem", color: "rgba(var(--brand-ink-rgb),0.45)" }}>
                         Submitting...
                       </p>
                     )}
                   </div>
                 ) : step === "phone" ? (
                   <>
-                    <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 600, fontSize: "0.82rem", color: "#2D4A2D", marginBottom: 12 }}>
+                    <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 600, fontSize: "0.82rem", color: "var(--brand-accent-deep)", marginBottom: 12 }}>
                       ✓ 20% off + free shipping locked in! Add your number and your code upgrades from 20% to 30% — best code wins.
                     </p>
                     <input
@@ -898,9 +898,9 @@ export default function Home() {
                       style={{
                         width: "100%",
                         padding: "16px 20px",
-                        border: "2px solid #1B1F3B",
+                        border: "2px solid var(--brand-ink)",
                         background: "#fff",
-                        fontFamily: "'Syne', system-ui, sans-serif",
+                        fontFamily: "var(--brand-font-body)",
                         fontSize: "0.95rem",
                         fontWeight: 500,
                         marginBottom: 10,
@@ -913,9 +913,9 @@ export default function Home() {
                         style={{
                           padding: "16px 32px",
                           border: "none",
-                          background: "#C8FF3A",
-                          color: "#2D4A2D",
-                          fontFamily: "'Syne', system-ui, sans-serif",
+                          background: "var(--brand-accent)",
+                          color: "var(--brand-accent-deep)",
+                          fontFamily: "var(--brand-font-body)",
                           fontWeight: 800,
                           fontSize: "0.78rem",
                           letterSpacing: "0.1em",
@@ -931,8 +931,8 @@ export default function Home() {
                           padding: "16px 16px",
                           border: "none",
                           background: "transparent",
-                          color: "rgba(27,31,59,0.45)",
-                          fontFamily: "'Syne', system-ui, sans-serif",
+                          color: "rgba(var(--brand-ink-rgb),0.45)",
+                          fontFamily: "var(--brand-font-body)",
                           fontWeight: 600,
                           fontSize: "0.72rem",
                           cursor: "pointer",
@@ -942,7 +942,7 @@ export default function Home() {
                         Skip
                       </button>
                     </div>
-                    <p style={{ margin: "8px 0 0", fontSize: "0.6rem", color: "rgba(27,31,59,0.35)", lineHeight: 1.4, maxWidth: 400 }}>
+                    <p style={{ margin: "8px 0 0", fontSize: "0.6rem", color: "rgba(var(--brand-ink-rgb),0.35)", lineHeight: 1.4, maxWidth: 400 }}>
                       By providing your phone number, you agree to receive marketing texts from shroomé. Msg &amp; data rates may apply. Reply STOP to unsubscribe.
                     </p>
                   </>
@@ -957,9 +957,9 @@ export default function Home() {
                       style={{
                         width: "100%",
                         padding: "16px 20px",
-                        border: "2px solid #1B1F3B",
+                        border: "2px solid var(--brand-ink)",
                         background: "#fff",
-                        fontFamily: "'Syne', system-ui, sans-serif",
+                        fontFamily: "var(--brand-font-body)",
                         fontSize: "0.95rem",
                         fontWeight: 500,
                         marginBottom: 10,
@@ -971,9 +971,9 @@ export default function Home() {
                       style={{
                         padding: "16px 32px",
                         border: "none",
-                        background: "#C8FF3A",
-                        color: "#2D4A2D",
-                        fontFamily: "'Syne', system-ui, sans-serif",
+                        background: "var(--brand-accent)",
+                        color: "var(--brand-accent-deep)",
+                        fontFamily: "var(--brand-font-body)",
                         fontWeight: 800,
                         fontSize: "0.78rem",
                         letterSpacing: "0.1em",
@@ -984,14 +984,14 @@ export default function Home() {
                       {loading ? "…" : "Get launch updates →"}
                     </button>
                     {captchaError && (
-                      <p role="alert" style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.72rem", color: "#B3261E", marginTop: 10, fontWeight: 600 }}>
+                      <p role="alert" style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.72rem", color: "#B3261E", marginTop: 10, fontWeight: 600 }}>
                         {captchaError}
                       </p>
                     )}
-                    <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.72rem", color: "rgba(27,31,59,0.45)", marginTop: 10 }}>
+                    <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.72rem", color: "rgba(var(--brand-ink-rgb),0.45)", marginTop: 10 }}>
                       No spam. Add your phone and your code upgrades from 20% to 30% at launch — best code wins.
                     </p>
-                    <p style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.65rem", color: "rgba(27,31,59,0.35)", marginTop: 8, letterSpacing: "0.03em" }}>
+                    <p style={{ fontFamily: "var(--brand-font-mono)", fontSize: "0.65rem", color: "rgba(var(--brand-ink-rgb),0.35)", marginTop: 8, letterSpacing: "0.03em" }}>
                       Join 100+ early adopters
                     </p>
                   </>
@@ -999,15 +999,15 @@ export default function Home() {
               </div>
               <div
                 style={{
-                  border: "1px solid rgba(27,31,59,0.15)",
+                  border: "1px solid rgba(var(--brand-ink-rgb),0.15)",
                   padding: "14px 24px",
                   textAlign: "center",
-                  background: "rgba(253,244,238,0.6)",
+                  background: "rgba(var(--brand-canvas-rgb),0.6)",
                 }}
               >
-                <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 700, fontSize: "0.7rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "rgba(27,31,59,0.5)", marginBottom: 4 }}>Per box</p>
-                <p style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "2rem", color: "#2D4A2D", lineHeight: 1 }}>12</p>
-                <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.68rem", color: "rgba(27,31,59,0.4)", fontStyle: "italic" }}>servings per box</p>
+                <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 700, fontSize: "0.7rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "rgba(var(--brand-ink-rgb),0.5)", marginBottom: 4 }}>Per box</p>
+                <p style={{ fontFamily: "var(--brand-font-display)", fontSize: "2rem", color: "var(--brand-accent-deep)", lineHeight: 1 }}>12</p>
+                <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.68rem", color: "rgba(var(--brand-ink-rgb),0.4)", fontStyle: "italic" }}>servings per box</p>
               </div>
             </div>
           </div>
@@ -1050,15 +1050,15 @@ export default function Home() {
             position: "absolute",
             right: 0,
             bottom: 40,
-            background: "#1B1F3B",
-            color: "#FDF4EE",
+            background: "var(--brand-ink)",
+            color: "var(--brand-canvas)",
             padding: "20px 20px",
             textAlign: "center",
             zIndex: 2,
           }}
         >
-          <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 700, fontSize: "0.65rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "#C8FF3A", marginBottom: 8 }}>Flavors</p>
-          <p style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontStyle: "italic", fontSize: "0.95rem", lineHeight: 1.5 }}>Vanilla<br />Strawberry</p>
+          <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 700, fontSize: "0.65rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--brand-accent)", marginBottom: 8 }}>Flavors</p>
+          <p style={{ fontFamily: "var(--brand-font-display)", fontStyle: "italic", fontSize: "0.95rem", lineHeight: 1.5 }}>Vanilla<br />Strawberry</p>
         </div>
       </section>
 
@@ -1068,11 +1068,11 @@ export default function Home() {
         style={{
           padding: "120px 24px 48px",
           marginTop: -2,
-          background: "linear-gradient(180deg, #FFB7D1 0%, #c47a96 8%, #6b3a52 18%, #1B1F3B 30%, #000 40%, #000 100%)",
+          background: "linear-gradient(180deg, var(--brand-flavor-strawberry) 0%, #c47a96 8%, #6b3a52 18%, var(--brand-ink) 30%, #000 40%, #000 100%)",
           position: "relative",
           overflow: "hidden",
           textAlign: "center",
-          color: "#FDF4EE",
+          color: "var(--brand-canvas)",
         }}
       >
         {/* Dramatic starburst light rays */}
@@ -1120,13 +1120,13 @@ export default function Home() {
 
         <div style={{ position: "relative", zIndex: 1, maxWidth: 1000, margin: "0 auto" }}>
           <div {...anim("flavor-head")}>
-            <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 700, fontSize: "0.65rem", letterSpacing: "0.25em", textTransform: "uppercase", color: "#C8FF3A", marginBottom: 16 }}>
+            <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 700, fontSize: "0.65rem", letterSpacing: "0.25em", textTransform: "uppercase", color: "var(--brand-accent)", marginBottom: 16 }}>
               2 Flavors
             </p>
-            <h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "clamp(2rem, 5vw, 3.5rem)", lineHeight: 1.05, marginBottom: 8 }}>
+            <h2 style={{ fontFamily: "var(--brand-font-display)", fontSize: "clamp(2rem, 5vw, 3.5rem)", lineHeight: 1.05, marginBottom: 8 }}>
               Pick your flavor.
               <br />
-              <span style={{ fontStyle: "italic", color: "#FFB7D1" }}>Both hit different.</span>
+              <span style={{ fontStyle: "italic", color: "var(--brand-flavor-strawberry)" }}>Both hit different.</span>
             </h2>
           </div>
 
@@ -1172,12 +1172,12 @@ export default function Home() {
           {/* Flavor cards side by side */}
           <div {...anim("flavor-cards", 0.3)} style={{ ...anim("flavor-cards", 0.3).style, display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 40, textAlign: "center" }}>
             <a href="/flavors/vanilla" style={{ textDecoration: "none", color: "inherit" }}>
-              <h3 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontStyle: "italic", fontSize: "1.5rem", marginBottom: 8 }}>Vanilla</h3>
-              <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.82rem", color: "rgba(253,244,238,0.4)", letterSpacing: "0.06em" }}>Warm · Floral · Grounding</p>
+              <h3 style={{ fontFamily: "var(--brand-font-display)", fontStyle: "italic", fontSize: "1.5rem", marginBottom: 8 }}>Vanilla</h3>
+              <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.82rem", color: "rgba(var(--brand-canvas-rgb),0.4)", letterSpacing: "0.06em" }}>Warm · Floral · Grounding</p>
             </a>
             <a href="/flavors/strawberry" style={{ textDecoration: "none", color: "inherit" }}>
-              <h3 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontStyle: "italic", fontSize: "1.5rem", marginBottom: 8 }}>Strawberry</h3>
-              <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.82rem", color: "rgba(253,244,238,0.4)", letterSpacing: "0.06em" }}>Bright · Fruity · Fresh</p>
+              <h3 style={{ fontFamily: "var(--brand-font-display)", fontStyle: "italic", fontSize: "1.5rem", marginBottom: 8 }}>Strawberry</h3>
+              <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.82rem", color: "rgba(var(--brand-canvas-rgb),0.4)", letterSpacing: "0.06em" }}>Bright · Fruity · Fresh</p>
             </a>
           </div>
         </div>
@@ -1186,26 +1186,26 @@ export default function Home() {
       {/* ════════════════════ INGREDIENTS ════════════════════ */}
       <section
         id="ingredients"
-        style={{ padding: "100px 24px", marginTop: -2, background: "linear-gradient(180deg, #000 0%, #1B1F3B 5%, #4a3560 12%, #8b6a9e 20%, #D4B8E0 30%, #D4B8E0 100%)", position: "relative", overflow: "hidden" }}
+        style={{ padding: "100px 24px", marginTop: -2, background: "linear-gradient(180deg, #000 0%, var(--brand-ink) 5%, #4a3560 12%, #8b6a9e 20%, var(--brand-flavor-functional) 30%, var(--brand-flavor-functional) 100%)", position: "relative", overflow: "hidden" }}
       >
-        <div className="blob-c" style={{ position: "absolute", top: "5%", right: "3%", width: "25vw", height: "25vw", background: "#FFB7D1", opacity: 0.4, pointerEvents: "none" }} />
-        <div className="blob-b" style={{ position: "absolute", bottom: "5%", left: "3%", width: "20vw", height: "20vw", background: "#1B1F3B", opacity: 0.12, pointerEvents: "none" }} />
-        <div className="blob-a" style={{ position: "absolute", top: "40%", left: "50%", width: "15vw", height: "15vw", background: "#C8FF3A", opacity: 0.2, pointerEvents: "none" }} />
+        <div className="blob-c" style={{ position: "absolute", top: "5%", right: "3%", width: "25vw", height: "25vw", background: "var(--brand-flavor-strawberry)", opacity: 0.4, pointerEvents: "none" }} />
+        <div className="blob-b" style={{ position: "absolute", bottom: "5%", left: "3%", width: "20vw", height: "20vw", background: "var(--brand-ink)", opacity: 0.12, pointerEvents: "none" }} />
+        <div className="blob-a" style={{ position: "absolute", top: "40%", left: "50%", width: "15vw", height: "15vw", background: "var(--brand-accent)", opacity: 0.2, pointerEvents: "none" }} />
         <div style={{ maxWidth: 1000, margin: "0 auto" }}>
           <div {...anim("ing-head")} style={{ ...anim("ing-head").style, textAlign: "center", marginBottom: 56 }}>
-            <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 600, fontSize: "0.68rem", letterSpacing: "0.25em", textTransform: "uppercase", color: "#1B1F3B", marginBottom: 16 }}>
+            <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 600, fontSize: "0.68rem", letterSpacing: "0.25em", textTransform: "uppercase", color: "var(--brand-ink)", marginBottom: 16 }}>
               What&apos;s inside
             </p>
-            <h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontStyle: "italic", fontSize: "clamp(2rem, 4.5vw, 3rem)", color: "#1B1F3B", lineHeight: 1.1 }}>
+            <h2 style={{ fontFamily: "var(--brand-font-display)", fontStyle: "italic", fontSize: "clamp(2rem, 4.5vw, 3rem)", color: "var(--brand-ink)", lineHeight: 1.1 }}>
               Clean label. Real doses.
             </h2>
           </div>
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 24 }}>
             {[
-              { name: "Ceremonial Matcha", dose: "2.5g", detail: "First-harvest, shade-grown. ~60mg caffeine. Not culinary grade — the real thing.", color: "#C8FF3A", bg: "#1B1F3B" },
-              { name: "Organic Mushroom Extracts", dose: "200mg", detail: "70%+ beta-glucan purity — the active compound behind immune and focus benefits. Industry average: 15–30%. No mycelium-on-grain filler. No underdosing.", color: "#FFB7D1", bg: "#1B1F3B" },
-              { name: "Grass-Fed Collagen", dose: "2g", detail: "Pre-dissolved bioavailable peptides for skin, hair, nails, and gut.", color: "#C8FF3A", bg: "#1B1F3B" },
+              { name: "Ceremonial Matcha", dose: "2.5g", detail: "First-harvest, shade-grown. ~60mg caffeine. Not culinary grade — the real thing.", color: "var(--brand-accent)", bg: "var(--brand-ink)" },
+              { name: "Organic Mushroom Extracts", dose: "200mg", detail: "70%+ beta-glucan purity — the active compound behind immune and focus benefits. Industry average: 15–30%. No mycelium-on-grain filler. No underdosing.", color: "var(--brand-flavor-strawberry)", bg: "var(--brand-ink)" },
+              { name: "Grass-Fed Collagen", dose: "2g", detail: "Pre-dissolved bioavailable peptides for skin, hair, nails, and gut.", color: "var(--brand-accent)", bg: "var(--brand-ink)" },
             ].map((item, i) => (
               <div
                 key={item.name}
@@ -1219,10 +1219,10 @@ export default function Home() {
                 }}
               >
                 <div style={{ display: "flex", alignItems: "baseline", gap: 12, marginBottom: 16 }}>
-                  <span style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "2.2rem", color: item.color, lineHeight: 1 }}>{item.dose}</span>
-                  <span style={{ fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 700, fontSize: "0.62rem", letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(253,244,238,0.5)" }}>{item.name}</span>
+                  <span style={{ fontFamily: "var(--brand-font-display)", fontSize: "2.2rem", color: item.color, lineHeight: 1 }}>{item.dose}</span>
+                  <span style={{ fontFamily: "var(--brand-font-body)", fontWeight: 700, fontSize: "0.62rem", letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(var(--brand-canvas-rgb),0.5)" }}>{item.name}</span>
                 </div>
-                <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.85rem", color: "rgba(253,244,238,0.45)", lineHeight: 1.6 }}>{item.detail}</p>
+                <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.85rem", color: "rgba(var(--brand-canvas-rgb),0.45)", lineHeight: 1.6 }}>{item.detail}</p>
               </div>
             ))}
           </div>
@@ -1230,27 +1230,27 @@ export default function Home() {
       </section>
 
       {/* ════════════════════ COMPARISON TABLE ════════════════════ */}
-      <section style={{ padding: "80px 24px 100px", background: "#FFB7D1", color: "#1B1F3B", position: "relative", overflow: "hidden" }}>
-        <div className="blob-c" style={{ position: "absolute", top: "8%", left: "3%", width: "20vw", height: "20vw", background: "#D4B8E0", opacity: 0.4, pointerEvents: "none" }} />
-        <div className="blob-a" style={{ position: "absolute", bottom: "8%", right: "3%", width: "16vw", height: "16vw", background: "#C8FF3A", opacity: 0.15, pointerEvents: "none" }} />
+      <section style={{ padding: "80px 24px 100px", background: "var(--brand-flavor-strawberry)", color: "var(--brand-ink)", position: "relative", overflow: "hidden" }}>
+        <div className="blob-c" style={{ position: "absolute", top: "8%", left: "3%", width: "20vw", height: "20vw", background: "var(--brand-flavor-functional)", opacity: 0.4, pointerEvents: "none" }} />
+        <div className="blob-a" style={{ position: "absolute", bottom: "8%", right: "3%", width: "16vw", height: "16vw", background: "var(--brand-accent)", opacity: 0.15, pointerEvents: "none" }} />
         <div style={{ maxWidth: 800, margin: "0 auto", position: "relative", zIndex: 1 }}>
           <div {...anim("comp-head")} style={{ ...anim("comp-head").style, textAlign: "center", marginBottom: 48 }}>
-            <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 600, fontSize: "0.68rem", letterSpacing: "0.25em", textTransform: "uppercase", color: "#1B1F3B", marginBottom: 16 }}>
+            <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 600, fontSize: "0.68rem", letterSpacing: "0.25em", textTransform: "uppercase", color: "var(--brand-ink)", marginBottom: 16 }}>
               How we compare
             </p>
-            <h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontStyle: "italic", fontSize: "clamp(1.8rem, 4vw, 2.6rem)", lineHeight: 1.1, color: "#1B1F3B" }}>
+            <h2 style={{ fontFamily: "var(--brand-font-display)", fontStyle: "italic", fontSize: "clamp(1.8rem, 4vw, 2.6rem)", lineHeight: 1.1, color: "var(--brand-ink)" }}>
               Not all matcha is created equal.
             </h2>
           </div>
 
-          <div {...anim("comp-table", 0.15)} style={{ ...anim("comp-table", 0.15).style, background: "#1B1F3B", borderRadius: 16, padding: "8px 0", boxShadow: "0 4px 30px rgba(0,0,0,0.2)", overflow: "hidden" }}>
+          <div {...anim("comp-table", 0.15)} style={{ ...anim("comp-table", 0.15).style, background: "var(--brand-ink)", borderRadius: 16, padding: "8px 0", boxShadow: "0 4px 30px rgba(0,0,0,0.2)", overflow: "hidden" }}>
             <div style={{ overflowX: "auto", WebkitOverflowScrolling: "touch" }}>
-              <table style={{ width: "100%", minWidth: 580, borderCollapse: "collapse", fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.85rem" }}>
+              <table style={{ width: "100%", minWidth: 580, borderCollapse: "collapse", fontFamily: "var(--brand-font-body)", fontSize: "0.85rem" }}>
                 <thead>
                   <tr>
-                    <th style={{ textAlign: "left", padding: "14px 14px", borderBottom: "1px solid rgba(253,244,238,0.08)", color: "rgba(253,244,238,0.35)", fontWeight: 600, fontSize: "0.72rem", letterSpacing: "0.08em", textTransform: "uppercase" }}></th>
+                    <th style={{ textAlign: "left", padding: "14px 14px", borderBottom: "1px solid rgba(var(--brand-canvas-rgb),0.08)", color: "rgba(var(--brand-canvas-rgb),0.35)", fontWeight: 600, fontSize: "0.72rem", letterSpacing: "0.08em", textTransform: "uppercase" }}></th>
                     {["shroomé", "Clevr", "RYZE", "MatchaKo", "Café"].map((b) => (
-                      <th key={b} style={{ textAlign: "center", padding: "14px 10px", borderBottom: "1px solid rgba(253,244,238,0.08)", color: b === "shroomé" ? "#C8FF3A" : "rgba(253,244,238,0.35)", fontWeight: 700, fontSize: "0.72rem", letterSpacing: "0.08em", textTransform: "uppercase" }}>{b}</th>
+                      <th key={b} style={{ textAlign: "center", padding: "14px 10px", borderBottom: "1px solid rgba(var(--brand-canvas-rgb),0.08)", color: b === "shroomé" ? "var(--brand-accent)" : "rgba(var(--brand-canvas-rgb),0.35)", fontWeight: 700, fontSize: "0.72rem", letterSpacing: "0.08em", textTransform: "uppercase" }}>{b}</th>
                     ))}
                   </tr>
                 </thead>
@@ -1263,10 +1263,10 @@ export default function Home() {
                     { feature: "12+ servings", values: [true, false, true, true, false] },
                   ].map((row) => (
                     <tr key={row.feature}>
-                      <td style={{ padding: "16px 14px", borderBottom: "1px solid rgba(253,244,238,0.06)", color: "#FDF4EE", fontWeight: 600, fontSize: "0.85rem" }}>{row.feature}</td>
+                      <td style={{ padding: "16px 14px", borderBottom: "1px solid rgba(var(--brand-canvas-rgb),0.06)", color: "var(--brand-canvas)", fontWeight: 600, fontSize: "0.85rem" }}>{row.feature}</td>
                       {row.values.map((v, i) => (
-                        <td key={i} style={{ textAlign: "center", padding: "16px 10px", borderBottom: "1px solid rgba(253,244,238,0.06)" }}>
-                          <span style={{ display: "inline-block", width: 34, height: 34, lineHeight: "34px", borderRadius: 4, fontSize: "1rem", fontWeight: 700, background: v ? "rgba(200,255,58,0.2)" : "rgba(253,244,238,0.04)", color: v ? "#C8FF3A" : "rgba(253,244,238,0.15)" }}>
+                        <td key={i} style={{ textAlign: "center", padding: "16px 10px", borderBottom: "1px solid rgba(var(--brand-canvas-rgb),0.06)" }}>
+                          <span style={{ display: "inline-block", width: 34, height: 34, lineHeight: "34px", borderRadius: 4, fontSize: "1rem", fontWeight: 700, background: v ? "rgba(var(--brand-accent-rgb),0.2)" : "rgba(var(--brand-canvas-rgb),0.04)", color: v ? "var(--brand-accent)" : "rgba(var(--brand-canvas-rgb),0.15)" }}>
                             {v ? "✓" : "—"}
                           </span>
                         </td>
@@ -1281,17 +1281,17 @@ export default function Home() {
       </section>
 
       {/* ════════════════════ HOW IT WORKS ════════════════════ */}
-      <section id="how" style={{ padding: "100px 24px", background: "#1B1F3B", position: "relative", overflow: "hidden" }}>
-        <div className="blob-a" style={{ position: "absolute", top: "10%", right: "3%", width: "18vw", height: "18vw", background: "#FFB7D1", opacity: 0.08, pointerEvents: "none" }} />
-        <div className="blob-c" style={{ position: "absolute", bottom: "5%", left: "5%", width: "14vw", height: "14vw", background: "#D4B8E0", opacity: 0.06, pointerEvents: "none" }} />
-        <div className="blob-b" style={{ position: "absolute", top: "5%", left: "8%", width: "12vw", height: "12vw", background: "#D4B8E0", opacity: 0.08, pointerEvents: "none" }} />
+      <section id="how" style={{ padding: "100px 24px", background: "var(--brand-ink)", position: "relative", overflow: "hidden" }}>
+        <div className="blob-a" style={{ position: "absolute", top: "10%", right: "3%", width: "18vw", height: "18vw", background: "var(--brand-flavor-strawberry)", opacity: 0.08, pointerEvents: "none" }} />
+        <div className="blob-c" style={{ position: "absolute", bottom: "5%", left: "5%", width: "14vw", height: "14vw", background: "var(--brand-flavor-functional)", opacity: 0.06, pointerEvents: "none" }} />
+        <div className="blob-b" style={{ position: "absolute", top: "5%", left: "8%", width: "12vw", height: "12vw", background: "var(--brand-flavor-functional)", opacity: 0.08, pointerEvents: "none" }} />
         <div style={{ maxWidth: 900, margin: "0 auto", textAlign: "center" }}>
           <div {...anim("how-head")}>
-            <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 600, fontSize: "0.68rem", letterSpacing: "0.25em", textTransform: "uppercase", color: "#C8FF3A", marginBottom: 16 }}>
+            <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 600, fontSize: "0.68rem", letterSpacing: "0.25em", textTransform: "uppercase", color: "var(--brand-accent)", marginBottom: 16 }}>
               How it works
             </p>
-            <h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontStyle: "italic", fontSize: "clamp(2rem, 4.5vw, 3rem)", color: "#FDF4EE", lineHeight: 1.1, marginBottom: 64 }}>
-              Tear. Pour. <span style={{ color: "#FFB7D1" }}>Hit.</span>
+            <h2 style={{ fontFamily: "var(--brand-font-display)", fontStyle: "italic", fontSize: "clamp(2rem, 4.5vw, 3rem)", color: "var(--brand-canvas)", lineHeight: 1.1, marginBottom: 64 }}>
+              Tear. Pour. <span style={{ color: "var(--brand-flavor-strawberry)" }}>Hit.</span>
             </h2>
           </div>
 
@@ -1302,9 +1302,9 @@ export default function Home() {
               { num: "03", title: "Hit", desc: "Stir once. 30 seconds to café-grade matcha latte. No blender, no whisk, no mess." },
             ].map((step, i) => (
               <div key={step.num} {...anim(`step-${i}`, i * 0.12)}>
-                <p style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.7rem", letterSpacing: "0.15em", color: "#C8FF3A", marginBottom: 14 }}>{step.num}</p>
-                <h3 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontStyle: "italic", fontSize: "1.6rem", color: "#FDF4EE", marginBottom: 10 }}>{step.title}</h3>
-                <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.85rem", color: "rgba(253,244,238,0.45)", lineHeight: 1.65 }}>{step.desc}</p>
+                <p style={{ fontFamily: "var(--brand-font-mono)", fontSize: "0.7rem", letterSpacing: "0.15em", color: "var(--brand-accent)", marginBottom: 14 }}>{step.num}</p>
+                <h3 style={{ fontFamily: "var(--brand-font-display)", fontStyle: "italic", fontSize: "1.6rem", color: "var(--brand-canvas)", marginBottom: 10 }}>{step.title}</h3>
+                <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.85rem", color: "rgba(var(--brand-canvas-rgb),0.45)", lineHeight: 1.65 }}>{step.desc}</p>
               </div>
             ))}
           </div>
@@ -1312,27 +1312,27 @@ export default function Home() {
       </section>
 
       {/* ════════════════════ HANDS PHOTO ════════════════════ */}
-      <section style={{ padding: "60px 24px 0", background: "#D4B8E0", textAlign: "center", position: "relative", overflow: "hidden" }}>
+      <section style={{ padding: "60px 24px 0", background: "var(--brand-flavor-functional)", textAlign: "center", position: "relative", overflow: "hidden" }}>
         {/* Subtle abstract blobs */}
-        <div className="blob-a" style={{ position: "absolute", top: "5%", left: "3%", width: "18vw", height: "18vw", background: "#FFB7D1", opacity: 0.3, pointerEvents: "none" }} />
-        <div className="blob-b" style={{ position: "absolute", top: "5%", right: "5%", width: "14vw", height: "14vw", background: "#1B1F3B", opacity: 0.06, pointerEvents: "none" }} />
-        <div className="blob-c" style={{ position: "absolute", bottom: "25%", right: "8%", width: "12vw", height: "12vw", background: "#D4B8E0", opacity: 0.15, pointerEvents: "none" }} />
-        <div className="blob-a" style={{ position: "absolute", bottom: "15%", left: "6%", width: "10vw", height: "10vw", background: "#FFB7D1", opacity: 0.1, pointerEvents: "none" }} />
+        <div className="blob-a" style={{ position: "absolute", top: "5%", left: "3%", width: "18vw", height: "18vw", background: "var(--brand-flavor-strawberry)", opacity: 0.3, pointerEvents: "none" }} />
+        <div className="blob-b" style={{ position: "absolute", top: "5%", right: "5%", width: "14vw", height: "14vw", background: "var(--brand-ink)", opacity: 0.06, pointerEvents: "none" }} />
+        <div className="blob-c" style={{ position: "absolute", bottom: "25%", right: "8%", width: "12vw", height: "12vw", background: "var(--brand-flavor-functional)", opacity: 0.15, pointerEvents: "none" }} />
+        <div className="blob-a" style={{ position: "absolute", bottom: "15%", left: "6%", width: "10vw", height: "10vw", background: "var(--brand-flavor-strawberry)", opacity: 0.1, pointerEvents: "none" }} />
         <div {...anim("hands")} style={{ ...anim("hands").style, maxWidth: 600, margin: "0 auto", overflow: "hidden", borderRadius: "16px 16px 0 0", position: "relative", zIndex: 1 }}>
           <Image src="/sachets-both.png" alt="Two shroomé sachets side by side — Vanilla and Strawberry matcha blends" width={1536} height={1024} loading="lazy" style={{ width: "100%", height: "auto", display: "block", marginBottom: "-12%" }} />
         </div>
       </section>
 
       {/* ════════════════════ TESTIMONIALS ════════════════════ */}
-      <section style={{ padding: "80px 24px 100px", background: "#FFB7D1", position: "relative", overflow: "hidden" }}>
-        <div className="blob-b" style={{ position: "absolute", top: "10%", right: "5%", width: "18vw", height: "18vw", background: "#D4B8E0", opacity: 0.4, pointerEvents: "none" }} />
-        <div className="blob-a" style={{ position: "absolute", bottom: "10%", left: "3%", width: "15vw", height: "15vw", background: "#C8FF3A", opacity: 0.15, pointerEvents: "none" }} />
+      <section style={{ padding: "80px 24px 100px", background: "var(--brand-flavor-strawberry)", position: "relative", overflow: "hidden" }}>
+        <div className="blob-b" style={{ position: "absolute", top: "10%", right: "5%", width: "18vw", height: "18vw", background: "var(--brand-flavor-functional)", opacity: 0.4, pointerEvents: "none" }} />
+        <div className="blob-a" style={{ position: "absolute", bottom: "10%", left: "3%", width: "15vw", height: "15vw", background: "var(--brand-accent)", opacity: 0.15, pointerEvents: "none" }} />
         <div style={{ maxWidth: 900, margin: "0 auto", position: "relative", zIndex: 1 }}>
           <div {...anim("test-head")} style={{ ...anim("test-head").style, textAlign: "center", marginBottom: 48 }}>
-            <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 600, fontSize: "0.68rem", letterSpacing: "0.25em", textTransform: "uppercase", color: "#1B1F3B", marginBottom: 16 }}>
+            <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 600, fontSize: "0.68rem", letterSpacing: "0.25em", textTransform: "uppercase", color: "var(--brand-ink)", marginBottom: 16 }}>
               Early testers
             </p>
-            <h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontStyle: "italic", fontSize: "clamp(1.8rem, 4vw, 2.6rem)", color: "#1B1F3B", lineHeight: 1.1 }}>
+            <h2 style={{ fontFamily: "var(--brand-font-display)", fontStyle: "italic", fontSize: "clamp(1.8rem, 4vw, 2.6rem)", color: "var(--brand-ink)", lineHeight: 1.1 }}>
               What people are saying.
             </h2>
           </div>
@@ -1350,15 +1350,15 @@ export default function Home() {
                 style={{
                   ...anim(`test-${i}`, i * 0.1).style,
                   padding: "28px 24px",
-                  background: "#1B1F3B",
+                  background: "var(--brand-ink)",
                   borderRadius: 8,
                 }}
               >
-                <p style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontStyle: "italic", fontSize: "1.05rem", color: "#FDF4EE", lineHeight: 1.55, marginBottom: 20 }}>
+                <p style={{ fontFamily: "var(--brand-font-display)", fontStyle: "italic", fontSize: "1.05rem", color: "var(--brand-canvas)", lineHeight: 1.55, marginBottom: 20 }}>
                   &ldquo;{t.quote}&rdquo;
                 </p>
-                <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 700, fontSize: "0.75rem", color: "#C8FF3A" }}>{t.name}</p>
-                <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.68rem", color: "rgba(253,244,238,0.4)" }}>{t.loc} · Early tester</p>
+                <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 700, fontSize: "0.75rem", color: "var(--brand-accent)" }}>{t.name}</p>
+                <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.68rem", color: "rgba(var(--brand-canvas-rgb),0.4)" }}>{t.loc} · Early tester</p>
               </div>
             ))}
           </div>
@@ -1370,8 +1370,8 @@ export default function Home() {
         id="cta"
         style={{
           padding: "100px 24px 60px",
-          background: "#D4B8E0",
-          color: "#1B1F3B",
+          background: "var(--brand-flavor-functional)",
+          color: "var(--brand-ink)",
           textAlign: "center",
           position: "relative",
           overflow: "hidden",
@@ -1389,54 +1389,54 @@ export default function Home() {
             pointerEvents: "none",
           }}
         />
-        {/* Warm pink overlay to blend */}
-        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, rgba(212,184,224,0.6) 0%, rgba(255,183,209,0.3) 50%, rgba(212,184,224,0.5) 100%)", pointerEvents: "none" }} />
-        <div className="blob-a" style={{ position: "absolute", top: "10%", right: "5%", width: "25vw", height: "25vw", background: "#FFB7D1", opacity: 0.3, pointerEvents: "none" }} />
+        {/* Warm tint overlay to blend */}
+        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, rgba(var(--brand-flavor-functional-rgb),0.6) 0%, rgba(var(--brand-flavor-strawberry-rgb),0.3) 50%, rgba(var(--brand-flavor-functional-rgb),0.5) 100%)", pointerEvents: "none" }} />
+        <div className="blob-a" style={{ position: "absolute", top: "10%", right: "5%", width: "25vw", height: "25vw", background: "var(--brand-flavor-strawberry)", opacity: 0.3, pointerEvents: "none" }} />
 
         <div {...anim("cta-block")} style={{ ...anim("cta-block").style, maxWidth: 520, margin: "0 auto", position: "relative", zIndex: 1 }}>
-          <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 600, fontSize: "0.68rem", letterSpacing: "0.25em", textTransform: "uppercase", color: "#1B1F3B", marginBottom: 16 }}>
+          <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 600, fontSize: "0.68rem", letterSpacing: "0.25em", textTransform: "uppercase", color: "var(--brand-ink)", marginBottom: 16 }}>
             Early Access
           </p>
-          <h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontStyle: "italic", fontSize: "clamp(1.8rem, 4vw, 2.8rem)", lineHeight: 1.1, marginBottom: 14, color: "#1B1F3B" }}>
+          <h2 style={{ fontFamily: "var(--brand-font-display)", fontStyle: "italic", fontSize: "clamp(1.8rem, 4vw, 2.8rem)", lineHeight: 1.1, marginBottom: 14, color: "var(--brand-ink)" }}>
             Get 20% off at launch.
           </h2>
-          <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.88rem", color: "rgba(27,31,59,0.5)", lineHeight: 1.6, marginBottom: 24 }}>
+          <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.88rem", color: "rgba(var(--brand-ink-rgb),0.5)", lineHeight: 1.6, marginBottom: 24 }}>
             Join the waitlist for 20% off + free shipping on your first box. Add your phone and your code upgrades from 20% to 30% — best code wins.
           </p>
           {step === "done" ? (
             <div>
-              <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 700, fontSize: "1rem", color: "#1B1F3B", marginBottom: referralCode ? 16 : 0 }}>
+              <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 700, fontSize: "1rem", color: "var(--brand-ink)", marginBottom: referralCode ? 16 : 0 }}>
                 ✓ You&apos;re on the list.
               </p>
               {referralCode && (
-                <div style={{ marginTop: 16, padding: "24px", background: "rgba(27,31,59,0.08)", borderRadius: 12, textAlign: "left" }}>
-                  <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 700, fontSize: "0.78rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "#1B1F3B", marginBottom: 8 }}>
+                <div style={{ marginTop: 16, padding: "24px", background: "rgba(var(--brand-ink-rgb),0.08)", borderRadius: 12, textAlign: "left" }}>
+                  <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 700, fontSize: "0.78rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--brand-ink)", marginBottom: 8 }}>
                     Refer friends → earn up to $15 credit
                   </p>
-                  <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.75rem", color: "rgba(27,31,59,0.5)", marginBottom: 14 }}>
+                  <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.75rem", color: "rgba(var(--brand-ink-rgb),0.5)", marginBottom: 14 }}>
                     $5 credit at 1 friend, $10 at 3, $15 at 5 — applied at checkout on drop day. Share your link:
                   </p>
                   <div style={{ display: "flex", gap: 8, alignItems: "center", marginBottom: 14, flexWrap: "wrap" }}>
-                    <div style={{ flex: "1 1 200px", background: "rgba(255,255,255,0.6)", border: "2px solid #1B1F3B", padding: "10px 14px", fontFamily: "'DM Mono', monospace", fontSize: "0.78rem", color: "#1B1F3B", minWidth: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                    <div style={{ flex: "1 1 200px", background: "rgba(255,255,255,0.6)", border: "2px solid var(--brand-ink)", padding: "10px 14px", fontFamily: "var(--brand-font-mono)", fontSize: "0.78rem", color: "var(--brand-ink)", minWidth: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
                       drinkshroome.com?ref={referralCode}
                     </div>
                     <button
                       onClick={copyReferralLink}
-                      style={{ padding: "10px 20px", border: "none", background: copied ? "#1B1F3B" : "#C8FF3A", color: copied ? "#C8FF3A" : "#1B1F3B", fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 800, fontSize: "0.7rem", letterSpacing: "0.08em", textTransform: "uppercase", cursor: "pointer", whiteSpace: "nowrap", transition: "all 0.2s" }}
+                      style={{ padding: "10px 20px", border: "none", background: copied ? "var(--brand-ink)" : "var(--brand-accent)", color: copied ? "var(--brand-accent)" : "var(--brand-ink)", fontFamily: "var(--brand-font-body)", fontWeight: 800, fontSize: "0.7rem", letterSpacing: "0.08em", textTransform: "uppercase", cursor: "pointer", whiteSpace: "nowrap", transition: "all 0.2s" }}
                     >
                       {copied ? "Copied!" : "Copy"}
                     </button>
                   </div>
                   <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 14 }}>
                     {[
-                      { label: "Share on Instagram", platform: "instagram", bg: "#D4B8E0" },
-                      { label: "Share on TikTok", platform: "tiktok", bg: "#FFB7D1" },
-                      { label: "Text a friend", platform: "text", bg: "#C8FF3A" },
+                      { label: "Share on Instagram", platform: "instagram", bg: "var(--brand-flavor-functional)" },
+                      { label: "Share on TikTok", platform: "tiktok", bg: "var(--brand-flavor-strawberry)" },
+                      { label: "Text a friend", platform: "text", bg: "var(--brand-accent)" },
                     ].map((s) => (
                       <button
                         key={s.platform}
                         onClick={() => shareOnPlatform(s.platform)}
-                        style={{ padding: "8px 14px", border: "none", background: s.bg, color: "#1B1F3B", fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 700, fontSize: "0.65rem", letterSpacing: "0.06em", textTransform: "uppercase", cursor: "pointer", borderRadius: 2 }}
+                        style={{ padding: "8px 14px", border: "none", background: s.bg, color: "var(--brand-ink)", fontFamily: "var(--brand-font-body)", fontWeight: 700, fontSize: "0.65rem", letterSpacing: "0.06em", textTransform: "uppercase", cursor: "pointer", borderRadius: 2 }}
                       >
                         {s.label}
                       </button>
@@ -1445,12 +1445,12 @@ export default function Home() {
                   <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
                     <div style={{ display: "flex", gap: 4 }}>
                       {[0, 1, 2].map((i) => (
-                        <div key={i} style={{ width: 28, height: 28, borderRadius: "50%", border: "2px solid #1B1F3B", background: i < referralCount ? "#C8FF3A" : "transparent", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.65rem", fontWeight: 700, color: i < referralCount ? "#1B1F3B" : "rgba(27,31,59,0.3)", fontFamily: "'Syne', system-ui, sans-serif", transition: "all 0.3s" }}>
+                        <div key={i} style={{ width: 28, height: 28, borderRadius: "50%", border: "2px solid var(--brand-ink)", background: i < referralCount ? "var(--brand-accent)" : "transparent", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.65rem", fontWeight: 700, color: i < referralCount ? "var(--brand-ink)" : "rgba(var(--brand-ink-rgb),0.3)", fontFamily: "var(--brand-font-body)", transition: "all 0.3s" }}>
                           {i < referralCount ? "✓" : ""}
                         </div>
                       ))}
                     </div>
-                    <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.72rem", color: "rgba(27,31,59,0.5)", fontWeight: 600 }}>
+                    <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.72rem", color: "rgba(var(--brand-ink-rgb),0.5)", fontWeight: 600 }}>
                       {referralCount}/3 friends joined
                     </p>
                   </div>
@@ -1459,19 +1459,19 @@ export default function Home() {
             </div>
           ) : step === "captcha" ? (
             <div>
-              <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 600, fontSize: "0.88rem", color: "#1B1F3B", marginBottom: 14 }}>
+              <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 600, fontSize: "0.88rem", color: "var(--brand-ink)", marginBottom: 14 }}>
                 Quick verification for {email}
               </p>
               {!captchaRef.current && <div ref={captchaRef} style={{ display: "flex", justifyContent: "center", marginBottom: 8 }} />}
               {loading && (
-                <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.72rem", color: "rgba(27,31,59,0.45)" }}>
+                <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.72rem", color: "rgba(var(--brand-ink-rgb),0.45)" }}>
                   Submitting...
                 </p>
               )}
             </div>
           ) : step === "phone" ? (
             <div>
-              <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 600, fontSize: "0.88rem", color: "#1B1F3B", marginBottom: 14 }}>
+              <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 600, fontSize: "0.88rem", color: "var(--brand-ink)", marginBottom: 14 }}>
                 ✓ 20% off + free shipping locked in! Add your number and your code upgrades from 20% to 30% — best code wins.
               </p>
               <form onSubmit={handlePhoneSubmit} style={{ display: "flex", gap: 8, flexWrap: "wrap", justifyContent: "center" }}>
@@ -1480,16 +1480,16 @@ export default function Home() {
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
                   placeholder="(555) 123-4567"
-                  style={{ flex: "1 1 240px", padding: "15px 20px", border: "2px solid #1B1F3B", background: "rgba(255,255,255,0.5)", color: "#1B1F3B", fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.95rem", fontWeight: 500, minWidth: 0 }}
+                  style={{ flex: "1 1 240px", padding: "15px 20px", border: "2px solid var(--brand-ink)", background: "rgba(255,255,255,0.5)", color: "var(--brand-ink)", fontFamily: "var(--brand-font-body)", fontSize: "0.95rem", fontWeight: 500, minWidth: 0 }}
                 />
-                <button type="submit" disabled={loading} style={{ padding: "15px 28px", border: "none", background: "#1B1F3B", color: "#C8FF3A", fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 800, fontSize: "0.75rem", letterSpacing: "0.12em", textTransform: "uppercase", cursor: loading ? "wait" : "pointer", whiteSpace: "nowrap" }}>
+                <button type="submit" disabled={loading} style={{ padding: "15px 28px", border: "none", background: "var(--brand-ink)", color: "var(--brand-accent)", fontFamily: "var(--brand-font-body)", fontWeight: 800, fontSize: "0.75rem", letterSpacing: "0.12em", textTransform: "uppercase", cursor: loading ? "wait" : "pointer", whiteSpace: "nowrap" }}>
                   {loading ? "…" : "Add phone →"}
                 </button>
               </form>
-              <button onClick={skipPhone} style={{ marginTop: 10, background: "transparent", border: "none", color: "rgba(27,31,59,0.45)", fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.72rem", cursor: "pointer", textDecoration: "underline" }}>
+              <button onClick={skipPhone} style={{ marginTop: 10, background: "transparent", border: "none", color: "rgba(var(--brand-ink-rgb),0.45)", fontFamily: "var(--brand-font-body)", fontSize: "0.72rem", cursor: "pointer", textDecoration: "underline" }}>
                 Skip
               </button>
-              <p style={{ margin: "8px 0 0", fontSize: "0.6rem", color: "rgba(27,31,59,0.35)", lineHeight: 1.4, maxWidth: 400 }}>
+              <p style={{ margin: "8px 0 0", fontSize: "0.6rem", color: "rgba(var(--brand-ink-rgb),0.35)", lineHeight: 1.4, maxWidth: 400 }}>
                 By providing your phone number, you agree to receive marketing texts from shroomé. Msg &amp; data rates may apply. Reply STOP to unsubscribe.
               </p>
             </div>
@@ -1501,45 +1501,45 @@ export default function Home() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="your@email.com"
-                style={{ flex: "1 1 240px", padding: "15px 20px", border: "2px solid #1B1F3B", background: "rgba(255,255,255,0.5)", color: "#1B1F3B", fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.95rem", fontWeight: 500, minWidth: 0 }}
+                style={{ flex: "1 1 240px", padding: "15px 20px", border: "2px solid var(--brand-ink)", background: "rgba(255,255,255,0.5)", color: "var(--brand-ink)", fontFamily: "var(--brand-font-body)", fontSize: "0.95rem", fontWeight: 500, minWidth: 0 }}
               />
-              <button type="submit" disabled={loading} style={{ padding: "15px 28px", border: "none", background: "#1B1F3B", color: "#C8FF3A", fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 800, fontSize: "0.75rem", letterSpacing: "0.12em", textTransform: "uppercase", cursor: loading ? "wait" : "pointer", whiteSpace: "nowrap" }}>
+              <button type="submit" disabled={loading} style={{ padding: "15px 28px", border: "none", background: "var(--brand-ink)", color: "var(--brand-accent)", fontFamily: "var(--brand-font-body)", fontWeight: 800, fontSize: "0.75rem", letterSpacing: "0.12em", textTransform: "uppercase", cursor: loading ? "wait" : "pointer", whiteSpace: "nowrap" }}>
                 {loading ? "…" : "Get launch updates →"}
               </button>
             </form>
           )}
           {captchaError && step === "email" && (
-            <p role="alert" style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.72rem", color: "#B3261E", marginTop: 10, fontWeight: 600 }}>
+            <p role="alert" style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.72rem", color: "#B3261E", marginTop: 10, fontWeight: 600 }}>
               {captchaError}
             </p>
           )}
         </div>
 
-        <div style={{ marginTop: 80, paddingTop: 28, borderTop: "1px solid rgba(27,31,59,0.08)", position: "relative", zIndex: 1 }}>
+        <div style={{ marginTop: 80, paddingTop: 28, borderTop: "1px solid rgba(var(--brand-ink-rgb),0.08)", position: "relative", zIndex: 1 }}>
           <div style={{ display: "flex", gap: 24, justifyContent: "center", marginBottom: 20 }}>
             {[
               { label: "TIKTOK", href: "https://tiktok.com/@drinkshroome" },
               { label: "INSTAGRAM", href: "https://instagram.com/drinkshroome" },
               { label: "YOUTUBE", href: "https://youtube.com/@drinkshroome" },
             ].map((s) => (
-              <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" style={{ fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 700, fontSize: "0.7rem", letterSpacing: "0.12em", color: "#1B1F3B", textDecoration: "none" }}>
+              <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" style={{ fontFamily: "var(--brand-font-body)", fontWeight: 700, fontSize: "0.7rem", letterSpacing: "0.12em", color: "var(--brand-ink)", textDecoration: "none" }}>
                 {s.label}
               </a>
             ))}
           </div>
-          <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.68rem", color: "rgba(27,31,59,0.3)", letterSpacing: "0.08em" }}>
+          <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.68rem", color: "rgba(var(--brand-ink-rgb),0.3)", letterSpacing: "0.08em" }}>
             © 2026 shroomé · hello@drinkshroome.com
           </p>
-          <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.62rem", color: "rgba(27,31,59,0.2)", marginTop: 8 }}>
-            <a href="/privacy" style={{ color: "rgba(27,31,59,0.3)", textDecoration: "underline" }}>Privacy Policy</a>
+          <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.62rem", color: "rgba(var(--brand-ink-rgb),0.2)", marginTop: 8 }}>
+            <a href="/privacy" style={{ color: "rgba(var(--brand-ink-rgb),0.3)", textDecoration: "underline" }}>Privacy Policy</a>
             {" · "}
-            <a href="/terms" style={{ color: "rgba(27,31,59,0.3)", textDecoration: "underline" }}>Terms of Service</a>
+            <a href="/terms" style={{ color: "rgba(var(--brand-ink-rgb),0.3)", textDecoration: "underline" }}>Terms of Service</a>
             {" · "}
-            <a href="/faq" style={{ color: "rgba(27,31,59,0.3)", textDecoration: "underline" }}>FAQ</a>
+            <a href="/faq" style={{ color: "rgba(var(--brand-ink-rgb),0.3)", textDecoration: "underline" }}>FAQ</a>
             {" · "}
-            <a href="/blog" style={{ color: "rgba(27,31,59,0.3)", textDecoration: "underline" }}>Blog</a>
+            <a href="/blog" style={{ color: "rgba(var(--brand-ink-rgb),0.3)", textDecoration: "underline" }}>Blog</a>
           </p>
-          <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.6rem", color: "rgba(27,31,59,0.2)", marginTop: 6 }}>
+          <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.6rem", color: "rgba(var(--brand-ink-rgb),0.2)", marginTop: 6 }}>
             @drinkshroome
           </p>
         </div>

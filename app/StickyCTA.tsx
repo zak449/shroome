@@ -41,7 +41,7 @@ export default function StickyCTA() {
           left: 0;
           right: 0;
           z-index: 150;
-          background: #C8FF3A;
+          background: var(--brand-accent);
           padding: 12px 16px;
           display: flex;
           align-items: center;
@@ -49,16 +49,16 @@ export default function StickyCTA() {
           gap: 12px;
           transform: translateY(100%);
           transition: transform 0.35s cubic-bezier(0.23, 1, 0.32, 1);
-          box-shadow: 0 -4px 20px rgba(27, 31, 59, 0.15);
+          box-shadow: 0 -4px 20px rgba(var(--brand-ink-rgb), 0.15);
         }
         .sticky-cta-bar.sticky-cta-visible {
           transform: translateY(0);
         }
         .sticky-cta-link {
-          font-family: 'Syne', system-ui, sans-serif;
+          font-family: var(--brand-font-body);
           font-size: 14px;
           font-weight: 800;
-          color: #1B1F3B;
+          color: var(--brand-ink);
           text-decoration: none;
           letter-spacing: 0.02em;
           white-space: nowrap;
@@ -70,7 +70,7 @@ export default function StickyCTA() {
           transform: translateY(-50%);
           background: none;
           border: none;
-          color: rgba(27, 31, 59, 0.4);
+          color: rgba(var(--brand-ink-rgb), 0.4);
           font-size: 18px;
           line-height: 1;
           cursor: pointer;
@@ -78,7 +78,7 @@ export default function StickyCTA() {
           transition: color 0.2s;
         }
         .sticky-cta-dismiss:hover {
-          color: #1B1F3B;
+          color: var(--brand-ink);
         }
         /* Only show on mobile */
         @media (min-width: 769px) {

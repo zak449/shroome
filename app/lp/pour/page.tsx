@@ -29,13 +29,13 @@ const config: LPConfig = {
     headlineLines: ["the café line was the only", "ingredient we removed."],
     subheadline:
       "a ready-to-pour ceremonial matcha latte in a 1oz sachet. tear it, pour it into any milk, swirl, go — fifteen seconds, one hand, zero cleanup. more ceremonial matcha than your café order, none of the detour.",
-    background: "#FDF4EE",
+    background: "var(--brand-canvas)",
     limeStreak: true,
     sachets: "both",
   },
-  stampColor: "#FFB7D1",
+  stampColor: "var(--brand-flavor-strawberry)",
   benefits: {
-    sectionBg: "#FDF4EE",
+    sectionBg: "var(--brand-canvas)",
     cardStyle: "numeral",
     items: [
       {
@@ -54,7 +54,7 @@ const config: LPConfig = {
   },
   strip: {
     header: "small sachet. full label.",
-    bg: "#D4B8E0",
+    bg: "var(--brand-flavor-functional)",
     stats: [
       { stat: "2.5g", label: "ceremonial matcha — first harvest, shade-grown" },
       { stat: "2g", label: "grass-fed collagen peptides" },

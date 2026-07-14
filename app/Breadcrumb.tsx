@@ -25,16 +25,16 @@ export default function Breadcrumb({
         }
         .${prefix}-breadcrumb-list li{
           display:inline-flex;align-items:center;
-          font-family:'DM Mono',monospace;font-size:11px;font-weight:500;
+          font-family:var(--brand-font-mono);font-size:11px;font-weight:500;
           letter-spacing:.14em;text-transform:uppercase;
-          color:rgba(27,31,59,0.5);
+          color:rgba(var(--brand-ink-rgb),0.5);
         }
         .${prefix}-breadcrumb-list li a{
-          color:rgba(27,31,59,0.5);text-decoration:none;transition:color .2s;
+          color:rgba(var(--brand-ink-rgb),0.5);text-decoration:none;transition:color .2s;
         }
-        .${prefix}-breadcrumb-list li a:hover{color:rgba(27,31,59,0.8)}
+        .${prefix}-breadcrumb-list li a:hover{color:rgba(var(--brand-ink-rgb),0.8)}
         .${prefix}-breadcrumb-sep{
-          margin:0 8px;color:rgba(27,31,59,0.3);font-size:11px;
+          margin:0 8px;color:rgba(var(--brand-ink-rgb),0.3);font-size:11px;
         }
         @media(max-width:768px){
           .${prefix}-breadcrumb{padding:16px 5% 0}

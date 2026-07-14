@@ -1,4 +1,5 @@
 import { MetadataRoute } from "next";
+import { BRAND } from "./lib/brand";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
@@ -8,8 +9,8 @@ export default function manifest(): MetadataRoute.Manifest {
       "Premium functional mushroom blends for daily wellness. Lion's Mane, Reishi, Chaga & more.",
     start_url: "/",
     display: "standalone",
-    background_color: "#0A0A0A",
-    theme_color: "#0A0A0A",
+    background_color: BRAND.manifest.backgroundColor,
+    theme_color: BRAND.manifest.themeColor,
     icons: [
       {
         src: "/icon-192.png",

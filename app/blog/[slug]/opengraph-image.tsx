@@ -1,4 +1,5 @@
 import { ImageResponse } from "next/og";
+import { BRAND, alpha } from "@/app/lib/brand";
 import { readFile } from "fs/promises";
 import { join } from "path";
 import { blogPosts, getPostBySlug } from "../posts";
@@ -12,22 +13,22 @@ export async function generateStaticParams() {
 }
 
 const categoryColors: Record<string, { bg: string; text: string; accent: string }> = {
-  Ingredients: { bg: "#E8F0DD", text: "#5A7A3A", accent: "#809463" },
-  Wellness: { bg: "#FFE4EE", text: "#B44C7A", accent: "#FFB7D1" },
-  "How-To": { bg: "#F0FFD0", text: "#4A6B1A", accent: "#C8FF3A" },
-  Science: { bg: "#EDE4F0", text: "#6B4D7A", accent: "#D4B8E0" },
+  Ingredients: { bg: "#E8F0DD", text: "#5A7A3A", accent: BRAND.colors.accentMuted },
+  Wellness: { bg: "#FFE4EE", text: "#B44C7A", accent: BRAND.colors.flavorStrawberry },
+  "How-To": { bg: "#F0FFD0", text: "#4A6B1A", accent: BRAND.colors.accent },
+  Science: { bg: "#EDE4F0", text: "#6B4D7A", accent: BRAND.colors.flavorFunctional },
 };
 
 export default async function Image({ params }: { params: { slug: string } }) {
   const post = getPostBySlug(params.slug);
   if (!post) {
-    return new ImageResponse(<div style={{ width: "100%", height: "100%", background: "#1B1F3B" }} />, size);
+    return new ImageResponse(<div style={{ width: "100%", height: "100%", background: BRAND.colors.ink }} />, size);
   }
 
   const fontsDir = join(process.cwd(), "app/fonts");
-  const instrumentSerifItalic = await readFile(join(fontsDir, "InstrumentSerif-Italic.ttf"));
-  const instrumentSerifRegular = await readFile(join(fontsDir, "InstrumentSerif-Regular.ttf"));
-  const syne = await readFile(join(fontsDir, "Syne-Bold.ttf"));
+  const instrumentSerifItalic = await readFile(join(fontsDir, BRAND.fonts.files.displayItalic));
+  const instrumentSerifRegular = await readFile(join(fontsDir, BRAND.fonts.files.displayRegular));
+  const syne = await readFile(join(fontsDir, BRAND.fonts.files.bodyBold));
 
   const colors = categoryColors[post.category] || categoryColors.Ingredients;
 
@@ -40,7 +41,7 @@ export default async function Image({ params }: { params: { slug: string } }) {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          background: "#FFB7D1",
+          background: BRAND.colors.flavorStrawberry,
           padding: "60px 80px 0",
           position: "relative",
           overflow: "hidden",
@@ -67,7 +68,7 @@ export default async function Image({ params }: { params: { slug: string } }) {
             width: "280px",
             height: "280px",
             borderRadius: "50%",
-            background: "#D4B8E0",
+            background: BRAND.colors.flavorFunctional,
             opacity: 0.35,
           }}
         />
@@ -76,10 +77,10 @@ export default async function Image({ params }: { params: { slug: string } }) {
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
           <p
             style={{
-              fontFamily: "'Instrument Serif'",
+              fontFamily: BRAND.fonts.displayName,
               fontStyle: "italic",
               fontSize: "34px",
-              color: "#1B1F3B",
+              color: BRAND.colors.ink,
             }}
           >
             shroomé
@@ -104,7 +105,7 @@ export default async function Image({ params }: { params: { slug: string } }) {
             />
             <p
               style={{
-                fontFamily: "'Syne'",
+                fontFamily: BRAND.fonts.bodyName,
                 fontWeight: 700,
                 fontSize: "13px",
                 letterSpacing: "0.14em",
@@ -121,9 +122,9 @@ export default async function Image({ params }: { params: { slug: string } }) {
         <div style={{ display: "flex", flexDirection: "column", flex: 1, justifyContent: "center", maxWidth: "900px" }}>
           <h1
             style={{
-              fontFamily: "'Instrument Serif'",
+              fontFamily: BRAND.fonts.displayName,
               fontSize: post.title.length > 50 ? "52px" : "62px",
-              color: "#2D4A2D",
+              color: BRAND.colors.accentDeep,
               lineHeight: 1.1,
               margin: "0",
             }}
@@ -132,10 +133,10 @@ export default async function Image({ params }: { params: { slug: string } }) {
           </h1>
           <p
             style={{
-              fontFamily: "'Syne'",
+              fontFamily: BRAND.fonts.bodyName,
               fontWeight: 700,
               fontSize: "15px",
-              color: "rgba(27, 31, 59, 0.5)",
+              color: alpha("ink", 0.5),
               marginTop: "16px",
               letterSpacing: "0.04em",
             }}
@@ -151,17 +152,17 @@ export default async function Image({ params }: { params: { slug: string } }) {
             alignItems: "center",
             justifyContent: "space-between",
             height: "50px",
-            background: "#1B1F3B",
+            background: BRAND.colors.ink,
             margin: "0 -80px",
             padding: "0 80px",
           }}
         >
           <p
             style={{
-              fontFamily: "'Syne'",
+              fontFamily: BRAND.fonts.bodyName,
               fontWeight: 700,
               fontSize: "15px",
-              color: "#FDF4EE",
+              color: BRAND.colors.canvas,
               letterSpacing: "0.05em",
             }}
           >
@@ -169,10 +170,10 @@ export default async function Image({ params }: { params: { slug: string } }) {
           </p>
           <p
             style={{
-              fontFamily: "'Syne'",
+              fontFamily: BRAND.fonts.bodyName,
               fontWeight: 700,
               fontSize: "12px",
-              color: "#C8FF3A",
+              color: BRAND.colors.accent,
               letterSpacing: "0.1em",
               textTransform: "uppercase",
             }}
@@ -186,19 +187,19 @@ export default async function Image({ params }: { params: { slug: string } }) {
       ...size,
       fonts: [
         {
-          name: "Instrument Serif",
+          name: BRAND.fonts.displayName,
           data: instrumentSerifRegular,
           style: "normal",
           weight: 400,
         },
         {
-          name: "Instrument Serif",
+          name: BRAND.fonts.displayName,
           data: instrumentSerifItalic,
           style: "italic",
           weight: 400,
         },
         {
-          name: "Syne",
+          name: BRAND.fonts.bodyName,
           data: syne,
           style: "normal",
           weight: 700,

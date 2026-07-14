@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import DropAccessForm from "./DropAccessForm";
+import { BRAND, alpha } from "../lib/brand";
 import {
   DROP_001,
   DROP_002,
@@ -25,25 +26,25 @@ export interface LPConfig {
     subheadline: string;
     /** CSS background for the hero section. */
     background: string;
-    /** Dark hero (Navy bg, Cream text) — focus page. */
+    /** Dark hero (ink bg, canvas text) — focus page. */
     dark?: boolean;
     /** Soft cloud texture overlay opacity (0 = none). */
     cloudOpacity?: number;
-    /** Lime→Cream energy streak behind the pour — pour page only. */
+    /** Accent→canvas energy streak behind the pour — pour page only. */
     limeStreak?: boolean;
-    /** Focus page: big data figures with Lime underline strokes. */
+    /** Focus page: big data figures with accent underline strokes. */
     dataCallouts?: string[];
     sachets: "both" | "vanilla" | "strawberry";
   };
-  /** Sold-out stamp color on the drop ledger (Pink or Lavender). */
+  /** Sold-out stamp color on the drop ledger (a flavor tint). */
   stampColor: string;
-  /** Focus page: Cream ledger cards on the Navy hero. */
+  /** Focus page: canvas ledger cards on the ink hero. */
   ledgerLight?: boolean;
   /** Calm page: render the caffeine-curve section after the hero. */
   curve?: boolean;
   benefits: {
     sectionBg: string;
-    /** "soft" (rounded cream cards) | "spec" (navy-bordered) | "numeral" (big numerals, navy rules) */
+    /** "soft" (rounded canvas cards) | "spec" (ink-bordered) | "numeral" (big numerals, ink rules) */
     cardStyle: "soft" | "spec" | "numeral";
     items: { title: string; body: string }[];
     /** Echo the FDA disclaimer directly under the blocks (glow/calm/focus). */
@@ -99,9 +100,9 @@ function useCountdown(target: string | null) {
 
 function DropLedger({ stampColor, light }: { stampColor: string; light?: boolean }) {
   const countdown = useCountdown(DROP_002.openDate);
-  const cardBg = light ? "#FDF4EE" : "#1B1F3B";
-  const cardText = light ? "#1B1F3B" : "#FDF4EE";
-  const cardFaint = light ? "rgba(27,31,59,0.5)" : "rgba(253,244,238,0.5)";
+  const cardBg = light ? "var(--brand-canvas)" : "var(--brand-ink)";
+  const cardText = light ? "var(--brand-ink)" : "var(--brand-canvas)";
+  const cardFaint = light ? "rgba(var(--brand-ink-rgb),0.5)" : "rgba(var(--brand-canvas-rgb),0.5)";
 
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 10, maxWidth: 520, width: "100%" }}>
@@ -109,7 +110,7 @@ function DropLedger({ stampColor, light }: { stampColor: string; light?: boolean
       <div className="lp-ledger-card" style={{ background: cardBg, color: cardText }}>
         <span className="lp-ledger-label">drop 001</span>
         <span style={{ display: "flex", alignItems: "center", gap: 12, flexWrap: "wrap" }}>
-          <s style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.8rem", color: cardFaint }}>
+          <s style={{ fontFamily: "var(--brand-font-mono)", fontSize: "0.8rem", color: cardFaint }}>
             {X1_BOXES} boxes
           </s>
           <span className="lp-ledger-stamp" style={{ background: stampColor }}>
@@ -123,7 +124,7 @@ function DropLedger({ stampColor, light }: { stampColor: string; light?: boolean
           <span className="lp-pulse-dot" aria-hidden="true" />
           drop 002
         </span>
-        <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.8rem" }}>
+        <span style={{ fontFamily: "var(--brand-font-mono)", fontSize: "0.8rem" }}>
           {DROP_002.openDate && countdown
             ? `opens in ${String(countdown.d).padStart(2, "0")} : ${String(countdown.h).padStart(2, "0")} : ${String(countdown.m).padStart(2, "0")} · ${DROP2_LEDGER}`
             : DROP2_LEDGER}
@@ -132,10 +133,10 @@ function DropLedger({ stampColor, light }: { stampColor: string; light?: boolean
       {!DROP_002.openDate && (
         <p
           style={{
-            fontFamily: "'Syne', system-ui, sans-serif",
+            fontFamily: "var(--brand-font-body)",
             fontStyle: "italic",
             fontSize: "0.78rem",
-            color: light ? "rgba(253,244,238,0.65)" : "rgba(27,31,59,0.6)",
+            color: light ? "rgba(var(--brand-canvas-rgb),0.65)" : "rgba(var(--brand-ink-rgb),0.6)",
             margin: 0,
           }}
         >
@@ -152,9 +153,9 @@ function DropLedger({ stampColor, light }: { stampColor: string; light?: boolean
 
 function CurveSection() {
   return (
-    <section style={{ background: "#FDF4EE", padding: "72px 24px" }}>
+    <section style={{ background: "var(--brand-canvas)", padding: "72px 24px" }}>
       <div style={{ maxWidth: 760, margin: "0 auto" }}>
-        <h2 className="lp-h2" style={{ color: "#1B1F3B", textAlign: "center", marginBottom: 36 }}>
+        <h2 className="lp-h2" style={{ color: "var(--brand-ink)", textAlign: "center", marginBottom: 36 }}>
           coffee spikes. matcha carries.
         </h2>
         <svg
@@ -164,55 +165,55 @@ function CurveSection() {
           style={{ width: "100%", height: "auto", display: "block" }}
         >
           {/* axes */}
-          <line x1="52" y1="20" x2="52" y2="248" stroke="#1B1F3B" strokeWidth="1.5" />
-          <line x1="52" y1="248" x2="616" y2="248" stroke="#1B1F3B" strokeWidth="1.5" />
+          <line x1="52" y1="20" x2="52" y2="248" stroke={BRAND.colors.ink} strokeWidth="1.5" />
+          <line x1="52" y1="248" x2="616" y2="248" stroke={BRAND.colors.ink} strokeWidth="1.5" />
           {/* baseline (dashed) */}
-          <line x1="52" y1="200" x2="616" y2="200" stroke="rgba(27,31,59,0.25)" strokeWidth="1" strokeDasharray="4 5" />
-          {/* shroomé curve fill (lavender) */}
+          <line x1="52" y1="200" x2="616" y2="200" stroke={alpha("ink", 0.25)} strokeWidth="1" strokeDasharray="4 5" />
+          {/* shroomé curve fill (flavor-functional tint) */}
           <path
             d="M 52 200 C 110 190 150 120 220 108 C 320 92 440 96 560 116 L 600 124 L 600 248 L 52 248 Z"
-            fill="#D4B8E0"
+            fill={BRAND.colors.flavorFunctional}
             opacity="0.55"
           />
           {/* shroomé line */}
           <path
             d="M 52 200 C 110 190 150 120 220 108 C 320 92 440 96 560 116 L 600 124"
             fill="none"
-            stroke="#1B1F3B"
+            stroke={BRAND.colors.ink}
             strokeWidth="3"
             strokeLinecap="round"
           />
-          {/* coffee line (Navy 40%) — sharp peak, hard drop, dips below baseline */}
+          {/* coffee line (ink 40%) — sharp peak, hard drop, dips below baseline */}
           <path
             d="M 52 200 C 70 170 84 60 118 52 C 150 46 168 120 210 178 C 250 232 300 236 380 226 L 600 214"
             fill="none"
-            stroke="rgba(27,31,59,0.4)"
+            stroke={alpha("ink", 0.4)}
             strokeWidth="2.5"
             strokeLinecap="round"
             strokeDasharray="1 0"
           />
           {/* labels */}
-          <text x="228" y="212" fontFamily="Syne, system-ui, sans-serif" fontSize="13" fontStyle="italic" fill="rgba(27,31,59,0.55)">
+          <text x="228" y="212" fontFamily={BRAND.fonts.body} fontSize="13" fontStyle="italic" fill={alpha("ink", 0.55)}>
             the 2pm cliff
           </text>
-          <text x="360" y="84" fontFamily="Syne, system-ui, sans-serif" fontSize="13" fontStyle="italic" fill="#1B1F3B">
+          <text x="360" y="84" fontFamily={BRAND.fonts.body} fontSize="13" fontStyle="italic" fill={BRAND.colors.ink}>
             the carry
           </text>
-          <text x="122" y="40" fontFamily="Syne, system-ui, sans-serif" fontSize="12" fill="rgba(27,31,59,0.45)">
+          <text x="122" y="40" fontFamily={BRAND.fonts.body} fontSize="12" fill={alpha("ink", 0.45)}>
             coffee
           </text>
-          <text x="560" y="106" fontFamily="Syne, system-ui, sans-serif" fontSize="12" fontWeight="700" fill="#1B1F3B">
+          <text x="560" y="106" fontFamily={BRAND.fonts.body} fontSize="12" fontWeight="700" fill={BRAND.colors.ink}>
             shroomé
           </text>
           {/* axis labels */}
-          <text x="330" y="284" textAnchor="middle" fontFamily="Syne, system-ui, sans-serif" fontSize="12" fill="rgba(27,31,59,0.55)">
+          <text x="330" y="284" textAnchor="middle" fontFamily={BRAND.fonts.body} fontSize="12" fill={alpha("ink", 0.55)}>
             hours after your first sip
           </text>
-          <text x="24" y="140" textAnchor="middle" fontFamily="Syne, system-ui, sans-serif" fontSize="12" fill="rgba(27,31,59,0.55)" transform="rotate(-90 24 140)">
+          <text x="24" y="140" textAnchor="middle" fontFamily={BRAND.fonts.body} fontSize="12" fill={alpha("ink", 0.55)} transform="rotate(-90 24 140)">
             how it feels
           </text>
         </svg>
-        <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "13px", color: "rgba(27,31,59,0.5)", textAlign: "center", marginTop: 16 }}>
+        <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "13px", color: "rgba(var(--brand-ink-rgb),0.5)", textAlign: "center", marginTop: 16 }}>
           illustrative of typical caffeine + l-theanine absorption character, not a measured clinical result.
         </p>
       </div>
@@ -229,9 +230,9 @@ export default function LPShell({ config }: { config: LPConfig }) {
   const { hero, benefits, strip, proof, faqs, final } = config;
   const source = `lp-${config.segment}`;
 
-  const heroText = hero.dark ? "#FDF4EE" : "#1B1F3B";
-  const heroFaint = hero.dark ? "rgba(253,244,238,0.8)" : "rgba(27,31,59,0.7)";
-  const heroMicro = hero.dark ? "rgba(253,244,238,0.6)" : "rgba(27,31,59,0.6)";
+  const heroText = hero.dark ? "var(--brand-canvas)" : "var(--brand-ink)";
+  const heroFaint = hero.dark ? "rgba(var(--brand-canvas-rgb),0.8)" : "rgba(var(--brand-ink-rgb),0.7)";
+  const heroMicro = hero.dark ? "rgba(var(--brand-canvas-rgb),0.6)" : "rgba(var(--brand-ink-rgb),0.6)";
 
   const scrollToFinal = () => {
     document.getElementById("final-cta")?.scrollIntoView({ behavior: "smooth" });
@@ -240,36 +241,36 @@ export default function LPShell({ config }: { config: LPConfig }) {
   return (
     <div id="top">
       <style>{`
-        .lp-h1{font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-weight:400;font-size:clamp(2.4rem,6vw,4rem);line-height:1.05;margin:0 0 20px}
-        .lp-h2{font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-weight:400;font-size:clamp(1.7rem,4vw,2.5rem);line-height:1.15;margin:0}
-        .lp-eyebrow{font-family:'Syne',system-ui,sans-serif;font-weight:700;font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;margin:0 0 18px}
-        .lp-sub{font-family:'Syne',system-ui,sans-serif;font-size:0.95rem;line-height:1.65;max-width:420px;margin:0 0 28px}
+        .lp-h1{font-family:var(--brand-font-display);font-style:italic;font-weight:400;font-size:clamp(2.4rem,6vw,4rem);line-height:1.05;margin:0 0 20px}
+        .lp-h2{font-family:var(--brand-font-display);font-style:italic;font-weight:400;font-size:clamp(1.7rem,4vw,2.5rem);line-height:1.15;margin:0}
+        .lp-eyebrow{font-family:var(--brand-font-body);font-weight:700;font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;margin:0 0 18px}
+        .lp-sub{font-family:var(--brand-font-body);font-size:0.95rem;line-height:1.65;max-width:420px;margin:0 0 28px}
         .lp-ledger-card{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 18px;flex-wrap:wrap}
-        .lp-ledger-label{font-family:'Syne',system-ui,sans-serif;font-weight:700;font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;display:inline-flex;align-items:center;gap:10px}
-        .lp-ledger-stamp{font-family:'Syne',system-ui,sans-serif;font-weight:800;font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:#1B1F3B;padding:4px 10px;transform:rotate(-2deg);display:inline-block}
-        .lp-pulse-dot{width:8px;height:8px;border-radius:50%;background:#C8FF3A;display:inline-block;animation:lpPulse 1.8s ease-in-out infinite}
-        @keyframes lpPulse{0%,100%{box-shadow:0 0 0 0 rgba(200,255,58,0.6)}50%{box-shadow:0 0 0 6px rgba(200,255,58,0)}}
+        .lp-ledger-label{font-family:var(--brand-font-body);font-weight:700;font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;display:inline-flex;align-items:center;gap:10px}
+        .lp-ledger-stamp{font-family:var(--brand-font-body);font-weight:800;font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--brand-ink);padding:4px 10px;transform:rotate(-2deg);display:inline-block}
+        .lp-pulse-dot{width:8px;height:8px;border-radius:50%;background:var(--brand-accent);display:inline-block;animation:lpPulse 1.8s ease-in-out infinite}
+        @keyframes lpPulse{0%,100%{box-shadow:0 0 0 0 rgba(var(--brand-accent-rgb),0.6)}50%{box-shadow:0 0 0 6px rgba(var(--brand-accent-rgb),0)}}
         .lp-benefits-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;max-width:1020px;margin:0 auto}
         .lp-card{padding:28px 24px}
-        .lp-card h3{font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-weight:400;font-size:1.4rem;color:#1B1F3B;margin:0 0 10px}
-        .lp-card p{font-family:'Syne',system-ui,sans-serif;font-size:0.85rem;color:rgba(27,31,59,0.7);line-height:1.65;margin:0}
-        .lp-card-soft{background:#FDF4EE;border-radius:12px;box-shadow:0 4px 24px rgba(27,31,59,0.05)}
-        .lp-card-spec{background:#FDF4EE;border:2px solid #1B1F3B}
-        .lp-card-numeral{background:#FDF4EE;border-top:3px solid #1B1F3B}
-        .lp-card-num{font-family:'DM Mono',monospace;font-size:2rem;font-weight:500;color:#1B1F3B;display:block;margin-bottom:10px}
+        .lp-card h3{font-family:var(--brand-font-display);font-style:italic;font-weight:400;font-size:1.4rem;color:var(--brand-ink);margin:0 0 10px}
+        .lp-card p{font-family:var(--brand-font-body);font-size:0.85rem;color:rgba(var(--brand-ink-rgb),0.7);line-height:1.65;margin:0}
+        .lp-card-soft{background:var(--brand-canvas);border-radius:12px;box-shadow:0 4px 24px rgba(var(--brand-ink-rgb),0.05)}
+        .lp-card-spec{background:var(--brand-canvas);border:2px solid var(--brand-ink)}
+        .lp-card-numeral{background:var(--brand-canvas);border-top:3px solid var(--brand-ink)}
+        .lp-card-num{font-family:var(--brand-font-mono);font-size:2rem;font-weight:500;color:var(--brand-ink);display:block;margin-bottom:10px}
         .lp-strip-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;max-width:1020px;margin:0 auto}
-        .lp-stat{background:rgba(253,244,238,0.55);padding:22px 18px;text-align:left}
-        .lp-stat-num{font-family:'DM Mono',monospace;font-size:1.7rem;font-weight:500;color:#1B1F3B;display:block;margin-bottom:6px}
-        .lp-stat-label{font-family:'Syne',system-ui,sans-serif;font-size:0.75rem;color:rgba(27,31,59,0.7);line-height:1.5}
-        .lp-badge{font-family:'DM Mono',monospace;font-size:0.68rem;letter-spacing:0.06em;color:#1B1F3B;background:rgba(27,31,59,0.06);border:1px solid rgba(27,31,59,0.15);padding:8px 14px;white-space:nowrap}
-        .lp-faq-item{border-top:1px solid rgba(27,31,59,0.1)}
-        .lp-faq-q{width:100%;background:none;border:none;padding:20px 0;text-align:left;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:'Syne',system-ui,sans-serif;font-size:0.95rem;font-weight:700;color:#1B1F3B;gap:16px}
+        .lp-stat{background:rgba(var(--brand-canvas-rgb),0.55);padding:22px 18px;text-align:left}
+        .lp-stat-num{font-family:var(--brand-font-mono);font-size:1.7rem;font-weight:500;color:var(--brand-ink);display:block;margin-bottom:6px}
+        .lp-stat-label{font-family:var(--brand-font-body);font-size:0.75rem;color:rgba(var(--brand-ink-rgb),0.7);line-height:1.5}
+        .lp-badge{font-family:var(--brand-font-mono);font-size:0.68rem;letter-spacing:0.06em;color:var(--brand-ink);background:rgba(var(--brand-ink-rgb),0.06);border:1px solid rgba(var(--brand-ink-rgb),0.15);padding:8px 14px;white-space:nowrap}
+        .lp-faq-item{border-top:1px solid rgba(var(--brand-ink-rgb),0.1)}
+        .lp-faq-q{width:100%;background:none;border:none;padding:20px 0;text-align:left;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:var(--brand-font-body);font-size:0.95rem;font-weight:700;color:var(--brand-ink);gap:16px}
         .lp-faq-q span{font-size:20px;flex-shrink:0;transition:transform .2s}
-        .lp-faq-a{font-family:'Syne',system-ui,sans-serif;font-size:0.88rem;color:rgba(27,31,59,0.65);line-height:1.7;padding:0 0 20px;margin:0;max-width:640px}
-        .lp-cta-btn{display:inline-block;background:#C8FF3A;color:#1B1F3B;border:none;padding:16px 36px;font-family:'Syne',system-ui,sans-serif;font-weight:800;font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer}
+        .lp-faq-a{font-family:var(--brand-font-body);font-size:0.88rem;color:rgba(var(--brand-ink-rgb),0.65);line-height:1.7;padding:0 0 20px;margin:0;max-width:640px}
+        .lp-cta-btn{display:inline-block;background:var(--brand-accent);color:var(--brand-ink);border:none;padding:16px 36px;font-family:var(--brand-font-body);font-weight:800;font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer}
         .lp-hero-grid{display:flex;align-items:center;gap:48px;flex-wrap:wrap;max-width:1120px;margin:0 auto;position:relative;z-index:1}
-        .lp-data-callout{font-family:'Syne',system-ui,sans-serif;font-weight:700;font-size:clamp(1.4rem,3vw,2rem);color:#FDF4EE;position:relative;display:inline-block;padding:0 4px}
-        .lp-data-callout::after{content:'';position:absolute;left:0;right:0;bottom:2px;height:10px;background:#C8FF3A;z-index:-1}
+        .lp-data-callout{font-family:var(--brand-font-body);font-weight:700;font-size:clamp(1.4rem,3vw,2rem);color:var(--brand-canvas);position:relative;display:inline-block;padding:0 4px}
+        .lp-data-callout::after{content:'';position:absolute;left:0;right:0;bottom:2px;height:10px;background:var(--brand-accent);z-index:-1}
         @media(prefers-reduced-motion:reduce){.lp-pulse-dot{animation:none}}
         @media(max-width:600px){.lp-hero-grid{gap:32px}}
       `}</style>
@@ -280,7 +281,7 @@ export default function LPShell({ config }: { config: LPConfig }) {
           padding: "18px 24px",
           display: "flex",
           justifyContent: "center",
-          background: hero.dark ? "#1B1F3B" : "transparent",
+          background: hero.dark ? "var(--brand-ink)" : "transparent",
           position: "absolute",
           top: 0,
           left: 0,
@@ -292,7 +293,7 @@ export default function LPShell({ config }: { config: LPConfig }) {
           <Image src="/logo-mark.png" width={30} height={30} alt="shroomé S" style={{ borderRadius: 6 }} priority />
           <span
             style={{
-              fontFamily: "'Instrument Serif', Georgia, serif",
+              fontFamily: "var(--brand-font-display)",
               fontStyle: "italic",
               fontSize: "1.3rem",
               color: heroText,
@@ -334,7 +335,7 @@ export default function LPShell({ config }: { config: LPConfig }) {
               right: "-12%",
               width: "70%",
               height: 200,
-              background: "linear-gradient(90deg, rgba(200,255,58,0.55) 0%, rgba(253,244,238,0) 85%)",
+              background: "linear-gradient(90deg, rgba(var(--brand-accent-rgb),0.55) 0%, rgba(var(--brand-canvas-rgb),0) 85%)",
               transform: "rotate(-8deg)",
               filter: "blur(28px)",
               pointerEvents: "none",
@@ -374,7 +375,7 @@ export default function LPShell({ config }: { config: LPConfig }) {
             <div style={{ marginTop: 28 }}>
               <DropLedger stampColor={config.stampColor} light={config.ledgerLight} />
             </div>
-            <p style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.65rem", color: heroMicro, marginTop: 16, letterSpacing: "0.03em" }}>
+            <p style={{ fontFamily: "var(--brand-font-mono)", fontSize: "0.65rem", color: heroMicro, marginTop: 16, letterSpacing: "0.03em" }}>
               {ACCESS_LIST_COUNT} people holding drop access
             </p>
           </div>
@@ -437,9 +438,9 @@ export default function LPShell({ config }: { config: LPConfig }) {
         {benefits.disclaimer && (
           <p
             style={{
-              fontFamily: "'Syne', system-ui, sans-serif",
+              fontFamily: "var(--brand-font-body)",
               fontSize: "12px",
-              color: "rgba(27,31,59,0.6)",
+              color: "rgba(var(--brand-ink-rgb),0.6)",
               maxWidth: 1020,
               margin: "24px auto 0",
               lineHeight: 1.5,
@@ -453,7 +454,7 @@ export default function LPShell({ config }: { config: LPConfig }) {
       {/* ══════════════ INGREDIENT / SCIENCE STRIP ══════════════ */}
       <section style={{ background: strip.bg, padding: "72px 24px" }}>
         <div style={{ maxWidth: 1020, margin: "0 auto" }}>
-          <h2 className="lp-h2" style={{ color: "#1B1F3B", marginBottom: 32 }}>{strip.header}</h2>
+          <h2 className="lp-h2" style={{ color: "var(--brand-ink)", marginBottom: 32 }}>{strip.header}</h2>
           <div className="lp-strip-grid">
             {strip.stats.map((s) => (
               <div key={s.stat + s.label} className="lp-stat">
@@ -462,20 +463,20 @@ export default function LPShell({ config }: { config: LPConfig }) {
               </div>
             ))}
           </div>
-          <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "13px", color: "rgba(27,31,59,0.65)", marginTop: 20 }}>
+          <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "13px", color: "rgba(var(--brand-ink-rgb),0.65)", marginTop: 20 }}>
             {strip.footnote}
           </p>
         </div>
       </section>
 
       {/* ══════════════ SOCIAL PROOF ══════════════ */}
-      <section style={{ background: "#FDF4EE", padding: "80px 24px" }}>
+      <section style={{ background: "var(--brand-canvas)", padding: "80px 24px" }}>
         <div style={{ maxWidth: 720, margin: "0 auto", textAlign: "center" }}>
-          <h2 className="lp-h2" style={{ color: "#1B1F3B", marginBottom: 20 }}>{proof.header}</h2>
-          <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.95rem", color: "rgba(27,31,59,0.7)", lineHeight: 1.7, margin: "0 auto 28px", maxWidth: 560 }}>
+          <h2 className="lp-h2" style={{ color: "var(--brand-ink)", marginBottom: 20 }}>{proof.header}</h2>
+          <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.95rem", color: "rgba(var(--brand-ink-rgb),0.7)", lineHeight: 1.7, margin: "0 auto 28px", maxWidth: 560 }}>
             {proof.body}
           </p>
-          <p style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.85rem", color: "#1B1F3B", marginBottom: 28 }}>
+          <p style={{ fontFamily: "var(--brand-font-mono)", fontSize: "0.85rem", color: "var(--brand-ink)", marginBottom: 28 }}>
             <strong>{ACCESS_LIST_COUNT}</strong> {proof.counterLabel}
           </p>
           <div style={{ display: "flex", gap: 10, flexWrap: "wrap", justifyContent: "center" }}>
@@ -487,9 +488,9 @@ export default function LPShell({ config }: { config: LPConfig }) {
       </section>
 
       {/* ══════════════ FAQ ══════════════ */}
-      <section style={{ background: "#FDF4EE", padding: "24px 24px 80px" }}>
+      <section style={{ background: "var(--brand-canvas)", padding: "24px 24px 80px" }}>
         <div style={{ maxWidth: 720, margin: "0 auto" }}>
-          <h2 className="lp-h2" style={{ color: "#1B1F3B", marginBottom: 28, textAlign: "center" }}>questions</h2>
+          <h2 className="lp-h2" style={{ color: "var(--brand-ink)", marginBottom: 28, textAlign: "center" }}>questions</h2>
           <div>
             {faqs.map((f, i) => (
               <div key={i} className="lp-faq-item">
@@ -514,11 +515,11 @@ export default function LPShell({ config }: { config: LPConfig }) {
         </div>
       </section>
 
-      {/* ══════════════ FINAL CTA (Navy) ══════════════ */}
-      <section id="final-cta" style={{ background: "#1B1F3B", padding: "88px 24px" }}>
+      {/* ══════════════ FINAL CTA (ink) ══════════════ */}
+      <section id="final-cta" style={{ background: "var(--brand-ink)", padding: "88px 24px" }}>
         <div style={{ maxWidth: 640, margin: "0 auto", textAlign: "center" }}>
-          <h2 className="lp-h2" style={{ color: "#FDF4EE", marginBottom: 18 }}>{final.header}</h2>
-          <p style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "0.92rem", color: "rgba(253,244,238,0.7)", lineHeight: 1.7, margin: "0 auto 32px", maxWidth: 520 }}>
+          <h2 className="lp-h2" style={{ color: "var(--brand-canvas)", marginBottom: 18 }}>{final.header}</h2>
+          <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.92rem", color: "rgba(var(--brand-canvas-rgb),0.7)", lineHeight: 1.7, margin: "0 auto 32px", maxWidth: 520 }}>
             {final.body}
           </p>
           <div style={{ display: "flex", justifyContent: "center" }}>
@@ -528,12 +529,12 @@ export default function LPShell({ config }: { config: LPConfig }) {
       </section>
 
       {/* ══════════════ LEGAL FOOTER ══════════════ */}
-      <footer style={{ background: "#FDF4EE", padding: "40px 24px", textAlign: "center" }}>
+      <footer style={{ background: "var(--brand-canvas)", padding: "40px 24px", textAlign: "center" }}>
         <p
           style={{
-            fontFamily: "'Syne', system-ui, sans-serif",
+            fontFamily: "var(--brand-font-body)",
             fontSize: "12px",
-            color: "rgba(27,31,59,0.6)",
+            color: "rgba(var(--brand-ink-rgb),0.6)",
             maxWidth: 620,
             margin: "0 auto 20px",
             lineHeight: 1.6,
@@ -542,11 +543,11 @@ export default function LPShell({ config }: { config: LPConfig }) {
           {FDA_DISCLAIMER}
         </p>
         <div style={{ display: "flex", justifyContent: "center", gap: 16, marginBottom: 12, flexWrap: "wrap" }}>
-          <a href="/privacy" style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "11px", color: "rgba(27,31,59,0.55)", textDecoration: "none" }}>privacy</a>
-          <a href="/terms" style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "11px", color: "rgba(27,31,59,0.55)", textDecoration: "none" }}>terms</a>
-          <a href="mailto:hello@drinkshroome.com" style={{ fontFamily: "'Syne', system-ui, sans-serif", fontSize: "11px", color: "rgba(27,31,59,0.55)", textDecoration: "none" }}>contact</a>
+          <a href="/privacy" style={{ fontFamily: "var(--brand-font-body)", fontSize: "11px", color: "rgba(var(--brand-ink-rgb),0.55)", textDecoration: "none" }}>privacy</a>
+          <a href="/terms" style={{ fontFamily: "var(--brand-font-body)", fontSize: "11px", color: "rgba(var(--brand-ink-rgb),0.55)", textDecoration: "none" }}>terms</a>
+          <a href="mailto:hello@drinkshroome.com" style={{ fontFamily: "var(--brand-font-body)", fontSize: "11px", color: "rgba(var(--brand-ink-rgb),0.55)", textDecoration: "none" }}>contact</a>
         </div>
-        <p style={{ fontFamily: "'DM Mono', monospace", fontSize: "10px", color: "rgba(27,31,59,0.4)", margin: 0 }}>
+        <p style={{ fontFamily: "var(--brand-font-mono)", fontSize: "10px", color: "rgba(var(--brand-ink-rgb),0.4)", margin: 0 }}>
           © 2026 shroomé · ZSQUARED INC
         </p>
       </footer>

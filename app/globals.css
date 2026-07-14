@@ -1,16 +1,53 @@
 @import "tailwindcss";
 
-@theme {
-  --color-navy:      #1B1F3B;
-  --color-sage:      #809463;
-  --color-pink:      #FFB7D1;
-  --color-lime:      #C8FF3A;
-  --color-coral:     #FF7043;
-  --color-teal:      #00C9A7;
-  --color-lavender:  #D4B8E0;
-  --color-cream:     #FDF4EE;
-  --font-serif: 'Instrument Serif', Georgia, serif;
-  --font-sans:  'Syne', system-ui, sans-serif;
+/* ─────────────────────────────────────────────────────────────────────────
+   BRAND TOKENS — CSS mirror of app/lib/brand.ts (the source of truth).
+   Change a value there → change it here too (`node scripts/check-brand-sync.mjs`
+   verifies the two stay in sync). Semantic names, not hue names:
+   ink = primary dark, canvas = light background, accent = hero CTA color.
+   ───────────────────────────────────────────────────────────────────────── */
+:root {
+  --brand-ink:               #1B1F3B; /* was "navy"  */
+  --brand-canvas:            #FDF4EE; /* was "cream" */
+  --brand-accent:            #C8FF3A; /* was "lime"  */
+  --brand-accent-contrast:   #1B1F3B; /* text on accent surfaces */
+  --brand-accent-deep:       #2D4A2D; /* was "matcha green" */
+  --brand-accent-warm:       #FF7043; /* was "coral" */
+  --brand-accent-warm-soft:  #E8936D; /* was "peach" */
+  --brand-accent-muted:      #809463; /* was "sage"  */
+  --brand-accent-muted-deep: #5A7A3A;
+  --brand-flavor-strawberry: #FFB7D1; /* was "pink" */
+  --brand-flavor-functional: #D4B8E0; /* was "lavender" */
+  --brand-tint-soft:         #E8D5F0;
+  --brand-tint-blush:        #FFE0EC;
+
+  /* RGB triplets for rgba(var(--brand-*-rgb), <alpha>) composition */
+  --brand-ink-rgb:               27,31,59;
+  --brand-canvas-rgb:            253,244,238;
+  --brand-accent-rgb:            200,255,58;
+  --brand-accent-warm-rgb:       255,112,67;
+  --brand-accent-muted-rgb:      128,148,99;
+  --brand-flavor-strawberry-rgb: 255,183,209;
+  --brand-flavor-functional-rgb: 212,184,224;
+
+  /* Font stacks */
+  --brand-font-display: 'Instrument Serif', Georgia, serif;
+  --brand-font-body:    'Syne', system-ui, sans-serif;
+  --brand-font-mono:    'DM Mono', monospace;
+}
+
+@theme inline {
+  /* Semantic utility tokens (text-ink, bg-accent, …) */
+  --color-ink:                var(--brand-ink);
+  --color-canvas:             var(--brand-canvas);
+  --color-accent:             var(--brand-accent);
+  --color-accent-warm:        var(--brand-accent-warm);
+  --color-accent-muted:       var(--brand-accent-muted);
+  --color-flavor-strawberry:  var(--brand-flavor-strawberry);
+  --color-flavor-functional:  var(--brand-flavor-functional);
+  --font-serif: var(--brand-font-display);
+  --font-sans:  var(--brand-font-body);
+  --font-mono:  var(--brand-font-mono);
 }
 
 * {
@@ -19,7 +56,7 @@
 
 /* ── Keyboard focus indicator ── */
 *:focus-visible {
-  outline: 2px solid #C8FF3A;
+  outline: 2px solid var(--brand-accent);
   outline-offset: 2px;
 }
 
@@ -42,9 +79,9 @@
   height: auto;
   overflow: visible;
   padding: 12px 24px;
-  background: #1B1F3B;
-  color: #C8FF3A;
-  font-family: 'Syne', system-ui, sans-serif;
+  background: var(--brand-ink);
+  color: var(--brand-accent);
+  font-family: var(--brand-font-body);
   font-size: 14px;
   font-weight: 700;
   letter-spacing: 0.06em;
@@ -55,9 +92,9 @@ html {
 }
 
 body {
-  background-color: #FDF4EE;
-  color: #1B1F3B;
-  font-family: 'Syne', system-ui, sans-serif;
+  background-color: var(--brand-canvas);
+  color: var(--brand-ink);
+  font-family: var(--brand-font-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
@@ -93,15 +130,15 @@ body {
 .delay-650 { animation-delay: 0.65s; opacity: 0; }
 
 /* ── Comparison checkmarks ── */
-.chk-y { background: rgba(200,255,58,0.25); color: #C8FF3A; }
-.chk-n { background: rgba(253,244,238,0.07); color: rgba(253,244,238,0.22); }
-.chk-y-light { background: rgba(128,148,99,0.15); color: #5A7A3A; }
-.chk-n-light { background: rgba(27,31,59,0.04); color: rgba(27,31,59,0.18); }
+.chk-y { background: rgba(var(--brand-accent-rgb),0.25); color: var(--brand-accent); }
+.chk-n { background: rgba(var(--brand-canvas-rgb),0.07); color: rgba(var(--brand-canvas-rgb),0.22); }
+.chk-y-light { background: rgba(var(--brand-accent-muted-rgb),0.15); color: var(--brand-accent-muted-deep); }
+.chk-n-light { background: rgba(var(--brand-ink-rgb),0.04); color: rgba(var(--brand-ink-rgb),0.18); }
 
 /* ── Scrollbar ── */
 ::-webkit-scrollbar { width: 3px; height: 0px; }
 ::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: rgba(128,148,99,0.3); border-radius: 2px; }
+::-webkit-scrollbar-thumb { background: rgba(var(--brand-accent-muted-rgb),0.3); border-radius: 2px; }
 
 /* ── Sachet float ── */
 @keyframes float {
@@ -185,7 +222,7 @@ body {
   body {
     background: #fff !important;
     color: #000 !important;
-    font-family: 'Syne', system-ui, sans-serif !important;
+    font-family: var(--brand-font-body) !important;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }
@@ -315,7 +352,7 @@ body {
     margin-top: 32px;
     padding-top: 12px;
     border-top: 1px solid #ccc;
-    font-family: 'DM Mono', monospace;
+    font-family: var(--brand-font-mono);
     font-size: 10px;
     color: #999;
     text-align: center;

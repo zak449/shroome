@@ -1,3 +1,4 @@
+import { BRAND, svgHex } from "@/app/lib/brand";
 import type { Metadata } from "next";
 
 import { recipes } from "./data";
@@ -74,10 +75,10 @@ export default function RecipesPage() {
 
       <style>{`
         /* ── TICKER ── */
-        .rec-ticker{background:#1B1F3B;padding:10px 0;overflow:hidden;white-space:nowrap}
+        .rec-ticker{background:var(--brand-ink);padding:10px 0;overflow:hidden;white-space:nowrap}
         .rec-ticker-track{display:inline-flex;animation:recTick 28s linear infinite}
-        .rec-ticker-item{font-family:'DM Mono',monospace;font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;padding:0 28px;color:rgba(253,244,238,.75)}
-        .rec-ticker-item em{color:#C8FF3A;font-style:normal;font-weight:500}
+        .rec-ticker-item{font-family:var(--brand-font-mono);font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;padding:0 28px;color:rgba(var(--brand-canvas-rgb),.75)}
+        .rec-ticker-item em{color:var(--brand-accent);font-style:normal;font-weight:500}
         @keyframes recTick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
         /* ── NAV ── */
@@ -85,29 +86,29 @@ export default function RecipesPage() {
           position:sticky;top:0;z-index:200;
           display:flex;align-items:center;justify-content:space-between;
           padding:0 5%;height:60px;
-          background:rgba(255,183,209,0.85);
+          background:rgba(var(--brand-flavor-strawberry-rgb),0.85);
           backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
-          border-bottom:1px solid rgba(27,31,59,0.06)
+          border-bottom:1px solid rgba(var(--brand-ink-rgb),0.06)
         }
         .rec-nav-logo{
           display:flex;align-items:center;gap:8px;
-          text-decoration:none;color:#1B1F3B
+          text-decoration:none;color:var(--brand-ink)
         }
         .rec-nav-logo img{width:32px;height:32px;border-radius:6px}
-        .rec-nav-logo span{font-family:'Instrument Serif',Georgia,serif;font-size:22px;font-weight:400;font-style:italic;color:#1B1F3B}
+        .rec-nav-logo span{font-family:var(--brand-font-display);font-size:22px;font-weight:400;font-style:italic;color:var(--brand-ink)}
         .rec-nav-links{display:flex;gap:8px}
         @media(max-width:768px){.rec-nav-links{display:none !important}.rec-nav-cta{display:none !important}}
         .rec-nav-links a{
           background:none;border:none;cursor:pointer;
-          font-family:'Syne',system-ui,sans-serif;font-size:11.5px;font-weight:600;
-          letter-spacing:.08em;text-transform:uppercase;color:#1B1F3B;
+          font-family:var(--brand-font-body);font-size:11.5px;font-weight:600;
+          letter-spacing:.08em;text-transform:uppercase;color:var(--brand-ink);
           padding:8px 14px;transition:color .2s;text-decoration:none
         }
-        .rec-nav-links a:hover{color:#2D4A2D}
-        .rec-nav-links a.active{color:#2D4A2D}
+        .rec-nav-links a:hover{color:var(--brand-accent-deep)}
+        .rec-nav-links a.active{color:var(--brand-accent-deep)}
         .rec-nav-cta{
-          background:#1B1F3B;color:#FDF4EE;border:none;
-          padding:10px 20px;font-family:'Syne',system-ui,sans-serif;
+          background:var(--brand-ink);color:var(--brand-canvas);border:none;
+          padding:10px 20px;font-family:var(--brand-font-body);
           font-size:12px;font-weight:700;letter-spacing:.06em;
           text-transform:uppercase;cursor:pointer;transition:background .2s;text-decoration:none
         }
@@ -116,61 +117,61 @@ export default function RecipesPage() {
         /* ── PAGE WRAPPER (retro 90s background) ── */
         .rec-page{
           background:
-            radial-gradient(ellipse 120% 80% at 20% 10%, rgba(212,184,224,0.35) 0%, transparent 50%),
-            radial-gradient(ellipse 100% 70% at 80% 85%, rgba(200,255,58,0.12) 0%, transparent 50%),
-            radial-gradient(ellipse 60% 50% at 60% 40%, rgba(255,183,209,0.2) 0%, transparent 50%),
+            radial-gradient(ellipse 120% 80% at 20% 10%, rgba(var(--brand-flavor-functional-rgb),0.35) 0%, transparent 50%),
+            radial-gradient(ellipse 100% 70% at 80% 85%, rgba(var(--brand-accent-rgb),0.12) 0%, transparent 50%),
+            radial-gradient(ellipse 60% 50% at 60% 40%, rgba(var(--brand-flavor-strawberry-rgb),0.2) 0%, transparent 50%),
             linear-gradient(180deg, #F0E4D8 0%, #EDE0D4 30%, #E8D8CC 60%, #F0E4D8 100%);
           background-attachment:fixed;
           position:relative
         }
         .rec-page::before{
           content:'';position:fixed;inset:0;pointer-events:none;z-index:-1;
-          background-image:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%231B1F3B' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+          background-image:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='${svgHex(BRAND.colors.ink)}' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
           opacity:0.6
         }
 
         /* ── HERO ── */
         .rec-hero{position:relative;overflow:hidden;padding:72px 8% 64px}
-        .rec-hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,rgba(200,255,58,0.2) 0%,rgba(255,183,209,0.25) 50%,rgba(212,184,224,0.2) 100%)}
+        .rec-hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,rgba(var(--brand-accent-rgb),0.2) 0%,rgba(var(--brand-flavor-strawberry-rgb),0.25) 50%,rgba(var(--brand-flavor-functional-rgb),0.2) 100%)}
         .rec-hero-overlay{position:absolute;inset:0;background:linear-gradient(rgba(240,228,216,0.85) 0%,rgba(237,224,212,0.8) 100%)}
         .rec-blob{position:absolute;border-radius:50%;pointer-events:none;opacity:.3}
-        .rec-blob-a{width:340px;height:340px;top:-80px;right:10%;background:#C8FF3A}
-        .rec-blob-b{width:200px;height:200px;bottom:-60px;left:5%;background:#D4B8E0}
+        .rec-blob-a{width:340px;height:340px;top:-80px;right:10%;background:var(--brand-accent)}
+        .rec-blob-b{width:200px;height:200px;bottom:-60px;left:5%;background:var(--brand-flavor-functional)}
         .rec-hero-inner{position:relative;z-index:2;max-width:640px}
         .rec-hero-tag{
           display:inline-flex;align-items:center;gap:8px;
-          font-family:'DM Mono',monospace;font-size:11px;font-weight:500;
-          letter-spacing:.16em;text-transform:uppercase;color:#1B1F3B;margin-bottom:24px;
+          font-family:var(--brand-font-mono);font-size:11px;font-weight:500;
+          letter-spacing:.16em;text-transform:uppercase;color:var(--brand-ink);margin-bottom:24px;
           opacity:0;animation:recFadeUp .7s .1s forwards
         }
-        .rec-hero-tag::before{content:'';width:6px;height:6px;border-radius:50%;background:#C8FF3A;flex-shrink:0}
+        .rec-hero-tag::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--brand-accent);flex-shrink:0}
         .rec-hero h1{
-          font-family:'Instrument Serif',Georgia,serif;
+          font-family:var(--brand-font-display);
           font-size:clamp(44px,5.5vw,72px);font-weight:400;line-height:1;letter-spacing:-.02em;
-          color:#1B1F3B;margin-bottom:18px;opacity:0;animation:recFadeUp .8s .2s forwards
+          color:var(--brand-ink);margin-bottom:18px;opacity:0;animation:recFadeUp .8s .2s forwards
         }
-        .rec-hero h1 em{font-style:italic;color:#2D4A2D}
+        .rec-hero h1 em{font-style:italic;color:var(--brand-accent-deep)}
         .rec-hero-sub{
-          font-size:15px;line-height:1.75;color:rgba(27,31,59,0.7);max-width:520px;font-weight:400;
+          font-size:15px;line-height:1.75;color:rgba(var(--brand-ink-rgb),0.7);max-width:520px;font-weight:400;
           opacity:0;animation:recFadeUp .8s .35s forwards
         }
-        .rec-hero-sub strong{color:#1B1F3B;font-weight:700}
+        .rec-hero-sub strong{color:var(--brand-ink);font-weight:700}
         @keyframes recFadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
 
         /* ── PILL ROW ── */
-        .rec-pill-row{display:flex;gap:0;overflow:hidden;white-space:nowrap;background:#D4B8E0;padding:12px 0}
+        .rec-pill-row{display:flex;gap:0;overflow:hidden;white-space:nowrap;background:var(--brand-flavor-functional);padding:12px 0}
         .rec-pill-track{display:inline-flex;animation:recTick 22s linear infinite}
         .rec-pill-item{
-          font-family:'Syne',system-ui,sans-serif;font-size:11px;font-weight:700;
-          letter-spacing:.14em;text-transform:uppercase;color:#1B1F3B;padding:0 28px
+          font-family:var(--brand-font-body);font-size:11px;font-weight:700;
+          letter-spacing:.14em;text-transform:uppercase;color:var(--brand-ink);padding:0 28px
         }
         .rec-pill-sep{opacity:.3}
 
         /* ── TILE GRID ── */
         .rec-grid-section{padding:20px 0 0}
         .rec-grid-title{
-          font-family:'DM Mono',monospace;font-size:11px;font-weight:500;
-          letter-spacing:.2em;text-transform:uppercase;color:rgba(27,31,59,0.5);
+          font-family:var(--brand-font-mono);font-size:11px;font-weight:500;
+          letter-spacing:.2em;text-transform:uppercase;color:rgba(var(--brand-ink-rgb),0.5);
           margin-bottom:16px;padding:0 6%;text-align:center
         }
         /* Desktop: 3-col grid, no gaps, colors bleed together */
@@ -211,49 +212,49 @@ export default function RecipesPage() {
           padding:24px
         }
         .rec-tile-ingredients{
-          font-family:'DM Mono',monospace;font-size:10px;font-weight:500;
+          font-family:var(--brand-font-mono);font-size:10px;font-weight:500;
           letter-spacing:.1em;text-transform:uppercase;
-          color:rgba(253,244,238,0.7);margin-bottom:6px
+          color:rgba(var(--brand-canvas-rgb),0.7);margin-bottom:6px
         }
         .rec-tile-name{
-          font-family:'Instrument Serif',Georgia,serif;
+          font-family:var(--brand-font-display);
           font-size:clamp(22px,2.5vw,32px);font-weight:400;font-style:italic;
           line-height:1.1;letter-spacing:-.01em;
-          color:#FDF4EE;
+          color:var(--brand-canvas);
           text-shadow:0 2px 16px rgba(0,0,0,0.25)
         }
 
         /* ── CTA ── */
         .rec-cta{
           text-align:center;padding:80px 8%;
-          background:#1B1F3B;
+          background:var(--brand-ink);
           position:relative;overflow:hidden
         }
         .rec-cta::before{
           content:'';position:absolute;inset:0;
-          background:radial-gradient(ellipse 80% 60% at 50% 50%, rgba(200,255,58,0.08) 0%, transparent 70%);
+          background:radial-gradient(ellipse 80% 60% at 50% 50%, rgba(var(--brand-accent-rgb),0.08) 0%, transparent 70%);
           pointer-events:none
         }
         .rec-cta-tag{
-          font-family:'DM Mono',monospace;font-size:11px;font-weight:500;
-          letter-spacing:.2em;text-transform:uppercase;color:#C8FF3A;
+          font-family:var(--brand-font-mono);font-size:11px;font-weight:500;
+          letter-spacing:.2em;text-transform:uppercase;color:var(--brand-accent);
           margin-bottom:20px;position:relative
         }
         .rec-cta h2{
-          font-family:'Instrument Serif',Georgia,serif;
+          font-family:var(--brand-font-display);
           font-size:clamp(32px,4.5vw,52px);font-weight:400;font-style:italic;line-height:1.05;
-          color:#FDF4EE;margin-bottom:14px;position:relative
+          color:var(--brand-canvas);margin-bottom:14px;position:relative
         }
-        .rec-cta h2 em{font-style:italic;color:#FF7043}
+        .rec-cta h2 em{font-style:italic;color:var(--brand-accent-warm)}
         .rec-cta-sub{
-          font-family:'Syne',system-ui,sans-serif;font-size:14px;
-          color:rgba(253,244,238,0.5);margin-bottom:32px;position:relative
+          font-family:var(--brand-font-body);font-size:14px;
+          color:rgba(var(--brand-canvas-rgb),0.5);margin-bottom:32px;position:relative
         }
         .rec-btn-cta{
           display:inline-block;
-          background:#C8FF3A;color:#1B1F3B;
+          background:var(--brand-accent);color:var(--brand-ink);
           padding:16px 40px;
-          font-family:'Syne',system-ui,sans-serif;font-size:13px;font-weight:700;
+          font-family:var(--brand-font-body);font-size:13px;font-weight:700;
           letter-spacing:.1em;text-transform:uppercase;
           text-decoration:none;transition:background .2s,transform .2s;
           position:relative
@@ -262,24 +263,24 @@ export default function RecipesPage() {
 
         /* ── FOOTER ── */
         .rec-footer{
-          background:#1B1F3B;color:rgba(253,244,238,0.6);
+          background:var(--brand-ink);color:rgba(var(--brand-canvas-rgb),0.6);
           padding:40px 8%;text-align:center;
-          font-family:'Syne',system-ui,sans-serif;font-size:12px
+          font-family:var(--brand-font-body);font-size:12px
         }
         .rec-footer-top{display:flex;justify-content:center;gap:24px;margin-bottom:16px}
         .rec-footer-top a{
-          color:rgba(253,244,238,0.7);text-decoration:none;
-          font-family:'DM Mono',monospace;font-size:11px;font-weight:500;
+          color:rgba(var(--brand-canvas-rgb),0.7);text-decoration:none;
+          font-family:var(--brand-font-mono);font-size:11px;font-weight:500;
           letter-spacing:.12em;text-transform:uppercase;transition:color .2s
         }
-        .rec-footer-top a:hover{color:#C8FF3A}
+        .rec-footer-top a:hover{color:var(--brand-accent)}
         .rec-footer-mid{line-height:1.8}
-        .rec-footer-mid a{color:rgba(253,244,238,0.5);text-decoration:none;transition:color .2s}
-        .rec-footer-mid a:hover{color:#FDF4EE}
+        .rec-footer-mid a{color:rgba(var(--brand-canvas-rgb),0.5);text-decoration:none;transition:color .2s}
+        .rec-footer-mid a:hover{color:var(--brand-canvas)}
         .rec-footer-bot{
           margin-top:12px;
-          font-family:'Instrument Serif',Georgia,serif;font-style:italic;
-          font-size:14px;color:rgba(253,244,238,0.4)
+          font-family:var(--brand-font-display);font-style:italic;
+          font-size:14px;color:rgba(var(--brand-canvas-rgb),0.4)
         }
 
         /* ── RESPONSIVE ── */

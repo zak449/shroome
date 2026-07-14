@@ -22,11 +22,11 @@ interface DashboardStats {
 
 function TrendBadge({ thisWeek, lastWeek }: WeeklyTrend) {
   if (lastWeek === 0 && thisWeek === 0) return <span className="text-sm text-white/40">No data yet</span>;
-  if (lastWeek === 0) return <span className="text-sm text-lime">New signups this week</span>;
+  if (lastWeek === 0) return <span className="text-sm text-accent">New signups this week</span>;
   const pct = Math.round(((thisWeek - lastWeek) / lastWeek) * 100);
   const up = pct >= 0;
   return (
-    <span className={`text-sm font-semibold ${up ? "text-lime" : "text-pink"}`}>
+    <span className={`text-sm font-semibold ${up ? "text-accent" : "text-flavor-strawberry"}`}>
       {up ? "+" : ""}{pct}% vs last week
     </span>
   );
@@ -98,18 +98,18 @@ export default function Dashboard() {
   // ─── Auth gate ────────────────────────────────────────────────────────────
   if (!authed) {
     return (
-      <div className="min-h-screen flex items-center justify-center" style={{ background: "#1B1F3B" }}>
+      <div className="min-h-screen flex items-center justify-center" style={{ background: "var(--brand-ink)" }}>
         <div className="text-center">
           <h1
             className="text-3xl font-bold mb-2"
-            style={{ color: "#FDF4EE", fontFamily: "'Syne', system-ui, sans-serif" }}
+            style={{ color: "var(--brand-canvas)", fontFamily: "var(--brand-font-body)" }}
           >
             shroom&eacute; dashboard
           </h1>
           <p className="text-white/40 text-sm mb-8">
             Add <code className="bg-white/10 px-2 py-0.5 rounded text-xs">?key=shroome2026</code> to the URL to access.
           </p>
-          <div className="w-8 h-0.5 mx-auto rounded" style={{ background: "#C8FF3A" }} />
+          <div className="w-8 h-0.5 mx-auto rounded" style={{ background: "var(--brand-accent)" }} />
         </div>
       </div>
     );
@@ -117,13 +117,13 @@ export default function Dashboard() {
 
   // ─── Dashboard ────────────────────────────────────────────────────────────
   return (
-    <div className="min-h-screen" style={{ background: "#1B1F3B", fontFamily: "'Syne', system-ui, sans-serif" }}>
+    <div className="min-h-screen" style={{ background: "var(--brand-ink)", fontFamily: "var(--brand-font-body)" }}>
       {/* Header */}
       <header className="border-b border-white/[0.08] px-6 py-5 flex items-center justify-between">
         <div className="flex items-center gap-3">
           <div
             className="w-2.5 h-2.5 rounded-full animate-pulse"
-            style={{ background: "#C8FF3A" }}
+            style={{ background: "var(--brand-accent)" }}
           />
           <h1 className="text-xl font-bold text-white tracking-tight">
             shroom&eacute; <span className="text-white/30 font-normal">/ dashboard</span>
@@ -140,9 +140,9 @@ export default function Dashboard() {
             disabled={loading}
             className="text-sm px-4 py-2 rounded-lg font-medium transition-all"
             style={{
-              background: loading ? "rgba(255,255,255,0.05)" : "rgba(200,255,58,0.12)",
-              color: loading ? "rgba(255,255,255,0.3)" : "#C8FF3A",
-              border: "1px solid rgba(200,255,58,0.15)",
+              background: loading ? "rgba(255,255,255,0.05)" : "rgba(var(--brand-accent-rgb),0.12)",
+              color: loading ? "rgba(255,255,255,0.3)" : "var(--brand-accent)",
+              border: "1px solid rgba(var(--brand-accent-rgb),0.15)",
             }}
           >
             {loading ? "Refreshing..." : "Refresh"}
@@ -152,14 +152,14 @@ export default function Dashboard() {
 
       <main className="max-w-5xl mx-auto px-6 py-10 space-y-8">
         {error && (
-          <div className="rounded-xl p-4 text-sm" style={{ background: "rgba(255,112,67,0.12)", color: "#FF7043", border: "1px solid rgba(255,112,67,0.2)" }}>
+          <div className="rounded-xl p-4 text-sm" style={{ background: "rgba(var(--brand-accent-warm-rgb),0.12)", color: "var(--brand-accent-warm)", border: "1px solid rgba(var(--brand-accent-warm-rgb),0.2)" }}>
             {error}
           </div>
         )}
 
         {/* ── Waitlist Stats ── */}
         <section>
-          <h2 className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: "#FFB7D1" }}>
+          <h2 className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: "var(--brand-flavor-strawberry)" }}>
             Waitlist
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -198,7 +198,7 @@ export default function Dashboard() {
         {/* ── Recent Signups ── */}
         {stats?.recentSignups && stats.recentSignups.length > 0 && (
           <section>
-            <h2 className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: "#FFB7D1" }}>
+            <h2 className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: "var(--brand-flavor-strawberry)" }}>
               Recent Signups
             </h2>
             <div className="rounded-2xl bg-white/[0.04] border border-white/[0.08] overflow-hidden">
@@ -209,8 +209,8 @@ export default function Dashboard() {
                       <div
                         className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold"
                         style={{
-                          background: s.phone ? "rgba(200,255,58,0.15)" : "rgba(255,183,209,0.12)",
-                          color: s.phone ? "#C8FF3A" : "#FFB7D1",
+                          background: s.phone ? "rgba(var(--brand-accent-rgb),0.15)" : "rgba(var(--brand-flavor-strawberry-rgb),0.12)",
+                          color: s.phone ? "var(--brand-accent)" : "var(--brand-flavor-strawberry)",
                         }}
                       >
                         {s.phone ? "SMS" : "E"}
@@ -232,7 +232,7 @@ export default function Dashboard() {
 
         {/* ── Traffic Overview ── */}
         <section>
-          <h2 className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: "#FFB7D1" }}>
+          <h2 className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: "var(--brand-flavor-strawberry)" }}>
             Traffic
           </h2>
           <div className="rounded-2xl bg-white/[0.04] border border-white/[0.08] p-6">
@@ -244,9 +244,9 @@ export default function Dashboard() {
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-sm font-semibold transition-colors"
-              style={{ color: "#C8FF3A" }}
+              style={{ color: "var(--brand-accent)" }}
               onMouseEnter={(e) => (e.currentTarget.style.color = "#d4ff6a")}
-              onMouseLeave={(e) => (e.currentTarget.style.color = "#C8FF3A")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "var(--brand-accent)")}
             >
               View full analytics in Google Analytics
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -280,7 +280,7 @@ export default function Dashboard() {
 
         {/* ── Quick Actions ── */}
         <section>
-          <h2 className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: "#FFB7D1" }}>
+          <h2 className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: "var(--brand-flavor-strawberry)" }}>
             Quick Actions
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -315,7 +315,7 @@ export default function Dashboard() {
         {/* ── Errors (if any) ── */}
         {stats?.errors && stats.errors.length > 0 && (
           <section>
-            <h2 className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: "#FF7043" }}>
+            <h2 className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: "var(--brand-accent-warm)" }}>
               Warnings
             </h2>
             <div className="rounded-2xl bg-white/[0.04] border border-white/[0.08] p-5 space-y-2">
@@ -365,7 +365,7 @@ function QuickAction({
     >
       <div
         className="w-9 h-9 rounded-lg flex items-center justify-center"
-        style={{ background: "rgba(200,255,58,0.1)", color: "#C8FF3A" }}
+        style={{ background: "rgba(var(--brand-accent-rgb),0.1)", color: "var(--brand-accent)" }}
       >
         {icon}
       </div>

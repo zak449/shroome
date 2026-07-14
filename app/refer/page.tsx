@@ -1,4 +1,5 @@
 "use client";
+import { BRAND, svgHex } from "@/app/lib/brand";
 import { useState, useEffect, useRef, useCallback } from "react";
 import Image from "next/image";
 import MobileNav from "../MobileNav";
@@ -17,10 +18,10 @@ declare global {
 // CFO ruling 2026-07-14: referral rewards are FIXED credits — $5 / $10 / $15
 // at 1 / 3 / 5 referrals (hard cap), plus the case-001 leaderboard prize.
 const tiers = [
-  { count: "1", label: "friend", reward: "$5 credit on your account", color: "#C8FF3A" },
-  { count: "3", label: "friends", reward: "$10 total credit", color: "#C8FF3A" },
-  { count: "5", label: "friends", reward: "$15 total credit — that’s the cap", color: "#FFB7D1" },
-  { count: "#1", label: "top ref", reward: "Case 001 — our top referrer takes home a hand-numbered box from the very first case", color: "#D4B8E0" },
+  { count: "1", label: "friend", reward: "$5 credit on your account", color: "var(--brand-accent)" },
+  { count: "3", label: "friends", reward: "$10 total credit", color: "var(--brand-accent)" },
+  { count: "5", label: "friends", reward: "$15 total credit — that’s the cap", color: "var(--brand-flavor-strawberry)" },
+  { count: "#1", label: "top ref", reward: "Case 001 — our top referrer takes home a hand-numbered box from the very first case", color: "var(--brand-flavor-functional)" },
 ];
 
 const faqs = [
@@ -169,17 +170,17 @@ export default function ReferPage() {
         .ref-page{
           min-height:100vh;
           background:
-            radial-gradient(ellipse 120% 80% at 20% 10%, rgba(212,184,224,0.35) 0%, transparent 50%),
-            radial-gradient(ellipse 100% 70% at 80% 85%, rgba(200,255,58,0.12) 0%, transparent 50%),
-            radial-gradient(ellipse 60% 50% at 60% 40%, rgba(255,183,209,0.2) 0%, transparent 50%),
+            radial-gradient(ellipse 120% 80% at 20% 10%, rgba(var(--brand-flavor-functional-rgb),0.35) 0%, transparent 50%),
+            radial-gradient(ellipse 100% 70% at 80% 85%, rgba(var(--brand-accent-rgb),0.12) 0%, transparent 50%),
+            radial-gradient(ellipse 60% 50% at 60% 40%, rgba(var(--brand-flavor-strawberry-rgb),0.2) 0%, transparent 50%),
             linear-gradient(180deg, #F0E4D8 0%, #EDE0D4 30%, #E8D8CC 60%, #F0E4D8 100%);
           background-attachment:fixed;
-          font-family:'Syne',system-ui,sans-serif;color:#1B1F3B;
+          font-family:var(--brand-font-body);color:var(--brand-ink);
           position:relative
         }
         .ref-page::before{
           content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
-          background-image:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%231B1F3B' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+          background-image:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='${svgHex(BRAND.colors.ink)}' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
           opacity:0.6
         }
 
@@ -190,22 +191,22 @@ export default function ReferPage() {
           padding:0 5%;height:60px;
           background:rgba(240,228,216,0.9);
           backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
-          border-bottom:1px solid rgba(27,31,59,0.06)
+          border-bottom:1px solid rgba(var(--brand-ink-rgb),0.06)
         }
-        .ref-nav-logo{display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B1F3B}
-        .ref-nav-logo span{font-family:'Instrument Serif',Georgia,serif;font-size:22px;font-weight:400;font-style:italic;color:#1B1F3B}
+        .ref-nav-logo{display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--brand-ink)}
+        .ref-nav-logo span{font-family:var(--brand-font-display);font-size:22px;font-weight:400;font-style:italic;color:var(--brand-ink)}
         .ref-nav-links{display:flex;gap:8px}
         @media(max-width:768px){.ref-nav-links{display:none !important}.ref-nav-cta{display:none !important}}
         .ref-nav-links a{
           background:none;border:none;cursor:pointer;
-          font-family:'Syne',system-ui,sans-serif;font-size:11.5px;font-weight:600;
-          letter-spacing:.08em;text-transform:uppercase;color:#1B1F3B;
+          font-family:var(--brand-font-body);font-size:11.5px;font-weight:600;
+          letter-spacing:.08em;text-transform:uppercase;color:var(--brand-ink);
           padding:8px 14px;transition:color .2s;text-decoration:none
         }
-        .ref-nav-links a:hover{color:#2D4A2D}
+        .ref-nav-links a:hover{color:var(--brand-accent-deep)}
         .ref-nav-cta{
-          background:#1B1F3B;color:#FDF4EE;border:none;
-          padding:10px 20px;font-family:'Syne',system-ui,sans-serif;
+          background:var(--brand-ink);color:var(--brand-canvas);border:none;
+          padding:10px 20px;font-family:var(--brand-font-body);
           font-size:12px;font-weight:700;letter-spacing:.06em;
           text-transform:uppercase;cursor:pointer;transition:background .2s;text-decoration:none
         }
@@ -218,99 +219,99 @@ export default function ReferPage() {
         }
         .ref-hero-blob1{
           position:absolute;width:420px;height:420px;border-radius:50%;
-          background:radial-gradient(circle,#C8FF3A 0%,transparent 70%);
+          background:radial-gradient(circle,var(--brand-accent) 0%,transparent 70%);
           opacity:0.15;top:-120px;right:5%;pointer-events:none
         }
         .ref-hero-blob2{
           position:absolute;width:320px;height:320px;border-radius:50%;
-          background:radial-gradient(circle,#FFB7D1 0%,transparent 70%);
+          background:radial-gradient(circle,var(--brand-flavor-strawberry) 0%,transparent 70%);
           opacity:0.2;bottom:-80px;left:10%;pointer-events:none
         }
         .ref-hero-inner{position:relative;z-index:1;max-width:720px;margin:0 auto}
         .ref-hero-tag{
-          font-family:'DM Mono',monospace;font-size:12px;font-weight:500;
+          font-family:var(--brand-font-mono);font-size:12px;font-weight:500;
           letter-spacing:.2em;text-transform:uppercase;
-          color:rgba(27,31,59,0.45);margin-bottom:28px
+          color:rgba(var(--brand-ink-rgb),0.45);margin-bottom:28px
         }
         .ref-hero h1{
-          font-family:'Instrument Serif',Georgia,serif;
+          font-family:var(--brand-font-display);
           font-size:clamp(40px,6vw,72px);font-weight:400;font-style:italic;
-          line-height:1.0;margin:0 0 24px;color:#1B1F3B
+          line-height:1.0;margin:0 0 24px;color:var(--brand-ink)
         }
-        .ref-hero h1 .lime{color:#2D4A2D}
+        .ref-hero h1 .accent-em{color:var(--brand-accent-deep)}
         .ref-hero-sub{
-          font-size:17px;color:rgba(27,31,59,0.6);line-height:1.7;
+          font-size:17px;color:rgba(var(--brand-ink-rgb),0.6);line-height:1.7;
           max-width:540px;margin:0 auto 40px
         }
         .ref-hero-cta{
           display:inline-block;
-          background:#C8FF3A;color:#1B1F3B;
+          background:var(--brand-accent);color:var(--brand-ink);
           padding:18px 40px;border:none;
-          font-family:'Syne',system-ui,sans-serif;
+          font-family:var(--brand-font-body);
           font-size:14px;font-weight:800;letter-spacing:.08em;
           text-transform:uppercase;cursor:pointer;
           transition:transform .2s,box-shadow .2s;
           text-decoration:none
         }
-        .ref-hero-cta:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(200,255,58,0.3)}
+        .ref-hero-cta:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(var(--brand-accent-rgb),0.3)}
 
         /* ── HOW IT WORKS ── */
-        .ref-how{background:#1B1F3B;padding:80px 6%;position:relative;z-index:1}
+        .ref-how{background:var(--brand-ink);padding:80px 6%;position:relative;z-index:1}
         .ref-how-inner{max-width:900px;margin:0 auto;text-align:center}
         .ref-how-title{
-          font-family:'Instrument Serif',Georgia,serif;
+          font-family:var(--brand-font-display);
           font-size:clamp(28px,4vw,44px);font-weight:400;font-style:italic;
-          color:#FDF4EE;margin:0 0 16px
+          color:var(--brand-canvas);margin:0 0 16px
         }
-        .ref-how-sub{font-size:14px;color:rgba(253,244,238,0.45);margin:0 0 48px}
+        .ref-how-sub{font-size:14px;color:rgba(var(--brand-canvas-rgb),0.45);margin:0 0 48px}
         .ref-steps{display:flex;gap:48px;justify-content:center;flex-wrap:wrap}
         .ref-step{flex:1;min-width:220px;max-width:260px;text-align:center}
         .ref-step-num{
-          font-family:'DM Mono',monospace;font-size:14px;font-weight:700;
-          letter-spacing:.12em;color:#C8FF3A;margin-bottom:16px
+          font-family:var(--brand-font-mono);font-size:14px;font-weight:700;
+          letter-spacing:.12em;color:var(--brand-accent);margin-bottom:16px
         }
         .ref-step-icon{
           width:56px;height:56px;border-radius:50%;
-          background:#C8FF3A;color:#1B1F3B;
+          background:var(--brand-accent);color:var(--brand-ink);
           font-weight:900;font-size:22px;
           display:flex;align-items:center;justify-content:center;
           margin:0 auto 18px;
-          box-shadow:0 4px 20px rgba(200,255,58,0.25)
+          box-shadow:0 4px 20px rgba(var(--brand-accent-rgb),0.25)
         }
         .ref-step-title{
-          font-weight:700;font-size:15px;color:#FDF4EE;
+          font-weight:700;font-size:15px;color:var(--brand-canvas);
           letter-spacing:.04em;margin-bottom:10px
         }
-        .ref-step-desc{font-size:13px;color:rgba(253,244,238,0.5);line-height:1.65}
+        .ref-step-desc{font-size:13px;color:rgba(var(--brand-canvas-rgb),0.5);line-height:1.65}
 
         /* ── TIERS ── */
         .ref-tiers{padding:80px 6%;text-align:center;position:relative;z-index:1}
         .ref-tiers-title{
-          font-family:'Instrument Serif',Georgia,serif;
+          font-family:var(--brand-font-display);
           font-size:clamp(28px,4vw,44px);font-weight:400;font-style:italic;
-          color:#1B1F3B;margin:0 0 12px
+          color:var(--brand-ink);margin:0 0 12px
         }
-        .ref-tiers-sub{font-size:14px;color:rgba(27,31,59,0.5);margin:0 0 48px}
+        .ref-tiers-sub{font-size:14px;color:rgba(var(--brand-ink-rgb),0.5);margin:0 0 48px}
         .ref-tier-ladder{
           max-width:600px;margin:0 auto;
           display:flex;flex-direction:column;gap:0
         }
         .ref-tier{
           display:flex;align-items:stretch;
-          border:2px solid rgba(27,31,59,0.08);
+          border:2px solid rgba(var(--brand-ink-rgb),0.08);
           border-bottom:none;
           background:#fff;
           transition:transform .2s,box-shadow .2s
         }
         .ref-tier:first-child{border-radius:12px 12px 0 0}
-        .ref-tier:last-child{border-bottom:2px solid rgba(27,31,59,0.08);border-radius:0 0 12px 12px}
-        .ref-tier:hover{transform:translateX(4px);box-shadow:0 4px 20px rgba(27,31,59,0.08)}
+        .ref-tier:last-child{border-bottom:2px solid rgba(var(--brand-ink-rgb),0.08);border-radius:0 0 12px 12px}
+        .ref-tier:hover{transform:translateX(4px);box-shadow:0 4px 20px rgba(var(--brand-ink-rgb),0.08)}
         .ref-tier-badge{
           width:80px;min-height:72px;
           display:flex;flex-direction:column;align-items:center;justify-content:center;
-          font-family:'DM Mono',monospace;font-size:11px;font-weight:700;
-          letter-spacing:.08em;text-transform:uppercase;color:#1B1F3B;
-          border-right:2px solid rgba(27,31,59,0.08);
+          font-family:var(--brand-font-mono);font-size:11px;font-weight:700;
+          letter-spacing:.08em;text-transform:uppercase;color:var(--brand-ink);
+          border-right:2px solid rgba(var(--brand-ink-rgb),0.08);
           flex-shrink:0
         }
         .ref-tier-badge-num{font-size:24px;font-weight:900;line-height:1;margin-bottom:2px}
@@ -318,29 +319,29 @@ export default function ReferPage() {
           flex:1;display:flex;align-items:center;
           padding:20px 24px;text-align:left
         }
-        .ref-tier-reward{font-size:15px;font-weight:600;color:#1B1F3B;line-height:1.4}
-        .ref-tier-vip .ref-tier-badge{background:#1B1F3B;color:#C8FF3A}
-        .ref-tier-vip .ref-tier-reward{color:#1B1F3B;font-weight:800}
-        .ref-tier-founder .ref-tier-badge{background:#2D4A2D;color:#C8FF3A}
+        .ref-tier-reward{font-size:15px;font-weight:600;color:var(--brand-ink);line-height:1.4}
+        .ref-tier-vip .ref-tier-badge{background:var(--brand-ink);color:var(--brand-accent)}
+        .ref-tier-vip .ref-tier-reward{color:var(--brand-ink);font-weight:800}
+        .ref-tier-founder .ref-tier-badge{background:var(--brand-accent-deep);color:var(--brand-accent)}
 
         /* ── SOCIAL PROOF ── */
         .ref-proof{
-          background:#1B1F3B;padding:48px 6%;
+          background:var(--brand-ink);padding:48px 6%;
           display:flex;gap:32px;justify-content:center;align-items:center;
           flex-wrap:wrap;position:relative;z-index:1
         }
         .ref-proof-stat{text-align:center;min-width:200px}
         .ref-proof-num{
-          font-family:'DM Mono',monospace;font-size:clamp(32px,5vw,48px);
-          font-weight:900;color:#C8FF3A;line-height:1
+          font-family:var(--brand-font-mono);font-size:clamp(32px,5vw,48px);
+          font-weight:900;color:var(--brand-accent);line-height:1
         }
         .ref-proof-label{
-          font-size:13px;color:rgba(253,244,238,0.55);
+          font-size:13px;color:rgba(var(--brand-canvas-rgb),0.55);
           letter-spacing:.06em;text-transform:uppercase;
           margin-top:8px;font-weight:600
         }
         .ref-proof-divider{
-          width:1px;height:48px;background:rgba(253,244,238,0.12)
+          width:1px;height:48px;background:rgba(var(--brand-canvas-rgb),0.12)
         }
 
         /* ── SHARE / FORM ── */
@@ -350,25 +351,25 @@ export default function ReferPage() {
         }
         .ref-share-inner{max-width:560px;margin:0 auto}
         .ref-share-title{
-          font-family:'Instrument Serif',Georgia,serif;
+          font-family:var(--brand-font-display);
           font-size:clamp(28px,4vw,44px);font-weight:400;font-style:italic;
-          color:#1B1F3B;margin:0 0 12px
+          color:var(--brand-ink);margin:0 0 12px
         }
-        .ref-share-sub{font-size:14px;color:rgba(27,31,59,0.55);margin:0 0 36px}
+        .ref-share-sub{font-size:14px;color:rgba(var(--brand-ink-rgb),0.55);margin:0 0 36px}
 
         .ref-form{display:flex;gap:8px;max-width:460px;margin:0 auto}
         .ref-input{
-          flex:1;padding:16px 18px;border:2px solid #1B1F3B;border-radius:0;
-          font-size:15px;font-family:'Syne',sans-serif;background:#fff;
-          color:#1B1F3B;outline:none
+          flex:1;padding:16px 18px;border:2px solid var(--brand-ink);border-radius:0;
+          font-size:15px;font-family:var(--brand-font-body);background:#fff;
+          color:var(--brand-ink);outline:none
         }
-        .ref-input:focus{border-color:#C8FF3A}
+        .ref-input:focus{border-color:var(--brand-accent)}
         .ref-btn{
-          padding:16px 28px;background:#C8FF3A;color:#1B1F3B;
-          border:2px solid #1B1F3B;
+          padding:16px 28px;background:var(--brand-accent);color:var(--brand-ink);
+          border:2px solid var(--brand-ink);
           font-size:13px;font-weight:800;letter-spacing:.06em;
           text-transform:uppercase;cursor:pointer;white-space:nowrap;
-          font-family:'Syne',sans-serif;transition:all .2s
+          font-family:var(--brand-font-body);transition:all .2s
         }
         .ref-btn:hover{background:#b8ef2a;transform:translateY(-1px)}
         .ref-btn:disabled{opacity:0.5;cursor:not-allowed;transform:none}
@@ -376,37 +377,37 @@ export default function ReferPage() {
         /* ── SHARE PANEL (post-submit) ── */
         .ref-panel{margin-top:40px;text-align:center}
         .ref-panel-title{
-          font-family:'Instrument Serif',Georgia,serif;
-          font-size:28px;font-style:italic;color:#1B1F3B;margin:0 0 8px
+          font-family:var(--brand-font-display);
+          font-size:28px;font-style:italic;color:var(--brand-ink);margin:0 0 8px
         }
-        .ref-panel-sub{font-size:14px;color:rgba(27,31,59,0.5);margin:0 0 24px}
+        .ref-panel-sub{font-size:14px;color:rgba(var(--brand-ink-rgb),0.5);margin:0 0 24px}
 
         .ref-link-row{
           display:flex;gap:8px;align-items:center;
           max-width:460px;margin:0 auto 20px
         }
         .ref-link-url{
-          flex:1;background:#fff;border:2px solid #1B1F3B;
-          padding:14px 16px;font-family:'DM Mono',monospace;font-size:13px;
-          color:#1B1F3B;overflow:hidden;text-overflow:ellipsis;white-space:nowrap
+          flex:1;background:#fff;border:2px solid var(--brand-ink);
+          padding:14px 16px;font-family:var(--brand-font-mono);font-size:13px;
+          color:var(--brand-ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap
         }
         .ref-copy-btn{
-          padding:14px 22px;border:2px solid #1B1F3B;background:#C8FF3A;
-          color:#1B1F3B;font-weight:800;font-size:12px;letter-spacing:.06em;
-          text-transform:uppercase;cursor:pointer;font-family:'Syne',sans-serif;
+          padding:14px 22px;border:2px solid var(--brand-ink);background:var(--brand-accent);
+          color:var(--brand-ink);font-weight:800;font-size:12px;letter-spacing:.06em;
+          text-transform:uppercase;cursor:pointer;font-family:var(--brand-font-body);
           transition:all .2s;white-space:nowrap
         }
         .ref-copy-btn:hover{background:#b8ef2a}
 
         .ref-msg-box{
-          background:#fff;border:2px solid rgba(27,31,59,0.1);
+          background:#fff;border:2px solid rgba(var(--brand-ink-rgb),0.1);
           padding:20px;margin:0 auto 24px;max-width:460px;
-          text-align:left;font-size:14px;color:rgba(27,31,59,0.7);
+          text-align:left;font-size:14px;color:rgba(var(--brand-ink-rgb),0.7);
           line-height:1.6;border-radius:8px;position:relative
         }
         .ref-msg-label{
-          font-family:'DM Mono',monospace;font-size:10px;font-weight:700;
-          letter-spacing:.12em;text-transform:uppercase;color:rgba(27,31,59,0.35);
+          font-family:var(--brand-font-mono);font-size:10px;font-weight:700;
+          letter-spacing:.12em;text-transform:uppercase;color:rgba(var(--brand-ink-rgb),0.35);
           margin-bottom:8px
         }
 
@@ -416,18 +417,18 @@ export default function ReferPage() {
         }
         .ref-channel{
           display:flex;align-items:center;gap:6px;
-          padding:12px 20px;border:2px solid #1B1F3B;
+          padding:12px 20px;border:2px solid var(--brand-ink);
           background:#fff;cursor:pointer;
-          font-family:'Syne',sans-serif;font-size:12px;font-weight:700;
-          letter-spacing:.04em;text-transform:uppercase;color:#1B1F3B;
+          font-family:var(--brand-font-body);font-size:12px;font-weight:700;
+          letter-spacing:.04em;text-transform:uppercase;color:var(--brand-ink);
           transition:all .2s
         }
-        .ref-channel:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(27,31,59,0.1)}
-        .ref-channel-imessage{background:#C8FF3A}
-        .ref-channel-whatsapp{background:#C8FF3A}
-        .ref-channel-twitter{background:#FDF4EE}
-        .ref-channel-instagram{background:#FFB7D1}
-        .ref-channel-email{background:#D4B8E0}
+        .ref-channel:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(var(--brand-ink-rgb),0.1)}
+        .ref-channel-imessage{background:var(--brand-accent)}
+        .ref-channel-whatsapp{background:var(--brand-accent)}
+        .ref-channel-twitter{background:var(--brand-canvas)}
+        .ref-channel-instagram{background:var(--brand-flavor-strawberry)}
+        .ref-channel-email{background:var(--brand-flavor-functional)}
 
         .ref-progress{
           display:flex;align-items:center;gap:8px;justify-content:center;
@@ -435,34 +436,34 @@ export default function ReferPage() {
         }
         .ref-dot{
           width:36px;height:36px;border-radius:50%;
-          border:2px solid #1B1F3B;
+          border:2px solid var(--brand-ink);
           display:flex;align-items:center;justify-content:center;
           font-size:13px;font-weight:700;transition:all .3s;
-          font-family:'DM Mono',monospace
+          font-family:var(--brand-font-mono)
         }
-        .ref-dot-filled{background:#C8FF3A;border-color:#C8FF3A}
+        .ref-dot-filled{background:var(--brand-accent);border-color:var(--brand-accent)}
 
         /* ── FAQ ── */
         .ref-faq{
-          background:#1B1F3B;padding:60px 6%;
+          background:var(--brand-ink);padding:60px 6%;
           position:relative;z-index:1
         }
         .ref-faq-inner{max-width:600px;margin:0 auto}
         .ref-faq-title{
-          font-family:'Instrument Serif',Georgia,serif;
+          font-family:var(--brand-font-display);
           font-size:clamp(24px,3.5vw,36px);font-weight:400;font-style:italic;
-          color:#FDF4EE;margin:0 0 32px;text-align:center
+          color:var(--brand-canvas);margin:0 0 32px;text-align:center
         }
         .ref-faq-item{
-          border-bottom:1px solid rgba(253,244,238,0.1);
+          border-bottom:1px solid rgba(var(--brand-canvas-rgb),0.1);
           padding:20px 0
         }
         .ref-faq-q{
-          font-weight:700;font-size:15px;color:#FDF4EE;
+          font-weight:700;font-size:15px;color:var(--brand-canvas);
           margin:0 0 8px;letter-spacing:.02em
         }
         .ref-faq-a{
-          font-size:14px;color:rgba(253,244,238,0.55);line-height:1.6;margin:0
+          font-size:14px;color:rgba(var(--brand-canvas-rgb),0.55);line-height:1.6;margin:0
         }
 
         /* ── FINAL CTA ── */
@@ -472,37 +473,37 @@ export default function ReferPage() {
         }
         .ref-final-inner{max-width:600px;margin:0 auto}
         .ref-final-title{
-          font-family:'Instrument Serif',Georgia,serif;
+          font-family:var(--brand-font-display);
           font-size:clamp(32px,5vw,56px);font-weight:400;font-style:italic;
-          color:#1B1F3B;margin:0 0 16px;line-height:1.05
+          color:var(--brand-ink);margin:0 0 16px;line-height:1.05
         }
         .ref-final-sub{
-          font-size:15px;color:rgba(27,31,59,0.55);margin:0 0 32px;line-height:1.6
+          font-size:15px;color:rgba(var(--brand-ink-rgb),0.55);margin:0 0 32px;line-height:1.6
         }
         .ref-final-btn{
           display:inline-block;
-          background:#C8FF3A;color:#1B1F3B;
-          padding:18px 44px;border:2px solid #1B1F3B;
-          font-family:'Syne',system-ui,sans-serif;
+          background:var(--brand-accent);color:var(--brand-ink);
+          padding:18px 44px;border:2px solid var(--brand-ink);
+          font-family:var(--brand-font-body);
           font-size:14px;font-weight:800;letter-spacing:.08em;
           text-transform:uppercase;cursor:pointer;
           transition:transform .2s,box-shadow .2s;text-decoration:none
         }
-        .ref-final-btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(200,255,58,0.3)}
+        .ref-final-btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(var(--brand-accent-rgb),0.3)}
 
         /* ── FOOTER ── */
-        .ref-footer{background:#D4B8E0;padding:32px 6%;text-align:center;border-top:1px solid rgba(27,31,59,0.06)}
+        .ref-footer{background:var(--brand-flavor-functional);padding:32px 6%;text-align:center;border-top:1px solid rgba(var(--brand-ink-rgb),0.06)}
         .ref-footer-top{display:flex;justify-content:center;gap:24px;margin-bottom:16px}
         .ref-footer-top a{
-          font-family:'Syne',system-ui,sans-serif;font-size:11px;font-weight:700;
-          letter-spacing:.1em;text-transform:uppercase;color:#1B1F3B;
+          font-family:var(--brand-font-body);font-size:11px;font-weight:700;
+          letter-spacing:.1em;text-transform:uppercase;color:var(--brand-ink);
           text-decoration:none;transition:color .2s
         }
-        .ref-footer-top a:hover{color:#2D4A2D}
-        .ref-footer-mid{font-size:12px;color:rgba(27,31,59,0.45);margin-bottom:8px}
-        .ref-footer-mid a{color:rgba(27,31,59,0.45);text-decoration:underline;transition:color .2s}
-        .ref-footer-mid a:hover{color:#1B1F3B}
-        .ref-footer-bot{font-family:'DM Mono',monospace;font-size:10px;color:rgba(27,31,59,0.45);letter-spacing:.08em}
+        .ref-footer-top a:hover{color:var(--brand-accent-deep)}
+        .ref-footer-mid{font-size:12px;color:rgba(var(--brand-ink-rgb),0.45);margin-bottom:8px}
+        .ref-footer-mid a{color:rgba(var(--brand-ink-rgb),0.45);text-decoration:underline;transition:color .2s}
+        .ref-footer-mid a:hover{color:var(--brand-ink)}
+        .ref-footer-bot{font-family:var(--brand-font-mono);font-size:10px;color:rgba(var(--brand-ink-rgb),0.45);letter-spacing:.08em}
 
         /* ── RESPONSIVE ── */
         @media(max-width:640px){
@@ -562,7 +563,7 @@ export default function ReferPage() {
             <p className="ref-hero-tag">Referral Program</p>
             <h1>
               Refer friends.<br />
-              <span className="lime">Earn matcha money.</span>
+              <span className="accent-em">Earn matcha money.</span>
             </h1>
             <p className="ref-hero-sub">
               Share shroom&eacute; with friends. They lock in 20% off + free shipping.
@@ -664,7 +665,7 @@ export default function ReferPage() {
                 </p>
                 {step === "captcha" ? (
                   <div>
-                    <p style={{ fontSize: 13, color: "rgba(27,31,59,0.5)", marginBottom: 12 }}>
+                    <p style={{ fontSize: 13, color: "rgba(var(--brand-ink-rgb),0.5)", marginBottom: 12 }}>
                       One quick check&hellip;
                     </p>
                     <div ref={captchaRef} style={{ display: "flex", justifyContent: "center" }} />
@@ -741,12 +742,12 @@ export default function ReferPage() {
                             {i < referralCount ? "\u2713" : i + 1}
                           </div>
                         ))}
-                        <span style={{ fontSize: 13, color: "rgba(27,31,59,0.5)", fontWeight: 600, marginLeft: 4 }}>
+                        <span style={{ fontSize: 13, color: "rgba(var(--brand-ink-rgb),0.5)", fontWeight: 600, marginLeft: 4 }}>
                           {referralCount} friend{referralCount !== 1 ? "s" : ""} referred
                         </span>
                       </div>
                     ) : (
-                      <p style={{ marginTop: 24, fontSize: 13, color: "rgba(27,31,59,0.5)", fontWeight: 600 }}>
+                      <p style={{ marginTop: 24, fontSize: 13, color: "rgba(var(--brand-ink-rgb),0.5)", fontWeight: 600 }}>
                         Every signup through your link is recorded &mdash; we&apos;ll confirm your
                         referral total (and your credit) before drop day.
                       </p>

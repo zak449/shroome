@@ -20,36 +20,36 @@ export default function Contact() {
   return (
     <>
       <style>{`
-        .contact-nav{position:sticky;top:0;z-index:99;display:flex;align-items:center;justify-content:space-between;padding:14px 5%;background:rgba(253,244,238,0.9);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(27,31,59,0.07)}
+        .contact-nav{position:sticky;top:0;z-index:99;display:flex;align-items:center;justify-content:space-between;padding:14px 5%;background:rgba(var(--brand-canvas-rgb),0.9);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(var(--brand-ink-rgb),0.07)}
         .contact-nav-logo{display:flex;align-items:center;gap:8px;text-decoration:none}
-        .contact-nav-logo span{font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:1.3rem;color:#1B1F3B}
+        .contact-nav-logo span{font-family:var(--brand-font-display);font-style:italic;font-size:1.3rem;color:var(--brand-ink)}
         .contact-nav-links{display:flex;gap:28px}
         @media(max-width:768px){.contact-nav-links{display:none}}
-        .contact-nav-links a{font-family:'Syne',system-ui,sans-serif;font-size:0.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#1B1F3B;text-decoration:none;opacity:.7;transition:opacity .2s}
+        .contact-nav-links a{font-family:var(--brand-font-body);font-size:0.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--brand-ink);text-decoration:none;opacity:.7;transition:opacity .2s}
         .contact-nav-links a:hover{opacity:1}
 
-        .contact-hero{background:#FDF4EE;padding:80px 5% 60px;text-align:center}
-        .contact-hero-tag{display:inline-block;font-family:'DM Mono',monospace;font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#1B1F3B;opacity:.4;margin-bottom:16px}
-        .contact-hero h1{font-family:'Instrument Serif',Georgia,serif;font-size:clamp(42px,7vw,72px);font-weight:400;font-style:italic;color:#1B1F3B;margin:0 0 16px;line-height:1.05}
-        .contact-hero-sub{font-family:'Syne',system-ui,sans-serif;font-size:16px;color:#1B1F3B;opacity:.6;max-width:480px;margin:0 auto;line-height:1.6}
+        .contact-hero{background:var(--brand-canvas);padding:80px 5% 60px;text-align:center}
+        .contact-hero-tag{display:inline-block;font-family:var(--brand-font-mono);font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--brand-ink);opacity:.4;margin-bottom:16px}
+        .contact-hero h1{font-family:var(--brand-font-display);font-size:clamp(42px,7vw,72px);font-weight:400;font-style:italic;color:var(--brand-ink);margin:0 0 16px;line-height:1.05}
+        .contact-hero-sub{font-family:var(--brand-font-body);font-size:16px;color:var(--brand-ink);opacity:.6;max-width:480px;margin:0 auto;line-height:1.6}
 
-        .contact-body{background:#FDF4EE;padding:0 5% 80px;max-width:760px;margin:0 auto}
+        .contact-body{background:var(--brand-canvas);padding:0 5% 80px;max-width:760px;margin:0 auto}
         .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:48px}
         @media(max-width:600px){.contact-grid{grid-template-columns:1fr}}
-        .contact-card{background:#fff;border-radius:16px;padding:32px 28px;border:1px solid rgba(27,31,59,0.07)}
-        .contact-card-label{font-family:'DM Mono',monospace;font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#1B1F3B;opacity:.35;margin:0 0 8px}
-        .contact-card h2{font-family:'Instrument Serif',Georgia,serif;font-size:22px;font-weight:400;font-style:italic;color:#1B1F3B;margin:0 0 8px}
-        .contact-card p{font-family:'Syne',system-ui,sans-serif;font-size:13px;color:#1B1F3B;opacity:.55;line-height:1.6;margin:0 0 16px}
-        .contact-card a{font-family:'DM Mono',monospace;font-size:12px;font-weight:700;letter-spacing:.08em;color:#1B1F3B;text-decoration:none;border-bottom:2px solid #C8FF3A;padding-bottom:2px;transition:opacity .2s}
+        .contact-card{background:#fff;border-radius:16px;padding:32px 28px;border:1px solid rgba(var(--brand-ink-rgb),0.07)}
+        .contact-card-label{font-family:var(--brand-font-mono);font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--brand-ink);opacity:.35;margin:0 0 8px}
+        .contact-card h2{font-family:var(--brand-font-display);font-size:22px;font-weight:400;font-style:italic;color:var(--brand-ink);margin:0 0 8px}
+        .contact-card p{font-family:var(--brand-font-body);font-size:13px;color:var(--brand-ink);opacity:.55;line-height:1.6;margin:0 0 16px}
+        .contact-card a{font-family:var(--brand-font-mono);font-size:12px;font-weight:700;letter-spacing:.08em;color:var(--brand-ink);text-decoration:none;border-bottom:2px solid var(--brand-accent);padding-bottom:2px;transition:opacity .2s}
         .contact-card a:hover{opacity:.6}
 
-        .contact-social-heading{font-family:'Instrument Serif',Georgia,serif;font-size:28px;font-weight:400;font-style:italic;color:#1B1F3B;margin:0 0 20px;text-align:center}
+        .contact-social-heading{font-family:var(--brand-font-display);font-size:28px;font-weight:400;font-style:italic;color:var(--brand-ink);margin:0 0 20px;text-align:center}
         .contact-social-links{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
-        .contact-social-link{font-family:'DM Mono',monospace;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#1B1F3B;text-decoration:none;padding:10px 20px;border-radius:8px;border:1.5px solid rgba(27,31,59,0.12);transition:all .2s}
-        .contact-social-link:hover{background:#1B1F3B;color:#C8FF3A;border-color:#1B1F3B}
+        .contact-social-link{font-family:var(--brand-font-mono);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--brand-ink);text-decoration:none;padding:10px 20px;border-radius:8px;border:1.5px solid rgba(var(--brand-ink-rgb),0.12);transition:all .2s}
+        .contact-social-link:hover{background:var(--brand-ink);color:var(--brand-accent);border-color:var(--brand-ink)}
 
-        .contact-footer{background:#D4B8E0;padding:32px 5%;text-align:center}
-        .contact-footer p{font-family:'DM Mono',monospace;font-size:10px;color:#1B1F3B;opacity:.35;margin:0}
+        .contact-footer{background:var(--brand-flavor-functional);padding:32px 5%;text-align:center}
+        .contact-footer p{font-family:var(--brand-font-mono);font-size:10px;color:var(--brand-ink);opacity:.35;margin:0}
       `}</style>
 
       {/* NAV */}

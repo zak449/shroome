@@ -4,6 +4,7 @@ import BackToTop from "./BackToTop";
 import StickyCTA from "./StickyCTA";
 import ExitPopup from "./ExitPopup";
 import "./globals.css";
+import { BRAND } from "./lib/brand";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -123,7 +124,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Syne:wght@400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap"
+          href={BRAND.fonts.googleFontsHref}
           rel="stylesheet"
         />
       </head>
