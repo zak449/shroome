@@ -219,7 +219,7 @@ export default function ExitPopup() {
           text-transform: uppercase; cursor: pointer;
           white-space: nowrap; transition: all 0.2s;
         }
-        .ep-btn:hover { background: #2a2e4f; transform: translateY(-1px); }
+        .ep-btn:hover { background: var(--brand-accent-muted-deep); transform: translateY(-1px); }
         .ep-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
         .ep-perks {
           display: flex; justify-content: center; gap: 20px;
@@ -248,7 +248,7 @@ export default function ExitPopup() {
           text-transform: uppercase; cursor: pointer;
           transition: all 0.2s;
         }
-        .ep-success-btn:hover { background: #d4ff5a; }
+        .ep-success-btn:hover { background: var(--brand-accent-muted-deep); }
         .ep-no-thanks {
           display: block; margin-top: 16px;
           font-family: var(--brand-font-body);

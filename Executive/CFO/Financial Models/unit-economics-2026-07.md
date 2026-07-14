@@ -4,7 +4,7 @@
 > Owner: CFO
 > Source of truth: `Shroome_FinancialV2.xlsx` where real numbers exist (cells cited as `Sheet!Cell`); all other figures are **market benchmark assumptions** for premium matcha CPG, labeled `[BM]`. Original blank template preserved at `unit-economics-template.md`.
 > Pricing basis: LIVE SITE established pricing — 12-pack $36 one-time ($3.00/serving, matches `Assumptions!B8:B9`); founders pre-order $25.20/12-pack locked "forever"; referral ladder 33/36/40% off ($24.12/$23.04/$21.60); SHROOME20 (20% + free ship), SHROOME30 (30% + free ship); subscription 10–20% off the $36 anchor; 24-pack $66–68 (modeled at $66).
-> Formulation per sachet (company-overview.md): 2.5g ceremonial matcha + 200mg mushroom extract (8:1, ≥70% beta-glucan) + 2g grass-fed collagen.
+> Formulation per sachet (company-overview.md): 2.5g ceremonial matcha + 200mg organic lion's mane fruiting-body extract + 2g grass-fed collagen. (Do not publish a beta-glucan % — unsubstantiated pending supplier CoA; see 2026-07 claims audit.)
 
 ---
 

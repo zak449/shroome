@@ -15,7 +15,7 @@ export async function generateStaticParams() {
 const categoryColors: Record<string, { bg: string; text: string; accent: string }> = {
   Ingredients: { bg: "#E8F0DD", text: BRAND.colors.accentMutedDeep, accent: BRAND.colors.accentMuted },
   Wellness: { bg: "#FFE4EE", text: "#B44C7A", accent: BRAND.colors.flavorStrawberry },
-  "How-To": { bg: "#F0FFD0", text: "#4A6B1A", accent: BRAND.colors.accent },
+  "How-To": { bg: "#EEF2D9", text: BRAND.colors.accentMutedDeep, accent: BRAND.colors.accent },
   Science: { bg: "#EDE4F0", text: "#6B4D7A", accent: BRAND.colors.flavorFunctional },
 };
 

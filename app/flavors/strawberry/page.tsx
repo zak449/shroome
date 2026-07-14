@@ -214,7 +214,7 @@ export default function StrawberryFlavorPage() {
           font-size:12px;font-weight:700;letter-spacing:.06em;
           text-transform:uppercase;cursor:pointer;transition:background .2s;text-decoration:none
         }
-        .sf-nav-cta:hover{background:#2a2e4f}
+        .sf-nav-cta:hover{background:var(--brand-accent-muted-deep)}
 
         /* ── HERO ── */
         .sf-hero{

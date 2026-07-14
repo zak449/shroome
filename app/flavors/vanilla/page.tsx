@@ -209,7 +209,7 @@ export default function VanillaFlavorPage() {
           font-size:12px;font-weight:700;letter-spacing:.06em;
           text-transform:uppercase;cursor:pointer;transition:background .2s;text-decoration:none
         }
-        .vf-nav-cta:hover{background:#2a2e4f}
+        .vf-nav-cta:hover{background:var(--brand-accent-muted-deep)}
 
         /* ── HERO ── */
         .vf-hero{

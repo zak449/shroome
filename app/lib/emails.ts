@@ -445,11 +445,11 @@ export function sachetEmail(email: string) {
         </td></tr>
         <tr><td style="padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
           <p style="margin:0;font-size:16px;font-weight:700;color:#fff;">\u2728 Skin glow. Gut health.</p>
-          <p style="margin:4px 0 0;font-size:13px;color:rgba(255,255,255,0.4);">2g grass-fed collagen peptides + prebiotic beta-glucans.</p>
+          <p style="margin:4px 0 0;font-size:13px;color:rgba(255,255,255,0.4);">2g grass-fed collagen peptides + organic lion's mane extract.</p>
         </td></tr>
         <tr><td style="padding:16px 0;">
           <p style="margin:0;font-size:16px;font-weight:700;color:#fff;">\ud83d\udc9a No crash. Zero anxiety.</p>
-          <p style="margin:4px 0 0;font-size:13px;color:rgba(255,255,255,0.4);">Reishi regulates cortisol. Energy up, jitters gone.</p>
+          <p style="margin:4px 0 0;font-size:13px;color:rgba(255,255,255,0.4);">Matcha's L-theanine smooths the caffeine curve. Energy up, jitters gone.</p>
         </td></tr>
       </table>
     </td></tr>

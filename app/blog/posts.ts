@@ -30,7 +30,7 @@ export const blogPosts: BlogPost[] = [
 
 <p><strong>LOS ANGELES, March 22, 2026</strong> — <a href="https://www.drinkshroome.com">shroom&eacute;</a>, the ceremonial matcha + functional mushroom + collagen brand, today launched a collection of 9 original recipes designed to show that great matcha drinks don't require a barista, a bamboo whisk, or more than 15 seconds of your morning. The full collection is now live at <a href="/recipes">drinkshroome.com/recipes</a>.</p>
 
-<p>Each recipe is built around shroom&eacute;'s single-serve sachets, which combine ceremonial-grade Japanese matcha, lion's mane and reishi mushroom extracts (standardized to 70%+ beta-glucan content), grass-fed bovine collagen peptides, and L-theanine. The format is tear, pour, done — no measuring, no equipment, no cleanup.</p>
+<p>Each recipe is built around shroom&eacute;'s single-serve liquid sachets, which combine ceremonial-grade Japanese matcha, 200mg organic lion's mane extract, grass-fed bovine collagen peptides, and naturally occurring L-theanine. The format is tear, pour, done — no measuring, no equipment, no cleanup.</p>
 
 <h2>The 9 Recipes</h2>
 
@@ -52,18 +52,17 @@ export const blogPosts: BlogPost[] = [
 
 <p>"Most people love the idea of matcha but get intimidated by the process," said Zachary Kaufman, co-founder of shroom&eacute;. "We built these recipes to prove that you don't need any experience or any equipment. If you can pour a sachet into a glass, you can make a drink that looks and tastes like it came from a $7 matcha bar."</p>
 
-<p>"We wanted to make matcha fun, not just functional," added Zachary Arenson, co-founder. "Recipes like the Sparkling Matcha and the Affogato show people that matcha isn't just a latte ingredient — it's a platform for creativity. And every recipe still delivers the same lion's mane, reishi, and collagen benefits."</p>
+<p>"We wanted to make matcha fun, not just functional," added Zachary Arenson, co-founder. "Recipes like the Sparkling Matcha and the Affogato show people that matcha isn't just a latte ingredient — it's a platform for creativity. And every recipe still delivers the same lion's mane and collagen benefits."</p>
 
 <h2>About the Product</h2>
 
 <p>shroom&eacute; sachets are currently available in two flavors — <a href="/flavors/vanilla">Vanilla</a> and <a href="/flavors/strawberry">Strawberry</a> — each containing:</p>
 
 <ul>
-<li>Ceremonial-grade Japanese matcha</li>
-<li>Lion's mane mushroom extract (70%+ beta-glucan)</li>
-<li>Reishi mushroom extract (70%+ beta-glucan)</li>
-<li>Grass-fed bovine collagen peptides</li>
-<li>L-theanine</li>
+<li>2.5g ceremonial-grade Japanese matcha</li>
+<li>200mg organic lion's mane extract</li>
+<li>2g grass-fed bovine collagen peptides</li>
+<li>Naturally occurring L-theanine (from matcha)</li>
 </ul>
 
 <p>Pre-launch orders are now available at <a href="https://www.drinkshroome.com">drinkshroome.com</a> with <strong>20% off and free shipping</strong>.</p>
@@ -110,15 +109,15 @@ Web: <a href="https://www.drinkshroome.com">drinkshroome.com</a>
 
 <ul>
 <li>Fill a tall glass with ice and pour in 6-8 oz of oat milk (or any milk you like).</li>
-<li>Tear open a shroom&eacute; sachet and pour the powder slowly over the back of a spoon so it floats on top.</li>
+<li>Tear open a shroom&eacute; sachet and pour the liquid concentrate slowly over the back of a spoon so it floats on top.</li>
 <li>That's it. Let it layer or stir it up — your call.</li>
 </ul>
 
-<p>The key here is the instant-dissolve formula. Traditional matcha powder clumps in cold liquid unless you whisk it separately in hot water first. That extra step is exactly what makes people give up on homemade matcha. With shroom&eacute;, the powder disperses on contact. Get the <a href="/recipes/classic-iced-matcha-latte">full Classic Iced Matcha Latte recipe here</a>.</p>
+<p>The key here is that shroom&eacute; is already a liquid concentrate. Traditional matcha powder clumps in cold liquid unless you whisk it separately in hot water first. That extra step is exactly what makes people give up on homemade matcha. With shroom&eacute;, the concentrate blends on contact — no powder, no whisk. Get the <a href="/recipes/classic-iced-matcha-latte">full Classic Iced Matcha Latte recipe here</a>.</p>
 
 <h2>2. Vanilla Matcha Smoothie</h2>
 
-<p>If you want something more substantial — something that counts as breakfast — this smoothie is your move. Frozen banana gives it thickness, the matcha gives it energy, and you get lion's mane and reishi in the mix without tasting anything "mushroomy."</p>
+<p>If you want something more substantial — something that counts as breakfast — this smoothie is your move. Frozen banana gives it thickness, the matcha gives it energy, and you get lion's mane in the mix without tasting anything "mushroomy."</p>
 
 <h3>How to Make It</h3>
 
@@ -152,7 +151,7 @@ Web: <a href="https://www.drinkshroome.com">drinkshroome.com</a>
 
 <ul>
 <li>Add one shroom&eacute; sachet to a glass.</li>
-<li>Pour in 2 oz of regular water and stir to dissolve the powder.</li>
+<li>Pour in 2 oz of regular water and give it a quick stir to combine.</li>
 <li>Add ice, then top with 6 oz of sparkling water. Give it one gentle stir.</li>
 </ul>
 
@@ -176,7 +175,7 @@ Web: <a href="https://www.drinkshroome.com">drinkshroome.com</a>
 
 <p>The reason most people don't make matcha at home isn't that they don't like matcha. It's that traditional matcha preparation is fussy. You need to sift the powder, heat water to exactly 175&deg;F, whisk in a specific pattern, and clean up the tools afterward. For a morning drink, that's a lot of friction.</p>
 
-<p>Shroom&eacute; sachets remove all of that. Each one is pre-portioned with ceremonial-grade matcha, functional mushroom extracts (lion's mane and reishi with 70%+ beta-glucan content), collagen peptides, and L-theanine. You get the same <a href="/#ingredients">ingredients</a> you'd get from buying five separate supplements — in one sachet that dissolves in seconds.</p>
+<p>Shroom&eacute; sachets remove all of that. Each one is pre-portioned with 2.5g ceremonial-grade matcha, 200mg organic lion's mane extract, 2g grass-fed collagen peptides, and naturally occurring L-theanine. You get the same <a href="/#ingredients">ingredients</a> you'd get from buying several separate supplements — in one liquid sachet that pours in seconds.</p>
 
 <p>That's why all five of these recipes work. The sachet format means there's no barrier between you and a great matcha drink. No learning curve. No equipment. No wasted powder at the bottom of the cup.</p>
 
@@ -380,7 +379,7 @@ Web: <a href="https://www.drinkshroome.com">drinkshroome.com</a>
 <li><strong>Additional functional ingredients:</strong> Some blends include complementary ingredients like collagen peptides for skin and joint support, or additional L-theanine to amplify the calming focus effect. These are bonuses if they're well-dosed.</li>
 </ul>
 
-<p>Shroom&eacute; checks every box on this list. We use ceremonial-grade Japanese matcha, lion's mane and reishi fruiting body extracts standardized to 70%+ beta-glucan content, marine collagen peptides, and added L-theanine — all in a single-serve sachet that dissolves instantly. You can see the <a href="/#ingredients">full ingredient breakdown here</a>.</p>
+<p>Shroom&eacute; checks every box on this list. We use ceremonial-grade Japanese matcha, organic lion's mane fruiting-body extract, and grass-fed collagen peptides, with naturally occurring L-theanine — all in a single-serve liquid sachet that pours in seconds. You can see the <a href="/#ingredients">full ingredient breakdown here</a>.</p>
 
 <h2>Getting Started with Mushroom Matcha</h2>
 
@@ -456,7 +455,7 @@ Web: <a href="https://www.drinkshroome.com">drinkshroome.com</a>
 
 <p>Beta-glucans are the reason mushroom supplements exist. They're the bioactive compound behind the immune-supporting properties that have made functional mushrooms so popular. Combined with other evidence-backed ingredients like <a href="https://www.drinkshroome.com/blog/caffeine-l-theanine-nootropic-stack">caffeine and L-theanine for focused energy</a>, they form the foundation of a truly functional daily pour. But not all products are created equal, and the difference between a well-sourced fruiting body extract and a mycelium-on-grain powder is enormous.</p>
 
-<p>When we formulated <a href="https://www.drinkshroome.com">shroom&eacute;</a>, standardizing to 70%+ beta-glucan content from fruiting body extracts was non-negotiable. At that concentration, you're getting a meaningful amount of the compound that actually does something — not a capsule of rice starch with a mushroom label on it.</p>
+<p>When we formulated <a href="https://www.drinkshroome.com">shroom&eacute;</a>, using real fruiting-body extract rather than mycelium-on-grain was non-negotiable. Fruiting body is the actual mushroom, concentrated — not a capsule of rice starch with a mushroom label on it. (We'll publish our extract's third-party beta-glucan assay here once the supplier CoA is finalized.)</p>
 
 <p>The bottom line: read the label, ask about the source, and look for the beta-glucan percentage. Your immune system — and your wallet — will thank you.</p>
 
@@ -893,7 +892,7 @@ Web: <a href="https://www.drinkshroome.com">drinkshroome.com</a>
 
 <p>The difference between a quality fruiting body extract and a mycelium on grain product is not subtle — it can be the difference between 60 percent beta-glucans and 6 percent. That is a tenfold gap, and it matters.</p>
 
-<p>At <a href="https://www.drinkshroome.com">shroom&eacute;</a>, this is precisely why we use fruiting body mushroom extracts standardized to 70%+ beta-glucan content. When you combine that with <a href="https://www.drinkshroome.com/blog/ceremonial-vs-culinary-matcha-grade-matters">ceremonial-grade matcha</a> and <a href="https://www.drinkshroome.com/blog/collagen-in-morning-drink-research">collagen peptides</a>, every ingredient earns its place based on verified potency — not label decoration.</p>
+<p>At <a href="https://www.drinkshroome.com">shroom&eacute;</a>, this is precisely why we use organic lion's mane <em>fruiting-body</em> extract rather than mycelium-on-grain. When you combine that with <a href="https://www.drinkshroome.com/blog/ceremonial-vs-culinary-matcha-grade-matters">ceremonial-grade matcha</a> and <a href="https://www.drinkshroome.com/blog/collagen-in-morning-drink-research">collagen peptides</a>, every ingredient earns its place based on the source and form we can stand behind — not label decoration.</p>
 
 <p>Your supplement should contain what it claims to contain. Read the label. Look for the numbers. And choose accordingly.</p>
 
@@ -2164,11 +2163,11 @@ Web: <a href="https://www.drinkshroome.com">drinkshroome.com</a>
 
 <h2>How Shroom&eacute; Uses Lion's Mane</h2>
 
-<p>Every <a href="/#ingredients">shroom&eacute; sachet</a> contains lion's mane fruiting body extract with verified beta-glucan content above 70%. We chose fruiting body over mycelium-on-grain specifically to avoid the starch dilution problem and to ensure meaningful concentrations of hericenones and beta-glucans in every serving.</p>
+<p>Every <a href="/#ingredients">shroom&eacute; sachet</a> contains 200mg of organic lion's mane fruiting-body extract. We chose fruiting body over mycelium-on-grain specifically to avoid the starch dilution problem and to deliver real mushroom material — not grain filler — in every serving.</p>
 
-<p>Paired with ceremonial matcha (which provides L-theanine and caffeine for immediate cognitive support), lion's mane serves as the long-term brain health component of the stack. The matcha gives you focus now; the lion's mane supports neurological health over time. Combined with reishi for stress adaptation, it creates a comprehensive daily cognitive and wellness foundation.</p>
+<p>Paired with ceremonial matcha (which provides naturally occurring L-theanine and caffeine for immediate cognitive support), lion's mane serves as the long-term brain health component of the stack. The matcha gives you focus now; the lion's mane supports neurological health over time.</p>
 
-<p>To understand more about the beta-glucan content and why we set the bar at 70%+, read our post on <a href="/blog/what-are-beta-glucans-mushroom-compound">what beta-glucans are and why they matter</a>.</p>
+<p>To understand why fruiting-body extraction matters and how to read a mushroom label, read our post on <a href="/blog/what-are-beta-glucans-mushroom-compound">what beta-glucans are and why they matter</a>.</p>
 
 <hr />
 
@@ -2413,7 +2412,7 @@ Web: <a href="https://www.drinkshroome.com">drinkshroome.com</a>
 
 <h2>How Shroom&eacute; Approaches Beta-Glucan Quality</h2>
 
-<p>Every <a href="/#ingredients">shroom&eacute; sachet</a> contains lion's mane and reishi mushroom extracts sourced exclusively from fruiting bodies, with verified beta-glucan content above 70%. We chose this standard because the research on immune modulation, cognitive support, and stress adaptation uses extracts in this potency range — and because the difference between a 15% product and a 70%+ product is the difference between a supplement that might work and one that delivers meaningful doses of bioactive compounds.</p>
+<p>Every <a href="/#ingredients">shroom&eacute; sachet</a> contains 200mg of organic lion's mane extract sourced exclusively from fruiting bodies — not mycelium grown on grain. We chose fruiting-body extraction because it delivers real mushroom material rather than starch filler; when our supplier Certificate of Analysis for beta-glucan content is finalized, we'll publish the number here.</p>
 
 <p>For a deeper look at how lion's mane specifically supports cognitive function through its unique hericenone and erinacine compounds, see our guide on <a href="/blog/lions-mane-mushroom-benefits-research">lion's mane mushroom benefits</a>. And for more on the original beta-glucan science and why we built our formula around this metric, read our earlier post on <a href="/blog/what-are-beta-glucans-mushroom-compound">what beta-glucans are</a>.</p>
 
@@ -2820,7 +2819,7 @@ Web: <a href="https://www.drinkshroome.com">drinkshroome.com</a>
 
 <p>Here&rsquo;s the thing most comparisons miss: you don&rsquo;t have to choose between matcha and mushrooms. The best functional drink combines both &mdash; matcha&rsquo;s smooth caffeine delivery and L-theanine with the cognitive and immune benefits of medicinal mushroom extracts.</p>
 
-<p>That&rsquo;s exactly what <a href="https://www.drinkshroome.com">shroom&eacute;</a> is built to deliver. Each sachet combines Japanese ceremonial grade matcha with lion&rsquo;s mane and reishi extracts (70%+ beta-glucan content from fruiting bodies, not mycelium on grain), plus collagen peptides and additional L-theanine. You get the <a href="/#ingredients">full ingredient breakdown here</a>.</p>
+<p>That&rsquo;s exactly what <a href="https://www.drinkshroome.com">shroom&eacute;</a> is built to deliver. Each sachet combines Japanese ceremonial grade matcha with 200mg organic lion&rsquo;s mane fruiting-body extract (not mycelium on grain), plus grass-fed collagen peptides and naturally occurring L-theanine. You get the <a href="/#ingredients">full ingredient breakdown here</a>.</p>
 
 <p>It&rsquo;s the functional benefits of mushroom coffee without the coffee crash, and the clean energy of matcha amplified by research-backed mushroom extracts. For a deeper dive into how mushrooms and matcha work together, check out our <a href="/blog/mushroom-matcha-guide-lions-mane-reishi-chaga">mushroom matcha guide</a>.</p>
 

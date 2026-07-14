@@ -112,7 +112,7 @@ export default function RecipesPage() {
           font-size:12px;font-weight:700;letter-spacing:.06em;
           text-transform:uppercase;cursor:pointer;transition:background .2s;text-decoration:none
         }
-        .rec-nav-cta:hover{background:#2a2e4f}
+        .rec-nav-cta:hover{background:var(--brand-accent-muted-deep)}
 
         /* ── PAGE WRAPPER (retro 90s background) ── */
         .rec-page{
@@ -232,7 +232,14 @@ export default function RecipesPage() {
         }
         .rec-cta::before{
           content:'';position:absolute;inset:0;
-          background:radial-gradient(ellipse 80% 60% at 50% 50%, rgba(var(--brand-accent-rgb),0.08) 0%, transparent 70%);
+          /* packaging sunburst — soft matcha rays fanning from the bottom mound */
+          background:repeating-conic-gradient(from 262.5deg at 50% 115%, rgba(var(--brand-accent-rgb),0.10) 0deg 7.5deg, transparent 7.5deg 15deg);
+          pointer-events:none
+        }
+        .rec-cta::after{
+          content:'';position:absolute;top:-1px;left:0;right:0;height:20px;
+          /* scalloped cloud edge from the sachet back panel */
+          background:radial-gradient(circle at 50% 0, var(--brand-canvas) 0 10px, transparent 10.5px) top left/40px 20px repeat-x;
           pointer-events:none
         }
         .rec-cta-tag{
@@ -259,7 +266,7 @@ export default function RecipesPage() {
           text-decoration:none;transition:background .2s,transform .2s;
           position:relative
         }
-        .rec-btn-cta:hover{background:#d4ff5a;transform:translateY(-2px)}
+        .rec-btn-cta:hover{background:var(--brand-accent-muted-deep);transform:translateY(-2px)}
 
         /* ── FOOTER ── */
         .rec-footer{

@@ -53,7 +53,7 @@ export default function NotFound() {
           font-size:12px;font-weight:700;letter-spacing:.06em;
           text-transform:uppercase;cursor:pointer;transition:background .2s;text-decoration:none
         }
-        .nf-nav-cta:hover{background:#2a2e4f}
+        .nf-nav-cta:hover{background:var(--brand-accent-muted-deep)}
 
         /* ── HERO / CONTENT ── */
         .nf-content{
@@ -106,7 +106,7 @@ export default function NotFound() {
         .nf-link-primary{
           background:var(--brand-ink);color:var(--brand-canvas);
         }
-        .nf-link-primary:hover{background:#2a2e4f;transform:translateY(-2px)}
+        .nf-link-primary:hover{background:var(--brand-accent-muted-deep);transform:translateY(-2px)}
         .nf-link-secondary{
           background:transparent;color:var(--brand-ink);
           border:1.5px solid rgba(var(--brand-ink-rgb),0.2);

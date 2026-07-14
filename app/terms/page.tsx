@@ -100,7 +100,7 @@ export default function Terms() {
           font-size:12px;font-weight:700;letter-spacing:.06em;
           text-transform:uppercase;cursor:pointer;transition:background .2s;text-decoration:none
         }
-        .tos-nav-cta:hover{background:#2a2e4f}
+        .tos-nav-cta:hover{background:var(--brand-accent-muted-deep)}
 
         /* ── HERO ─── */
         .tos-hero{position:relative;overflow:hidden;padding:72px 8% 64px}
@@ -157,6 +157,7 @@ export default function Terms() {
 
         /* ── CTA SECTION ─── */
         .tos-cta{background:var(--brand-ink);padding:64px 7%;text-align:center;position:relative;overflow:hidden}
+        .tos-cta::before{content:'';position:absolute;top:-1px;left:0;right:0;height:20px;background:radial-gradient(circle at 50% 0, var(--brand-canvas) 0 10px, transparent 10.5px) top left/40px 20px repeat-x;pointer-events:none}
         .tos-cta-tag{font-family:var(--brand-font-mono);font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--brand-tint-soft);margin-bottom:16px}
         .tos-cta h2{
           font-family:var(--brand-font-display);
@@ -171,7 +172,7 @@ export default function Terms() {
           font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
           cursor:pointer;transition:background .2s,transform .2s;text-decoration:none
         }
-        .tos-btn-cta:hover{background:#d4ff5a;transform:translateY(-2px)}
+        .tos-btn-cta:hover{background:var(--brand-accent-muted-deep);transform:translateY(-2px)}
 
         /* ── FOOTER ─── */
         .tos-footer{background:var(--brand-flavor-functional);padding:32px 6%;text-align:center;border-top:1px solid rgba(var(--brand-ink-rgb),0.06)}

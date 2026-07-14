@@ -21,10 +21,10 @@ const productSchema = {
   ],
   "sku": "SHROOME-VARIETY-12",
   "mpn": "SHROOME-V1",
-  "material": "Ceremonial Matcha, Organic Mushroom Beta-Glucan Extracts, Grass-Fed Collagen Peptides",
+  "material": "Ceremonial Matcha, Organic Lion's Mane Extract, Grass-Fed Collagen Peptides",
   "additionalProperty": [
-    { "@type": "PropertyValue", "name": "Caffeine Content", "value": "~60mg per sachet" },
-    { "@type": "PropertyValue", "name": "Beta-Glucan Concentration", "value": "70%+ (1,3 and 1,6 linked)" },
+    { "@type": "PropertyValue", "name": "Caffeine Content", "value": "about 60mg per sachet" },
+    { "@type": "PropertyValue", "name": "Lion's Mane Extract", "value": "200mg organic fruiting-body extract" },
     { "@type": "PropertyValue", "name": "Matcha Grade", "value": "Ceremonial (first harvest, shade-grown)" },
     { "@type": "PropertyValue", "name": "Collagen Source", "value": "Grass-fed bovine, hydrolyzed peptides" },
     { "@type": "PropertyValue", "name": "Servings Per Box", "value": "12" },
@@ -1205,7 +1205,7 @@ export default function Home() {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 24 }}>
             {[
               { name: "Ceremonial Matcha", dose: "2.5g", detail: "First-harvest, shade-grown. ~60mg caffeine. Not culinary grade — the real thing.", color: "var(--brand-tint-soft)", bg: "var(--brand-ink)" },
-              { name: "Organic Mushroom Extracts", dose: "200mg", detail: "70%+ beta-glucan purity — the active compound behind immune and focus benefits. Industry average: 15–30%. No mycelium-on-grain filler. No underdosing.", color: "var(--brand-flavor-strawberry)", bg: "var(--brand-ink)" },
+              { name: "Organic Lion's Mane Extract", dose: "200mg", detail: "Real fruiting-body extract — the mushroom, not the grain it grows on. No mycelium-on-grain filler. Supports immune and focus benefits.", color: "var(--brand-flavor-strawberry)", bg: "var(--brand-ink)" },
               { name: "Grass-Fed Collagen", dose: "2g", detail: "Pre-dissolved bioavailable peptides for skin, hair, nails, and gut.", color: "var(--brand-tint-soft)", bg: "var(--brand-ink)" },
             ].map((item, i) => (
               <div

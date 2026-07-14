@@ -41,11 +41,13 @@ We are not a supplement company that happens to taste okay. We are a drink brand
 
 ## Key Differentiator
 
-**70%+ beta-glucan content in our mushroom extracts.**
+**Real fruiting-body lion's mane extract — 200mg per sachet.**
 
-Most mushroom supplements on the market use mycelium-on-grain, which contains 15-30% beta-glucans diluted with starch. Our extracts are fruiting-body-derived, hot-water-extracted, and third-party verified at 70%+ beta-glucan concentration.
+Most mushroom supplements on the market use mycelium-on-grain, which is largely starch. Our lion's mane is fruiting-body-derived and hot-water-extracted — the actual mushroom, not the grain it grows on.
 
 This is not a marginal difference — it is a fundamentally different product category.
+
+> ⚠️ **Claims note (2026-07 audit):** We cannot yet state a beta-glucan **percentage** ("70%+"/"≥70%") — the delivered Bolden formulation sheet V2 documents 200mg of *extract* with no BG % assay. Do not publish a beta-glucan % until the Immulink CoA is on file. (Prior versions of this doc claimed "70%+ beta-glucan"; that claim has been pulled pending substantiation.)
 
 ---
 
