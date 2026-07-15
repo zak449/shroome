@@ -22,7 +22,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "3 min read",
     category: "Press",
     metaDescription:
-      "shroomé launches 9 original matcha recipes featuring ceremonial matcha, lion's mane, reishi, and collagen. Each recipe is ready in 15 seconds with a single sachet. Available at drinkshroome.com.",
+      "shroomé launches 9 original matcha recipes featuring ceremonial matcha, lion's mane, and collagen. Each recipe is ready in 15 seconds with a single sachet. Available at drinkshroome.com.",
     ogImage: "/og-blog-press-recipes.jpg",
     author: "shroomé",
     content: `
@@ -255,7 +255,7 @@ Web: <a href="https://www.drinkshroome.com">drinkshroome.com</a>
 
 <p>Matcha's primary antioxidant is EGCG (epigallocatechin gallate), a catechin that has been extensively studied for its anti-inflammatory and cellular protection properties. Because you're consuming the entire ground tea leaf rather than just a brewed extract, a single serving of matcha delivers roughly 10 times the antioxidants of a cup of steeped green tea.</p>
 
-<p>Over the long term, these antioxidants support cardiovascular health, cellular repair, and reduction of oxidative stress. Combined with functional mushroom extracts — like the lion's mane and reishi in shroom&eacute; that provide <a href="/blog/what-are-beta-glucans-mushroom-compound">immune-supporting beta-glucans</a> — you're getting a morning drink that does more than just wake you up.</p>
+<p>Over the long term, these antioxidants support cardiovascular health, cellular repair, and reduction of oxidative stress. Combined with the lion's mane extract in shroom&eacute; — a functional mushroom studied for its <a href="/blog/what-are-beta-glucans-mushroom-compound">immune-supporting beta-glucans</a> — you're getting a morning drink that does more than just wake you up.</p>
 
 <h2>The Social Factor</h2>
 
@@ -1769,7 +1769,7 @@ Web: <a href="https://www.drinkshroome.com">drinkshroome.com</a>
 
 <h2>How Shroom&eacute; Puts This Into Practice</h2>
 
-<p>We built <a href="/">shroom&eacute;</a> around the idea that adaptogens should be part of your daily routine — not something you have to remember to take separately. Every serving combines lion's mane, reishi, and chaga with ceremonial-grade matcha, creating a single drink that delivers focus, calm energy, and immune support in about 15 seconds of prep time.</p>
+<p>We built <a href="/">shroom&eacute;</a> around the idea that adaptogens should be part of your daily routine — not something you have to remember to take separately. Every serving combines lion's mane with ceremonial-grade matcha, creating a single drink that delivers focus, calm energy, and immune support in about 15 seconds of prep time.</p>
 
 <p>The matcha provides the caffeine and L-theanine for immediate energy and focus. The functional mushrooms provide the adaptogenic support that builds over time. Together, they cover both the short game (feeling alert right now) and the long game (supporting your body's stress response, cognitive function, and immunity over weeks and months of consistent use).</p>
 
