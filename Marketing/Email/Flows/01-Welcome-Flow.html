@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<!-- [CMO 2026-07-15] DEPRECATED RENDER — pre-reskin ghost. Predates the Bolden re-skin AND the
-     2026-07-14 claims cleanup: old navy/lime/cream palette (not Bolden Green/Retro/Matcha) and
-     dead claims. CANONICAL copy = Marketing/Email/Flows/engagement-capture-flows.md (FLOW A
-     EMAIL 1 welcome). Rebuild from canonical + brand.ts tokens before any send. Hardest
-     dead-claim / disease-adjacent strings neutralised in-place as interim ("FDA GRAS",
-     "immune system on full blast / activates macrophages & NK cells", "no crash" overreach);
-     palette/layout re-skin still OWED. -->
+<!-- [CMO 2026-07-15; Brand Mgr 2026-07-15] DEPRECATED RENDER — pre-reskin ghost.
+     CANONICAL copy = Marketing/Email/Flows/engagement-capture-flows.md (FLOW A EMAIL 1 welcome).
+     Rebuild from canonical + brand.ts tokens before any send. Interim state: (a) CMO neutralised
+     dead/disease-adjacent claims in-place; (b) Brand Mgr swapped the palette HEX values to Bolden
+     tokens (Green #2D341A / Retro #FEFFF8 / Matcha #7A881F / Strawberry #FF6DC7 / Vanilla #E4CB9F
+     / Purple #E3D5F7) and forced all CTA pills to the Green-button + Retro-text lockup, and fixed
+     wordmark casing. The LAYOUT (navy-bar / stat-card design) is still a direct port of the old
+     template — a proper Bolden email rebuild (see app/lib/emails.ts for the reskinned reference)
+     is still OWED. Internal section-label comments below still name old colors; ignore. -->
 <html lang="en">
 <head>
   <meta charset="utf-8"/>
@@ -69,7 +71,7 @@
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#FF6DC7;">
         <tr>
           <td style="padding:20px 24px 0;text-align:center;">
-            <img src="https://www.drinkshroome.com/sachets-both.png" alt="shroome vanilla and strawberry sachets" width="480" style="display:inline-block;width:80%;max-width:480px;height:auto;" />
+            <img src="https://www.drinkshroome.com/sachets-both.png" alt="shroomé vanilla and strawberry sachets" width="480" style="display:inline-block;width:80%;max-width:480px;height:auto;" />
           </td>
         </tr>
       </table>
@@ -89,8 +91,8 @@
     <!-- CTA — lime pill on pink -->
     <tr><td style="padding:24px 36px 36px;background-color:#FF6DC7;text-align:center;">
       <table role="presentation" cellpadding="0" cellspacing="0" style="margin:0 auto;">
-        <tr><td style="background:#7A881F;border-radius:50px;padding:16px 48px;">
-          <a href="https://drinkshroome.com" style="color:#2D341A;font-size:13px;font-weight:700;text-decoration:none;letter-spacing:2px;text-transform:uppercase;">
+        <tr><td style="background:#2D341A;border-radius:50px;padding:16px 48px;">
+          <a href="https://drinkshroome.com" style="color:#FEFFF8;font-size:13px;font-weight:700;text-decoration:none;letter-spacing:2px;text-transform:uppercase;">
             SEE WHAT&#8217;S INSIDE &#8594;
           </a>
         </td></tr>
@@ -231,8 +233,8 @@
       </p>
       <table role="presentation" cellpadding="0" cellspacing="0" style="margin:0 auto;">
         <tr><td style="background:#2D341A;border-radius:50px;padding:16px 52px;">
-          <a href="https://drinkshroome.com" style="color:#7A881F;font-size:13px;font-weight:700;text-decoration:none;letter-spacing:2px;text-transform:uppercase;">
-            EXPLORE SHROOME &#8594;
+          <a href="https://drinkshroome.com" style="color:#FEFFF8;font-size:13px;font-weight:700;text-decoration:none;letter-spacing:2px;text-transform:uppercase;">
+            EXPLORE SHROOM&Eacute; &#8594;
           </a>
         </td></tr>
       </table>
