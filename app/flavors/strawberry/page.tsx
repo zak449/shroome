@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import MobileNav from "../../MobileNav";
 import Breadcrumb from "../../Breadcrumb";
+import { SunburstMound } from "../../Motif";
 
 export const metadata: Metadata = {
   title: "Strawberry — shroomé | Ready-to-Pour Strawberry Matcha Latte",
@@ -387,7 +388,13 @@ export default function StrawberryFlavorPage() {
               height={270}
               priority
             />
-            <div className="sf-hero-tag">Flavor Profile</div>
+            {/* Flavor pill — mirrors the R02 sachet tag (flavor name in flavor color) */}
+            <div
+              className="flavor-pill"
+              style={{ background: "var(--brand-flavor-strawberry)", color: "var(--brand-canvas)", marginBottom: 20 }}
+            >
+              Strawberry
+            </div>
             <h1>Strawberry</h1>
             <p className="sf-hero-desc">
               Fruity, bright, and naturally sweet. Real freeze-dried strawberry
@@ -455,6 +462,11 @@ export default function StrawberryFlavorPage() {
               <p>{r.desc}</p>
             </a>
           ))}
+        </div>
+
+        {/* ── SUNBURST MOUND — sachet-front motif rising into the footer ── */}
+        <div style={{ display: "flex", justifyContent: "center", marginTop: 24 }} aria-hidden="true">
+          <SunburstMound flavor={BRAND.colors.flavorStrawberry} width={260} style={{ marginBottom: -1 }} />
         </div>
 
         {/* ── FOOTER ── */}

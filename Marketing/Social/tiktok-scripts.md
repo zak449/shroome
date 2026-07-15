@@ -59,7 +59,7 @@ Face fills the frame. Deadpan delivery, slightly raised eyebrow.
 | 0-2s | Direct-to-camera or text-on-screen hook. Bold white text on dark background if no face. | VO delivers hook. |
 | 2-7s | Hand holds a small pile of brown rice grains. Text overlay labels it. Camera pushes in. | VO: "Most brands use mycelium grown on grain. That means you're mostly drinking rice starch." |
 | 7-12s | Cut to: hand holds a whole dried lion's mane mushroom (or reishi). Rotate it slowly. Beautiful texture. | VO: "Fruiting body is the actual mushroom. The part with the compounds that matter." |
-| 12-17s | Close-up of shroome sachet back label. Finger points to "fruiting body extract" and beta-glucan percentage. | VO: "We use dual-extracted fruiting body. Seventy percent-plus beta-glucans. It's on the label." |
+| 12-17s | Close-up of shroome sachet back label. Finger points to "200mg lion's mane · fruiting body extract." | VO: "We use fruiting-body extract. 200mg. The actual mushroom, printed on the label." <!-- [CMO 2026-07-15] was "seventy percent-plus beta-glucans" — beta-glucan % banned pre-CoA; spark-ad candidate = paid, must obey honest-claims regime. --> |
 | 17-22s | Quick tear-pour-done sequence with the shroome sachet into a latte. Beauty shot. | VO: "Real mushrooms. Real matcha. That's it." |
 | 22-25s | End card: shroome logo + "Link in bio" | Music resolves. |
 
@@ -174,7 +174,7 @@ Hold up a supplement bottle (generic, no brand visible). Skeptical look.
 |------|-------|------|----|
 | 0-2s | — | Hand holds generic supplement container. Direct look at camera. | "Three things to check before you buy any functional beverage." |
 | 2-8s | #1 | Finger on a label. Zoom in on ingredient list. Circle or highlight "mycelium" vs "fruiting body." | "Number one. Does it say fruiting body or mycelium? Mycelium on grain is mostly filler." |
-| 8-14s | #2 | Different angle on label. Looking for beta-glucan percentage. | "Number two. Is there a beta-glucan percentage? If they don't list it, they're probably hiding a low number." |
+| 8-14s | #2 | Different angle on label. Looking for the dose and the source. | "Number two. Does it print the dose and the source — fruiting body, in milligrams? Vague 'blends' hide low numbers." <!-- [CMO 2026-07-15] reframed from "is there a beta-glucan %?" — the old checklist demanded a % and then claimed shroomé "passes all three," but shroomé cannot state a beta-glucan % pre-CoA (claims audit). Checklist now tests dose+source, which shroomé genuinely passes (200mg, fruiting body, on the label). Restore the % criterion only once our own CoA lets us answer it. --> |
 | 14-19s | #3 | Close-up on matcha grade callout (or lack of one). | "Number three. Ceremonial or culinary grade matcha? Culinary is for baking. You're drinking this." |
 | 19-23s | — | Cut to shroome sachet. Flip to back label. All three checkmarks visible. | "If you can't find these answers, you're drinking marketing. Not function." |
 | 23-25s | — | Tear, pour, done. Quick beauty shot. Logo. | "shroome. Every answer on the label." |
@@ -182,7 +182,7 @@ Hold up a supplement bottle (generic, no brand visible). Skeptical look.
 ### Text Overlays
 - (0s) — "CHECK YOUR LABEL"
 - (3s) — "1. Fruiting body or mycelium?"
-- (9s) — "2. Beta-glucan % listed?"
+- (9s) — "2. Dose + source on the label?"
 - (15s) — "3. Ceremonial or culinary grade?"
 - (19s) — "shroome passes all three."
 - (23s) — "Link in bio"

@@ -1,6 +1,7 @@
 import { BRAND, svgHex } from "@/app/lib/brand";
 import Image from "next/image";
 import MobileNav from "./MobileNav";
+import { MeOnMound } from "./Motif";
 
 export default function NotFound() {
   return (
@@ -185,6 +186,10 @@ export default function NotFound() {
           <div className="nf-blob nf-blob-b" />
           <div className="nf-blob nf-blob-c" />
 
+          {/* Mé, unbothered, on her sunburst mound — the page wandered off, she didn't */}
+          <div style={{ marginBottom: 28, opacity: 0, animation: "nfFadeUp .7s .05s forwards" }}>
+            <MeOnMound flavor={BRAND.colors.flavorStrawberry} width={170} />
+          </div>
           <div className="nf-tag">404 — Page Not Found</div>
           <h1 className="nf-heading">Sheep happens.<br />This page wandered off.</h1>
           <p className="nf-sub">No page here &mdash; but the good energy&apos;s just a pour away. Maybe you were looking for one of our recipes?</p>

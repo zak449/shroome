@@ -195,7 +195,7 @@
 **script / shot list**
 1. (0–1.5s) greenscreen hook over rice image. deadpan.
 2. (1.5–7s) greenscreen over diagram text "mycelium grown on grain." VO: "most mushroom products use mycelium grown on grain — you're largely drinking the grain it grew on."
-3. (7–13s) cut to hands holding the sachet. VO: "shroomé uses dual-extracted lion's mane fruiting body — the actual mushroom — standardized to seventy percent or more beta-glucans."
+3. (7–13s) cut to hands holding the sachet. VO: "shroomé uses lion's mane fruiting-body extract — the actual mushroom — 200mg, hot-water extracted, printed on the label." <!-- [CMO 2026-07-15] was "standardized to 70%+ beta-glucans" — a beta-glucan % is banned pre-CoA (claims audit); this is a spark-ad candidate = paid prospecting, so it must obey the honest-claims regime. Restore a % only after the Immulink CoA substantiates it. -->
 4. (13–18s) macro of back label, finger under "200mg lion's mane · fruiting body." VO: "beta-glucans are the compounds studied for immune support — the source and form are what to check. mycelium on grain is mostly grain."
 5. (18–23s) the pour as proof-of-life: tear, pour, swirl. VO: "and it's in a matcha latte, not a chalky brown mystery."
 6. (23–26s) direct to camera: "read your labels. even ours." end card.

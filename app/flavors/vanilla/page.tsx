@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import MobileNav from "../../MobileNav";
 import Breadcrumb from "../../Breadcrumb";
+import { SunburstMound } from "../../Motif";
 
 export const metadata: Metadata = {
   title: "Vanilla — shroomé | Ready-to-Pour Vanilla Matcha Latte",
@@ -382,7 +383,13 @@ export default function VanillaFlavorPage() {
               height={270}
               priority
             />
-            <div className="vf-hero-tag">Flavor Profile</div>
+            {/* Flavor pill — mirrors the R02 sachet tag (flavor name in flavor color) */}
+            <div
+              className="flavor-pill"
+              style={{ background: "var(--brand-flavor-functional)", color: "var(--brand-ink)", marginBottom: 20 }}
+            >
+              Vanilla
+            </div>
             <h1>Vanilla</h1>
             <p className="vf-hero-desc">
               Smooth, naturally sweet, and impossibly creamy. Real vanilla bean
@@ -454,6 +461,11 @@ export default function VanillaFlavorPage() {
         </div>
 
         {/* ── FOOTER ── */}
+        {/* ── SUNBURST MOUND — sachet-front motif rising into the footer ── */}
+        <div style={{ display: "flex", justifyContent: "center", marginTop: 24 }} aria-hidden="true">
+          <SunburstMound flavor={BRAND.colors.flavorFunctional} width={260} style={{ marginBottom: -1 }} />
+        </div>
+
         <footer className="vf-footer">
           <div className="vf-footer-top">
             <a href="https://tiktok.com/@drinkshroome" target="_blank" rel="noopener noreferrer">TikTok</a>

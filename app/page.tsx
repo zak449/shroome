@@ -3,6 +3,7 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import Image from "next/image";
 import Script from "next/script";
 import ExitPopup from "./ExitPopup";
+import { MeOnMound } from "./Motif";
 import { BRAND } from "./lib/brand";
 
 const productSchema = {
@@ -408,7 +409,9 @@ export default function Home() {
                   whiteSpace: "nowrap",
                 }}
               >
-                {i % 2 === 0 ? (i % 4 === 0 ? "TEAR. POUR. DONE." : "ZERO JITTERS") : "✦"}
+                {i % 2 === 1
+                  ? "✦"
+                  : ["TEAR. POUR. DONE.", "GET SHEEP DONE", "ZERO JITTERS", "NICE TO MATCHA YOU"][(i / 2) % 4]}
               </span>
             ))}
         </div>
@@ -882,7 +885,7 @@ export default function Home() {
                     <div ref={captchaRef} style={{ marginBottom: 8 }} />
                     {loading && (
                       <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.72rem", color: "rgba(var(--brand-ink-rgb),0.45)" }}>
-                        Submitting...
+                        Pouring it in…
                       </p>
                     )}
                   </div>
@@ -924,7 +927,7 @@ export default function Home() {
                           cursor: loading ? "wait" : "pointer",
                         }}
                       >
-                        {loading ? "…" : "Add phone →"}
+                        {loading ? "pouring…" : "Add phone →"}
                       </button>
                       <button
                         onClick={skipPhone}
@@ -982,7 +985,7 @@ export default function Home() {
                         cursor: loading ? "wait" : "pointer",
                       }}
                     >
-                      {loading ? "…" : "Get launch updates →"}
+                      {loading ? "pouring…" : "Get launch updates →"}
                     </button>
                     {captchaError && (
                       <p role="alert" style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.72rem", color: "#B3261E", marginTop: 10, fontWeight: 600 }}>
@@ -1466,7 +1469,7 @@ export default function Home() {
               {!captchaRef.current && <div ref={captchaRef} style={{ display: "flex", justifyContent: "center", marginBottom: 8 }} />}
               {loading && (
                 <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.72rem", color: "rgba(var(--brand-ink-rgb),0.45)" }}>
-                  Submitting...
+                  Pouring it in…
                 </p>
               )}
             </div>
@@ -1484,7 +1487,7 @@ export default function Home() {
                   style={{ flex: "1 1 240px", padding: "15px 20px", border: "2px solid var(--brand-ink)", background: "rgba(255,255,255,0.5)", color: "var(--brand-ink)", fontFamily: "var(--brand-font-body)", fontSize: "0.95rem", fontWeight: 500, minWidth: 0 }}
                 />
                 <button type="submit" disabled={loading} style={{ padding: "15px 28px", border: "none", background: "var(--brand-ink)", color: "var(--brand-accent-contrast)", fontFamily: "var(--brand-font-body)", fontWeight: 800, fontSize: "0.75rem", letterSpacing: "0.12em", textTransform: "uppercase", cursor: loading ? "wait" : "pointer", whiteSpace: "nowrap" }}>
-                  {loading ? "…" : "Add phone →"}
+                  {loading ? "pouring…" : "Add phone →"}
                 </button>
               </form>
               <button onClick={skipPhone} style={{ marginTop: 10, background: "transparent", border: "none", color: "rgba(var(--brand-ink-rgb),0.45)", fontFamily: "var(--brand-font-body)", fontSize: "0.72rem", cursor: "pointer", textDecoration: "underline" }}>
@@ -1505,7 +1508,7 @@ export default function Home() {
                 style={{ flex: "1 1 240px", padding: "15px 20px", border: "2px solid var(--brand-ink)", background: "rgba(255,255,255,0.5)", color: "var(--brand-ink)", fontFamily: "var(--brand-font-body)", fontSize: "0.95rem", fontWeight: 500, minWidth: 0 }}
               />
               <button type="submit" disabled={loading} style={{ padding: "15px 28px", border: "none", background: "var(--brand-ink)", color: "var(--brand-accent-contrast)", fontFamily: "var(--brand-font-body)", fontWeight: 800, fontSize: "0.75rem", letterSpacing: "0.12em", textTransform: "uppercase", cursor: loading ? "wait" : "pointer", whiteSpace: "nowrap" }}>
-                {loading ? "…" : "Get launch updates →"}
+                {loading ? "pouring…" : "Get launch updates →"}
               </button>
             </form>
           )}
@@ -1517,6 +1520,10 @@ export default function Home() {
         </div>
 
         <div style={{ marginTop: 80, paddingTop: 28, borderTop: "1px solid rgba(var(--brand-ink-rgb),0.08)", position: "relative", zIndex: 1 }}>
+          {/* Mé on her sunburst mound — the sachet-front moment, closing the page */}
+          <div style={{ marginBottom: 24 }}>
+            <MeOnMound flavor={BRAND.colors.flavorStrawberry} width={150} />
+          </div>
           <div style={{ display: "flex", gap: 24, justifyContent: "center", marginBottom: 20 }}>
             {[
               { label: "TIKTOK", href: "https://tiktok.com/@drinkshroome" },
