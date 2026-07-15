@@ -99,7 +99,7 @@ shroome is a **young energy brand**. Every image should feel like it belongs in 
 ### Cloud Imagery
 - Use organic, dreamy cloud imagery for website and marketing backgrounds
 - Clouds should feel soft, textural, and slightly surreal
-- Color-tinted clouds preferred — lean into the brand palette (Lavender, Blush, Soft Lavender)
+- Color-tinted clouds preferred — lean into the Bolden palette (Purple #E3D5F7, Vanilla #E4CB9F, Strawberry-blush #FFE2F4)
 - Source from custom-generated imagery (ChatGPT images approved) for backgrounds only
 - Clouds communicate: lightness, elevation, the "no crash" feeling
 
@@ -116,8 +116,8 @@ shroome is a **young energy brand**. Every image should feel like it belongs in 
 - Photos should lean warm — never cool/blue-toned
 - Slight desaturation is fine, but never fully muted
 - Highlights should feel creamy, not blown out
-- Shadows should lean warm brown/navy, never pure black
-- Post-processing should maintain the Cream (#FDF4EE) warmth of the brand
+- Shadows should lean warm brown/deep green, never pure black
+- Post-processing should maintain the Retro off-white (#FEFFF8) warmth of the brand
 
 ---
 
@@ -129,7 +129,7 @@ shroome is a **young energy brand**. Every image should feel like it belongs in 
 | Product pages | Clean sachet photography, minimal styling |
 | Instagram feed | Mix of lifestyle + product, warm tones |
 | Instagram stories | Behind-the-scenes, casual, unpolished OK |
-| Email headers | Product-focused, Blush or Soft Lavender backgrounds |
+| Email headers | Product-focused, Purple (#E3D5F7) or Vanilla (#E4CB9F) backgrounds |
 | Ads (paid social) | Sachet hero shot + bold Syne typography overlay |
 
 ---

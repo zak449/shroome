@@ -56,7 +56,8 @@ function emailShell(content: string, email: string) {
       <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;">
         ${content}
         <tr><td align="center" style="padding:20px 24px 32px;background-color:${EMAIL.tintSoft};">
-          <p style="margin:0 0 4px;font-size:10px;color:${EMAIL.ink};opacity:0.25;">\u00a9 ${new Date().getFullYear()} shroome</p>
+          <img src="${EMAIL.siteUrl}/logo-mark.png" width="28" height="28" alt="M\u00e9 \u2014 the shroom\u00e9 sheep" style="display:block;margin:0 auto 8px;" />
+          <p style="margin:0 0 4px;font-size:10px;color:${EMAIL.ink};opacity:0.25;">\u00a9 ${new Date().getFullYear()} shroom\u00e9</p>
           ${/* TODO: insert full street address before first commercial send \u2014 CAN-SPAM requires a valid physical postal address */""}
           <p style="margin:0 0 6px;font-size:10px;color:${EMAIL.ink};opacity:0.25;">SHROOM\u00c9 \u00b7 Z Squared Beverages LLC \u00b7 Los Angeles, CA</p>
           <a href="${unsub(email)}" style="font-size:10px;color:${EMAIL.ink};opacity:0.3;text-decoration:underline;">unsubscribe</a>
@@ -90,7 +91,7 @@ export function welcomeEmail(email: string, referralCode?: string) {
             </td></tr>
             <tr><td style="padding:300px 0 0;"></td></tr>
             <tr><td style="padding:0 36px 8px;text-align:center;">
-              <p style="margin:0 0 10px;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:${EMAIL.tintSoft};font-weight:700;">\u2726 YOU\u2019RE IN \u2726</p>
+              <p style="margin:0 0 10px;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:${EMAIL.tintSoft};font-weight:700;">\u2726 NICE TO MATCHA YOU \u2726</p>
               <h1 style="margin:0;font-size:42px;color:#fff;font-weight:400;line-height:1.05;font-family:${SERIF};">
                 Caf\u00e9 energy.<br/><span style="font-style:italic;color:${EMAIL.accent};">Home address.</span>
               </h1>

@@ -176,7 +176,7 @@ export default function DropAccessForm({
           ✓ you&apos;re in. drop access locked — 20% off + free shipping.
         </p>
         <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.78rem", color: faint, marginTop: 8 }}>
-          we&apos;ll send the drop 002 link the moment it&apos;s live.
+          nice to matcha you — we&apos;ll send the drop 002 link the moment it&apos;s live.
         </p>
       </div>
     );
@@ -191,7 +191,7 @@ export default function DropAccessForm({
         <div ref={captchaRef} style={{ marginBottom: 8 }} />
         {loading && (
           <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.72rem", color: fainter }}>
-            submitting...
+            pouring it in…
           </p>
         )}
       </div>
@@ -248,7 +248,7 @@ export default function DropAccessForm({
                 cursor: loading ? "wait" : "pointer",
               }}
             >
-              {loading ? "…" : "text me the link →"}
+              {loading ? "pouring…" : "text me the link →"}
             </button>
             <button
               type="button"
@@ -315,7 +315,7 @@ export default function DropAccessForm({
             whiteSpace: "nowrap",
           }}
         >
-          {loading ? "…" : `${buttonLabel} →`}
+          {loading ? "pouring…" : `${buttonLabel} →`}
         </button>
       </form>
       {captchaError && (

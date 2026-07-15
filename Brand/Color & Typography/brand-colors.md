@@ -1,53 +1,55 @@
-# shroome Brand Colors & Typography
+# shroomé Brand Colors & Typography
 
-> Last updated: March 2026
+> Last updated: 2026-07-15 (re-skinned to the Bolden identity)
 > Owner: Brand Director
+> Source of truth: `Brand/bolden-identity-extraction.md` §b + `app/lib/brand.ts`. This doc mirrors those tokens in human terms — if they ever disagree, `brand.ts` wins.
 
 ---
 
-## Primary Palette
+## Primary Palette (Bolden)
 
-### Navy — #1B1F3B
-- **Role:** Primary dark color
-- **Usage:** Body text, headings, navigation, footer backgrounds, dark-mode surfaces
-- **Accessibility:** Use on Cream (#FDF4EE) backgrounds for maximum contrast (WCAG AAA)
-- **Do not** use Navy text on Pink, Lavender, or any mid-tone accent — contrast will fail
+### Green — #2D341A
+- **Role:** Primary dark color (token: `ink` / `accentDeep`)
+- **Usage:** Body text, headings, navigation, footer backgrounds, dark sections, packaging line art
+- **Accessibility:** Use on Retro (#FEFFF8) backgrounds for maximum contrast
+- **Do not** use Green text on Matcha, Strawberry, or any mid-tone accent for small copy — contrast will fail
 
-### Cream — #FDF4EE
-- **Role:** Primary light / background color
-- **Usage:** Page backgrounds, card surfaces, form fields, email body backgrounds
-- **Notes:** This is the default canvas for all digital and print materials. Never use pure white (#FFFFFF) as a background — Cream keeps the brand warm and intentional
+### Retro — #FEFFF8
+- **Role:** Primary light / background color (token: `canvas` / `accentContrast`)
+- **Usage:** Page backgrounds, card surfaces, form fields, email body backgrounds, sachet/box front stock
+- **Notes:** This is the default canvas for all digital and print materials. It is a warm off-white — not pure white (#FFFFFF).
 
-### Lime — #C8FF3A
-- **Role:** Accent / Call-to-action
-- **Usage:** Primary buttons, CTAs, highlights, badges, hover states, waitlist button
-- **Pairing:** Always set on Navy (#1B1F3B) background for CTAs. Navy text on Lime buttons
-- **Do not** use Lime for body text or large text blocks — it is a signal color only
-- **Do not** use Lime on Cream backgrounds for text — insufficient contrast
+### Matcha — #7A881F
+- **Role:** Accent / brand green (token: `accent` / `accentMuted`)
+- **Usage:** Hero accents, Mé body, pattern rays, links, badges, highlights
+- **Pairing:** Contrast is only ~3.9:1 on Retro and ~3.3:1 on Green. For CTAs, render large/bold text **or invert** — Green button with Retro text is the primary CTA lockup.
+- **Do not** rely on Matcha for small body text on light or dark backgrounds — it is a signal/large-type color.
 
 ---
 
-## Accent Palette
+## Secondary Palette (Bolden)
 
-### Pink — #FFB7D1
-- **Role:** Accent / Strawberry flavor association
-- **Usage:** Strawberry product cards, flavor callouts, decorative gradients, secondary highlights
-- **Pairing:** Works well as a gradient endpoint with Lavender or Blush
+### Strawberry — #FF6DC7
+- **Role:** Strawberry flavor association (token: `flavorStrawberry`; Pantone 212 C)
+- **Usage:** Strawberry product cards, flavor pill tags, decorative gradients, accent blocks
+- **Pairing:** Works as a gradient endpoint with its blush tint (#FFE2F4) or Vanilla
 
-### Lavender — #D4B8E0
-- **Role:** Accent / Mushroom/functional association
-- **Usage:** Functional ingredient callouts, section dividers, decorative elements, icon backgrounds
-- **Pairing:** Pairs with Soft Lavender for subtle tonal depth
+### Vanilla — #E4CB9F
+- **Role:** Vanilla / "functional" flavor association (token: `flavorFunctional` / `accentWarmSoft`; Pantone 468 C)
+- **Usage:** Vanilla flavor pill tags, warm email art direction, sunburst rays on the vanilla pack
+- **Note:** Replaces the retired lavender association — the functional/vanilla SKU tint is now Vanilla beige.
 
-### Soft Lavender — #E8D5F0
-- **Role:** Light accent / background tint
-- **Usage:** Subtle section backgrounds, hover states on cards, secondary surface color
-- **Notes:** Use when Lavender feels too heavy — this is the "whisper" version
+### Mango — #FA9427
+- **Role:** Warm pop / future mango flavor (token: `accentWarm`; Pantone 2011 C)
+- **Usage:** Italic highlights, error/notice text, future mango flavor tag
 
-### Blush — #FFE0EC
-- **Role:** Light accent / background tint
-- **Usage:** Subtle section backgrounds, email header backgrounds, soft highlight zones
-- **Notes:** The lightest pink in the system — use for gentle warmth without visual weight
+### Purple — #E3D5F7
+- **Role:** Institutional pastel tint (token: `tintSoft`; Pantone 263 C)
+- **Usage:** Calm section backgrounds, box interiors, email shell background, hover surfaces
+- **Note:** This is the Bolden supporting pastel — it replaces the old "Soft Lavender".
+
+### Chocolate — #956A3C
+- **Role:** Future chocolate flavor tag (secondary; no Pantone given). Not in the digital token set yet.
 
 ---
 
@@ -56,50 +58,54 @@
 ### Backgrounds
 | Context | Color | Hex |
 |---|---|---|
-| Default page background | Cream | #FDF4EE |
-| Dark sections / footer | Navy | #1B1F3B |
-| Feature highlight sections | Soft Lavender | #E8D5F0 |
-| Strawberry product sections | Blush | #FFE0EC |
+| Default page background | Retro | #FEFFF8 |
+| Dark sections / footer | Green | #2D341A |
+| Feature highlight / calm sections | Purple | #E3D5F7 |
+| Strawberry product sections | Strawberry (or blush tint #FFE2F4) | #FF6DC7 |
+| Vanilla product sections | Vanilla | #E4CB9F |
 
 ### Text
 | Context | Color | Hex |
 |---|---|---|
-| Body text on light backgrounds | Navy | #1B1F3B |
-| Body text on dark backgrounds | Cream | #FDF4EE |
-| Links / interactive text | Navy | #1B1F3B |
-| Link hover | Lime (underline) | #C8FF3A |
+| Body text on light backgrounds | Green | #2D341A |
+| Body text on dark backgrounds | Retro | #FEFFF8 |
+| Links / interactive text | Green | #2D341A |
+| Link hover | Matcha | #7A881F |
 
 ### Buttons
 | Type | Background | Text | Border |
 |---|---|---|---|
-| Primary CTA | Lime #C8FF3A | Navy #1B1F3B | None |
-| Secondary | Transparent | Navy #1B1F3B | Navy 1px |
-| Ghost (dark bg) | Transparent | Cream #FDF4EE | Cream 1px |
+| Primary CTA | Green #2D341A | Retro #FEFFF8 | None |
+| Accent CTA (large/bold only) | Matcha #7A881F | Retro #FEFFF8 | None |
+| Secondary | Transparent | Green #2D341A | Green 1px |
+| Ghost (dark bg) | Transparent | Retro #FEFFF8 | Retro 1px |
 
 ### Gradients
-- **Dreamy gradient:** Soft Lavender (#E8D5F0) to Blush (#FFE0EC) — use for hero sections, cloud backgrounds
-- **Energy gradient:** Lime (#C8FF3A) to Cream (#FDF4EE) — use sparingly for emphasis
-- **Sunset gradient:** Pink (#FFB7D1) to Lavender (#D4B8E0) — decorative use only
+- **Calm gradient:** Purple (#E3D5F7) to Strawberry-blush (#FFE2F4) — hero sections, cloud backgrounds
+- **Warm gradient:** Vanilla (#E4CB9F) to Retro (#FEFFF8) — soft emphasis
+- **Flavor gradient:** Strawberry (#FF6DC7) to Vanilla (#E4CB9F) — decorative use only
 
 ---
 
 ## Typography
 
-### Instrument Serif
-- **Role:** Display / Headings
-- **Weight:** Regular (400), always set in *italic*
-- **Usage:** H1, H2, hero headlines, pull quotes, product names
-- **Style note:** The italic is the signature look — never use Instrument Serif upright in marketing materials
-- **Source:** Google Fonts (SIL Open Font License)
-- **Fallback:** Georgia, serif
+> **Bolden's specified faces are Tarnac + Tarnac Sans (Sharp Type).** They are not yet licensed/self-hosted — until purchase, the site ships the interim OFL stack below (Instrument Serif + Syne). See `Brand/bolden-identity-extraction.md` §c and `Assets/Fonts/font-licenses.md`.
 
-### Syne
-- **Role:** Body / UI
+### Instrument Serif (interim display)
+- **Role:** Display / Headings — fallback for Tarnac
+- **Weight:** Regular (400), typically set in *italic*
+- **Usage:** H1, H2, hero headlines, pull quotes, product names
+- **Source:** Google Fonts (SIL Open Font License) — **Fallback:** Georgia, serif
+
+### Syne (interim body)
+- **Role:** Body / UI — fallback for Tarnac Sans
 - **Weight:** Bold (700) for emphasis, Regular (400) for body, Medium (500) for navigation
 - **Usage:** Body copy, buttons, navigation, labels, form text, email body
-- **Style note:** Syne Bold carries the brand energy — use it for subheadings and CTAs
-- **Source:** Google Fonts (SIL Open Font License)
-- **Fallback:** system-ui, sans-serif
+- **Source:** Google Fonts (SIL Open Font License) — **Fallback:** system-ui, sans-serif
+
+### DM Mono (site-only stat role)
+- **Role:** Stats, ledger numbers, micro-labels (not a Bolden-specified face; site convention)
+- **Source:** Google Fonts (OFL)
 
 ### Type Scale (Web)
 | Element | Font | Weight | Size | Line Height |
@@ -117,21 +123,22 @@
 ## Quick Reference — Hex Values
 
 ```
-Navy:          #1B1F3B
-Cream:         #FDF4EE
-Lime:          #C8FF3A
-Pink:          #FFB7D1
-Lavender:      #D4B8E0
-Soft Lavender: #E8D5F0
-Blush:         #FFE0EC
+Green (ink):       #2D341A
+Retro (canvas):    #FEFFF8
+Matcha (accent):   #7A881F
+Strawberry:        #FF6DC7
+Vanilla:           #E4CB9F
+Mango:             #FA9427
+Purple (tint):     #E3D5F7
+Chocolate:         #956A3C
 ```
 
 ---
 
 ## Anti-Patterns
 
-- Never use pure black (#000000) — always use Navy
-- Never use pure white (#FFFFFF) — always use Cream
-- Never put Lime text on any background — Lime is for fills and accents only
-- Never pair Pink and Lime directly — they vibrate and create visual noise
+- Never use pure black (#000000) — always use Green (#2D341A)
+- Never use pure white (#FFFFFF) as a surface — always use Retro (#FEFFF8)
+- Never set small body text in Matcha — it is a large-type / fill signal color
+- Never put Green small-text on Matcha, Strawberry, or Vanilla — invert to Retro text or enlarge
 - Never use more than two accent colors in a single section

@@ -422,7 +422,7 @@ export async function POST(req: NextRequest) {
     try {
       if (!resend) throw new Error("Resend not configured");
       await resend.emails.send({
-        from: "Shroomé Waitlist <hello@drinkshroome.com>",
+        from: "shroomé Waitlist <hello@drinkshroome.com>",
         to: ["info@drinkshroome.com"],
         subject: phone ? `📱 Phone added: ${email}` : `🍵 New waitlist signup: ${email}`,
         html: `<p style="font-family:Arial,sans-serif;">${phone ? "Phone number added" : "New waitlist signup"} from <strong>${safeEmail}</strong></p>${phone ? `<p style="font-family:Arial,sans-serif;">Phone: <strong>${safePhone}</strong></p>` : ""}<p style="font-family:Arial,sans-serif;color:#666;">Time: ${new Date().toISOString()}</p><p style="font-family:Arial,sans-serif;color:#666;">Discount: ${phone ? "SHROOME30 — 30% off + free shipping (replaces the 20% code; best code wins)" : "SHROOME20 — 20% off + free shipping"}</p><p style="font-family:Arial,sans-serif;color:#666;">Source: ${escapeHtml(signupSource)}</p><p style="font-family:Arial,sans-serif;color:#666;">Referral code: ${referralCode}${isExistingProfile ? " (existing — reused)" : ""}</p>${referredBy ? `<p style="font-family:Arial,sans-serif;color:#666;">Referred by: ${escapeHtml(referredBy)}</p>` : ""}`,

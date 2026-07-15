@@ -122,7 +122,7 @@ Before section: no music or chaotic/comedic sound. After section: warm lo-fi or 
 **Style:** Vlog/journal format. Each "day" is a quick cut with the same making-the-latte sequence as a visual anchor. Text-heavy with VO.
 
 ### Hook (0-2s)
-Close-up of coffee mug being pushed aside. Shroome sachet slides into frame.
+Close-up of coffee mug being pushed aside. shroomé sachet slides into frame.
 
 **VO / Text:** "I replaced coffee with mushroom matcha for 30 days."
 
@@ -130,7 +130,7 @@ Close-up of coffee mug being pushed aside. Shroome sachet slides into frame.
 
 | Time | Day | Shot | VO / Text Overlay |
 |------|-----|------|-------------------|
-| 0-2s | — | Coffee mug pushed aside. Shroome sachet enters frame. | "I replaced coffee for 30 days." |
+| 0-2s | — | Coffee mug pushed aside. shroomé sachet enters frame. | "I replaced coffee for 30 days." |
 | 2-7s | Day 1 | Tearing sachet, pouring into milk. Skeptical face to camera. | "Day 1. I'm skeptical. This is weird." |
 | 7-12s | Day 7 | Same pour, more fluid now. Person working at desk mid-afternoon, alert. | "Day 7. No crash at 2pm for the first time in years." |
 | 12-18s | Day 14 | Making the latte. Cut to phone showing Oura Ring sleep score trending up. | "Day 14. Sleeping better. My Oura Ring confirms it." |

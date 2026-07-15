@@ -3,6 +3,7 @@ import { BRAND, svgHex } from "@/app/lib/brand";
 import { useState, useEffect, useRef, useCallback } from "react";
 import Image from "next/image";
 import MobileNav from "../MobileNav";
+import { MeOnMound } from "../Motif";
 import { ACCESS_LIST_COUNT } from "../lib/drop-config";
 
 declare global {
@@ -703,7 +704,11 @@ export default function ReferPage() {
               </>
             ) : (
               <div className="ref-panel">
-                <h2 className="ref-panel-title">you&apos;re in. now share it.</h2>
+                {/* Mé on the mound — she's the reward at 3 friends, so she delivers the good news */}
+                <div style={{ marginBottom: 20 }}>
+                  <MeOnMound flavor={BRAND.colors.flavorStrawberry} width={130} />
+                </div>
+                <h2 className="ref-panel-title">nice to matcha you. now share it.</h2>
                 <p className="ref-panel-sub">$5 for your 1st friend, $10 total at 3, $15 total at 5 &mdash; plus the M&eacute; keychain at 3, the under-eye gels ($18 value) at 5, and a shot at case 001.</p>
 
                 {referralCode && (
@@ -784,6 +789,19 @@ export default function ReferPage() {
         {/* ═══ 7. FINAL CTA ═══ */}
         <section className="ref-final">
           <div className="ref-final-inner">
+            <p
+              style={{
+                fontFamily: "var(--brand-font-mono)",
+                fontSize: 11,
+                fontWeight: 500,
+                letterSpacing: ".22em",
+                textTransform: "uppercase",
+                color: "rgba(var(--brand-ink-rgb),0.5)",
+                margin: "0 0 16px",
+              }}
+            >
+              ✦ get sheep done ✦
+            </p>
             <h2 className="ref-final-title">start referring. get your link.</h2>
             <p className="ref-final-sub">
               Fixed credits up to $15, applied automatically at checkout &mdash; and the top

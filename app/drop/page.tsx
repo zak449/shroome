@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import MobileNav from "../MobileNav";
 import DropAccessForm from "../lp/DropAccessForm";
+import { SunburstMound } from "../Motif";
+import { BRAND } from "../lib/brand";
 import {
   DROP_001,
   DROP_002,
@@ -217,7 +219,9 @@ export default function DropPage() {
         .dr-eyebrow{font-family:var(--brand-font-mono);font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;margin:0 0 18px}
 
         .dr-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;max-width:1120px;margin:0 auto}
-        .dr-card{background:#fff;border:1px solid rgba(var(--brand-ink-rgb),0.08);border-radius:12px;overflow:hidden;position:relative;display:flex;flex-direction:column}
+        .dr-card{background:#fff;border:1px solid rgba(var(--brand-ink-rgb),0.08);border-radius:12px;overflow:hidden;position:relative;display:flex;flex-direction:column;transition:transform .25s cubic-bezier(.23,1,.32,1),box-shadow .25s}
+        .dr-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(var(--brand-ink-rgb),0.10)}
+        @media(prefers-reduced-motion:reduce){.dr-card,.dr-card:hover{transform:none;transition:none}}
         .dr-card-img{position:relative;padding:28px 20px 12px;display:flex;justify-content:center;align-items:center;min-height:190px}
         .dr-card-img img{filter:grayscale(0.15) opacity(0.9)}
         .dr-soldout{position:absolute;top:16px;left:50%;transform:translateX(-50%) rotate(-6deg);background:var(--brand-ink);color:var(--brand-canvas);font-family:var(--brand-font-body);font-weight:800;font-size:0.82rem;letter-spacing:.16em;text-transform:uppercase;padding:8px 18px;z-index:2}
@@ -324,7 +328,11 @@ export default function DropPage() {
       </section>
 
       {/* ── PRODUCT GRID ── */}
-      <section style={{ background: "var(--brand-canvas)", padding: "80px 24px" }}>
+      <section style={{ background: "var(--brand-canvas)", padding: "56px 24px 80px" }}>
+        {/* Sunburst mound divider — the sachet-front motif, sun rising on the lineup */}
+        <div style={{ display: "flex", justifyContent: "center", marginBottom: 32 }} aria-hidden="true">
+          <SunburstMound flavor={BRAND.colors.flavorStrawberry} width={200} />
+        </div>
         <div style={{ maxWidth: 1120, margin: "0 auto 36px", textAlign: "center" }}>
           <h2 className="dr-h2">the lineup.</h2>
           <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.88rem", color: "rgba(var(--brand-ink-rgb),0.6)", marginTop: 10 }}>
@@ -379,6 +387,9 @@ export default function DropPage() {
           </p>
           <p style={{ fontFamily: "var(--brand-font-mono)", fontSize: "0.68rem", letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--brand-ink)", background: "rgba(var(--brand-accent-rgb),0.35)", display: "inline-block", padding: "6px 14px", marginTop: 16 }}>
             opens with drop 002
+          </p>
+          <p style={{ fontFamily: "var(--brand-font-display)", fontStyle: "italic", fontSize: "1.05rem", color: "rgba(var(--brand-ink-rgb),0.55)", marginTop: 18 }}>
+            matcha for mé? the answer is always.
           </p>
         </div>
         <div className="dr-table-wrap">
