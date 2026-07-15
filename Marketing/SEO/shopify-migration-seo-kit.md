@@ -40,7 +40,7 @@ Shopify destinations use the **real catalog handles** already defined in `Produc
 | `/faq` | `/pages/faq` (TBD-handle) | `FAQ — shroomé \| Café Energy. Home Address.` | "Frequently asked questions about shroomé — the world's first ready-to-pour ceremonial matcha latte. 2.5g matcha, 2g collagen, real mushrooms. Learn about ingredients, how to pour, caffeine content, and more." | self | **FAQPage (15 Questions in 4 categories)**, BreadcrumbList | shroomé faq, ready to pour matcha, liquid matcha, matcha with collagen, matcha alternative to coffee |
 | `/contact` | `/pages/contact` (TBD-handle) | `Contact — shroomé` | "Get in touch with shroomé. Questions about your order, press inquiries, or just want to say hi — we're real people who actually respond." | self | none | brand/navigational |
 | `/refer` | `/pages/refer` (TBD-handle) | `Give $5, Get $5 — Refer Friends to shroomé` | "Share shroomé with friends. They get $5 off their first box. You get $5 credit for every friend who orders. No limit. Unlock free boxes, merch, and VIP status." | self | none | referral/brand |
-| `/welcome` | `/pages/welcome` (TBD-handle — ad landing page; keep out of nav) | `shroomé — The Matcha Latte That Replaced Our Coffee` | "2.5g ceremonial matcha, functional mushroom extracts (70%+ beta-glucans), and grass-fed collagen peptides in one sachet. The coffee alternative that actually works. Join the waitlist for 20% off + free shipping." | self | none | coffee alternative, mushroom coffee, lion's mane, reishi, nootropics, adaptogenic drinks |
+| `/welcome` | `/pages/welcome` (TBD-handle — ad landing page; keep out of nav) | `shroomé — The Matcha Latte That Replaced Our Coffee` | "2.5g ceremonial matcha, 200mg organic lion's mane extract, and grass-fed collagen peptides in one sachet. The coffee alternative that actually works. Join the waitlist for 20% off + free shipping." | self | none | coffee alternative, mushroom coffee, lion's mane, reishi, nootropics, adaptogenic drinks |
 | `/terms` | `/policies/terms-of-service` (Shopify native policy page) | `Terms of Service — shroomé \| Café Energy. Home Address.` | "Terms of Service for drinkshroome.com, operated by ZSQUARED INC. Read our terms before using the site." | self | none | — |
 | `/privacy` | `/policies/privacy-policy` (Shopify native) | `Privacy Policy — shroomé \| Café Energy. Home Address.` | "How shroomé collects, uses, and protects your information. Read our full privacy policy." | self | none | — |
 | `/unsubscribe` | `/pages/unsubscribe` (TBD-handle) or Klaviyo preference page | (none — noindex today via robots disallow) | — | — | none | keep **noindexed** (`seo.hidden` metafield = 1) |
@@ -76,7 +76,7 @@ Second Shopify blog with handle **`recipes`**. Recipe schema is NOT emitted by D
 
 | Schema | Dawn native? | Gap vs. our current markup |
 |---|---|---|
-| Product | Yes (basic) | Dawn emits name/image/sku/offer price + availability only. **Missing:** `aggregateRating` (5★/12·8·6 reviews), `review` bodies, `additionalProperty` (Caffeine ~60mg, Beta-Glucan 70%+, Ceremonial grade, Grass-fed collagen, 12 servings, 15-sec prep), `manufacturer`/`seller` = **ZSQUARED INC**, `mpn`, `hasMerchantReturnPolicy` (30-day free return by mail), `shippingDetails` (free US, 1–3d handling, 3–7d transit), `priceValidUntil` 2027-12-31, PreOrder availability |
+| Product | Yes (basic) | Dawn emits name/image/sku/offer price + availability only. **Missing:** `aggregateRating` (5★/12·8·6 reviews), `review` bodies, `additionalProperty` (Caffeine ~60mg, Lion's Mane 200mg, Ceremonial grade, Grass-fed collagen, 12 servings, 15-sec prep) — do NOT populate a beta-glucan % until supplier CoA, `manufacturer`/`seller` = **ZSQUARED INC**, `mpn`, `hasMerchantReturnPolicy` (30-day free return by mail), `shippingDetails` (free US, 1–3d handling, 3–7d transit), `priceValidUntil` 2027-12-31, PreOrder availability |
 | Organization | Partial (name/logo/url only) | Missing: legal name **ZSQUARED INC**, brand shroomé, alternateName list, founder Zachary Kaufman, foundingDate 2025, CA/US address, `sameAs` (tiktok/instagram/youtube @drinkshroome), contactPoint hello@drinkshroome.com, knowsAbout list |
 | WebSite | Yes | acceptable; our alternateName list is a nice-to-have via the org snippet |
 | BreadcrumbList | Yes (Dawn 9+) | verify 3-level article breadcrumbs render; else extend snippet |
@@ -94,7 +94,7 @@ All custom snippets in `scripts/shopify-theme-snippets/` read these metafields �
 | `custom.rating_value` | decimal | `5` | json-ld-product |
 | `custom.rating_count` | integer | `8` (vanilla) / `6` (strawberry) / `12` (variety) | json-ld-product |
 | `custom.mpn` | single line text | `SHROOME-VAN-V1` | json-ld-product |
-| `custom.beta_glucan` | single line text | `70%+ (1,3 and 1,6 linked)` | json-ld-product |
+| `custom.beta_glucan` | single line text | LEAVE BLANK until supplier CoA (do not seed `70%+` — unsubstantiated per 2026-07 claims audit) | json-ld-product |
 | `custom.caffeine` | single line text | `~60mg per sachet` | json-ld-product |
 | `custom.matcha_grade` | single line text | `Ceremonial (first harvest, shade-grown)` | json-ld-product |
 | `custom.collagen_source` | single line text | `Grass-fed bovine, hydrolyzed peptides` | json-ld-product |

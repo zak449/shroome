@@ -18,7 +18,7 @@ The goal is not to go viral — it is to build a community of informed, loyal cu
 **Purpose:** Teach people what functional ingredients actually do and why shroome's formulation matters.
 
 **Key Topics:**
-- Beta-glucans: what they are, why 70%+ concentration is rare, how they support immune function
+- Beta-glucans: what they are, why fruiting-body extraction matters, how they support immune function (educational category content — do not attach an unsubstantiated shroomé % claim)
 - Mushroom extracts: the difference between mycelium-on-grain and real fruiting body extracts
 - Ceremonial matcha: first-harvest, shade-grown, why grade matters for taste and caffeine quality
 - Collagen peptides: grass-fed sourcing, bioavailability, why 2g is a meaningful daily dose

@@ -222,7 +222,7 @@ Merge tags are Klaviyo syntax. All body copy is final; layout blocks in [bracket
 
 > a status update, because you're on the list and the list gets status updates:
 >
-> **☑ sachets — in production.** 2.5g ceremonial matcha, 2g grass-fed collagen, 200mg lion's mane at ≥70% beta-glucan. same formula that sold out DROP 001. we didn't touch it. you don't touch a thing like that.
+> **☑ sachets — in production.** 2.5g ceremonial matcha, 2g grass-fed collagen, 200mg organic lion's mane fruiting-body extract. same formula that sold out DROP 001. we didn't touch it. you don't touch a thing like that.
 > **☑ strawberry + vanilla — both flavors.** {% if person|lookup:'flavor_pref' %}({{ person|lookup:'flavor_pref' }} gang — noted. we know what you're here for.){% endif %}
 > **☑ the date — set.** internally. we know it. you don't. yet.
 >

@@ -121,14 +121,14 @@ The pour/swirl is to shroomé what the pull-tab hiss is to soda: the ownable sen
 
 **Palette application:** Green #2D341A leads (the only dark-mode segment), Retro type, Matcha #7A881F as data-highlighter strokes under numbers, Purple for the ingredient/functional band. Feels like a beautifully typeset spec sheet, not a gamer aesthetic.
 
-**Typography feel:** Syne 700 finally leads — tabular, confident, engineered; big numerals (200mg / ≥70% / 2.5g) as the visual heroes. Instrument Serif italic appears once per piece as the human counterpoint. Monospaced-feeling tables, hairline Green rules.
+**Typography feel:** Syne 700 finally leads — tabular, confident, engineered; big numerals (200mg / 2.5g / 2g) as the visual heroes. Instrument Serif italic appears once per piece as the human counterpoint. Monospaced-feeling tables, hairline Green rules.
 
 **Set & props:** The focused desk at golden hour — matte laptop (logo taped), mechanical keyboard, paper notebook with real handwriting, the sachet propped against a "shroomé" glass. Label macro shots are a prop category of their own: the back of the sachet lit like product jewelry. No RGB, no energy-drink chaos, no brain imagery.
 
 **Motion language:** Precise and metronomic. Hard cuts on the beat, insert-shot rhythm (label / pour / keystroke / label), one slow 180° orbit around the sachet as the "spec reveal." Timers and counters animate with tabular digits — the drop countdown belongs to this world natively.
 
 **Reference-style descriptions:**
-1. *The label as hero* — macro rack-focus across the sachet's back panel, beta-glucan line snapping sharp, Matcha underline animating beneath "≥70%"; lit like a watch ad, read like a datasheet.
+1. *The label as hero* — macro rack-focus across the sachet's back panel, dose line snapping sharp, Matcha underline animating beneath "200mg lion’s mane"; lit like a watch ad, read like a datasheet. (Do NOT hero a beta-glucan % — unsubstantiated pending supplier CoA.)
 2. *Deep-work timelapse* — locked-off desk from first pour to closed laptop, light moving across the wall, the glass emptying in steps; caption: "one pour. one block."
 3. *Receipts, beautifully* — lab report pages fanned on Green felt beside the sachet, overhead, raking warm light; transparency styled as luxury print collateral.
 

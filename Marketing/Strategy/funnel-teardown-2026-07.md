@@ -85,7 +85,7 @@ Legend: effort S/M/L · **NOW** = buildable on the Next.js waitlist site today �
 - **Effort:** S–M · **NOW** (everything downstream is already specced in engagement-capture-flows.md; this is the missing artifact).
 
 ### ★ BUILD TODAY #2 — /drop → PDP-grade sold-out page
-- **What:** upgrade /drop from poster to salesperson: (a) ingredient **evidence accordion** per active (matcha grade, collagen peptide science, ≥70% beta-glucan fruiting-body explainer with links to the existing SEO blog posts + a COA/third-party-testing block), (b) **comparison table** — "shroomé vs matcha powder vs café order vs mushroom coffee" on prep time, matcha dose, disclosed doses, $/serving, (c) sticky bottom CTA bar ("drop 002 — get access") on scroll, (d) drop-001 sell-through fact as proof module.
+- **What:** upgrade /drop from poster to salesperson: (a) ingredient **evidence accordion** per active (matcha grade, collagen peptide science, lion's mane fruiting-body-vs-mycelium explainer with links to the existing SEO blog posts + a COA/third-party-testing block; publish the beta-glucan % only once the supplier CoA substantiates it), (b) **comparison table** — "shroomé vs matcha powder vs café order vs mushroom coffee" on prep time, matcha dose, disclosed doses, $/serving, (c) sticky bottom CTA bar ("drop 002 — get access") on scroll, (d) drop-001 sell-through fact as proof module.
 - **Steals:** Magna's education-backed PDP + Seed's label-as-spec-sheet; sticky ATC pattern.
 - **Impact:** the page every ad, email, and referral ultimately lands on starts converting skeptics, not just believers; comparison table is also the ad-creative source of truth.
 - **Effort:** M · **NOW** (content exists in segment docs + SEO posts; pure frontend).

@@ -15,7 +15,7 @@ The xlsx carries a single all-in figure: **$0.75/sachet** (`Assumptions!B5`), CO
 | Line Item | Lean | Base | Premium | Notes |
 |---|---|---|---|---|
 | Ceremonial matcha (2.5g) | $0.200 | $0.275 | $0.375 | [BM] $80 / $110 / $150 per kg; ~400 sachets/kg |
-| Mushroom extract, 200mg (8:1, ≥70% BG) | $0.012 | $0.018 | $0.024 | [BM] $60 / $90 / $120 per kg fruiting-body hot-water extract |
+| Lion's mane extract, 200mg (8:1 fruiting-body) | $0.012 | $0.018 | $0.024 | [BM] $60 / $90 / $120 per kg fruiting-body hot-water extract. Do not cite a beta-glucan % until supplier CoA. |
 | Collagen peptides (2g, grass-fed) | $0.030 | $0.040 | $0.050 | [BM] $15 / $20 / $25 per kg |
 | Flavoring (vanilla/strawberry, natural) | $0.020 | $0.040 | $0.060 | [BM] incl. natural sweetener system |
 | Sachet packaging (printed foil stick-pack) | $0.060 | $0.090 | $0.130 | [BM] at 25k / 15k / 10k MOQ; xlsx MOQ = 15,000/flavor (`Assumptions!B11`) |

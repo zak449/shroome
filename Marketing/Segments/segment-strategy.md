@@ -18,7 +18,7 @@ Five segments. Five landing pages. One product. Every paid social dollar maps to
 - **The honesty rule (one line, memorize it): scarcity claims must be true — drop 001 genuinely sold out, drop sizes are real production runs, countdowns run to real dates only.**
 - The goal is impulse-buy energy through a single low-friction CTA and zero browsing detours — urgency from facts, never from theater.
 
-**Product facts every segment shares (memorize):** 1oz/30ml ready-to-pour liquid sachet · 2.5g ceremonial matcha · 2g grass-fed collagen peptides · 200mg organic lion's mane fruiting-body extract at ≥70% beta-glucans · ~60mg caffeine (+ naturally occurring L-theanine) · no powder, no whisk, no blender · flavors: vanilla & strawberry · the move: pour / swirl / glow.
+**Product facts every segment shares (memorize):** 1oz/30ml ready-to-pour liquid sachet · 2.5g ceremonial matcha · 2g grass-fed collagen peptides · 200mg organic lion's mane fruiting-body extract · ~60mg caffeine (+ naturally occurring L-theanine) · sweetened with organic agave (8g added sugars) · no powder, no whisk, no blender · flavors: vanilla & strawberry · the move: pour / swirl / glow. **Do NOT state a beta-glucan % or "no added sugar"/"no preservatives" — see claims audit.**
 
 **Compliance baseline for ALL segments:** structure/function claims only, FDA disclaimer wherever claims appear, no disease/drug claims, no "clinically proven," no competitor names. Full rules: `Product/Compliance & Claims/claims-guidelines.md`.
 
@@ -167,7 +167,7 @@ Steady, calm alertness from wake-up through the afternoon — no crash, no jitte
 |---|---|
 | "60mg won't be enough caffeine for me" | ~60mg (about half an espresso shot) plus matcha's naturally occurring L-theanine — smoother absorption curve, sustained not spiked; many switchers taper with one coffee + one shroomé |
 | "Matcha tastes like lawn" | ceremonial grade is the difference — smooth and naturally sweet, in vanilla or strawberry |
-| "Mushroom drinks are a scam" | doses printed on every sachet: 200mg lion's mane fruiting body, ≥70% beta-glucans, third-party tested |
+| "Mushroom drinks are a scam" | doses printed on every sachet: 200mg organic lion's mane fruiting-body extract, third-party tested |
 
 ### Key message hierarchy
 1. Break up with the crash — not with caffeine (60mg + L-theanine = calm, steady energy)
@@ -212,17 +212,17 @@ YouTube Shorts + pre-roll (primary for trust-building), TikTok (supplement-tok, 
 - "Proprietary blend" is a red flag they're tired of seeing
 
 ### Dream outcome
-A single, honest, spec-sheet-clean drink that anchors a locked-in morning work block: lion's mane at a disclosed dose and verified beta-glucan content, plus matcha's caffeine + L-theanine — with zero prep friction breaking flow.
+A single, honest, spec-sheet-clean drink that anchors a locked-in morning work block: lion's mane fruiting-body extract at a disclosed 200mg dose, plus matcha's caffeine + L-theanine — with zero prep friction breaking flow.
 
 ### Objections → answers
 | Objection | Answer |
 |---|---|
-| "200mg lion's mane is a small dose" | 200mg of ≥70% beta-glucan fruiting-body extract ≈ more actives than gram-level doses of 15–30% mycelium products — concentration beats mass; third-party verified |
-| "Is this fruiting body or mycelium?" | fruiting body, hot-water extracted, ≥70% beta-glucans, printed on the label |
+| "200mg lion's mane is a small dose" | 200mg of concentrated fruiting-body extract — real mushroom material, not the grain-heavy filler in mycelium-on-grain products; concentration beats mass. (Beta-glucan % pending supplier CoA — do not quote a number.) |
+| "Is this fruiting body or mycelium?" | fruiting body, hot-water extracted, printed on the label |
 | "Why is there collagen in my nootropic" | 2g protein-adjacent peptides, neutral in taste; skip the debate — everything is disclosed, nothing is filler |
 
 ### Key message hierarchy
-1. Read the label: 200mg lion's mane fruiting body, ≥70% beta-glucans, third-party tested (lead with the spec)
+1. Read the label: 200mg organic lion's mane fruiting-body extract, third-party tested (lead with the spec; beta-glucan % pending CoA — do not quote)
 2. Caffeine + L-theanine (~60mg + naturally occurring theanine): supports sustained focus
 3. No proprietary blends, no fairy-dusting — every dose disclosed
 4. 15-second prep = zero friction before deep work
@@ -232,7 +232,7 @@ A single, honest, spec-sheet-clean drink that anchors a locked-in morning work b
 1. "your lion's mane gummy is mostly rice. here's the number they don't print." (label exposé)
 2. "the 3 numbers to check before buying any mushroom product" (checklist format — mirrors TikTok Script 5)
 3. "I put my morning stack on one label" (pill bottles swept aside, one sachet remains)
-4. "≥70% beta-glucans. most brands won't even tell you theirs." (spec-sheet aesthetic)
+4. "fruiting body, not grain filler. the source most brands won't print." (spec-sheet aesthetic)
 5. "my 4-hour deep work block starts with a 15-second pour" (desk POV timelapse)
 6. "fruiting body vs mycelium, explained in one pour" (green-screen + b-roll)
 7. "we third-party test so you don't have to trust us" (receipts energy, lab report b-roll)
@@ -240,7 +240,8 @@ A single, honest, spec-sheet-clean drink that anchors a locked-in morning work b
 9. **drop hook:** "drop 001: sold out. same energy as a limited keyboard groupbuy, except it supports sustained focus" (niche-culture wink)
 
 ### Compliant claim language
-- **DO:** "supports sustained focus" · "supports immune function" (beta-glucans) · "200mg lion's mane fruiting-body extract" · "≥70% beta-glucan content, third-party tested" · "higher beta-glucan concentration than typical mushroom supplements" (approved comparative)
+- **DO:** "supports sustained focus" · "supports immune function" · "200mg organic lion's mane fruiting-body extract" · "fruiting body, hot-water extracted, third-party tested"
+- **DON'T (claims audit hold):** any beta-glucan percentage — "≥70% beta-glucans", "70%+ beta-glucan content", "200mg beta-glucans", "standardized to X% beta-glucans", or beta-glucan comparative claims — until the Immulink CoA substantiates it
 - **DON'T:** "boosts brainpower / memory / neurogenesis" · "NGF" mechanism claims · "prevents cognitive decline" (disease claim) · "better than Adderall" or any drug comparison (hard prohibition) · "clinically proven nootropic" · naming competitor brands in label comparisons
 - This audience rewards precision — compliant language IS the flex here ("supports sustained focus. that's the claim. here's the dose."). FDA disclaimer on LP + claim-bearing captions.
 

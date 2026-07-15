@@ -171,7 +171,7 @@ When choosing a mushroom supplement, the science points clearly in one direction
 
 The difference between a quality fruiting body extract and a mycelium on grain product is not subtle — it can be the difference between 60 percent beta-glucans and 6 percent. That is a tenfold gap, and it matters.
 
-At [shroomé](https://drinkshroome.com), this is precisely why we use fruiting body mushroom extracts standardized to 70%+ beta-glucan content. When you combine that with ceremonial-grade matcha and collagen peptides, every ingredient earns its place based on verified potency — not label decoration.
+At [shroomé](https://drinkshroome.com), this is precisely why we use organic lion's mane *fruiting-body* extract rather than mycelium-on-grain. When you combine that with ceremonial-grade matcha and collagen peptides, every ingredient earns its place based on a source and form we can stand behind — not label decoration. (We'll publish our extract's third-party beta-glucan assay here once the supplier CoA is finalized.)
 
 Your supplement should contain what it claims to contain. Read the label. Look for the numbers. And choose accordingly.
 

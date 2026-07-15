@@ -38,7 +38,7 @@
 ## 3 paid-ad candidates (spark ads)
 
 1. **day 2 — ASMR "the sound the waitlist is waiting for."** the swirl is the brand's single most thumb-stopping asset, the scarcity framing is native (not ad-coded), and pure-sensory creative has the broadest cold-audience appeal. run weeks 1–2 as top-of-funnel reach; optimize for 6-second view-through.
-2. **day 8 — greenscreen rant "your mushroom latte is mostly rice starch."** the highest-shareability concept of the month: an industry-exposé hook with our differentiators (fruiting body, ≥70% beta-glucan, doses on the label) as the payoff. converts skeptical coffee-quitters and focus buyers who need a *reason*, not a vibe. run weeks 2–3; optimize for shares + profile visits.
+2. **day 8 — greenscreen rant "your mushroom latte is mostly rice starch."** the highest-shareability concept of the month: an industry-exposé hook with our differentiators (fruiting body, 200mg lion's mane, doses on the label) as the payoff. converts skeptical coffee-quitters and focus buyers who need a *reason*, not a vibe. run weeks 2–3; optimize for shares + profile visits.
 3. **day 24 — POV "the restock email hits your inbox first."** the direct-response closer: it dramatizes the exact reward of joining the waitlist. run week 4 only, retargeting engagers of days 2 and 8; optimize for link clicks to drinkshroome.com.
 
 ---
@@ -196,13 +196,13 @@
 1. (0–1.5s) greenscreen hook over rice image. deadpan.
 2. (1.5–7s) greenscreen over diagram text "mycelium grown on grain." VO: "most mushroom products use mycelium grown on grain — you're largely drinking the grain it grew on."
 3. (7–13s) cut to hands holding the sachet. VO: "shroomé uses dual-extracted lion's mane fruiting body — the actual mushroom — standardized to seventy percent or more beta-glucans."
-4. (13–18s) macro of back label, finger under "≥70% beta-glucan." VO: "beta-glucans are the compounds studied for immune support. if a brand won't print the percentage, ask why."
+4. (13–18s) macro of back label, finger under "200mg lion's mane · fruiting body." VO: "beta-glucans are the compounds studied for immune support — the source and form are what to check. mycelium on grain is mostly grain."
 5. (18–23s) the pour as proof-of-life: tear, pour, swirl. VO: "and it's in a matcha latte, not a chalky brown mystery."
 6. (23–26s) direct to camera: "read your labels. even ours." end card.
 
 - **sound:** exposé-editorial beat — restrained tension, one bass hit on "rice," resolves clean at the pour.
-- **on-screen text:** (0s) hook · (4s) "mycelium on grain = mostly grain" · (9s) "fruiting body = the actual mushroom" · (15s) "≥70% beta-glucans. printed on the label." · (24s) "shroomé — waitlist open"
-- **caption:** the mushroom industry has a rice problem. we said what we said. beta-glucans support immune function — and ours are on the label at ≥70%. *these statements have not been evaluated by the fda. this product is not intended to diagnose, treat, cure, or prevent any disease.* #lionsmane #betaglucans #mushroomtok #matcha #supplementtok #readthelabel
+- **on-screen text:** (0s) hook · (4s) "mycelium on grain = mostly grain" · (9s) "fruiting body = the actual mushroom" · (15s) "fruiting body, not grain. printed on the label." · (24s) "shroomé — waitlist open"
+- **caption:** the mushroom industry has a rice problem. we said what we said. beta-glucans support immune function — and ours come from real fruiting-body extract, printed on the label. *these statements have not been evaluated by the fda. this product is not intended to diagnose, treat, cure, or prevent any disease.* #lionsmane #betaglucans #mushroomtok #matcha #supplementtok #readthelabel
 - **CTA:** the next pour drops soon → drinkshroome.com
 
 ---
@@ -215,7 +215,7 @@
 1. (0–1.5s) open mid-pour (skip the setup — start at the good part). hook text.
 2. (1.5–6s) swirl developing. text overlay pins appear one at a time on the glass: "2.5g ceremonial matcha."
 3. (6–10s) continued swirl, second pin: "2g grass-fed collagen."
-4. (10–14s) third pin: "200mg lion's mane · ≥70% beta-glucan."
+4. (10–14s) third pin: "200mg lion's mane · fruiting body."
 5. (14–18s) fourth pin: "~60mg caffeine. about ⅔ of a small coffee."
 6. (18–22s) the glass swirled by hand, color resolves. final text: "that's the whole label."
 7. (22–25s) sip + end card.
@@ -272,7 +272,7 @@
 **script / shot list**
 1. (0–1.5s) hairnet hook at the facility door.
 2. (1.5–7s) walking shot into the co-packer floor (with permission, no proprietary equipment close-ups). VO: "this is our co-packer — a small food-grade facility, and the reason the restock takes as long as it does."
-3. (7–13s) b-roll: totes of matcha concentrate, QC clipboard, batch labels. VO: "every batch gets tested — identity, purity, beta-glucan content. the boring paperwork is the whole point."
+3. (7–13s) b-roll: totes of matcha concentrate, QC clipboard, batch labels. VO: "every batch gets tested — identity, purity, potency. the boring paperwork is the whole point."
 4. (13–18s) the filling line: sachets being filled with dark green liquid and sealed (the money shot). VO: "one fluid ounce each. watch them get born."
 5. (18–23s) founder holding a fresh-sealed sachet still warm from the sealer, grinning like a dad.
 6. (23–27s) pallet shot: "this pallet is spoken for. the waitlist did that." end card.
@@ -391,14 +391,14 @@
 **script / shot list**
 1. (0–1.5s) the sachet-between-fingers hook.
 2. (1.5–7s) simple prop demo: two clear jars — one mostly filled with rice, one with a small amount of dark extract. VO: "quick recap: lots of products count the grain their mushroom grew on. we don't. ours is fruiting-body extract only."
-3. (7–13s) label macro. VO: "200 milligrams, standardized to at least seventy percent beta-glucans — so about 140mg of the polysaccharides the research actually looks at. beta-glucans support immune function."
+3. (7–13s) label macro. VO: "200 milligrams of organic lion's mane fruiting-body extract — the actual mushroom, not the grain it grows on. beta-glucans support immune function."
 4. (13–18s) VO over the pour + swirl: "and the reason we can put it in something this pretty is that it's an extract, not a powdery mushroom dust situation."
 5. (18–23s) direct to camera: "small number, honest number. i'd rather print 200 real milligrams than 2,000 fake ones."
 6. (23–26s) end card.
 
 - **sound:** smart-friend explainer archetype — light keys, curious energy, zero corporate sheen.
-- **on-screen text:** (0s) hook · (8s) "200mg lion's mane extract" · (10s) "≥70% beta-glucans" · (12s) "supports immune function*" · (24s) "*see caption — shroomé"
-- **caption:** the number on the label, explained like a friend would. beta-glucans support immune function — ours are ≥70% and printed right there. *these statements have not been evaluated by the fda. this product is not intended to diagnose, treat, cure, or prevent any disease.* #lionsmane #betaglucans #mushroomtok #supplementtok #matcha #focustok
+- **on-screen text:** (0s) hook · (8s) "200mg lion's mane extract" · (10s) "fruiting body, not grain" · (12s) "supports immune function*" · (24s) "*see caption — shroomé"
+- **caption:** the number on the label, explained like a friend would. beta-glucans support immune function — ours come from real fruiting-body extract, printed right there. *these statements have not been evaluated by the fda. this product is not intended to diagnose, treat, cure, or prevent any disease.* #lionsmane #betaglucans #mushroomtok #supplementtok #matcha #focustok
 - **CTA:** waitlist at drinkshroome.com — the next pour drops soon.
 
 ---

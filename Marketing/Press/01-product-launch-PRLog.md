@@ -9,9 +9,9 @@
 
 ## ZSQUARED INC Introduces shroomé: A Ready-to-Pour Ceremonial Matcha Latte with Functional Mushroom Extracts and Collagen
 
-*New single-serve sachet combines three functional ingredients — ceremonial matcha, organic mushroom extracts standardized to 70%+ beta-glucans, and grass-fed collagen — designed to support sustained energy without the crash*
+*New single-serve sachet combines three functional ingredients — ceremonial matcha, organic lion's mane extract, and grass-fed collagen — designed to support sustained energy without the crash*
 
-**LOS ANGELES, CA — March 2026** — ZSQUARED INC today announced shroomé (drinkshroome.com), a functional beverage brand launching a first-of-its-kind ready-to-pour ceremonial matcha latte. Each single-serve sachet delivers 2g of first-harvest ceremonial matcha, 200mg of organic mushroom extracts with verified 70%+ beta-glucan concentration, and 2g of grass-fed collagen peptides — ready in 15 seconds with just hot water.
+**LOS ANGELES, CA — March 2026** — ZSQUARED INC today announced shroomé (drinkshroome.com), a functional beverage brand launching a first-of-its-kind ready-to-pour ceremonial matcha latte. Each single-serve liquid sachet delivers 2.5g of first-harvest ceremonial matcha, 200mg of organic lion's mane extract, and 2g of grass-fed collagen peptides — pour it over the milk of your choice, ready in 15 seconds.
 
 The product is designed for health-conscious consumers who currently spend $5-7 per day at cafes but want a cleaner, more functional alternative they can make at home. shroomé launches in two flavors — Vanilla and Strawberry — available in 12-sachet boxes.
 
@@ -21,9 +21,9 @@ Unlike traditional matcha powders that require whisks, frothers, or elaborate pr
 
 "We are not a supplement company that happens to taste okay. We are a drink brand that happens to be functional," said Zachary Kaufman, founder and CEO of ZSQUARED INC.
 
-**The Beta-Glucan Difference**
+**The Fruiting-Body Difference**
 
-shroomé's mushroom extract component uses fruiting body extraction — not mycelium-on-grain — standardized to 70%+ beta-glucan content through third-party testing. Industry standard mushroom supplements typically contain 15-30% beta-glucans. Beta-glucans are naturally occurring polysaccharides researched for their role in supporting immune function.
+shroomé's lion's mane component uses fruiting-body extraction — the actual mushroom, not mycelium grown on grain. Fruiting-body extracts deliver real mushroom material rather than the starch filler common in mycelium-on-grain products. Beta-glucans are naturally occurring polysaccharides researched for their role in supporting immune function; shroomé will publish its extract's third-party beta-glucan assay once the supplier Certificate of Analysis is finalized.
 
 **Product Highlights:**
 

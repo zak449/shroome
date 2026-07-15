@@ -58,8 +58,8 @@ This is not a marginal difference — it is a fundamentally different product ca
 | SHR-VAN-01 | Vanilla | 2.5g ceremonial matcha, 200mg mushroom extract, 2g collagen |
 | SHR-STR-01 | Strawberry | 2.5g ceremonial matcha, 200mg mushroom extract, 2g collagen |
 
-**Format:** Single-serve sachets
-**Preparation:** Add 6-8oz hot water, stir or shake
+**Format:** Single-serve ready-to-pour liquid sachets (30ml / 1oz)
+**Preparation:** Tear, pour the liquid concentrate over 6-8oz of milk (hot or iced), swirl
 
 ---
 
@@ -111,7 +111,7 @@ This is not a marginal difference — it is a fundamentally different product ca
 | Category | How shroome differs |
 |---|---|
 | Matcha brands (Ippodo, Jade Leaf) | We add functional mushroom + collagen; single-serve convenience |
-| Mushroom brands (Four Sigmatic, MUD\WTR) | Higher beta-glucan content (70%+ vs 15-30%); real ceremonial matcha |
+| Mushroom brands (Four Sigmatic, MUD\WTR) | Fruiting-body lion's mane extract (not mycelium-on-grain); real ceremonial matcha |
 | Collagen brands (Vital Proteins) | Combined with matcha + mushroom for a complete morning drink |
 | Energy drinks (Celsius, Alani Nu) | Natural caffeine from matcha; no artificial ingredients; functional adaptogens |
 

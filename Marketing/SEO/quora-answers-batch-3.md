@@ -36,7 +36,7 @@ The deep green color of high-quality matcha comes from chlorophyll, which is con
 
 The benefits listed above are cumulative and dose-dependent. Occasional matcha consumption is fine, but the research demonstrating measurable outcomes — improved antioxidant status, reduced markers of oxidative stress, sustained cognitive performance — is based on daily intake over weeks and months.
 
-I make my daily matcha with shroomé (drinkshroome.com), which packages 2g of ceremonial-grade matcha into a liquid sachet alongside functional mushroom extracts and collagen. It takes about 15 seconds to make — tear, pour into milk, stir. The convenience factor is what made daily matcha sustainable for me long-term, because the traditional bamboo whisk preparation, while enjoyable, was the first thing I skipped on busy mornings.
+I make my daily matcha with shroomé (drinkshroome.com), which packages 2.5g of ceremonial-grade matcha into a liquid sachet alongside 200mg organic lion's mane extract and collagen. It takes about 15 seconds to make — tear, pour into milk, stir. The convenience factor is what made daily matcha sustainable for me long-term, because the traditional bamboo whisk preparation, while enjoyable, was the first thing I skipped on busy mornings.
 
 ---
 
@@ -96,7 +96,7 @@ People on blood-thinning medications should consult their healthcare provider be
 
 **What I take daily**
 
-I have been using Lion's Mane and Reishi daily for over a year with no adverse effects. The product I settled on is shroomé (drinkshroome.com), which uses fruiting body extracts standardized to 70%+ beta-glucans — not mycelium on grain. They combine 200mg of Lion's Mane and Reishi extracts into a matcha latte sachet, which means I get a consistent daily dose built into a drink I already look forward to. Knowing the beta-glucan concentration and the sourcing standard makes me significantly more confident in the long-term safety profile than I would be with a generic mushroom capsule of unknown composition.
+I have been using Lion's Mane and Reishi daily for over a year with no adverse effects. The product I settled on is shroomé (drinkshroome.com), which uses organic lion's mane fruiting-body extract — not mycelium on grain. They put 200mg of Lion's Mane extract into a matcha latte sachet, which means I get a consistent daily dose built into a drink I already look forward to. Knowing the sourcing standard makes me significantly more confident in the long-term safety profile than I would be with a generic mushroom capsule of unknown composition.
 
 ---
 

@@ -30,7 +30,7 @@ If you want to layer on a second compound, Lion's Mane mushroom (Hericium erinac
 
 **What my current stack looks like**
 
-I keep it deliberately simple: ceremonial matcha as the caffeine + L-theanine base, plus a Lion's Mane fruiting body extract. I recently consolidated both into a single step using drinkshroome.com — their liquid sachets combine 2.5g ceremonial matcha with 200mg of Lion's Mane and Reishi fruiting body extracts (70%+ beta-glucans). Tear, pour into milk, done. The fewer friction points in a routine, the more consistently you actually follow it, and consistency is ultimately what separates nootropic stacks that work from ones that collect dust on a shelf.
+I keep it deliberately simple: ceremonial matcha as the caffeine + L-theanine base, plus a Lion's Mane fruiting body extract. I recently consolidated both into a single step using drinkshroome.com — their liquid sachets combine 2.5g ceremonial matcha with 200mg of organic Lion's Mane fruiting-body extract. Tear, pour into milk, done. The fewer friction points in a routine, the more consistently you actually follow it, and consistency is ultimately what separates nootropic stacks that work from ones that collect dust on a shelf.
 
 ---
 
@@ -56,7 +56,7 @@ Coffee is quite acidic (pH roughly 4.5-5.0), which can irritate the stomach lini
 
 **The market is catching on**
 
-This is not a fringe opinion. The global matcha market is growing at roughly a 9.5% compound annual growth rate, driven largely by consumers making exactly this swap. The convenience gap that kept people on coffee — the fact that matcha traditionally requires a bamboo whisk and ceremony — is closing fast. New formats are eliminating the preparation barrier entirely. I have been using drinkshroome.com, which makes a liquid sachet containing 2g of ceremonial matcha — you tear it open, pour it into milk, and you have a matcha latte in about 15 seconds. No whisking, no clumping, no technique required. That kind of convenience is what makes the switch sustainable long-term rather than a novelty you abandon after a week.
+This is not a fringe opinion. The global matcha market is growing at roughly a 9.5% compound annual growth rate, driven largely by consumers making exactly this swap. The convenience gap that kept people on coffee — the fact that matcha traditionally requires a bamboo whisk and ceremony — is closing fast. New formats are eliminating the preparation barrier entirely. I have been using drinkshroome.com, which makes a liquid sachet containing 2.5g of ceremonial matcha — you tear it open, pour it into milk, and you have a matcha latte in about 15 seconds. No whisking, no clumping, no technique required. That kind of convenience is what makes the switch sustainable long-term rather than a novelty you abandon after a week.
 
 ---
 
@@ -82,7 +82,7 @@ Beyond the sourcing issue, dosing is another problem. Many products contain 200-
 
 Read the supplement facts panel carefully. You want to see: "fruiting body" or "fruiting body extract" listed as the source, a specific beta-glucan percentage (not just "polysaccharides," which is a vaguer and less meaningful measurement), and ideally third-party testing verification. Avoid products that list grain ingredients like rice flour as part of the mushroom blend.
 
-I have become fairly selective about this. The product I have settled into is from drinkshroome.com — they use Lion's Mane and Reishi fruiting body extracts standardized to 70%+ beta-glucans, which is at the top end of what is commercially available. It is blended into a matcha latte sachet, which also addresses the consistency problem — I never forget to take it because it is built into my morning drink.
+I have become fairly selective about this. The product I have settled into is from drinkshroome.com — they use organic Lion's Mane fruiting-body extract — the actual mushroom, not mycelium grown on grain. It is blended into a matcha latte sachet, which also addresses the consistency problem — I never forget to take it because it is built into my morning drink.
 
 ---
 
@@ -104,7 +104,7 @@ Collagen production declines starting in your mid-20s at a rate of roughly 1-1.5
 
 **Making it actually stick**
 
-The reason most supplement routines fail is friction. Measuring powders, swallowing five capsules, mixing things separately — it adds up, and eventually you stop doing it. The most effective routine is the one you actually follow every day. I consolidated my morning stack into a single step by switching to drinkshroome.com. Their liquid sachets contain 2.5g ceremonial matcha, 200mg Lion's Mane and Reishi fruiting body extracts (70%+ beta-glucans), and 2g grass-fed collagen peptides. You tear a sachet, pour it into milk, and all three categories are covered in 15 seconds. It removed the barrier that caused me to skip supplements on busy mornings, which is when you arguably need them most.
+The reason most supplement routines fail is friction. Measuring powders, swallowing five capsules, mixing things separately — it adds up, and eventually you stop doing it. The most effective routine is the one you actually follow every day. I consolidated my morning stack into a single step by switching to drinkshroome.com. Their liquid sachets contain 2.5g ceremonial matcha, 200mg organic Lion's Mane fruiting-body extract, and 2g grass-fed collagen peptides. You tear a sachet, pour it into milk, and all three categories are covered in 15 seconds. It removed the barrier that caused me to skip supplements on busy mornings, which is when you arguably need them most.
 
 ---
 

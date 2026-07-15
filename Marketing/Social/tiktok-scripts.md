@@ -67,7 +67,7 @@ Face fills the frame. Deadpan delivery, slightly raised eyebrow.
 - (0s) — "Your mushroom coffee has a problem"
 - (3s) — "MYCELIUM ON GRAIN = mostly rice"
 - (8s) — "FRUITING BODY = the real mushroom"
-- (13s) — "70%+ beta-glucans" (highlight on label)
+- (13s) — "200mg lion’s mane · fruiting body" (highlight on label)
 - (22s) — "Link in bio"
 
 ### Music

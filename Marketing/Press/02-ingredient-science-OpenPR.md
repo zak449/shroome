@@ -7,11 +7,11 @@
 
 **FOR IMMEDIATE RELEASE**
 
-## New Functional Matcha Brand Spotlights Beta-Glucan Concentration Gap in Mushroom Supplement Market
+## New Functional Matcha Brand Spotlights the Fruiting-Body vs. Mycelium Quality Gap in Mushroom Supplements
 
-*shroomé's organic mushroom extracts verified at 70%+ beta-glucan content — more than double the concentration found in most commercial mushroom products*
+*shroomé uses organic lion's mane fruiting-body extract — the actual mushroom, not the mycelium-on-grain filler common across the category*
 
-**LOS ANGELES, CA — March 2026** — As the functional mushroom market grows toward an estimated $19.3 billion globally, a new entrant is drawing attention to a significant gap in product quality. shroomé (drinkshroome.com), a ready-to-pour ceremonial matcha latte brand from ZSQUARED INC, has formulated its mushroom extract component at 70%+ verified beta-glucan concentration — a number that highlights how much variation exists across the category.
+**LOS ANGELES, CA — March 2026** — As the functional mushroom market grows toward an estimated $19.3 billion globally, a new entrant is drawing attention to a significant gap in product quality. shroomé (drinkshroome.com), a ready-to-pour ceremonial matcha latte brand from ZSQUARED INC, formulates its mushroom component from lion's mane fruiting-body extract — the source where bioactive compounds are most concentrated — rather than the mycelium-on-grain products that dominate the category.
 
 Beta-glucans are polysaccharides found in the cell walls of fungi that have been the subject of extensive research regarding immune function support. However, the concentration of beta-glucans in commercial mushroom products varies dramatically depending on source material and extraction methods.
 
@@ -19,7 +19,7 @@ Beta-glucans are polysaccharides found in the cell walls of fungi that have been
 
 The distinction between fruiting body extracts and mycelium-on-grain products is a central issue in mushroom supplement quality. Fruiting body extracts are derived from the mature mushroom itself, where beta-glucan compounds are most concentrated. Mycelium-on-grain products, by contrast, grow fungal mycelium on a grain substrate (typically rice or oats), and the final product often contains significant amounts of starch from that substrate — diluting the active compounds.
 
-shroomé uses exclusively fruiting body extraction, followed by hot water processing and spray drying, to produce a concentrated powder that third-party testing has verified at 70%+ beta-glucan content. The company publishes its full ingredient list with exact dosages — no proprietary blends.
+shroomé uses exclusively fruiting-body extraction, followed by hot-water processing and spray drying, to produce a concentrated extract that is then dissolved into the ready-to-pour liquid sachet. The company publishes its full ingredient list with exact dosages — no proprietary blends — and will publish the extract's third-party beta-glucan assay once the supplier Certificate of Analysis is finalized.
 
 "Consumers deserve to know what concentration of active compounds they are actually getting," said Zachary Kaufman, founder and CEO of ZSQUARED INC. "A label that says 'mushroom extract' without specifying beta-glucan content is not providing enough information for an informed decision."
 

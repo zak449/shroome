@@ -13,7 +13,7 @@
 
 **LOS ANGELES, CA — March 2026** — Zachary Kaufman watched his peers spend $5, $6, sometimes $7 every morning at coffee shops and matcha bars — thousands of dollars a year on beverages that delivered caffeine and not much else. His response: build something that tastes just as good, costs a fraction of the price, and actually contains ingredients formulated to support sustained energy, immune function, and skin health.
 
-The result is shroomé (drinkshroome.com), a ready-to-pour ceremonial matcha latte from his company ZSQUARED INC. Each sachet contains ceremonial-grade matcha, organic mushroom extracts with 70%+ beta-glucan concentration, and grass-fed collagen peptides. Tear it open, pour into a mug, add hot water. Fifteen seconds, done.
+The result is shroomé (drinkshroome.com), a ready-to-pour ceremonial matcha latte from his company ZSQUARED INC. Each liquid sachet contains 2.5g ceremonial-grade matcha, 200mg organic lion's mane extract, and grass-fed collagen peptides. Tear it open, pour it over the milk of your choice, swirl. Fifteen seconds, done.
 
 **The Problem with Functional Beverages Today**
 
@@ -21,7 +21,7 @@ Kaufman's frustration extended beyond cafe prices. As he explored the functional
 
 "I kept finding products with 'proprietary blends' on the label, which is a legal way of saying 'we won't tell you how much of each ingredient is in here,'" Kaufman said. "Or mushroom supplements that turned out to be mostly rice starch grown with a little bit of mycelium. That is not the same thing as a concentrated mushroom extract."
 
-shroomé takes a different approach. Every ingredient and its exact amount is listed on the label. The mushroom extract component uses fruiting body extraction — not mycelium grown on grain — and each batch is third-party tested to verify 70%+ beta-glucan content, a concentration that significantly exceeds industry norms of 15-30%.
+shroomé takes a different approach. Every ingredient and its exact amount is listed on the label. The mushroom component uses lion's mane fruiting-body extraction — not mycelium grown on grain — delivering real mushroom material rather than starch filler. (shroomé will publish its extract's third-party beta-glucan assay once the supplier Certificate of Analysis is finalized.)
 
 **Designed for a Generation That Reads Labels**
 

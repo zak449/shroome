@@ -29,7 +29,7 @@ The core architecture is sound — $36/12-pack ($3.00/serving), $66–68/24-pack
 | **Base** | **$0.75** | **$10.00** | **$18.50** | Anchored to `Assumptions!B5`; bottom-up $0.69 + buffer. Matcha $110/kg, 15k MOQ (`Assumptions!B11`), $5 avg ship (`Assumptions!B25`) |
 | Premium | $0.98 | $13.21 | $23.81 | Matcha $150/kg, 10k MOQ, heavier QC |
 
-Bottom-up Base build: matcha 2.5g $0.275 + lion's mane 200mg (8:1, ≥70% BG) $0.018 + collagen 2g $0.040 + flavor $0.040 + foil sachet $0.090 + fill/co-pack $0.150 + QC amortized $0.080 = $0.69.
+Bottom-up Base build: matcha 2.5g $0.275 + lion's mane 200mg (8:1 fruiting-body) $0.018 + collagen 2g $0.040 + flavor $0.040 + foil sachet $0.090 + fill/co-pack $0.150 + QC amortized $0.080 = $0.69.
 
 ## (b) Margin by SKU / tier / discount — Base COGS (contribution per order, % of net revenue)
 

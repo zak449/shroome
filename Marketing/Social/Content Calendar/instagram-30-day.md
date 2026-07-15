@@ -24,7 +24,7 @@
 |---|---|---|
 | **S1 — the crash defector** | 24–32, drinks 2–3 coffees, hates the 2pm dip | wants energy without the spike/crash story |
 | **S2 — the matcha aesthete** | 20–28, already drinks matcha, cares about grade + the visual | converts on beauty + "no whisk" convenience |
-| **S3 — the label reader** | 25–35, supplement-literate, reads doses | converts on 70%+ beta-glucan, fruiting body, no proprietary blends |
+| **S3 — the label reader** | 25–35, supplement-literate, reads doses | converts on fruiting body, 200mg lion's mane, no proprietary blends |
 | **S4 — the glow seeker** | 22–30, skin/collagen-first wellness | converts on 2g grass-fed collagen + "glow" routine language |
 | **S5 — the waitlist insider** | existing followers + waitlist members | converts on access, milestones, founder intimacy |
 
@@ -94,7 +94,7 @@ Format mix: **12 reels · 8 carousels · 4 static · 6 story-first.**
 **slides:**
 1. *hook:* strawberry-tint tile, Instrument Serif italic: **"one ounce. nothing hiding."** small sachet photo bottom right.
 2. Retro tile, sachet macro: "2.5g ceremonial matcha — first harvest, shade grown. the grade you'd get at the counter, not the baking aisle."
-3. purple tile: "200mg lion's mane extract — real fruiting body, ≥70% beta-glucans. that number is on the label because most brands can't print theirs."
+3. purple tile: "200mg lion's mane extract — real fruiting body, not mycelium on grain. that dose is on the label because most brands hide theirs."
 4. Retro tile: "2g grass-fed collagen peptides — an actual daily dose, not fairy dust."
 5. Retro tile: "~60mg caffeine + naturally occurring l-theanine. supports sustained focus and healthy energy levels."
 6. green tile, matcha chip CTA: "sold out. the waitlist walks in first. link in bio." + FDA disclaimer in small Syne at bottom.
@@ -102,7 +102,7 @@ Format mix: **12 reels · 8 carousels · 4 static · 6 story-first.**
 **caption:**
 one ounce. nothing hiding.
 every dose, printed on the front, because we're proud of the math.
-2.5g ceremonial matcha. 200mg lion's mane fruiting body at ≥70% beta-glucans. 2g grass-fed collagen. ~60mg caffeine with its l-theanine intact — supports sustained focus, no rollercoaster.
+2.5g ceremonial matcha. 200mg organic lion's mane fruiting-body extract. 2g grass-fed collagen. ~60mg caffeine with its l-theanine intact — supports sustained focus, no rollercoaster.
 first run sold out. the waitlist gets the restock first — link in bio.
 these statements have not been evaluated by the food and drug administration. this product is not intended to diagnose, treat, cure, or prevent any disease. **[FDA disclaimer]**
 
@@ -134,7 +134,7 @@ sold out for now — waitlist link in bio.
 
 **caption:**
 we printed the number.
-≥70% beta-glucans, fruiting body extract, on the front of the sachet.
+200mg lion's mane, fruiting-body extract, on the front of the sachet.
 if a label won't tell you the percentage, it's telling you something else.
 full ingredient list + doses at the link in bio.
 
@@ -151,7 +151,7 @@ full ingredient list + doses at the link in bio.
 **caption:**
 your mushroom drink might be mostly rice.
 mycelium grown on grain = grain in the extract. fruiting body = the actual mushroom, with the beta-glucans that support immune function.
-ours: dual-extracted lion's mane fruiting body, ≥70% beta-glucans, printed on the label.
+ours: lion's mane fruiting-body extract, 200mg, printed on the label.
 waitlist for the restock — link in bio.
 these statements have not been evaluated by the food and drug administration. this product is not intended to diagnose, treat, cure, or prevent any disease. **[FDA disclaimer]**
 
@@ -201,15 +201,15 @@ just the good glass and the morning you actually wanted.
 **concept:** beta-glucan deep dive — "70 is not a typo."
 
 **slides:**
-1. *hook:* purple tile, huge Instrument Serif italic: **"≥70% is not a typo."**
+1. *hook:* purple tile, huge Instrument Serif italic: **"fruiting body is not a buzzword."**
 2. "beta-glucans are the compounds in mushrooms most studied for supporting immune function."
 3. "typical mushroom powders: the % isn't listed. often because it's low single digits."
 4. "why ours is high: dual-extracted lion's mane fruiting body only. no grain, no filler, no proprietary blend."
-5. "200mg per sachet at ≥70% — you can do the math because we showed the math."
+5. "200mg per sachet of fruiting-body extract — printed, because we show our doses."
 6. green CTA tile: "the label is the receipt. waitlist in bio." + FDA disclaimer small print.
 
 **caption:**
-≥70% is not a typo.
+fruiting body is not a buzzword.
 beta-glucans support immune function — and they're the first thing diluted when a brand grows mycelium on grain.
 we use dual-extracted lion's mane fruiting body, 200mg per sachet, percentage printed where you can see it.
 restock waitlist in bio.
@@ -248,7 +248,7 @@ these statements have not been evaluated by the food and drug administration. th
 2. "① fruiting body or mycelium? mycelium-on-grain means you're mostly buying grain."
 3. "② is a beta-glucan % listed? silence is an answer."
 4. "③ ceremonial or culinary matcha? culinary is for baking. you're drinking this."
-5. sachet back-label photo, three matcha check chips on green: "shroomé: fruiting body ✓ ≥70% listed ✓ ceremonial ✓"
+5. sachet back-label photo, three matcha check chips on green: "shroomé: fruiting body ✓ 200mg listed ✓ ceremonial ✓"
 6. CTA tile: "screenshot slide 1. audit everything in your pantry. then — link in bio."
 
 **caption:**
@@ -504,7 +504,7 @@ link in bio.
 2. photo: filling line running — "3× the run size. same 30ml pour."
 3. photo: lab report corner (lot #, beta-glucan verification visible) — "every lot tested before it ships."
 4. photo: pallets of finished boxes — "boxed and waiting on you."
-5. "what didn't change: the formula. 2.5g ceremonial matcha, 200mg lion's mane ≥70% beta-glucans, 2g collagen."
+5. "what didn't change: the formula. 2.5g ceremonial matcha, 200mg organic lion's mane fruiting-body extract, 2g collagen."
 6. CTA tile: "08.18 · 9am ET · waitlist first. bio."
 
 **caption:**
@@ -620,9 +620,9 @@ All ads: green/matcha CTA button color equivalent ("Sign Up" objective → waitl
 - **headline:** the 15-second matcha latte
 
 ### ad 2 — "your mushroom drink is mostly rice" (from day 4 reel)
-- **why:** highest-conviction education angle; creates the problem shroomé uniquely answers (fruiting body, ≥70% beta-glucans printed). converts skeptics who've bounced off other functional brands.
+- **why:** highest-conviction education angle; creates the problem shroomé uniquely answers (fruiting body, 200mg lion's mane printed). converts skeptics who've bounced off other functional brands.
 - **audience:** S3 label reader — interests: lion's mane, functional mushrooms, supplements; exclude existing waitlist. placements: reels + feed.
-- **primary text:** most mushroom drinks use mycelium grown on grain — so you're mostly buying grain. shroomé uses dual-extracted lion's mane fruiting body at ≥70% beta-glucans, with the percentage printed on the label. beta-glucans support immune function. these statements have not been evaluated by the food and drug administration. this product is not intended to diagnose, treat, cure, or prevent any disease.
+- **primary text:** most mushroom drinks use mycelium grown on grain — so you're mostly buying grain. shroomé uses lion's mane fruiting-body extract — 200mg, with the dose printed on the label. beta-glucans support immune function. these statements have not been evaluated by the food and drug administration. this product is not intended to diagnose, treat, cure, or prevent any disease.
 - **headline:** the number is on the label
 
 ### ad 3 — "same morning, different energy" (from day 9 before/after reel)
@@ -634,7 +634,7 @@ All ads: green/matcha CTA button color equivalent ("Sign Up" objective → waitl
 ### ad 4 — "one ounce, nothing hiding" (from day 1 carousel)
 - **why:** best retargeting unit — the full formulation argument in swipeable form for people who watched ads 1–3 or visited the site without signing up. carousels overperform for consideration-stage supplement buyers.
 - **audience:** retargeting — video viewers (50%+) of ads 1–3, site visitors 30d, IG engagers 30d, excluding waitlist signups. placements: feed carousel.
-- **primary text:** 2.5g ceremonial matcha. 200mg lion's mane fruiting body (≥70% beta-glucans). 2g grass-fed collagen. every dose printed on the front of a 1oz sachet — no proprietary blends, no fairy dust. restock august 18; the waitlist walks in first. these statements have not been evaluated by the food and drug administration. this product is not intended to diagnose, treat, cure, or prevent any disease.
+- **primary text:** 2.5g ceremonial matcha. 200mg organic lion's mane fruiting-body extract. 2g grass-fed collagen. every dose printed on the front of a 1oz sachet — no proprietary blends, no fairy dust. restock august 18; the waitlist walks in first. these statements have not been evaluated by the food and drug administration. this product is not intended to diagnose, treat, cure, or prevent any disease.
 - **headline:** every dose on the label
 
 ---

@@ -45,7 +45,7 @@ The short answer is: it depends entirely on what you're actually consuming. Most
 
 A well-extracted fruiting body product can hit 30-50% beta-glucans. Some standardized extracts push 70%+ using hot water extraction. Compare that to single digits in low-quality mycelium-on-grain products.
 
-I've been stacking a high-concentration mushroom extract into my morning routine. There are a few products hitting the 70%+ beta-glucan range — some standalone, some blended into functional drinks (drinkshroome.com does this with matcha). The key is just making sure whatever you buy discloses its beta-glucan content.
+I've been stacking a high-concentration mushroom extract into my morning routine. There are a few fruiting-body products worth a look — some standalone, some blended into functional drinks (drinkshroome.com does this with matcha). The key is just making sure whatever you buy uses real fruiting-body extract and discloses its doses.
 
 ---
 
@@ -133,7 +133,7 @@ L-theanine crosses the blood-brain barrier, promotes alpha brain waves (relaxed 
 - **Creatine (3-5g/day):** Well-researched for cognition, especially under sleep deprivation
 - **Omega-3s (EPA/DHA):** Long-term brain health foundation
 
-My daily stack: ceremonial matcha base (caffeine + L-theanine), creatine, omega-3s. For matcha I use drinkshroome.com sachets which include mushroom extracts (70%+ beta-glucans) — saves a separate mushroom supplement. Nothing fancy, but consistency with this routine has been more impactful than any exotic compound I tried before.
+My daily stack: ceremonial matcha base (caffeine + L-theanine), creatine, omega-3s. For matcha I use drinkshroome.com sachets which include organic lion's mane fruiting-body extract — saves a separate mushroom supplement. Nothing fancy, but consistency with this routine has been more impactful than any exotic compound I tried before.
 
 ---
 

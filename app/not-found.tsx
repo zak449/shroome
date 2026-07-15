@@ -186,8 +186,8 @@ export default function NotFound() {
           <div className="nf-blob nf-blob-c" />
 
           <div className="nf-tag">404 — Page Not Found</div>
-          <h1 className="nf-heading">Oops. This page<br />doesn&apos;t exist.</h1>
-          <p className="nf-sub">Maybe you were looking for one of our recipes?</p>
+          <h1 className="nf-heading">Sheep happens.<br />This page wandered off.</h1>
+          <p className="nf-sub">No page here &mdash; but the good energy&apos;s just a pour away. Maybe you were looking for one of our recipes?</p>
 
           <div className="nf-links">
             <a href="/recipes" className="nf-link nf-link-primary">Browse Recipes &rarr;</a>
@@ -207,7 +207,7 @@ export default function NotFound() {
             &copy; 2026 shroomé &middot; hello@drinkshroome.com &middot;{" "}
             <a href="/privacy">Privacy Policy</a> &middot; <a href="/terms">Terms of Service</a>
           </div>
-          <div className="nf-footer-bot">@drinkshroome</div>
+          <div className="nf-footer-bot">Grown in Kyoto, Made in California &middot; @drinkshroome</div>
         </footer>
       </div>
     </>

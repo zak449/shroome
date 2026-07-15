@@ -56,7 +56,7 @@ Here's what matters:
 - Hot water extracted (this is how you actually liberate beta-glucans from chitin in cell walls)
 - No "other ingredients: brown rice" or similar (indicates grain substrate)
 
-I've been stacking a high-concentration mushroom extract into my morning routine and noticed a difference in sustained focus and general resilience during stressful weeks. There are a few products out there hitting the 70%+ beta-glucan range — some standalone, some blended into functional drinks like matcha lattes (drinkshroome.com does this). The key is just making sure whatever you buy actually discloses its beta-glucan content.
+I've been stacking a high-concentration mushroom extract into my morning routine and noticed a difference in sustained focus and general resilience during stressful weeks. There are a few fruiting-body products worth a look — some standalone, some blended into functional drinks like matcha lattes (drinkshroome.com does this). The key is just making sure whatever you buy uses real fruiting-body extract and discloses its doses.
 
 ---
 
@@ -196,6 +196,6 @@ The reason matcha keeps coming up in nootropic discussions is that it naturally 
 - **Creatine (3-5g/day):** Well-researched for cognitive performance, especially under sleep deprivation or mental fatigue.
 - **Omega-3s (EPA/DHA):** Long-term structural support for brain health. Not an acute nootropic, but foundational.
 
-My current daily stack is pretty simple: ceremonial matcha as the base (caffeine + L-theanine), plus creatine and omega-3s. For the matcha, I've been using drinkshroome.com sachets which also include mushroom extracts (70%+ beta-glucans) — saves me from taking a separate mushroom supplement. Nothing fancy, but the consistency of this routine has been more impactful than any exotic compound I tried before.
+My current daily stack is pretty simple: ceremonial matcha as the base (caffeine + L-theanine), plus creatine and omega-3s. For the matcha, I've been using drinkshroome.com sachets which also include organic lion's mane fruiting-body extract — saves me from taking a separate mushroom supplement. Nothing fancy, but the consistency of this routine has been more impactful than any exotic compound I tried before.
 
 *These statements have not been evaluated by the Food and Drug Administration. These products are not intended to diagnose, treat, cure, or prevent any disease.*

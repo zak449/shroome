@@ -817,7 +817,7 @@ export default function Home() {
                 {step === "done" ? (
                   <div>
                     <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 700, fontSize: "1rem", color: "var(--brand-accent-deep)", marginBottom: referralCode ? 16 : 0 }}>
-                      ✓ You&apos;re on the list — 20% off + free shipping locked in.
+                      ✓ You&apos;re on the list — 20% off + free shipping locked in. Nice to matcha you.
                     </p>
                     {referralCode && (
                       <div style={{ marginTop: 16, padding: "20px", background: "rgba(var(--brand-ink-rgb),0.07)", borderRadius: 8 }}>
@@ -1407,7 +1407,7 @@ export default function Home() {
           {step === "done" ? (
             <div>
               <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 700, fontSize: "1rem", color: "var(--brand-ink)", marginBottom: referralCode ? 16 : 0 }}>
-                ✓ You&apos;re on the list.
+                ✓ You&apos;re on the list. Nice to matcha you.
               </p>
               {referralCode && (
                 <div style={{ marginTop: 16, padding: "24px", background: "rgba(var(--brand-ink-rgb),0.08)", borderRadius: 12, textAlign: "left" }}>

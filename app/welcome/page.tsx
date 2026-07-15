@@ -481,7 +481,7 @@ export default function WelcomePage() {
                 padding: "16px 0",
               }}
             >
-              You&rsquo;re in! Check your email.
+              You&rsquo;re in! Check your email. Nice to matcha you.
             </div>
           ) : step === "captcha" ? (
             <div>

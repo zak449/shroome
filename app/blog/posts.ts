@@ -77,7 +77,7 @@ Web: <a href="https://www.drinkshroome.com">drinkshroome.com</a>
 
 <h2>About shroom&eacute;</h2>
 
-<p>shroom&eacute; is a Los Angeles-based wellness brand on a mission to make ceremonial matcha accessible, convenient, and genuinely enjoyable. Each single-serve sachet combines ceremonial-grade Japanese matcha with functional mushroom extracts (lion's mane and reishi), grass-fed collagen peptides, and L-theanine — delivering focus, immunity support, and skin health in a format that dissolves instantly in any liquid. No whisk. No mess. No compromise on quality. Follow shroom&eacute; on <a href="https://www.tiktok.com/@drinkshroome" target="_blank" rel="noopener">TikTok</a>, <a href="https://www.instagram.com/drinkshroome" target="_blank" rel="noopener">Instagram</a>, and <a href="https://www.youtube.com/@drinkshroome" target="_blank" rel="noopener">YouTube</a> @drinkshroome.</p>
+<p>shroom&eacute; is a Los Angeles-based wellness brand on a mission to make ceremonial matcha accessible, convenient, and genuinely enjoyable. Each single-serve liquid sachet combines ceremonial-grade Japanese matcha with 200mg organic lion's mane extract, grass-fed collagen peptides, and naturally occurring L-theanine — delivering focus, immunity support, and skin health in a ready-to-pour format that blends instantly into any milk. No whisk. No mess. No compromise on quality. Follow shroom&eacute; on <a href="https://www.tiktok.com/@drinkshroome" target="_blank" rel="noopener">TikTok</a>, <a href="https://www.instagram.com/drinkshroome" target="_blank" rel="noopener">Instagram</a>, and <a href="https://www.youtube.com/@drinkshroome" target="_blank" rel="noopener">YouTube</a> @drinkshroome.</p>
 
 <hr />
 
@@ -275,7 +275,7 @@ Web: <a href="https://www.drinkshroome.com">drinkshroome.com</a>
 
 <p><strong>Week 3 and beyond:</strong> By now, most people notice they're sleeping better, feeling less anxious, and have more consistent energy throughout the day. The afternoon crash disappears. The 3pm caffeine craving fades.</p>
 
-<p>The easiest way to try it? <a href="https://www.drinkshroome.com">Shroom&eacute; sachets</a> dissolve instantly in any liquid, so there's zero learning curve. No special equipment, no technique to master. If you can stir a spoon, you can make matcha. And right now, we're offering <strong>20% off pre-launch orders</strong> — making it cheaper per serving than most coffee shop lattes.</p>
+<p>The easiest way to try it? <a href="https://www.drinkshroome.com">Shroom&eacute; sachets</a> are ready-to-pour liquid concentrate that blends instantly into any milk, so there's zero learning curve. No special equipment, no technique to master. If you can stir a spoon, you can make matcha. And right now, we're offering <strong>20% off pre-launch orders</strong> — making it cheaper per serving than most coffee shop lattes.</p>
 
 <p>Still have questions about making the switch? Our <a href="/faq">FAQ page</a> covers caffeine content, taste differences, and the best way to get started.</p>
 
@@ -2570,7 +2570,7 @@ Web: <a href="https://www.drinkshroome.com">drinkshroome.com</a>
 
 <p>Matcha has less caffeine than coffee on a per-cup basis, but it delivers that caffeine in a fundamentally different way. The presence of L-theanine creates a sustained, calm focus instead of a spike-and-crash cycle. If you&rsquo;ve been chasing the perfect caffeine balance &mdash; enough to feel alert, not so much that you feel anxious &mdash; matcha might be exactly what you&rsquo;re looking for.</p>
 
-<p>Ready to try it? <a href="https://www.drinkshroome.com">shroom&eacute;</a> makes it easy with pre-portioned sachets that dissolve instantly in hot or cold liquid. <strong>20% off pre-launch orders</strong> at <a href="https://www.drinkshroome.com">drinkshroome.com</a>.</p>
+<p>Ready to try it? <a href="https://www.drinkshroome.com">shroom&eacute;</a> makes it easy with pre-portioned liquid sachets that blend instantly into hot or cold milk. <strong>20% off pre-launch orders</strong> at <a href="https://www.drinkshroome.com">drinkshroome.com</a>.</p>
 
 <hr />
 
@@ -2648,7 +2648,7 @@ Web: <a href="https://www.drinkshroome.com">drinkshroome.com</a>
 
 <p>Drinking matcha every day is safe for most adults and may provide compounding health benefits over time. Stick to 1-3 servings of high-quality, Japanese ceremonial grade matcha, keep an eye on your total caffeine intake, and choose a source that tests for contaminants.</p>
 
-<p>For more answers to common matcha questions, visit our <a href="/faq">FAQ page</a>. And if you&rsquo;re looking for the easiest way to make daily matcha a habit, <a href="https://www.drinkshroome.com">shroom&eacute;</a> sachets dissolve instantly in any liquid &mdash; hot or cold &mdash; with no equipment needed. <strong>20% off pre-launch orders</strong> at <a href="https://www.drinkshroome.com">drinkshroome.com</a>.</p>
+<p>For more answers to common matcha questions, visit our <a href="/faq">FAQ page</a>. And if you&rsquo;re looking for the easiest way to make daily matcha a habit, <a href="https://www.drinkshroome.com">shroom&eacute;</a> liquid sachets blend instantly into any milk &mdash; hot or cold &mdash; with no equipment needed. <strong>20% off pre-launch orders</strong> at <a href="https://www.drinkshroome.com">drinkshroome.com</a>.</p>
 
 <hr />
 
@@ -2723,7 +2723,7 @@ Web: <a href="https://www.drinkshroome.com">drinkshroome.com</a>
 
 <h2>The Best Way to Try Matcha for the First Time</h2>
 
-<p><a href="https://www.drinkshroome.com">shroom&eacute;</a> is designed to make your first matcha experience great. Each sachet contains Japanese ceremonial grade matcha that&rsquo;s smooth and naturally sweet &mdash; no bitterness. The sachets dissolve instantly in hot or cold liquid, so you don&rsquo;t need a whisk, a thermometer, or any barista skills. Just tear, pour into your favorite milk, and stir.</p>
+<p><a href="https://www.drinkshroome.com">shroom&eacute;</a> is designed to make your first matcha experience great. Each sachet contains Japanese ceremonial grade matcha that&rsquo;s smooth and naturally sweet &mdash; no bitterness. The liquid concentrate blends instantly into hot or cold milk, so you don&rsquo;t need a whisk, a thermometer, or any barista skills. Just tear, pour into your favorite milk, and stir.</p>
 
 <p>Plus, the added lion&rsquo;s mane and reishi give you functional benefits beyond what plain matcha offers, without adding any mushroom taste. It&rsquo;s all matcha flavor. Try it with <strong>20% off pre-launch orders</strong> at <a href="https://www.drinkshroome.com">drinkshroome.com</a>.</p>
 

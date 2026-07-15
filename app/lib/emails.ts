@@ -233,7 +233,7 @@ export function welcomeEmail(email: string, referralCode?: string) {
       </p>
     </td></tr>
 
-    <!-- ACCENT STAT CARD — 70%+ hero number -->
+    <!-- ACCENT STAT CARD — 200mg lion's mane hero number -->
     <tr><td style="padding:20px 36px;background-color:${EMAIL.ink};">
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
         <tr><td style="background-color:${EMAIL.accent};border-radius:16px;padding:32px 24px;text-align:center;">
@@ -398,7 +398,7 @@ export function sachetEmail(email: string) {
       </p>
     </td></tr>
 
-    <!-- ═══ 70%+ STAT — accent card ═══ -->
+    <!-- ═══ 200mg lion's mane STAT — accent card ═══ -->
     <tr><td style="padding:24px 28px;background-color:${EMAIL.ink};">
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
         <tr><td style="background-color:${EMAIL.accent};border-radius:16px;padding:36px 24px;text-align:center;">
@@ -425,8 +425,8 @@ export function sachetEmail(email: string) {
           <td width="4%"></td>
           <td width="48%" style="background:${alpha("accent",0.08)};border-radius:12px;padding:20px 16px;text-align:center;vertical-align:top;border:1px solid ${alpha("accent",0.15)};">
             <p style="margin:0 0 6px;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:${EMAIL.tintSoft};font-weight:700;">SHROOM\u00c9</p>
-            <p style="margin:0 0 8px;font-size:28px;font-weight:800;color:${EMAIL.accent};line-height:1;">70%+</p>
-            <p style="margin:0;font-size:11px;color:rgba(255,255,255,0.5);line-height:1.4;">Fruiting body extract.<br/>Hot water extracted.<br/>Third-party verified.</p>
+            <p style="margin:0 0 8px;font-size:24px;font-weight:800;color:${EMAIL.accent};line-height:1;">MUSHROOM</p>
+            <p style="margin:0;font-size:11px;color:rgba(255,255,255,0.5);line-height:1.4;">Fruiting-body extract.<br/>Hot-water extracted.<br/>Third-party tested.</p>
           </td>
         </tr>
       </table>

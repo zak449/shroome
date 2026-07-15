@@ -36,7 +36,7 @@ Whatever the mechanism, I was waking up feeling more rested. That alone was enou
 
 ## The Functional Extras I Didn't Expect to Care About
 
-The particular sachets I'd chosen happened to contain more than just matcha. They included mushroom extracts — lion's mane and reishi, specifically — standardized to contain over 70 percent beta-glucans. They also contained collagen peptides.
+The particular sachets I'd chosen happened to contain more than just matcha. They included an organic lion's mane fruiting-body extract. They also contained collagen peptides.
 
 I'll be honest: I started this experiment for the caffeine swap, not for the add-ons. But by week three, I found myself reading the research, and it was more compelling than I expected.
 

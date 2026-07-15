@@ -39,7 +39,7 @@ Our emails are a conversation, not a sales pitch. Every touchpoint should make t
 - **Timing:** Day 0 (immediate)
 - **Subject line:** "you just made the list"
 - **Content mix:**
-  - 60% — Beta-glucans education (what they are, why 70%+ matters, how shroome sources them)
+  - 60% — Beta-glucans education (what they are, why fruiting-body extraction matters, how shroome sources them; do not state a shroomé beta-glucan % until supplier CoA)
   - 20% — Collagen introduction (grass-fed, bioavailable peptides, why it belongs in your morning)
   - 20% — The drink experience (what it tastes like, how it fits into your morning, the "no crash" promise)
 - **CTA:** Soft — visit the site, follow on socials
