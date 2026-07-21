@@ -16,10 +16,12 @@
 | 1 | phone (SMS opt-in) | **+10 min early drop access** + **SHROOME30 (replaces the 20)** | phone E.164, `sms_opt_in`, `sms_consent_at` |
 | 2 | flavor + pour quiz (4 q's) | their **"first pour profile"** + **jump 50 spots** up the list | `flavor_pref`, `temp_pref`, `pour_time`, `current_drink`, `pour_profile` |
 | 3 | birthday | **birthday sachet drop** — a free sachet rides along with their box in their birthday month | `birthday` |
-| 4 | referrals | **$5 / $10 / $15 credit at 1 / 3 / 5** + leaderboard: **top referrer gets case 001, hand-numbered box** | `referral_count`, `referral_credit` |
+| 4 | referrals | **$5 / $10 / $15 credit at 1 / 3 / 5** + leaderboard: **top referrer gets a hand-numbered mé keychain ($15 value) from case 001** | `referral_count`, `referral_credit` |
 | 5 | UGC / follow + join the "pour list" broadcast channel | entry into the **line-skip giveaway** (winner goes to position #1 for the next drop) | `pour_list_joined`, `ugc_entry`, `ig_handle` |
 
 Design rules: one ask per message, ever. Reward is named before the ask. Nothing is "unlock 10% off" vague — everything is a thing you can hold (a spot, a code, a sachet, a numbered box).
+
+> **Value tags (anchor strategy, approved 2026-07-14):** wherever the promo items are named as gifts/rewards, append their now-real values — "**mé keychain ($15 value)**" and "**under-eye gels ($18 value)**" — backed by actual sales (the one-time 100-unit $15 keychain drop; the live $18 gels retail SKU). Run these tags only once the respective sales are live (FTC rule, `promo-value-add-plan.md` Anchor Strategy section).
 
 ---
 
@@ -205,7 +207,7 @@ Merge tags are Klaviyo syntax. All body copy is final; layout blocks in [bracket
 > **3 friends → $10 credit**
 > **5 friends → $15 credit** *(that's the cap — we're a small batch brand, not a pyramid)*
 >
-> and then there's the thing money can't buy: our **top referrer** before DROP 002 gets a **hand-numbered box from case 001.** the first case. numbered in marker. there will never be another one.
+> and then there's the thing money can't buy — not even on drop day: our **top referrer** before DROP 002 gets a **hand-numbered mé keychain ($15 value) from case 001.** the first case. numbered in marker. there will never be another one.
 >
 > credits apply automatically at checkout on drop day. your friends get on the list; you get paid in matcha money. everyone wins except the person who has to number the boxes (zak).
 >
@@ -300,15 +302,15 @@ Trigger: FLOW D, `referral_count` hits 1. Send within window; if fired at night,
 
 **SMS 5 — referral milestone 3 ($10)**
 
-> shroomé: 3 referrals. $10 credit locked in. you're 2 away from $15 + a shot at the case 001 hand-numbered box. keep going: [LINK]
+> shroomé: 3 referrals. $10 credit locked in. 2 more = $15 + a shot at the case 001 numbered mé keychain ($15 value). your link: [LINK]
 
-*129 chars (150 w/ link) · GSM-7 · 1 segment.*
+*133 chars (152 w/ link) · GSM-7 · 1 segment. "$15 value" tag per the anchor strategy — live only after the drop-002 keychain sale transacts.*
 
 **SMS 6 — referral milestone 5 ($15, cap)**
 
-> shroomé: 5 referrals. $15 credit secured - max tier. you're officially on the leaderboard for the case 001 box. we see you.
+> shroomé: 5 referrals. $15 credit secured - max tier. you're officially on the leaderboard for the case 001 mé keychain ($15 value). we see you.
 
-*123 chars · GSM-7 · 1 segment. This is the cap message — no link needed; do not promise further credits.*
+*143 chars · GSM-7 · 1 segment. This is the cap message — no link needed; do not promise further credits. "$15 value" tag per the anchor strategy — live only after the drop-002 keychain sale transacts.*
 
 **SMS 7 — drop day, T-10 minutes**
 Trigger: FLOW F, scheduled. **Schedule the drop itself so T-10 lands ≥9:00am in the westernmost customer timezone** (e.g. doors 10:10am PT = T-10 at 10:00am PT / 1:00pm ET — safe everywhere in the US).

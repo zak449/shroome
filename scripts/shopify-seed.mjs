@@ -3,13 +3,31 @@
  * shroomé — Shopify catalog seed script
  * =====================================
  * Seeds the launch catalog against the Shopify Admin GraphQL API (2025-07):
- *   1. Products + variants (productSet): 4 products / 10 variants, inventory
+ *   1. Products + variants (productSet): 6 products / 12 variants, inventory
  *      tracked, 0 available, policy DENY  → everything renders SOLD OUT.
+ *      Includes the ANCHOR-STRATEGY promo SKUs (founder decision 2026-07-14):
+ *        - shroome-under-eye-gels (SHR-EYG-06, $18): full retail SKU;
+ *          quantity stays 0 until first-PO stock is confirmed at the 3PL.
+ *        - shroome-me-keychain (SHR-KCH-01, $15): ONE-TIME drop — set
+ *          inventory to exactly 100 at drop-002 T-0, sell through, NEVER
+ *          restock. Page stays live at $15 permanently sold out ("how to
+ *          earn her" replaces the buy button — theme work, not this script).
+ *          Metafields carry drop 002 + colorway 001.
  *   2. Selling plan groups: 3 subscribe & save groups (12 / 24 / 48 tiers,
  *      cadences every 2 weeks / 30 days / 60 days, 10–20% off).
+ *      The keychain and gels are DELIBERATELY in no group: the keychain is
+ *      one-time only (no subscriptions, ever); the gels ride inside sub
+ *      boxes as a Loop gift rule, not as a subscribable product.
  *   3. Discount codes: SHROOME20 (waitlist) & SHROOME30 (SMS) — mutually
  *      exclusive (combinesWith all false), one per customer, ONE-TIME
  *      purchases only, active LAUNCH_AT → +14 days. Absolute cap: 30%.
+ *      DISCOUNT SCOPING (anchor strategy): the keychain NEVER discounts.
+ *      DiscountItemsInput has no "all except X", and this script creates no
+ *      collections, so instead of an "applies to collection: the-drop"
+ *      setup the codes are scoped to an EXPLICIT product-ID list = every
+ *      seeded product except those flagged excludeFromDiscounts (the
+ *      keychain). Gels ARE code-eligible. If you later move discount
+ *      management to a "the-drop" collection, keep SHR-KCH-01 out of it.
  *
  * Idempotent: every step queries by handle / merchantCode / code first and
  * skips anything that already exists. Safe to re-run.
@@ -143,10 +161,65 @@ const CATALOG = [
       { option: "6 sachets (3 vanilla / 3 strawberry)", sku: "SHR-KIT-VAR-06", price: "21.00", compareAtPrice: null, grams: 350, barcode: null }, // DTC-only kit — no GTIN needed unless retail
     ],
   },
+  {
+    // ANCHOR STRATEGY (approved 2026-07-14): gels are a full retail SKU at
+    // $18. Seeded at 0/DENY like everything else — flip live when the first
+    // PO lands at the 3PL (stock TBD). Cosmetic claims ONLY in this copy
+    // (appearance/sensory language) — never medical, never blended with the
+    // drink's supplement claims; no FDA supplement disclaimer (it makes no
+    // supplement claims).
+    handle: "shroome-under-eye-gels",
+    title: "shroomé under-eye gels — box of 6",
+    productType: "Under-Eye Gels",
+    optionName: "Title",
+    descriptionHtml:
+      "<p>the glow you drink, now the glow you wear. under-eye gel patches — box of 6, 30ml total.</p><p>cooling, hydrating gels that refresh the look of tired under-eyes and reduce the appearance of puffiness. fifteen quiet minutes while your matcha does the drinking part. skin feels smoother. you look more awake.</p><ul><li>hydrates</li><li>cools on contact</li><li>refreshes the look of tired under-eyes</li><li>a 15-minute reset</li></ul><p>$18 — or earned free: every 3rd delivery on 24/48 subscriptions, at 5 referrals, or with $66+ on drop day. pour. swirl. patch. glow.</p>",
+    tags: ["under-eye gels", "skincare", "cosmetic", "glow", "eye patches", "gift", "drop"],
+    seo: {
+      title: "shroomé under-eye gels — the glow you drink now the glow you wear",
+      description:
+        "cooling, hydrating under-eye gel patches. box of 6, 30ml. $18 — or earned free through subscription boxes and referrals.",
+    },
+    variants: [
+      { option: "Default Title", sku: "SHR-EYG-06", price: "18.00", compareAtPrice: null, grams: 60, barcode: "860015741363" }, // real GS1 GTIN; ~60g incl. box (VERIFY)
+    ],
+  },
+  {
+    // ANCHOR STRATEGY (approved 2026-07-14): the mé keychain — ONE-TIME
+    // authenticated drop. Exactly 100 units of colorway 001 at $15 on
+    // drop-002 day, then earned-only forever. Seeded 0/DENY; set inventory
+    // to 100 at drop-002 T-0 and NEVER restock. Excluded from all discount
+    // codes (see DISCOUNTS scoping) and from all selling plan groups.
+    handle: "shroome-me-keychain",
+    title: "the mé keychain — colorway 001",
+    productType: "Keychain",
+    optionName: "Title",
+    excludeFromDiscounts: true, // the keychain never discounts — scopes SHROOME20/30 away from it
+    metafields: [
+      { namespace: "shroome", key: "drop_number", value: "002", type: "single_line_text_field" },
+      { namespace: "shroome", key: "kch_colorway", value: "001", type: "single_line_text_field" },
+      { namespace: "shroome", key: "one_time_drop", value: "true", type: "boolean" }, // theme hook: post-sellout, render "how to earn her" instead of a waitlist form
+    ],
+    descriptionHtml:
+      "<p>mé. colorway 001. sold once, never again.</p><p>soft pvc charm of mé the sheep — 45×40mm, with her 40×12mm wordmark tag, in a printed poly bag. 100 units of colorway 001, sold exactly once, on drop 002 day, at $15. that is the only sale there will ever be.</p><p>after that, she is earned, not bought: she rides in first boxes for the text list, arrives at three converted referrals, and comes with every new subscriber's first box. one colorway per drop — when the drop closes, so does she.</p><p>she's not merch. she's a receipt.</p>",
+    tags: ["keychain", "mé", "colorway 001", "drop-002", "one-time drop", "collectible", "never restocked"],
+    seo: {
+      title: "the mé keychain — colorway 001 · sold once never again",
+      description:
+        "mé. colorway 001. 100 units sold once on drop 002 day at $15 — then earned-only forever. the only price she will ever have.",
+    },
+    variants: [
+      { option: "Default Title", sku: "SHR-KCH-01", price: "15.00", compareAtPrice: null, grams: 15, barcode: "860015741349" }, // real GS1 GTIN; ~15g incl. poly bag (VERIFY)
+    ],
+  },
 ];
 
 // Subscription matrix — mirrors Product/SKU Catalog/subscription-plans.md.
 // One group per quantity tier (selling-plan discounts are fixed per plan).
+// SELLING-PLAN EXCLUSIONS (anchor strategy): SHR-KCH-01 appears in NO group
+// — the keychain is a one-time-only purchase, no subscriptions, ever.
+// SHR-EYG-06 is also excluded: gels are delivered inside subscription boxes
+// via Loop gift rules (promo-value-add-plan.md §5), not subscribed to.
 const SELLING_PLAN_GROUPS = [
   {
     merchantCode: "shroome-sub-12",
@@ -186,6 +259,10 @@ const SELLING_PLAN_GROUPS = [
 // Launch codes — CFO verdict 2026-07-14: mutually exclusive (combinesWith all
 // false), one per customer, ONE-TIME purchases only. SHROOME30 REPLACES
 // SHROOME20, it never stacks. Absolute single-order discount cap: 30%.
+// Scoping (anchor strategy): codes apply to an explicit product list that
+// EXCLUDES every product flagged excludeFromDiscounts (the keychain — it
+// never discounts). See the header comment for why product-scoping was
+// chosen over an "applies to collection: the-drop" setup.
 const DISCOUNTS = [
   { code: "SHROOME20", title: "SHROOME20 — waitlist launch (20% off, one-time only)", percentage: 0.2 },
   { code: "SHROOME30", title: "SHROOME30 — SMS waitlist (30% off, replaces SHROOME20)", percentage: 0.3 },
@@ -271,20 +348,25 @@ async function ensureProduct(p, locationId) {
     return found;
   }
 
+  // Drink products use option "Pack Size"; single-variant promo anchor SKUs
+  // (gels, keychain) use Shopify's standard "Title" / "Default Title".
+  const optionName = p.optionName ?? "Pack Size";
+
   const input = {
     title: p.title,
     handle: p.handle,
     descriptionHtml: p.descriptionHtml,
     vendor: "shroomé",
-    productType: "Matcha Latte Concentrate",
+    productType: p.productType ?? "Matcha Latte Concentrate",
     status: "ACTIVE",
     tags: p.tags,
     seo: p.seo,
+    ...(p.metafields ? { metafields: p.metafields } : {}), // e.g. keychain drop 002 / colorway 001
     productOptions: [
-      { name: "Pack Size", position: 1, values: p.variants.map((v) => ({ name: v.option })) },
+      { name: optionName, position: 1, values: p.variants.map((v) => ({ name: v.option })) },
     ],
     variants: p.variants.map((v) => ({
-      optionValues: [{ optionName: "Pack Size", name: v.option }],
+      optionValues: [{ optionName, name: v.option }],
       sku: v.sku,
       price: v.price,
       compareAtPrice: v.compareAtPrice,
@@ -394,7 +476,7 @@ const DISCOUNT_CREATE = `
     }
   }`;
 
-async function ensureDiscount(d) {
+async function ensureDiscount(d, discountableProductIds) {
   const lookup = await gql(DISCOUNT_LOOKUP, { q: d.code });
   const exists = lookup.codeDiscountNodes.nodes.some(
     (n) => n.codeDiscount?.codes?.nodes?.some((c) => c.code === d.code)
@@ -403,6 +485,21 @@ async function ensureDiscount(d) {
     log(`[skip] discount code exists: ${d.code}`);
     summary.skippedDiscounts.push(d.code);
     return;
+  }
+
+  // Anchor strategy: scope the code to the discountable products only —
+  // the keychain (excludeFromDiscounts) must never be code-eligible.
+  // Fall back to all-items ONLY if product resolution failed entirely, and
+  // warn loudly, because that fallback would let codes touch the keychain.
+  let items;
+  if (discountableProductIds.length) {
+    items = { products: { productsToAdd: discountableProductIds } };
+  } else {
+    items = { all: true };
+    summary.warnings.push(
+      `${d.code}: no product ids resolved — created with items:all, which INCLUDES the keychain. Fix the scope in admin (the keychain never discounts).`
+    );
+    log(`[warn] ${summary.warnings.at(-1)}`);
   }
 
   const basicCodeDiscount = {
@@ -418,7 +515,7 @@ async function ensureDiscount(d) {
       appliesOnOneTimePurchase: true,
       appliesOnSubscription: false,
       value: { percentage: d.percentage },
-      items: { all: true },
+      items,
     },
     // CFO: SHROOME20 and SHROOME30 are MUTUALLY EXCLUSIVE — SHROOME30
     // replaces, never stacks. All-false also blocks any other discount.
@@ -431,7 +528,7 @@ async function ensureDiscount(d) {
 
   const data = await gql(DISCOUNT_CREATE, { basicCodeDiscount });
   assertNoUserErrors(data.discountCodeBasicCreate, `discountCodeBasicCreate(${d.code})`);
-  log(`[create] discount ${d.code}: ${d.percentage * 100}% off one-time orders, ${LAUNCH_AT.toISOString()} → ${ENDS_AT.toISOString()}, one per customer, combines with nothing`);
+  log(`[create] discount ${d.code}: ${d.percentage * 100}% off one-time orders, ${LAUNCH_AT.toISOString()} → ${ENDS_AT.toISOString()}, one per customer, combines with nothing, scoped to ${discountableProductIds.length || "ALL (warned)"} products (keychain excluded)`);
   summary.discounts.push(d.code);
 }
 
@@ -447,19 +544,21 @@ async function main() {
 
   // 1. products
   const variantIdBySku = new Map();
+  const discountableProductIds = []; // every product EXCEPT excludeFromDiscounts (the keychain never discounts)
   for (const p of CATALOG) {
     const product = await ensureProduct(p, locationId);
     for (const v of product.variants.nodes) {
       if (v.sku) variantIdBySku.set(v.sku, v.id);
     }
+    if (!p.excludeFromDiscounts && product?.id) discountableProductIds.push(product.id);
   }
 
-  // 2. subscriptions
+  // 2. subscriptions (keychain + gels deliberately in no group — see SELLING_PLAN_GROUPS comment)
   await ensureSellingPlanGroups(variantIdBySku);
 
-  // 3. discounts
+  // 3. discounts (scoped: keychain excluded)
   for (const d of DISCOUNTS) {
-    await ensureDiscount(d);
+    await ensureDiscount(d, discountableProductIds);
   }
 
   // summary
@@ -478,7 +577,10 @@ async function main() {
   log("  1. Settings → Shipping: add temporary $0 rate for orders ≥ $15 (launch → +14d), then revert to $50 free-shipping threshold.");
   log("  2. Import founders FP30-XXXX codes (12-pack only, fenced) — see Product/SKU Catalog/discount-matrix.md §2.");
   log("  3. Barcodes are live GS1 GTINs (SKUMaster.xlsx). Buy NEW GTINs only if variety/trial ever become physical retail boxes.");
-  log("  4. Verify SOLD OUT rendering + back-in-stock waitlist form on all 4 product pages.");
+  log("  4. Verify SOLD OUT rendering + back-in-stock waitlist form on all 6 product pages.");
+  log("  5. KEYCHAIN ONE-TIME DROP (anchor strategy): at drop-002 T-0 set SHR-KCH-01 available to EXACTLY 100 — never restock after. Post-sellout, the theme must swap the buy button for the 'how to earn her' section (metafield shroome.one_time_drop=true is the hook); page stays live at $15.");
+  log("  6. GELS: set real SHR-EYG-06 stock when the first PO lands at the 3PL (quantity 0 until confirmed). Loop gift rules for P5/P6 are configured in Loop, not here.");
+  log("  7. Any future discount/automatic promo must keep SHR-KCH-01 excluded — the keychain never discounts. If you move code scoping to a 'the-drop' collection, keep the keychain out of that collection.");
   log("==========================================");
 }
 

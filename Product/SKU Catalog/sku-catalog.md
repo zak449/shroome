@@ -1,6 +1,6 @@
 # shroomé SKU Catalog — Master Architecture
 
-> Last updated: July 14, 2026 (reconciled against founder's `SKUMaster.xlsx` — official SKU pattern + real GS1 GTINs)
+> Last updated: July 14, 2026 (reconciled against founder's `SKUMaster.xlsx` — official SKU pattern + real GS1 GTINs; **promo anchor SKUs added per founder's approved anchor strategy** — keychain one-time drop + $18 gels retail SKU)
 > Owner: Product / SKU Master
 > Status: PRE-LAUNCH — all SKUs live in Shopify as SOLD OUT (inventory 0, policy deny) with waitlist capture. Structure is flip-ready for launch day.
 > Source of truth for SKU codes & barcodes: **`Product/SKU Catalog/SKUMaster.xlsx`** (Master SKU List tab). This doc maps that system onto the DTC/Shopify catalog.
@@ -48,7 +48,9 @@ Flavor code **VAR** (variety, mixed VAN+STR) is also a **proposed addition** to 
 | SHR-TRY-STR-24 | Master case (24 boxes) | GTIN-14 **10860015741339** | 288 oz (8,064 g) | Matcha Latte, Strawberry, 12-Count Box, Master Case of 24 |
 | SHR-PLT-STR | Pallet | — | — | — |
 
-Future products (GTINs assigned, **noted only — not in launch catalog/CSV**): SHR-KCH-01 keychain (860015741349), SHR-KCH-BOX manufacturer case of 100 (860015741356), SHR-EYG-06 under-eye gels (860015741363).
+Future products (GTINs assigned, **noted only — not in launch catalog/CSV**): SHR-KCH-BOX manufacturer case of 100 keychains (860015741356).
+
+**Promoted to the DTC catalog (anchor strategy, approved 2026-07-14):** SHR-KCH-01 mé keychain (860015741349, $15 — one-time 100-unit drop) and SHR-EYG-06 under-eye gels (860015741363, $18 retail) — see the promo anchor SKU table below and `promo-value-add-plan.md` (Anchor Strategy section).
 
 ---
 
@@ -89,6 +91,17 @@ Every DTC listing is built from the two GTIN'd physical units (the VAN and STR 1
 
 **Legacy code mapping** (earlier drafts — retire everywhere): SHR-VAN-12→SHR-BOX-VAN-12 · SHR-STR-12→SHR-BOX-STR-12 · SHR-VAR-12→SHR-KIT-VAR-12 · SHR-VAN-24→SHR-BOX-VAN-24 · SHR-STR-24→SHR-BOX-STR-24 · SHR-VAR-24→SHR-BOX-VAR-24 · SHR-VAN-48→SHR-BOX-VAN-48 · SHR-STR-48→SHR-BOX-STR-48 · SHR-VAR-48→SHR-BOX-VAR-48 · SHR-TRY-6→SHR-KIT-VAR-06 (old "TRY" trial code collided with the official TRY = tray/master case category).
 
+### Promo anchor SKUs (anchor strategy, approved 2026-07-14)
+
+Non-drink DTC SKUs — real GS1 GTINs, priced and sellable per the founder's one-time-anchor decision (`promo-value-add-plan.md`, Anchor Strategy section):
+
+| SKU | Product | Physical config | Price | Compare At | Barcode (Shopify field) | Inventory | Gross Margin* | Notes |
+|---|---|---|---|---|---|---|---|---|
+| SHR-EYG-06 | under-eye gels — box of 6 | 6 under-eye gel patches, 30ml total, one box | $18.00 | — | **860015741363** | active/sellable; policy `deny` (standard — no overselling); **stock TBD — quantity 0 until first PO confirmed** | ~82% | full retail SKU; **cosmetic claims only** (appearance language — see creative pack §0.4); also earned free via referral/sub/GWP placements ("$18 value") |
+| SHR-KCH-01 | the mé keychain — colorway 001 | soft PVC 2D charm 45×40mm + 40×12mm wordmark tag, poly bag | $15.00 | — | **860015741349** | **100 units allocated to the one-time drop-002 sale**; policy **`deny`** — quantity 0 pre-drop, set to 100 at T-0, never restocked | ~90% | **colorway 001 — one-time sale, then earned-only.** Never resellable after the 100-unit drop; never discounted; never in subscriptions. Page stays live at $15 permanently sold out with "how to earn her" content replacing the buy button ("$15 value" in gift copy, post-drop) |
+
+\* Margins use the promo plan's landed-cost planning midpoints ($3.25/box gels, $1.50/unit keychain — ⚠️ ASSUMPTIONS TO VERIFY, `promo-value-add-plan.md` §1/§6).
+
 Fulfillment notes:
 - 3PL picks sealed boxes for all BOX SKUs (multiples ship as 2 or 4 boxes in one mailer) and kits KIT SKUs from SCH eaches (internal Code-128 labels `SHR-SCH-VAN-01` / `SHR-SCH-STR-01`). KIT SKUs carry a small per-order kitting fee — factor into the fulfillment cost line.
 - If kitting proves uneconomic, retire SHR-KIT-VAR-12 and let SHR-KIT-VAR-06 + SHR-BOX-VAR-24 cover variety demand (pricing grid unaffected).
@@ -97,7 +110,7 @@ Fulfillment notes:
 
 ## Shopify Product Structure
 
-4 products, 10 variants (option: **Pack Size**):
+6 products, 12 variants (drink products use option **Pack Size**; promo anchor SKUs are single-variant):
 
 | Handle | Product Title | Variants (SKUs) |
 |---|---|---|
@@ -105,8 +118,12 @@ Fulfillment notes:
 | `shroome-strawberry` | shroomé strawberry — matcha latte concentrate | SHR-BOX-STR-12 / -24 / -48 |
 | `shroome-variety-pack` | shroomé variety pack — matcha latte concentrate | SHR-KIT-VAR-12, SHR-BOX-VAR-24, SHR-BOX-VAR-48 |
 | `shroome-first-pour-kit` | shroomé first pour kit — 6 sachets | SHR-KIT-VAR-06 |
+| `shroome-under-eye-gels` | shroomé under-eye gels — box of 6 | SHR-EYG-06 |
+| `shroome-me-keychain` | the mé keychain — colorway 001 | SHR-KCH-01 |
 
 Launch state for every variant: inventory tracked by Shopify, **quantity 0, inventory policy `deny`** → storefront shows SOLD OUT; theme/Klaviyo back-in-stock form captures waitlist. Flip-live = receive inventory at the 3PL location; nothing else changes. (Handles match `shopify-redirects.csv` targets, e.g. `/flavors/vanilla` → `/products/shroome-vanilla`.)
+
+Promo anchor exceptions to flip-live: **gels** flip when the first PO lands (then restock normally); the **keychain** flips exactly once — quantity set to 100 at drop-002 T-0, never restocked — and its permanent post-sellout state is the live $15 page with "how to earn her" content instead of a buy button.
 
 > **Schema sync:** site JSON-LD currently uses marketing SKU `SHROOME-STRAWBERRY-12`. At Shopify migration, update JSON-LD `sku` to `SHR-BOX-STR-12` / `SHR-BOX-VAN-12` and add `gtin12` (`860015741332` / `860015741318`) — real GTINs improve Google Shopping / rich-result eligibility.
 
@@ -146,7 +163,7 @@ The #1 subscription value-add: **subscribers never miss a drop — their allocat
 
 GS1 Company Prefix **860015741** is live — all launch physical units carry real GTINs (tables above). Usage by system:
 
-- **Shopify Barcode field:** GTIN-12 on the two 12-boxes; `<GTIN> x2` / `x4` notation on same-flavor multiples (aids 3PL pick verification); blank on variety bundles and KIT SKUs (no GTIN required for DTC-only bundles/kits).
+- **Shopify Barcode field:** GTIN-12 on the two 12-boxes plus the promo anchor SKUs (SHR-EYG-06 **860015741363**, SHR-KCH-01 **860015741349**); `<GTIN> x2` / `x4` notation on same-flavor multiples (aids 3PL pick verification); blank on variety bundles and KIT SKUs (no GTIN required for DTC-only bundles/kits).
 - **Internal / 3PL / warehouse scanning:** Code-128 barcodes of the SKU string itself (e.g. `SHR-BOX-VAN-12`, `SHR-SCH-VAN-01`) — free, no registration, per the Barcode Guide tab.
 - **Retail / Amazon / wholesale:** UPC-A printed on retail box artwork (≥80% magnification, quiet zones). GTINs are GS1-verified — never resold UPCs (marketplaces delist).
 
@@ -183,6 +200,8 @@ DTC shipping cartons (3PL) do not need retail barcodes; Code-128 SKU labels are 
 | 24 (2 boxes) | 672 g | 1,250 g |
 | 48 (4 boxes) | 1,344 g | 2,400 g |
 | Master case (24 boxes) | 288 oz (8,064 g) | TBD w/ co-packer |
+| Under-eye gels box (SHR-EYG-06) | 30 ml | ~60 g incl. box (⚠️ VERIFY) |
+| Mé keychain (SHR-KCH-01) | — | ~15 g incl. poly bag (⚠️ VERIFY) |
 
 ---
 
@@ -193,6 +212,7 @@ Per `Product/Compliance & Claims/claims-guidelines.md` — structure/function on
 - ✅ "supports sustained focus", "supports healthy energy levels", "supports immune function", "supports skin health", "supports gut health", "provides antioxidant support", "70%+ beta-glucan content"
 - ❌ "boosts immunity", "cures/treats/prevents", "clinically proven", disease or drug-alternative claims
 - FDA disclaimer required on every product page / Body HTML: *"These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease."*
+- **SHR-EYG-06 is a cosmetic, not a supplement:** appearance/sensory language only ("hydrates," "cools," "refreshes the look of tired under-eyes," "reduces the appearance of puffiness") — never medical outcomes, and never blended with the drink's structure/function claims in one sentence. No supplement disclaimer on the gels page (it makes no supplement claims). SHR-KCH-01: no claims exist; honesty rule governs all scarcity copy ("100 units, sold once" must stay literally true).
 
 Brand voice: lowercase, café-energy-meets-gen-z (2026-07-14 repositioning: energetic, never earthy). Signature action sequence: **pour / swirl / glow**.
 
