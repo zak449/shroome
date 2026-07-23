@@ -193,6 +193,7 @@ export default function FAQ() {
         .faq-ticker-track{display:flex;justify-content:center;flex-wrap:wrap;row-gap:6px}
         .faq-ticker-item{font-family:var(--brand-font-mono);font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;padding:0 28px;color:rgba(var(--brand-canvas-rgb),.75)}
         .faq-ticker-item em{color:var(--brand-tint-soft);font-style:normal;font-weight:500}
+        @media(max-width:480px){.faq-ticker{white-space:normal}.faq-ticker-item{padding:0 10px;letter-spacing:.08em;font-size:9px;white-space:normal;text-align:center}}
         @keyframes faqTick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
         /* ── NAV ─── */

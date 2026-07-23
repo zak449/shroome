@@ -132,7 +132,7 @@ export default function RecipesPage() {
 
         /* ── HERO ── */
         .rec-hero{position:relative;overflow:hidden;padding:72px 8% 64px}
-        .rec-hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,rgba(var(--brand-accent-rgb),0.2) 0%,rgba(var(--brand-flavor-strawberry-rgb),0.25) 50%,rgba(var(--brand-flavor-functional-rgb),0.2) 100%)}
+        .rec-hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,rgba(var(--brand-accent-rgb),0.2) 0%,rgba(227,213,247,0.5) 50%,rgba(var(--brand-flavor-functional-rgb),0.2) 100%)}
         .rec-hero-overlay{position:absolute;inset:0;background:linear-gradient(rgba(254,255,248,0.88) 0%,rgba(227,213,247,0.75) 100%)}
         .rec-blob{position:absolute;border-radius:50%;pointer-events:none;opacity:.3}
         .rec-blob-a{width:340px;height:340px;top:-80px;right:10%;background:var(--brand-accent)}

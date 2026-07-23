@@ -101,20 +101,6 @@ body {
   overflow-x: hidden;
 }
 
-/* ── Marquee ticker ── */
-@keyframes ticker {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-.ticker-track {
-  animation: ticker 18s linear infinite;
-  will-change: transform;
-  display: flex;
-  white-space: nowrap;
-  width: max-content;
-}
-
 
 /* ── Fade-up entrance ── */
 @keyframes fadeUp {

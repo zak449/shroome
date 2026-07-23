@@ -61,7 +61,7 @@ export default function StickyCTA() {
           color: var(--brand-canvas);
           text-decoration: none;
           letter-spacing: 0.02em;
-          white-space: nowrap;
+          text-align: center;
         }
         .sticky-cta-dismiss {
           position: absolute;
@@ -93,7 +93,7 @@ export default function StickyCTA() {
         style={{ pointerEvents: show ? "auto" : "none" }}
       >
         <a href="/#signup" className="sticky-cta-link">
-          Drop 001 sold out — get first access to Drop 002 &rarr;
+          Get first access to Drop 002 &rarr;
         </a>
         <button
           className="sticky-cta-dismiss"

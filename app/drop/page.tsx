@@ -365,6 +365,17 @@ export default function DropPage() {
           <p style={{ fontFamily: "var(--brand-font-mono)", fontWeight: 700, fontSize: "0.68rem", letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--brand-canvas)", background: "var(--brand-accent)", display: "inline-block", padding: "8px 18px", borderRadius: 999, border: "2px solid var(--brand-ink)", marginTop: 20 }}>
             opens with drop 002
           </p>
+          <Image
+            src="/brand/shipper-box.jpg"
+            alt="The shroomé kraft shipping box — Pour. Swirl. Go."
+            width={1600}
+            height={900}
+            loading="lazy"
+            style={{ width: "100%", maxWidth: 640, height: "auto", borderRadius: 24, border: "3px solid var(--brand-ink)", margin: "36px auto 0", display: "block", boxShadow: "0 18px 40px rgba(45,52,26,0.2)" }}
+          />
+          <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.78rem", color: "rgba(var(--brand-ink-rgb),0.6)", marginTop: 14 }}>
+            cafe energy, delivered to your home address.
+          </p>
         </div>
       </section>
 

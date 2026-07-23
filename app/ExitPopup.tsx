@@ -295,7 +295,7 @@ export default function ExitPopup() {
                   autoFocus
                 />
                 <button className="ep-btn" type="submit" disabled={status === "loading"}>
-                  {status === "loading" ? "..." : "Get the link first"}
+                  {status === "loading" ? "..." : "Get first access"}
                 </button>
               </form>
               {status === "error" && (

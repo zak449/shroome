@@ -541,7 +541,7 @@ export default function WelcomePage() {
                   letterSpacing: "0.01em",
                 }}
               >
-                {status === "loading" ? "Joining..." : "Join the list"}
+                {status === "loading" ? "Joining..." : "Get first access →"}
               </button>
             </form>
           )}

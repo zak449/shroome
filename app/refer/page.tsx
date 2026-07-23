@@ -320,9 +320,9 @@ export default function ReferPage() {
           padding:20px 24px;text-align:left
         }
         .ref-tier-reward{font-size:15px;font-weight:600;color:var(--brand-ink);line-height:1.4}
-        .ref-tier-vip .ref-tier-badge{background:var(--brand-ink);color:var(--brand-accent)}
+        .ref-tier-vip .ref-tier-badge{background:var(--brand-ink);color:var(--brand-tint-soft)}
         .ref-tier-vip .ref-tier-reward{color:var(--brand-ink);font-weight:800}
-        .ref-tier-founder .ref-tier-badge{background:var(--brand-accent-deep);color:var(--brand-accent)}
+        .ref-tier-founder .ref-tier-badge{background:var(--brand-accent-deep);color:var(--brand-canvas)}
 
         /* ── SOCIAL PROOF ── */
         .ref-proof{
@@ -622,7 +622,7 @@ export default function ReferPage() {
                 key={tier.count}
                 className={`ref-tier${i === 3 ? " ref-tier-vip" : ""}`}
               >
-                <div className="ref-tier-badge" style={i < 3 ? { background: tier.color } : undefined}>
+                <div className="ref-tier-badge" style={i < 3 ? { background: tier.color, color: tier.color === "var(--brand-accent)" ? "var(--brand-canvas)" : "var(--brand-ink)" } : undefined}>
                   <span className="ref-tier-badge-num">{tier.count}</span>
                   {tier.label}
                 </div>

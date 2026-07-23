@@ -28,7 +28,7 @@ export const recipes: Recipe[] = [
     description:
       "The simplest iced matcha latte you'll ever make. One shroomé sachet, oat milk, ice — done in 30 seconds flat.",
     prepTime: "PT15S",
-    prepLabel: "15 sec",
+    prepLabel: "30 sec",
     totalTime: "PT1M",
     color: BRAND.colors.accent,
     imageBg: "#D9585B",
@@ -103,7 +103,7 @@ export const recipes: Recipe[] = [
     description:
       "Matcha meets ice cream. Pour one shroomé sachet over a scoop of vanilla — the easiest dessert of your life.",
     prepTime: "PT15S",
-    prepLabel: "15 sec",
+    prepLabel: "30 sec",
     totalTime: "PT30S",
     color: BRAND.colors.ink,
     imageBg: "#9B8ACA",
@@ -181,7 +181,7 @@ export const recipes: Recipe[] = [
     description:
       "A true agua fresca — strawberry shroomé stirred into cold water with fresh lemon and a touch of agave. Light, citrusy, and barely sweet. The easiest refresher you'll ever make.",
     prepTime: "PT15S",
-    prepLabel: "15 sec",
+    prepLabel: "30 sec",
     totalTime: "PT30S",
     color: BRAND.colors.flavorFunctional,
     imageBg: "#E87830",
@@ -210,7 +210,7 @@ export const recipes: Recipe[] = [
     description:
       "Tropical and hydrating — shroomé mixed with coconut water for a light, electrolyte-rich matcha refresher. No milk needed.",
     prepTime: "PT15S",
-    prepLabel: "15 sec",
+    prepLabel: "30 sec",
     totalTime: "PT30S",
     color: BRAND.colors.ink,
     imageBg: "#3BBFA0",
@@ -238,7 +238,7 @@ export const recipes: Recipe[] = [
     description:
       "Matcha meets sparkling water — fizzy, light, and surprisingly refreshing. The coolest way to pour a shroomé.",
     prepTime: "PT15S",
-    prepLabel: "15 sec",
+    prepLabel: "30 sec",
     totalTime: "PT30S",
     color: BRAND.colors.accent,
     imageBg: "#D65A50",

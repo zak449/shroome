@@ -68,6 +68,7 @@ export default function Terms() {
         .tos-ticker-track{display:flex;justify-content:center;flex-wrap:wrap;row-gap:6px}
         .tos-ticker-item{font-family:var(--brand-font-mono);font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;padding:0 28px;color:rgba(var(--brand-canvas-rgb),.75)}
         .tos-ticker-item em{color:var(--brand-tint-soft);font-style:normal;font-weight:500}
+        @media(max-width:480px){.tos-ticker{white-space:normal}.tos-ticker-item{padding:0 10px;letter-spacing:.08em;font-size:9px;white-space:normal;text-align:center}}
         @keyframes tosTick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
         /* ── NAV ─── */

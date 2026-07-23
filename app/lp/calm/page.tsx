@@ -29,7 +29,7 @@ const config: LPConfig = {
     headlineLines: ["break up with the crash.", "keep the energy."],
     subheadline:
       "shroomé is a liquid ceremonial matcha latte with ~60mg of caffeine and matcha's naturally occurring l-theanine — energy that arrives smooth, stays steady, and leaves quietly. no 2pm cliff. no jitters. no apology tour.",
-    background: "linear-gradient(155deg, var(--brand-tint-soft) 0%, var(--brand-tint-soft) 55%, var(--brand-tint-blush) 100%)",
+    background: "linear-gradient(155deg, var(--brand-tint-soft) 0%, var(--brand-tint-soft) 55%, var(--brand-tint-soft) 100%)",
     cloudOpacity: 0.4,
     sachets: "vanilla",
   },

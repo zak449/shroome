@@ -67,7 +67,7 @@ export async function generateMetadata({
 
 const categoryColors: Record<string, { bg: string; text: string }> = {
   Ingredients: { bg: "rgba(var(--brand-accent-muted-rgb),0.15)", text: "var(--brand-accent-muted-deep)" },
-  Wellness: { bg: "rgba(var(--brand-flavor-strawberry-rgb),0.25)", text: "#B44C7A" },
+  Wellness: { bg: "rgba(227,213,247,0.55)", text: "#5C661A" },
   "How-To": { bg: "rgba(var(--brand-accent-rgb),0.2)", text: "#4A6B1A" },
   Science: { bg: "rgba(var(--brand-flavor-functional-rgb),0.3)", text: "#6B4D7A" },
 };
@@ -221,7 +221,7 @@ export default async function BlogPost({
         /* ── ARTICLE HEADER ── */
         .post-header{
           padding:64px 6% 48px;
-          background:linear-gradient(135deg,rgba(var(--brand-flavor-strawberry-rgb),0.3) 0%,rgba(var(--brand-canvas-rgb),0.9) 50%,rgba(var(--brand-flavor-functional-rgb),0.15) 100%)
+          background:linear-gradient(135deg,rgba(227,213,247,0.55) 0%,rgba(var(--brand-canvas-rgb),0.9) 50%,rgba(var(--brand-flavor-functional-rgb),0.15) 100%)
         }
         .post-header-inner{max-width:680px;margin:0 auto}
         .post-back{

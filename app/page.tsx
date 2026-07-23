@@ -1,7 +1,6 @@
 "use client";
 import { useState, useEffect, useRef, useCallback } from "react";
 import Image from "next/image";
-import ExitPopup from "./ExitPopup";
 
 const productSchema = {
   "@context": "https://schema.org",
@@ -1192,7 +1191,9 @@ export default function Home() {
             {[
               { src: "/brand/ig-matcha-in.jpg", alt: "Friends at a picnic — our vibe is matcha-in" },
               { src: "/brand/ig-glow-skin.jpg", alt: "Glow and skin — smiling model in sunlight" },
+              { src: "/brand/ig-sachet-sip.jpg", alt: "Sipping an iced shroomé matcha, sachet in hand" },
               { src: "/brand/ready-to-glow.jpg", alt: "Ready to glow — iced matcha close-up" },
+              { src: "/brand/ig-good-energy.jpg", alt: "Ready to enjoy life with good energy — cozy moment" },
               { src: "/brand/cup-logo.jpg", alt: "Iced shroomé matcha latte in a branded cup" },
             ].map((g, i) => (
               <div key={g.src} className="wobble" style={{ transform: `rotate(${i % 2 === 0 ? -1.5 : 1.5}deg)` }}>
@@ -1217,6 +1218,56 @@ export default function Home() {
             >
               Follow the flock →
             </a>
+          </div>
+        </div>
+      </section>
+
+      {/* ════════════════════ CAFE ENERGY. HOME ADDRESS. — THE ARRIVAL ════════════════════ */}
+      <section style={{ padding: "100px 24px", background: "var(--brand-canvas)", position: "relative", overflow: "hidden" }}>
+        <div style={{ maxWidth: 1080, margin: "0 auto", display: "flex", alignItems: "center", gap: "clamp(28px, 4vw, 60px)", flexWrap: "wrap" }}>
+          <div {...anim("arrival-img")} style={{ ...anim("arrival-img").style, flex: "1 1 420px", minWidth: 300, position: "relative" }}>
+            <Image
+              src="/brand/shipper-box.jpg"
+              alt="The shroomé kraft shipping box — Pour. Swirl. Go. — sealed with pinwheel pattern tape"
+              width={1600}
+              height={900}
+              loading="lazy"
+              style={{ width: "100%", height: "auto", borderRadius: 24, border: "3px solid var(--brand-ink)", boxShadow: "0 20px 48px rgba(45,52,26,0.18)", display: "block" }}
+            />
+            <Image
+              src="/brand/box-stack.jpg"
+              alt="Stacked shroomé strawberry boxes"
+              width={520}
+              height={293}
+              loading="lazy"
+              style={{ position: "absolute", right: -18, bottom: -44, width: "44%", height: "auto", borderRadius: 16, border: "3px solid var(--brand-ink)", transform: "rotate(3deg)", boxShadow: "0 14px 30px rgba(45,52,26,0.25)" }}
+            />
+          </div>
+          <div {...anim("arrival-copy", 0.12)} style={{ ...anim("arrival-copy", 0.12).style, flex: "1 1 380px", minWidth: 280 }}>
+            <p style={{ ...tagStyle, fontSize: "0.66rem", color: "var(--brand-accent-deep)", marginBottom: 14 }}>
+              The arrival
+            </p>
+            <h2 style={{ fontFamily: "var(--brand-font-display)", fontWeight: 800, fontSize: "clamp(1.9rem, 4vw, 2.8rem)", color: "var(--brand-ink)", lineHeight: 1.08, letterSpacing: "-0.02em", marginBottom: 18 }}>
+              Cafe energy.<br />Home address.
+            </h2>
+            <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.95rem", color: "rgba(var(--brand-ink-rgb),0.75)", lineHeight: 1.7, marginBottom: 22 }}>
+              The kraft box lands on your doorstep sealed in pinwheel tape, mé stamped on the
+              side, a month of matcha lattes inside. No line, no counter, no name spelled
+              wrong on a cup. Subscribers never even have to think about it — their boxes
+              are reserved out of every run before the public window opens.
+            </p>
+            <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+              {[
+                "Ships free, every box",
+                "Subscribers: allocation reserved every drop",
+                "Skip, pause, or swap flavors anytime",
+              ].map((r) => (
+                <div key={r} style={{ display: "flex", alignItems: "center", gap: 12 }}>
+                  <span style={{ width: 10, height: 10, borderRadius: "50%", background: "var(--brand-accent)", border: "2px solid var(--brand-ink)", flexShrink: 0 }} />
+                  <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 600, fontSize: "0.88rem", color: "var(--brand-ink)" }}>{r}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -1304,8 +1355,6 @@ export default function Home() {
         </div>
       </footer>
 
-      {/* Exit-intent popup */}
-      <ExitPopup />
     </>
   );
 }

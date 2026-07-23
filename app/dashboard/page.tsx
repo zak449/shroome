@@ -159,7 +159,7 @@ export default function Dashboard() {
 
         {/* ── Waitlist Stats ── */}
         <section>
-          <h2 className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: "var(--brand-flavor-strawberry)" }}>
+          <h2 className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: "var(--brand-tint-soft)" }}>
             Waitlist
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -198,7 +198,7 @@ export default function Dashboard() {
         {/* ── Recent Signups ── */}
         {stats?.recentSignups && stats.recentSignups.length > 0 && (
           <section>
-            <h2 className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: "var(--brand-flavor-strawberry)" }}>
+            <h2 className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: "var(--brand-tint-soft)" }}>
               Recent Signups
             </h2>
             <div className="rounded-2xl bg-white/[0.04] border border-white/[0.08] overflow-hidden">
@@ -209,8 +209,8 @@ export default function Dashboard() {
                       <div
                         className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold"
                         style={{
-                          background: s.phone ? "rgba(var(--brand-accent-rgb),0.15)" : "rgba(var(--brand-flavor-strawberry-rgb),0.12)",
-                          color: s.phone ? "var(--brand-accent)" : "var(--brand-flavor-strawberry)",
+                          background: s.phone ? "rgba(var(--brand-accent-rgb),0.15)" : "rgba(227,213,247,0.5)",
+                          color: s.phone ? "var(--brand-accent)" : "var(--brand-tint-soft)",
                         }}
                       >
                         {s.phone ? "SMS" : "E"}
@@ -232,7 +232,7 @@ export default function Dashboard() {
 
         {/* ── Traffic Overview ── */}
         <section>
-          <h2 className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: "var(--brand-flavor-strawberry)" }}>
+          <h2 className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: "var(--brand-tint-soft)" }}>
             Traffic
           </h2>
           <div className="rounded-2xl bg-white/[0.04] border border-white/[0.08] p-6">
@@ -280,7 +280,7 @@ export default function Dashboard() {
 
         {/* ── Quick Actions ── */}
         <section>
-          <h2 className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: "var(--brand-flavor-strawberry)" }}>
+          <h2 className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: "var(--brand-tint-soft)" }}>
             Quick Actions
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
