@@ -245,7 +245,7 @@ export default function ReferPage() {
         }
         .ref-hero-cta{
           display:inline-block;
-          background:var(--brand-accent);color:var(--brand-ink);
+          background:var(--brand-accent);color:var(--brand-canvas);
           padding:18px 40px;border:none;
           font-family:var(--brand-font-body);
           font-size:14px;font-weight:800;letter-spacing:.08em;
@@ -272,7 +272,7 @@ export default function ReferPage() {
         }
         .ref-step-icon{
           width:56px;height:56px;border-radius:50%;
-          background:var(--brand-accent);color:var(--brand-ink);
+          background:var(--brand-accent);color:var(--brand-canvas);
           font-weight:900;font-size:22px;
           display:flex;align-items:center;justify-content:center;
           margin:0 auto 18px;
@@ -365,7 +365,7 @@ export default function ReferPage() {
         }
         .ref-input:focus{border-color:var(--brand-accent)}
         .ref-btn{
-          padding:16px 28px;background:var(--brand-accent);color:var(--brand-ink);
+          padding:16px 28px;background:var(--brand-accent);color:var(--brand-canvas);
           border:2px solid var(--brand-ink);
           font-size:13px;font-weight:800;letter-spacing:.06em;
           text-transform:uppercase;cursor:pointer;white-space:nowrap;
@@ -482,7 +482,7 @@ export default function ReferPage() {
         }
         .ref-final-btn{
           display:inline-block;
-          background:var(--brand-accent);color:var(--brand-ink);
+          background:var(--brand-accent);color:var(--brand-canvas);
           padding:18px 44px;border:2px solid var(--brand-ink);
           font-family:var(--brand-font-body);
           font-size:14px;font-weight:800;letter-spacing:.08em;

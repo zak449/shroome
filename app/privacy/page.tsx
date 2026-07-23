@@ -65,9 +65,9 @@ export default function Privacy() {
 
         /* ── TICKER ─── */
         .pp-ticker{background:var(--brand-ink);padding:10px 0;overflow:hidden;white-space:nowrap}
-        .pp-ticker-track{display:inline-flex;animation:ppTick 28s linear infinite}
+        .pp-ticker-track{display:flex;justify-content:center;flex-wrap:wrap;row-gap:6px}
         .pp-ticker-item{font-family:var(--brand-font-mono);font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;padding:0 28px;color:rgba(var(--brand-canvas-rgb),.75)}
-        .pp-ticker-item em{color:var(--brand-accent);font-style:normal;font-weight:500}
+        .pp-ticker-item em{color:var(--brand-tint-soft);font-style:normal;font-weight:500}
         @keyframes ppTick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
         /* ── NAV ─── */
@@ -132,7 +132,7 @@ export default function Privacy() {
 
         /* ── PILL ROW ─── */
         .pp-pill-row{display:flex;gap:0;overflow:hidden;white-space:nowrap;background:var(--brand-flavor-functional);padding:12px 0}
-        .pp-pill-track{display:inline-flex;animation:ppTick 22s linear infinite}
+        .pp-pill-track{display:flex;justify-content:center;flex-wrap:wrap;row-gap:6px}
         .pp-pill-item{
           font-family:var(--brand-font-body);font-size:11px;font-weight:700;
           letter-spacing:.14em;text-transform:uppercase;color:var(--brand-ink);padding:0 28px
@@ -166,7 +166,7 @@ export default function Privacy() {
         .pp-cta h2 em{font-style:normal;color:var(--brand-accent-warm)}
         .pp-cta-sub{font-size:14px;color:rgba(var(--brand-canvas-rgb),.5);margin-bottom:28px;font-weight:400}
         .pp-btn-cta{
-          display:inline-block;background:var(--brand-accent);color:var(--brand-ink);border:none;
+          display:inline-block;background:var(--brand-accent);color:var(--brand-canvas);border:none;
           padding:14px 36px;font-family:var(--brand-font-body);
           font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
           cursor:pointer;transition:background .2s,transform .2s;text-decoration:none
@@ -214,7 +214,7 @@ export default function Privacy() {
       <div className="pp-page">
       <div className="pp-ticker">
         <div className="pp-ticker-track">
-          {[...tickerItems, ...tickerItems].map((t, i) => (
+          {tickerItems.map((t, i) => (
             <span key={i} className="pp-ticker-item" dangerouslySetInnerHTML={{
               __html: t.replace(/✦/g, '<em>✦</em>')
             }} />
@@ -267,7 +267,7 @@ export default function Privacy() {
       {/* ═══ PILL TICKER ═══ */}
       <div className="pp-pill-row">
         <div className="pp-pill-track">
-          {[...pills, ...pills].map((p, i) => (
+          {pills.map((p, i) => (
             <span key={i} className="pp-pill-item">
               {p} <span className="pp-pill-sep">◆</span>
             </span>

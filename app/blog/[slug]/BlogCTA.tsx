@@ -261,7 +261,7 @@ export default function BlogCTA() {
                   setInlinePhoneDone(true);
                 }} style={{ display: "flex", gap: 0, maxWidth: 380, margin: "0 auto", flexWrap: "wrap" as const, justifyContent: "center" }}>
                   <input type="tel" placeholder="(555) 123-4567" value={inlinePhone} onChange={(e) => setInlinePhone(e.target.value)} required style={{ flex: "1 1 200px", padding: "12px 14px", fontFamily: "var(--brand-font-body)", fontSize: 13, color: "var(--brand-ink)", background: "var(--brand-canvas)", border: "2px solid transparent", outline: "none" }} />
-                  <button type="submit" style={{ padding: "12px 20px", background: "var(--brand-accent)", color: "var(--brand-ink)", border: "none", fontFamily: "var(--brand-font-body)", fontWeight: 800, fontSize: 12, letterSpacing: "0.06em", textTransform: "uppercase" as const, cursor: "pointer" }}>Upgrade it</button>
+                  <button type="submit" style={{ padding: "12px 20px", background: "var(--brand-accent)", color: "var(--brand-canvas)", border: "none", fontFamily: "var(--brand-font-body)", fontWeight: 800, fontSize: 12, letterSpacing: "0.06em", textTransform: "uppercase" as const, cursor: "pointer" }}>Upgrade it</button>
                 </form>
                 <button onClick={() => setInlinePhoneDone(true)} style={{ background: "none", border: "none", color: "rgba(var(--brand-canvas-rgb),0.4)", fontSize: 11, fontFamily: "var(--brand-font-body)", cursor: "pointer", marginTop: 8, textDecoration: "underline" }}>Skip</button>
               </div>
@@ -389,7 +389,7 @@ export default function BlogCTA() {
                 setStickyPhoneDone(true);
               }} style={{ display: "flex", gap: 0 }}>
                 <input type="tel" placeholder="(555) 123-4567" value={stickyPhone} onChange={(e) => setStickyPhone(e.target.value)} required style={{ padding: "8px 12px", fontSize: 12, fontFamily: "var(--brand-font-body)", border: "none", background: "rgba(var(--brand-canvas-rgb),0.15)", color: "var(--brand-canvas)", outline: "none", width: 130 }} />
-                <button type="submit" style={{ padding: "8px 14px", background: "var(--brand-accent)", color: "var(--brand-ink)", border: "none", fontFamily: "var(--brand-font-body)", fontWeight: 800, fontSize: 10, letterSpacing: "0.06em", textTransform: "uppercase" as const, cursor: "pointer" }}>Add</button>
+                <button type="submit" style={{ padding: "8px 14px", background: "var(--brand-accent)", color: "var(--brand-canvas)", border: "none", fontFamily: "var(--brand-font-body)", fontWeight: 800, fontSize: 10, letterSpacing: "0.06em", textTransform: "uppercase" as const, cursor: "pointer" }}>Add</button>
               </form>
               <button onClick={() => setStickyPhoneDone(true)} style={{ background: "none", border: "none", color: "rgba(var(--brand-canvas-rgb),0.35)", fontSize: 10, cursor: "pointer", textDecoration: "underline", fontFamily: "var(--brand-font-body)" }}>Skip</button>
             </div>

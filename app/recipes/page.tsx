@@ -76,9 +76,9 @@ export default function RecipesPage() {
       <style>{`
         /* ── TICKER ── */
         .rec-ticker{background:var(--brand-ink);padding:10px 0;overflow:hidden;white-space:nowrap}
-        .rec-ticker-track{display:inline-flex;animation:recTick 28s linear infinite}
+        .rec-ticker-track{display:flex;justify-content:center;flex-wrap:wrap;row-gap:6px}
         .rec-ticker-item{font-family:var(--brand-font-mono);font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;padding:0 28px;color:rgba(var(--brand-canvas-rgb),.75)}
-        .rec-ticker-item em{color:var(--brand-accent);font-style:normal;font-weight:500}
+        .rec-ticker-item em{color:var(--brand-tint-soft);font-style:normal;font-weight:500}
         @keyframes recTick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
         /* ── NAV ── */
@@ -160,7 +160,7 @@ export default function RecipesPage() {
 
         /* ── PILL ROW ── */
         .rec-pill-row{display:flex;gap:0;overflow:hidden;white-space:nowrap;background:var(--brand-flavor-functional);padding:12px 0}
-        .rec-pill-track{display:inline-flex;animation:recTick 22s linear infinite}
+        .rec-pill-track{display:flex;justify-content:center;flex-wrap:wrap;row-gap:6px}
         .rec-pill-item{
           font-family:var(--brand-font-body);font-size:11px;font-weight:700;
           letter-spacing:.14em;text-transform:uppercase;color:var(--brand-ink);padding:0 28px
@@ -252,7 +252,7 @@ export default function RecipesPage() {
         }
         .rec-btn-cta{
           display:inline-block;
-          background:var(--brand-accent);color:var(--brand-ink);
+          background:var(--brand-accent);color:var(--brand-canvas);
           padding:16px 40px;
           font-family:var(--brand-font-body);font-size:13px;font-weight:700;
           letter-spacing:.1em;text-transform:uppercase;
@@ -307,15 +307,11 @@ export default function RecipesPage() {
       <div className="rec-ticker">
         <div className="rec-ticker-track">
           {[
-            "POUR ✦ SWIRL ✦ GO",
-            "9 EASY RECIPES",
-            "ALL UNDER A MINUTE",
-            "CEREMONIAL MATCHA + MUSHROOMS + COLLAGEN",
-            "POUR ✦ SWIRL ✦ GO",
-            "9 EASY RECIPES",
-            "ALL UNDER A MINUTE",
-            "CEREMONIAL MATCHA + MUSHROOMS + COLLAGEN",
-          ].map((t, i) => (
+              "POUR ✦ SWIRL ✦ GO",
+              "9 EASY RECIPES",
+              "ALL UNDER A MINUTE",
+              "CEREMONIAL MATCHA + MUSHROOMS + COLLAGEN",
+            ].map((t, i) => (
             <span
               key={i}
               className="rec-ticker-item"

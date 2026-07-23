@@ -181,7 +181,7 @@ export default function StrawberryFlavorPage() {
         .sf-ticker{background:var(--brand-ink);padding:10px 0;overflow:hidden;white-space:nowrap}
         .sf-ticker-track{display:flex;justify-content:center;flex-wrap:wrap}
         .sf-ticker-item{font-family:var(--brand-font-mono);font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;padding:0 28px;color:rgba(var(--brand-canvas-rgb),.75)}
-        .sf-ticker-item em{color:var(--brand-accent);font-style:normal;font-weight:500}
+        .sf-ticker-item em{color:var(--brand-tint-soft);font-style:normal;font-weight:500}
         @keyframes sfTick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
         /* ── NAV ── */
@@ -324,10 +324,6 @@ export default function StrawberryFlavorPage() {
         <div className="sf-ticker">
           <div className="sf-ticker-track">
             {[
-              "POUR \u2726 SWIRL \u2726 GO",
-              "STRAWBERRY MATCHA LATTE",
-              "CEREMONIAL MATCHA + MUSHROOMS + COLLAGEN",
-              "REAL FREEZE-DRIED STRAWBERRY",
               "POUR \u2726 SWIRL \u2726 GO",
               "STRAWBERRY MATCHA LATTE",
               "CEREMONIAL MATCHA + MUSHROOMS + COLLAGEN",

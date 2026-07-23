@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import MobileNav from "../MobileNav";
 import DropAccessForm from "../lp/DropAccessForm";
+import BoxBuilder from "./BoxBuilder";
 import {
   DROP_001,
   DROP_002,
@@ -306,6 +307,17 @@ export default function DropPage() {
             drop 002 — {DROP_002.openDate ? "date confirmed" : DROP2_SOON_LINE}
           </p>
         </div>
+      </section>
+
+      {/* ── BOX BUILDER ── */}
+      <section style={{ background: "var(--brand-tint-soft)", padding: "80px 24px" }}>
+        <div style={{ maxWidth: 1120, margin: "0 auto 36px", textAlign: "center" }}>
+          <h2 className="dr-h2">build your box.</h2>
+          <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.88rem", color: "rgba(var(--brand-ink-rgb),0.65)", marginTop: 10 }}>
+            spec it now, pour it when drop 002 opens. every combination from drop 001 is gone.
+          </p>
+        </div>
+        <BoxBuilder />
       </section>
 
       {/* ── PRODUCT GRID ── */}

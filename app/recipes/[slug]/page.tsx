@@ -140,9 +140,9 @@ export default async function RecipeDetailPage({
       <style>{`
         /* ── TICKER ── */
         .rd-ticker{background:var(--brand-ink);padding:10px 0;overflow:hidden;white-space:nowrap}
-        .rd-ticker-track{display:inline-flex;animation:rdTick 28s linear infinite}
+        .rd-ticker-track{display:flex;justify-content:center;flex-wrap:wrap;row-gap:6px}
         .rd-ticker-item{font-family:var(--brand-font-mono);font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;padding:0 28px;color:rgba(var(--brand-canvas-rgb),.75)}
-        .rd-ticker-item em{color:var(--brand-accent);font-style:normal;font-weight:500}
+        .rd-ticker-item em{color:var(--brand-tint-soft);font-style:normal;font-weight:500}
         @keyframes rdTick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
         /* ── NAV ── */
@@ -448,15 +448,11 @@ export default async function RecipeDetailPage({
       <div className="rd-ticker">
         <div className="rd-ticker-track">
           {[
-            "POUR ✦ SWIRL ✦ GO",
-            "9 EASY RECIPES",
-            "UNDER 2 MINUTES",
-            "CEREMONIAL MATCHA + MUSHROOMS + COLLAGEN",
-            "POUR ✦ SWIRL ✦ GO",
-            "9 EASY RECIPES",
-            "UNDER 2 MINUTES",
-            "CEREMONIAL MATCHA + MUSHROOMS + COLLAGEN",
-          ].map((t, i) => (
+              "POUR ✦ SWIRL ✦ GO",
+              "9 EASY RECIPES",
+              "UNDER 2 MINUTES",
+              "CEREMONIAL MATCHA + MUSHROOMS + COLLAGEN",
+            ].map((t, i) => (
             <span
               key={i}
               className="rd-ticker-item"

@@ -177,8 +177,8 @@ export default function FAQ() {
           background:
             radial-gradient(ellipse 120% 80% at 20% 10%, rgba(var(--brand-flavor-functional-rgb),0.35) 0%, transparent 50%),
             radial-gradient(ellipse 100% 70% at 80% 85%, rgba(var(--brand-accent-rgb),0.12) 0%, transparent 50%),
-            radial-gradient(ellipse 60% 50% at 60% 40%, rgba(var(--brand-flavor-strawberry-rgb),0.2) 0%, transparent 50%),
-            linear-gradient(180deg, #F0E4D8 0%, #EDE0D4 30%, #E8D8CC 60%, #F0E4D8 100%);
+            radial-gradient(ellipse 60% 50% at 60% 40%, rgba(var(--brand-accent-muted-rgb),0.12) 0%, transparent 50%),
+            linear-gradient(180deg, var(--brand-canvas) 0%, var(--brand-tint-soft) 45%, var(--brand-canvas) 100%);
           background-attachment:fixed;
           position:relative
         }
@@ -190,9 +190,9 @@ export default function FAQ() {
 
         /* ── TICKER ─── */
         .faq-ticker{background:var(--brand-ink);padding:10px 0;overflow:hidden;white-space:nowrap}
-        .faq-ticker-track{display:inline-flex;animation:faqTick 28s linear infinite}
+        .faq-ticker-track{display:flex;justify-content:center;flex-wrap:wrap;row-gap:6px}
         .faq-ticker-item{font-family:var(--brand-font-mono);font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;padding:0 28px;color:rgba(var(--brand-canvas-rgb),.75)}
-        .faq-ticker-item em{color:var(--brand-accent);font-style:normal;font-weight:500}
+        .faq-ticker-item em{color:var(--brand-tint-soft);font-style:normal;font-weight:500}
         @keyframes faqTick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
         /* ── NAV ─── */
@@ -231,7 +231,7 @@ export default function FAQ() {
         /* ── HERO ─── */
         .faq-hero{position:relative;overflow:hidden;padding:72px 8% 64px}
         .faq-hero-bg{position:absolute;inset:0;background:url('/email-clouds-bg.jpg') center bottom/cover no-repeat;opacity:.45}
-        .faq-hero-overlay{position:absolute;inset:0;background:linear-gradient(rgba(var(--brand-flavor-strawberry-rgb),0.7) 0%,rgba(var(--brand-flavor-strawberry-rgb),0.5) 40%,rgba(var(--brand-canvas-rgb),0.6) 100%)}
+        .faq-hero-overlay{position:absolute;inset:0;background:linear-gradient(rgba(227,213,247,0.75) 0%,rgba(227,213,247,0.45) 40%,rgba(var(--brand-canvas-rgb),0.6) 100%)}
         .faq-blob{position:absolute;border-radius:50%;pointer-events:none;background:var(--brand-flavor-functional);opacity:.4}
         .faq-blob-a{width:340px;height:340px;top:-80px;right:10%}
         .faq-blob-b{width:200px;height:200px;bottom:-60px;left:5%;background:var(--brand-canvas);opacity:.3}
@@ -248,7 +248,7 @@ export default function FAQ() {
           font-size:clamp(44px,5.5vw,72px);font-weight:400;line-height:1;letter-spacing:-.02em;
           color:var(--brand-accent-deep);margin-bottom:18px;opacity:0;animation:faqFadeUp .8s .2s forwards
         }
-        .faq-hero h1 em{font-style:normal;color:var(--brand-accent-warm)}
+        .faq-hero h1 em{font-style:normal;color:var(--brand-accent-deep)}
         .faq-hero-sub{
           font-size:15px;line-height:1.75;color:rgba(var(--brand-ink-rgb),0.7);max-width:480px;font-weight:400;
           opacity:0;animation:faqFadeUp .8s .35s forwards
@@ -258,7 +258,7 @@ export default function FAQ() {
 
         /* ── PILL ROW ─── */
         .faq-pill-row{display:flex;gap:0;overflow:hidden;white-space:nowrap;background:var(--brand-flavor-functional);padding:12px 0}
-        .faq-pill-track{display:inline-flex;animation:faqTick 22s linear infinite}
+        .faq-pill-track{display:flex;justify-content:center;flex-wrap:wrap;row-gap:6px}
         .faq-pill-item{
           font-family:var(--brand-font-body);font-size:11px;font-weight:700;
           letter-spacing:.14em;text-transform:uppercase;color:var(--brand-ink);padding:0 28px
@@ -311,10 +311,10 @@ export default function FAQ() {
           font-size:clamp(30px,4vw,48px);font-weight:700;font-style:normal;
           color:var(--brand-canvas);line-height:1.05;margin-bottom:12px
         }
-        .faq-cta h2 em{font-style:normal;color:var(--brand-accent-warm)}
+        .faq-cta h2 em{font-style:normal;color:var(--brand-accent-deep)}
         .faq-cta-sub{font-size:14px;color:rgba(var(--brand-canvas-rgb),.5);margin-bottom:28px;font-weight:400}
         .faq-btn-cta{
-          display:inline-block;background:var(--brand-accent);color:var(--brand-ink);border:none;
+          display:inline-block;background:var(--brand-accent);color:var(--brand-canvas);border:none;
           padding:14px 36px;font-family:var(--brand-font-body);
           font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
           cursor:pointer;transition:background .2s,transform .2s;text-decoration:none
@@ -369,7 +369,7 @@ export default function FAQ() {
       {/* ═══ TICKER ═══ */}
       <div className="faq-ticker">
         <div className="faq-ticker-track">
-          {[...tickerItems, ...tickerItems].map((t, i) => (
+          {tickerItems.map((t, i) => (
             <span key={i} className="faq-ticker-item" dangerouslySetInnerHTML={{
               __html: t.replace(/✦/g, '<em>✦</em>')
             }} />
@@ -423,7 +423,7 @@ export default function FAQ() {
       {/* ═══ PILL TICKER ═══ */}
       <div className="faq-pill-row">
         <div className="faq-pill-track">
-          {[...pills, ...pills].map((p, i) => (
+          {pills.map((p, i) => (
             <span key={i} className="faq-pill-item">
               {p} <span className="faq-pill-sep">◆</span>
             </span>

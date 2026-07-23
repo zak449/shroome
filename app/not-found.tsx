@@ -113,7 +113,7 @@ export default function NotFound() {
         }
         .nf-link-secondary:hover{border-color:var(--brand-ink);transform:translateY(-2px)}
         .nf-link-accent{
-          background:var(--brand-accent);color:var(--brand-ink);
+          background:var(--brand-accent);color:var(--brand-canvas);
         }
         .nf-link-accent:hover{background:#ff8fd4;transform:translateY(-2px)}
 

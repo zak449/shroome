@@ -176,7 +176,7 @@ export default function VanillaFlavorPage() {
         .vf-ticker{background:var(--brand-ink);padding:10px 0;overflow:hidden;white-space:nowrap}
         .vf-ticker-track{display:flex;justify-content:center;flex-wrap:wrap}
         .vf-ticker-item{font-family:var(--brand-font-mono);font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;padding:0 28px;color:rgba(var(--brand-canvas-rgb),.75)}
-        .vf-ticker-item em{color:var(--brand-accent);font-style:normal;font-weight:500}
+        .vf-ticker-item em{color:var(--brand-tint-soft);font-style:normal;font-weight:500}
         @keyframes vfTick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
         /* ── NAV ── */
@@ -319,10 +319,6 @@ export default function VanillaFlavorPage() {
         <div className="vf-ticker">
           <div className="vf-ticker-track">
             {[
-              "POUR \u2726 SWIRL \u2726 GO",
-              "VANILLA MATCHA LATTE",
-              "CEREMONIAL MATCHA + MUSHROOMS + COLLAGEN",
-              "REAL VANILLA BEAN EXTRACT",
               "POUR \u2726 SWIRL \u2726 GO",
               "VANILLA MATCHA LATTE",
               "CEREMONIAL MATCHA + MUSHROOMS + COLLAGEN",

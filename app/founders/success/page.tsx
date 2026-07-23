@@ -34,7 +34,7 @@ export default function FoundersSuccess() {
         .fs-detail-label{font-family:var(--brand-font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(var(--brand-canvas-rgb),0.35)}
         .fs-detail-val{font-family:var(--brand-font-body);font-size:14px;font-weight:600;color:var(--brand-canvas)}
         .fs-ctas{display:flex;flex-direction:column;gap:10px;align-items:center}
-        .fs-cta-primary{display:inline-block;padding:14px 40px;border-radius:8px;background:var(--brand-accent);color:var(--brand-ink);font-family:var(--brand-font-mono);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:transform .15s}
+        .fs-cta-primary{display:inline-block;padding:14px 40px;border-radius:8px;background:var(--brand-accent);color:var(--brand-canvas);font-family:var(--brand-font-mono);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:transform .15s}
         .fs-cta-primary:hover{transform:scale(1.03)}
         .fs-cta-secondary{font-family:var(--brand-font-body);font-size:13px;color:rgba(var(--brand-canvas-rgb),0.4);text-decoration:none}
         .fs-cta-secondary:hover{color:rgba(var(--brand-canvas-rgb),0.7)}

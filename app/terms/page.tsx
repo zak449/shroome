@@ -65,9 +65,9 @@ export default function Terms() {
 
         /* ── TICKER ─── */
         .tos-ticker{background:var(--brand-ink);padding:10px 0;overflow:hidden;white-space:nowrap}
-        .tos-ticker-track{display:inline-flex;animation:tosTick 28s linear infinite}
+        .tos-ticker-track{display:flex;justify-content:center;flex-wrap:wrap;row-gap:6px}
         .tos-ticker-item{font-family:var(--brand-font-mono);font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;padding:0 28px;color:rgba(var(--brand-canvas-rgb),.75)}
-        .tos-ticker-item em{color:var(--brand-accent);font-style:normal;font-weight:500}
+        .tos-ticker-item em{color:var(--brand-tint-soft);font-style:normal;font-weight:500}
         @keyframes tosTick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
         /* ── NAV ─── */
@@ -132,7 +132,7 @@ export default function Terms() {
 
         /* ── PILL ROW ─── */
         .tos-pill-row{display:flex;gap:0;overflow:hidden;white-space:nowrap;background:var(--brand-flavor-functional);padding:12px 0}
-        .tos-pill-track{display:inline-flex;animation:tosTick 22s linear infinite}
+        .tos-pill-track{display:flex;justify-content:center;flex-wrap:wrap;row-gap:6px}
         .tos-pill-item{
           font-family:var(--brand-font-body);font-size:11px;font-weight:700;
           letter-spacing:.14em;text-transform:uppercase;color:var(--brand-ink);padding:0 28px
@@ -166,7 +166,7 @@ export default function Terms() {
         .tos-cta h2 em{font-style:normal;color:var(--brand-accent-warm)}
         .tos-cta-sub{font-size:14px;color:rgba(var(--brand-canvas-rgb),.5);margin-bottom:28px;font-weight:400}
         .tos-btn-cta{
-          display:inline-block;background:var(--brand-accent);color:var(--brand-ink);border:none;
+          display:inline-block;background:var(--brand-accent);color:var(--brand-canvas);border:none;
           padding:14px 36px;font-family:var(--brand-font-body);
           font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
           cursor:pointer;transition:background .2s,transform .2s;text-decoration:none
@@ -214,7 +214,7 @@ export default function Terms() {
       <div className="tos-page">
       <div className="tos-ticker">
         <div className="tos-ticker-track">
-          {[...tickerItems, ...tickerItems].map((t, i) => (
+          {tickerItems.map((t, i) => (
             <span key={i} className="tos-ticker-item" dangerouslySetInnerHTML={{
               __html: t.replace(/✦/g, '<em>✦</em>')
             }} />
@@ -267,7 +267,7 @@ export default function Terms() {
       {/* ═══ PILL TICKER ═══ */}
       <div className="tos-pill-row">
         <div className="tos-pill-track">
-          {[...pills, ...pills].map((p, i) => (
+          {pills.map((p, i) => (
             <span key={i} className="tos-pill-item">
               {p} <span className="tos-pill-sep">◆</span>
             </span>
