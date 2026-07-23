@@ -8,7 +8,7 @@ const seoMap: Record<
 > = {
   "classic-iced-matcha-latte": {
     description:
-      "Make a Classic Iced Matcha Latte in 15 seconds with shroomé — ceremonial matcha, lion's mane mushroom, and collagen in one sachet. Just tear, pour over oat milk, and enjoy a layered iced matcha with clean energy and zero prep.",
+      "Make a Classic Iced Matcha Latte in 30 seconds with shroomé — ceremonial matcha, lion's mane mushroom, and collagen in one sachet. Just tear, pour over oat milk, and enjoy a layered iced matcha with clean energy and zero prep.",
     keywords: [
       "iced matcha latte recipe",
       "classic iced matcha latte",
@@ -60,7 +60,7 @@ const seoMap: Record<
   },
   "matcha-affogato": {
     description:
-      "Pour a Matcha Affogato in 15 seconds — one shroomé sachet over vanilla ice cream for the easiest matcha dessert ever. Ceremonial matcha, lion's mane mushroom, and collagen meet creamy gelato.",
+      "Pour a Matcha Affogato in 30 seconds — one shroomé sachet over vanilla ice cream for the easiest matcha dessert ever. Ceremonial matcha, lion's mane mushroom, and collagen meet creamy gelato.",
     keywords: [
       "matcha affogato",
       "matcha affogato recipe",
@@ -111,7 +111,7 @@ const seoMap: Record<
   },
   "light-matcha-agua-fresca": {
     description:
-      "Stir up a Strawberry Matcha Agua Fresca in 15 seconds with shroomé strawberry — cold water, fresh lemon, agave, ceremonial matcha, lion's mane mushroom, and collagen. Light, citrusy, barely sweet, and ultra-refreshing.",
+      "Stir up a Strawberry Matcha Agua Fresca in 30 seconds with shroomé strawberry — cold water, fresh lemon, agave, ceremonial matcha, lion's mane mushroom, and collagen. Light, citrusy, barely sweet, and ultra-refreshing.",
     keywords: [
       "matcha agua fresca",
       "strawberry matcha agua fresca",
@@ -128,7 +128,7 @@ const seoMap: Record<
   },
   "coconut-water-matcha": {
     description:
-      "Mix a Coconut Water Matcha in 15 seconds with shroomé — coconut water, fresh mint, ceremonial matcha, lion's mane mushroom, and collagen. Tropical, hydrating, electrolyte-rich, and dairy-free. No milk needed.",
+      "Mix a Coconut Water Matcha in 30 seconds with shroomé — coconut water, fresh mint, ceremonial matcha, lion's mane mushroom, and collagen. Tropical, hydrating, electrolyte-rich, and dairy-free. No milk needed.",
     keywords: [
       "coconut water matcha",
       "coconut matcha recipe",
@@ -145,7 +145,7 @@ const seoMap: Record<
   },
   "sparkling-matcha": {
     description:
-      "Pour a Sparkling Matcha in 15 seconds with shroomé — sparkling water, ceremonial matcha, lion's mane mushroom, and collagen. Fizzy, light, layered, and surprisingly refreshing with an optional oat milk float.",
+      "Pour a Sparkling Matcha in 30 seconds with shroomé — sparkling water, ceremonial matcha, lion's mane mushroom, and collagen. Fizzy, light, layered, and surprisingly refreshing with an optional oat milk float.",
     keywords: [
       "sparkling matcha",
       "sparkling matcha recipe",

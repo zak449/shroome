@@ -26,7 +26,7 @@ interface DropAccessFormProps {
 export default function DropAccessForm({
   source,
   dark = false,
-  buttonLabel = "get drop access",
+  buttonLabel = "get first access",
   microcopy,
 }: DropAccessFormProps) {
   const [email, setEmail] = useState("");
@@ -234,7 +234,7 @@ export default function DropAccessForm({
                 padding: "16px 32px",
                 border: "none",
                 background: "var(--brand-accent)",
-                color: "var(--brand-ink)",
+                color: "var(--brand-canvas)",
                 fontFamily: "var(--brand-font-body)",
                 fontWeight: 800,
                 fontSize: "0.78rem",
@@ -300,7 +300,7 @@ export default function DropAccessForm({
             padding: "16px 28px",
             border: "none",
             background: "var(--brand-accent)",
-            color: "var(--brand-ink)",
+            color: "var(--brand-canvas)",
             fontFamily: "var(--brand-font-body)",
             fontWeight: 800,
             fontSize: "0.78rem",

@@ -40,7 +40,7 @@ export default function FoundersPage() {
         </nav>
 
         <main className="fp-main">
-          <img src="/brand/pattern-flower.svg" alt="" aria-hidden className="fp-flower" style={{ top: "-12%", left: "-8%", width: "26vw", minWidth: 220, opacity: 0.7 }} />
+          <img src="/brand/pattern-flower-brand.svg" alt="" aria-hidden className="fp-flower" style={{ top: "-12%", left: "-8%", width: "26vw", minWidth: 220, opacity: 0.7 }} />
           <img src="/brand/pattern-flower-vanilla.svg" alt="" aria-hidden className="fp-flower" style={{ bottom: "-14%", right: "-6%", width: "20vw", minWidth: 180, opacity: 0.55 }} />
 
           <div className="fp-card">

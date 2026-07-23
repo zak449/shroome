@@ -40,7 +40,7 @@ export async function POST(req: NextRequest) {
       custom_text: {
         submit: {
           message:
-            "Your box is reserved. Ships June 15, 2026 — launch day. Includes 3 reorder codes at 30% off.",
+            "Your box is reserved. Shipped with Drop 001 — launch day. Includes 3 reorder codes at 30% off.",
         },
       },
       // Allow promo codes (a single best code — codes never stack per the

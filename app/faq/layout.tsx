@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "FAQ — shroomé | Pour. Swirl. Go.",
   description:
-    "Frequently asked questions about shroomé — the world's first ready-to-pour ceremonial matcha latte. 2.5g matcha, 2g collagen, real mushrooms. Learn about ingredients, how to pour, caffeine content, and more.",
+    "Frequently asked questions about shroomé — the liquid ceremonial matcha latte. 2.5g matcha, 2g collagen, real mushrooms. Learn about ingredients, how to pour, caffeine content, and more.",
   keywords: [
     "shroomé faq",
     "matcha latte questions",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "FAQ — shroomé | Pour. Swirl. Go.",
     description:
-      "Everything you need to know about shroomé — the world's first ready-to-pour ceremonial matcha latte with collagen + mushrooms.",
+      "Everything you need to know about shroomé — the liquid ceremonial matcha latte with collagen + mushrooms.",
     url: "https://www.drinkshroome.com/faq",
     siteName: "shroomé",
     type: "website",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "FAQ — shroomé | Pour. Swirl. Go.",
     description:
-      "Everything you need to know about shroomé — the world's first ready-to-pour ceremonial matcha latte with collagen + mushrooms.",
+      "Everything you need to know about shroomé — the liquid ceremonial matcha latte with collagen + mushrooms.",
   },
   alternates: {
     canonical: "https://www.drinkshroome.com/faq",

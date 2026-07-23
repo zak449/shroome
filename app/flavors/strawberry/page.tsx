@@ -6,7 +6,7 @@ import MobileNav from "../../MobileNav";
 import Breadcrumb from "../../Breadcrumb";
 
 export const metadata: Metadata = {
-  title: "Strawberry — shroomé | Ready-to-Pour Strawberry Matcha Latte",
+  title: "Strawberry — shroomé | Liquid Strawberry Matcha Latte",
   description:
     "shroomé Strawberry — ceremonial matcha meets real freeze-dried strawberry, functional mushroom extracts, and grass-fed collagen peptides. One sachet, 30 seconds, zero compromise.",
   keywords: [
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     "ceremonial matcha latte",
   ],
   openGraph: {
-    title: "Strawberry — shroomé | Ready-to-Pour Strawberry Matcha Latte",
+    title: "Strawberry — shroomé | Liquid Strawberry Matcha Latte",
     description:
       "Ceremonial matcha meets real freeze-dried strawberry, functional mushroom extracts, and grass-fed collagen. One sachet, 30 seconds.",
     url: "https://www.drinkshroome.com/flavors/strawberry",
@@ -119,7 +119,7 @@ const productSchema = {
 const ingredients = [
   {
     name: "Ceremonial Matcha",
-    detail: "2g first-harvest, shade-grown ceremonial grade",
+    detail: "2.5g first-harvest, shade-grown ceremonial grade",
   },
   {
     name: "Mushroom Extracts",
@@ -166,7 +166,7 @@ export default function StrawberryFlavorPage() {
           background:
             radial-gradient(ellipse 120% 80% at 20% 10%, rgba(var(--brand-flavor-functional-rgb),0.35) 0%, transparent 50%),
             radial-gradient(ellipse 100% 70% at 80% 85%, rgba(var(--brand-accent-rgb),0.12) 0%, transparent 50%),
-            radial-gradient(ellipse 60% 50% at 60% 40%, rgba(var(--brand-flavor-strawberry-rgb),0.2) 0%, transparent 50%),
+            radial-gradient(ellipse 60% 50% at 60% 40%, rgba(227,213,247,0.5) 0%, transparent 50%),
             linear-gradient(180deg, var(--brand-canvas) 0%, var(--brand-tint-soft) 45%, var(--brand-canvas) 100%);
           background-attachment:fixed;
           position:relative
@@ -404,11 +404,11 @@ export default function StrawberryFlavorPage() {
                 fontSize: 12,
                 letterSpacing: "0.1em",
                 textTransform: "uppercase",
-                color: "var(--brand-ink)",
+                color: "var(--brand-canvas)",
                 textDecoration: "none",
               }}
             >
-              Sold out &mdash; notify me for the restock &rarr;
+              Sold out &mdash; get first access to Drop 002 &rarr;
             </a>
           </div>
         </section>

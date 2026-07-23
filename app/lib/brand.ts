@@ -90,7 +90,7 @@ export const BRAND = {
     monoName: "Besley",
     /** Web-font stylesheet loaded in app/layout.tsx <head>. */
     googleFontsHref:
-      "https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,700;0,800;1,400;1,700&family=Besley:wght@600;700&display=swap",
+      "https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;700;800&family=Besley:wght@600;700&display=swap",
     /** Local TTFs in app/fonts/ used by opengraph-image renderers. */
     files: {
       displayRegular: "SchibstedGrotesk-Regular.ttf",

@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 // at 1 / 3 / 5 referrals (hard cap) + case-001 leaderboard prize.
 const TITLE = "Refer Friends, Earn Credit — shroomé Referral Program";
 const DESCRIPTION =
-  "Share shroomé with friends. They lock in 20% off + free shipping. You earn fixed credits — $5 for your 1st friend, $10 total at 3, $15 total at 5 — plus a shot at a hand-numbered box from case 001.";
+  "Share shroomé with friends. They lock in first access to Drop 002.";
 
 export const metadata: Metadata = {
   title: TITLE,

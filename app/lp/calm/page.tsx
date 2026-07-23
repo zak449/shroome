@@ -5,12 +5,12 @@ import { X1_BOXES, DROP2_RUN } from "../../lib/drop-config";
 export const metadata: Metadata = {
   title: "shroomé — break up with the crash, not with caffeine",
   description:
-    "~60mg caffeine + matcha's natural l-theanine for calm, steady energy. a ready-to-pour ceremonial matcha latte. drop 001 sold out — get access to drop 002.",
+    "~60mg caffeine + matcha's natural l-theanine for calm, steady energy. a liquid ceremonial matcha latte. drop 001 sold out — get access to drop 002.",
   robots: { index: false, follow: false },
   openGraph: {
     title: "shroomé — break up with the crash, not with caffeine",
     description:
-      "~60mg caffeine + matcha's natural l-theanine for calm, steady energy. a ready-to-pour ceremonial matcha latte. drop 001 sold out — get access to drop 002.",
+      "~60mg caffeine + matcha's natural l-theanine for calm, steady energy. a liquid ceremonial matcha latte. drop 001 sold out — get access to drop 002.",
     siteName: "shroomé",
     type: "website",
   },
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "shroomé — break up with the crash, not with caffeine",
     description:
-      "~60mg caffeine + matcha's natural l-theanine for calm, steady energy. a ready-to-pour ceremonial matcha latte. drop 001 sold out — get access to drop 002.",
+      "~60mg caffeine + matcha's natural l-theanine for calm, steady energy. a liquid ceremonial matcha latte. drop 001 sold out — get access to drop 002.",
   },
 };
 
@@ -28,7 +28,7 @@ const config: LPConfig = {
     eyebrow: "CALM, STEADY ENERGY · SUPPORTS SUSTAINED FOCUS",
     headlineLines: ["break up with the crash.", "keep the energy."],
     subheadline:
-      "shroomé is a ready-to-pour ceremonial matcha latte with ~60mg of caffeine and matcha's naturally occurring l-theanine — energy that arrives smooth, stays steady, and leaves quietly. no 2pm cliff. no jitters. no apology tour.",
+      "shroomé is a liquid ceremonial matcha latte with ~60mg of caffeine and matcha's naturally occurring l-theanine — energy that arrives smooth, stays steady, and leaves quietly. no 2pm cliff. no jitters. no apology tour.",
     background: "linear-gradient(155deg, var(--brand-tint-soft) 0%, var(--brand-tint-soft) 55%, var(--brand-tint-blush) 100%)",
     cloudOpacity: 0.4,
     sachets: "vanilla",

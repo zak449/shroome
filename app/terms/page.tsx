@@ -37,7 +37,7 @@ const pills = [
 ];
 
 const tickerItems = [
-  "The World's First Ready-to-Pour Matcha Latte",
+  "The Liquid Ceremonial Matcha Latte",
   "✦ Energy Without the Crash",
   "✦ 2.5g matcha · Mushroom Extracts · Collagen",
   "✦ 60mg Caffeine · Zero Jitters · Actually Tastes Good",
@@ -52,7 +52,7 @@ export default function Terms() {
           background:
             radial-gradient(ellipse 120% 80% at 20% 10%, rgba(var(--brand-flavor-functional-rgb),0.35) 0%, transparent 50%),
             radial-gradient(ellipse 100% 70% at 80% 85%, rgba(var(--brand-accent-rgb),0.12) 0%, transparent 50%),
-            radial-gradient(ellipse 60% 50% at 60% 40%, rgba(var(--brand-flavor-strawberry-rgb),0.2) 0%, transparent 50%),
+            radial-gradient(ellipse 60% 50% at 60% 40%, rgba(227,213,247,0.5) 0%, transparent 50%),
             linear-gradient(180deg, #F0E4D8 0%, #EDE0D4 30%, #E8D8CC 60%, #F0E4D8 100%);
           background-attachment:fixed;
           position:relative
@@ -105,7 +105,7 @@ export default function Terms() {
         /* ── HERO ─── */
         .tos-hero{position:relative;overflow:hidden;padding:72px 8% 64px}
         .tos-hero-bg{position:absolute;inset:0;background:url('/email-clouds-bg.jpg') center bottom/cover no-repeat;opacity:.45}
-        .tos-hero-overlay{position:absolute;inset:0;background:linear-gradient(rgba(var(--brand-flavor-strawberry-rgb),0.7) 0%,rgba(var(--brand-flavor-strawberry-rgb),0.5) 40%,rgba(var(--brand-canvas-rgb),0.6) 100%)}
+        .tos-hero-overlay{position:absolute;inset:0;background:linear-gradient(rgba(227,213,247,0.8) 0%,rgba(227,213,247,0.5) 40%,rgba(var(--brand-canvas-rgb),0.6) 100%)}
         .tos-blob{position:absolute;border-radius:50%;pointer-events:none;background:var(--brand-flavor-functional);opacity:.4}
         .tos-blob-a{width:340px;height:340px;top:-80px;right:10%}
         .tos-blob-b{width:200px;height:200px;bottom:-60px;left:5%;background:var(--brand-canvas);opacity:.3}
@@ -122,7 +122,7 @@ export default function Terms() {
           font-size:clamp(44px,5.5vw,72px);font-weight:400;line-height:1;letter-spacing:-.02em;
           color:var(--brand-accent-deep);margin-bottom:18px;opacity:0;animation:tosFadeUp .8s .2s forwards
         }
-        .tos-hero h1 em{font-style:normal;color:var(--brand-accent-warm)}
+        .tos-hero h1 em{font-style:normal;color:var(--brand-accent-deep)}
         .tos-hero-sub{
           font-size:15px;line-height:1.75;color:rgba(var(--brand-ink-rgb),0.7);max-width:480px;font-weight:400;
           opacity:0;animation:tosFadeUp .8s .35s forwards
@@ -163,7 +163,7 @@ export default function Terms() {
           font-size:clamp(30px,4vw,48px);font-weight:700;font-style:normal;
           color:var(--brand-canvas);line-height:1.05;margin-bottom:12px
         }
-        .tos-cta h2 em{font-style:normal;color:var(--brand-accent-warm)}
+        .tos-cta h2 em{font-style:normal;color:var(--brand-accent-deep)}
         .tos-cta-sub{font-size:14px;color:rgba(var(--brand-canvas-rgb),.5);margin-bottom:28px;font-weight:400}
         .tos-btn-cta{
           display:inline-block;background:var(--brand-accent);color:var(--brand-canvas);border:none;
@@ -235,7 +235,7 @@ export default function Terms() {
           <a href="/faq">FAQ</a>
           <a href="/blog">Blog</a>
           <a href="/recipes">Recipes</a>        </div>
-        <a href="/" className="tos-nav-cta">Get 20% off + free shipping &rarr;</a>
+        <a href="/" className="tos-nav-cta">Get first access &rarr;</a>
         <MobileNav
           prefix="tos"
           links={[
@@ -355,11 +355,11 @@ export default function Terms() {
         <h2>
           Be first.
           <br />
-          <em>Get 20% off + free shipping.</em>
+          <em>Get first access.</em>
         </h2>
-        <p className="tos-cta-sub">12 servings per box · Tear. Pour. Hit.</p>
+        <p className="tos-cta-sub">12 servings per box · Pour. Swirl. Go.</p>
         <a href="/" className="tos-btn-cta">
-          Claim 20% off →
+          Get first access →
         </a>
       </section>
 

@@ -294,7 +294,7 @@ export default function FAQ() {
         .faq-q-btn::after{
           content:'+';position:absolute;right:0;top:50%;transform:translateY(-50%);
           font-family:var(--brand-font-display);font-size:26px;font-weight:400;
-          color:var(--brand-accent-warm);transition:transform .3s cubic-bezier(.23,1,.32,1)
+          color:var(--brand-accent-deep);transition:transform .3s cubic-bezier(.23,1,.32,1)
         }
         .faq-item-open .faq-q-btn{color:var(--brand-accent-deep)}
         .faq-item-open .faq-q-btn::after{content:'−'}

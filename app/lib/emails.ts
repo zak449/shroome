@@ -83,7 +83,7 @@ export function welcomeEmail(email: string, referralCode?: string) {
             <tr><td style="padding:16px 28px;">
               <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
                 <tr>
-                  <td style="font-size:22px;font-family:${SERIF};font-style:italic;color:#fff;font-weight:400;">shroom\u00e9</td>
+                  <td style="font-size:22px;font-family:${SERIF};font-style:normal;color:#fff;font-weight:400;">shroom\u00e9</td>
                   <td align="right"><span style="font-size:9px;letter-spacing:2px;text-transform:uppercase;color:${EMAIL.accent};font-weight:700;">PRE-LAUNCH</span></td>
                 </tr>
               </table>
@@ -92,18 +92,18 @@ export function welcomeEmail(email: string, referralCode?: string) {
             <tr><td style="padding:0 36px 8px;text-align:center;">
               <p style="margin:0 0 10px;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:${EMAIL.accent};font-weight:700;">\u2726 YOU\u2019RE IN \u2726</p>
               <h1 style="margin:0;font-size:42px;color:#fff;font-weight:400;line-height:1.05;font-family:${SERIF};">
-                Caf\u00e9 energy.<br/><span style="font-style:italic;color:${EMAIL.accent};">Home address.</span>
+                Caf\u00e9 energy.<br/><span style="font-style:normal;color:${EMAIL.accent};">Home address.</span>
               </h1>
             </td></tr>
             <tr><td style="padding:12px 48px 16px;text-align:center;">
               <p style="margin:0;font-size:13px;color:rgba(255,255,255,0.8);line-height:1.6;">
-                The world\u2019s first ready-to-pour ceremonial matcha latte.<br/>2.5g matcha \u00b7 mushroom extracts \u00b7 collagen \u00b7 zero crash.
+                The world\u2019s first liquid ceremonial matcha latte.<br/>2.5g matcha \u00b7 mushroom extracts \u00b7 collagen \u00b7 zero crash.
               </p>
             </td></tr>
             <tr><td style="padding:0 36px 28px;text-align:center;">
               <table role="presentation" cellpadding="0" cellspacing="0" style="margin:0 auto;">
                 <tr>
-                  <td style="background:${alpha("accent",0.15)};border-radius:20px;padding:5px 13px;border:1px solid ${alpha("accent",0.25)};"><span style="font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:${EMAIL.accent};">20% OFF</span></td>
+                  <td style="background:${alpha("accent",0.15)};border-radius:20px;padding:5px 13px;border:1px solid ${alpha("accent",0.25)};"><span style="font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:${EMAIL.accent};">FIRST ACCESS</span></td>
                   <td style="width:6px;"></td>
                   <td style="background:${alpha("accent",0.15)};border-radius:20px;padding:5px 13px;border:1px solid ${alpha("accent",0.25)};"><span style="font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:${EMAIL.accent};">FREE SHIPPING</span></td>
                   <td style="width:6px;"></td>
@@ -120,8 +120,8 @@ export function welcomeEmail(email: string, referralCode?: string) {
     <tr><td style="padding:0;background:linear-gradient(180deg, ${EMAIL.ink} 0%, ${EMAIL.flavorFunctional} 100%);text-align:center;">
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
         <tr><td style="padding:36px 36px 6px;text-align:center;">
-          <p style="margin:0 0 4px;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.4);font-weight:600;">THE 15 SECONDS</p>
-          <p style="margin:0;font-size:30px;color:#fff;font-weight:400;font-family:${SERIF};font-style:italic;line-height:1.1;">
+          <p style="margin:0 0 4px;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.4);font-weight:600;">THE 30 SECONDS</p>
+          <p style="margin:0;font-size:30px;color:#fff;font-weight:400;font-family:${SERIF};font-style:normal;line-height:1.1;">
             Tear. Pour. <span style="color:${EMAIL.accent};">Feel the shift.</span>
           </p>
         </td></tr>
@@ -130,7 +130,7 @@ export function welcomeEmail(email: string, referralCode?: string) {
         </td></tr>
         <tr><td style="padding:16px 40px 32px;text-align:center;">
           <p style="margin:0;font-size:12px;color:${G};line-height:1.7;opacity:0.7;">
-            Two flavors. Twelve per box. Pre-dissolved \u2014 no powder, no frother. 15 seconds to caf\u00e9-grade matcha.
+            Two flavors. Twelve per box. Pre-dissolved \u2014 no powder, no frother. 30 seconds to caf\u00e9-grade matcha.
           </p>
         </td></tr>
       </table>
@@ -142,7 +142,7 @@ export function welcomeEmail(email: string, referralCode?: string) {
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
         <tr><td style="padding:36px 40px 12px;text-align:center;">
           <p style="margin:0 0 6px;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:${EMAIL.ink};opacity:0.5;font-weight:600;">SHARE THE LOVE</p>
-          <p style="margin:0 0 16px;font-size:28px;color:${EMAIL.ink};font-weight:400;font-family:${SERIF};font-style:italic;line-height:1.1;">
+          <p style="margin:0 0 16px;font-size:28px;color:${EMAIL.ink};font-weight:400;font-family:${SERIF};font-style:normal;line-height:1.1;">
             Give your friends the same deal.
           </p>
           <p style="margin:0 0 20px;font-size:14px;color:${EMAIL.ink};line-height:1.6;opacity:0.7;">
@@ -176,7 +176,7 @@ export function welcomeEmail(email: string, referralCode?: string) {
     <!-- ═══ FLOW: tint → ink (smooth transition into ingredients) ═══ -->
     <tr><td style="padding:40px 40px 24px;background:linear-gradient(180deg, ${EMAIL.flavorFunctional} 0%, ${EMAIL.ink} 100%);text-align:center;">
       <p style="margin:0 0 6px;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.5);font-weight:600;">WHAT\u2019S INSIDE</p>
-      <p style="margin:0;font-size:34px;color:#fff;font-weight:400;font-family:${SERIF};font-style:italic;line-height:1.1;">
+      <p style="margin:0;font-size:34px;color:#fff;font-weight:400;font-family:${SERIF};font-style:normal;line-height:1.1;">
         Clean label. <span style="color:${EMAIL.accent};">Real doses.</span>
       </p>
     </td></tr>
@@ -189,7 +189,7 @@ export function welcomeEmail(email: string, referralCode?: string) {
           <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
             <tr><td style="background-color:rgba(255,255,255,0.06);border-radius:12px;padding:20px 24px;border:1px solid rgba(255,255,255,0.06);">
               <p style="margin:0;">
-                <span style="font-size:36px;font-weight:300;color:${EMAIL.accent};font-family:${SERIF};font-style:italic;">2.5g</span>
+                <span style="font-size:36px;font-weight:300;color:${EMAIL.accent};font-family:${SERIF};font-style:normal;">2.5g</span>
                 <span style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-left:12px;"> CEREMONIAL MATCHA</span>
               </p>
               <p style="margin:8px 0 0;font-size:13px;color:rgba(255,255,255,0.4);line-height:1.4;">First-harvest, shade-grown. 60mg caffeine. Not culinary grade \u2014 the real thing.</p>
@@ -201,7 +201,7 @@ export function welcomeEmail(email: string, referralCode?: string) {
           <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
             <tr><td style="background-color:rgba(255,255,255,0.06);border-radius:12px;padding:20px 24px;border:1px solid rgba(255,255,255,0.06);">
               <p style="margin:0;">
-                <span style="font-size:36px;font-weight:300;color:${EMAIL.accent};font-family:${SERIF};font-style:italic;">200mg</span>
+                <span style="font-size:36px;font-weight:300;color:${EMAIL.accent};font-family:${SERIF};font-style:normal;">200mg</span>
                 <span style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-left:12px;"> ORGANIC MUSHROOM EXTRACTS</span>
               </p>
               <p style="margin:8px 0 0;font-size:13px;color:rgba(255,255,255,0.4);line-height:1.4;">70%+ beta-glucan (1/3, 1/6) purity. Immune activation, sustained focus, no crash. Most brands: 15\u201330%.</p>
@@ -213,7 +213,7 @@ export function welcomeEmail(email: string, referralCode?: string) {
           <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
             <tr><td style="background-color:rgba(255,255,255,0.06);border-radius:12px;padding:20px 24px;border:1px solid rgba(255,255,255,0.06);">
               <p style="margin:0;">
-                <span style="font-size:36px;font-weight:300;color:${EMAIL.accent};font-family:${SERIF};font-style:italic;">2g</span>
+                <span style="font-size:36px;font-weight:300;color:${EMAIL.accent};font-family:${SERIF};font-style:normal;">2g</span>
                 <span style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-left:12px;"> GRASS-FED COLLAGEN</span>
               </p>
               <p style="margin:8px 0 0;font-size:13px;color:rgba(255,255,255,0.4);line-height:1.4;">Pre-dissolved bioavailable peptides for skin, hair, nails, and gut.</p>
@@ -225,7 +225,7 @@ export function welcomeEmail(email: string, referralCode?: string) {
 
     <!-- THE BIG HOOK — beta-glucan education -->
     <tr><td style="padding:36px 40px 20px;background-color:${EMAIL.ink};text-align:center;">
-      <p style="margin:0 0 14px;font-size:32px;color:#fff;font-weight:400;font-family:${SERIF};font-style:italic;line-height:1.1;">
+      <p style="margin:0 0 14px;font-size:32px;color:#fff;font-weight:400;font-family:${SERIF};font-style:normal;line-height:1.1;">
         Other brands sell you<br/>mushroom powder.
       </p>
       <p style="margin:0;font-size:28px;color:${EMAIL.accent};font-weight:700;font-family:${SANS};line-height:1.15;">
@@ -288,7 +288,7 @@ export function welcomeEmail(email: string, referralCode?: string) {
     <tr><td style="padding:0;background:linear-gradient(180deg, ${EMAIL.ink} 0%, ${EMAIL.flavorStrawberry} 100%);">
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
         <tr><td style="padding:36px 40px 0;text-align:center;">
-          <p style="margin:0;font-size:13px;color:rgba(255,255,255,0.2);font-style:italic;">
+          <p style="margin:0;font-size:13px;color:rgba(255,255,255,0.2);font-style:normal;">
             \u201cEvery competitor sells mushroom powder. We sell what\u2019s actually inside it.\u201d
           </p>
         </td></tr>
@@ -301,7 +301,7 @@ export function welcomeEmail(email: string, referralCode?: string) {
         <tr><td style="padding:0;">
           <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:linear-gradient(180deg, ${alpha("flavorStrawberry",0.75)} 0%, ${alpha("flavorStrawberry",0.55)} 40%, ${alpha("flavorFunctional",0.7)} 100%);">
             <tr><td style="padding:40px 40px 16px;text-align:center;">
-              <p style="margin:0 0 20px;font-size:34px;color:${G};font-weight:400;font-family:${SERIF};font-style:italic;line-height:1.1;">
+              <p style="margin:0 0 20px;font-size:34px;color:${G};font-weight:400;font-family:${SERIF};font-style:normal;line-height:1.1;">
                 This is what<br/>you\u2019re <span style="color:${EMAIL.accentWarmSoft};">getting.</span>
               </p>
               <table role="presentation" cellpadding="0" cellspacing="0" style="margin:0 auto;">
@@ -349,7 +349,7 @@ export function sachetEmail(email: string) {
             <tr><td style="padding:20px 28px 0;">
               <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
                 <tr>
-                  <td style="font-size:22px;font-family:${SERIF};font-style:italic;color:${EMAIL.ink};font-weight:400;">shroom\u00e9</td>
+                  <td style="font-size:22px;font-family:${SERIF};font-style:normal;color:${EMAIL.ink};font-weight:400;">shroom\u00e9</td>
                   <td align="right"><span style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:${EMAIL.ink};font-weight:700;opacity:0.5;">EMAIL 2 OF 2</span></td>
                 </tr>
               </table>
@@ -357,7 +357,7 @@ export function sachetEmail(email: string) {
             <tr><td style="padding:40px 36px 12px;text-align:center;">
               <p style="margin:0 0 12px;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:${EMAIL.accentDeep};opacity:0.6;font-weight:700;">INSIDE THE SACHET</p>
               <h1 style="margin:0;font-size:44px;color:${EMAIL.accentDeep};font-weight:400;line-height:1.05;font-family:${SERIF};">
-                Not all matcha is<br/>created <span style="color:${EMAIL.accentWarmSoft};font-style:italic;">equal.</span>
+                Not all matcha is<br/>created <span style="color:${EMAIL.accentWarmSoft};font-style:normal;">equal.</span>
               </h1>
             </td></tr>
             <tr><td style="padding:16px 48px 44px;text-align:center;">
@@ -377,7 +377,7 @@ export function sachetEmail(email: string) {
           <img src="${EMAIL.sachetVanilla}" alt="shroom\u00e9 vanilla sachet" width="180" style="display:inline-block;width:180px;max-width:180px;height:auto;" />
         </td></tr>
         <tr><td style="padding:16px 40px 28px;text-align:center;">
-          <p style="margin:0;font-size:20px;color:${EMAIL.accentDeep};font-weight:400;font-family:${SERIF};font-style:italic;">
+          <p style="margin:0;font-size:20px;color:${EMAIL.accentDeep};font-weight:400;font-family:${SERIF};font-style:normal;">
             pour \u00b7 swirl \u00b7 <span style="color:${EMAIL.accentWarmSoft};">glow</span>
           </p>
           <p style="margin:8px 0 0;font-size:11px;color:${EMAIL.accentDeep};opacity:0.5;letter-spacing:1px;text-transform:uppercase;font-weight:600;">
@@ -390,7 +390,7 @@ export function sachetEmail(email: string) {
     <!-- ═══ FLOW: tint → ink (seamless) ═══ -->
     <tr><td style="padding:40px 40px 20px;background:linear-gradient(180deg, ${EMAIL.flavorFunctional} 0%, ${EMAIL.ink} 100%);text-align:center;">
       <p style="margin:0 0 6px;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:${EMAIL.flavorFunctional};font-weight:600;">THE DIFFERENCE</p>
-      <p style="margin:0 0 14px;font-size:34px;color:#fff;font-weight:400;font-family:${SERIF};font-style:italic;line-height:1.1;">
+      <p style="margin:0 0 14px;font-size:34px;color:#fff;font-weight:400;font-family:${SERIF};font-style:normal;line-height:1.1;">
         It\u2019s not the mushroom.
       </p>
       <p style="margin:0;font-size:26px;color:${EMAIL.accent};font-weight:700;font-family:${SANS};line-height:1.15;">
@@ -458,7 +458,7 @@ export function sachetEmail(email: string) {
     <tr><td style="padding:0;background:linear-gradient(180deg, ${EMAIL.ink} 0%, ${alpha("ink",0.85)} 100%);">
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
         <tr><td style="padding:28px 40px;text-align:center;">
-          <p style="margin:0;font-size:13px;color:rgba(255,255,255,0.2);font-style:italic;">
+          <p style="margin:0;font-size:13px;color:rgba(255,255,255,0.2);font-style:normal;">
             \u201cEvery competitor sells mushroom powder. We sell what\u2019s actually inside it.\u201d
           </p>
         </td></tr>
@@ -470,7 +470,7 @@ export function sachetEmail(email: string) {
         <tr><td style="padding:0;">
           <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:linear-gradient(180deg, ${alpha("ink",0.8)} 0%, ${alpha("ink",0.35)} 40%, ${alpha("flavorStrawberry",0.5)} 100%);">
             <tr><td style="padding:48px 40px 16px;text-align:center;">
-              <p style="margin:0 0 20px;font-size:36px;color:#fff;font-weight:400;font-family:${SERIF};font-style:italic;line-height:1.1;">
+              <p style="margin:0 0 20px;font-size:36px;color:#fff;font-weight:400;font-family:${SERIF};font-style:normal;line-height:1.1;">
                 The matcha is already made.<br/><span style="color:${EMAIL.accent};">Just pour.</span>
               </p>
               <table role="presentation" cellpadding="0" cellspacing="0" style="margin:0 auto;">

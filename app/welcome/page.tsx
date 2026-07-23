@@ -144,16 +144,7 @@ export default function WelcomePage() {
             height={28}
             style={{ borderRadius: 6 }}
           />
-          <span
-            style={{
-              fontFamily: F.heading,
-              fontStyle: "normal",
-              fontSize: 22,
-              letterSpacing: "-0.02em",
-            }}
-          >
-            shroomé
-          </span>
+          <img src="/brand/wordmark.png" alt="shroomé" style={{ height: 22, width: "auto" }} />
         </a>
         <a
           href="#signup"
@@ -322,7 +313,7 @@ export default function WelcomePage() {
               },
               {
                 label: "Collagen Peptides",
-                accent: C.flavorStrawberry,
+                accent: C.flavorFunctional,
                 body: "2g grass-fed bovine, hydrolyzed for absorption. Types I & III for skin, joints, gut.",
               },
             ] as const
@@ -543,7 +534,7 @@ export default function WelcomePage() {
                   borderRadius: 100,
                   border: "none",
                   background: C.accent,
-                  color: C.ink,
+                  color: C.canvas,
                   cursor: status === "loading" ? "wait" : "pointer",
                   opacity: status === "loading" ? 0.6 : 1,
                   transition: "opacity .2s",
@@ -560,7 +551,7 @@ export default function WelcomePage() {
               style={{
                 fontFamily: F.body,
                 fontSize: 13,
-                color: C.flavorStrawberry,
+                color: C.flavorFunctional,
                 marginTop: 16,
               }}
             >

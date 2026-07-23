@@ -28,12 +28,12 @@ const config: LPConfig = {
     eyebrow: "30 SECONDS · NO WHISK · NO BLENDER · NO LINE",
     headlineLines: ["the café line was the only", "ingredient we removed."],
     subheadline:
-      "a ready-to-pour ceremonial matcha latte in a 1oz sachet. tear it, pour it into any milk, swirl, go — thirty seconds, one hand, zero cleanup. more ceremonial matcha than your café order, none of the detour.",
+      "a liquid ceremonial matcha latte in a 1oz sachet. tear it, pour it into any milk, swirl, go — thirty seconds, one hand, zero cleanup. more ceremonial matcha than your café order, none of the detour.",
     background: "var(--brand-canvas)",
     limeStreak: true,
     sachets: "both",
   },
-  stampColor: "var(--brand-flavor-strawberry)",
+  stampColor: "var(--brand-tint-soft)",
   benefits: {
     sectionBg: "var(--brand-canvas)",
     cardStyle: "numeral",

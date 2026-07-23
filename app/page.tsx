@@ -7,7 +7,7 @@ const productSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "shroomé Liquid Ceremonial Matcha Latte",
-  "description": "The liquid ceremonial matcha latte — 2.5g ceremonial-grade matcha, 200mg organic mushroom extracts (lion's mane, reishi, cordyceps), and 2g grass-fed collagen in a ready-to-pour sachet. Tear, pour over milk, go. No blender, no whisk, no mess.",
+  "description": "The liquid ceremonial matcha latte — 2.5g ceremonial-grade matcha, 200mg organic mushroom extracts (lion's mane, reishi, cordyceps), and 2g grass-fed collagen in a sachet. Tear, pour over milk, go. No blender, no whisk, no mess.",
   "brand": { "@type": "Brand", "name": "shroomé" },
   "manufacturer": { "@type": "Organization", "name": "ZSQUARED INC" },
   "category": "Functional Beverages",
@@ -786,7 +786,7 @@ export default function Home() {
 
             {/* Sticker badges */}
             <div className="fade-up delay-650" style={{ display: "flex", gap: 4, alignItems: "center", marginTop: 30, opacity: 0 }}>
-              <Image src="/brand/badge-ready-to-pour.png" width={132} height={85} alt="Ready to pour" style={{ width: 116, height: "auto", transform: "rotate(-3deg)" }} />
+              <Image src="/brand/badge-collagen.png" width={124} height={101} alt="With grass-fed type 1 and type 3 collagen" style={{ width: 108, height: "auto", transform: "rotate(-3deg)" }} />
               <Image src="/brand/badge-b-glucans.png" width={110} height={113} alt="Organic beta-glucans, lion's mane" style={{ width: 94, height: "auto", transform: "rotate(2deg)" }} />
               <Image src="/brand/badge-matcha.png" width={140} height={85} alt="Organic ceremonial grade matcha" style={{ width: 124, height: "auto", transform: "rotate(-2deg)" }} />
             </div>
@@ -1146,7 +1146,7 @@ export default function Home() {
                     { feature: "Ceremonial matcha", values: [true, false, false, true, true] },
                     { feature: "Collagen", values: [true, false, false, false, false] },
                     { feature: "Functional mushrooms", values: [true, true, true, false, false] },
-                    { feature: "Liquid — ready to pour", values: [true, false, false, false, true] },
+                    { feature: "Liquid — pours in 30 seconds", values: [true, false, false, false, true] },
                     { feature: "Lives in your bag", values: [true, true, true, true, false] },
                   ].map((row) => (
                     <tr key={row.feature}>

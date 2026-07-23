@@ -14,7 +14,7 @@ export async function generateStaticParams() {
 
 const categoryColors: Record<string, { bg: string; text: string; accent: string }> = {
   Ingredients: { bg: "#E8F0DD", text: "#5A7A3A", accent: BRAND.colors.accentMuted },
-  Wellness: { bg: "#FFE4EE", text: "#B44C7A", accent: BRAND.colors.flavorStrawberry },
+  Wellness: { bg: "#FFE4EE", text: "#B44C7A", accent: BRAND.colors.tintSoft },
   "How-To": { bg: "#F0FFD0", text: "#4A6B1A", accent: BRAND.colors.accent },
   Science: { bg: "#EDE4F0", text: "#6B4D7A", accent: BRAND.colors.flavorFunctional },
 };
@@ -41,7 +41,7 @@ export default async function Image({ params }: { params: { slug: string } }) {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          background: BRAND.colors.flavorStrawberry,
+          background: BRAND.colors.tintSoft,
           padding: "60px 80px 0",
           position: "relative",
           overflow: "hidden",

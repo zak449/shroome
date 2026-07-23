@@ -5,12 +5,12 @@ import { X1_BOXES, DROP2_RUN } from "../../lib/drop-config";
 export const metadata: Metadata = {
   title: "shroomé — drop 002 is coming. the prettiest 30 seconds of your morning",
   description:
-    "ready-to-pour ceremonial matcha latte. no whisk, no powder — just pour, swirl, glow. drop 001 sold out. get access to drop 002 before it goes.",
+    "liquid ceremonial matcha latte. no whisk, no powder — just pour, swirl, glow. drop 001 sold out. get access to drop 002 before it goes.",
   robots: { index: false, follow: false },
   openGraph: {
     title: "shroomé — drop 002 is coming. the prettiest 30 seconds of your morning",
     description:
-      "ready-to-pour ceremonial matcha latte. no whisk, no powder — just pour, swirl, glow. drop 001 sold out. get access to drop 002 before it goes.",
+      "liquid ceremonial matcha latte. no whisk, no powder — just pour, swirl, glow. drop 001 sold out. get access to drop 002 before it goes.",
     siteName: "shroomé",
     type: "website",
   },
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "shroomé — drop 002 is coming. the prettiest 30 seconds of your morning",
     description:
-      "ready-to-pour ceremonial matcha latte. no whisk, no powder — just pour, swirl, glow. drop 001 sold out. get access to drop 002 before it goes.",
+      "liquid ceremonial matcha latte. no whisk, no powder — just pour, swirl, glow. drop 001 sold out. get access to drop 002 before it goes.",
   },
 };
 
@@ -33,7 +33,7 @@ const config: LPConfig = {
     cloudOpacity: 0.35,
     sachets: "both",
   },
-  stampColor: "var(--brand-flavor-strawberry)",
+  stampColor: "var(--brand-tint-soft)",
   benefits: {
     sectionBg: "var(--brand-tint-blush)",
     cardStyle: "soft",

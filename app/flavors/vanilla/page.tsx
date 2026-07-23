@@ -6,7 +6,7 @@ import MobileNav from "../../MobileNav";
 import Breadcrumb from "../../Breadcrumb";
 
 export const metadata: Metadata = {
-  title: "Vanilla — shroomé | Ready-to-Pour Vanilla Matcha Latte",
+  title: "Vanilla — shroomé | Liquid Vanilla Matcha Latte",
   description:
     "shroomé Vanilla — ceremonial matcha meets real vanilla bean extract, functional mushroom extracts, and grass-fed collagen peptides. One sachet, 30 seconds, zero compromise.",
   keywords: [
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     "ceremonial matcha latte",
   ],
   openGraph: {
-    title: "Vanilla — shroomé | Ready-to-Pour Vanilla Matcha Latte",
+    title: "Vanilla — shroomé | Liquid Vanilla Matcha Latte",
     description:
       "Ceremonial matcha meets real vanilla bean extract, functional mushroom extracts, and grass-fed collagen. One sachet, 30 seconds.",
     url: "https://www.drinkshroome.com/flavors/vanilla",
@@ -119,7 +119,7 @@ const productSchema = {
 const ingredients = [
   {
     name: "Ceremonial Matcha",
-    detail: "2g first-harvest, shade-grown ceremonial grade",
+    detail: "2.5g first-harvest, shade-grown ceremonial grade",
   },
   {
     name: "Mushroom Extracts",
@@ -161,7 +161,7 @@ export default function VanillaFlavorPage() {
           background:
             radial-gradient(ellipse 120% 80% at 20% 10%, rgba(var(--brand-flavor-functional-rgb),0.35) 0%, transparent 50%),
             radial-gradient(ellipse 100% 70% at 80% 85%, rgba(var(--brand-accent-rgb),0.12) 0%, transparent 50%),
-            radial-gradient(ellipse 60% 50% at 60% 40%, rgba(var(--brand-flavor-strawberry-rgb),0.2) 0%, transparent 50%),
+            radial-gradient(ellipse 60% 50% at 60% 40%, rgba(227,213,247,0.5) 0%, transparent 50%),
             linear-gradient(180deg, var(--brand-canvas) 0%, var(--brand-tint-soft) 45%, var(--brand-canvas) 100%);
           background-attachment:fixed;
           position:relative
@@ -217,7 +217,7 @@ export default function VanillaFlavorPage() {
           position:relative;overflow:hidden
         }
         .vf-hero-blob-a{position:absolute;width:340px;height:340px;border-radius:50%;background:var(--brand-flavor-functional);opacity:.3;top:-80px;right:10%}
-        .vf-hero-blob-b{position:absolute;width:200px;height:200px;border-radius:50%;background:var(--brand-flavor-strawberry);opacity:.25;bottom:-60px;left:5%}
+        .vf-hero-blob-b{position:absolute;width:200px;height:200px;border-radius:50%;background:var(--brand-tint-soft);opacity:.5;bottom:-60px;left:5%}
         .vf-hero-inner{position:relative;z-index:2;max-width:600px;margin:0 auto}
         .vf-hero-sachet{
           width:250px;height:auto;margin:0 auto 32px;
@@ -399,11 +399,11 @@ export default function VanillaFlavorPage() {
                 fontSize: 12,
                 letterSpacing: "0.1em",
                 textTransform: "uppercase",
-                color: "var(--brand-ink)",
+                color: "var(--brand-canvas)",
                 textDecoration: "none",
               }}
             >
-              Sold out &mdash; notify me for the restock &rarr;
+              Sold out &mdash; get first access to Drop 002 &rarr;
             </a>
           </div>
         </section>

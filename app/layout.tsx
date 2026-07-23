@@ -17,11 +17,11 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   title: "shroomé — Liquid Ceremonial Matcha Latte | Pour. Swirl. Go.",
-  description: "The liquid ceremonial matcha latte with lion's mane + collagen. Tear the sachet, pour over milk, go. Drop 001 sold out — join the restock list for first access + 20% off.",
+  description: "The liquid ceremonial matcha latte with lion's mane + collagen. Pour it over milk, go get charged. Drop 001 sold out in 9 days — the Drop 002 list gets the link first.",
   keywords: ["ceremonial matcha latte", "functional mushrooms", "matcha latte", "beta-glucans", "mushroom extract", "collagen peptides", "ready to pour matcha", "matcha sachet", "coffee alternative", "L-theanine", "adaptogenic", "shroomé", "drinkshroome"],
   openGraph: {
     title: "shroomé — Pour. Swirl. Go.",
-    description: "Liquid ceremonial matcha latte with lion's mane + collagen. Sold out — get notified for the restock and lock 20% off.",
+    description: "Liquid ceremonial matcha latte with lion's mane + collagen. Drop 001 sold out in 9 days — get first access to Drop 002.",
     type: "website",
     siteName: "shroomé",
     url: "https://www.drinkshroome.com",
@@ -58,7 +58,7 @@ const organizationSchema = {
   "alternateName": ["Shroome", "Shroomé", "drinkshroome", "drink shroome"],
   "url": "https://www.drinkshroome.com",
   "logo": "https://www.drinkshroome.com/logo-mark.png",
-  "description": "shroomé is the world's first ready-to-pour ceremonial matcha latte — combining 2.5g ceremonial-grade matcha, 200mg organic mushroom extracts (70%+ beta-glucans via fruiting body extraction), and 2g grass-fed collagen peptides in a single-serve sachet.",
+  "description": "shroomé is the liquid ceremonial matcha latte — combining 2.5g ceremonial-grade matcha, 200mg organic mushroom extracts (70%+ beta-glucans via fruiting body extraction), and 2g grass-fed collagen peptides in a single-serve sachet.",
   "foundingDate": "2025",
   "founder": {
     "@type": "Person",
@@ -98,7 +98,7 @@ const websiteSchema = {
   "name": "shroomé",
   "alternateName": ["drinkshroome", "Shroomé", "Shroome"],
   "url": "https://www.drinkshroome.com",
-  "description": "The world's first ready-to-pour ceremonial matcha latte with organic mushroom extracts and grass-fed collagen.",
+  "description": "The liquid ceremonial matcha latte with organic mushroom extracts and grass-fed collagen.",
   "publisher": { "@type": "Organization", "name": "ZSQUARED INC" },
   "inLanguage": "en-US"
 };

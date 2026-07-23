@@ -17,24 +17,24 @@ export const blogPosts: BlogPost[] = [
     title:
       "shroomé Launches 9 Ready-in-Seconds Matcha Recipes — From Iced Lattes to Sparkling Matcha",
     excerpt:
-      "shroomé unveils a curated collection of 9 original matcha recipes designed around its single-serve sachets — each one ready in 15 seconds or less, no equipment required.",
+      "shroomé unveils a curated collection of 9 original matcha recipes designed around its single-serve sachets — each one ready in 30 seconds or less, no equipment required.",
     date: "2026-03-22",
     readTime: "3 min read",
     category: "Press",
     metaDescription:
-      "shroomé launches 9 original matcha recipes featuring ceremonial matcha, lion's mane, reishi, and collagen. Each recipe is ready in 15 seconds with a single sachet. Available at drinkshroome.com.",
+      "shroomé launches 9 original matcha recipes featuring ceremonial matcha, lion's mane, reishi, and collagen. Each recipe is ready in 30 seconds with a single sachet. Available at drinkshroome.com.",
     ogImage: "/og-blog-press-recipes.jpg",
     author: "shroomé",
     content: `
 <p style="text-align:center;font-weight:700;letter-spacing:0.05em;margin-bottom:0.25em;">FOR IMMEDIATE RELEASE</p>
 
-<p><strong>LOS ANGELES, March 22, 2026</strong> — <a href="https://www.drinkshroome.com">shroom&eacute;</a>, the ceremonial matcha + functional mushroom + collagen brand, today launched a collection of 9 original recipes designed to show that great matcha drinks don't require a barista, a bamboo whisk, or more than 15 seconds of your morning. The full collection is now live at <a href="/recipes">drinkshroome.com/recipes</a>.</p>
+<p><strong>LOS ANGELES, March 22, 2026</strong> — <a href="https://www.drinkshroome.com">shroom&eacute;</a>, the ceremonial matcha + functional mushroom + collagen brand, today launched a collection of 9 original recipes designed to show that great matcha drinks don't require a barista, a bamboo whisk, or more than 30 seconds of your morning. The full collection is now live at <a href="/recipes">drinkshroome.com/recipes</a>.</p>
 
 <p>Each recipe is built around shroom&eacute;'s single-serve sachets, which combine ceremonial-grade Japanese matcha, lion's mane and reishi mushroom extracts (standardized to 70%+ beta-glucan content), grass-fed bovine collagen peptides, and L-theanine. The format is tear, pour, done — no measuring, no equipment, no cleanup.</p>
 
 <h2>The 9 Recipes</h2>
 
-<p>The collection spans hot and cold, simple and unexpected — all united by the same 15-second prep time:</p>
+<p>The collection spans hot and cold, simple and unexpected — all united by the same 30-second prep time:</p>
 
 <ul>
 <li><strong><a href="/recipes/classic-iced-matcha-latte">Classic Iced Matcha Latte</a></strong> — The signature layered green-over-white drink that needs nothing more than ice, milk, and a sachet.</li>
@@ -104,7 +104,7 @@ Web: <a href="https://www.drinkshroome.com">drinkshroome.com</a>
 
 <h2>1. The Classic Iced Matcha Latte</h2>
 
-<p>This is the one that got most of us into matcha in the first place. The layered green-over-white look. The creamy, slightly sweet taste. The focus without the jitters. And with a pre-portioned sachet, it's genuinely a 15-second drink.</p>
+<p>This is the one that got most of us into matcha in the first place. The layered green-over-white look. The creamy, slightly sweet taste. The focus without the jitters. And with a pre-portioned sachet, it's genuinely a 30-second drink.</p>
 
 <h3>How to Make It</h3>
 
@@ -1356,11 +1356,11 @@ Web: <a href="https://www.drinkshroome.com">drinkshroome.com</a>
 
 <h2>Option 5: Liquid Sachets (The Format Nobody Is Talking About)</h2>
 
-<p>This is the category that barely existed two years ago and is quietly solving the problems every other format creates. A liquid sachet contains pre-measured, pre-mixed matcha in a concentrated liquid form. You tear it open, pour it into hot or cold water (or milk), and you are done in 15 seconds.</p>
+<p>This is the category that barely existed two years ago and is quietly solving the problems every other format creates. A liquid sachet contains pre-measured, pre-mixed matcha in a concentrated liquid form. You tear it open, pour it into hot or cold water (or milk), and you are done in 30 seconds.</p>
 
 <p><strong>Pros:</strong></p>
 <ul>
-<li>Preparation time is under 15 seconds — no whisking, no sifting, no clumping</li>
+<li>Preparation time is under 30 seconds — no whisking, no sifting, no clumping</li>
 <li>The matcha is already properly dissolved, so consistency is perfect every time</li>
 <li>Portable — sachets are lightweight, shelf-stable, and fit in a pocket or bag</li>
 <li>Quality ceiling is high — the format can deliver ceremonial-grade matcha with full potency</li>
@@ -1400,7 +1400,7 @@ Web: <a href="https://www.drinkshroome.com">drinkshroome.com</a>
 
 <h2>Why We Built shroomé Around This Format</h2>
 
-<p>When we created <a href="https://www.drinkshroome.com">shroom&eacute;</a>, the liquid sachet format was a deliberate choice. We wanted to deliver ceremonial-grade matcha with functional mushroom extracts and grass-fed collagen in a format that takes 15 seconds to prepare — because we knew from our own experience that the best morning routine is the one you actually stick with.</p>
+<p>When we created <a href="https://www.drinkshroome.com">shroom&eacute;</a>, the liquid sachet format was a deliberate choice. We wanted to deliver ceremonial-grade matcha with functional mushroom extracts and grass-fed collagen in a format that takes 30 seconds to prepare — because we knew from our own experience that the best morning routine is the one you actually stick with.</p>
 
 <p>Traditional matcha preparation is beautiful. But if it becomes a barrier to consistency, the health benefits never compound. The sachet format removes that barrier entirely. You get café-quality matcha — arguably better, since most cafés use culinary grade — without the café price, the delivery wait, or the cleanup.</p>
 
@@ -1548,7 +1548,7 @@ Web: <a href="https://www.drinkshroome.com">drinkshroome.com</a>
     title:
       "The Morning Routine Stack: Matcha, Mushrooms, and Collagen in One Pour",
     excerpt:
-      "Three supplements. Three different jars. Three different routines. Or one sachet that does it all in 15 seconds.",
+      "Three supplements. Three different jars. Three different routines. Or one sachet that does it all in 30 seconds.",
     date: "2025-12-18",
     readTime: "6 min read",
     category: "Lifestyle",
@@ -1645,7 +1645,7 @@ Web: <a href="https://www.drinkshroome.com">drinkshroome.com</a>
 <ul>
 <li>A product like <a href="https://www.drinkshroome.com">shroom&eacute;</a> that combines all three: $2 to $4/day</li>
 <li><strong>Total: $730 to $1,460/year</strong></li>
-<li>Preparation time: 15 seconds daily</li>
+<li>Preparation time: 30 seconds daily</li>
 <li>Annual prep time: approximately 1.5 hours</li>
 </ul>
 
@@ -1679,7 +1679,7 @@ Web: <a href="https://www.drinkshroome.com">drinkshroome.com</a>
 
 <p>The science behind matcha, functional mushrooms, and collagen is individually compelling. Together, they form a morning stack that addresses energy, focus, immune function, cognitive support, and structural recovery — the foundations of how you feel and perform every day.</p>
 
-<p>But science means nothing without consistency, and consistency depends on simplicity. Three jars, three routines, and three chances to skip is a system designed to fail. One sachet, one pour, and 15 seconds is a system designed to stick.</p>
+<p>But science means nothing without consistency, and consistency depends on simplicity. Three jars, three routines, and three chances to skip is a system designed to fail. One sachet, one pour, and 30 seconds is a system designed to stick.</p>
 
 <p>Your morning routine should be the easiest part of your day — not another thing on your to-do list. Choose accordingly.</p>
 
@@ -1770,7 +1770,7 @@ Web: <a href="https://www.drinkshroome.com">drinkshroome.com</a>
 
 <h2>How Shroom&eacute; Puts This Into Practice</h2>
 
-<p>We built <a href="/">shroom&eacute;</a> around the idea that adaptogens should be part of your daily routine — not something you have to remember to take separately. Every serving combines lion's mane, reishi, and chaga with ceremonial-grade matcha, creating a single drink that delivers focus, calm energy, and immune support in about 15 seconds of prep time.</p>
+<p>We built <a href="/">shroom&eacute;</a> around the idea that adaptogens should be part of your daily routine — not something you have to remember to take separately. Every serving combines lion's mane, reishi, and chaga with ceremonial-grade matcha, creating a single drink that delivers focus, calm energy, and immune support in about 30 seconds of prep time.</p>
 
 <p>The matcha provides the caffeine and L-theanine for immediate energy and focus. The functional mushrooms provide the adaptogenic support that builds over time. Together, they cover both the short game (feeling alert right now) and the long game (supporting your body's stress response, cognitive function, and immunity over weeks and months of consistent use).</p>
 
@@ -1889,7 +1889,7 @@ Web: <a href="https://www.drinkshroome.com">drinkshroome.com</a>
     slug: "morning-routine-with-matcha",
     title: "How to Build a Morning Routine That Actually Sticks (With Matcha)",
     excerpt:
-      "Most morning routines fail because they're too complicated. Here's how to build one that actually works — and why a 15-second matcha pour might be the anchor it needs.",
+      "Most morning routines fail because they're too complicated. Here's how to build one that actually works — and why a 30-second matcha pour might be the anchor it needs.",
     date: "2025-11-25",
     readTime: "8 min read",
     category: "Lifestyle",
@@ -1936,7 +1936,7 @@ Web: <a href="https://www.drinkshroome.com">drinkshroome.com</a>
 
 <p>For a lot of people, this is making a drink — coffee, tea, matcha. It works as an anchor because it's sensory (you see, smell, taste, and feel it), it's rewarding (caffeine is a powerful reinforcer), and it creates a natural pause between "just woke up" and "starting the day."</p>
 
-<p>This is exactly why we designed <a href="/">shroom&eacute;</a> to be a 15-second preparation. Tear open a sachet, pour it into water or milk, stir, and you're done. No measuring scoops, no blender, no boiling water, no waiting. The entire point is to make the anchor habit as frictionless as possible so it happens every single day — including the mornings when you're running late, didn't sleep well, or just aren't feeling it.</p>
+<p>This is exactly why we designed <a href="/">shroom&eacute;</a> to be a 30-second preparation. Tear open a sachet, pour it into water or milk, stir, and you're done. No measuring scoops, no blender, no boiling water, no waiting. The entire point is to make the anchor habit as frictionless as possible so it happens every single day — including the mornings when you're running late, didn't sleep well, or just aren't feeling it.</p>
 
 <p>Those difficult mornings are actually the ones that matter most. Anyone can do a morning routine when they feel great. The routines that stick are the ones that survive your worst mornings.</p>
 
@@ -1964,7 +1964,7 @@ Web: <a href="https://www.drinkshroome.com">drinkshroome.com</a>
 
 <p>There's an important distinction between a routine you perform and a routine you enjoy. A sequence of actions you're merely executing is easy to drop. A sequence with a genuinely good moment built into it defends itself.</p>
 
-<p>Making instant coffee in a Styrofoam cup is pure execution. Pouring dark green matcha into cold oat milk and watching it swirl through — same amount of time, completely different experience. One is a chore. The other is the best fifteen seconds of your morning, and your brain absolutely knows the difference.</p>
+<p>Making instant coffee in a Styrofoam cup is pure execution. Pouring dark green matcha into cold oat milk and watching it swirl through — same amount of time, completely different experience. One is a chore. The other is the best thirty seconds of your morning, and your brain absolutely knows the difference.</p>
 
 <p>Small sensory rewards work because they engage your senses and your attention at the same time, which pulls you out of autopilot. You don't need to slow your morning down to get this effect — you need one moment in it that's actually good.</p>
 
@@ -1985,7 +1985,7 @@ Web: <a href="https://www.drinkshroome.com">drinkshroome.com</a>
 <p>Here's what a sustainable morning routine might look like in practice:</p>
 
 <p><strong>6:45 AM</strong> — Alarm goes off. No snooze. Feet on floor.<br />
-<strong>6:46 AM</strong> — Walk to kitchen. Pour a sachet of <a href="/">shroom&eacute;</a> into your favorite cup, add water or oat milk, stir. 15 seconds.<br />
+<strong>6:46 AM</strong> — Walk to kitchen. Pour a sachet of <a href="/">shroom&eacute;</a> into your favorite cup, add water or oat milk, stir. 30 seconds.<br />
 <strong>6:47 AM</strong> — Stand by the window. Drink your matcha. No phone. Just taste the drink and look at whatever's outside.<br />
 <strong>6:52 AM</strong> — 3 minutes of stretching. Neck, shoulders, hips. Nothing fancy.<br />
 <strong>6:55 AM</strong> — Grab a notebook. Write down today's top 3 priorities. Done.<br />

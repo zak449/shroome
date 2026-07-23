@@ -26,7 +26,7 @@ export const recipes: Recipe[] = [
     heroImage: "/recipes/hero/hero-iced-matcha-latte.jpg",
     imageAlt: "Classic Iced Matcha Latte — layered green matcha floating over oat milk with ice in a tall glass",
     description:
-      "The simplest iced matcha latte you'll ever make. One shroomé sachet, oat milk, ice — done in 15 seconds flat.",
+      "The simplest iced matcha latte you'll ever make. One shroomé sachet, oat milk, ice — done in 30 seconds flat.",
     prepTime: "PT15S",
     prepLabel: "15 sec",
     totalTime: "PT1M",

@@ -193,10 +193,10 @@ function CurveSection() {
             strokeDasharray="1 0"
           />
           {/* labels */}
-          <text x="228" y="212" fontFamily={BRAND.fonts.body} fontSize="13" fontStyle="italic" fill={alpha("ink", 0.55)}>
+          <text x="228" y="212" fontFamily={BRAND.fonts.body} fontSize="13" fontStyle="normal" fill={alpha("ink", 0.55)}>
             the 2pm cliff
           </text>
-          <text x="360" y="84" fontFamily={BRAND.fonts.body} fontSize="13" fontStyle="italic" fill={BRAND.colors.ink}>
+          <text x="360" y="84" fontFamily={BRAND.fonts.body} fontSize="13" fontStyle="normal" fill={BRAND.colors.ink}>
             the carry
           </text>
           <text x="122" y="40" fontFamily={BRAND.fonts.body} fontSize="12" fill={alpha("ink", 0.45)}>
@@ -291,16 +291,7 @@ export default function LPShell({ config }: { config: LPConfig }) {
       >
         <a href="#top" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none" }} aria-label="shroomé">
           <Image src="/brand/symbol-sheep-solid.png" width={30} height={30} alt="shroomé S" style={{ borderRadius: 6 }} priority />
-          <span
-            style={{
-              fontFamily: "var(--brand-font-display)",
-              fontStyle: "normal",
-              fontSize: "1.3rem",
-              color: heroText,
-            }}
-          >
-            shroomé
-          </span>
+          <img src="/brand/wordmark.png" alt="shroomé" style={{ height: 22, width: "auto" }} />
         </a>
       </header>
 

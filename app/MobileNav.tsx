@@ -89,7 +89,7 @@ export default function MobileNav({ links, prefix }: MobileNavProps) {
           className={`${prefix}-mobile-menu-cta`}
           onClick={() => setMenuOpen(false)}
         >
-          Get 20% off + free shipping &rarr;
+          Get first access &rarr;
         </a>
       </div>
     </>

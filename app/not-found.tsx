@@ -12,7 +12,7 @@ export default function NotFound() {
           background:
             radial-gradient(ellipse 120% 80% at 20% 10%, rgba(var(--brand-flavor-functional-rgb),0.35) 0%, transparent 50%),
             radial-gradient(ellipse 100% 70% at 80% 85%, rgba(var(--brand-accent-rgb),0.12) 0%, transparent 50%),
-            radial-gradient(ellipse 60% 50% at 60% 40%, rgba(var(--brand-flavor-strawberry-rgb),0.2) 0%, transparent 50%),
+            radial-gradient(ellipse 60% 50% at 60% 40%, rgba(227,213,247,0.5) 0%, transparent 50%),
             linear-gradient(180deg, #F0E4D8 0%, #EDE0D4 30%, #E8D8CC 60%, #F0E4D8 100%);
           background-attachment:fixed;
           position:relative
@@ -62,7 +62,7 @@ export default function NotFound() {
         }
         .nf-blob{position:absolute;border-radius:50%;pointer-events:none;opacity:.35}
         .nf-blob-a{width:360px;height:360px;top:-100px;right:8%;background:var(--brand-flavor-functional)}
-        .nf-blob-b{width:240px;height:240px;bottom:-80px;left:5%;background:var(--brand-flavor-strawberry);opacity:.25}
+        .nf-blob-b{width:240px;height:240px;bottom:-80px;left:5%;background:var(--brand-tint-soft);opacity:.25}
         .nf-blob-c{width:180px;height:180px;top:40%;left:60%;background:var(--brand-accent);opacity:.12}
 
         .nf-tag{

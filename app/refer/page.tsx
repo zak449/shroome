@@ -20,7 +20,7 @@ declare global {
 const tiers = [
   { count: "1", label: "friend", reward: "$5 credit on your account", color: "var(--brand-accent)" },
   { count: "3", label: "friends", reward: "$10 total credit", color: "var(--brand-accent)" },
-  { count: "5", label: "friends", reward: "$15 total credit — that’s the cap", color: "var(--brand-flavor-strawberry)" },
+  { count: "5", label: "friends", reward: "$15 total credit — that’s the cap", color: "var(--brand-tint-soft)" },
   { count: "#1", label: "top ref", reward: "Case 001 — our top referrer takes home a hand-numbered box from the very first case", color: "var(--brand-flavor-functional)" },
 ];
 
@@ -172,7 +172,7 @@ export default function ReferPage() {
           background:
             radial-gradient(ellipse 120% 80% at 20% 10%, rgba(var(--brand-flavor-functional-rgb),0.35) 0%, transparent 50%),
             radial-gradient(ellipse 100% 70% at 80% 85%, rgba(var(--brand-accent-rgb),0.12) 0%, transparent 50%),
-            radial-gradient(ellipse 60% 50% at 60% 40%, rgba(var(--brand-flavor-strawberry-rgb),0.2) 0%, transparent 50%),
+            radial-gradient(ellipse 60% 50% at 60% 40%, rgba(227,213,247,0.5) 0%, transparent 50%),
             linear-gradient(180deg, #F0E4D8 0%, #EDE0D4 30%, #E8D8CC 60%, #F0E4D8 100%);
           background-attachment:fixed;
           font-family:var(--brand-font-body);color:var(--brand-ink);
@@ -224,7 +224,7 @@ export default function ReferPage() {
         }
         .ref-hero-blob2{
           position:absolute;width:320px;height:320px;border-radius:50%;
-          background:radial-gradient(circle,var(--brand-flavor-strawberry) 0%,transparent 70%);
+          background:radial-gradient(circle,var(--brand-tint-soft) 0%,transparent 70%);
           opacity:0.2;bottom:-80px;left:10%;pointer-events:none
         }
         .ref-hero-inner{position:relative;z-index:1;max-width:720px;margin:0 auto}
@@ -427,7 +427,7 @@ export default function ReferPage() {
         .ref-channel-imessage{background:var(--brand-accent)}
         .ref-channel-whatsapp{background:var(--brand-accent)}
         .ref-channel-twitter{background:var(--brand-canvas)}
-        .ref-channel-instagram{background:var(--brand-flavor-strawberry)}
+        .ref-channel-instagram{background:var(--brand-tint-soft)}
         .ref-channel-email{background:var(--brand-flavor-functional)}
 
         .ref-progress{

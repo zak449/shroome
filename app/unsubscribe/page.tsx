@@ -82,7 +82,7 @@ function UnsubscribeFlow() {
               <p
                 style={{
                   fontSize: 13,
-                  background: "#fff",
+                  background: "var(--brand-canvas)",
                   padding: "10px 16px",
                   borderRadius: 8,
                   display: "inline-block",
@@ -100,7 +100,7 @@ function UnsubscribeFlow() {
                 style={{
                   padding: "14px 32px",
                   background: "var(--brand-ink)",
-                  color: "#fff",
+                  color: "var(--brand-canvas)",
                   border: "none",
                   borderRadius: 50,
                   fontSize: 14,
@@ -116,7 +116,7 @@ function UnsubscribeFlow() {
                 style={{
                   padding: "14px 32px",
                   background: "var(--brand-accent)",
-                  color: "var(--brand-ink)",
+                  color: "var(--brand-canvas)",
                   border: "none",
                   borderRadius: 50,
                   fontSize: 14,
@@ -158,8 +158,8 @@ function UnsubscribeFlow() {
                   onClick={() => setReason(r)}
                   style={{
                     padding: "12px 20px",
-                    background: reason === r ? "var(--brand-ink)" : "#fff",
-                    color: reason === r ? "#fff" : "var(--brand-ink)",
+                    background: reason === r ? "var(--brand-ink)" : "var(--brand-canvas)",
+                    color: reason === r ? "var(--brand-canvas)" : "var(--brand-ink)",
                     border: "1px solid rgba(var(--brand-ink-rgb),0.15)",
                     borderRadius: 10,
                     fontSize: 14,
@@ -182,7 +182,7 @@ function UnsubscribeFlow() {
                 marginTop: 24,
                 padding: "14px 32px",
                 background: "var(--brand-ink)",
-                color: "#fff",
+                color: "var(--brand-canvas)",
                 border: "none",
                 borderRadius: 50,
                 fontSize: 14,
@@ -229,7 +229,7 @@ function UnsubscribeFlow() {
               style={{
                 padding: "14px 32px",
                 background: "var(--brand-accent)",
-                color: "var(--brand-ink)",
+                color: "var(--brand-canvas)",
                 border: "none",
                 borderRadius: 50,
                 fontSize: 14,

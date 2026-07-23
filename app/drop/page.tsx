@@ -70,7 +70,7 @@ const vanillaSchema = {
   "@type": "Product",
   name: "shroomé Vanilla Matcha Latte Concentrate — 12 Sachets",
   description:
-    "Ready-to-pour ceremonial matcha latte concentrate, vanilla. 2.5g ceremonial matcha, 2g grass-fed collagen peptides, 200mg lion's mane extract (≥70% beta-glucans) per 1oz sachet. Box of 12. Sold in numbered, limited drops.",
+    "Liquid ceremonial matcha latte concentrate, vanilla. 2.5g ceremonial matcha, 2g grass-fed collagen peptides, 200mg lion's mane extract (≥70% beta-glucans) per 1oz sachet. Box of 12. Sold in numbered, limited drops.",
   brand: { "@type": "Brand", name: "shroomé" },
   manufacturer: { "@type": "Organization", name: "ZSQUARED INC" },
   category: "Functional Beverages",
@@ -86,7 +86,7 @@ const strawberrySchema = {
   "@type": "Product",
   name: "shroomé Strawberry Matcha Latte Concentrate — 12 Sachets",
   description:
-    "Ready-to-pour ceremonial matcha latte concentrate, strawberry. 2.5g ceremonial matcha, 2g grass-fed collagen peptides, 200mg lion's mane extract (≥70% beta-glucans) per 1oz sachet. Box of 12. Sold in numbered, limited drops.",
+    "Liquid ceremonial matcha latte concentrate, strawberry. 2.5g ceremonial matcha, 2g grass-fed collagen peptides, 200mg lion's mane extract (≥70% beta-glucans) per 1oz sachet. Box of 12. Sold in numbered, limited drops.",
   brand: { "@type": "Brand", name: "shroomé" },
   manufacturer: { "@type": "Organization", name: "ZSQUARED INC" },
   category: "Functional Beverages",
