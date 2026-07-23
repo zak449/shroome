@@ -218,8 +218,8 @@ export default function DropPage() {
 
         .dr-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;max-width:1120px;margin:0 auto}
         .dr-card{background:#fff;border:2px solid var(--brand-ink);border-radius:24px;overflow:hidden;position:relative;display:flex;flex-direction:column}
-        .dr-card-img{position:relative;padding:28px 20px 12px;display:flex;justify-content:center;align-items:center;min-height:190px}
-        .dr-card-img img{filter:grayscale(0.15) opacity(0.9)}
+        .dr-card-img{position:relative;padding:30px 20px 16px;display:flex;justify-content:center;align-items:center;min-height:230px}
+        .dr-card-img img{filter:drop-shadow(0 14px 22px rgba(45,52,26,0.3))}
         .dr-soldout{position:absolute;top:16px;left:50%;transform:translateX(-50%) rotate(-6deg);background:var(--brand-ink);color:var(--brand-canvas);font-family:var(--brand-font-body);font-weight:800;font-size:0.82rem;letter-spacing:.16em;text-transform:uppercase;padding:8px 18px;z-index:2}
         .dr-card-body{padding:8px 22px 24px;display:flex;flex-direction:column;flex:1}
         .dr-card-sku{font-family:var(--brand-font-mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(var(--brand-ink-rgb),0.35);margin:0 0 6px}
@@ -336,7 +336,7 @@ export default function DropPage() {
             <div key={p.sku} className="dr-card">
               <div className="dr-card-img" style={{ background: p.accent }}>
                 <span className="dr-soldout">sold out</span>
-                <Image src={p.image} alt={`shroomé ${p.name} — sold out`} width={150} height={214} style={{ width: "auto", height: 160 }} />
+                <Image src={p.image} alt={`shroomé ${p.name} — sold out`} width={306} height={639} style={{ width: "auto", height: 200, maxWidth: "100%", objectFit: "contain" }} />
               </div>
               <div className="dr-card-body">
                 <p className="dr-card-sku">{p.sku}</p>

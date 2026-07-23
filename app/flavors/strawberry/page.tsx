@@ -225,7 +225,7 @@ export default function StrawberryFlavorPage() {
         .sf-hero-blob-b{position:absolute;width:200px;height:200px;border-radius:50%;background:var(--brand-flavor-functional);opacity:.25;bottom:-60px;left:5%}
         .sf-hero-inner{position:relative;z-index:2;max-width:600px;margin:0 auto}
         .sf-hero-sachet{
-          width:180px;height:auto;margin:0 auto 32px;
+          width:250px;height:auto;margin:0 auto 32px;
           filter:drop-shadow(0 12px 32px rgba(var(--brand-ink-rgb),0.15));
           animation:sfFloat 5s ease-in-out infinite
         }
@@ -312,7 +312,7 @@ export default function StrawberryFlavorPage() {
           .sf-nav-logo img{width:30px;height:30px}
           .sf-hero{padding:48px 5% 40px}
           .sf-hero h1{font-size:clamp(36px,9vw,52px)}
-          .sf-hero-sachet{width:140px}
+          .sf-hero-sachet{width:190px}
           .sf-ingredients{padding:40px 5% 48px}
           .sf-recipes{padding:0 5% 48px}
           .sf-footer-top{gap:16px;flex-wrap:wrap}
@@ -383,8 +383,8 @@ export default function StrawberryFlavorPage() {
               src="/sachet-strawberry.png"
               alt="shroomé Strawberry matcha sachet — single-serve packet with ceremonial matcha, lion's mane, and collagen"
               className="sf-hero-sachet"
-              width={180}
-              height={270}
+              width={306}
+              height={639}
               priority
             />
             <div className="sf-hero-tag">Flavor Profile &middot; Drop 001 sold out</div>

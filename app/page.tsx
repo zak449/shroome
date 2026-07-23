@@ -865,6 +865,28 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ════════════════════ BENEFITS MARQUEE ════════════════════ */}
+      <div style={{ background: "var(--brand-accent-deep)", padding: "12px 0", overflow: "hidden" }}>
+        <div className="ticker-track">
+          {Array(12)
+            .fill(null)
+            .map((_, i) => (
+              <span
+                key={i}
+                style={{
+                  ...tagStyle,
+                  fontSize: "0.72rem",
+                  color: i % 2 === 0 ? "var(--brand-canvas)" : "var(--brand-accent)",
+                  padding: "0 36px",
+                  whiteSpace: "nowrap",
+                }}
+              >
+                {["ENERGY", "✿", "CLARITY", "✿", "SKIN", "✿", "IMMUNITY", "✿", "GOOD ENERGY", "✿", "NO CRASH", "✿"][i % 12]}
+              </span>
+            ))}
+        </div>
+      </div>
+
       {/* ════════════════════ GOOD ENERGY LOCKUP ════════════════════ */}
       <section id="why" style={{ padding: "96px 24px 80px", background: "var(--brand-canvas)", textAlign: "center", position: "relative", overflow: "hidden" }}>
         <div {...anim("lockup")} style={{ ...anim("lockup").style, maxWidth: 680, margin: "0 auto" }}>
@@ -910,11 +932,11 @@ export default function Home() {
 
           <div className="flavor-cards-wrap" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 32 }}>
             {[
-              { src: "/sachet-vanilla.png", name: "Vanilla", note: "Warm · Smooth · Everyday", href: "/flavors/vanilla", bg: "var(--brand-flavor-functional)", alt: "shroomé Vanilla liquid ceremonial matcha latte sachet on the vanilla pinwheel pattern" },
-              { src: "/sachet-strawberry.png", name: "Strawberry", note: "Bright · Fruity · Loud", href: "/flavors/strawberry", bg: "var(--brand-tint-blush)", alt: "shroomé Strawberry liquid ceremonial matcha latte sachet on the strawberry pinwheel pattern" },
+              { src: "/sachet-vanilla.png", name: "Vanilla", note: "Warm · Smooth · Everyday", href: "/flavors/vanilla", bg: "var(--brand-flavor-functional)", me: "/brand/me-04.png", meStyle: { top: 14, left: 14, width: 74, transform: "rotate(-10deg)" }, alt: "shroomé Vanilla liquid ceremonial matcha latte sachet" },
+              { src: "/sachet-strawberry.png", name: "Strawberry", note: "Bright · Fruity · Loud", href: "/flavors/strawberry", bg: "var(--brand-tint-blush)", me: "/brand/me-02.png", meStyle: { top: 18, left: 16, width: 80, transform: "rotate(8deg)" }, alt: "shroomé Strawberry liquid ceremonial matcha latte sachet" },
             ].map((f, i) => (
               <a key={f.name} href={f.href} {...anim(`flavor-${i}`, i * 0.12)} style={{ ...anim(`flavor-${i}`, i * 0.12).style, textDecoration: "none", color: "inherit" }}>
-                <div className="lift" style={{ background: f.bg, border: "3px solid var(--brand-ink)", borderRadius: 32, padding: "20px 20px 28px", position: "relative" }}>
+                <div className="lift" style={{ background: f.bg, border: "3px solid var(--brand-ink)", borderRadius: 32, padding: "28px 16px 26px", position: "relative", overflow: "hidden" }}>
                   <div
                     style={{
                       position: "absolute",
@@ -933,14 +955,23 @@ export default function Home() {
                     Sold out
                   </div>
                   <Image
+                    src={f.me}
+                    alt=""
+                    aria-hidden
+                    width={120}
+                    height={120}
+                    loading="lazy"
+                    style={{ position: "absolute", height: "auto", zIndex: 2, ...f.meStyle } as React.CSSProperties}
+                  />
+                  <Image
                     src={f.src}
                     alt={f.alt}
-                    width={520}
-                    height={613}
+                    width={612}
+                    height={1278}
                     loading="lazy"
-                    style={{ width: "100%", height: "auto", borderRadius: 20, border: "2px solid var(--brand-ink)", display: "block" }}
+                    style={{ width: "72%", maxWidth: 330, height: "auto", display: "block", margin: "0 auto", filter: "drop-shadow(0 22px 34px rgba(45,52,26,0.28))" }}
                   />
-                  <h3 style={{ fontFamily: "var(--brand-font-display)", fontWeight: 800, fontSize: "1.7rem", margin: "20px 0 6px", color: "var(--brand-ink)" }}>{f.name}</h3>
+                  <h3 style={{ fontFamily: "var(--brand-font-display)", fontWeight: 800, fontSize: "1.7rem", margin: "22px 0 6px", color: "var(--brand-ink)" }}>{f.name}</h3>
                   <p style={{ ...tagStyle, fontSize: "0.62rem", color: "rgba(var(--brand-ink-rgb),0.65)" }}>{f.note}</p>
                   <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 800, fontSize: "0.72rem", letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--brand-ink)", marginTop: 14, textDecoration: "underline" }}>
                     See the flavor →
@@ -1089,6 +1120,12 @@ export default function Home() {
               </table>
             </div>
           </div>
+
+          <p {...anim("comp-anchor", 0.25)} style={{ ...anim("comp-anchor", 0.25).style, textAlign: "center", marginTop: 24, fontFamily: "var(--brand-font-body)", fontSize: "0.95rem", color: "var(--brand-ink)", fontWeight: 600 }}>
+            One pour = <span style={{ fontFamily: "var(--brand-font-mono)", fontWeight: 700, color: "var(--brand-accent-deep)" }}>$3.00</span>.
+            Your cafe matcha = <span style={{ fontFamily: "var(--brand-font-mono)", fontWeight: 700, textDecoration: "line-through", opacity: 0.6 }}>$7</span>.
+            Same ceremonial grade — plus the stack.
+          </p>
         </div>
       </section>
 
@@ -1167,6 +1204,7 @@ export default function Home() {
                   borderRadius: 28,
                 }}
               >
+                <p aria-label="5 out of 5 stars" style={{ color: "var(--brand-accent-deep)", fontSize: "0.95rem", letterSpacing: "0.15em", marginBottom: 12 }}>★★★★★</p>
                 <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 600, fontSize: "1rem", color: "var(--brand-ink)", lineHeight: 1.55, marginBottom: 20 }}>
                   &ldquo;{t.quote}&rdquo;
                 </p>

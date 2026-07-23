@@ -220,7 +220,7 @@ export default function VanillaFlavorPage() {
         .vf-hero-blob-b{position:absolute;width:200px;height:200px;border-radius:50%;background:var(--brand-flavor-strawberry);opacity:.25;bottom:-60px;left:5%}
         .vf-hero-inner{position:relative;z-index:2;max-width:600px;margin:0 auto}
         .vf-hero-sachet{
-          width:180px;height:auto;margin:0 auto 32px;
+          width:250px;height:auto;margin:0 auto 32px;
           filter:drop-shadow(0 12px 32px rgba(var(--brand-ink-rgb),0.15));
           animation:vfFloat 5s ease-in-out infinite
         }
@@ -307,7 +307,7 @@ export default function VanillaFlavorPage() {
           .vf-nav-logo img{width:30px;height:30px}
           .vf-hero{padding:48px 5% 40px}
           .vf-hero h1{font-size:clamp(36px,9vw,52px)}
-          .vf-hero-sachet{width:140px}
+          .vf-hero-sachet{width:190px}
           .vf-ingredients{padding:40px 5% 48px}
           .vf-recipes{padding:0 5% 48px}
           .vf-footer-top{gap:16px;flex-wrap:wrap}
@@ -378,8 +378,8 @@ export default function VanillaFlavorPage() {
               src="/sachet-vanilla.png"
               alt="shroomé Vanilla matcha sachet — single-serve packet with ceremonial matcha, lion's mane, and collagen"
               className="vf-hero-sachet"
-              width={180}
-              height={270}
+              width={306}
+              height={639}
               priority
             />
             <div className="vf-hero-tag">Flavor Profile &middot; Drop 001 sold out</div>
