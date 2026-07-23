@@ -22,8 +22,8 @@ export default function FoundersPage() {
         .fp-sub{font-family:var(--brand-font-body);font-size:1rem;line-height:1.7;color:rgba(var(--brand-ink-rgb),0.75);margin:0 auto 30px;max-width:460px}
         .fp-ledger{display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--brand-ink);color:var(--brand-canvas);border-radius:999px;padding:14px 24px;margin:0 auto 30px;max-width:440px;flex-wrap:wrap}
         .fp-ledger span{font-family:var(--brand-font-mono);font-weight:700;font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase}
-        .fp-ledger .gone{background:var(--brand-accent);color:var(--brand-ink);padding:4px 12px;border-radius:999px;transform:rotate(-2deg)}
-        .fp-cta{display:inline-block;background:var(--brand-accent);border:2px solid var(--brand-ink);border-radius:999px;padding:16px 32px;font-family:var(--brand-font-body);font-weight:800;font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--brand-ink);text-decoration:none}
+        .fp-ledger .gone{background:var(--brand-tint-soft);color:var(--brand-ink);padding:4px 12px;border-radius:999px;transform:rotate(-2deg)}
+        .fp-cta{display:inline-block;background:var(--brand-accent);border:2px solid var(--brand-ink);border-radius:999px;padding:16px 32px;font-family:var(--brand-font-body);font-weight:800;font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--brand-canvas);text-decoration:none}
         .fp-secondary{display:block;margin-top:16px;font-family:var(--brand-font-body);font-size:0.75rem;color:rgba(var(--brand-ink-rgb),0.6);text-decoration:underline}
         .fp-flower{position:absolute;pointer-events:none}
       `}</style>
@@ -34,7 +34,7 @@ export default function FoundersPage() {
             <Image src="/brand/symbol-sheep-solid.png" width={32} height={35} alt="mé the shroomé sheep" priority style={{ height: 32, width: "auto" }} />
             <Image src="/brand/wordmark.png" width={118} height={25} alt="shroomé" priority style={{ height: 24, width: "auto" }} />
           </a>
-          <a href="/drop" style={{ fontFamily: "var(--brand-font-body)", fontWeight: 800, fontSize: "0.7rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--brand-ink)", textDecoration: "none", background: "var(--brand-accent)", border: "2px solid var(--brand-ink)", borderRadius: 999, padding: "10px 20px" }}>
+          <a href="/drop" style={{ fontFamily: "var(--brand-font-body)", fontWeight: 800, fontSize: "0.7rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--brand-canvas)", textDecoration: "none", background: "var(--brand-accent)", border: "2px solid var(--brand-ink)", borderRadius: 999, padding: "10px 20px" }}>
             The Drop →
           </a>
         </nav>

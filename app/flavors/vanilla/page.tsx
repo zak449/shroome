@@ -174,7 +174,7 @@ export default function VanillaFlavorPage() {
 
         /* ── TICKER ── */
         .vf-ticker{background:var(--brand-ink);padding:10px 0;overflow:hidden;white-space:nowrap}
-        .vf-ticker-track{display:inline-flex;animation:vfTick 28s linear infinite}
+        .vf-ticker-track{display:flex;justify-content:center;flex-wrap:wrap}
         .vf-ticker-item{font-family:var(--brand-font-mono);font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;padding:0 28px;color:rgba(var(--brand-canvas-rgb),.75)}
         .vf-ticker-item em{color:var(--brand-accent);font-style:normal;font-weight:500}
         @keyframes vfTick{from{transform:translateX(0)}to{transform:translateX(-50%)}}

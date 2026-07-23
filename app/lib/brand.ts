@@ -38,10 +38,11 @@ export const BRAND = {
     ink: "#2D341A",
     /** Page background / light surfaces. Bolden "retro" cream #FEFFF8. */
     canvas: "#FEFFF8",
-    /** Hero accent — CTAs, highlights, focus rings. Bolden "strawberry" #FF6DC7. */
-    accent: "#FF6DC7",
+    /** Action color — CTAs, highlights, focus rings. Bolden "matcha" #7A881F.
+     *  (Pink is a FLAVOR color, not a brand accent — see flavorStrawberry.) */
+    accent: "#7A881F",
     /** Text/icon color used ON accent surfaces. */
-    accentContrast: "#2D341A",
+    accentContrast: "#FEFFF8",
     /** Deep companion to accent — link hovers, <em> emphasis. Bolden "matcha" #7A881F. */
     accentDeep: "#7A881F",
     /** Warm pop — italic highlights, notice text. Bolden "mango" #FA9427. */
@@ -69,7 +70,7 @@ export const BRAND = {
   rgb: {
     ink: "45,52,26",
     canvas: "254,255,248",
-    accent: "255,109,199",
+    accent: "122,136,31",
     accentWarm: "250,148,39",
     accentMuted: "122,136,31",
     flavorStrawberry: "255,109,199",

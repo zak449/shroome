@@ -241,14 +241,14 @@ export default function ExitPopup() {
           line-height: 1.6; margin: 0 0 20px;
         }
         .ep-success-btn {
-          padding: 12px 28px; background: var(--brand-accent); color: var(--brand-ink);
+          padding: 12px 28px; background: var(--brand-accent); color: var(--brand-canvas);
           border: none; border-radius: 10px; font-size: 12px;
           font-family: var(--brand-font-body);
           font-weight: 700; letter-spacing: 0.06em;
           text-transform: uppercase; cursor: pointer;
           transition: all 0.2s;
         }
-        .ep-success-btn:hover { background: var(--brand-tint-blush); }
+        .ep-success-btn:hover { background: var(--brand-accent-muted-deep); }
         .ep-no-thanks {
           display: block; margin-top: 16px;
           font-family: var(--brand-font-body);

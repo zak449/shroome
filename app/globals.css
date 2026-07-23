@@ -9,8 +9,8 @@
 :root {
   --brand-ink:               #2D341A; /* Bolden "green" — dark forest */
   --brand-canvas:            #FEFFF8; /* Bolden "retro" cream */
-  --brand-accent:            #FF6DC7; /* Bolden "strawberry" pink */
-  --brand-accent-contrast:   #2D341A; /* text on accent surfaces */
+  --brand-accent:            #7A881F; /* Bolden "matcha" — action color */
+  --brand-accent-contrast:   #FEFFF8; /* text on accent surfaces */
   --brand-accent-deep:       #7A881F; /* Bolden "matcha" */
   --brand-accent-warm:       #FA9427; /* Bolden "mango" */
   --brand-accent-warm-soft:  #E4CB9F; /* Bolden "vanilla" */
@@ -24,7 +24,7 @@
   /* RGB triplets for rgba(var(--brand-*-rgb), <alpha>) composition */
   --brand-ink-rgb:               45,52,26;
   --brand-canvas-rgb:            254,255,248;
-  --brand-accent-rgb:            255,109,199;
+  --brand-accent-rgb:            122,136,31;
   --brand-accent-warm-rgb:       250,148,39;
   --brand-accent-muted-rgb:      122,136,31;
   --brand-flavor-strawberry-rgb: 255,109,199;

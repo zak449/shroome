@@ -128,7 +128,7 @@ const products = [
     name: "48 stock-up",
     desc: "24 vanilla + 24 strawberry. never run dry.",
     price: "$126",
-    accent: "var(--brand-accent)",
+    accent: "var(--brand-tint-soft)",
     image: "/sachets-both.png",
   },
   {
@@ -136,7 +136,7 @@ const products = [
     name: "first-pour trial — 6",
     desc: "3 vanilla + 3 strawberry. the low-risk taste test.",
     price: "$21",
-    accent: "var(--brand-tint-blush)",
+    accent: "var(--brand-flavor-functional)",
     image: "/sachets-both.png",
   },
 ];
@@ -194,7 +194,7 @@ export default function DropPage() {
         @media(max-width:768px){.dr-nav-links{display:none !important}.dr-nav-cta{display:none !important}}
         .dr-nav-links a{font-family:var(--brand-font-body);font-size:11.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--brand-ink);opacity:.7;text-decoration:none;padding:6px 10px;transition:opacity .2s}
         .dr-nav-links a:hover{opacity:1}
-        .dr-nav-cta{font-family:var(--brand-font-body);font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;background:var(--brand-accent);color:var(--brand-ink);border:2px solid var(--brand-ink);padding:10px 22px;border-radius:999px;text-decoration:none;transition:transform .15s}
+        .dr-nav-cta{font-family:var(--brand-font-body);font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;background:var(--brand-accent);color:var(--brand-canvas);border:2px solid var(--brand-ink);padding:10px 22px;border-radius:999px;text-decoration:none;transition:transform .15s}
         .dr-nav-cta:hover{transform:scale(1.03)}
 
         .dr-h1{font-family:var(--brand-font-display);letter-spacing:-0.02em;font-weight:800;font-size:clamp(2.4rem,6vw,4rem);line-height:1.05;margin:0 0 18px;color:var(--brand-canvas)}
@@ -229,7 +229,7 @@ export default function DropPage() {
         .dr-ledger-row{display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--brand-ink);color:var(--brand-canvas);padding:18px 22px;flex-wrap:wrap}
         .dr-ledger-num{font-family:var(--brand-font-body);font-weight:700;font-size:0.85rem;letter-spacing:.12em;text-transform:uppercase;display:inline-flex;align-items:center;gap:10px}
         .dr-ledger-detail{font-family:var(--brand-font-mono);font-size:0.78rem;color:rgba(var(--brand-canvas-rgb),0.75)}
-        .dr-ledger-stamp{font-family:var(--brand-font-body);font-weight:800;font-size:0.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--brand-ink);background:var(--brand-flavor-strawberry);padding:4px 10px;transform:rotate(-2deg)}
+        .dr-ledger-stamp{font-family:var(--brand-font-body);font-weight:800;font-size:0.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--brand-ink);background:var(--brand-tint-soft);padding:4px 10px;transform:rotate(-2deg)}
         .dr-dot{width:8px;height:8px;border-radius:50%;background:var(--brand-accent);display:inline-block;animation:drPulse 1.8s ease-in-out infinite}
         @keyframes drPulse{0%,100%{box-shadow:0 0 0 0 rgba(var(--brand-accent-rgb),0.6)}50%{box-shadow:0 0 0 6px rgba(var(--brand-accent-rgb),0)}}
         @media(prefers-reduced-motion:reduce){.dr-dot{animation:none}}
@@ -289,7 +289,7 @@ export default function DropPage() {
             style={{
               display: "inline-block",
               background: "var(--brand-accent)",
-              color: "var(--brand-ink)",
+              color: "var(--brand-canvas)",
               fontFamily: "var(--brand-font-body)",
               fontWeight: 800,
               fontSize: "0.78rem",
@@ -349,7 +349,7 @@ export default function DropPage() {
             the public window opens. one-time buyers refresh the page — subscribers get theirs
             automatically. skip, pause, or swap flavors anytime.
           </p>
-          <p style={{ fontFamily: "var(--brand-font-mono)", fontWeight: 700, fontSize: "0.68rem", letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--brand-ink)", background: "var(--brand-accent)", display: "inline-block", padding: "8px 18px", borderRadius: 999, border: "2px solid var(--brand-ink)", marginTop: 20 }}>
+          <p style={{ fontFamily: "var(--brand-font-mono)", fontWeight: 700, fontSize: "0.68rem", letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--brand-canvas)", background: "var(--brand-accent)", display: "inline-block", padding: "8px 18px", borderRadius: 999, border: "2px solid var(--brand-ink)", marginTop: 20 }}>
             opens with drop 002
           </p>
         </div>

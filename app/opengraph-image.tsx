@@ -37,8 +37,8 @@ export default async function Image() {
             width: "520px",
             height: "520px",
             borderRadius: "50%",
-            background: BRAND.colors.accent,
-            opacity: 0.9,
+            background: BRAND.colors.accentDeep,
+            opacity: 0.95,
           }}
         />
         <div
@@ -49,7 +49,7 @@ export default async function Image() {
             width: "320px",
             height: "320px",
             borderRadius: "50%",
-            background: BRAND.colors.accentDeep,
+            background: BRAND.colors.ink,
           }}
         />
         <div
@@ -99,7 +99,7 @@ export default async function Image() {
               fontSize: "15px",
               letterSpacing: "0.18em",
               textTransform: "uppercase",
-              color: BRAND.colors.ink,
+              color: BRAND.colors.canvas,
               background: BRAND.colors.accent,
               padding: "10px 22px",
               borderRadius: "999px",
@@ -184,7 +184,7 @@ export default async function Image() {
               fontFamily: BRAND.fonts.bodyName,
               fontWeight: 700,
               fontSize: "16px",
-              color: BRAND.colors.accent,
+              color: BRAND.colors.tintSoft,
               letterSpacing: "0.14em",
               textTransform: "uppercase",
             }}

@@ -348,7 +348,7 @@ export default function Home() {
                 </div>
                 <button
                   onClick={copyReferralLink}
-                  style={{ padding: "10px 20px", border: "2px solid var(--brand-ink)", borderRadius: 999, background: copied ? "var(--brand-ink)" : "var(--brand-accent)", color: copied ? "var(--brand-canvas)" : "var(--brand-ink)", fontFamily: "var(--brand-font-body)", fontWeight: 800, fontSize: "0.7rem", letterSpacing: "0.08em", textTransform: "uppercase", cursor: "pointer", whiteSpace: "nowrap", transition: "all 0.2s" }}
+                  style={{ padding: "10px 20px", border: "2px solid var(--brand-ink)", borderRadius: 999, background: copied ? "var(--brand-ink)" : "var(--brand-accent)", color: "var(--brand-canvas)", fontFamily: "var(--brand-font-body)", fontWeight: 800, fontSize: "0.7rem", letterSpacing: "0.08em", textTransform: "uppercase", cursor: "pointer", whiteSpace: "nowrap", transition: "all 0.2s" }}
                 >
                   {copied ? "Copied!" : "Copy"}
                 </button>
@@ -356,7 +356,7 @@ export default function Home() {
               <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
                 {[
                   { label: "Instagram", platform: "instagram", bg: "var(--brand-tint-soft)" },
-                  { label: "TikTok", platform: "tiktok", bg: "var(--brand-tint-blush)" },
+                  { label: "TikTok", platform: "tiktok", bg: "var(--brand-canvas)" },
                   { label: "Text a friend", platform: "text", bg: "var(--brand-flavor-functional)" },
                 ].map((s) => (
                   <button
@@ -371,7 +371,7 @@ export default function Home() {
               <div style={{ marginTop: 14, display: "flex", alignItems: "center", gap: 8 }}>
                 <div style={{ display: "flex", gap: 4 }}>
                   {[0, 1, 2].map((i) => (
-                    <div key={i} style={{ width: 28, height: 28, borderRadius: "50%", border: "2px solid var(--brand-ink)", background: i < referralCount ? "var(--brand-accent)" : "transparent", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.65rem", fontWeight: 700, color: "var(--brand-ink)", fontFamily: "var(--brand-font-body)", transition: "all 0.3s" }}>
+                    <div key={i} style={{ width: 28, height: 28, borderRadius: "50%", border: "2px solid var(--brand-ink)", background: i < referralCount ? "var(--brand-accent)" : "transparent", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.65rem", fontWeight: 700, color: i < referralCount ? "var(--brand-canvas)" : "var(--brand-ink)", fontFamily: "var(--brand-font-body)", transition: "all 0.3s" }}>
                       {i < referralCount ? "✓" : ""}
                     </div>
                   ))}
@@ -437,7 +437,7 @@ export default function Home() {
               style={{ flex: "1 1 220px", padding: "15px 20px", border: "2px solid var(--brand-ink)", borderRadius: 999, background: "#fff", color: "var(--brand-ink)", fontFamily: "var(--brand-font-body)", fontSize: "0.95rem", fontWeight: 500, minWidth: 0 }}
             />
             <button type="submit" disabled={loading} style={{ padding: "15px 28px", border: "2px solid var(--brand-ink)", borderRadius: 999, background: "var(--brand-ink)", color: "var(--brand-canvas)", fontFamily: "var(--brand-font-body)", fontWeight: 800, fontSize: "0.75rem", letterSpacing: "0.1em", textTransform: "uppercase", cursor: loading ? "wait" : "pointer", whiteSpace: "nowrap" }}>
-              {loading ? "…" : "Notify me →"}
+              {loading ? "…" : "Get first access →"}
             </button>
           </form>
           {captchaError && (
@@ -471,34 +471,19 @@ export default function Home() {
         .wobble:hover { transform: rotate(-3deg) scale(1.03); }
       `}</style>
 
-      {/* ════════════════════ MARQUEE TOP BAR ════════════════════ */}
+      {/* ════════════════════ ANNOUNCEMENT BAR ════════════════════ */}
       <div
         style={{
           background: "var(--brand-ink)",
-          padding: "10px 0",
-          overflow: "hidden",
+          padding: "11px 16px",
+          textAlign: "center",
           position: "relative",
           zIndex: 100,
         }}
       >
-        <div className="ticker-track">
-          {Array(16)
-            .fill(null)
-            .map((_, i) => (
-              <span
-                key={i}
-                style={{
-                  ...tagStyle,
-                  fontSize: "0.65rem",
-                  color: i % 2 === 0 ? "var(--brand-accent)" : "rgba(var(--brand-canvas-rgb),0.75)",
-                  padding: "0 48px",
-                  whiteSpace: "nowrap",
-                }}
-              >
-                {i % 4 === 0 ? "POUR. SWIRL. GO." : i % 4 === 1 ? "✿" : i % 4 === 2 ? "DROP 001 SOLD OUT — RESTOCK SOON" : "✿"}
-              </span>
-            ))}
-        </div>
+        <p style={{ ...tagStyle, fontSize: "0.66rem", color: "var(--brand-tint-soft)", margin: 0 }}>
+          Drop 001 sold out in 9 days ✿ The Drop 002 list is open
+        </p>
       </div>
 
       {/* ════════════════════ STICKY NAV ════════════════════ */}
@@ -557,7 +542,7 @@ export default function Home() {
             className="nav-cta-btn"
             style={{
               background: "var(--brand-accent)",
-              color: "var(--brand-ink)",
+              color: "var(--brand-canvas)",
               border: "2px solid var(--brand-ink)",
               borderRadius: 999,
               padding: "10px 22px",
@@ -656,7 +641,7 @@ export default function Home() {
             }}
             style={{
               background: "var(--brand-accent)",
-              color: "var(--brand-ink)",
+              color: "var(--brand-canvas)",
               border: "2px solid var(--brand-ink)",
               borderRadius: 999,
               width: "calc(100% - 48px)",
@@ -690,14 +675,14 @@ export default function Home() {
       >
         {/* Pinwheel flower motifs */}
         <img
-          src="/brand/pattern-flower.svg"
+          src="/brand/pattern-flower-brand.svg"
           alt=""
           aria-hidden
           className="flower-spin hero-flower-a"
           style={{ position: "absolute", top: "-14vw", left: "-14vw", width: "30vw", minWidth: 260, opacity: 0.85, pointerEvents: "none" }}
         />
         <img
-          src="/brand/pattern-flower.svg"
+          src="/brand/pattern-flower-brand.svg"
           alt=""
           aria-hidden
           style={{ position: "absolute", bottom: "-18%", right: "-8%", width: "24vw", minWidth: 220, opacity: 0.55, pointerEvents: "none" }}
@@ -710,7 +695,7 @@ export default function Home() {
               <div
                 className="fade-up"
                 style={{
-                  background: "var(--brand-accent)",
+                  background: "var(--brand-tint-soft)",
                   border: "2px solid var(--brand-ink)",
                   borderRadius: 999,
                   padding: "10px 18px",
@@ -736,7 +721,7 @@ export default function Home() {
                 transform: "rotate(-2deg)",
                 ...tagStyle,
                 fontSize: "0.68rem",
-                color: "var(--brand-ink)",
+                color: "var(--brand-canvas)",
                 marginBottom: 22,
                 opacity: 0,
               }}
@@ -975,7 +960,7 @@ export default function Home() {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 20 }}>
             {[
               { quote: "I replaced my $7 oat milk latte with this. Tastes better, costs less, and I actually feel focused.", name: "Sarah M.", loc: "Austin, TX", bg: "var(--brand-tint-soft)" },
-              { quote: "The strawberry one is insane. The pour is genuinely the prettiest thing in my kitchen.", name: "Mike R.", loc: "Brooklyn, NY", bg: "var(--brand-tint-blush)" },
+              { quote: "The strawberry one is insane. The pour is genuinely the prettiest thing in my kitchen.", name: "Mike R.", loc: "Brooklyn, NY", bg: "var(--brand-canvas)" },
               { quote: "Finally a matcha that doesn't taste like grass. The vanilla is my daily non-negotiable.", name: "Jess L.", loc: "Portland, OR", bg: "var(--brand-flavor-functional)" },
             ].map((t, i) => (
               <div
@@ -1035,7 +1020,7 @@ export default function Home() {
         id="ingredients"
         style={{ padding: "100px 24px", background: "var(--brand-tint-soft)", position: "relative", overflow: "hidden" }}
       >
-        <img src="/brand/pattern-flower.svg" alt="" aria-hidden style={{ position: "absolute", bottom: "-14%", left: "-7%", width: "20vw", minWidth: 200, opacity: 0.45, pointerEvents: "none" }} />
+        <img src="/brand/pattern-flower-brand.svg" alt="" aria-hidden style={{ position: "absolute", bottom: "-14%", left: "-7%", width: "20vw", minWidth: 200, opacity: 0.45, pointerEvents: "none" }} />
         <div style={{ maxWidth: 1000, margin: "0 auto", position: "relative", zIndex: 1 }}>
           <div {...anim("ing-head")} style={{ ...anim("ing-head").style, textAlign: "center", marginBottom: 48 }}>
             <p style={{ ...tagStyle, fontSize: "0.66rem", color: "var(--brand-ink)", marginBottom: 16 }}>
@@ -1084,7 +1069,7 @@ export default function Home() {
                 }}
               >
                 <Image src={item.icon} alt="" aria-hidden width={64} height={64} loading="lazy" style={{ width: 52, height: 52, objectFit: "contain", marginBottom: 16, filter: "invert(1) brightness(1.6)" }} />
-                <p style={{ ...tagStyle, fontSize: "0.72rem", color: "var(--brand-accent)", marginBottom: 12 }}>{item.name}</p>
+                <p style={{ ...tagStyle, fontSize: "0.72rem", color: "var(--brand-tint-soft)", marginBottom: 12 }}>{item.name}</p>
                 <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.85rem", color: "rgba(var(--brand-canvas-rgb),0.72)", lineHeight: 1.6 }}>{item.detail}</p>
               </div>
             ))}
@@ -1116,7 +1101,7 @@ export default function Home() {
                   <tr>
                     <th style={{ textAlign: "left", padding: "14px 18px", borderBottom: "1px solid rgba(var(--brand-canvas-rgb),0.1)", color: "rgba(var(--brand-canvas-rgb),0.45)", fontWeight: 600, fontSize: "0.72rem", letterSpacing: "0.08em", textTransform: "uppercase" }}></th>
                     {["shroomé", "Clevr", "RYZE", "MatchaKo", "Cafe"].map((b) => (
-                      <th key={b} style={{ textAlign: "center", padding: "14px 10px", borderBottom: "1px solid rgba(var(--brand-canvas-rgb),0.1)", color: b === "shroomé" ? "var(--brand-accent)" : "rgba(var(--brand-canvas-rgb),0.45)", fontWeight: 700, fontSize: "0.72rem", letterSpacing: "0.08em", textTransform: "uppercase" }}>{b}</th>
+                      <th key={b} style={{ textAlign: "center", padding: "14px 10px", borderBottom: "1px solid rgba(var(--brand-canvas-rgb),0.1)", color: b === "shroomé" ? "var(--brand-tint-soft)" : "rgba(var(--brand-canvas-rgb),0.45)", fontWeight: 700, fontSize: "0.72rem", letterSpacing: "0.08em", textTransform: "uppercase" }}>{b}</th>
                     ))}
                   </tr>
                 </thead>
@@ -1132,7 +1117,7 @@ export default function Home() {
                       <td style={{ padding: "16px 18px", borderBottom: "1px solid rgba(var(--brand-canvas-rgb),0.06)", color: "var(--brand-canvas)", fontWeight: 600, fontSize: "0.85rem" }}>{row.feature}</td>
                       {row.values.map((v, i) => (
                         <td key={i} style={{ textAlign: "center", padding: "16px 10px", borderBottom: "1px solid rgba(var(--brand-canvas-rgb),0.06)" }}>
-                          <span style={{ display: "inline-block", width: 34, height: 34, lineHeight: "34px", borderRadius: "50%", fontSize: "1rem", fontWeight: 700, background: v ? "rgba(var(--brand-accent-rgb),0.25)" : "rgba(var(--brand-canvas-rgb),0.05)", color: v ? "var(--brand-accent)" : "rgba(var(--brand-canvas-rgb),0.2)" }}>
+                          <span style={{ display: "inline-block", width: 34, height: 34, lineHeight: "34px", borderRadius: "50%", fontSize: "1rem", fontWeight: 700, background: v ? "rgba(var(--brand-tint-soft-rgb, 227,213,247),0.2)" : "rgba(var(--brand-canvas-rgb),0.05)", color: v ? "var(--brand-tint-soft)" : "rgba(var(--brand-canvas-rgb),0.2)" }}>
                             {v ? "✓" : "—"}
                           </span>
                         </td>
@@ -1148,13 +1133,13 @@ export default function Home() {
       </section>
 
       {/* ════════════════════ OUR VIBE IS MATCHA-IN — LIFESTYLE ════════════════════ */}
-      <section style={{ padding: "90px 24px 100px", background: "var(--brand-accent)", position: "relative", overflow: "hidden" }}>
+      <section style={{ padding: "90px 24px 100px", background: "var(--brand-ink)", position: "relative", overflow: "hidden" }}>
         <div style={{ maxWidth: 1080, margin: "0 auto", position: "relative", zIndex: 1 }}>
           <div {...anim("vibe-head")} style={{ ...anim("vibe-head").style, textAlign: "center", marginBottom: 44 }}>
-            <p style={{ ...tagStyle, fontSize: "0.66rem", color: "var(--brand-ink)", marginBottom: 14 }}>
+            <p style={{ ...tagStyle, fontSize: "0.66rem", color: "var(--brand-tint-soft)", marginBottom: 14 }}>
               @drinkshroome
             </p>
-            <h2 style={{ fontFamily: "var(--brand-font-display)", fontWeight: 800, fontSize: "clamp(2rem, 4.6vw, 3.2rem)", color: "var(--brand-ink)", lineHeight: 1.05, letterSpacing: "-0.02em" }}>
+            <h2 style={{ fontFamily: "var(--brand-font-display)", fontWeight: 800, fontSize: "clamp(2rem, 4.6vw, 3.2rem)", color: "var(--brand-canvas)", lineHeight: 1.05, letterSpacing: "-0.02em" }}>
               Our vibe is matcha-in.
             </h2>
           </div>
@@ -1173,7 +1158,7 @@ export default function Home() {
                   width={500}
                   height={625}
                   loading="lazy"
-                  style={{ width: "100%", height: "auto", aspectRatio: "4 / 5", objectFit: "cover", borderRadius: 24, border: "3px solid var(--brand-ink)", display: "block", background: "var(--brand-canvas)" }}
+                  style={{ width: "100%", height: "auto", aspectRatio: "4 / 5", objectFit: "cover", borderRadius: 24, border: "3px solid rgba(var(--brand-canvas-rgb),0.25)", display: "block", background: "var(--brand-canvas)" }}
                 />
               </div>
             ))}
@@ -1184,7 +1169,7 @@ export default function Home() {
               href="https://instagram.com/drinkshroome"
               target="_blank"
               rel="noopener noreferrer"
-              style={{ display: "inline-block", background: "var(--brand-canvas)", border: "2px solid var(--brand-ink)", borderRadius: 999, padding: "12px 26px", fontFamily: "var(--brand-font-body)", fontWeight: 800, fontSize: "0.72rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--brand-ink)", textDecoration: "none" }}
+              style={{ display: "inline-block", background: "var(--brand-tint-soft)", border: "2px solid var(--brand-tint-soft)", borderRadius: 999, padding: "12px 26px", fontFamily: "var(--brand-font-body)", fontWeight: 800, fontSize: "0.72rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--brand-ink)", textDecoration: "none" }}
             >
               Follow the flock →
             </a>
@@ -1204,7 +1189,7 @@ export default function Home() {
           overflow: "hidden",
         }}
       >
-        <img src="/brand/pattern-flower.svg" alt="" aria-hidden className="flower-spin" style={{ position: "absolute", top: "-20%", right: "-10%", width: "30vw", minWidth: 260, opacity: 0.8, pointerEvents: "none" }} />
+        <img src="/brand/pattern-flower-brand.svg" alt="" aria-hidden className="flower-spin" style={{ position: "absolute", top: "-20%", right: "-10%", width: "30vw", minWidth: 260, opacity: 0.8, pointerEvents: "none" }} />
         <img src="/brand/pattern-flower-vanilla.svg" alt="" aria-hidden style={{ position: "absolute", bottom: "-16%", left: "-8%", width: "20vw", minWidth: 180, opacity: 0.55, pointerEvents: "none" }} />
 
         <div {...anim("cta-block")} style={{ ...anim("cta-block").style, maxWidth: 560, margin: "0 auto", position: "relative", zIndex: 1 }}>
@@ -1227,7 +1212,7 @@ export default function Home() {
       <footer style={{ background: "var(--brand-ink)", color: "var(--brand-canvas)", padding: "70px 24px 40px", textAlign: "center", position: "relative", overflow: "hidden" }}>
         <div style={{ maxWidth: 900, margin: "0 auto" }}>
           <Image src="/brand/wordmark-cream.png" width={300} height={65} alt="shroomé" loading="lazy" style={{ width: 240, height: "auto", margin: "0 auto 18px" }} />
-          <p style={{ ...tagStyle, fontSize: "0.66rem", color: "var(--brand-accent)", marginBottom: 32 }}>
+          <p style={{ ...tagStyle, fontSize: "0.66rem", color: "var(--brand-tint-soft)", marginBottom: 32 }}>
             Pour. Swirl. Go.
           </p>
 
