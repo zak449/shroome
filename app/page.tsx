@@ -330,9 +330,17 @@ export default function Home() {
     <div style={{ textAlign: variant === "cta" ? "center" : "left" }}>
       {step === "done" ? (
         <div style={{ textAlign: "left" }}>
-          <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 700, fontSize: "1rem", color: "var(--brand-ink)", marginBottom: referralCode ? 16 : 0 }}>
-            ✓ You&apos;re in line for Drop 002.
-          </p>
+          <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: referralCode ? 16 : 0 }}>
+            <Image src="/brand/sheep-drink.png" alt="" aria-hidden width={64} height={76} style={{ width: 54, height: "auto" }} />
+            <div>
+              <p style={{ fontFamily: "var(--brand-font-display)", fontWeight: 800, fontSize: "1.15rem", color: "var(--brand-ink)", letterSpacing: "-0.01em" }}>
+                Welcome to the flock.
+              </p>
+              <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 600, fontSize: "0.8rem", color: "rgba(var(--brand-ink-rgb),0.65)" }}>
+                You&apos;re in line for Drop 002 — the link hits your inbox before it&apos;s public.
+              </p>
+            </div>
+          </div>
           {referralCode && (
             <div style={{ marginTop: 16, padding: "20px", background: "rgba(var(--brand-canvas-rgb),0.75)", border: "2px solid var(--brand-ink)", borderRadius: 20 }}>
               <p style={{ ...tagStyle, fontSize: "0.72rem", color: "var(--brand-ink)", marginBottom: 8 }}>
@@ -1002,9 +1010,9 @@ export default function Home() {
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 20 }}>
             {[
-              { quote: "I replaced my $7 oat milk latte with this. Tastes better, costs less, and I actually feel focused.", name: "Sarah M.", loc: "Austin, TX", bg: "var(--brand-tint-soft)" },
-              { quote: "The strawberry one is insane. The pour is genuinely the prettiest thing in my kitchen.", name: "Mike R.", loc: "Brooklyn, NY", bg: "var(--brand-canvas)" },
-              { quote: "Finally a matcha that doesn't taste like grass. The vanilla is my daily non-negotiable.", name: "Jess L.", loc: "Portland, OR", bg: "var(--brand-flavor-functional)" },
+              { quote: "I replaced my $7 oat milk latte with this. Tastes better, costs less, and I actually feel focused.", name: "Sarah M.", loc: "Austin, TX", bg: "var(--brand-tint-soft)", face: "/brand/model-cloud.jpg" },
+              { quote: "The strawberry one is insane. The pour is genuinely the prettiest thing in my kitchen.", name: "Mike R.", loc: "Brooklyn, NY", bg: "var(--brand-canvas)", face: "/brand/ig-scallop-model.jpg" },
+              { quote: "Finally a matcha that doesn't taste like grass. The vanilla is my daily non-negotiable.", name: "Jess L.", loc: "Portland, OR", bg: "var(--brand-flavor-functional)", face: "/brand/ig-lavender-face.jpg" },
             ].map((t, i) => (
               <div
                 key={t.name}
@@ -1022,8 +1030,13 @@ export default function Home() {
                 <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 600, fontSize: "1rem", color: "var(--brand-ink)", lineHeight: 1.55, marginBottom: 20 }}>
                   &ldquo;{t.quote}&rdquo;
                 </p>
-                <p style={{ ...tagStyle, fontSize: "0.68rem", color: "var(--brand-ink)" }}>{t.name}</p>
-                <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.68rem", color: "rgba(var(--brand-ink-rgb),0.55)" }}>{t.loc} · Drop 001</p>
+                <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+                  <Image src={t.face} alt="" aria-hidden width={44} height={44} loading="lazy" style={{ width: 44, height: 44, borderRadius: "50%", objectFit: "cover", border: "2px solid var(--brand-ink)" }} />
+                  <div>
+                    <p style={{ ...tagStyle, fontSize: "0.68rem", color: "var(--brand-ink)" }}>{t.name}</p>
+                    <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.68rem", color: "rgba(var(--brand-ink-rgb),0.55)" }}>{t.loc} · Drop 001</p>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
@@ -1042,7 +1055,16 @@ export default function Home() {
             </h2>
           </div>
 
-          <div {...anim("how-card", 0.15)} style={{ ...anim("how-card", 0.15).style, background: "var(--brand-canvas)", border: "3px solid var(--brand-ink)", borderRadius: 36, padding: "48px 32px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 36 }}>
+          <div {...anim("how-card", 0.15)} style={{ ...anim("how-card", 0.15).style, background: "var(--brand-canvas)", border: "3px solid var(--brand-ink)", borderRadius: 36, padding: "48px 32px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 36, position: "relative" }}>
+            <Image
+              src="/brand/lockup-circle.png"
+              alt="Ready to enjoy life with good energy"
+              width={140}
+              height={140}
+              loading="lazy"
+              className="flower-spin"
+              style={{ position: "absolute", top: -54, right: 28, width: 116, height: 116, zIndex: 2 }}
+            />
             {[
               { img: "/brand/sheep-sachet.png", num: "1. Tear", desc: "Rip open one sachet. That's your perfectly measured dose." },
               { img: "/brand/sheep-swirl.png", num: "2. Pour", desc: "Over your milk of choice. Oat, almond, coconut, dairy. Hot or iced." },
@@ -1175,6 +1197,35 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ════════════════════ THE POUR — EDITORIAL BAND ════════════════════ */}
+      <section
+        aria-label="The pour"
+        style={{
+          height: "min(52vw, 420px)",
+          backgroundImage: "url(/brand/ready-to-glow.jpg)",
+          backgroundSize: "cover",
+          backgroundPosition: "center 42%",
+          position: "relative",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <p
+          style={{
+            background: "rgba(254,255,248,0.92)",
+            border: "2px solid var(--brand-ink)",
+            borderRadius: 999,
+            padding: "12px 26px",
+            ...tagStyle,
+            fontSize: "0.7rem",
+            color: "var(--brand-ink)",
+          }}
+        >
+          the prettiest pour on your fyp ✿ @drinkshroome
+        </p>
+      </section>
+
       {/* ════════════════════ OUR VIBE IS MATCHA-IN — LIFESTYLE ════════════════════ */}
       <section style={{ padding: "90px 24px 100px", background: "var(--brand-ink)", position: "relative", overflow: "hidden" }}>
         <div style={{ maxWidth: 1080, margin: "0 auto", position: "relative", zIndex: 1 }}>
@@ -1192,7 +1243,7 @@ export default function Home() {
               { src: "/brand/ig-matcha-in.jpg", alt: "Friends at a picnic — our vibe is matcha-in" },
               { src: "/brand/ig-glow-skin.jpg", alt: "Glow and skin — smiling model in sunlight" },
               { src: "/brand/ig-sachet-sip.jpg", alt: "Sipping an iced shroomé matcha, sachet in hand" },
-              { src: "/brand/ready-to-glow.jpg", alt: "Ready to glow — iced matcha close-up" },
+              { src: "/brand/ig-iced-close.jpg", alt: "Iced matcha with the mé sheep — pour creative" },
               { src: "/brand/ig-good-energy.jpg", alt: "Ready to enjoy life with good energy — cozy moment" },
               { src: "/brand/cup-logo.jpg", alt: "Iced shroomé matcha latte in a branded cup" },
             ].map((g, i) => (
@@ -1318,6 +1369,7 @@ export default function Home() {
 
       {/* ════════════════════ FOOTER ════════════════════ */}
       <footer style={{ background: "var(--brand-ink)", color: "var(--brand-canvas)", padding: "70px 24px 40px", textAlign: "center", position: "relative", overflow: "hidden" }}>
+        <Image src="/brand/sheep-stack.png" alt="" aria-hidden width={90} height={226} loading="lazy" style={{ position: "absolute", right: "6%", bottom: 0, width: 74, height: "auto", opacity: 0.85, filter: "invert(1) brightness(1.8)" }} />
         <div style={{ maxWidth: 900, margin: "0 auto" }}>
           <Image src="/brand/wordmark-cream.png" width={300} height={65} alt="shroomé" loading="lazy" style={{ width: 240, height: "auto", margin: "0 auto 18px" }} />
           <p style={{ ...tagStyle, fontSize: "0.66rem", color: "var(--brand-tint-soft)", marginBottom: 32 }}>

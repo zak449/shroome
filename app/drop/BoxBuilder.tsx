@@ -90,6 +90,14 @@ export default function BoxBuilder() {
         textAlign: "left",
       }}
     >
+      <Image
+        src="/brand/me-01.png"
+        alt=""
+        aria-hidden
+        width={100}
+        height={86}
+        style={{ position: "absolute", top: -46, left: 26, width: 88, height: "auto" }}
+      />
       {/* sold-out stamp */}
       <div
         style={{
