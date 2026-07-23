@@ -359,7 +359,8 @@ export default function DropPage() {
           <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.92rem", color: "rgba(var(--brand-ink-rgb),0.7)", marginTop: 14, lineHeight: 1.7 }}>
             every active subscription&apos;s boxes are reserved out of the production run before
             the public window opens. one-time buyers refresh the page — subscribers get theirs
-            automatically. skip, pause, or swap flavors anytime.
+            automatically at 10–20% off by size and cadence (priced live in the builder above).
+            skip, pause, or swap flavors anytime.
           </p>
           <p style={{ fontFamily: "var(--brand-font-mono)", fontWeight: 700, fontSize: "0.68rem", letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--brand-canvas)", background: "var(--brand-accent)", display: "inline-block", padding: "8px 18px", borderRadius: 999, border: "2px solid var(--brand-ink)", marginTop: 20 }}>
             opens with drop 002

@@ -350,7 +350,7 @@ export default function VanillaFlavorPage() {
             <a href="/recipes">Recipes</a>
           </div>
           <a href="/" className="vf-nav-cta">
-            Sold out &mdash; get restock alerts &rarr;
+            Get first access &rarr;
           </a>
           <MobileNav
             prefix="vf"
@@ -417,6 +417,31 @@ export default function VanillaFlavorPage() {
             { label: "Vanilla" },
           ]}
         />
+
+
+        {/* ── PACKS & PRICING ── */}
+        <div style={{ maxWidth: 720, margin: "0 auto", padding: "40px 6% 56px" }}>
+          <h2 className="vf-label">Packs &amp; Pricing</h2>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))", gap: 12 }}>
+            {[
+              { n: "6 sachets", d: "first-pour kit", p: "$21", sub: "one-time only" },
+              { n: "12 sachets", d: "the standard box", p: "$36", sub: "from $30.60 subscribed" },
+              { n: "24 sachets", d: "the duo stock", p: "$66", sub: "from $54.12 subscribed" },
+              { n: "48 sachets", d: "never run dry", p: "$126", sub: "from $100.80 subscribed" },
+            ].map((b) => (
+              <div key={b.n} style={{ background: "#fff", border: "2px solid var(--brand-ink)", borderRadius: 18, padding: "16px 14px", position: "relative" }}>
+                <p style={{ fontFamily: "var(--brand-font-mono)", fontWeight: 700, fontSize: "0.62rem", letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(var(--brand-ink-rgb),0.6)" }}>{b.n}</p>
+                <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.68rem", color: "rgba(var(--brand-ink-rgb),0.55)", margin: "2px 0 8px" }}>{b.d}</p>
+                <p style={{ fontFamily: "var(--brand-font-mono)", fontWeight: 700, fontSize: "1.3rem", color: "var(--brand-ink)" }}>{b.p}</p>
+                <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.64rem", fontWeight: 600, color: "var(--brand-accent-deep)" }}>{b.sub}</p>
+              </div>
+            ))}
+          </div>
+          <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.72rem", color: "rgba(var(--brand-ink-rgb),0.55)", marginTop: 14 }}>
+            All packs sold out with Drop 001.{" "}
+            <a href="/drop" style={{ color: "var(--brand-ink)", fontWeight: 700, textDecoration: "underline" }}>Spec your Drop 002 box →</a>
+          </p>
+        </div>
 
         {/* ── KEY INGREDIENTS ── */}
         <div className="vf-ingredients">

@@ -978,6 +978,14 @@ export default function Home() {
               </a>
             ))}
           </div>
+
+          <p {...anim("flavor-packs", 0.2)} style={{ ...anim("flavor-packs", 0.2).style, marginTop: 30, fontFamily: "var(--brand-font-body)", fontSize: "0.82rem", color: "rgba(var(--brand-ink-rgb),0.65)" }}>
+            Boxes of 6 · 12 · 24 · 48 — from $21. Subscriptions from $30.60 with reserved
+            allocation every drop.{" "}
+            <a href="/drop" style={{ color: "var(--brand-ink)", fontWeight: 700, textDecoration: "underline" }}>
+              Build your box →
+            </a>
+          </p>
         </div>
       </section>
 
