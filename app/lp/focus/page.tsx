@@ -98,7 +98,7 @@ const config: LPConfig = {
   ],
   final: {
     header: "the label already convinced you. the drop won't wait.",
-    body: `drop 001 sold out. drop 002 is ${DROP2_RUN} — get access now, add your number for the 10-minute head start (your code upgrades from 20% to 30% — best code wins).`,
+    body: `drop 001 sold out. drop 002 is ${DROP2_RUN} — get access now, the text list shops 10 minutes before the link is public — with an upgraded welcome code.`,
     microcopy: "one text per drop. we email like we label — only when there's something worth reading.",
   },
 };

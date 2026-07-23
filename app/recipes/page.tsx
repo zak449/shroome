@@ -192,6 +192,7 @@ export default function RecipesPage() {
           text-decoration:none;
           transition:filter .3s,transform .3s
         }
+        .rec-tile::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(227,213,247,0.18) 0%,rgba(45,52,26,0.12) 100%);mix-blend-mode:soft-light;pointer-events:none;z-index:1}
         .rec-tile:hover{filter:brightness(1.06);transform:scale(1.02);z-index:2}
         .rec-tile-img{
           position:absolute;inset:0;

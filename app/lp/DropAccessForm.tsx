@@ -205,7 +205,7 @@ export default function DropAccessForm({
           ✓ drop access locked in.
         </p>
         <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 600, fontSize: "0.82rem", color: faint, marginBottom: 12 }}>
-          the text list gets the drop link 10 minutes before everyone else — and your code upgrades from 20% to 30%. best code wins.
+          the text list gets the drop link 10 minutes before everyone else — with an upgraded welcome code.
         </p>
         <form onSubmit={handlePhoneSubmit}>
           <input

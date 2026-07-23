@@ -89,12 +89,12 @@ const config: LPConfig = {
     },
     {
       q: "how do drops work?",
-      a: `we produce in numbered, limited runs. drop 001 (${X1_BOXES} boxes) sold out; drop 002 is ${DROP2_RUN}. drop access gets you the link at open — the text list gets it 10 minutes early, and your code upgrades from 20% to 30% (best code wins). real runs, real dates, no fake timers.`,
+      a: `we produce in numbered, limited runs. drop 001 (${X1_BOXES} boxes) sold out; drop 002 is ${DROP2_RUN}. drop access gets you the link at open — the text list gets it 10 minutes early, with an upgraded welcome code. real runs, real dates, no fake timers.`,
     },
   ],
   final: {
     header: "you have thirty seconds. that's all this takes.",
-    body: `drop 001 sold out. drop 002 is ${DROP2_RUN} — get access now, add your number for the 10-minute head start (your code upgrades from 20% to 30% — best code wins). 20% off and free shipping locked in either way.`,
+    body: `drop 001 sold out. drop 002 is ${DROP2_RUN} — get access now, the text list shops 10 minutes before the link is public — with an upgraded welcome code.`,
     microcopy: "one text per drop. that's the entire notification load — promise.",
   },
 };
