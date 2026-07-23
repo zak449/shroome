@@ -150,7 +150,7 @@ export default async function RecipeDetailPage({
           position:sticky;top:0;z-index:200;
           display:flex;align-items:center;justify-content:space-between;
           padding:0 5%;height:60px;
-          background:rgba(var(--brand-flavor-strawberry-rgb),0.85);
+          background:rgba(var(--brand-canvas-rgb),0.88);
           backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
           border-bottom:1px solid rgba(var(--brand-ink-rgb),0.06)
         }
@@ -159,7 +159,7 @@ export default async function RecipeDetailPage({
           text-decoration:none;color:var(--brand-ink)
         }
         .rd-nav-logo img{width:32px;height:32px;border-radius:6px}
-        .rd-nav-logo span{font-family:var(--brand-font-display);font-size:22px;font-weight:400;font-style:italic;color:var(--brand-ink)}
+        .rd-nav-logo span{font-family:var(--brand-font-display);font-size:22px;font-weight:700;font-style:normal;color:var(--brand-ink)}
         .rd-nav-links{display:flex;gap:8px}
         @media(max-width:768px){.rd-nav-links{display:none !important}.rd-nav-cta{display:none !important}}
         .rd-nav-links a{
@@ -226,7 +226,7 @@ export default async function RecipeDetailPage({
         .rd-hero-back:hover{color:var(--brand-canvas)}
         .rd-hero h1{
           font-family:var(--brand-font-display);
-          font-size:clamp(40px,6vw,72px);font-weight:400;font-style:italic;
+          font-size:clamp(40px,6vw,72px);font-weight:700;font-style:normal;
           line-height:1;letter-spacing:-.02em;
           color:var(--brand-canvas);margin-bottom:20px;
           text-shadow:0 2px 24px rgba(0,0,0,0.25)
@@ -320,7 +320,7 @@ export default async function RecipeDetailPage({
           font-size:clamp(32px,4.5vw,52px);font-weight:400;line-height:1.05;
           color:var(--brand-ink);margin-bottom:14px
         }
-        .rd-cta h2 em{font-style:italic;color:var(--brand-accent-deep)}
+        .rd-cta h2 em{font-style:normal;color:var(--brand-accent-deep)}
         .rd-cta-sub{
           font-family:var(--brand-font-body);font-size:14px;
           color:rgba(var(--brand-ink-rgb),0.6);margin-bottom:28px
@@ -365,7 +365,7 @@ export default async function RecipeDetailPage({
         .rd-more-card-body{padding:16px 18px 20px}
         .rd-more-card-name{
           font-family:var(--brand-font-display);
-          font-size:20px;font-weight:400;font-style:italic;
+          font-size:20px;font-weight:700;font-style:normal;
           color:var(--brand-ink);line-height:1.2;margin-bottom:6px
         }
         .rd-more-card-meta{
@@ -405,7 +405,7 @@ export default async function RecipeDetailPage({
         .rd-footer-mid a:hover{color:var(--brand-canvas)}
         .rd-footer-bot{
           margin-top:12px;
-          font-family:var(--brand-font-display);font-style:italic;
+          font-family:var(--brand-font-display);font-style:normal;
           font-size:14px;color:rgba(var(--brand-canvas-rgb),0.4)
         }
 
@@ -448,11 +448,11 @@ export default async function RecipeDetailPage({
       <div className="rd-ticker">
         <div className="rd-ticker-track">
           {[
-            "TEAR ✦ POUR ✦ DONE",
+            "POUR ✦ SWIRL ✦ GO",
             "9 EASY RECIPES",
             "UNDER 2 MINUTES",
             "CEREMONIAL MATCHA + MUSHROOMS + COLLAGEN",
-            "TEAR ✦ POUR ✦ DONE",
+            "POUR ✦ SWIRL ✦ GO",
             "9 EASY RECIPES",
             "UNDER 2 MINUTES",
             "CEREMONIAL MATCHA + MUSHROOMS + COLLAGEN",
@@ -472,12 +472,12 @@ export default async function RecipeDetailPage({
       <nav className="rd-nav" aria-label="Main navigation">
         <a href="/" className="rd-nav-logo">
           <img
-            src="/logo-mark.png"
+            src="/brand/symbol-sheep-solid.png"
             width={32}
             height={32}
             alt="shroomé S"
           />
-          <span>shroomé</span>
+          <img src="/brand/wordmark.png" alt="shroomé" style={{ height: 22, width: "auto" }} />
         </a>
         <div className="rd-nav-links">
           <a href="/#why">Why shroomé</a>

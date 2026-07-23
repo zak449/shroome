@@ -134,7 +134,7 @@ function DropLedger({ stampColor, light }: { stampColor: string; light?: boolean
         <p
           style={{
             fontFamily: "var(--brand-font-body)",
-            fontStyle: "italic",
+            fontStyle: "normal",
             fontSize: "0.78rem",
             color: light ? "rgba(var(--brand-canvas-rgb),0.65)" : "rgba(var(--brand-ink-rgb),0.6)",
             margin: 0,
@@ -290,11 +290,11 @@ export default function LPShell({ config }: { config: LPConfig }) {
         }}
       >
         <a href="#top" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none" }} aria-label="shroomé">
-          <Image src="/logo-mark.png" width={30} height={30} alt="shroomé S" style={{ borderRadius: 6 }} priority />
+          <Image src="/brand/symbol-sheep-solid.png" width={30} height={30} alt="shroomé S" style={{ borderRadius: 6 }} priority />
           <span
             style={{
               fontFamily: "var(--brand-font-display)",
-              fontStyle: "italic",
+              fontStyle: "normal",
               fontSize: "1.3rem",
               color: heroText,
             }}

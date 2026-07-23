@@ -193,13 +193,13 @@ export default async function BlogPost({
           position:sticky;top:0;z-index:200;
           display:flex;align-items:center;justify-content:space-between;
           padding:0 5%;height:60px;
-          background:rgba(var(--brand-flavor-strawberry-rgb),0.85);
+          background:rgba(var(--brand-canvas-rgb),0.88);
           backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
           border-bottom:1px solid rgba(var(--brand-ink-rgb),0.06)
         }
         .post-nav-logo{display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--brand-ink)}
         .post-nav-logo img{width:32px;height:32px;border-radius:6px}
-        .post-nav-logo span{font-family:var(--brand-font-display);font-size:22px;font-weight:400;font-style:italic;color:var(--brand-ink)}
+        .post-nav-logo span{font-family:var(--brand-font-display);font-size:22px;font-weight:700;font-style:normal;color:var(--brand-ink)}
         .post-nav-links{display:flex;gap:8px}
         @media(max-width:768px){.post-nav-links{display:none !important}.post-nav-cta{display:none !important}}
         .post-nav-links a{
@@ -249,7 +249,7 @@ export default async function BlogPost({
         .post-body{max-width:680px;margin:0 auto;padding:48px 6% 56px}
         .post-body h2{
           font-family:var(--brand-font-display);
-          font-size:clamp(24px,3vw,32px);font-weight:400;font-style:italic;
+          font-size:clamp(24px,3vw,32px);font-weight:700;font-style:normal;
           color:var(--brand-ink);margin:40px 0 16px;line-height:1.2;letter-spacing:-.01em
         }
         .post-body h2:first-child{margin-top:0}
@@ -258,7 +258,7 @@ export default async function BlogPost({
           line-height:1.85;color:rgba(var(--brand-ink-rgb),0.72);margin-bottom:20px;font-weight:400
         }
         .post-body strong{color:var(--brand-ink);font-weight:600}
-        .post-body em{font-style:italic}
+        .post-body em{font-style:normal}
         .post-body a{color:var(--brand-accent-muted);text-decoration:underline;text-underline-offset:3px;transition:color .2s}
         .post-body a:hover{color:var(--brand-accent-muted-deep)}
         .post-body hr{border:none;border-top:1px solid rgba(var(--brand-ink-rgb),0.1);margin:40px 0}
@@ -313,7 +313,7 @@ export default async function BlogPost({
         }
         .post-editorial-cta-inner h3{
           font-family:var(--brand-font-display);
-          font-size:clamp(20px,3vw,26px);font-weight:400;font-style:italic;
+          font-size:clamp(20px,3vw,26px);font-weight:700;font-style:normal;
           color:var(--brand-ink);line-height:1.2;margin:0 0 10px
         }
         .post-editorial-cta-inner p{
@@ -333,10 +333,10 @@ export default async function BlogPost({
         .post-cta-tag{font-family:var(--brand-font-mono);font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--brand-accent);margin-bottom:16px}
         .post-cta h2{
           font-family:var(--brand-font-display);
-          font-size:clamp(28px,4vw,44px);font-weight:400;font-style:italic;
+          font-size:clamp(28px,4vw,44px);font-weight:700;font-style:normal;
           color:var(--brand-canvas);line-height:1.1;margin-bottom:12px
         }
-        .post-cta h2 em{font-style:italic;color:var(--brand-accent-warm)}
+        .post-cta h2 em{font-style:normal;color:var(--brand-accent-warm)}
         .post-cta-sub{font-size:14px;color:rgba(var(--brand-canvas-rgb),.5);margin-bottom:28px;font-weight:400}
         .post-btn-cta{
           display:inline-block;background:var(--brand-accent);color:var(--brand-ink);border:none;
@@ -411,8 +411,8 @@ export default async function BlogPost({
       {/* NAV */}
       <nav className="post-nav" aria-label="Main navigation">
         <Link href="/" className="post-nav-logo">
-          <Image src="/logo-mark.png" width={32} height={32} alt="shroomé S" style={{ borderRadius: 6 }} priority />
-          <span>shroom&eacute;</span>
+          <Image src="/brand/symbol-sheep-solid.png" width={32} height={32} alt="shroomé S" style={{ borderRadius: 6 }} priority />
+          <img src="/brand/wordmark.png" alt="shroomé" style={{ height: 22, width: "auto" }} />
         </Link>
         <div className="post-nav-links">
           <Link href="/#why">Why shroom&eacute;</Link>

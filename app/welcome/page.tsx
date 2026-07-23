@@ -138,7 +138,7 @@ export default function WelcomePage() {
           }}
         >
           <Image
-            src="/logo-mark.png"
+            src="/brand/symbol-sheep-solid.png"
             alt="shroomé S"
             width={28}
             height={28}
@@ -147,7 +147,7 @@ export default function WelcomePage() {
           <span
             style={{
               fontFamily: F.heading,
-              fontStyle: "italic",
+              fontStyle: "normal",
               fontSize: 22,
               letterSpacing: "-0.02em",
             }}
@@ -226,7 +226,7 @@ export default function WelcomePage() {
         <h1
           style={{
             fontFamily: F.heading,
-            fontStyle: "italic",
+            fontStyle: "normal",
             fontSize: "clamp(36px, 6vw, 64px)",
             lineHeight: 1.08,
             letterSpacing: "-0.03em",
@@ -236,7 +236,7 @@ export default function WelcomePage() {
           }}
         >
           The matcha latte that{" "}
-          <em style={{ fontStyle: "italic", color: C.ink }}>
+          <em style={{ fontStyle: "normal", color: C.ink }}>
             replaced our coffee.
           </em>
         </h1>
@@ -407,7 +407,7 @@ export default function WelcomePage() {
               <div
                 style={{
                   fontFamily: F.heading,
-                  fontStyle: "italic",
+                  fontStyle: "normal",
                   fontSize: 48,
                   lineHeight: 1,
                   color: C.ink,
@@ -449,7 +449,7 @@ export default function WelcomePage() {
           <h2
             style={{
               fontFamily: F.heading,
-              fontStyle: "italic",
+              fontStyle: "normal",
               fontSize: "clamp(28px, 5vw, 40px)",
               color: C.canvas,
               lineHeight: 1.15,

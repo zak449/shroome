@@ -75,7 +75,7 @@ export default function Terms() {
           position:sticky;top:0;z-index:200;
           display:flex;align-items:center;justify-content:space-between;
           padding:0 5%;height:60px;
-          background:rgba(var(--brand-flavor-strawberry-rgb),0.85);
+          background:rgba(var(--brand-canvas-rgb),0.88);
           backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
           border-bottom:1px solid rgba(var(--brand-ink-rgb),0.06)
         }
@@ -84,7 +84,7 @@ export default function Terms() {
           text-decoration:none;color:var(--brand-ink)
         }
         .tos-nav-logo img{width:32px;height:32px;border-radius:6px}
-        .tos-nav-logo span{font-family:var(--brand-font-display);font-size:22px;font-weight:400;font-style:italic;color:var(--brand-ink)}
+        .tos-nav-logo span{font-family:var(--brand-font-display);font-size:22px;font-weight:700;font-style:normal;color:var(--brand-ink)}
         .tos-nav-links{display:flex;gap:8px}
         @media(max-width:768px){.tos-nav-links{display:none !important}.tos-nav-cta{display:none !important}}
         .tos-nav-links a{
@@ -122,7 +122,7 @@ export default function Terms() {
           font-size:clamp(44px,5.5vw,72px);font-weight:400;line-height:1;letter-spacing:-.02em;
           color:var(--brand-accent-deep);margin-bottom:18px;opacity:0;animation:tosFadeUp .8s .2s forwards
         }
-        .tos-hero h1 em{font-style:italic;color:var(--brand-accent-warm)}
+        .tos-hero h1 em{font-style:normal;color:var(--brand-accent-warm)}
         .tos-hero-sub{
           font-size:15px;line-height:1.75;color:rgba(var(--brand-ink-rgb),0.7);max-width:480px;font-weight:400;
           opacity:0;animation:tosFadeUp .8s .35s forwards
@@ -146,7 +146,7 @@ export default function Terms() {
         .tos-body p strong{color:var(--brand-ink);font-weight:600}
         .tos-body h2{
           font-family:var(--brand-font-display);
-          font-size:clamp(22px,3vw,30px);font-weight:400;font-style:italic;
+          font-size:clamp(22px,3vw,30px);font-weight:700;font-style:normal;
           color:var(--brand-ink);letter-spacing:-.01em;margin:48px 0 16px;padding-top:8px;
           border-top:1px solid rgba(var(--brand-ink-rgb),0.1)
         }
@@ -160,10 +160,10 @@ export default function Terms() {
         .tos-cta-tag{font-family:var(--brand-font-mono);font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--brand-accent);margin-bottom:16px}
         .tos-cta h2{
           font-family:var(--brand-font-display);
-          font-size:clamp(30px,4vw,48px);font-weight:400;font-style:italic;
+          font-size:clamp(30px,4vw,48px);font-weight:700;font-style:normal;
           color:var(--brand-canvas);line-height:1.05;margin-bottom:12px
         }
-        .tos-cta h2 em{font-style:italic;color:var(--brand-accent-warm)}
+        .tos-cta h2 em{font-style:normal;color:var(--brand-accent-warm)}
         .tos-cta-sub{font-size:14px;color:rgba(var(--brand-canvas-rgb),.5);margin-bottom:28px;font-weight:400}
         .tos-btn-cta{
           display:inline-block;background:var(--brand-accent);color:var(--brand-ink);border:none;
@@ -225,8 +225,8 @@ export default function Terms() {
       {/* ═══ NAV ═══ */}
       <nav className="tos-nav" aria-label="Main navigation">
         <a href="/" className="tos-nav-logo">
-          <Image src="/logo-mark.png" width={32} height={32} alt="shroomé S" style={{ borderRadius: 6 }} priority />
-          <span>shroomé</span>
+          <Image src="/brand/symbol-sheep-solid.png" width={32} height={32} alt="shroomé S" style={{ borderRadius: 6 }} priority />
+          <img src="/brand/wordmark.png" alt="shroomé" style={{ height: 22, width: "auto" }} />
         </a>
         <div className="tos-nav-links">
           <a href="/#why">Why shroomé</a>

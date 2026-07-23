@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 const config: LPConfig = {
   segment: "pour",
   hero: {
-    eyebrow: "15 SECONDS · NO WHISK · NO BLENDER · NO LINE",
+    eyebrow: "30 SECONDS · NO WHISK · NO BLENDER · NO LINE",
     headlineLines: ["the café line was the only", "ingredient we removed."],
     subheadline:
       "a ready-to-pour ceremonial matcha latte in a 1oz sachet. tear it, pour it into any milk, swirl, go — fifteen seconds, one hand, zero cleanup. more ceremonial matcha than your café order, none of the detour.",

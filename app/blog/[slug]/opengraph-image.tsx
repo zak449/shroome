@@ -78,7 +78,7 @@ export default async function Image({ params }: { params: { slug: string } }) {
           <p
             style={{
               fontFamily: BRAND.fonts.displayName,
-              fontStyle: "italic",
+              fontStyle: "normal",
               fontSize: "34px",
               color: BRAND.colors.ink,
             }}

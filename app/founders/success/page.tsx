@@ -23,11 +23,11 @@ export default function FoundersSuccess() {
       <style>{`
         .fs-wrap{min-height:100vh;background:var(--brand-ink);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;padding:60px 24px;text-align:center}
         .fs-logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--brand-canvas);margin-bottom:40px}
-        .fs-logo span{font-family:var(--brand-font-display);font-size:28px;font-weight:400;font-style:italic}
+        .fs-logo span{font-family:var(--brand-font-display);font-size:28px;font-weight:700;font-style:normal}
         .fs-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(var(--brand-accent-rgb),0.12);border:1px solid rgba(var(--brand-accent-rgb),0.3);border-radius:24px;padding:8px 20px;margin-bottom:24px}
         .fs-badge-dot{width:8px;height:8px;border-radius:50%;background:var(--brand-accent);box-shadow:0 0 10px rgba(var(--brand-accent-rgb),0.6)}
         .fs-badge span{font-family:var(--brand-font-mono);font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--brand-accent)}
-        .fs-heading{font-family:var(--brand-font-display);font-size:clamp(40px,7vw,64px);font-weight:400;font-style:italic;color:var(--brand-canvas);margin:0 0 16px;line-height:1.05}
+        .fs-heading{font-family:var(--brand-font-display);font-size:clamp(40px,7vw,64px);font-weight:700;font-style:normal;color:var(--brand-canvas);margin:0 0 16px;line-height:1.05}
         .fs-sub{font-family:var(--brand-font-body);font-size:16px;color:rgba(var(--brand-canvas-rgb),0.55);margin:0 0 48px;max-width:480px;line-height:1.6}
         .fs-details{display:flex;flex-direction:column;gap:12px;margin-bottom:48px;max-width:360px;width:100%}
         .fs-detail{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;background:rgba(var(--brand-canvas-rgb),0.05);border-radius:10px;border:1px solid rgba(var(--brand-canvas-rgb),0.08)}
@@ -41,8 +41,8 @@ export default function FoundersSuccess() {
       `}</style>
       <div className="fs-wrap">
         <a href="/" className="fs-logo">
-          <Image src="/logo-mark.png" alt="shroomé" width={36} height={36} />
-          <span>shroomé</span>
+          <Image src="/brand/symbol-sheep-solid.png" alt="shroomé" width={36} height={36} />
+          <img src="/brand/wordmark.png" alt="shroomé" style={{ height: 22, width: "auto" }} />
         </a>
 
         <div className="fs-badge">

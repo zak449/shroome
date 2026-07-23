@@ -28,7 +28,7 @@ export default function NotFound() {
           position:sticky;top:0;z-index:200;
           display:flex;align-items:center;justify-content:space-between;
           padding:0 5%;height:60px;
-          background:rgba(var(--brand-flavor-strawberry-rgb),0.85);
+          background:rgba(var(--brand-canvas-rgb),0.88);
           backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
           border-bottom:1px solid rgba(var(--brand-ink-rgb),0.06)
         }
@@ -37,7 +37,7 @@ export default function NotFound() {
           text-decoration:none;color:var(--brand-ink)
         }
         .nf-nav-logo img{width:32px;height:32px;border-radius:6px}
-        .nf-nav-logo span{font-family:var(--brand-font-display);font-size:22px;font-weight:400;font-style:italic;color:var(--brand-ink)}
+        .nf-nav-logo span{font-family:var(--brand-font-display);font-size:22px;font-weight:700;font-style:normal;color:var(--brand-ink)}
         .nf-nav-links{display:flex;gap:8px}
         @media(max-width:768px){.nf-nav-links{display:none !important}.nf-nav-cta{display:none !important}}
         .nf-nav-links a{
@@ -76,7 +76,7 @@ export default function NotFound() {
 
         .nf-heading{
           font-family:var(--brand-font-display);
-          font-size:clamp(40px,6vw,72px);font-weight:400;font-style:italic;
+          font-size:clamp(40px,6vw,72px);font-weight:700;font-style:normal;
           line-height:1.05;letter-spacing:-.02em;
           color:var(--brand-ink);margin:0 0 20px;
           opacity:0;animation:nfFadeUp .8s .2s forwards
@@ -154,8 +154,8 @@ export default function NotFound() {
         {/* ═══ NAV ═══ */}
         <nav className="nf-nav" aria-label="Main navigation">
           <a href="/" className="nf-nav-logo">
-            <Image src="/logo-mark.png" width={32} height={32} alt="shroomé S" style={{ borderRadius: 6 }} priority />
-            <span>shroomé</span>
+            <Image src="/brand/symbol-sheep-solid.png" width={32} height={32} alt="shroomé S" style={{ borderRadius: 6 }} priority />
+            <img src="/brand/wordmark.png" alt="shroomé" style={{ height: 22, width: "auto" }} />
           </a>
           <div className="nf-nav-links">
             <a href="/#why">Why shroomé</a>

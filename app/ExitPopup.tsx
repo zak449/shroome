@@ -276,13 +276,13 @@ export default function ExitPopup() {
 
           {step === "email" ? (
             <>
-              <img src="/brand/symbol-sheep.png" alt="" aria-hidden style={{ width: 48, height: "auto", margin: "0 auto 14px", display: "block" }} />
+              <img src="/brand/symbol-sheep-solid.png" alt="" aria-hidden style={{ width: 48, height: "auto", margin: "0 auto 14px", display: "block" }} />
               <h2 className="ep-title">
-                wait — the restock list gets <em>20% off.</em>
+                leaving before you&apos;re <em>on the list?</em>
               </h2>
               <p className="ep-sub">
-                Drop 001 sold out. Join the restock list for first access to Drop 002 of the
-                liquid ceremonial matcha latte — with <strong style={{ color: "var(--brand-ink)", fontWeight: 700 }}>20% off + free shipping</strong> locked in.
+                Drop 001 — 500 boxes — sold out in 9 days. The Drop 002 list gets the link
+                before it&apos;s public. After that, it&apos;s gone again.
               </p>
               <form className="ep-form" onSubmit={handleEmailSubmit}>
                 <input
@@ -295,7 +295,7 @@ export default function ExitPopup() {
                   autoFocus
                 />
                 <button className="ep-btn" type="submit" disabled={status === "loading"}>
-                  {status === "loading" ? "..." : "Claim it"}
+                  {status === "loading" ? "..." : "Get the link first"}
                 </button>
               </form>
               {status === "error" && (
@@ -304,9 +304,9 @@ export default function ExitPopup() {
                 </p>
               )}
               <div className="ep-perks">
-                <span className="ep-perk">20% off</span>
-                <span className="ep-perk">Free shipping</span>
-                <span className="ep-perk">Restock priority</span>
+                <span className="ep-perk">First access</span>
+                <span className="ep-perk">Drop-day text</span>
+                <span className="ep-perk">No spam</span>
               </div>
               <button className="ep-no-thanks" onClick={dismiss}>
                 No thanks, I&apos;ll miss the drop
@@ -314,9 +314,9 @@ export default function ExitPopup() {
             </>
           ) : step === "captcha" ? (
             <>
-              <img src="/brand/symbol-sheep.png" alt="" aria-hidden style={{ width: 48, height: "auto", margin: "0 auto 14px", display: "block" }} />
+              <img src="/brand/symbol-sheep-solid.png" alt="" aria-hidden style={{ width: 48, height: "auto", margin: "0 auto 14px", display: "block" }} />
               <h2 className="ep-title">one quick check&hellip;</h2>
-              <p className="ep-sub">Confirm you&apos;re human and your restock spot + 20% off are locked in.</p>
+              <p className="ep-sub">Confirm you&apos;re human and your place in line is locked.</p>
               <div ref={captchaRef} style={{ display: "flex", justifyContent: "center", minHeight: 65 }} />
               {status === "loading" && (
                 <p style={{ fontSize: 12, marginTop: 8, fontFamily: "var(--brand-font-body)", color: "rgba(var(--brand-ink-rgb),0.5)" }}>
@@ -327,9 +327,9 @@ export default function ExitPopup() {
           ) : step === "phone" ? (
             <>
               <div className="ep-emoji">📱</div>
-              <h2 className="ep-success-title">20% off locked in!</h2>
+              <h2 className="ep-success-title">you&apos;re in line!</h2>
               <p className="ep-sub">
-                Add your number and your code upgrades to <strong style={{ color: "var(--brand-ink)", fontWeight: 700 }}>30% off + free shipping</strong> at restock &mdash; and you get the text before the email goes out. Best code wins.
+                Drop texts go out <strong style={{ color: "var(--brand-ink)", fontWeight: 700 }}>10 minutes before the email</strong>. Add your number and shop Drop 002 before the link is public.
               </p>
               <form className="ep-form" onSubmit={handlePhoneSubmit}>
                 <input
@@ -342,16 +342,16 @@ export default function ExitPopup() {
                   autoFocus
                 />
                 <button className="ep-btn" type="submit" disabled={status === "loading"}>
-                  {status === "loading" ? "..." : "Upgrade it"}
+                  {status === "loading" ? "..." : "Text me first"}
                 </button>
               </form>
               <div className="ep-perks">
-                <span className="ep-perk">30% total</span>
-                <span className="ep-perk">SMS alerts</span>
+                <span className="ep-perk">10 min early</span>
+                <span className="ep-perk">Drop-day text</span>
                 <span className="ep-perk">First in line</span>
               </div>
               <button className="ep-no-thanks" onClick={skipPhone}>
-                No thanks, 20% is enough
+                No thanks, I&apos;ll refresh the page like everyone else
               </button>
             </>
           ) : (
@@ -359,7 +359,7 @@ export default function ExitPopup() {
               <div className="ep-emoji">💚</div>
               <h2 className="ep-success-title">you&apos;re all set!</h2>
               <p className="ep-success-sub">
-                Check your email for your discount code.{phone ? " We'll text you the second the restock opens." : ""} You&apos;re ahead of the line.
+                Watch your inbox for the Drop 002 link.{phone ? " The text lands 10 minutes before it." : ""} You&apos;re ahead of the line.
               </p>
               <button className="ep-success-btn" onClick={dismiss}>
                 Back to browsing

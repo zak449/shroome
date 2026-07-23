@@ -194,7 +194,7 @@ export default function ReferPage() {
           border-bottom:1px solid rgba(var(--brand-ink-rgb),0.06)
         }
         .ref-nav-logo{display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--brand-ink)}
-        .ref-nav-logo span{font-family:var(--brand-font-display);font-size:22px;font-weight:400;font-style:italic;color:var(--brand-ink)}
+        .ref-nav-logo span{font-family:var(--brand-font-display);font-size:22px;font-weight:700;font-style:normal;color:var(--brand-ink)}
         .ref-nav-links{display:flex;gap:8px}
         @media(max-width:768px){.ref-nav-links{display:none !important}.ref-nav-cta{display:none !important}}
         .ref-nav-links a{
@@ -235,7 +235,7 @@ export default function ReferPage() {
         }
         .ref-hero h1{
           font-family:var(--brand-font-display);
-          font-size:clamp(40px,6vw,72px);font-weight:400;font-style:italic;
+          font-size:clamp(40px,6vw,72px);font-weight:700;font-style:normal;
           line-height:1.0;margin:0 0 24px;color:var(--brand-ink)
         }
         .ref-hero h1 .accent-em{color:var(--brand-accent-deep)}
@@ -260,7 +260,7 @@ export default function ReferPage() {
         .ref-how-inner{max-width:900px;margin:0 auto;text-align:center}
         .ref-how-title{
           font-family:var(--brand-font-display);
-          font-size:clamp(28px,4vw,44px);font-weight:400;font-style:italic;
+          font-size:clamp(28px,4vw,44px);font-weight:700;font-style:normal;
           color:var(--brand-canvas);margin:0 0 16px
         }
         .ref-how-sub{font-size:14px;color:rgba(var(--brand-canvas-rgb),0.45);margin:0 0 48px}
@@ -288,7 +288,7 @@ export default function ReferPage() {
         .ref-tiers{padding:80px 6%;text-align:center;position:relative;z-index:1}
         .ref-tiers-title{
           font-family:var(--brand-font-display);
-          font-size:clamp(28px,4vw,44px);font-weight:400;font-style:italic;
+          font-size:clamp(28px,4vw,44px);font-weight:700;font-style:normal;
           color:var(--brand-ink);margin:0 0 12px
         }
         .ref-tiers-sub{font-size:14px;color:rgba(var(--brand-ink-rgb),0.5);margin:0 0 48px}
@@ -352,7 +352,7 @@ export default function ReferPage() {
         .ref-share-inner{max-width:560px;margin:0 auto}
         .ref-share-title{
           font-family:var(--brand-font-display);
-          font-size:clamp(28px,4vw,44px);font-weight:400;font-style:italic;
+          font-size:clamp(28px,4vw,44px);font-weight:700;font-style:normal;
           color:var(--brand-ink);margin:0 0 12px
         }
         .ref-share-sub{font-size:14px;color:rgba(var(--brand-ink-rgb),0.55);margin:0 0 36px}
@@ -378,7 +378,7 @@ export default function ReferPage() {
         .ref-panel{margin-top:40px;text-align:center}
         .ref-panel-title{
           font-family:var(--brand-font-display);
-          font-size:28px;font-style:italic;color:var(--brand-ink);margin:0 0 8px
+          font-size:28px;font-style:normal;color:var(--brand-ink);margin:0 0 8px
         }
         .ref-panel-sub{font-size:14px;color:rgba(var(--brand-ink-rgb),0.5);margin:0 0 24px}
 
@@ -451,7 +451,7 @@ export default function ReferPage() {
         .ref-faq-inner{max-width:600px;margin:0 auto}
         .ref-faq-title{
           font-family:var(--brand-font-display);
-          font-size:clamp(24px,3.5vw,36px);font-weight:400;font-style:italic;
+          font-size:clamp(24px,3.5vw,36px);font-weight:700;font-style:normal;
           color:var(--brand-canvas);margin:0 0 32px;text-align:center
         }
         .ref-faq-item{
@@ -474,7 +474,7 @@ export default function ReferPage() {
         .ref-final-inner{max-width:600px;margin:0 auto}
         .ref-final-title{
           font-family:var(--brand-font-display);
-          font-size:clamp(32px,5vw,56px);font-weight:400;font-style:italic;
+          font-size:clamp(32px,5vw,56px);font-weight:700;font-style:normal;
           color:var(--brand-ink);margin:0 0 16px;line-height:1.05
         }
         .ref-final-sub{
@@ -530,8 +530,8 @@ export default function ReferPage() {
         {/* ═══ NAV ═══ */}
         <nav className="ref-nav" aria-label="Main navigation">
           <a href="/" className="ref-nav-logo">
-            <Image src="/logo-mark.png" width={32} height={32} alt="shroom\u00e9 S" style={{ borderRadius: 6 }} priority />
-            <span>shroom&eacute;</span>
+            <Image src="/brand/symbol-sheep-solid.png" width={32} height={32} alt="shroom\u00e9 S" style={{ borderRadius: 6 }} priority />
+            <img src="/brand/wordmark.png" alt="shroomé" style={{ height: 22, width: "auto" }} />
           </a>
           <div className="ref-nav-links">
             <a href="/#why">Why shroom&eacute;</a>

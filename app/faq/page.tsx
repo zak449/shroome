@@ -200,7 +200,7 @@ export default function FAQ() {
           position:sticky;top:0;z-index:200;
           display:flex;align-items:center;justify-content:space-between;
           padding:0 5%;height:60px;
-          background:rgba(var(--brand-flavor-strawberry-rgb),0.85);
+          background:rgba(var(--brand-canvas-rgb),0.88);
           backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
           border-bottom:1px solid rgba(var(--brand-ink-rgb),0.06)
         }
@@ -209,7 +209,7 @@ export default function FAQ() {
           text-decoration:none;color:var(--brand-ink)
         }
         .faq-nav-logo img{width:32px;height:32px;border-radius:6px}
-        .faq-nav-logo span{font-family:var(--brand-font-display);font-size:22px;font-weight:400;font-style:italic;color:var(--brand-ink)}
+        .faq-nav-logo span{font-family:var(--brand-font-display);font-size:22px;font-weight:700;font-style:normal;color:var(--brand-ink)}
         .faq-nav-links{display:flex;gap:8px}
         @media(max-width:768px){.faq-nav-links{display:none !important}.faq-nav-cta{display:none !important}}
         .faq-nav-links a{
@@ -248,7 +248,7 @@ export default function FAQ() {
           font-size:clamp(44px,5.5vw,72px);font-weight:400;line-height:1;letter-spacing:-.02em;
           color:var(--brand-accent-deep);margin-bottom:18px;opacity:0;animation:faqFadeUp .8s .2s forwards
         }
-        .faq-hero h1 em{font-style:italic;color:var(--brand-accent-warm)}
+        .faq-hero h1 em{font-style:normal;color:var(--brand-accent-warm)}
         .faq-hero-sub{
           font-size:15px;line-height:1.75;color:rgba(var(--brand-ink-rgb),0.7);max-width:480px;font-weight:400;
           opacity:0;animation:faqFadeUp .8s .35s forwards
@@ -277,7 +277,7 @@ export default function FAQ() {
         .faq-cat-line{flex:1;height:1px;background:rgba(var(--brand-ink-rgb),0.12)}
         .faq-cat-name{
           font-family:var(--brand-font-display);
-          font-size:clamp(26px,3.5vw,36px);font-weight:400;font-style:italic;
+          font-size:clamp(26px,3.5vw,36px);font-weight:700;font-style:normal;
           color:var(--brand-ink);letter-spacing:-.01em;margin:0
         }
 
@@ -308,10 +308,10 @@ export default function FAQ() {
         .faq-cta-tag{font-family:var(--brand-font-mono);font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--brand-accent);margin-bottom:16px}
         .faq-cta h2{
           font-family:var(--brand-font-display);
-          font-size:clamp(30px,4vw,48px);font-weight:400;font-style:italic;
+          font-size:clamp(30px,4vw,48px);font-weight:700;font-style:normal;
           color:var(--brand-canvas);line-height:1.05;margin-bottom:12px
         }
-        .faq-cta h2 em{font-style:italic;color:var(--brand-accent-warm)}
+        .faq-cta h2 em{font-style:normal;color:var(--brand-accent-warm)}
         .faq-cta-sub{font-size:14px;color:rgba(var(--brand-canvas-rgb),.5);margin-bottom:28px;font-weight:400}
         .faq-btn-cta{
           display:inline-block;background:var(--brand-accent);color:var(--brand-ink);border:none;
@@ -380,8 +380,8 @@ export default function FAQ() {
       {/* ═══ NAV ═══ */}
       <nav className="faq-nav" aria-label="Main navigation">
         <a href="/" className="faq-nav-logo">
-          <Image src="/logo-mark.png" width={32} height={32} alt="shroomé S" style={{ borderRadius: 6 }} priority />
-          <span>shroomé</span>
+          <Image src="/brand/symbol-sheep-solid.png" width={32} height={32} alt="shroomé S" style={{ borderRadius: 6 }} priority />
+          <img src="/brand/wordmark.png" alt="shroomé" style={{ height: 22, width: "auto" }} />
         </a>
         <div className="faq-nav-links">
           <a href="/#why">Why shroomé</a>

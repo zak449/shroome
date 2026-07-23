@@ -93,7 +93,7 @@ export default function StickyCTA() {
         style={{ pointerEvents: show ? "auto" : "none" }}
       >
         <a href="/#signup" className="sticky-cta-link">
-          Sold out — get restock alerts + 20% off &rarr;
+          Drop 001 gone — get in line for Drop 002 &rarr;
         </a>
         <button
           className="sticky-cta-dismiss"

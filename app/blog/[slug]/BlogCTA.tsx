@@ -217,7 +217,7 @@ export default function BlogCTA() {
               fontFamily: "var(--brand-font-display)",
               fontSize: "clamp(24px, 4vw, 32px)",
               fontWeight: 400,
-              fontStyle: "italic",
+              fontStyle: "normal",
               color: "var(--brand-canvas)",
               lineHeight: 1.15,
               marginBottom: 12,

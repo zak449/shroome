@@ -56,7 +56,7 @@ function UnsubscribeFlow() {
       <div style={{ maxWidth: 480, width: "100%", textAlign: "center" }}>
         {/* Logo */}
         <a href="https://www.drinkshroome.com" style={{ display: "inline-block", marginBottom: 40 }}>
-          <Image src="/logo-mark.png" alt="shroomé logo mark" width={100} height={100} style={{ display: "block" }} priority />
+          <Image src="/brand/symbol-sheep-solid.png" alt="shroomé logo mark" width={100} height={100} style={{ display: "block" }} priority />
         </a>
 
         {/* Step 1: Confirm */}
@@ -66,7 +66,7 @@ function UnsubscribeFlow() {
               style={{
                 fontSize: 28,
                 fontFamily: "var(--brand-font-display)",
-                fontStyle: "italic",
+                fontStyle: "normal",
                 fontWeight: 400,
                 margin: "0 0 12px",
               }}
@@ -140,7 +140,7 @@ function UnsubscribeFlow() {
               style={{
                 fontSize: 28,
                 fontFamily: "var(--brand-font-display)",
-                fontStyle: "italic",
+                fontStyle: "normal",
                 fontWeight: 400,
                 margin: "0 0 12px",
               }}
@@ -213,7 +213,7 @@ function UnsubscribeFlow() {
               style={{
                 fontSize: 28,
                 fontFamily: "var(--brand-font-display)",
-                fontStyle: "italic",
+                fontStyle: "normal",
                 fontWeight: 400,
                 margin: "0 0 12px",
               }}

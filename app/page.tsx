@@ -332,7 +332,7 @@ export default function Home() {
       {step === "done" ? (
         <div style={{ textAlign: "left" }}>
           <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 700, fontSize: "1rem", color: "var(--brand-ink)", marginBottom: referralCode ? 16 : 0 }}>
-            ✓ You&apos;re on the restock list — 20% off locked in.
+            ✓ You&apos;re in line for Drop 002.
           </p>
           {referralCode && (
             <div style={{ marginTop: 16, padding: "20px", background: "rgba(var(--brand-canvas-rgb),0.75)", border: "2px solid var(--brand-ink)", borderRadius: 20 }}>
@@ -340,7 +340,7 @@ export default function Home() {
                 Refer friends → earn up to $15 credit
               </p>
               <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.75rem", color: "rgba(var(--brand-ink-rgb),0.6)", marginBottom: 12 }}>
-                $5 credit at 1 friend, $10 at 3, $15 at 5 — applied at checkout on restock day. Share your link:
+                Bring the group chat. $5 credit at 1 friend, $10 at 3, $15 at 5 — good on drop day. Share your link:
               </p>
               <div style={{ display: "flex", gap: 8, alignItems: "center", marginBottom: 12, flexWrap: "wrap" }}>
                 <div style={{ flex: "1 1 200px", background: "#fff", border: "2px solid var(--brand-ink)", borderRadius: 999, padding: "10px 16px", fontFamily: "var(--brand-font-mono)", fontSize: "0.75rem", color: "var(--brand-ink)", minWidth: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
@@ -404,7 +404,7 @@ export default function Home() {
       ) : step === "phone" ? (
         <div style={{ textAlign: "left" }}>
           <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 600, fontSize: "0.82rem", color: "var(--brand-ink)", marginBottom: 12 }}>
-            ✓ Restock alert + 20% off locked in! Add your number for a text the second it&apos;s live — and your code upgrades from 20% to 30%.
+            ✓ You&apos;re in line. Drop texts go out before the email — add your number and shop Drop 002 first.
           </p>
           <form onSubmit={handlePhoneSubmit} style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
             <input
@@ -446,10 +446,10 @@ export default function Home() {
             </p>
           )}
           <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.72rem", color: "rgba(var(--brand-ink-rgb),0.55)", marginTop: 10 }}>
-            No spam — one email when the restock opens, with your 20% code. Add your phone after and it upgrades to 30%.
+            One email when Drop 002 goes live. The list shops before the link is public.
           </p>
           <p style={{ ...tagStyle, fontSize: "0.62rem", color: "rgba(var(--brand-ink-rgb),0.45)", marginTop: 8 }}>
-            Join 100+ on the restock list
+            Join 100+ already in line
           </p>
         </div>
       )}
@@ -520,7 +520,7 @@ export default function Home() {
         }}
       >
         <a href="/" style={{ display: "flex", alignItems: "center", gap: 12, textDecoration: "none" }}>
-          <Image src="/logo-mark.png" width={34} height={34} alt="mé the shroomé sheep" priority style={{ height: 34, width: "auto" }} />
+          <Image src="/brand/symbol-sheep-solid.png" width={34} height={34} alt="mé the shroomé sheep" priority style={{ height: 34, width: "auto" }} />
           <Image src="/brand/wordmark.png" width={128} height={28} alt="shroomé" priority style={{ height: 26, width: "auto" }} />
         </a>
         <div style={{ display: "flex", alignItems: "center", gap: 28 }}>
@@ -553,7 +553,7 @@ export default function Home() {
             </button>
           ))}
           <button
-            onClick={() => { scrollTo("cta"); window.gtag?.("event", "select_promotion", { promotion_name: "nav_cta_restock" }); }}
+            onClick={() => { scrollTo("cta"); window.gtag?.("event", "select_promotion", { promotion_name: "nav_cta_drop002" }); }}
             className="nav-cta-btn"
             style={{
               background: "var(--brand-accent)",
@@ -652,7 +652,7 @@ export default function Home() {
             onClick={() => {
               setMenuOpen(false);
               scrollTo("cta");
-              window.gtag?.("event", "select_promotion", { promotion_name: "mobile_nav_cta_restock" });
+              window.gtag?.("event", "select_promotion", { promotion_name: "mobile_nav_cta_drop002" });
             }}
             style={{
               background: "var(--brand-accent)",
@@ -801,10 +801,9 @@ export default function Home() {
 
             {/* Sticker badges */}
             <div className="fade-up delay-650" style={{ display: "flex", gap: 4, alignItems: "center", marginTop: 30, opacity: 0 }}>
-              <Image src="/brand/badge-ready-to-pour.png" width={132} height={85} alt="Ready to pour" style={{ width: 118, height: "auto", transform: "rotate(-4deg)" }} />
-              <Image src="/brand/badge-b-glucans.png" width={110} height={113} alt="Organic beta-glucans, lion's mane" style={{ width: 96, height: "auto", transform: "rotate(3deg)" }} />
-              <Image src="/brand/badge-collagen.png" width={124} height={101} alt="With grass-fed type 1 and type 3 collagen" style={{ width: 112, height: "auto", transform: "rotate(-2deg)" }} />
-              <Image src="/brand/badge-matcha.png" width={140} height={85} alt="Organic ceremonial grade matcha" style={{ width: 126, height: "auto", transform: "rotate(2deg)" }} />
+              <Image src="/brand/badge-ready-to-pour.png" width={132} height={85} alt="Ready to pour" style={{ width: 116, height: "auto", transform: "rotate(-3deg)" }} />
+              <Image src="/brand/badge-b-glucans.png" width={110} height={113} alt="Organic beta-glucans, lion's mane" style={{ width: 94, height: "auto", transform: "rotate(2deg)" }} />
+              <Image src="/brand/badge-matcha.png" width={140} height={85} alt="Organic ceremonial grade matcha" style={{ width: 124, height: "auto", transform: "rotate(-2deg)" }} />
             </div>
           </div>
 
@@ -836,7 +835,7 @@ export default function Home() {
                 }}
               />
               <Image
-                src="/brand/symbol-sheep.png"
+                src="/brand/symbol-sheep-solid.png"
                 width={104}
                 height={115}
                 alt=""
@@ -864,28 +863,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* ════════════════════ BENEFITS MARQUEE ════════════════════ */}
-      <div style={{ background: "var(--brand-accent-deep)", padding: "12px 0", overflow: "hidden" }}>
-        <div className="ticker-track">
-          {Array(12)
-            .fill(null)
-            .map((_, i) => (
-              <span
-                key={i}
-                style={{
-                  ...tagStyle,
-                  fontSize: "0.72rem",
-                  color: i % 2 === 0 ? "var(--brand-canvas)" : "var(--brand-accent)",
-                  padding: "0 36px",
-                  whiteSpace: "nowrap",
-                }}
-              >
-                {["ENERGY", "✿", "CLARITY", "✿", "SKIN", "✿", "IMMUNITY", "✿", "GOOD ENERGY", "✿", "NO CRASH", "✿"][i % 12]}
-              </span>
-            ))}
-        </div>
-      </div>
 
       {/* ════════════════════ GOOD ENERGY LOCKUP ════════════════════ */}
       <section id="why" style={{ padding: "96px 24px 80px", background: "var(--brand-canvas)", textAlign: "center", position: "relative", overflow: "hidden" }}>
@@ -983,6 +960,48 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ════════════════════ TESTIMONIALS ════════════════════ */}
+      <section style={{ padding: "90px 24px", background: "var(--brand-canvas)", position: "relative", overflow: "hidden" }}>
+        <div style={{ maxWidth: 960, margin: "0 auto", position: "relative", zIndex: 1 }}>
+          <div {...anim("test-head")} style={{ ...anim("test-head").style, textAlign: "center", marginBottom: 44 }}>
+            <p style={{ ...tagStyle, fontSize: "0.66rem", color: "var(--brand-accent-deep)", marginBottom: 16 }}>
+              Drop 001 reviews
+            </p>
+            <h2 style={{ fontFamily: "var(--brand-font-display)", fontWeight: 800, fontSize: "clamp(1.8rem, 4vw, 2.6rem)", color: "var(--brand-ink)", lineHeight: 1.1, letterSpacing: "-0.02em" }}>
+              The flock has spoken.
+            </h2>
+          </div>
+
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 20 }}>
+            {[
+              { quote: "I replaced my $7 oat milk latte with this. Tastes better, costs less, and I actually feel focused.", name: "Sarah M.", loc: "Austin, TX", bg: "var(--brand-tint-soft)" },
+              { quote: "The strawberry one is insane. The pour is genuinely the prettiest thing in my kitchen.", name: "Mike R.", loc: "Brooklyn, NY", bg: "var(--brand-tint-blush)" },
+              { quote: "Finally a matcha that doesn't taste like grass. The vanilla is my daily non-negotiable.", name: "Jess L.", loc: "Portland, OR", bg: "var(--brand-flavor-functional)" },
+            ].map((t, i) => (
+              <div
+                key={t.name}
+                className="lift"
+                {...anim(`test-${i}`, i * 0.1)}
+                style={{
+                  ...anim(`test-${i}`, i * 0.1).style,
+                  padding: "28px 24px",
+                  background: t.bg,
+                  border: "2px solid var(--brand-ink)",
+                  borderRadius: 28,
+                }}
+              >
+                <p aria-label="5 out of 5 stars" style={{ color: "var(--brand-accent-deep)", fontSize: "0.95rem", letterSpacing: "0.15em", marginBottom: 12 }}>★★★★★</p>
+                <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 600, fontSize: "1rem", color: "var(--brand-ink)", lineHeight: 1.55, marginBottom: 20 }}>
+                  &ldquo;{t.quote}&rdquo;
+                </p>
+                <p style={{ ...tagStyle, fontSize: "0.68rem", color: "var(--brand-ink)" }}>{t.name}</p>
+                <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.68rem", color: "rgba(var(--brand-ink-rgb),0.55)" }}>{t.loc} · Drop 001</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ════════════════════ THE RITUAL — POUR. SWIRL. GO. ════════════════════ */}
       <section id="how" style={{ padding: "100px 24px", background: "var(--brand-accent-deep)", position: "relative", overflow: "hidden" }}>
         <div style={{ maxWidth: 980, margin: "0 auto", textAlign: "center" }}>
@@ -1025,10 +1044,14 @@ export default function Home() {
             <h2 style={{ fontFamily: "var(--brand-font-display)", fontWeight: 800, fontSize: "clamp(2rem, 4.5vw, 3rem)", color: "var(--brand-ink)", lineHeight: 1.1, letterSpacing: "-0.02em" }}>
               Clean label. Real doses.
             </h2>
+            <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.92rem", color: "rgba(var(--brand-ink-rgb),0.65)", marginTop: 12 }}>
+              No fairy dusting. No mystery blends. Just the stack — at doses that actually do something.
+            </p>
           </div>
 
           {/* Stat strip — mirrors the sachet back panel */}
-          <div {...anim("stats", 0.1)} style={{ ...anim("stats", 0.1).style, display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))", gap: 14, marginBottom: 28 }}>
+          <div {...anim("stats", 0.1)} style={{ ...anim("stats", 0.1).style, position: "relative", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))", gap: 14, marginBottom: 28 }}>
+            <Image src="/brand/me-06.png" width={72} height={90} alt="" aria-hidden loading="lazy" style={{ position: "absolute", top: -54, right: 8, width: 58, height: "auto", transform: "rotate(6deg)", zIndex: 2 }} />
             {[
               { dose: "60mg", label: "Caffeine" },
               { dose: "2.5g", label: "Ceremonial Matcha" },
@@ -1044,9 +1067,9 @@ export default function Home() {
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 20 }}>
             {[
-              { icon: "/brand/icon-whisk.png", name: "Ceremonial Matcha", detail: "First-harvest, shade-grown, stone-ground. Vivid jade color, zero bitterness — the real thing, not culinary grade." },
-              { icon: "/brand/icon-mushrooms.png", name: "Functional Mushrooms", detail: "Lion's mane, reishi, and cordyceps extracts with organic β-glucans — clarity and immunity without the mushroom taste." },
-              { icon: "/brand/icon-molecule.png", name: "Grass-Fed Collagen", detail: "Type 1 & 3 collagen pre-dissolved into the liquid — silky texture in the glass, skin-deep benefits after." },
+              { icon: "/brand/icon-whisk.png", name: "Ceremonial Matcha", detail: "First-harvest, shade-grown, stone-ground in Japan. Vivid jade, zero bitterness. If your matcha doesn\u2019t glow, it\u2019s not the real thing." },
+              { icon: "/brand/icon-mushrooms.png", name: "Functional Mushrooms", detail: "Lion\u2019s mane, reishi, cordyceps. Clarity and immunity without your latte tasting like the forest floor. Brain fog? Sheep happens — this fixes it." },
+              { icon: "/brand/icon-molecule.png", name: "Grass-Fed Collagen", detail: "Type 1 & 3, pre-dissolved into the liquid. Silky in the glass, glowy after. Your skincare routine drinks with us now." },
             ].map((item, i) => (
               <div
                 key={item.name}
@@ -1121,11 +1144,6 @@ export default function Home() {
             </div>
           </div>
 
-          <p {...anim("comp-anchor", 0.25)} style={{ ...anim("comp-anchor", 0.25).style, textAlign: "center", marginTop: 24, fontFamily: "var(--brand-font-body)", fontSize: "0.95rem", color: "var(--brand-ink)", fontWeight: 600 }}>
-            One pour = <span style={{ fontFamily: "var(--brand-font-mono)", fontWeight: 700, color: "var(--brand-accent-deep)" }}>$3.00</span>.
-            Your cafe matcha = <span style={{ fontFamily: "var(--brand-font-mono)", fontWeight: 700, textDecoration: "line-through", opacity: 0.6 }}>$7</span>.
-            Same ceremonial grade — plus the stack.
-          </p>
         </div>
       </section>
 
@@ -1174,48 +1192,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ════════════════════ TESTIMONIALS ════════════════════ */}
-      <section style={{ padding: "90px 24px", background: "var(--brand-canvas)", position: "relative", overflow: "hidden" }}>
-        <div style={{ maxWidth: 960, margin: "0 auto", position: "relative", zIndex: 1 }}>
-          <div {...anim("test-head")} style={{ ...anim("test-head").style, textAlign: "center", marginBottom: 44 }}>
-            <p style={{ ...tagStyle, fontSize: "0.66rem", color: "var(--brand-accent-deep)", marginBottom: 16 }}>
-              Drop 001 reviews
-            </p>
-            <h2 style={{ fontFamily: "var(--brand-font-display)", fontWeight: 800, fontSize: "clamp(1.8rem, 4vw, 2.6rem)", color: "var(--brand-ink)", lineHeight: 1.1, letterSpacing: "-0.02em" }}>
-              The flock has spoken.
-            </h2>
-          </div>
-
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 20 }}>
-            {[
-              { quote: "I replaced my $7 oat milk latte with this. Tastes better, costs less, and I actually feel focused.", name: "Sarah M.", loc: "Austin, TX", bg: "var(--brand-tint-soft)" },
-              { quote: "The strawberry one is insane. The pour is genuinely the prettiest thing in my kitchen.", name: "Mike R.", loc: "Brooklyn, NY", bg: "var(--brand-tint-blush)" },
-              { quote: "Finally a matcha that doesn't taste like grass. The vanilla is my daily non-negotiable.", name: "Jess L.", loc: "Portland, OR", bg: "var(--brand-flavor-functional)" },
-            ].map((t, i) => (
-              <div
-                key={t.name}
-                className="lift"
-                {...anim(`test-${i}`, i * 0.1)}
-                style={{
-                  ...anim(`test-${i}`, i * 0.1).style,
-                  padding: "28px 24px",
-                  background: t.bg,
-                  border: "2px solid var(--brand-ink)",
-                  borderRadius: 28,
-                }}
-              >
-                <p aria-label="5 out of 5 stars" style={{ color: "var(--brand-accent-deep)", fontSize: "0.95rem", letterSpacing: "0.15em", marginBottom: 12 }}>★★★★★</p>
-                <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 600, fontSize: "1rem", color: "var(--brand-ink)", lineHeight: 1.55, marginBottom: 20 }}>
-                  &ldquo;{t.quote}&rdquo;
-                </p>
-                <p style={{ ...tagStyle, fontSize: "0.68rem", color: "var(--brand-ink)" }}>{t.name}</p>
-                <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.68rem", color: "rgba(var(--brand-ink-rgb),0.55)" }}>{t.loc} · Drop 001</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ════════════════════ FINAL CTA — SOLD OUT / NOTIFY ════════════════════ */}
       <section
         id="cta"
@@ -1232,7 +1208,7 @@ export default function Home() {
         <img src="/brand/pattern-flower-vanilla.svg" alt="" aria-hidden style={{ position: "absolute", bottom: "-16%", left: "-8%", width: "20vw", minWidth: 180, opacity: 0.55, pointerEvents: "none" }} />
 
         <div {...anim("cta-block")} style={{ ...anim("cta-block").style, maxWidth: 560, margin: "0 auto", position: "relative", zIndex: 1 }}>
-          <Image src="/brand/symbol-sheep.png" width={72} height={80} alt="" aria-hidden style={{ width: 64, height: "auto", margin: "0 auto 18px", display: "block" }} />
+          <Image src="/brand/symbol-sheep-solid.png" width={72} height={80} alt="" aria-hidden style={{ width: 64, height: "auto", margin: "0 auto 18px", display: "block" }} />
           <p style={{ ...tagStyle, fontSize: "0.66rem", color: "var(--brand-ink)", marginBottom: 14 }}>
             Drop 001 · 500 boxes · gone in 9 days
           </p>
@@ -1240,8 +1216,8 @@ export default function Home() {
             Sold out. Not gone.
           </h2>
           <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.92rem", color: "rgba(var(--brand-ink-rgb),0.7)", lineHeight: 1.65, marginBottom: 28 }}>
-            The restock list hears about Drop 002 before anyone else — with 20% off locked in,
-            and 30% if you add your number. When it&apos;s gone, it&apos;s gone.
+            500 boxes went in 9 days last time. The list gets the Drop 002 link before it&apos;s
+            public — and when it&apos;s gone, it&apos;s gone.
           </p>
           {restockForm("cta")}
         </div>

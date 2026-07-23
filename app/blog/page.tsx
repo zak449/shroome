@@ -107,13 +107,13 @@ export default function BlogIndex() {
           position:sticky;top:0;z-index:200;
           display:flex;align-items:center;justify-content:space-between;
           padding:0 5%;height:60px;
-          background:rgba(var(--brand-flavor-strawberry-rgb),0.85);
+          background:rgba(var(--brand-canvas-rgb),0.88);
           backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
           border-bottom:1px solid rgba(var(--brand-ink-rgb),0.06)
         }
         .blog-nav-logo{display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--brand-ink)}
         .blog-nav-logo img{width:32px;height:32px;border-radius:6px}
-        .blog-nav-logo span{font-family:var(--brand-font-display);font-size:22px;font-weight:400;font-style:italic;color:var(--brand-ink)}
+        .blog-nav-logo span{font-family:var(--brand-font-display);font-size:22px;font-weight:700;font-style:normal;color:var(--brand-ink)}
         .blog-nav-links{display:flex;gap:8px}
         @media(max-width:768px){.blog-nav-links{display:none !important}.blog-nav-cta{display:none !important}}
         .blog-nav-links a{
@@ -150,7 +150,7 @@ export default function BlogIndex() {
           font-size:clamp(44px,5.5vw,72px);font-weight:400;line-height:1;letter-spacing:-.02em;
           color:var(--brand-ink);margin-bottom:18px;opacity:0;animation:blogFadeUp .8s .2s forwards
         }
-        .blog-hero h1 em{font-style:italic;color:var(--brand-accent-muted)}
+        .blog-hero h1 em{font-style:normal;color:var(--brand-accent-muted)}
         .blog-hero-sub{
           font-size:15px;line-height:1.75;color:rgba(var(--brand-ink-rgb),0.65);max-width:480px;font-weight:400;
           opacity:0;animation:blogFadeUp .8s .35s forwards
@@ -221,8 +221,8 @@ export default function BlogIndex() {
       {/* NAV */}
       <nav className="blog-nav" aria-label="Main navigation">
         <Link href="/" className="blog-nav-logo">
-          <Image src="/logo-mark.png" width={32} height={32} alt="shroomé S" style={{ borderRadius: 6 }} priority />
-          <span>shroom&eacute;</span>
+          <Image src="/brand/symbol-sheep-solid.png" width={32} height={32} alt="shroomé S" style={{ borderRadius: 6 }} priority />
+          <img src="/brand/wordmark.png" alt="shroomé" style={{ height: 22, width: "auto" }} />
         </Link>
         <div className="blog-nav-links">
           <Link href="/#why">Why shroom&eacute;</Link>

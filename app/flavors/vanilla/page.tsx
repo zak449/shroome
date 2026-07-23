@@ -319,11 +319,11 @@ export default function VanillaFlavorPage() {
         <div className="vf-ticker">
           <div className="vf-ticker-track">
             {[
-              "TEAR \u2726 POUR \u2726 DONE",
+              "POUR \u2726 SWIRL \u2726 GO",
               "VANILLA MATCHA LATTE",
               "CEREMONIAL MATCHA + MUSHROOMS + COLLAGEN",
               "REAL VANILLA BEAN EXTRACT",
-              "TEAR \u2726 POUR \u2726 DONE",
+              "POUR \u2726 SWIRL \u2726 GO",
               "VANILLA MATCHA LATTE",
               "CEREMONIAL MATCHA + MUSHROOMS + COLLAGEN",
               "REAL VANILLA BEAN EXTRACT",
@@ -342,7 +342,7 @@ export default function VanillaFlavorPage() {
         {/* ── NAV ── */}
         <nav className="vf-nav" aria-label="Main navigation">
           <a href="/" className="vf-nav-logo">
-            <Image src="/logo-mark.png" width={32} height={32} alt="mé the shroomé sheep" priority style={{ borderRadius: 0 }} />
+            <Image src="/brand/symbol-sheep-solid.png" width={32} height={32} alt="mé the shroomé sheep" priority style={{ borderRadius: 0 }} />
             <Image src="/brand/wordmark.png" width={110} height={24} alt="shroomé" priority style={{ width: 110, height: "auto" }} />
           </a>
           <div className="vf-nav-links">

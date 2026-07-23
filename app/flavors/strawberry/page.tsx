@@ -324,11 +324,11 @@ export default function StrawberryFlavorPage() {
         <div className="sf-ticker">
           <div className="sf-ticker-track">
             {[
-              "TEAR \u2726 POUR \u2726 DONE",
+              "POUR \u2726 SWIRL \u2726 GO",
               "STRAWBERRY MATCHA LATTE",
               "CEREMONIAL MATCHA + MUSHROOMS + COLLAGEN",
               "REAL FREEZE-DRIED STRAWBERRY",
-              "TEAR \u2726 POUR \u2726 DONE",
+              "POUR \u2726 SWIRL \u2726 GO",
               "STRAWBERRY MATCHA LATTE",
               "CEREMONIAL MATCHA + MUSHROOMS + COLLAGEN",
               "REAL FREEZE-DRIED STRAWBERRY",
@@ -347,7 +347,7 @@ export default function StrawberryFlavorPage() {
         {/* ── NAV ── */}
         <nav className="sf-nav" aria-label="Main navigation">
           <a href="/" className="sf-nav-logo">
-            <Image src="/logo-mark.png" width={32} height={32} alt="mé the shroomé sheep" priority style={{ borderRadius: 0 }} />
+            <Image src="/brand/symbol-sheep-solid.png" width={32} height={32} alt="mé the shroomé sheep" priority style={{ borderRadius: 0 }} />
             <Image src="/brand/wordmark.png" width={110} height={24} alt="shroomé" priority style={{ width: 110, height: "auto" }} />
           </a>
           <div className="sf-nav-links">

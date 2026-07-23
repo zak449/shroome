@@ -22,7 +22,7 @@ export default function Contact() {
       <style>{`
         .contact-nav{position:sticky;top:0;z-index:99;display:flex;align-items:center;justify-content:space-between;padding:14px 5%;background:rgba(var(--brand-canvas-rgb),0.9);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(var(--brand-ink-rgb),0.07)}
         .contact-nav-logo{display:flex;align-items:center;gap:8px;text-decoration:none}
-        .contact-nav-logo span{font-family:var(--brand-font-display);font-style:italic;font-size:1.3rem;color:var(--brand-ink)}
+        .contact-nav-logo span{font-family:var(--brand-font-display);font-style:normal;font-size:1.3rem;color:var(--brand-ink)}
         .contact-nav-links{display:flex;gap:28px}
         @media(max-width:768px){.contact-nav-links{display:none}}
         .contact-nav-links a{font-family:var(--brand-font-body);font-size:0.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--brand-ink);text-decoration:none;opacity:.7;transition:opacity .2s}
@@ -30,7 +30,7 @@ export default function Contact() {
 
         .contact-hero{background:var(--brand-canvas);padding:80px 5% 60px;text-align:center}
         .contact-hero-tag{display:inline-block;font-family:var(--brand-font-mono);font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--brand-ink);opacity:.4;margin-bottom:16px}
-        .contact-hero h1{font-family:var(--brand-font-display);font-size:clamp(42px,7vw,72px);font-weight:400;font-style:italic;color:var(--brand-ink);margin:0 0 16px;line-height:1.05}
+        .contact-hero h1{font-family:var(--brand-font-display);font-size:clamp(42px,7vw,72px);font-weight:700;font-style:normal;color:var(--brand-ink);margin:0 0 16px;line-height:1.05}
         .contact-hero-sub{font-family:var(--brand-font-body);font-size:16px;color:var(--brand-ink);opacity:.6;max-width:480px;margin:0 auto;line-height:1.6}
 
         .contact-body{background:var(--brand-canvas);padding:0 5% 80px;max-width:760px;margin:0 auto}
@@ -38,12 +38,12 @@ export default function Contact() {
         @media(max-width:600px){.contact-grid{grid-template-columns:1fr}}
         .contact-card{background:#fff;border-radius:16px;padding:32px 28px;border:1px solid rgba(var(--brand-ink-rgb),0.07)}
         .contact-card-label{font-family:var(--brand-font-mono);font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--brand-ink);opacity:.35;margin:0 0 8px}
-        .contact-card h2{font-family:var(--brand-font-display);font-size:22px;font-weight:400;font-style:italic;color:var(--brand-ink);margin:0 0 8px}
+        .contact-card h2{font-family:var(--brand-font-display);font-size:22px;font-weight:700;font-style:normal;color:var(--brand-ink);margin:0 0 8px}
         .contact-card p{font-family:var(--brand-font-body);font-size:13px;color:var(--brand-ink);opacity:.55;line-height:1.6;margin:0 0 16px}
         .contact-card a{font-family:var(--brand-font-mono);font-size:12px;font-weight:700;letter-spacing:.08em;color:var(--brand-ink);text-decoration:none;border-bottom:2px solid var(--brand-accent);padding-bottom:2px;transition:opacity .2s}
         .contact-card a:hover{opacity:.6}
 
-        .contact-social-heading{font-family:var(--brand-font-display);font-size:28px;font-weight:400;font-style:italic;color:var(--brand-ink);margin:0 0 20px;text-align:center}
+        .contact-social-heading{font-family:var(--brand-font-display);font-size:28px;font-weight:700;font-style:normal;color:var(--brand-ink);margin:0 0 20px;text-align:center}
         .contact-social-links{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
         .contact-social-link{font-family:var(--brand-font-mono);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--brand-ink);text-decoration:none;padding:10px 20px;border-radius:8px;border:1.5px solid rgba(var(--brand-ink-rgb),0.12);transition:all .2s}
         .contact-social-link:hover{background:var(--brand-ink);color:var(--brand-accent);border-color:var(--brand-ink)}
@@ -55,8 +55,8 @@ export default function Contact() {
       {/* NAV */}
       <nav className="contact-nav" aria-label="Main navigation">
         <a href="/" className="contact-nav-logo">
-          <Image src="/logo-mark.png" alt="shroomé" width={32} height={32} style={{ borderRadius: 6 }} />
-          <span>shroomé</span>
+          <Image src="/brand/symbol-sheep-solid.png" alt="shroomé" width={32} height={32} style={{ borderRadius: 6 }} />
+          <img src="/brand/wordmark.png" alt="shroomé" style={{ height: 22, width: "auto" }} />
         </a>
         <div className="contact-nav-links">
           {navLinks.map((l) => (

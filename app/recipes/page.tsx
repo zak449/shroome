@@ -86,7 +86,7 @@ export default function RecipesPage() {
           position:sticky;top:0;z-index:200;
           display:flex;align-items:center;justify-content:space-between;
           padding:0 5%;height:60px;
-          background:rgba(var(--brand-flavor-strawberry-rgb),0.85);
+          background:rgba(var(--brand-canvas-rgb),0.88);
           backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
           border-bottom:1px solid rgba(var(--brand-ink-rgb),0.06)
         }
@@ -95,7 +95,7 @@ export default function RecipesPage() {
           text-decoration:none;color:var(--brand-ink)
         }
         .rec-nav-logo img{width:32px;height:32px;border-radius:6px}
-        .rec-nav-logo span{font-family:var(--brand-font-display);font-size:22px;font-weight:400;font-style:italic;color:var(--brand-ink)}
+        .rec-nav-logo span{font-family:var(--brand-font-display);font-size:22px;font-weight:700;font-style:normal;color:var(--brand-ink)}
         .rec-nav-links{display:flex;gap:8px}
         @media(max-width:768px){.rec-nav-links{display:none !important}.rec-nav-cta{display:none !important}}
         .rec-nav-links a{
@@ -150,7 +150,7 @@ export default function RecipesPage() {
           font-size:clamp(44px,5.5vw,72px);font-weight:400;line-height:1;letter-spacing:-.02em;
           color:var(--brand-ink);margin-bottom:18px;opacity:0;animation:recFadeUp .8s .2s forwards
         }
-        .rec-hero h1 em{font-style:italic;color:var(--brand-accent-deep)}
+        .rec-hero h1 em{font-style:normal;color:var(--brand-accent-deep)}
         .rec-hero-sub{
           font-size:15px;line-height:1.75;color:rgba(var(--brand-ink-rgb),0.7);max-width:520px;font-weight:400;
           opacity:0;animation:recFadeUp .8s .35s forwards
@@ -218,7 +218,7 @@ export default function RecipesPage() {
         }
         .rec-tile-name{
           font-family:var(--brand-font-display);
-          font-size:clamp(22px,2.5vw,32px);font-weight:400;font-style:italic;
+          font-size:clamp(22px,2.5vw,32px);font-weight:700;font-style:normal;
           line-height:1.1;letter-spacing:-.01em;
           color:var(--brand-canvas);
           text-shadow:0 2px 16px rgba(0,0,0,0.25)
@@ -242,10 +242,10 @@ export default function RecipesPage() {
         }
         .rec-cta h2{
           font-family:var(--brand-font-display);
-          font-size:clamp(32px,4.5vw,52px);font-weight:400;font-style:italic;line-height:1.05;
+          font-size:clamp(32px,4.5vw,52px);font-weight:700;font-style:normal;line-height:1.05;
           color:var(--brand-canvas);margin-bottom:14px;position:relative
         }
-        .rec-cta h2 em{font-style:italic;color:var(--brand-accent-warm)}
+        .rec-cta h2 em{font-style:normal;color:var(--brand-accent-warm)}
         .rec-cta-sub{
           font-family:var(--brand-font-body);font-size:14px;
           color:rgba(var(--brand-canvas-rgb),0.5);margin-bottom:32px;position:relative
@@ -279,7 +279,7 @@ export default function RecipesPage() {
         .rec-footer-mid a:hover{color:var(--brand-canvas)}
         .rec-footer-bot{
           margin-top:12px;
-          font-family:var(--brand-font-display);font-style:italic;
+          font-family:var(--brand-font-display);font-style:normal;
           font-size:14px;color:rgba(var(--brand-canvas-rgb),0.4)
         }
 
@@ -307,11 +307,11 @@ export default function RecipesPage() {
       <div className="rec-ticker">
         <div className="rec-ticker-track">
           {[
-            "TEAR ✦ POUR ✦ DONE",
+            "POUR ✦ SWIRL ✦ GO",
             "9 EASY RECIPES",
             "ALL UNDER A MINUTE",
             "CEREMONIAL MATCHA + MUSHROOMS + COLLAGEN",
-            "TEAR ✦ POUR ✦ DONE",
+            "POUR ✦ SWIRL ✦ GO",
             "9 EASY RECIPES",
             "ALL UNDER A MINUTE",
             "CEREMONIAL MATCHA + MUSHROOMS + COLLAGEN",
@@ -331,12 +331,12 @@ export default function RecipesPage() {
       <nav className="rec-nav" aria-label="Main navigation">
         <a href="/" className="rec-nav-logo">
           <img
-            src="/logo-mark.png"
+            src="/brand/symbol-sheep-solid.png"
             width={32}
             height={32}
             alt="shroomé S"
           />
-          <span>shroomé</span>
+          <img src="/brand/wordmark.png" alt="shroomé" style={{ height: 22, width: "auto" }} />
         </a>
         <div className="rec-nav-links">
           <a href="/#why">Why shroomé</a>
