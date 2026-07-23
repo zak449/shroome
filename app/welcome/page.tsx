@@ -171,7 +171,7 @@ export default function WelcomePage() {
             transition: "opacity .2s",
           }}
         >
-          Get 20% off &rarr;
+          Get first access &rarr;
         </a>
         <MobileNav
           prefix="wel"
@@ -254,7 +254,7 @@ export default function WelcomePage() {
           }}
         >
           2.5g ceremonial matcha. Functional mushroom extracts. Collagen peptides.
-          One sachet. 15 seconds. No crash.
+          One sachet, one 30-second pour. No crash.
         </p>
       </section>
 
@@ -398,9 +398,9 @@ export default function WelcomePage() {
         >
           {(
             [
-              { num: "1", text: "Tear" },
-              { num: "2", text: "Pour over milk" },
-              { num: "3", text: "Feel the shift" },
+              { num: "1", text: "Pour" },
+              { num: "2", text: "Swirl" },
+              { num: "3", text: "Go" },
             ] as const
           ).map((s) => (
             <div key={s.num} style={{ minWidth: 120 }}>
@@ -458,7 +458,7 @@ export default function WelcomePage() {
               letterSpacing: "-0.02em",
             }}
           >
-            Be first. Get 20% off + free shipping.
+            Drop 001 sold out in 9 days. Don&rsquo;t sleep on 002.
           </h2>
           <p
             style={{
@@ -468,7 +468,7 @@ export default function WelcomePage() {
               marginBottom: 36,
             }}
           >
-            Join the pre-launch list. No spam, just early access.
+            The list gets the Drop 002 link before it&rsquo;s public. No spam — just the flock.
           </p>
 
           {status === "done" ? (

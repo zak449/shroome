@@ -541,7 +541,7 @@ export default function ReferPage() {
             <a href="/blog">Blog</a>
             <a href="/recipes">Recipes</a>
           </div>
-          <a href="/" className="ref-nav-cta">Get 20% off &rarr;</a>
+          <a href="/" className="ref-nav-cta">Get first access &rarr;</a>
           <MobileNav
             prefix="ref"
             links={[
