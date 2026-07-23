@@ -488,7 +488,7 @@ export default async function RecipeDetailPage({
           <a href="/recipes">Recipes</a>
         </div>
         <a href="/#signup" className="rd-nav-cta">
-          Get 20% off + free shipping &rarr;
+          Get first access &rarr;
         </a>
         <MobileNav
           prefix="rd"
@@ -595,17 +595,17 @@ export default async function RecipeDetailPage({
 
       {/* ── CTA ── */}
       <section className="rd-cta">
-        <div className="rd-cta-tag">Pre-Launch List</div>
+        <div className="rd-cta-tag">Drop 002 Is Coming</div>
         <h2>
           Ready to pour?
           <br />
-          <em>Get 20% off + free shipping.</em>
+          <em>Get in line for Drop 002.</em>
         </h2>
         <p className="rd-cta-sub">
-          12 servings per box · Tear. Pour. Done.
+          12 servings per box · Pour. Swirl. Go.
         </p>
         <a href="/#signup" className="rd-btn-cta">
-          Claim 20% off →
+          Get first access →
         </a>
       </section>
 

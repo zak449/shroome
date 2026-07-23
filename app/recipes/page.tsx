@@ -347,7 +347,7 @@ export default function RecipesPage() {
           <a href="/recipes" className="active">Recipes</a>
         </div>
         <a href="/#signup" className="rec-nav-cta">
-          Get 20% off + free shipping &rarr;
+          Get first access &rarr;
         </a>
         <MobileNav
           prefix="rec"
@@ -442,10 +442,10 @@ export default function RecipesPage() {
           <em>Get yours.</em>
         </h2>
         <p className="rec-cta-sub">
-          20% off + free shipping on your first box &middot; 12 servings &middot; Tear. Pour. Done.
+          Drop 001 sold out in 9 days &middot; 12 servings per box &middot; Pour. Swirl. Go.
         </p>
         <a href="/#signup" className="rec-btn-cta">
-          Join the Waitlist &rarr;
+          Join the Drop 002 list &rarr;
         </a>
       </section>
 

@@ -88,7 +88,7 @@ export default function Contact() {
           <div className="contact-card">
             <div className="contact-card-label">Orders</div>
             <h2>Order support</h2>
-            <p>Pre-order questions, shipping inquiries, or issues with your purchase.</p>
+            <p>Drop questions, shipping inquiries, or issues with your order.</p>
             <a href="mailto:hello@drinkshroome.com">hello@drinkshroome.com</a>
           </div>
 

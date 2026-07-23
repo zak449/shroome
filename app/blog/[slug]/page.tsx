@@ -423,7 +423,7 @@ export default async function BlogPost({
           <Link href="/recipes">Recipes</Link>
         </div>
         <Link href="/#signup" className="post-nav-cta">
-          Get 20% off + free shipping &rarr;
+          Get first access &rarr;
         </Link>
         <MobileNav
           prefix="post"
@@ -527,28 +527,28 @@ export default async function BlogPost({
         <div className="post-editorial-cta-inner">
           <h3>Ready to try the cleanest matcha?</h3>
           <p>
-            Get 20% off + free shipping on your first box. Ceremonial matcha, mushroom extracts, and collagen — in one pour.
+            Drop 001 sold out in 9 days. Ceremonial matcha, mushroom extracts, and collagen — in one pour. The list gets the Drop 002 link first.
           </p>
           <Link href="/#signup" className="post-editorial-link">
-            Join the waitlist &rarr;
+            Join the Drop 002 list &rarr;
           </Link>
         </div>
       </div>
 
       {/* CTA */}
       <section className="post-cta">
-        <div className="post-cta-tag">Join the Waitlist</div>
+        <div className="post-cta-tag">Drop 002 Is Coming</div>
         <h2>
           Try shroom&eacute; for yourself.
           <br />
-          <em>20% off + free shipping.</em>
+          <em>Before it sells out again.</em>
         </h2>
         <p className="post-cta-sub">
           12 servings per box &middot; Ceremonial matcha + mushroom extracts +
           collagen
         </p>
         <Link href="/#signup" className="post-btn-cta">
-          Claim 20% off &rarr;
+          Get first access &rarr;
         </Link>
       </section>
 

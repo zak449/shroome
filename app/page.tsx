@@ -554,7 +554,7 @@ export default function Home() {
               cursor: "pointer",
             }}
           >
-            Get restock alerts →
+            Get first access →
           </button>
         </div>
 
@@ -655,7 +655,7 @@ export default function Home() {
               cursor: "pointer",
             }}
           >
-            Get restock alerts →
+            Get first access →
           </button>
         </div>
       </nav>

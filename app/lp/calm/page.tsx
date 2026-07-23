@@ -50,7 +50,7 @@ const config: LPConfig = {
       },
       {
         title: "a drink you'd choose anyway",
-        body: "quitting the crash shouldn't taste like punishment. this is a genuinely good latte — 2.5g ceremonial matcha in vanilla or strawberry, poured into your milk in fifteen seconds. the switch sticks because you look forward to it.",
+        body: "quitting the crash shouldn't taste like punishment. this is a genuinely good latte — 2.5g ceremonial matcha in vanilla or strawberry, poured into your milk in thirty seconds. the switch sticks because you look forward to it.",
       },
     ],
   },
@@ -60,7 +60,7 @@ const config: LPConfig = {
     stats: [
       { stat: "~60mg", label: "caffeine — about half an espresso shot" },
       { stat: "2.5g", label: "ceremonial matcha — naturally occurring l-theanine, supports sustained focus" },
-      { stat: "200mg", label: "lion's mane fruiting-body extract — ≥70% beta-glucans" },
+      { stat: "200mg", label: "mushroom extracts (lion's mane, reishi, cordyceps) — ≥70% beta-glucans" },
       { stat: "2g", label: "grass-fed collagen peptides — along for the ride" },
     ],
     footnote:

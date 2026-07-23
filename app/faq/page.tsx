@@ -17,7 +17,7 @@ const faqData = [
       },
       {
         q: "What's the difference between shroomé and matcha powder?",
-        a: `Every matcha product on the market is a powder. Powder requires hot water, a frother, time, and cleanup. <strong>shroomé is the world's first ready-to-pour ceremonial matcha latte.</strong> It's already blended, already emulsified, already perfect. Tear it open. Pour it in. Done. Plus, shroomé stacks three benefits in one sachet: 2.5g ceremonial matcha, 2g grass-fed collagen, and real mushroom extracts.`,
+        a: `Powder requires hot water, a frother, time, and cleanup. <strong>shroomé is a liquid ceremonial matcha latte.</strong> It's already blended, already emulsified, already perfect. Pour. Swirl. Go. Plus, shroomé stacks three benefits in one sachet: 2.5g ceremonial matcha, 2g grass-fed collagen, and real mushroom extracts.`,
       },
       {
         q: "What flavors does shroomé come in?",
@@ -25,11 +25,11 @@ const faqData = [
       },
       {
         q: "Does shroomé taste like mushrooms?",
-        a: `Not even a little. shroomé uses <strong>beta glucan 1/3 and 1/6 polysaccharides</strong> — the specific bioactive compounds extracted from mushroom cell walls — not raw mushroom powder. At <strong>70%+ beta glucan concentration</strong> (which is extremely high for the category), these compounds are tasteless when formulated into the liquid matrix. What you actually taste is smooth, naturally sweet ceremonial matcha with the silky mouthfeel of collagen. Most people say it tastes better than the $7 matcha latte from their local café — and it takes <strong>15 seconds instead of 15 minutes.</strong>`,
+        a: `Not even a little. shroomé uses <strong>beta glucan 1/3 and 1/6 polysaccharides</strong> — the specific bioactive compounds extracted from mushroom cell walls — not raw mushroom powder. At <strong>70%+ beta glucan concentration</strong> (which is extremely high for the category), these compounds are tasteless when formulated into the liquid matrix. What you actually taste is smooth, naturally sweet ceremonial matcha with the silky mouthfeel of collagen. Most people say it tastes better than the $7 matcha latte from their local café — and it takes <strong>a 30-second pour instead of 15 minutes.</strong>`,
       },
       {
         q: "How many servings per box?",
-        a: `Each box contains <strong>12 single-serve sachets.</strong> Each sachet is one full matcha latte serving — just tear, pour over milk, and you're done. Subscribe for 20% off + free shipping on every box.`,
+        a: `Each box contains <strong>12 single-serve sachets.</strong> Each sachet is one full matcha latte serving — pour over milk, swirl, go. Boxes ship in numbered drops: Drop 001 (500 boxes) sold out in 9 days, and the Drop 002 list gets the link before it's public.`,
       },
     ],
   },
@@ -79,7 +79,7 @@ const faqData = [
     items: [
       {
         q: "How do I make a shroomé matcha latte?",
-        a: `Fill your glass with ice (or warm your mug), add 6–8 oz of your milk of choice, then <strong>tear open the sachet and pour shroomé in last.</strong> Give it a swirl with your hand, a straw, or a spoon — no frother, no whisk, no mess. A full café-quality matcha latte in under 15 seconds.`,
+        a: `Fill your glass with ice (or warm your mug), add 6–8 oz of your milk of choice, then <strong>tear open the sachet and pour shroomé in last.</strong> Give it a swirl with your hand, a straw, or a spoon — no frother, no whisk, no mess. A full café-quality matcha latte in one 30-second pour.`,
       },
       {
         q: "Can I pour shroomé over oat milk?",
@@ -138,7 +138,7 @@ const pills = [
 ];
 
 const tickerItems = [
-  "The World's First Ready-to-Pour Matcha Latte",
+  "The Liquid Ceremonial Matcha Latte",
   "✦ Energy Without the Crash",
   "✦ 2.5g matcha · Mushroom Extracts · Collagen",
   "✦ 60mg Caffeine · Zero Jitters · Actually Tastes Good",
@@ -390,7 +390,7 @@ export default function FAQ() {
           <a href="/faq" className="active">FAQ</a>
           <a href="/blog">Blog</a>
           <a href="/recipes">Recipes</a>        </div>
-        <a href="/" className="faq-nav-cta">Get 20% off + free shipping &rarr;</a>
+        <a href="/" className="faq-nav-cta">Get first access &rarr;</a>
         <MobileNav
           prefix="faq"
           links={[
@@ -414,7 +414,7 @@ export default function FAQ() {
           <div className="faq-hero-tag">Frequently Asked Questions</div>
           <h1>Got questions?<br /><em>We got answers.</em></h1>
           <p className="faq-hero-sub">
-            The world&apos;s first ready-to-pour ceremonial matcha latte. Here&apos;s what people ask us most — from{" "}
+            The liquid ceremonial matcha latte. Here&apos;s what the flock asks us most — from{" "}
             <strong>what&apos;s inside</strong> to <strong>how to pour it.</strong>
           </p>
         </div>
@@ -469,15 +469,15 @@ export default function FAQ() {
 
       {/* ═══ CTA ═══ */}
       <section className="faq-cta">
-        <div className="faq-cta-tag">Try It Risk-Free</div>
+        <div className="faq-cta-tag">Drop 002 Is Coming</div>
         <h2>
           Still have questions?
           <br />
-          <em>Try it risk-free.</em>
+          <em>The pour answers most of them.</em>
         </h2>
-        <p className="faq-cta-sub">20% off + free shipping. Tear. Pour. Done.</p>
+        <p className="faq-cta-sub">Drop 001 sold out in 9 days. The list gets the link first. Pour. Swirl. Go.</p>
         <a href="/" className="faq-btn-cta">
-          Join the Waitlist &rarr;
+          Join the Drop 002 list &rarr;
         </a>
       </section>
 

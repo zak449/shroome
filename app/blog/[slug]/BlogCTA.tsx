@@ -239,8 +239,8 @@ export default function BlogCTA() {
               marginRight: "auto",
             }}
           >
-            Join the waitlist for 20% off + free shipping on the world&rsquo;s first
-            ready-to-pour ceremonial matcha latte.
+            Drop 001 — 500 boxes — sold out in 9 days. Join the Drop 002 list
+            and get the link before it&rsquo;s public.
           </p>
 
           {inlineStatus === "success" ? (
@@ -251,7 +251,7 @@ export default function BlogCTA() {
             ) : (
               <div>
                 <p style={{ fontFamily: "var(--brand-font-body)", fontSize: 13, fontWeight: 600, color: "var(--brand-accent)", marginBottom: 10 }}>
-                  &#10003; 20% off locked in! Add your number to upgrade to 30% (replaces your 20% code):
+                  &#10003; You&rsquo;re on the list! Add your number — drop-day texts go out 10 minutes before the email:
                 </p>
                 <form onSubmit={async (e) => {
                   e.preventDefault();
@@ -330,7 +330,7 @@ export default function BlogCTA() {
                   whiteSpace: "nowrap" as const,
                 }}
               >
-                {inlineStatus === "loading" ? "Joining..." : "Join the waitlist →"}
+                {inlineStatus === "loading" ? "Joining..." : "Join the Drop 002 list →"}
               </button>
             </form>
           )}
@@ -380,7 +380,7 @@ export default function BlogCTA() {
             </p>
           ) : (
             <div style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap" as const, justifyContent: "center" }}>
-              <p style={{ fontFamily: "var(--brand-font-body)", fontSize: 12, color: "var(--brand-accent)", fontWeight: 600, margin: 0, whiteSpace: "nowrap" as const }}>&#10003; 20% locked! Add phone for 30%:</p>
+              <p style={{ fontFamily: "var(--brand-font-body)", fontSize: 12, color: "var(--brand-accent)", fontWeight: 600, margin: 0, whiteSpace: "nowrap" as const }}>&#10003; You&rsquo;re in! Add your number — texts get the link first:</p>
               <form onSubmit={async (e) => {
                 e.preventDefault();
                 if (!stickyPhone.trim()) return;
@@ -413,7 +413,7 @@ export default function BlogCTA() {
                 whiteSpace: "nowrap" as const,
               }}
             >
-              Get 20% off the world&rsquo;s first ready-to-pour matcha latte
+              Drop 002 is coming &mdash; the list gets the link first
             </p>
 
             <form

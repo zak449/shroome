@@ -74,8 +74,8 @@ function UnsubscribeFlow() {
               we&apos;ll miss you 💚
             </h1>
             <p style={{ fontSize: 15, opacity: 0.6, margin: "0 0 32px", lineHeight: 1.6 }}>
-              are you sure you want to unsubscribe from shroomé emails?
-              you&apos;ll miss out on exclusive early access and launch discounts.
+              sure you want to leave the flock? unsubscribing means no Drop 002
+              link when it goes out — the list gets it before anyone else.
             </p>
 
             {email && (

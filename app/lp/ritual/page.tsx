@@ -3,12 +3,12 @@ import LPShell, { type LPConfig } from "../LPShell";
 import { X1_BOXES, DROP2_RUN } from "../../lib/drop-config";
 
 export const metadata: Metadata = {
-  title: "shroomé — drop 002 is coming. the prettiest 15 seconds of your morning",
+  title: "shroomé — drop 002 is coming. the prettiest 30 seconds of your morning",
   description:
     "ready-to-pour ceremonial matcha latte. no whisk, no powder — just pour, swirl, glow. drop 001 sold out. get access to drop 002 before it goes.",
   robots: { index: false, follow: false },
   openGraph: {
-    title: "shroomé — drop 002 is coming. the prettiest 15 seconds of your morning",
+    title: "shroomé — drop 002 is coming. the prettiest 30 seconds of your morning",
     description:
       "ready-to-pour ceremonial matcha latte. no whisk, no powder — just pour, swirl, glow. drop 001 sold out. get access to drop 002 before it goes.",
     siteName: "shroomé",
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "shroomé — drop 002 is coming. the prettiest 15 seconds of your morning",
+    title: "shroomé — drop 002 is coming. the prettiest 30 seconds of your morning",
     description:
       "ready-to-pour ceremonial matcha latte. no whisk, no powder — just pour, swirl, glow. drop 001 sold out. get access to drop 002 before it goes.",
   },
@@ -28,7 +28,7 @@ const config: LPConfig = {
     eyebrow: "POUR / SWIRL / GLOW",
     headlineLines: ["ceremonial-grade matcha,", "minus the ceremony."],
     subheadline:
-      "the world's first ready-to-pour ceremonial matcha latte. tear the sachet, pour into your milk, watch it swirl. fifteen seconds to the drink you've been saving on your fyp.",
+      "the liquid ceremonial matcha latte. tear the sachet, pour into your milk, watch it swirl. thirty seconds to the drink you've been saving on your fyp.",
     background: "linear-gradient(160deg, var(--brand-tint-soft) 0%, var(--brand-tint-blush) 100%)",
     cloudOpacity: 0.35,
     sachets: "both",
@@ -48,7 +48,7 @@ const config: LPConfig = {
       },
       {
         title: "pretty on the outside, honest on the inside",
-        body: "every dose is printed right on the sachet — ceremonial matcha, grass-fed collagen, lion's mane extract. the aesthetic is the invitation; the label is the reason you stay.",
+        body: "every dose is printed right on the sachet — ceremonial matcha, grass-fed collagen, mushroom extracts. the aesthetic is the invitation; the label is the reason you stay.",
       },
     ],
   },
@@ -58,7 +58,7 @@ const config: LPConfig = {
     stats: [
       { stat: "2.5g", label: "ceremonial matcha — first harvest, shade-grown" },
       { stat: "2g", label: "grass-fed collagen peptides" },
-      { stat: "200mg", label: "lion's mane extract, ≥70% beta-glucans" },
+      { stat: "200mg", label: "mushroom extracts (lion's mane, reishi, cordyceps), ≥70% beta-glucans" },
       { stat: "~60mg", label: "caffeine, with matcha's natural l-theanine" },
     ],
     footnote:

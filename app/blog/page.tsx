@@ -233,7 +233,7 @@ export default function BlogIndex() {
           <Link href="/recipes">Recipes</Link>
         </div>
         <Link href="/#signup" className="blog-nav-cta">
-          Get 20% off + free shipping &rarr;
+          Get first access &rarr;
         </Link>
         <MobileNav
           prefix="blog"

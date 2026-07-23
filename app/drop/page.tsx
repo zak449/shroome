@@ -251,7 +251,7 @@ export default function DropPage() {
           <a href="/faq">FAQ</a>
           <a href="/founders">First Pour</a>
         </div>
-        <a className="dr-nav-cta" href="#waitlist">Get Drop Access &rarr;</a>
+        <a className="dr-nav-cta" href="#waitlist">Get first access &rarr;</a>
         <MobileNav
           prefix="dr"
           links={[
@@ -259,7 +259,7 @@ export default function DropPage() {
             { label: "Ingredients", href: "/#ingredients" },
             { label: "FAQ", href: "/faq" },
             { label: "First Pour", href: "/founders" },
-            { label: "Get Drop Access", href: "#waitlist" },
+            { label: "Get first access", href: "#waitlist" },
           ]}
         />
       </nav>
@@ -299,7 +299,7 @@ export default function DropPage() {
               textDecoration: "none",
             }}
           >
-            get drop access →
+            get first access →
           </a>
           <p style={{ fontFamily: "var(--brand-font-mono)", fontSize: "0.68rem", color: "rgba(var(--brand-canvas-rgb),0.45)", marginTop: 14 }}>
             <span className="dr-dot" style={{ marginRight: 8, verticalAlign: "middle" }} aria-hidden="true" />
@@ -332,7 +332,7 @@ export default function DropPage() {
                 </div>
                 <span style={{ height: 12, display: "block" }} />
                 <a className="dr-card-btn" href="#waitlist">
-                  get in line for drop 002
+                  get first access — drop 002
                 </a>
               </div>
             </div>
@@ -394,7 +394,7 @@ export default function DropPage() {
             time — this run won&apos;t wait either.
           </p>
           <div style={{ display: "flex", justifyContent: "center" }}>
-            <DropAccessForm source="drop" dark buttonLabel="get drop access" microcopy="one text per drop. no spam, ever." />
+            <DropAccessForm source="drop" dark buttonLabel="get first access" microcopy="one text per drop. no spam, ever." />
           </div>
         </div>
       </section>

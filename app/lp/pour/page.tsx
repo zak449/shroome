@@ -3,22 +3,22 @@ import LPShell, { type LPConfig } from "../LPShell";
 import { X1_BOXES, DROP2_RUN } from "../../lib/drop-config";
 
 export const metadata: Metadata = {
-  title: "shroomé — a café matcha latte in 15 seconds. drop 002 is limited.",
+  title: "shroomé — a café matcha latte in 30 seconds. drop 002 is limited.",
   description:
-    "tear. pour. done. ready-to-pour ceremonial matcha latte — no whisk, no blender, no line. drop 001 sold out. get drop access before 002 goes.",
+    "pour. swirl. go. the liquid ceremonial matcha latte — no whisk, no blender, no line. drop 001 sold out. get drop access before 002 goes.",
   robots: { index: false, follow: false },
   openGraph: {
-    title: "shroomé — a café matcha latte in 15 seconds. drop 002 is limited.",
+    title: "shroomé — a café matcha latte in 30 seconds. drop 002 is limited.",
     description:
-      "tear. pour. done. ready-to-pour ceremonial matcha latte — no whisk, no blender, no line. drop 001 sold out. get drop access before 002 goes.",
+      "pour. swirl. go. the liquid ceremonial matcha latte — no whisk, no blender, no line. drop 001 sold out. get drop access before 002 goes.",
     siteName: "shroomé",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "shroomé — a café matcha latte in 15 seconds. drop 002 is limited.",
+    title: "shroomé — a café matcha latte in 30 seconds. drop 002 is limited.",
     description:
-      "tear. pour. done. ready-to-pour ceremonial matcha latte — no whisk, no blender, no line. drop 001 sold out. get drop access before 002 goes.",
+      "pour. swirl. go. the liquid ceremonial matcha latte — no whisk, no blender, no line. drop 001 sold out. get drop access before 002 goes.",
   },
 };
 
@@ -28,7 +28,7 @@ const config: LPConfig = {
     eyebrow: "30 SECONDS · NO WHISK · NO BLENDER · NO LINE",
     headlineLines: ["the café line was the only", "ingredient we removed."],
     subheadline:
-      "a ready-to-pour ceremonial matcha latte in a 1oz sachet. tear it, pour it into any milk, swirl, go — fifteen seconds, one hand, zero cleanup. more ceremonial matcha than your café order, none of the detour.",
+      "a ready-to-pour ceremonial matcha latte in a 1oz sachet. tear it, pour it into any milk, swirl, go — thirty seconds, one hand, zero cleanup. more ceremonial matcha than your café order, none of the detour.",
     background: "var(--brand-canvas)",
     limeStreak: true,
     sachets: "both",
@@ -39,7 +39,7 @@ const config: LPConfig = {
     cardStyle: "numeral",
     items: [
       {
-        title: "fifteen seconds, timed honestly",
+        title: "thirty seconds, timed honestly",
         body: "tear the sachet, pour the concentrate into 6–8oz of milk, one swirl — done before the toast pops. no whisk to wash, no blender to unclog, no powder dusting your counter at 6:45am.",
       },
       {
@@ -58,7 +58,7 @@ const config: LPConfig = {
     stats: [
       { stat: "2.5g", label: "ceremonial matcha — first harvest, shade-grown" },
       { stat: "2g", label: "grass-fed collagen peptides" },
-      { stat: "200mg", label: "lion's mane fruiting-body extract — ≥70% beta-glucans" },
+      { stat: "200mg", label: "mushroom extracts — lion's mane, reishi, cordyceps — ≥70% beta-glucans" },
       { stat: "~60mg", label: "caffeine — supports healthy energy levels, no 2pm cliff" },
     ],
     footnote:
@@ -76,7 +76,7 @@ const config: LPConfig = {
   },
   faqs: [
     {
-      q: "is it really 15 seconds?",
+      q: "is it really 30 seconds?",
       a: "tear, pour, swirl — yes. the concentrate is liquid, so there's nothing to dissolve, froth, or rinse. our engineers timed it while holding a coffee in the other hand.",
     },
     {
@@ -93,7 +93,7 @@ const config: LPConfig = {
     },
   ],
   final: {
-    header: "you have fifteen seconds. that's all this takes.",
+    header: "you have thirty seconds. that's all this takes.",
     body: `drop 001 sold out. drop 002 is ${DROP2_RUN} — get access now, add your number for the 10-minute head start (your code upgrades from 20% to 30% — best code wins). 20% off and free shipping locked in either way.`,
     microcopy: "one text per drop. that's the entire notification load — promise.",
   },

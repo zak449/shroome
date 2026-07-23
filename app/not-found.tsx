@@ -165,7 +165,7 @@ export default function NotFound() {
             <a href="/blog">Blog</a>
             <a href="/recipes">Recipes</a>
           </div>
-          <a href="/" className="nf-nav-cta">Get 20% off + free shipping &rarr;</a>
+          <a href="/" className="nf-nav-cta">Get first access &rarr;</a>
           <MobileNav
             prefix="nf"
             links={[
@@ -186,8 +186,8 @@ export default function NotFound() {
           <div className="nf-blob nf-blob-c" />
 
           <div className="nf-tag">404 — Page Not Found</div>
-          <h1 className="nf-heading">Oops. This page<br />doesn&apos;t exist.</h1>
-          <p className="nf-sub">Maybe you were looking for one of our recipes?</p>
+          <h1 className="nf-heading">Sheep happens.<br />This page doesn&apos;t exist.</h1>
+          <p className="nf-sub">This page wandered off from the flock. The recipes didn&apos;t.</p>
 
           <div className="nf-links">
             <a href="/recipes" className="nf-link nf-link-primary">Browse Recipes &rarr;</a>

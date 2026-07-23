@@ -384,7 +384,7 @@ export default function LPShell({ config }: { config: LPConfig }) {
             {(hero.sachets === "both" || hero.sachets === "vanilla") && (
               <Image
                 src="/sachet-vanilla.png"
-                alt="shroomé Vanilla matcha sachet — single-serve packet with ceremonial matcha, lion's mane, and collagen"
+                alt="shroomé Vanilla matcha sachet — single-serve packet with ceremonial matcha, mushroom extracts, and collagen"
                 width={260}
                 height={372}
                 className="sachet-float"
@@ -401,7 +401,7 @@ export default function LPShell({ config }: { config: LPConfig }) {
             {(hero.sachets === "both" || hero.sachets === "strawberry") && (
               <Image
                 src="/sachet-strawberry.png"
-                alt="shroomé Strawberry matcha sachet — single-serve packet with ceremonial matcha, lion's mane, and collagen"
+                alt="shroomé Strawberry matcha sachet — single-serve packet with ceremonial matcha, mushroom extracts, and collagen"
                 width={260}
                 height={372}
                 className="sachet-float"
