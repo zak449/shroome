@@ -120,7 +120,7 @@ export default function RecipesPage() {
             radial-gradient(ellipse 120% 80% at 20% 10%, rgba(var(--brand-flavor-functional-rgb),0.35) 0%, transparent 50%),
             radial-gradient(ellipse 100% 70% at 80% 85%, rgba(var(--brand-accent-rgb),0.12) 0%, transparent 50%),
             radial-gradient(ellipse 60% 50% at 60% 40%, rgba(227,213,247,0.5) 0%, transparent 50%),
-            linear-gradient(180deg, #F0E4D8 0%, #EDE0D4 30%, #E8D8CC 60%, #F0E4D8 100%);
+            linear-gradient(180deg, var(--brand-canvas) 0%, var(--brand-tint-soft) 45%, var(--brand-canvas) 100%);
           background-attachment:fixed;
           position:relative
         }
@@ -133,11 +133,15 @@ export default function RecipesPage() {
         /* ── HERO ── */
         .rec-hero{position:relative;overflow:hidden;padding:72px 8% 64px}
         .rec-hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,rgba(var(--brand-accent-rgb),0.2) 0%,rgba(var(--brand-flavor-strawberry-rgb),0.25) 50%,rgba(var(--brand-flavor-functional-rgb),0.2) 100%)}
-        .rec-hero-overlay{position:absolute;inset:0;background:linear-gradient(rgba(240,228,216,0.85) 0%,rgba(237,224,212,0.8) 100%)}
+        .rec-hero-overlay{position:absolute;inset:0;background:linear-gradient(rgba(254,255,248,0.88) 0%,rgba(227,213,247,0.75) 100%)}
         .rec-blob{position:absolute;border-radius:50%;pointer-events:none;opacity:.3}
         .rec-blob-a{width:340px;height:340px;top:-80px;right:10%;background:var(--brand-accent)}
         .rec-blob-b{width:200px;height:200px;bottom:-60px;left:5%;background:var(--brand-flavor-functional)}
         .rec-hero-inner{position:relative;z-index:2;max-width:640px}
+        .rec-hero-img{position:absolute;right:6%;top:50%;transform:translateY(-50%) rotate(2deg);width:min(24vw,300px);z-index:1;display:block}
+        .rec-hero-img img{width:100%;height:auto;border-radius:20px;border:3px solid var(--brand-ink);box-shadow:0 18px 44px rgba(45,52,26,0.22);display:block}
+        @media(max-width:900px){.rec-hero-img{display:none}}
+
         .rec-hero-tag{
           display:inline-flex;align-items:center;gap:8px;
           font-family:var(--brand-font-mono);font-size:11px;font-weight:500;
@@ -159,7 +163,7 @@ export default function RecipesPage() {
         @keyframes recFadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
 
         /* ── PILL ROW ── */
-        .rec-pill-row{display:flex;gap:0;overflow:hidden;white-space:nowrap;background:var(--brand-flavor-functional);padding:12px 0}
+        .rec-pill-row{display:flex;gap:0;overflow:hidden;white-space:nowrap;background:var(--brand-tint-soft);padding:12px 0}
         .rec-pill-track{display:flex;justify-content:center;flex-wrap:wrap;row-gap:6px}
         .rec-pill-item{
           font-family:var(--brand-font-body);font-size:11px;font-weight:700;
@@ -364,6 +368,7 @@ export default function RecipesPage() {
         <div className="rec-hero-overlay" />
         <div className="rec-blob rec-blob-a" />
         <div className="rec-blob rec-blob-b" />
+        <div className="rec-hero-img" aria-hidden="true"><img src="/brand/cup-logo.jpg" alt="Iced shroomé matcha latte in a branded cup" loading="lazy" /></div>
         <div className="rec-hero-inner">
           <div className="rec-hero-tag">Recipes</div>
           <h1>
@@ -382,12 +387,6 @@ export default function RecipesPage() {
       <div className="rec-pill-row">
         <div className="rec-pill-track">
           {[
-            "ICED",
-            "HOT",
-            "BLENDED",
-            "DESSERT",
-            "PROTEIN",
-            "FLORAL",
             "ICED",
             "HOT",
             "BLENDED",

@@ -138,6 +138,10 @@ export default function BlogIndex() {
           background:linear-gradient(135deg,rgba(var(--brand-flavor-strawberry-rgb),0.4) 0%,rgba(var(--brand-canvas-rgb),0.8) 60%,rgba(var(--brand-flavor-functional-rgb),0.25) 100%)
         }
         .blog-hero-inner{position:relative;z-index:2;max-width:640px}
+        .blog-hero-img{position:absolute;right:6%;top:50%;transform:translateY(-50%) rotate(2deg);width:min(24vw,300px);z-index:1;display:block}
+        .blog-hero-img img{width:100%;height:auto;border-radius:20px;border:3px solid var(--brand-ink);box-shadow:0 18px 44px rgba(45,52,26,0.22);display:block}
+        @media(max-width:900px){.blog-hero-img{display:none}}
+
         .blog-hero-tag{
           display:inline-flex;align-items:center;gap:8px;
           font-family:var(--brand-font-mono);font-size:11px;font-weight:500;
@@ -250,6 +254,7 @@ export default function BlogIndex() {
 
       {/* HERO */}
       <section className="blog-hero">
+        <div className="blog-hero-img" aria-hidden="true"><img src="/brand/ig-matcha-in.jpg" alt="Friends at a picnic — our vibe is matcha-in" loading="lazy" /></div>
         <div className="blog-hero-inner">
           <div className="blog-hero-tag">The shroom&eacute; Blog</div>
           <h1>

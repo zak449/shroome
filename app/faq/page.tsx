@@ -236,6 +236,10 @@ export default function FAQ() {
         .faq-blob-a{width:340px;height:340px;top:-80px;right:10%}
         .faq-blob-b{width:200px;height:200px;bottom:-60px;left:5%;background:var(--brand-canvas);opacity:.3}
         .faq-hero-inner{position:relative;z-index:2;max-width:640px}
+        .faq-hero-img{position:absolute;right:6%;top:50%;transform:translateY(-50%) rotate(2deg);width:min(24vw,300px);z-index:1;display:block}
+        .faq-hero-img img{width:100%;height:auto;border-radius:20px;border:3px solid var(--brand-ink);box-shadow:0 18px 44px rgba(45,52,26,0.22);display:block}
+        @media(max-width:900px){.faq-hero-img{display:none}}
+
         .faq-hero-tag{
           display:inline-flex;align-items:center;gap:8px;
           font-family:var(--brand-font-mono);font-size:11px;font-weight:500;
@@ -410,6 +414,7 @@ export default function FAQ() {
         <div className="faq-hero-overlay" />
         <div className="faq-blob faq-blob-a" />
         <div className="faq-blob faq-blob-b" />
+        <div className="faq-hero-img" aria-hidden="true"><img src="/brand/iced-flower.jpg" alt="Iced matcha in a lavender flower glass" loading="lazy" /></div>
         <div className="faq-hero-inner">
           <div className="faq-hero-tag">Frequently Asked Questions</div>
           <h1>Got questions?<br /><em>We got answers.</em></h1>
