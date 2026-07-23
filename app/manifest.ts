@@ -3,10 +3,10 @@ import { BRAND } from "./lib/brand";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "shroomé — Functional Mushroom Wellness",
+    name: "shroomé — Liquid Ceremonial Matcha Latte",
     short_name: "shroomé",
     description:
-      "Premium functional mushroom blends for daily wellness. Lion's Mane, Reishi, Chaga & more.",
+      "The liquid ceremonial matcha latte with lion's mane + collagen. Pour. Swirl. Go.",
     start_url: "/",
     display: "standalone",
     background_color: BRAND.manifest.backgroundColor,

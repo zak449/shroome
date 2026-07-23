@@ -112,7 +112,7 @@ export default function RecipesPage() {
           font-size:12px;font-weight:700;letter-spacing:.06em;
           text-transform:uppercase;cursor:pointer;transition:background .2s;text-decoration:none
         }
-        .rec-nav-cta:hover{background:#2a2e4f}
+        .rec-nav-cta:hover{background:#3c452a}
 
         /* ── PAGE WRAPPER (retro 90s background) ── */
         .rec-page{
@@ -259,7 +259,7 @@ export default function RecipesPage() {
           text-decoration:none;transition:background .2s,transform .2s;
           position:relative
         }
-        .rec-btn-cta:hover{background:#d4ff5a;transform:translateY(-2px)}
+        .rec-btn-cta:hover{background:#ff8fd4;transform:translateY(-2px)}
 
         /* ── FOOTER ── */
         .rec-footer{

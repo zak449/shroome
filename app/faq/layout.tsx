@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "FAQ — shroomé | Café Energy. Home Address.",
+  title: "FAQ — shroomé | Pour. Swirl. Go.",
   description:
     "Frequently asked questions about shroomé — the world's first ready-to-pour ceremonial matcha latte. 2.5g matcha, 2g collagen, real mushrooms. Learn about ingredients, how to pour, caffeine content, and more.",
   keywords: [
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     "drinkshroome",
   ],
   openGraph: {
-    title: "FAQ — shroomé | Café Energy. Home Address.",
+    title: "FAQ — shroomé | Pour. Swirl. Go.",
     description:
       "Everything you need to know about shroomé — the world's first ready-to-pour ceremonial matcha latte with collagen + mushrooms.",
     url: "https://www.drinkshroome.com/faq",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "FAQ — shroomé | Café Energy. Home Address.",
+    title: "FAQ — shroomé | Pour. Swirl. Go.",
     description:
       "Everything you need to know about shroomé — the world's first ready-to-pour ceremonial matcha latte with collagen + mushrooms.",
   },

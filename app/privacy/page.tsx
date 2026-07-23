@@ -4,7 +4,7 @@ import Image from "next/image";
 import MobileNav from "../MobileNav";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — shroomé | Café Energy. Home Address.",
+  title: "Privacy Policy — shroomé",
   description:
     "How shroomé collects, uses, and protects your information. Read our full privacy policy.",
   openGraph: {
@@ -100,7 +100,7 @@ export default function Privacy() {
           font-size:12px;font-weight:700;letter-spacing:.06em;
           text-transform:uppercase;cursor:pointer;transition:background .2s;text-decoration:none
         }
-        .pp-nav-cta:hover{background:#2a2e4f}
+        .pp-nav-cta:hover{background:#3c452a}
 
         /* ── HERO ─── */
         .pp-hero{position:relative;overflow:hidden;padding:72px 8% 64px}
@@ -171,7 +171,7 @@ export default function Privacy() {
           font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
           cursor:pointer;transition:background .2s,transform .2s;text-decoration:none
         }
-        .pp-btn-cta:hover{background:#d4ff5a;transform:translateY(-2px)}
+        .pp-btn-cta:hover{background:#ff8fd4;transform:translateY(-2px)}
 
         /* ── FOOTER ─── */
         .pp-footer{background:var(--brand-flavor-functional);padding:32px 6%;text-align:center;border-top:1px solid rgba(var(--brand-ink-rgb),0.06)}

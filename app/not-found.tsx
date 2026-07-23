@@ -53,7 +53,7 @@ export default function NotFound() {
           font-size:12px;font-weight:700;letter-spacing:.06em;
           text-transform:uppercase;cursor:pointer;transition:background .2s;text-decoration:none
         }
-        .nf-nav-cta:hover{background:#2a2e4f}
+        .nf-nav-cta:hover{background:#3c452a}
 
         /* ── HERO / CONTENT ── */
         .nf-content{
@@ -106,7 +106,7 @@ export default function NotFound() {
         .nf-link-primary{
           background:var(--brand-ink);color:var(--brand-canvas);
         }
-        .nf-link-primary:hover{background:#2a2e4f;transform:translateY(-2px)}
+        .nf-link-primary:hover{background:#3c452a;transform:translateY(-2px)}
         .nf-link-secondary{
           background:transparent;color:var(--brand-ink);
           border:1.5px solid rgba(var(--brand-ink-rgb),0.2);
@@ -115,7 +115,7 @@ export default function NotFound() {
         .nf-link-accent{
           background:var(--brand-accent);color:var(--brand-ink);
         }
-        .nf-link-accent:hover{background:#d4ff5a;transform:translateY(-2px)}
+        .nf-link-accent:hover{background:#ff8fd4;transform:translateY(-2px)}
 
         @keyframes nfFadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
 

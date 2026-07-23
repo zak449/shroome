@@ -7,33 +7,33 @@
    ink = primary dark, canvas = light background, accent = hero CTA color.
    ───────────────────────────────────────────────────────────────────────── */
 :root {
-  --brand-ink:               #1B1F3B; /* was "navy"  */
-  --brand-canvas:            #FDF4EE; /* was "cream" */
-  --brand-accent:            #C8FF3A; /* was "lime"  */
-  --brand-accent-contrast:   #1B1F3B; /* text on accent surfaces */
-  --brand-accent-deep:       #2D4A2D; /* was "matcha green" */
-  --brand-accent-warm:       #FF7043; /* was "coral" */
-  --brand-accent-warm-soft:  #E8936D; /* was "peach" */
-  --brand-accent-muted:      #809463; /* was "sage"  */
-  --brand-accent-muted-deep: #5A7A3A;
-  --brand-flavor-strawberry: #FFB7D1; /* was "pink" */
-  --brand-flavor-functional: #D4B8E0; /* was "lavender" */
-  --brand-tint-soft:         #E8D5F0;
-  --brand-tint-blush:        #FFE0EC;
+  --brand-ink:               #2D341A; /* Bolden "green" — dark forest */
+  --brand-canvas:            #FEFFF8; /* Bolden "retro" cream */
+  --brand-accent:            #FF6DC7; /* Bolden "strawberry" pink */
+  --brand-accent-contrast:   #2D341A; /* text on accent surfaces */
+  --brand-accent-deep:       #7A881F; /* Bolden "matcha" */
+  --brand-accent-warm:       #FA9427; /* Bolden "mango" */
+  --brand-accent-warm-soft:  #E4CB9F; /* Bolden "vanilla" */
+  --brand-accent-muted:      #7A881F; /* Bolden "matcha" */
+  --brand-accent-muted-deep: #5C661A;
+  --brand-flavor-strawberry: #FF6DC7; /* Bolden flavor "strawberry" */
+  --brand-flavor-functional: #E4CB9F; /* Bolden flavor "vanilla" */
+  --brand-tint-soft:         #E3D5F7; /* Bolden "purple" lavender */
+  --brand-tint-blush:        #FFD9EF;
 
   /* RGB triplets for rgba(var(--brand-*-rgb), <alpha>) composition */
-  --brand-ink-rgb:               27,31,59;
-  --brand-canvas-rgb:            253,244,238;
-  --brand-accent-rgb:            200,255,58;
-  --brand-accent-warm-rgb:       255,112,67;
-  --brand-accent-muted-rgb:      128,148,99;
-  --brand-flavor-strawberry-rgb: 255,183,209;
-  --brand-flavor-functional-rgb: 212,184,224;
+  --brand-ink-rgb:               45,52,26;
+  --brand-canvas-rgb:            254,255,248;
+  --brand-accent-rgb:            255,109,199;
+  --brand-accent-warm-rgb:       250,148,39;
+  --brand-accent-muted-rgb:      122,136,31;
+  --brand-flavor-strawberry-rgb: 255,109,199;
+  --brand-flavor-functional-rgb: 228,203,159;
 
-  /* Font stacks */
-  --brand-font-display: 'Instrument Serif', Georgia, serif;
-  --brand-font-body:    'Syne', system-ui, sans-serif;
-  --brand-font-mono:    'DM Mono', monospace;
+  /* Font stacks — Tarnac Sans stand-ins (see app/lib/brand.ts type note) */
+  --brand-font-display: 'Schibsted Grotesk', system-ui, sans-serif;
+  --brand-font-body:    'Schibsted Grotesk', system-ui, sans-serif;
+  --brand-font-mono:    'Besley', Georgia, serif;
 }
 
 @theme inline {
@@ -164,6 +164,13 @@ body {
 
 /* ── Responsive ── */
 @media (max-width: 768px) {
+  .hero-flower-a {
+    width: 170px !important;
+    min-width: 0 !important;
+    top: -85px !important;
+    left: -70px !important;
+    opacity: 0.5 !important;
+  }
   .hamburger-btn {
     display: block !important;
   }

@@ -241,8 +241,8 @@ export default function LPShell({ config }: { config: LPConfig }) {
   return (
     <div id="top">
       <style>{`
-        .lp-h1{font-family:var(--brand-font-display);font-style:italic;font-weight:400;font-size:clamp(2.4rem,6vw,4rem);line-height:1.05;margin:0 0 20px}
-        .lp-h2{font-family:var(--brand-font-display);font-style:italic;font-weight:400;font-size:clamp(1.7rem,4vw,2.5rem);line-height:1.15;margin:0}
+        .lp-h1{font-family:var(--brand-font-display);letter-spacing:-0.02em;font-weight:800;font-size:clamp(2.4rem,6vw,4rem);line-height:1.05;margin:0 0 20px}
+        .lp-h2{font-family:var(--brand-font-display);letter-spacing:-0.02em;font-weight:800;font-size:clamp(1.7rem,4vw,2.5rem);line-height:1.15;margin:0}
         .lp-eyebrow{font-family:var(--brand-font-body);font-weight:700;font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;margin:0 0 18px}
         .lp-sub{font-family:var(--brand-font-body);font-size:0.95rem;line-height:1.65;max-width:420px;margin:0 0 28px}
         .lp-ledger-card{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 18px;flex-wrap:wrap}
@@ -252,7 +252,7 @@ export default function LPShell({ config }: { config: LPConfig }) {
         @keyframes lpPulse{0%,100%{box-shadow:0 0 0 0 rgba(var(--brand-accent-rgb),0.6)}50%{box-shadow:0 0 0 6px rgba(var(--brand-accent-rgb),0)}}
         .lp-benefits-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;max-width:1020px;margin:0 auto}
         .lp-card{padding:28px 24px}
-        .lp-card h3{font-family:var(--brand-font-display);font-style:italic;font-weight:400;font-size:1.4rem;color:var(--brand-ink);margin:0 0 10px}
+        .lp-card h3{font-family:var(--brand-font-display);font-weight:700;font-size:1.4rem;color:var(--brand-ink);margin:0 0 10px}
         .lp-card p{font-family:var(--brand-font-body);font-size:0.85rem;color:rgba(var(--brand-ink-rgb),0.7);line-height:1.65;margin:0}
         .lp-card-soft{background:var(--brand-canvas);border-radius:12px;box-shadow:0 4px 24px rgba(var(--brand-ink-rgb),0.05)}
         .lp-card-spec{background:var(--brand-canvas);border:2px solid var(--brand-ink)}

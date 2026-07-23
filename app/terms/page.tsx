@@ -4,7 +4,7 @@ import Image from "next/image";
 import MobileNav from "../MobileNav";
 
 export const metadata: Metadata = {
-  title: "Terms of Service — shroomé | Café Energy. Home Address.",
+  title: "Terms of Service — shroomé",
   description:
     "Terms of Service for drinkshroome.com, operated by ZSQUARED INC. Read our terms before using the site.",
   openGraph: {
@@ -100,7 +100,7 @@ export default function Terms() {
           font-size:12px;font-weight:700;letter-spacing:.06em;
           text-transform:uppercase;cursor:pointer;transition:background .2s;text-decoration:none
         }
-        .tos-nav-cta:hover{background:#2a2e4f}
+        .tos-nav-cta:hover{background:#3c452a}
 
         /* ── HERO ─── */
         .tos-hero{position:relative;overflow:hidden;padding:72px 8% 64px}
@@ -171,7 +171,7 @@ export default function Terms() {
           font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
           cursor:pointer;transition:background .2s,transform .2s;text-decoration:none
         }
-        .tos-btn-cta:hover{background:#d4ff5a;transform:translateY(-2px)}
+        .tos-btn-cta:hover{background:#ff8fd4;transform:translateY(-2px)}
 
         /* ── FOOTER ─── */
         .tos-footer{background:var(--brand-flavor-functional);padding:32px 6%;text-align:center;border-top:1px solid rgba(var(--brand-ink-rgb),0.06)}

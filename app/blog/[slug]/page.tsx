@@ -216,7 +216,7 @@ export default async function BlogPost({
           font-size:12px;font-weight:700;letter-spacing:.06em;
           text-transform:uppercase;cursor:pointer;transition:background .2s;text-decoration:none
         }
-        .post-nav-cta:hover{background:#2a2e4f}
+        .post-nav-cta:hover{background:#3c452a}
 
         /* ── ARTICLE HEADER ── */
         .post-header{
@@ -344,7 +344,7 @@ export default async function BlogPost({
           font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
           cursor:pointer;transition:background .2s,transform .2s;text-decoration:none
         }
-        .post-btn-cta:hover{background:#d4ff5a;transform:translateY(-2px)}
+        .post-btn-cta:hover{background:#ff8fd4;transform:translateY(-2px)}
 
         /* ── RELATED ── */
         .post-related{max-width:960px;margin:0 auto;padding:56px 6% 64px}

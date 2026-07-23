@@ -8,7 +8,7 @@ import Breadcrumb from "../../Breadcrumb";
 export const metadata: Metadata = {
   title: "Strawberry — shroomé | Ready-to-Pour Strawberry Matcha Latte",
   description:
-    "shroomé Strawberry — ceremonial matcha meets real freeze-dried strawberry, functional mushroom extracts, and grass-fed collagen peptides. One sachet, 15 seconds, zero compromise.",
+    "shroomé Strawberry — ceremonial matcha meets real freeze-dried strawberry, functional mushroom extracts, and grass-fed collagen peptides. One sachet, 30 seconds, zero compromise.",
   keywords: [
     "strawberry matcha latte",
     "strawberry matcha",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Strawberry — shroomé | Ready-to-Pour Strawberry Matcha Latte",
     description:
-      "Ceremonial matcha meets real freeze-dried strawberry, functional mushroom extracts, and grass-fed collagen. One sachet, 15 seconds.",
+      "Ceremonial matcha meets real freeze-dried strawberry, functional mushroom extracts, and grass-fed collagen. One sachet, 30 seconds.",
     url: "https://www.drinkshroome.com/flavors/strawberry",
     siteName: "shroomé",
     type: "website",
@@ -60,7 +60,7 @@ const productSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "shroomé Strawberry Matcha Latte",
-  "description": "shroomé Strawberry — ceremonial matcha meets real freeze-dried strawberry, functional mushroom extracts standardized to 70%+ beta-glucan concentration, and grass-fed collagen peptides. One sachet, 15 seconds, zero compromise.",
+  "description": "shroomé Strawberry — ceremonial matcha meets real freeze-dried strawberry, functional mushroom extracts standardized to 70%+ beta-glucan concentration, and grass-fed collagen peptides. One sachet, 30 seconds, zero compromise.",
   "brand": { "@type": "Brand", "name": "shroomé" },
   "manufacturer": { "@type": "Organization", "name": "ZSQUARED INC" },
   "category": "Functional Beverages",
@@ -72,12 +72,12 @@ const productSchema = {
   "mpn": "SHROOME-STR-V1",
   "offers": {
     "@type": "Offer",
-    "availability": "https://schema.org/PreOrder",
+    "availability": "https://schema.org/SoldOut",
     "itemCondition": "https://schema.org/NewCondition",
     "price": "36.00",
     "priceCurrency": "USD",
     "priceValidUntil": "2027-12-31",
-    "url": "https://www.drinkshroome.com/founders",
+    "url": "https://www.drinkshroome.com/drop",
     "seller": { "@type": "Organization", "name": "ZSQUARED INC" },
     "hasMerchantReturnPolicy": {
       "@type": "MerchantReturnPolicy",
@@ -167,7 +167,7 @@ export default function StrawberryFlavorPage() {
             radial-gradient(ellipse 120% 80% at 20% 10%, rgba(var(--brand-flavor-functional-rgb),0.35) 0%, transparent 50%),
             radial-gradient(ellipse 100% 70% at 80% 85%, rgba(var(--brand-accent-rgb),0.12) 0%, transparent 50%),
             radial-gradient(ellipse 60% 50% at 60% 40%, rgba(var(--brand-flavor-strawberry-rgb),0.2) 0%, transparent 50%),
-            linear-gradient(180deg, #F0E4D8 0%, #EDE0D4 30%, #E8D8CC 60%, #F0E4D8 100%);
+            linear-gradient(180deg, var(--brand-canvas) 0%, var(--brand-tint-soft) 45%, var(--brand-canvas) 100%);
           background-attachment:fixed;
           position:relative
         }
@@ -189,7 +189,7 @@ export default function StrawberryFlavorPage() {
           position:sticky;top:0;z-index:200;
           display:flex;align-items:center;justify-content:space-between;
           padding:0 5%;height:60px;
-          background:rgba(var(--brand-flavor-strawberry-rgb),0.85);
+          background:rgba(var(--brand-canvas-rgb),0.88);
           backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
           border-bottom:1px solid rgba(var(--brand-ink-rgb),0.06)
         }
@@ -198,7 +198,7 @@ export default function StrawberryFlavorPage() {
           text-decoration:none;color:var(--brand-ink)
         }
         .sf-nav-logo img{width:32px;height:32px;border-radius:6px}
-        .sf-nav-logo span{font-family:var(--brand-font-display);font-size:22px;font-weight:400;font-style:italic;color:var(--brand-ink)}
+        .sf-nav-logo span{font-family:var(--brand-font-display);font-size:22px;font-weight:800;color:var(--brand-ink)}
         .sf-nav-links{display:flex;gap:8px}
         @media(max-width:768px){.sf-nav-links{display:none !important}.sf-nav-cta{display:none !important}}
         .sf-nav-links a{
@@ -214,7 +214,7 @@ export default function StrawberryFlavorPage() {
           font-size:12px;font-weight:700;letter-spacing:.06em;
           text-transform:uppercase;cursor:pointer;transition:background .2s;text-decoration:none
         }
-        .sf-nav-cta:hover{background:#2a2e4f}
+        .sf-nav-cta:hover{background:#3c452a}
 
         /* ── HERO ── */
         .sf-hero{
@@ -238,7 +238,7 @@ export default function StrawberryFlavorPage() {
         .sf-hero-tag::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--brand-accent);flex-shrink:0}
         .sf-hero h1{
           font-family:var(--brand-font-display);
-          font-size:clamp(44px,6vw,72px);font-weight:400;font-style:italic;
+          font-size:clamp(44px,6vw,72px);font-weight:800;
           line-height:1;letter-spacing:-.02em;color:var(--brand-ink);margin-bottom:20px
         }
         .sf-hero-desc{
@@ -283,7 +283,7 @@ export default function StrawberryFlavorPage() {
         .sf-recipe-card:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(var(--brand-ink-rgb),0.07)}
         .sf-recipe-card h3{
           font-family:var(--brand-font-display);
-          font-size:20px;font-weight:400;font-style:italic;
+          font-size:20px;font-weight:700;
           color:var(--brand-ink);margin-bottom:6px
         }
         .sf-recipe-card p{
@@ -347,8 +347,8 @@ export default function StrawberryFlavorPage() {
         {/* ── NAV ── */}
         <nav className="sf-nav" aria-label="Main navigation">
           <a href="/" className="sf-nav-logo">
-            <Image src="/logo-mark.png" width={32} height={32} alt="shroomé S" priority />
-            <span>shroom&eacute;</span>
+            <Image src="/logo-mark.png" width={32} height={32} alt="mé the shroomé sheep" priority style={{ borderRadius: 0 }} />
+            <Image src="/brand/wordmark.png" width={110} height={24} alt="shroomé" priority style={{ width: 110, height: "auto" }} />
           </a>
           <div className="sf-nav-links">
             <a href="/#why">Why shroom&eacute;</a>
@@ -359,7 +359,7 @@ export default function StrawberryFlavorPage() {
             <a href="/recipes">Recipes</a>
           </div>
           <a href="/" className="sf-nav-cta">
-            Get 20% off + free shipping &rarr;
+            Sold out &mdash; get restock alerts &rarr;
           </a>
           <MobileNav
             prefix="sf"
@@ -387,13 +387,33 @@ export default function StrawberryFlavorPage() {
               height={270}
               priority
             />
-            <div className="sf-hero-tag">Flavor Profile</div>
+            <div className="sf-hero-tag">Flavor Profile &middot; Drop 001 sold out</div>
             <h1>Strawberry</h1>
             <p className="sf-hero-desc">
               Fruity, bright, and naturally sweet. Real freeze-dried strawberry
               meets ceremonial matcha for a berry-forward latte that&apos;s as
               refreshing iced as it is cozy hot. Pour it and taste summer.
             </p>
+            <a
+              href="/#signup"
+              style={{
+                display: "inline-block",
+                marginTop: 26,
+                background: "var(--brand-accent)",
+                border: "2px solid var(--brand-ink)",
+                borderRadius: 999,
+                padding: "14px 28px",
+                fontFamily: "var(--brand-font-body)",
+                fontWeight: 800,
+                fontSize: 12,
+                letterSpacing: "0.1em",
+                textTransform: "uppercase",
+                color: "var(--brand-ink)",
+                textDecoration: "none",
+              }}
+            >
+              Sold out &mdash; notify me for the restock &rarr;
+            </a>
           </div>
         </section>
 

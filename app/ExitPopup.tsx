@@ -191,10 +191,10 @@ export default function ExitPopup() {
         .ep-emoji { font-size: 40px; margin-bottom: 16px; }
         .ep-title {
           font-family: var(--brand-font-display);
-          font-size: 32px; font-weight: 400; font-style: italic;
+          font-size: 30px; font-weight: 800; letter-spacing: -0.02em;
           color: var(--brand-ink); margin: 0 0 8px; line-height: 1.1;
         }
-        .ep-title em { color: var(--brand-accent-warm); font-style: italic; }
+        .ep-title em { color: var(--brand-accent-deep); font-style: normal; }
         .ep-sub {
           font-family: var(--brand-font-body);
           font-size: 14px; color: rgba(var(--brand-ink-rgb), 0.6);
@@ -219,7 +219,7 @@ export default function ExitPopup() {
           text-transform: uppercase; cursor: pointer;
           white-space: nowrap; transition: all 0.2s;
         }
-        .ep-btn:hover { background: #2a2e4f; transform: translateY(-1px); }
+        .ep-btn:hover { background: #3c452a; transform: translateY(-1px); }
         .ep-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
         .ep-perks {
           display: flex; justify-content: center; gap: 20px;
@@ -232,7 +232,7 @@ export default function ExitPopup() {
         }
         .ep-success-title {
           font-family: var(--brand-font-display);
-          font-size: 28px; font-weight: 400; font-style: italic;
+          font-size: 26px; font-weight: 800; letter-spacing: -0.02em;
           color: var(--brand-accent-deep); margin: 0 0 8px;
         }
         .ep-success-sub {
@@ -248,7 +248,7 @@ export default function ExitPopup() {
           text-transform: uppercase; cursor: pointer;
           transition: all 0.2s;
         }
-        .ep-success-btn:hover { background: #d4ff5a; }
+        .ep-success-btn:hover { background: var(--brand-tint-blush); }
         .ep-no-thanks {
           display: block; margin-top: 16px;
           font-family: var(--brand-font-body);
@@ -276,13 +276,13 @@ export default function ExitPopup() {
 
           {step === "email" ? (
             <>
-              <div className="ep-emoji">🍵</div>
+              <img src="/brand/symbol-sheep.png" alt="" aria-hidden style={{ width: 48, height: "auto", margin: "0 auto 14px", display: "block" }} />
               <h2 className="ep-title">
-                wait — don&apos;t leave without your <em>20% off.</em>
+                wait — the restock list gets <em>20% off.</em>
               </h2>
               <p className="ep-sub">
-                Get <strong style={{ color: "var(--brand-ink)", fontWeight: 700 }}>20% off + free shipping</strong> on the
-                world&apos;s first ready-to-pour ceremonial matcha latte. Only for early access members.
+                Drop 001 sold out. Join the restock list for first access to Drop 002 of the
+                liquid ceremonial matcha latte — with <strong style={{ color: "var(--brand-ink)", fontWeight: 700 }}>20% off + free shipping</strong> locked in.
               </p>
               <form className="ep-form" onSubmit={handleEmailSubmit}>
                 <input
@@ -306,17 +306,17 @@ export default function ExitPopup() {
               <div className="ep-perks">
                 <span className="ep-perk">20% off</span>
                 <span className="ep-perk">Free shipping</span>
-                <span className="ep-perk">Early access</span>
+                <span className="ep-perk">Restock priority</span>
               </div>
               <button className="ep-no-thanks" onClick={dismiss}>
-                No thanks, I&apos;ll pay full price
+                No thanks, I&apos;ll miss the drop
               </button>
             </>
           ) : step === "captcha" ? (
             <>
-              <div className="ep-emoji">🍵</div>
+              <img src="/brand/symbol-sheep.png" alt="" aria-hidden style={{ width: 48, height: "auto", margin: "0 auto 14px", display: "block" }} />
               <h2 className="ep-title">one quick check&hellip;</h2>
-              <p className="ep-sub">Confirm you&apos;re human and your 20% off is locked in.</p>
+              <p className="ep-sub">Confirm you&apos;re human and your restock spot + 20% off are locked in.</p>
               <div ref={captchaRef} style={{ display: "flex", justifyContent: "center", minHeight: 65 }} />
               {status === "loading" && (
                 <p style={{ fontSize: 12, marginTop: 8, fontFamily: "var(--brand-font-body)", color: "rgba(var(--brand-ink-rgb),0.5)" }}>
@@ -329,7 +329,7 @@ export default function ExitPopup() {
               <div className="ep-emoji">📱</div>
               <h2 className="ep-success-title">20% off locked in!</h2>
               <p className="ep-sub">
-                Add your number and your code upgrades to <strong style={{ color: "var(--brand-ink)", fontWeight: 700 }}>30% off + free shipping</strong> at launch. It replaces your 20% code &mdash; best code wins.
+                Add your number and your code upgrades to <strong style={{ color: "var(--brand-ink)", fontWeight: 700 }}>30% off + free shipping</strong> at restock &mdash; and you get the text before the email goes out. Best code wins.
               </p>
               <form className="ep-form" onSubmit={handlePhoneSubmit}>
                 <input
@@ -348,7 +348,7 @@ export default function ExitPopup() {
               <div className="ep-perks">
                 <span className="ep-perk">30% total</span>
                 <span className="ep-perk">SMS alerts</span>
-                <span className="ep-perk">Launch priority</span>
+                <span className="ep-perk">First in line</span>
               </div>
               <button className="ep-no-thanks" onClick={skipPhone}>
                 No thanks, 20% is enough
@@ -359,7 +359,7 @@ export default function ExitPopup() {
               <div className="ep-emoji">💚</div>
               <h2 className="ep-success-title">you&apos;re all set!</h2>
               <p className="ep-success-sub">
-                Check your email for your discount code.{phone ? " We'll text you too when we launch." : ""} You&apos;re ahead of the line.
+                Check your email for your discount code.{phone ? " We'll text you the second the restock opens." : ""} You&apos;re ahead of the line.
               </p>
               <button className="ep-success-btn" onClick={dismiss}>
                 Back to browsing

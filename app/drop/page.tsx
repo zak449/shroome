@@ -13,14 +13,14 @@ import {
 export const metadata: Metadata = {
   title: "the drop — shroomé",
   description:
-    "shroomé ships in numbered, limited drops. drop 001 — 500 boxes — sold out. drop 002 is next: vanilla, strawberry, variety, and stock-up boxes of the world's first ready-to-pour ceremonial matcha latte. join the waitlist for first access.",
+    "shroomé ships in numbered, limited drops. drop 001 — 500 boxes — sold out. drop 002 is next: vanilla, strawberry, variety, and stock-up boxes of the liquid ceremonial matcha latte. join the waitlist for first access.",
   alternates: {
     canonical: "https://www.drinkshroome.com/drop",
   },
   openGraph: {
     title: "the drop — shroomé",
     description:
-      "numbered, limited drops of the world's first ready-to-pour ceremonial matcha latte. drop 001 sold out. drop 002 is next — the waitlist gets first access.",
+      "numbered, limited drops of the liquid ceremonial matcha latte. drop 001 sold out. drop 002 is next — the waitlist gets first access.",
     url: "https://www.drinkshroome.com/drop",
     siteName: "shroomé",
     type: "website",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "the drop — shroomé",
     description:
-      "numbered, limited drops of the world's first ready-to-pour ceremonial matcha latte. drop 001 sold out. drop 002 is next — the waitlist gets first access.",
+      "numbered, limited drops of the liquid ceremonial matcha latte. drop 001 sold out. drop 002 is next — the waitlist gets first access.",
   },
 };
 
@@ -202,35 +202,35 @@ export default function DropPage() {
       />
 
       <style>{`
-        .dr-nav{position:sticky;top:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 5%;height:60px;background:rgba(var(--brand-flavor-strawberry-rgb),0.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(var(--brand-ink-rgb),0.06)}
+        .dr-nav{position:sticky;top:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 5%;height:60px;background:rgba(var(--brand-canvas-rgb),0.88);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(var(--brand-ink-rgb),0.06)}
         .dr-nav-logo{display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--brand-ink)}
-        .dr-nav-logo span{font-family:var(--brand-font-display);font-size:22px;font-style:italic;color:var(--brand-ink)}
+        .dr-nav-logo span{display:none}
         .dr-nav-links{display:flex;gap:8px}
         @media(max-width:768px){.dr-nav-links{display:none !important}.dr-nav-cta{display:none !important}}
         .dr-nav-links a{font-family:var(--brand-font-body);font-size:11.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--brand-ink);opacity:.7;text-decoration:none;padding:6px 10px;transition:opacity .2s}
         .dr-nav-links a:hover{opacity:1}
-        .dr-nav-cta{font-family:var(--brand-font-mono);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;background:var(--brand-ink);color:var(--brand-accent);padding:10px 22px;border-radius:6px;text-decoration:none;transition:transform .15s}
+        .dr-nav-cta{font-family:var(--brand-font-body);font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;background:var(--brand-accent);color:var(--brand-ink);border:2px solid var(--brand-ink);padding:10px 22px;border-radius:999px;text-decoration:none;transition:transform .15s}
         .dr-nav-cta:hover{transform:scale(1.03)}
 
-        .dr-h1{font-family:var(--brand-font-display);font-style:italic;font-weight:400;font-size:clamp(2.4rem,6vw,4rem);line-height:1.05;margin:0 0 18px;color:var(--brand-canvas)}
-        .dr-h2{font-family:var(--brand-font-display);font-style:italic;font-weight:400;font-size:clamp(1.7rem,4vw,2.5rem);line-height:1.15;margin:0;color:var(--brand-ink)}
+        .dr-h1{font-family:var(--brand-font-display);letter-spacing:-0.02em;font-weight:800;font-size:clamp(2.4rem,6vw,4rem);line-height:1.05;margin:0 0 18px;color:var(--brand-canvas)}
+        .dr-h2{font-family:var(--brand-font-display);letter-spacing:-0.02em;font-weight:800;font-size:clamp(1.7rem,4vw,2.5rem);line-height:1.15;margin:0;color:var(--brand-ink)}
         .dr-eyebrow{font-family:var(--brand-font-mono);font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;margin:0 0 18px}
 
         .dr-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;max-width:1120px;margin:0 auto}
-        .dr-card{background:#fff;border:1px solid rgba(var(--brand-ink-rgb),0.08);border-radius:12px;overflow:hidden;position:relative;display:flex;flex-direction:column}
+        .dr-card{background:#fff;border:2px solid var(--brand-ink);border-radius:24px;overflow:hidden;position:relative;display:flex;flex-direction:column}
         .dr-card-img{position:relative;padding:28px 20px 12px;display:flex;justify-content:center;align-items:center;min-height:190px}
         .dr-card-img img{filter:grayscale(0.15) opacity(0.9)}
         .dr-soldout{position:absolute;top:16px;left:50%;transform:translateX(-50%) rotate(-6deg);background:var(--brand-ink);color:var(--brand-canvas);font-family:var(--brand-font-body);font-weight:800;font-size:0.82rem;letter-spacing:.16em;text-transform:uppercase;padding:8px 18px;z-index:2}
         .dr-card-body{padding:8px 22px 24px;display:flex;flex-direction:column;flex:1}
         .dr-card-sku{font-family:var(--brand-font-mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(var(--brand-ink-rgb),0.35);margin:0 0 6px}
-        .dr-card h3{font-family:var(--brand-font-display);font-style:italic;font-weight:400;font-size:1.35rem;color:var(--brand-ink);margin:0 0 4px}
+        .dr-card h3{font-family:var(--brand-font-display);font-weight:800;font-size:1.35rem;color:var(--brand-ink);margin:0 0 4px}
         .dr-card-desc{font-family:var(--brand-font-body);font-size:0.78rem;color:rgba(var(--brand-ink-rgb),0.55);line-height:1.5;margin:0 0 14px}
         .dr-price-row{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;margin:0 0 2px}
         .dr-price{font-family:var(--brand-font-mono);font-size:1.4rem;font-weight:500;color:var(--brand-ink)}
         .dr-compare{font-family:var(--brand-font-mono);font-size:0.9rem;color:rgba(var(--brand-ink-rgb),0.35);text-decoration:line-through}
         .dr-per{font-family:var(--brand-font-mono);font-size:0.68rem;color:rgba(var(--brand-ink-rgb),0.5);margin:0 0 4px}
         .dr-sub-from{font-family:var(--brand-font-body);font-size:0.7rem;font-weight:600;color:var(--brand-ink);background:rgba(var(--brand-accent-rgb),0.35);display:inline-block;padding:4px 8px;margin:6px 0 14px}
-        .dr-card-btn{margin-top:auto;display:block;text-align:center;background:var(--brand-accent);color:var(--brand-ink);font-family:var(--brand-font-body);font-weight:800;font-size:0.7rem;letter-spacing:.1em;text-transform:uppercase;padding:14px 12px;text-decoration:none}
+        .dr-card-btn{margin-top:auto;display:block;text-align:center;background:var(--brand-ink);color:var(--brand-canvas);font-family:var(--brand-font-body);font-weight:800;font-size:0.7rem;letter-spacing:.1em;text-transform:uppercase;padding:14px 12px;border-radius:999px;text-decoration:none}
 
         .dr-table-wrap{max-width:900px;margin:0 auto;overflow-x:auto}
         .dr-table{width:100%;border-collapse:collapse;min-width:560px}
@@ -257,8 +257,8 @@ export default function DropPage() {
       {/* ── NAV ── */}
       <nav className="dr-nav" aria-label="Main navigation">
         <a href="/" className="dr-nav-logo">
-          <Image src="/logo-mark.png" alt="shroomé logo mark" width={32} height={32} style={{ borderRadius: 6 }} priority />
-          <span>shroomé</span>
+          <Image src="/logo-mark.png" alt="mé the shroomé sheep" width={32} height={32} priority />
+          <Image src="/brand/wordmark.png" alt="shroomé" width={110} height={24} priority style={{ width: 110, height: "auto" }} />
         </a>
         <div className="dr-nav-links">
           <a href="/#why">Why shroomé</a>
@@ -297,7 +297,7 @@ export default function DropPage() {
           </h1>
           <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.95rem", color: "rgba(var(--brand-canvas-rgb),0.7)", lineHeight: 1.7, maxWidth: 520, margin: "0 auto 32px" }}>
             shroomé ships in numbered, limited drops — real production runs, published counts.
-            drop 002 is next: same label, same fifteen seconds. the waitlist gets the link first.
+            drop 002 is next: same sachet, same thirty-second pour. the waitlist gets the link first.
           </p>
           <a
             href="#waitlist"

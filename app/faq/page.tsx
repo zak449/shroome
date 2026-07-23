@@ -65,11 +65,11 @@ const faqData = [
     items: [
       {
         q: "Does shroomé contain caffeine?",
-        a: `Yes — each sachet contains approximately <strong>60mg of naturally occurring caffeine</strong> from ceremonial matcha, roughly half a cup of coffee. But the difference is matcha's L-theanine creates smooth, sustained energy — focused alertness for 4–6 hours without the spike, jitters, or crash. Café energy without the cortisol rollercoaster.`,
+        a: `Yes — each sachet contains approximately <strong>60mg of naturally occurring caffeine</strong> from ceremonial matcha, roughly half a cup of coffee. But the difference is matcha's L-theanine creates smooth, sustained energy — focused alertness for 4–6 hours without the spike, jitters, or crash. Good energy without the cortisol rollercoaster.`,
       },
       {
         q: "How does shroomé compare to coffee?",
-        a: `Coffee gives you a fast spike that crashes hard. shroomé delivers <strong>smooth, sustained energy</strong> thanks to matcha's natural L-theanine — calm focus without sedation. Most people describe it as 4–6 hours of clean, even alertness. No jitters. No crash. No 2pm wall. Café energy. Home address.`,
+        a: `Coffee gives you a fast spike that crashes hard. shroomé delivers <strong>smooth, sustained energy</strong> thanks to matcha's natural L-theanine — calm focus without sedation. Most people describe it as 4–6 hours of clean, even alertness. No jitters. No crash. No 2pm wall. Pour. Swirl. Go.`,
       },
     ],
   },
@@ -226,7 +226,7 @@ export default function FAQ() {
           font-size:12px;font-weight:700;letter-spacing:.06em;
           text-transform:uppercase;cursor:pointer;transition:background .2s;text-decoration:none
         }
-        .faq-nav-cta:hover{background:#2a2e4f}
+        .faq-nav-cta:hover{background:#3c452a}
 
         /* ── HERO ─── */
         .faq-hero{position:relative;overflow:hidden;padding:72px 8% 64px}
@@ -319,7 +319,7 @@ export default function FAQ() {
           font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
           cursor:pointer;transition:background .2s,transform .2s;text-decoration:none
         }
-        .faq-btn-cta:hover{background:#d4ff5a;transform:translateY(-2px)}
+        .faq-btn-cta:hover{background:#ff8fd4;transform:translateY(-2px)}
 
         /* ── DISCLAIMER ─── */
         .faq-disclaimer{max-width:820px;margin:0 auto;padding:0 6% 40px}

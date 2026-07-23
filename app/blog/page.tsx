@@ -130,7 +130,7 @@ export default function BlogIndex() {
           font-size:12px;font-weight:700;letter-spacing:.06em;
           text-transform:uppercase;cursor:pointer;transition:background .2s;text-decoration:none
         }
-        .blog-nav-cta:hover{background:#2a2e4f}
+        .blog-nav-cta:hover{background:#3c452a}
 
         /* ── HERO ── */
         .blog-hero{

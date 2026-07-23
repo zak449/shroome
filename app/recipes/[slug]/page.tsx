@@ -175,7 +175,7 @@ export default async function RecipeDetailPage({
           font-size:12px;font-weight:700;letter-spacing:.06em;
           text-transform:uppercase;cursor:pointer;transition:background .2s;text-decoration:none
         }
-        .rd-nav-cta:hover{background:#2a2e4f}
+        .rd-nav-cta:hover{background:#3c452a}
 
         /* ── PAGE WRAPPER (retro 90s background) ── */
         .rd-page{
@@ -333,7 +333,7 @@ export default async function RecipeDetailPage({
           letter-spacing:.08em;text-transform:uppercase;
           text-decoration:none;transition:background .2s
         }
-        .rd-btn-cta:hover{background:#2a2e4f}
+        .rd-btn-cta:hover{background:#3c452a}
 
         /* ── MORE RECIPES ── */
         .rd-more{padding:72px 8% 80px}

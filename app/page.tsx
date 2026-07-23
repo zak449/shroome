@@ -1,61 +1,42 @@
 "use client";
 import { useState, useEffect, useRef, useCallback } from "react";
 import Image from "next/image";
-import Script from "next/script";
 import ExitPopup from "./ExitPopup";
 
 const productSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
-  "name": "shroomé Ceremonial Matcha Latte",
-  "description": "The world's first ready-to-pour ceremonial matcha latte. 2.5g ceremonial-grade matcha, 200mg organic mushroom extracts standardized to 70%+ beta-glucan concentration via fruiting body extraction, and 2g grass-fed collagen peptides. No powder, no frother — tear, pour, done in 15 seconds.",
+  "name": "shroomé Liquid Ceremonial Matcha Latte",
+  "description": "The liquid ceremonial matcha latte — 2.5g ceremonial-grade matcha, 200mg organic mushroom extracts (lion's mane, reishi, cordyceps), and 2g grass-fed collagen in a ready-to-pour sachet. Tear, pour over milk, go. No blender, no whisk, no mess.",
   "brand": { "@type": "Brand", "name": "shroomé" },
   "manufacturer": { "@type": "Organization", "name": "ZSQUARED INC" },
   "category": "Functional Beverages",
   "url": "https://www.drinkshroome.com",
   "image": [
-    "https://www.drinkshroome.com/sachets-both.png",
+    "https://www.drinkshroome.com/brand/hero-pour.jpg",
     "https://www.drinkshroome.com/sachet-vanilla.png",
     "https://www.drinkshroome.com/sachet-strawberry.png"
   ],
   "sku": "SHROOME-VARIETY-12",
   "mpn": "SHROOME-V1",
-  "material": "Ceremonial Matcha, Organic Mushroom Beta-Glucan Extracts, Grass-Fed Collagen Peptides",
+  "material": "Ceremonial Matcha, Organic Mushroom Extracts, Grass-Fed Collagen",
   "additionalProperty": [
-    { "@type": "PropertyValue", "name": "Caffeine Content", "value": "~60mg per sachet" },
-    { "@type": "PropertyValue", "name": "Beta-Glucan Concentration", "value": "70%+ (1,3 and 1,6 linked)" },
-    { "@type": "PropertyValue", "name": "Matcha Grade", "value": "Ceremonial (first harvest, shade-grown)" },
-    { "@type": "PropertyValue", "name": "Collagen Source", "value": "Grass-fed bovine, hydrolyzed peptides" },
+    { "@type": "PropertyValue", "name": "Caffeine Content", "value": "60mg per sachet" },
+    { "@type": "PropertyValue", "name": "Ceremonial Matcha", "value": "2.5g per sachet" },
+    { "@type": "PropertyValue", "name": "Organic Mushroom Extracts", "value": "200mg (lion's mane, reishi, cordyceps)" },
+    { "@type": "PropertyValue", "name": "Grass-Fed Collagen", "value": "2g per sachet" },
     { "@type": "PropertyValue", "name": "Servings Per Box", "value": "12" },
-    { "@type": "PropertyValue", "name": "Prep Time", "value": "15 seconds" }
+    { "@type": "PropertyValue", "name": "Prep Time", "value": "30 seconds" }
   ],
   "offers": {
     "@type": "Offer",
-    "availability": "https://schema.org/PreOrder",
+    "availability": "https://schema.org/SoldOut",
     "itemCondition": "https://schema.org/NewCondition",
     "price": "36.00",
     "priceCurrency": "USD",
     "priceValidUntil": "2027-12-31",
-    "url": "https://www.drinkshroome.com/founders",
-    "seller": { "@type": "Organization", "name": "ZSQUARED INC" },
-    "hasMerchantReturnPolicy": {
-      "@type": "MerchantReturnPolicy",
-      "applicableCountry": "US",
-      "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
-      "merchantReturnDays": 30,
-      "returnMethod": "https://schema.org/ReturnByMail",
-      "returnFees": "https://schema.org/FreeReturn"
-    },
-    "shippingDetails": {
-      "@type": "OfferShippingDetails",
-      "shippingRate": { "@type": "MonetaryAmount", "value": "0", "currency": "USD" },
-      "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "US" },
-      "deliveryTime": {
-        "@type": "ShippingDeliveryTime",
-        "handlingTime": { "@type": "QuantitativeValue", "minValue": 1, "maxValue": 3, "unitCode": "DAY" },
-        "transitTime": { "@type": "QuantitativeValue", "minValue": 3, "maxValue": 7, "unitCode": "DAY" }
-      }
-    }
+    "url": "https://www.drinkshroome.com/drop",
+    "seller": { "@type": "Organization", "name": "ZSQUARED INC" }
   },
   "aggregateRating": {
     "@type": "AggregateRating",
@@ -64,21 +45,7 @@ const productSchema = {
     "bestRating": "5",
     "worstRating": "1"
   },
-  "review": [
-    {
-      "@type": "Review",
-      "author": { "@type": "Person", "name": "Early Taster" },
-      "datePublished": "2026-02-15",
-      "reviewBody": "The matcha is smooth, no bitterness at all. Love that it takes 15 seconds.",
-      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
-    }
-  ],
-  "isFamilyFriendly": true,
-  "audience": {
-    "@type": "PeopleAudience",
-    "suggestedMinAge": 18,
-    "healthCondition": "Healthy adults seeking sustained energy without coffee crash"
-  }
+  "isFamilyFriendly": true
 };
 
 declare global {
@@ -90,6 +57,14 @@ declare global {
     gtag?: (...args: unknown[]) => void;
   }
 }
+
+/* Serif micro-label — the packaging tag/sticker type style */
+const tagStyle: React.CSSProperties = {
+  fontFamily: "var(--brand-font-mono)",
+  fontWeight: 700,
+  letterSpacing: "0.16em",
+  textTransform: "uppercase",
+};
 
 export default function Home() {
   const [email, setEmail] = useState("");
@@ -202,8 +177,11 @@ export default function Home() {
   const handleEmailSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email.trim() || loading) return;
-    window.gtag?.("event", "begin_checkout", { items: [{ item_name: "waitlist_signup" }] });
+    window.gtag?.("event", "begin_checkout", { items: [{ item_name: "restock_signup" }] });
     setStep("captcha");
+    // The Turnstile widget mounts in the hero form — bring it into view when
+    // the submit came from the bottom CTA.
+    setTimeout(() => document.getElementById("signup")?.scrollIntoView({ behavior: "smooth", block: "center" }), 50);
   };
 
   const onTurnstileSuccess = useCallback(async (token: string) => {
@@ -311,7 +289,7 @@ export default function Home() {
 
   // ── Referral helpers ──
   const referralLink = referralCode ? `https://www.drinkshroome.com?ref=${referralCode}` : "";
-  const referralMessage = "I just joined the shroomé waitlist — the world's first ready-to-pour matcha latte with real mushroom extracts and collagen. Use my link to sign up and we both get extra perks:";
+  const referralMessage = "I just joined the shroomé restock list — the liquid ceremonial matcha latte with lion's mane + collagen. Pour it over milk and go. Use my link and we both get extra perks:";
 
   const copyReferralLink = () => {
     if (!referralLink) return;
@@ -325,11 +303,8 @@ export default function Home() {
   const shareOnPlatform = (platform: string) => {
     if (!referralLink) return;
     const text = encodeURIComponent(`${referralMessage} ${referralLink}`);
-    const url = encodeURIComponent(referralLink);
-    let shareUrl = "";
     switch (platform) {
       case "instagram":
-        // Instagram doesn't have a direct share URL — copy link and open Instagram
         navigator.clipboard.writeText(`${referralMessage} ${referralLink}`).catch(() => {});
         setCopied(true);
         setTimeout(() => setCopied(false), 2000);
@@ -342,16 +317,144 @@ export default function Home() {
         window.open("https://tiktok.com/@drinkshroome", "_blank");
         break;
       case "text":
-        shareUrl = `sms:?&body=${text}`;
-        window.open(shareUrl);
+        window.open(`sms:?&body=${text}`);
         break;
       case "twitter":
-        shareUrl = `https://twitter.com/intent/tweet?text=${text}`;
-        window.open(shareUrl, "_blank");
+        window.open(`https://twitter.com/intent/tweet?text=${text}`, "_blank");
         break;
     }
     window.gtag?.("event", "share", { method: platform, content_type: "referral" });
   };
+
+  // ── Shared restock form (hero + final CTA) ──
+  const restockForm = (variant: "hero" | "cta") => (
+    <div style={{ textAlign: variant === "cta" ? "center" : "left" }}>
+      {step === "done" ? (
+        <div style={{ textAlign: "left" }}>
+          <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 700, fontSize: "1rem", color: "var(--brand-ink)", marginBottom: referralCode ? 16 : 0 }}>
+            ✓ You&apos;re on the restock list — 20% off locked in.
+          </p>
+          {referralCode && (
+            <div style={{ marginTop: 16, padding: "20px", background: "rgba(var(--brand-canvas-rgb),0.75)", border: "2px solid var(--brand-ink)", borderRadius: 20 }}>
+              <p style={{ ...tagStyle, fontSize: "0.72rem", color: "var(--brand-ink)", marginBottom: 8 }}>
+                Refer friends → earn up to $15 credit
+              </p>
+              <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.75rem", color: "rgba(var(--brand-ink-rgb),0.6)", marginBottom: 12 }}>
+                $5 credit at 1 friend, $10 at 3, $15 at 5 — applied at checkout on restock day. Share your link:
+              </p>
+              <div style={{ display: "flex", gap: 8, alignItems: "center", marginBottom: 12, flexWrap: "wrap" }}>
+                <div style={{ flex: "1 1 200px", background: "#fff", border: "2px solid var(--brand-ink)", borderRadius: 999, padding: "10px 16px", fontFamily: "var(--brand-font-mono)", fontSize: "0.75rem", color: "var(--brand-ink)", minWidth: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                  drinkshroome.com?ref={referralCode}
+                </div>
+                <button
+                  onClick={copyReferralLink}
+                  style={{ padding: "10px 20px", border: "2px solid var(--brand-ink)", borderRadius: 999, background: copied ? "var(--brand-ink)" : "var(--brand-accent)", color: copied ? "var(--brand-canvas)" : "var(--brand-ink)", fontFamily: "var(--brand-font-body)", fontWeight: 800, fontSize: "0.7rem", letterSpacing: "0.08em", textTransform: "uppercase", cursor: "pointer", whiteSpace: "nowrap", transition: "all 0.2s" }}
+                >
+                  {copied ? "Copied!" : "Copy"}
+                </button>
+              </div>
+              <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+                {[
+                  { label: "Instagram", platform: "instagram", bg: "var(--brand-tint-soft)" },
+                  { label: "TikTok", platform: "tiktok", bg: "var(--brand-tint-blush)" },
+                  { label: "Text a friend", platform: "text", bg: "var(--brand-flavor-functional)" },
+                ].map((s) => (
+                  <button
+                    key={s.platform}
+                    onClick={() => shareOnPlatform(s.platform)}
+                    style={{ padding: "8px 16px", border: "2px solid var(--brand-ink)", background: s.bg, color: "var(--brand-ink)", fontFamily: "var(--brand-font-body)", fontWeight: 700, fontSize: "0.65rem", letterSpacing: "0.06em", textTransform: "uppercase", cursor: "pointer", borderRadius: 999 }}
+                  >
+                    {s.label}
+                  </button>
+                ))}
+              </div>
+              <div style={{ marginTop: 14, display: "flex", alignItems: "center", gap: 8 }}>
+                <div style={{ display: "flex", gap: 4 }}>
+                  {[0, 1, 2].map((i) => (
+                    <div key={i} style={{ width: 28, height: 28, borderRadius: "50%", border: "2px solid var(--brand-ink)", background: i < referralCount ? "var(--brand-accent)" : "transparent", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.65rem", fontWeight: 700, color: "var(--brand-ink)", fontFamily: "var(--brand-font-body)", transition: "all 0.3s" }}>
+                      {i < referralCount ? "✓" : ""}
+                    </div>
+                  ))}
+                </div>
+                <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.72rem", color: "rgba(var(--brand-ink-rgb),0.6)", fontWeight: 600 }}>
+                  {referralCount}/3 friends joined
+                </p>
+              </div>
+              <a
+                href="/refer"
+                style={{ display: "inline-block", marginTop: 14, fontFamily: "var(--brand-font-body)", fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.06em", textTransform: "uppercase" as const, color: "var(--brand-ink)", textDecoration: "underline", opacity: 0.6 }}
+              >
+                Share &amp; track referrals →
+              </a>
+            </div>
+          )}
+        </div>
+      ) : step === "captcha" ? (
+        <div>
+          <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 600, fontSize: "0.82rem", color: "var(--brand-ink)", marginBottom: 14 }}>
+            Quick verification for {email}
+          </p>
+          <div ref={variant === "hero" ? captchaRef : undefined} style={{ marginBottom: 8, display: "flex", justifyContent: variant === "cta" ? "center" : "flex-start" }} />
+          {loading && (
+            <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.72rem", color: "rgba(var(--brand-ink-rgb),0.5)" }}>
+              Submitting...
+            </p>
+          )}
+        </div>
+      ) : step === "phone" ? (
+        <div style={{ textAlign: "left" }}>
+          <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 600, fontSize: "0.82rem", color: "var(--brand-ink)", marginBottom: 12 }}>
+            ✓ Restock alert + 20% off locked in! Add your number for a text the second it&apos;s live — and your code upgrades from 20% to 30%.
+          </p>
+          <form onSubmit={handlePhoneSubmit} style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+            <input
+              type="tel"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              placeholder="(555) 123-4567"
+              style={{ flex: "1 1 220px", padding: "15px 20px", border: "2px solid var(--brand-ink)", borderRadius: 999, background: "#fff", color: "var(--brand-ink)", fontFamily: "var(--brand-font-body)", fontSize: "0.95rem", fontWeight: 500, minWidth: 0 }}
+            />
+            <button type="submit" disabled={loading} style={{ padding: "15px 28px", border: "2px solid var(--brand-ink)", borderRadius: 999, background: "var(--brand-ink)", color: "var(--brand-canvas)", fontFamily: "var(--brand-font-body)", fontWeight: 800, fontSize: "0.75rem", letterSpacing: "0.1em", textTransform: "uppercase", cursor: loading ? "wait" : "pointer", whiteSpace: "nowrap" }}>
+              {loading ? "…" : "Text me first →"}
+            </button>
+          </form>
+          <button onClick={skipPhone} style={{ marginTop: 10, background: "transparent", border: "none", color: "rgba(var(--brand-ink-rgb),0.5)", fontFamily: "var(--brand-font-body)", fontSize: "0.72rem", cursor: "pointer", textDecoration: "underline" }}>
+            Skip
+          </button>
+          <p style={{ margin: "8px 0 0", fontSize: "0.6rem", color: "rgba(var(--brand-ink-rgb),0.4)", lineHeight: 1.4, maxWidth: 400 }}>
+            By providing your phone number, you agree to receive marketing texts from shroomé. Msg &amp; data rates may apply. Reply STOP to unsubscribe.
+          </p>
+        </div>
+      ) : (
+        <div>
+          <form onSubmit={handleEmailSubmit} style={{ display: "flex", gap: 8, flexWrap: "wrap", justifyContent: variant === "cta" ? "center" : "flex-start" }}>
+            <input
+              type="email"
+              required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="your@email.com"
+              style={{ flex: "1 1 220px", padding: "15px 20px", border: "2px solid var(--brand-ink)", borderRadius: 999, background: "#fff", color: "var(--brand-ink)", fontFamily: "var(--brand-font-body)", fontSize: "0.95rem", fontWeight: 500, minWidth: 0 }}
+            />
+            <button type="submit" disabled={loading} style={{ padding: "15px 28px", border: "2px solid var(--brand-ink)", borderRadius: 999, background: "var(--brand-ink)", color: "var(--brand-canvas)", fontFamily: "var(--brand-font-body)", fontWeight: 800, fontSize: "0.75rem", letterSpacing: "0.1em", textTransform: "uppercase", cursor: loading ? "wait" : "pointer", whiteSpace: "nowrap" }}>
+              {loading ? "…" : "Notify me →"}
+            </button>
+          </form>
+          {captchaError && (
+            <p role="alert" style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.72rem", color: "#B3261E", marginTop: 10, fontWeight: 600 }}>
+              {captchaError}
+            </p>
+          )}
+          <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.72rem", color: "rgba(var(--brand-ink-rgb),0.55)", marginTop: 10 }}>
+            No spam — one email when the restock opens, with your 20% code. Add your phone after and it upgrades to 30%.
+          </p>
+          <p style={{ ...tagStyle, fontSize: "0.62rem", color: "rgba(var(--brand-ink-rgb),0.45)", marginTop: 8 }}>
+            Join 100+ on the restock list
+          </p>
+        </div>
+      )}
+    </div>
+  );
 
   return (
     <>
@@ -360,25 +463,12 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
       />
       <style>{`
-        @keyframes morphA {
-          0%, 100% { border-radius: 42% 58% 62% 38% / 45% 55% 45% 55%; transform: translate(0, 0) scale(1); }
-          33% { border-radius: 55% 45% 38% 62% / 52% 48% 52% 48%; transform: translate(15px, -20px) scale(1.04); }
-          66% { border-radius: 38% 62% 55% 45% / 48% 52% 48% 52%; transform: translate(-10px, 15px) scale(0.97); }
-        }
-        @keyframes morphB {
-          0%, 100% { border-radius: 55% 45% 48% 52% / 42% 58% 42% 58%; transform: translate(0, 0) scale(1); }
-          33% { border-radius: 45% 55% 52% 48% / 58% 42% 58% 42%; transform: translate(-20px, 10px) scale(1.06); }
-          66% { border-radius: 52% 48% 42% 58% / 55% 45% 55% 45%; transform: translate(12px, -15px) scale(0.95); }
-        }
-        @keyframes morphC {
-          0%, 100% { border-radius: 48% 52% 55% 45% / 38% 62% 38% 62%; transform: translate(0, 0) scale(1); }
-          50% { border-radius: 62% 38% 45% 55% / 52% 48% 52% 48%; transform: translate(8px, 12px) scale(1.03); }
-        }
-        .blob-a { animation: morphA 18s ease-in-out infinite; }
-        .blob-b { animation: morphB 14s ease-in-out infinite; }
-        .blob-c { animation: morphC 22s ease-in-out infinite; }
-        .lift:hover { transform: translateY(-5px); box-shadow: 0 12px 40px rgba(0,0,0,0.1); }
+        @keyframes spinSlow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        .flower-spin { animation: spinSlow 90s linear infinite; }
+        .lift:hover { transform: translateY(-5px); box-shadow: 0 12px 40px rgba(45,52,26,0.12); }
         .lift { transition: transform 0.3s, box-shadow 0.3s; }
+        .wobble { transition: transform 0.3s; }
+        .wobble:hover { transform: rotate(-3deg) scale(1.03); }
       `}</style>
 
       {/* ════════════════════ MARQUEE TOP BAR ════════════════════ */}
@@ -398,16 +488,14 @@ export default function Home() {
               <span
                 key={i}
                 style={{
-                  fontFamily: "var(--brand-font-body)",
-                  fontWeight: 600,
+                  ...tagStyle,
                   fontSize: "0.65rem",
-                  letterSpacing: "0.18em",
-                  color: i % 2 === 0 ? "var(--brand-accent)" : "rgba(var(--brand-accent-rgb),0.4)",
-                  padding: "0 64px",
+                  color: i % 2 === 0 ? "var(--brand-accent)" : "rgba(var(--brand-canvas-rgb),0.75)",
+                  padding: "0 48px",
                   whiteSpace: "nowrap",
                 }}
               >
-                {i % 2 === 0 ? (i % 4 === 0 ? "TEAR. POUR. DONE." : "ZERO JITTERS") : "✦"}
+                {i % 4 === 0 ? "POUR. SWIRL. GO." : i % 4 === 1 ? "✿" : i % 4 === 2 ? "DROP 001 SOLD OUT — RESTOCK SOON" : "✿"}
               </span>
             ))}
         </div>
@@ -421,36 +509,26 @@ export default function Home() {
           position: "sticky",
           top: 0,
           zIndex: 99,
-          background: "rgba(var(--brand-flavor-strawberry-rgb),0.85)",
+          background: "rgba(var(--brand-canvas-rgb),0.88)",
           backdropFilter: "blur(16px)",
           WebkitBackdropFilter: "blur(16px)",
-          borderBottom: "1px solid rgba(var(--brand-ink-rgb),0.08)",
+          borderBottom: "1px solid rgba(var(--brand-ink-rgb),0.1)",
           padding: "14px 32px",
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
         }}
       >
-        <a href="/" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none" }}>
-          <Image src="/logo-mark.png" width={32} height={32} alt="shroomé S" style={{ borderRadius: 6 }} priority />
-          <span
-            style={{
-              fontFamily: "var(--brand-font-display)",
-              fontStyle: "italic",
-              fontSize: "1.3rem",
-              color: "var(--brand-ink)",
-            }}
-          >
-            shroomé
-          </span>
+        <a href="/" style={{ display: "flex", alignItems: "center", gap: 12, textDecoration: "none" }}>
+          <Image src="/logo-mark.png" width={34} height={34} alt="mé the shroomé sheep" priority style={{ height: 34, width: "auto" }} />
+          <Image src="/brand/wordmark.png" width={128} height={28} alt="shroomé" priority style={{ height: 26, width: "auto" }} />
         </a>
-        <div style={{ display: "flex", alignItems: "center", gap: 32 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 28 }}>
           {[
             { label: "Why shroomé", id: "why" },
-            { label: "Ingredients", id: "ingredients" },
-            { label: "How It Works", id: "how" },
+            { label: "Flavors", id: "flavors" },
+            { label: "The Ritual", id: "how" },
             { label: "FAQ", id: "faq", href: "/faq" },
-            { label: "Blog", id: "blog", href: "/blog" },
             { label: "Recipes", id: "recipes", href: "/recipes" },
             { label: "The Drop", id: "drop", href: "/drop" },
           ].map((l) => (
@@ -461,7 +539,7 @@ export default function Home() {
                 background: "none",
                 border: "none",
                 fontFamily: "var(--brand-font-body)",
-                fontWeight: 600,
+                fontWeight: 700,
                 fontSize: "0.72rem",
                 letterSpacing: "0.08em",
                 textTransform: "uppercase",
@@ -475,12 +553,13 @@ export default function Home() {
             </button>
           ))}
           <button
-            onClick={() => { scrollTo("cta"); window.gtag?.("event", "select_promotion", { promotion_name: "nav_cta_waitlist" }); }}
+            onClick={() => { scrollTo("cta"); window.gtag?.("event", "select_promotion", { promotion_name: "nav_cta_restock" }); }}
             className="nav-cta-btn"
             style={{
-              background: "var(--brand-ink)",
-              color: "var(--brand-canvas)",
-              border: "none",
+              background: "var(--brand-accent)",
+              color: "var(--brand-ink)",
+              border: "2px solid var(--brand-ink)",
+              borderRadius: 999,
               padding: "10px 22px",
               fontFamily: "var(--brand-font-body)",
               fontWeight: 800,
@@ -490,7 +569,7 @@ export default function Home() {
               cursor: "pointer",
             }}
           >
-            Get 20% Off + Free Shipping →
+            Get restock alerts →
           </button>
         </div>
 
@@ -534,10 +613,9 @@ export default function Home() {
         >
           {[
             { label: "Why shroomé", id: "why" },
-            { label: "Ingredients", id: "ingredients" },
-            { label: "How It Works", id: "how" },
+            { label: "Flavors", id: "flavors" },
+            { label: "The Ritual", id: "how" },
             { label: "FAQ", id: "faq", href: "/faq" },
-            { label: "Blog", id: "blog", href: "/blog" },
             { label: "Recipes", id: "recipes", href: "/recipes" },
             { label: "The Drop", id: "drop", href: "/drop" },
           ].map((l) => (
@@ -558,7 +636,7 @@ export default function Home() {
                 width: "100%",
                 padding: "16px 24px",
                 fontFamily: "var(--brand-font-body)",
-                fontWeight: 600,
+                fontWeight: 700,
                 fontSize: "0.78rem",
                 letterSpacing: "0.1em",
                 textTransform: "uppercase" as const,
@@ -574,12 +652,13 @@ export default function Home() {
             onClick={() => {
               setMenuOpen(false);
               scrollTo("cta");
-              window.gtag?.("event", "select_promotion", { promotion_name: "mobile_nav_cta_waitlist" });
+              window.gtag?.("event", "select_promotion", { promotion_name: "mobile_nav_cta_restock" });
             }}
             style={{
               background: "var(--brand-accent)",
               color: "var(--brand-ink)",
-              border: "none",
+              border: "2px solid var(--brand-ink)",
+              borderRadius: 999,
               width: "calc(100% - 48px)",
               margin: "16px 24px",
               padding: "14px 22px",
@@ -591,120 +670,50 @@ export default function Home() {
               cursor: "pointer",
             }}
           >
-            Get 20% Off + Free Shipping →
+            Get restock alerts →
           </button>
         </div>
       </nav>
 
-      {/* ════════════════════ HERO — FLAVOR-TINT WITH CLOUD BACKGROUND ════════════════════ */}
+      {/* ════════════════════ HERO — LAVENDER FIELD, POUR SHOT ════════════════════ */}
       <section
+        className="hero-section"
         style={{
-          minHeight: "100vh",
-          background: "var(--brand-flavor-strawberry)",
+          minHeight: "92vh",
+          background: "var(--brand-tint-soft)",
           position: "relative",
           overflow: "hidden",
-          padding: "80px 24px 100px",
+          padding: "72px 24px 90px",
           display: "flex",
           alignItems: "center",
         }}
       >
-        {/* Cloud background image */}
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            backgroundImage: "url(/email-clouds-bg.jpg)",
-            backgroundSize: "cover",
-            backgroundPosition: "center bottom",
-            opacity: 0.35,
-            pointerEvents: "none",
-          }}
+        {/* Pinwheel flower motifs */}
+        <img
+          src="/brand/pattern-flower.svg"
+          alt=""
+          aria-hidden
+          className="flower-spin hero-flower-a"
+          style={{ position: "absolute", top: "-14vw", left: "-14vw", width: "30vw", minWidth: 260, opacity: 0.85, pointerEvents: "none" }}
         />
-        {/* Flavor-tint overlay to blend clouds with brand */}
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            background: "linear-gradient(180deg, rgba(var(--brand-flavor-strawberry-rgb),0.5) 0%, rgba(var(--brand-flavor-strawberry-rgb),0.2) 40%, rgba(var(--brand-canvas-rgb),0.4) 100%)",
-            pointerEvents: "none",
-          }}
-        />
-        {/* Morphing blobs */}
-        <div
-          className="blob-a"
-          style={{
-            position: "absolute",
-            top: "-10%",
-            right: "-10%",
-            width: "62vw",
-            height: "62vw",
-            background: "var(--brand-flavor-functional)",
-            opacity: 0.7,
-            pointerEvents: "none",
-          }}
-        />
-        <div
-          className="blob-b"
-          style={{
-            position: "absolute",
-            bottom: "15%",
-            left: "-8%",
-            width: "20vw",
-            height: "20vw",
-            background: "var(--brand-accent)",
-            opacity: 0.15,
-            pointerEvents: "none",
-          }}
-        />
-        <div
-          className="blob-c"
-          style={{
-            position: "absolute",
-            top: "35%",
-            left: "15%",
-            width: "18vw",
-            height: "18vw",
-            background: "var(--brand-accent-warm)",
-            opacity: 0.18,
-            pointerEvents: "none",
-          }}
-        />
-        <div
-          className="blob-b"
-          style={{
-            position: "absolute",
-            top: "60%",
-            right: "5%",
-            width: "22vw",
-            height: "22vw",
-            background: "var(--brand-canvas)",
-            opacity: 0.12,
-            pointerEvents: "none",
-          }}
-        />
-        <div
-          className="blob-a"
-          style={{
-            position: "absolute",
-            top: "10%",
-            left: "-8%",
-            width: "20vw",
-            height: "20vw",
-            background: "var(--brand-flavor-strawberry)",
-            opacity: 0.25,
-            pointerEvents: "none",
-          }}
+        <img
+          src="/brand/pattern-flower.svg"
+          alt=""
+          aria-hidden
+          style={{ position: "absolute", bottom: "-18%", right: "-8%", width: "24vw", minWidth: 220, opacity: 0.55, pointerEvents: "none" }}
         />
 
-        <div style={{ position: "relative", zIndex: 1, maxWidth: 1200, margin: "0 auto", width: "100%", display: "flex", alignItems: "center", gap: 48, flexWrap: "wrap" }}>
+        <div className="hero-content" style={{ position: "relative", zIndex: 1, maxWidth: 1180, margin: "0 auto", width: "100%", display: "flex", alignItems: "center", gap: 56, flexWrap: "wrap" }}>
           {/* Left — copy */}
-          <div style={{ flex: "1 1 440px", minWidth: 300 }}>
+          <div style={{ flex: "1 1 460px", minWidth: 300 }}>
             {referredBy && step === "email" && (
               <div
                 className="fade-up"
                 style={{
                   background: "var(--brand-accent)",
-                  padding: "10px 16px",
+                  border: "2px solid var(--brand-ink)",
+                  borderRadius: 999,
+                  padding: "10px 18px",
                   marginBottom: 16,
                   display: "inline-block",
                   opacity: 0,
@@ -719,493 +728,294 @@ export default function Home() {
             <p
               className="fade-up"
               style={{
-                fontFamily: "var(--brand-font-body)",
-                fontWeight: 700,
-                fontSize: "0.7rem",
-                letterSpacing: "0.18em",
-                textTransform: "uppercase",
-                color: "var(--brand-accent-deep)",
-                marginBottom: 20,
+                display: "inline-block",
+                background: "var(--brand-accent)",
+                border: "2px solid var(--brand-ink)",
+                borderRadius: 999,
+                padding: "8px 18px",
+                transform: "rotate(-2deg)",
+                ...tagStyle,
+                fontSize: "0.68rem",
+                color: "var(--brand-ink)",
+                marginBottom: 22,
                 opacity: 0,
               }}
             >
-              <span style={{ display: "inline-block", width: 8, height: 8, borderRadius: "50%", background: "var(--brand-accent)", marginRight: 10, verticalAlign: "middle" }} />
-              Join the pre-launch list · 20% off + free shipping
+              Drop 001 sold out — restock soon
             </p>
 
             <h1
               className="fade-up delay-100"
               style={{
                 fontFamily: "var(--brand-font-display)",
-                fontSize: "clamp(2.6rem, 5.5vw, 4.2rem)",
-                color: "var(--brand-accent-deep)",
-                lineHeight: 1.05,
+                fontWeight: 800,
+                fontSize: "clamp(2.6rem, 5.6vw, 4.3rem)",
+                color: "var(--brand-ink)",
+                lineHeight: 1.02,
+                letterSpacing: "-0.02em",
                 marginBottom: 8,
                 opacity: 0,
               }}
             >
-              Café energy.
+              Your whole
               <br />
-              Home address.
+              morning stack.
               <br />
-              <span style={{ fontStyle: "italic", color: "var(--brand-accent-warm)" }}>No crash.</span>
+              <span style={{ color: "var(--brand-accent-deep)" }}>One pour.</span>
             </h1>
 
             <p
               className="fade-up delay-200"
               style={{
                 fontFamily: "var(--brand-font-body)",
-                fontSize: "0.95rem",
-                color: "rgba(var(--brand-ink-rgb),0.7)",
+                fontSize: "1rem",
+                color: "rgba(var(--brand-ink-rgb),0.8)",
                 lineHeight: 1.65,
-                maxWidth: 420,
-                margin: "24px 0",
+                maxWidth: 440,
+                margin: "22px 0",
                 opacity: 0,
               }}
             >
-              The world&apos;s first ready-to-pour ceremonial matcha latte. 2.5g matcha. 2g collagen. Real mushrooms.{" "}
-              <strong>Tear it open. Pour it in. Done.</strong>
+              The liquid ceremonial matcha latte with lion&apos;s mane + collagen.{" "}
+              <strong>Tear the sachet. Pour over milk. Go get charged.</strong>{" "}
+              No whisk. No barista. No crash.
             </p>
 
             <p
               className="fade-up delay-350"
               style={{
-                fontFamily: "var(--brand-font-body)",
-                fontWeight: 700,
-                fontSize: "0.68rem",
-                letterSpacing: "0.15em",
-                textTransform: "uppercase",
+                ...tagStyle,
+                fontSize: "0.7rem",
                 color: "var(--brand-accent-deep)",
-                marginBottom: 24,
+                marginBottom: 26,
                 opacity: 0,
               }}
             >
-              60mg caffeine · Zero jitters · Actually tastes good.
+              energy ✿ clarity ✿ skin ✿ immunity
             </p>
 
-            {/* Ingredient pills */}
-            <div className="fade-up delay-350" style={{ display: "flex", gap: 10, flexWrap: "wrap", marginBottom: 28, opacity: 0 }}>
-              {[
-                { label: "Clean Energy", bg: "rgba(var(--brand-accent-warm-rgb),0.2)", color: "var(--brand-ink)" },
-                { label: "Zero Crash", bg: "rgba(var(--brand-flavor-functional-rgb),0.35)", color: "var(--brand-ink)" },
-                { label: "Ready to Pour", bg: "rgba(var(--brand-accent-rgb),0.3)", color: "var(--brand-ink)" },
-                { label: "15 Seconds", bg: "rgba(var(--brand-ink-rgb),0.12)", color: "var(--brand-ink)" },
-              ].map((p) => (
-                <span
-                  key={p.label}
-                  style={{
-                    fontFamily: "var(--brand-font-body)",
-                    fontWeight: 700,
-                    fontSize: "0.65rem",
-                    letterSpacing: "0.08em",
-                    textTransform: "uppercase",
-                    background: p.bg,
-                    color: p.color,
-                    padding: "8px 16px",
-                    borderRadius: 2,
-                  }}
-                >
-                  {p.label}
-                </span>
-              ))}
+            {/* Restock notify form */}
+            <div className="fade-up delay-500" id="signup" style={{ maxWidth: 460, opacity: 0 }}>
+              {restockForm("hero")}
             </div>
 
-            {/* Email signup form */}
-            <div className="fade-up delay-400" style={{ display: "flex", gap: 16, alignItems: "flex-start", flexWrap: "wrap", opacity: 0 }}>
-              <div style={{ flex: "1 1 260px" }}>
-                {step === "done" ? (
-                  <div>
-                    <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 700, fontSize: "1rem", color: "var(--brand-accent-deep)", marginBottom: referralCode ? 16 : 0 }}>
-                      ✓ You&apos;re on the list — 20% off + free shipping locked in.
-                    </p>
-                    {referralCode && (
-                      <div style={{ marginTop: 16, padding: "20px", background: "rgba(var(--brand-ink-rgb),0.07)", borderRadius: 8 }}>
-                        <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 700, fontSize: "0.78rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--brand-ink)", marginBottom: 8 }}>
-                          Refer friends → earn up to $15 credit
-                        </p>
-                        <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.75rem", color: "rgba(var(--brand-ink-rgb),0.5)", marginBottom: 12 }}>
-                          $5 credit at 1 friend, $10 at 3, $15 at 5 — applied at checkout on drop day. Share your link:
-                        </p>
-                        <div style={{ display: "flex", gap: 8, alignItems: "center", marginBottom: 12, flexWrap: "wrap" }}>
-                          <div style={{ flex: "1 1 200px", background: "#fff", border: "2px solid var(--brand-ink)", padding: "10px 14px", fontFamily: "var(--brand-font-mono)", fontSize: "0.78rem", color: "var(--brand-ink)", minWidth: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
-                            drinkshroome.com?ref={referralCode}
-                          </div>
-                          <button
-                            onClick={copyReferralLink}
-                            style={{ padding: "10px 20px", border: "none", background: copied ? "var(--brand-ink)" : "var(--brand-accent)", color: copied ? "var(--brand-accent)" : "var(--brand-ink)", fontFamily: "var(--brand-font-body)", fontWeight: 800, fontSize: "0.7rem", letterSpacing: "0.08em", textTransform: "uppercase", cursor: "pointer", whiteSpace: "nowrap", transition: "all 0.2s" }}
-                          >
-                            {copied ? "Copied!" : "Copy"}
-                          </button>
-                        </div>
-                        <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-                          {[
-                            { label: "Share on Instagram", platform: "instagram", bg: "var(--brand-flavor-functional)" },
-                            { label: "Share on TikTok", platform: "tiktok", bg: "var(--brand-flavor-strawberry)" },
-                            { label: "Text a friend", platform: "text", bg: "var(--brand-accent)" },
-                          ].map((s) => (
-                            <button
-                              key={s.platform}
-                              onClick={() => shareOnPlatform(s.platform)}
-                              style={{ padding: "8px 14px", border: "none", background: s.bg, color: "var(--brand-ink)", fontFamily: "var(--brand-font-body)", fontWeight: 700, fontSize: "0.65rem", letterSpacing: "0.06em", textTransform: "uppercase", cursor: "pointer", borderRadius: 2 }}
-                            >
-                              {s.label}
-                            </button>
-                          ))}
-                        </div>
-                        <div style={{ marginTop: 14, display: "flex", alignItems: "center", gap: 8 }}>
-                          <div style={{ display: "flex", gap: 4 }}>
-                            {[0, 1, 2].map((i) => (
-                              <div key={i} style={{ width: 28, height: 28, borderRadius: "50%", border: "2px solid var(--brand-ink)", background: i < referralCount ? "var(--brand-accent)" : "transparent", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.65rem", fontWeight: 700, color: i < referralCount ? "var(--brand-ink)" : "rgba(var(--brand-ink-rgb),0.3)", fontFamily: "var(--brand-font-body)", transition: "all 0.3s" }}>
-                                {i < referralCount ? "✓" : ""}
-                              </div>
-                            ))}
-                          </div>
-                          <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.72rem", color: "rgba(var(--brand-ink-rgb),0.5)", fontWeight: 600 }}>
-                            {referralCount}/3 friends joined
-                          </p>
-                        </div>
-                        <a
-                          href="/refer"
-                          style={{ display: "inline-block", marginTop: 14, fontFamily: "var(--brand-font-body)", fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.06em", textTransform: "uppercase" as const, color: "var(--brand-ink)", textDecoration: "underline", opacity: 0.5 }}
-                        >
-                          Share &amp; track referrals →
-                        </a>
-                      </div>
-                    )}
-                  </div>
-                ) : step === "captcha" ? (
-                  <div>
-                    <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 600, fontSize: "0.82rem", color: "var(--brand-accent-deep)", marginBottom: 14 }}>
-                      Quick verification for {email}
-                    </p>
-                    <div ref={captchaRef} style={{ marginBottom: 8 }} />
-                    {loading && (
-                      <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.72rem", color: "rgba(var(--brand-ink-rgb),0.45)" }}>
-                        Submitting...
-                      </p>
-                    )}
-                  </div>
-                ) : step === "phone" ? (
-                  <>
-                    <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 600, fontSize: "0.82rem", color: "var(--brand-accent-deep)", marginBottom: 12 }}>
-                      ✓ 20% off + free shipping locked in! Add your number and your code upgrades from 20% to 30% — best code wins.
-                    </p>
-                    <input
-                      type="tel"
-                      value={phone}
-                      onChange={(e) => setPhone(e.target.value)}
-                      placeholder="(555) 123-4567"
-                      style={{
-                        width: "100%",
-                        padding: "16px 20px",
-                        border: "2px solid var(--brand-ink)",
-                        background: "#fff",
-                        fontFamily: "var(--brand-font-body)",
-                        fontSize: "0.95rem",
-                        fontWeight: 500,
-                        marginBottom: 10,
-                      }}
-                    />
-                    <div style={{ display: "flex", gap: 10, alignItems: "center" }}>
-                      <button
-                        onClick={(e) => { e.preventDefault(); handlePhoneSubmit(e as unknown as React.FormEvent); }}
-                        disabled={loading}
-                        style={{
-                          padding: "16px 32px",
-                          border: "none",
-                          background: "var(--brand-accent)",
-                          color: "var(--brand-accent-deep)",
-                          fontFamily: "var(--brand-font-body)",
-                          fontWeight: 800,
-                          fontSize: "0.78rem",
-                          letterSpacing: "0.1em",
-                          textTransform: "uppercase",
-                          cursor: loading ? "wait" : "pointer",
-                        }}
-                      >
-                        {loading ? "…" : "Add phone →"}
-                      </button>
-                      <button
-                        onClick={skipPhone}
-                        style={{
-                          padding: "16px 16px",
-                          border: "none",
-                          background: "transparent",
-                          color: "rgba(var(--brand-ink-rgb),0.45)",
-                          fontFamily: "var(--brand-font-body)",
-                          fontWeight: 600,
-                          fontSize: "0.72rem",
-                          cursor: "pointer",
-                          textDecoration: "underline",
-                        }}
-                      >
-                        Skip
-                      </button>
-                    </div>
-                    <p style={{ margin: "8px 0 0", fontSize: "0.6rem", color: "rgba(var(--brand-ink-rgb),0.35)", lineHeight: 1.4, maxWidth: 400 }}>
-                      By providing your phone number, you agree to receive marketing texts from shroomé. Msg &amp; data rates may apply. Reply STOP to unsubscribe.
-                    </p>
-                  </>
-                ) : (
-                  <>
-                    <input
-                      type="email"
-                      required
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      placeholder="your@email.com"
-                      style={{
-                        width: "100%",
-                        padding: "16px 20px",
-                        border: "2px solid var(--brand-ink)",
-                        background: "#fff",
-                        fontFamily: "var(--brand-font-body)",
-                        fontSize: "0.95rem",
-                        fontWeight: 500,
-                        marginBottom: 10,
-                      }}
-                    />
-                    <button
-                      onClick={(e) => { e.preventDefault(); handleEmailSubmit(e as unknown as React.FormEvent); }}
-                      disabled={loading}
-                      style={{
-                        padding: "16px 32px",
-                        border: "none",
-                        background: "var(--brand-accent)",
-                        color: "var(--brand-accent-deep)",
-                        fontFamily: "var(--brand-font-body)",
-                        fontWeight: 800,
-                        fontSize: "0.78rem",
-                        letterSpacing: "0.1em",
-                        textTransform: "uppercase",
-                        cursor: loading ? "wait" : "pointer",
-                      }}
-                    >
-                      {loading ? "…" : "Get launch updates →"}
-                    </button>
-                    {captchaError && (
-                      <p role="alert" style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.72rem", color: "#B3261E", marginTop: 10, fontWeight: 600 }}>
-                        {captchaError}
-                      </p>
-                    )}
-                    <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.72rem", color: "rgba(var(--brand-ink-rgb),0.45)", marginTop: 10 }}>
-                      No spam. Add your phone and your code upgrades from 20% to 30% at launch — best code wins.
-                    </p>
-                    <p style={{ fontFamily: "var(--brand-font-mono)", fontSize: "0.65rem", color: "rgba(var(--brand-ink-rgb),0.35)", marginTop: 8, letterSpacing: "0.03em" }}>
-                      Join 100+ early adopters
-                    </p>
-                  </>
-                )}
-              </div>
-              <div
-                style={{
-                  border: "1px solid rgba(var(--brand-ink-rgb),0.15)",
-                  padding: "14px 24px",
-                  textAlign: "center",
-                  background: "rgba(var(--brand-canvas-rgb),0.6)",
-                }}
-              >
-                <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 700, fontSize: "0.7rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "rgba(var(--brand-ink-rgb),0.5)", marginBottom: 4 }}>Per box</p>
-                <p style={{ fontFamily: "var(--brand-font-display)", fontSize: "2rem", color: "var(--brand-accent-deep)", lineHeight: 1 }}>12</p>
-                <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.68rem", color: "rgba(var(--brand-ink-rgb),0.4)", fontStyle: "italic" }}>servings per box</p>
-              </div>
+            {/* Sticker badges */}
+            <div className="fade-up delay-650" style={{ display: "flex", gap: 4, alignItems: "center", marginTop: 30, opacity: 0 }}>
+              <Image src="/brand/badge-ready-to-pour.png" width={132} height={85} alt="Ready to pour" style={{ width: 118, height: "auto", transform: "rotate(-4deg)" }} />
+              <Image src="/brand/badge-b-glucans.png" width={110} height={113} alt="Organic beta-glucans, lion's mane" style={{ width: 96, height: "auto", transform: "rotate(3deg)" }} />
+              <Image src="/brand/badge-collagen.png" width={124} height={101} alt="With grass-fed type 1 and type 3 collagen" style={{ width: 112, height: "auto", transform: "rotate(-2deg)" }} />
+              <Image src="/brand/badge-matcha.png" width={140} height={85} alt="Organic ceremonial grade matcha" style={{ width: 126, height: "auto", transform: "rotate(2deg)" }} />
             </div>
           </div>
 
-          {/* Right — sachet images */}
+          {/* Right — hero pour photo */}
           <div
+            className="sachet-hero-wrap"
             style={{
-              flex: "1 1 420px",
+              flex: "1 1 380px",
+              minWidth: 300,
               display: "flex",
               justifyContent: "center",
-              alignItems: "center",
-              gap: 24,
-              minWidth: 0,
+              position: "relative",
             }}
           >
-            <Image
-              src="/sachet-vanilla.png"
-              alt="shroomé Vanilla matcha sachet — single-serve packet with ceremonial matcha, lion's mane, and collagen"
-              width={280}
-              height={400}
-              className="sachet-float"
-              priority
-              style={{ width: "48%", maxWidth: 280, height: "auto", filter: "drop-shadow(0 16px 48px rgba(0,0,0,0.15))" }}
-            />
-            <Image
-              src="/sachet-strawberry.png"
-              alt="shroomé Strawberry matcha sachet — single-serve packet with ceremonial matcha, lion's mane, and collagen"
-              width={280}
-              height={400}
-              className="sachet-float"
-              priority
-              style={{ width: "48%", maxWidth: 280, height: "auto", animationDelay: "2s", filter: "drop-shadow(0 16px 48px rgba(0,0,0,0.15))" }}
-            />
+            <div className="wobble" style={{ position: "relative", width: "min(100%, 420px)", transform: "rotate(1.5deg)" }}>
+              <Image
+                src="/brand/hero-pour.jpg"
+                alt="shroomé strawberry sachet pouring vivid green matcha over milk in a bubble glass"
+                width={700}
+                height={1254}
+                priority
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  borderRadius: 32,
+                  border: "3px solid var(--brand-ink)",
+                  boxShadow: "0 24px 60px rgba(45,52,26,0.25)",
+                  display: "block",
+                }}
+              />
+              <Image
+                src="/brand/symbol-sheep.png"
+                width={104}
+                height={115}
+                alt=""
+                aria-hidden
+                className="sachet-float"
+                style={{ position: "absolute", top: -34, left: -30, width: 92, height: "auto" }}
+              />
+              <div
+                style={{
+                  position: "absolute",
+                  bottom: 26,
+                  right: -18,
+                  background: "var(--brand-ink)",
+                  color: "var(--brand-canvas)",
+                  borderRadius: 999,
+                  padding: "12px 20px",
+                  transform: "rotate(3deg)",
+                  ...tagStyle,
+                  fontSize: "0.66rem",
+                }}
+              >
+                Sold out — again
+              </div>
+            </div>
           </div>
-        </div>
-
-        {/* Flavor sidebar */}
-        <div
-          style={{
-            position: "absolute",
-            right: 0,
-            bottom: 40,
-            background: "var(--brand-ink)",
-            color: "var(--brand-canvas)",
-            padding: "20px 20px",
-            textAlign: "center",
-            zIndex: 2,
-          }}
-        >
-          <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 700, fontSize: "0.65rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--brand-accent)", marginBottom: 8 }}>Flavors</p>
-          <p style={{ fontFamily: "var(--brand-font-display)", fontStyle: "italic", fontSize: "0.95rem", lineHeight: 1.5 }}>Vanilla<br />Strawberry</p>
         </div>
       </section>
 
-      {/* ════════════════════ DARK — PICK YOUR FLAVOR (GHIA STYLE) ════════════════════ */}
+      {/* ════════════════════ GOOD ENERGY LOCKUP ════════════════════ */}
+      <section id="why" style={{ padding: "96px 24px 80px", background: "var(--brand-canvas)", textAlign: "center", position: "relative", overflow: "hidden" }}>
+        <div {...anim("lockup")} style={{ ...anim("lockup").style, maxWidth: 680, margin: "0 auto" }}>
+          <Image
+            src="/brand/lockup-good-energy.png"
+            alt="Ready to enjoy life with good energy."
+            width={840}
+            height={551}
+            style={{ width: "100%", maxWidth: 560, height: "auto" }}
+          />
+          <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.98rem", color: "rgba(var(--brand-ink-rgb),0.75)", lineHeight: 1.7, maxWidth: 520, margin: "28px auto 0" }}>
+            We&apos;re a different animal in this space — uniting taste with real benefits,
+            and lifestyle with science. Cafe-grade ceremonial matcha, functional mushrooms,
+            and collagen, already blended into a liquid you pour like creamer.
+          </p>
+        </div>
+      </section>
+
+      {/* ════════════════════ FLAVORS — SOLD OUT CARDS ════════════════════ */}
       <section
-        id="why"
+        id="flavors"
         style={{
-          padding: "120px 24px 48px",
-          marginTop: -2,
-          background: "linear-gradient(180deg, var(--brand-flavor-strawberry) 0%, #c47a96 8%, #6b3a52 18%, var(--brand-ink) 30%, #000 40%, #000 100%)",
+          padding: "90px 24px 110px",
+          background: "var(--brand-canvas)",
           position: "relative",
           overflow: "hidden",
           textAlign: "center",
-          color: "var(--brand-canvas)",
         }}
       >
-        {/* Dramatic starburst light rays */}
-        <div
-          style={{
-            position: "absolute",
-            inset: "-20%",
-            background: `conic-gradient(
-              from 0deg at 50% 45%,
-              transparent 0deg, rgba(255,240,220,0.18) 4deg, transparent 8deg,
-              transparent 14deg, rgba(255,240,220,0.14) 18deg, transparent 22deg,
-              transparent 28deg, rgba(255,240,220,0.2) 32deg, transparent 36deg,
-              transparent 44deg, rgba(255,240,220,0.12) 48deg, transparent 52deg,
-              transparent 58deg, rgba(255,240,220,0.18) 62deg, transparent 66deg,
-              transparent 74deg, rgba(255,240,220,0.14) 78deg, transparent 82deg,
-              transparent 88deg, rgba(255,240,220,0.2) 92deg, transparent 96deg,
-              transparent 104deg, rgba(255,240,220,0.12) 108deg, transparent 112deg,
-              transparent 118deg, rgba(255,240,220,0.18) 122deg, transparent 126deg,
-              transparent 134deg, rgba(255,240,220,0.14) 138deg, transparent 142deg,
-              transparent 148deg, rgba(255,240,220,0.2) 152deg, transparent 156deg,
-              transparent 164deg, rgba(255,240,220,0.12) 168deg, transparent 172deg,
-              transparent 178deg, rgba(255,240,220,0.18) 182deg, transparent 186deg,
-              transparent 194deg, rgba(255,240,220,0.14) 198deg, transparent 202deg,
-              transparent 208deg, rgba(255,240,220,0.2) 212deg, transparent 216deg,
-              transparent 224deg, rgba(255,240,220,0.12) 228deg, transparent 232deg,
-              transparent 238deg, rgba(255,240,220,0.18) 242deg, transparent 246deg,
-              transparent 254deg, rgba(255,240,220,0.14) 258deg, transparent 262deg,
-              transparent 268deg, rgba(255,240,220,0.2) 272deg, transparent 276deg,
-              transparent 284deg, rgba(255,240,220,0.12) 288deg, transparent 292deg,
-              transparent 298deg, rgba(255,240,220,0.18) 302deg, transparent 306deg,
-              transparent 314deg, rgba(255,240,220,0.14) 318deg, transparent 322deg,
-              transparent 328deg, rgba(255,240,220,0.2) 332deg, transparent 336deg,
-              transparent 344deg, rgba(255,240,220,0.12) 348deg, transparent 352deg,
-              transparent 360deg
-            )`,
-            maskImage: "radial-gradient(ellipse 80% 70% at 50% 40%, white 0%, white 50%, transparent 80%)",
-            WebkitMaskImage: "radial-gradient(ellipse 80% 70% at 50% 40%, white 0%, white 50%, transparent 80%)",
-            pointerEvents: "none",
-          }}
-        />
-        {/* Central warm glow */}
-        <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse 45% 50% at 50% 45%, rgba(255,220,180,0.25) 0%, rgba(255,180,140,0.1) 40%, transparent 70%)", pointerEvents: "none" }} />
-        {/* Subtle edge vignette */}
-        <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse 80% 80% at 50% 50%, transparent 40%, rgba(0,0,0,0.6) 100%)", pointerEvents: "none" }} />
-
+        <img src="/brand/pattern-flower-vanilla.svg" alt="" aria-hidden style={{ position: "absolute", top: "-8%", right: "-6%", width: "18vw", minWidth: 180, opacity: 0.5, pointerEvents: "none" }} />
         <div style={{ position: "relative", zIndex: 1, maxWidth: 1000, margin: "0 auto" }}>
           <div {...anim("flavor-head")}>
-            <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 700, fontSize: "0.65rem", letterSpacing: "0.25em", textTransform: "uppercase", color: "var(--brand-accent)", marginBottom: 16 }}>
-              2 Flavors
+            <p style={{ ...tagStyle, fontSize: "0.66rem", color: "var(--brand-accent-deep)", marginBottom: 16 }}>
+              Launching with two flavors
             </p>
-            <h2 style={{ fontFamily: "var(--brand-font-display)", fontSize: "clamp(2rem, 5vw, 3.5rem)", lineHeight: 1.05, marginBottom: 8 }}>
-              Pick your flavor.
-              <br />
-              <span style={{ fontStyle: "italic", color: "var(--brand-flavor-strawberry)" }}>Both hit different.</span>
+            <h2 style={{ fontFamily: "var(--brand-font-display)", fontWeight: 800, fontSize: "clamp(2rem, 5vw, 3.4rem)", lineHeight: 1.05, marginBottom: 12, color: "var(--brand-ink)", letterSpacing: "-0.02em" }}>
+              Pick your pour.
             </h2>
+            <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.92rem", color: "rgba(var(--brand-ink-rgb),0.65)", marginBottom: 48 }}>
+              Both sold out in 9 days. Restock list gets them first.
+            </p>
           </div>
 
-          {/* Sachet images — large with reflections */}
-          <div
-            {...anim("flavor-imgs", 0.2)}
-            style={{
-              ...anim("flavor-imgs", 0.2).style,
-              display: "flex",
-              justifyContent: "center",
-              gap: 32,
-              margin: "40px auto 0",
-              maxWidth: 720,
-            }}
-          >
+          <div className="flavor-cards-wrap" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 32 }}>
             {[
-              { src: "/sachet-vanilla.png", alt: "shroomé Vanilla matcha sachet — warm, floral, cozy blend", delay: "0s", shadow: "rgba(255,220,180,0.3)", href: "/flavors/vanilla" },
-              { src: "/sachet-strawberry.png", alt: "shroomé Strawberry matcha sachet — bright, fruity, fresh blend", delay: "1.8s", shadow: "rgba(212,114,122,0.35)", href: "/flavors/strawberry" },
-            ].map((s) => (
-              <a key={s.alt} href={s.href} style={{ width: "46%", display: "flex", flexDirection: "column", alignItems: "center", textDecoration: "none" }}>
-                <Image
-                  src={s.src}
-                  alt={s.alt}
-                  width={280}
-                  height={400}
-                  className="sachet-float"
-                  loading="lazy"
-                  style={{
-                    width: "100%",
-                    height: "auto",
-                    animationDelay: s.delay,
-                    filter: `drop-shadow(0 0 40px ${s.shadow}) drop-shadow(0 0 80px ${s.shadow})`,
-                    cursor: "pointer",
-                  }}
-                />
+              { src: "/sachet-vanilla.png", name: "Vanilla", note: "Warm · Smooth · Everyday", href: "/flavors/vanilla", bg: "var(--brand-flavor-functional)", alt: "shroomé Vanilla liquid ceremonial matcha latte sachet on the vanilla pinwheel pattern" },
+              { src: "/sachet-strawberry.png", name: "Strawberry", note: "Bright · Fruity · Loud", href: "/flavors/strawberry", bg: "var(--brand-tint-blush)", alt: "shroomé Strawberry liquid ceremonial matcha latte sachet on the strawberry pinwheel pattern" },
+            ].map((f, i) => (
+              <a key={f.name} href={f.href} {...anim(`flavor-${i}`, i * 0.12)} style={{ ...anim(`flavor-${i}`, i * 0.12).style, textDecoration: "none", color: "inherit" }}>
+                <div className="lift" style={{ background: f.bg, border: "3px solid var(--brand-ink)", borderRadius: 32, padding: "20px 20px 28px", position: "relative" }}>
+                  <div
+                    style={{
+                      position: "absolute",
+                      top: 18,
+                      right: 18,
+                      zIndex: 2,
+                      background: "var(--brand-ink)",
+                      color: "var(--brand-canvas)",
+                      borderRadius: 999,
+                      padding: "8px 16px",
+                      transform: "rotate(6deg)",
+                      ...tagStyle,
+                      fontSize: "0.6rem",
+                    }}
+                  >
+                    Sold out
+                  </div>
+                  <Image
+                    src={f.src}
+                    alt={f.alt}
+                    width={520}
+                    height={613}
+                    loading="lazy"
+                    style={{ width: "100%", height: "auto", borderRadius: 20, border: "2px solid var(--brand-ink)", display: "block" }}
+                  />
+                  <h3 style={{ fontFamily: "var(--brand-font-display)", fontWeight: 800, fontSize: "1.7rem", margin: "20px 0 6px", color: "var(--brand-ink)" }}>{f.name}</h3>
+                  <p style={{ ...tagStyle, fontSize: "0.62rem", color: "rgba(var(--brand-ink-rgb),0.65)" }}>{f.note}</p>
+                  <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 800, fontSize: "0.72rem", letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--brand-ink)", marginTop: 14, textDecoration: "underline" }}>
+                    See the flavor →
+                  </p>
+                </div>
               </a>
             ))}
-          </div>
-
-          {/* Floor spacer */}
-          <div style={{ height: 16 }} />
-
-          {/* Flavor cards side by side */}
-          <div {...anim("flavor-cards", 0.3)} style={{ ...anim("flavor-cards", 0.3).style, display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 40, textAlign: "center" }}>
-            <a href="/flavors/vanilla" style={{ textDecoration: "none", color: "inherit" }}>
-              <h3 style={{ fontFamily: "var(--brand-font-display)", fontStyle: "italic", fontSize: "1.5rem", marginBottom: 8 }}>Vanilla</h3>
-              <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.82rem", color: "rgba(var(--brand-canvas-rgb),0.4)", letterSpacing: "0.06em" }}>Warm · Floral · Cozy</p>
-            </a>
-            <a href="/flavors/strawberry" style={{ textDecoration: "none", color: "inherit" }}>
-              <h3 style={{ fontFamily: "var(--brand-font-display)", fontStyle: "italic", fontSize: "1.5rem", marginBottom: 8 }}>Strawberry</h3>
-              <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.82rem", color: "rgba(var(--brand-canvas-rgb),0.4)", letterSpacing: "0.06em" }}>Bright · Fruity · Fresh</p>
-            </a>
           </div>
         </div>
       </section>
 
-      {/* ════════════════════ INGREDIENTS ════════════════════ */}
+      {/* ════════════════════ THE RITUAL — POUR. SWIRL. GO. ════════════════════ */}
+      <section id="how" style={{ padding: "100px 24px", background: "var(--brand-accent-deep)", position: "relative", overflow: "hidden" }}>
+        <div style={{ maxWidth: 980, margin: "0 auto", textAlign: "center" }}>
+          <div {...anim("how-head")}>
+            <p style={{ ...tagStyle, fontSize: "0.66rem", color: "var(--brand-canvas)", opacity: 0.85, marginBottom: 16 }}>
+              Making your shroomé
+            </p>
+            <h2 style={{ fontFamily: "var(--brand-font-display)", fontWeight: 800, fontSize: "clamp(2.2rem, 5vw, 3.6rem)", color: "var(--brand-canvas)", lineHeight: 1.05, marginBottom: 56, letterSpacing: "-0.02em" }}>
+              Pour. Swirl. Go.
+            </h2>
+          </div>
+
+          <div {...anim("how-card", 0.15)} style={{ ...anim("how-card", 0.15).style, background: "var(--brand-canvas)", border: "3px solid var(--brand-ink)", borderRadius: 36, padding: "48px 32px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 36 }}>
+            {[
+              { img: "/brand/sheep-sachet.png", num: "1. Tear", desc: "Rip open one sachet. That's your perfectly measured dose." },
+              { img: "/brand/sheep-swirl.png", num: "2. Pour", desc: "Over your milk of choice. Oat, almond, coconut, dairy. Hot or iced." },
+              { img: "/brand/sheep-drink.png", num: "3. Go", desc: "Stir once. 30 seconds to cafe-grade matcha latte. No blender, no whisk, no mess." },
+            ].map((s, i) => (
+              <div key={s.num} {...anim(`step-${i}`, 0.2 + i * 0.12)}>
+                <Image src={s.img} alt="" aria-hidden width={140} height={140} loading="lazy" style={{ width: 96, height: 96, objectFit: "contain", margin: "0 auto 18px", display: "block" }} />
+                <h3 style={{ ...tagStyle, fontSize: "0.9rem", color: "var(--brand-accent-deep)", marginBottom: 10 }}>{s.num}</h3>
+                <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.88rem", color: "rgba(var(--brand-ink-rgb),0.75)", lineHeight: 1.65, maxWidth: 260, margin: "0 auto" }}>{s.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ════════════════════ INGREDIENTS / STATS ════════════════════ */}
       <section
         id="ingredients"
-        style={{ padding: "100px 24px", marginTop: -2, background: "linear-gradient(180deg, #000 0%, var(--brand-ink) 5%, #4a3560 12%, #8b6a9e 20%, var(--brand-flavor-functional) 30%, var(--brand-flavor-functional) 100%)", position: "relative", overflow: "hidden" }}
+        style={{ padding: "100px 24px", background: "var(--brand-tint-soft)", position: "relative", overflow: "hidden" }}
       >
-        <div className="blob-c" style={{ position: "absolute", top: "5%", right: "3%", width: "25vw", height: "25vw", background: "var(--brand-flavor-strawberry)", opacity: 0.4, pointerEvents: "none" }} />
-        <div className="blob-b" style={{ position: "absolute", bottom: "5%", left: "3%", width: "20vw", height: "20vw", background: "var(--brand-ink)", opacity: 0.12, pointerEvents: "none" }} />
-        <div className="blob-a" style={{ position: "absolute", top: "40%", left: "50%", width: "15vw", height: "15vw", background: "var(--brand-accent)", opacity: 0.2, pointerEvents: "none" }} />
-        <div style={{ maxWidth: 1000, margin: "0 auto" }}>
-          <div {...anim("ing-head")} style={{ ...anim("ing-head").style, textAlign: "center", marginBottom: 56 }}>
-            <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 600, fontSize: "0.68rem", letterSpacing: "0.25em", textTransform: "uppercase", color: "var(--brand-ink)", marginBottom: 16 }}>
+        <img src="/brand/pattern-flower.svg" alt="" aria-hidden style={{ position: "absolute", bottom: "-14%", left: "-7%", width: "20vw", minWidth: 200, opacity: 0.45, pointerEvents: "none" }} />
+        <div style={{ maxWidth: 1000, margin: "0 auto", position: "relative", zIndex: 1 }}>
+          <div {...anim("ing-head")} style={{ ...anim("ing-head").style, textAlign: "center", marginBottom: 48 }}>
+            <p style={{ ...tagStyle, fontSize: "0.66rem", color: "var(--brand-ink)", marginBottom: 16 }}>
               What&apos;s inside
             </p>
-            <h2 style={{ fontFamily: "var(--brand-font-display)", fontStyle: "italic", fontSize: "clamp(2rem, 4.5vw, 3rem)", color: "var(--brand-ink)", lineHeight: 1.1 }}>
+            <h2 style={{ fontFamily: "var(--brand-font-display)", fontWeight: 800, fontSize: "clamp(2rem, 4.5vw, 3rem)", color: "var(--brand-ink)", lineHeight: 1.1, letterSpacing: "-0.02em" }}>
               Clean label. Real doses.
             </h2>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 24 }}>
+          {/* Stat strip — mirrors the sachet back panel */}
+          <div {...anim("stats", 0.1)} style={{ ...anim("stats", 0.1).style, display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))", gap: 14, marginBottom: 28 }}>
             {[
-              { name: "Ceremonial Matcha", dose: "2.5g", detail: "First-harvest, shade-grown. ~60mg caffeine. Not culinary grade — the real thing.", color: "var(--brand-accent)", bg: "var(--brand-ink)" },
-              { name: "Organic Mushroom Extracts", dose: "200mg", detail: "70%+ beta-glucan purity — the active compound behind immune and focus benefits. Industry average: 15–30%. No mycelium-on-grain filler. No underdosing.", color: "var(--brand-flavor-strawberry)", bg: "var(--brand-ink)" },
-              { name: "Grass-Fed Collagen", dose: "2g", detail: "Pre-dissolved bioavailable peptides for skin, hair, nails, and gut.", color: "var(--brand-accent)", bg: "var(--brand-ink)" },
+              { dose: "60mg", label: "Caffeine" },
+              { dose: "2.5g", label: "Ceremonial Matcha" },
+              { dose: "200mg", label: "Organic Mushroom Extracts" },
+              { dose: "2g", label: "Grass-Fed Collagen" },
+            ].map((s) => (
+              <div key={s.label} style={{ background: "var(--brand-canvas)", border: "2px solid var(--brand-ink)", borderRadius: 20, padding: "20px 14px", textAlign: "center" }}>
+                <p style={{ fontFamily: "var(--brand-font-mono)", fontWeight: 700, fontSize: "1.7rem", color: "var(--brand-accent-deep)", lineHeight: 1.1 }}>{s.dose}</p>
+                <p style={{ ...tagStyle, fontSize: "0.58rem", color: "rgba(var(--brand-ink-rgb),0.7)", marginTop: 6 }}>{s.label}</p>
+              </div>
+            ))}
+          </div>
+
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 20 }}>
+            {[
+              { icon: "/brand/icon-whisk.png", name: "Ceremonial Matcha", detail: "First-harvest, shade-grown, stone-ground. Vivid jade color, zero bitterness — the real thing, not culinary grade." },
+              { icon: "/brand/icon-mushrooms.png", name: "Functional Mushrooms", detail: "Lion's mane, reishi, and cordyceps extracts with organic β-glucans — clarity and immunity without the mushroom taste." },
+              { icon: "/brand/icon-molecule.png", name: "Grass-Fed Collagen", detail: "Type 1 & 3 collagen pre-dissolved into the liquid — silky texture in the glass, skin-deep benefits after." },
             ].map((item, i) => (
               <div
                 key={item.name}
@@ -1214,43 +1024,45 @@ export default function Home() {
                 style={{
                   ...anim(`ing-${i}`, i * 0.1).style,
                   padding: "32px 28px",
-                  background: item.bg,
-                  borderRadius: 8,
+                  background: "var(--brand-ink)",
+                  borderRadius: 28,
+                  textAlign: "left",
                 }}
               >
-                <div style={{ display: "flex", alignItems: "baseline", gap: 12, marginBottom: 16 }}>
-                  <span style={{ fontFamily: "var(--brand-font-display)", fontSize: "2.2rem", color: item.color, lineHeight: 1 }}>{item.dose}</span>
-                  <span style={{ fontFamily: "var(--brand-font-body)", fontWeight: 700, fontSize: "0.62rem", letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(var(--brand-canvas-rgb),0.5)" }}>{item.name}</span>
-                </div>
-                <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.85rem", color: "rgba(var(--brand-canvas-rgb),0.45)", lineHeight: 1.6 }}>{item.detail}</p>
+                <Image src={item.icon} alt="" aria-hidden width={64} height={64} loading="lazy" style={{ width: 52, height: 52, objectFit: "contain", marginBottom: 16, filter: "invert(1) brightness(1.6)" }} />
+                <p style={{ ...tagStyle, fontSize: "0.72rem", color: "var(--brand-accent)", marginBottom: 12 }}>{item.name}</p>
+                <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.85rem", color: "rgba(var(--brand-canvas-rgb),0.72)", lineHeight: 1.6 }}>{item.detail}</p>
               </div>
             ))}
           </div>
+
+          <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.72rem", color: "rgba(var(--brand-ink-rgb),0.55)", textAlign: "center", marginTop: 26, lineHeight: 1.6 }}>
+            Ingredients: Ceremonial Grade Matcha (organic), Lion&apos;s Mane Mushroom Extract, Reishi Mushroom Extract,
+            Cordyceps Mushroom Extract, Collagen Peptides (Hydrolyzed), Natural Flavor.
+          </p>
         </div>
       </section>
 
       {/* ════════════════════ COMPARISON TABLE ════════════════════ */}
-      <section style={{ padding: "80px 24px 100px", background: "var(--brand-flavor-strawberry)", color: "var(--brand-ink)", position: "relative", overflow: "hidden" }}>
-        <div className="blob-c" style={{ position: "absolute", top: "8%", left: "3%", width: "20vw", height: "20vw", background: "var(--brand-flavor-functional)", opacity: 0.4, pointerEvents: "none" }} />
-        <div className="blob-a" style={{ position: "absolute", bottom: "8%", right: "3%", width: "16vw", height: "16vw", background: "var(--brand-accent)", opacity: 0.15, pointerEvents: "none" }} />
+      <section style={{ padding: "90px 24px", background: "var(--brand-canvas)", color: "var(--brand-ink)", position: "relative", overflow: "hidden" }}>
         <div style={{ maxWidth: 800, margin: "0 auto", position: "relative", zIndex: 1 }}>
-          <div {...anim("comp-head")} style={{ ...anim("comp-head").style, textAlign: "center", marginBottom: 48 }}>
-            <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 600, fontSize: "0.68rem", letterSpacing: "0.25em", textTransform: "uppercase", color: "var(--brand-ink)", marginBottom: 16 }}>
+          <div {...anim("comp-head")} style={{ ...anim("comp-head").style, textAlign: "center", marginBottom: 44 }}>
+            <p style={{ ...tagStyle, fontSize: "0.66rem", color: "var(--brand-accent-deep)", marginBottom: 16 }}>
               How we compare
             </p>
-            <h2 style={{ fontFamily: "var(--brand-font-display)", fontStyle: "italic", fontSize: "clamp(1.8rem, 4vw, 2.6rem)", lineHeight: 1.1, color: "var(--brand-ink)" }}>
+            <h2 style={{ fontFamily: "var(--brand-font-display)", fontWeight: 800, fontSize: "clamp(1.8rem, 4vw, 2.6rem)", lineHeight: 1.1, color: "var(--brand-ink)", letterSpacing: "-0.02em" }}>
               Not all matcha is created equal.
             </h2>
           </div>
 
-          <div {...anim("comp-table", 0.15)} style={{ ...anim("comp-table", 0.15).style, background: "var(--brand-ink)", borderRadius: 16, padding: "8px 0", boxShadow: "0 4px 30px rgba(0,0,0,0.2)", overflow: "hidden" }}>
+          <div {...anim("comp-table", 0.15)} style={{ ...anim("comp-table", 0.15).style, background: "var(--brand-ink)", borderRadius: 28, padding: "8px 0", boxShadow: "0 4px 30px rgba(45,52,26,0.25)", overflow: "hidden" }}>
             <div style={{ overflowX: "auto", WebkitOverflowScrolling: "touch" }}>
               <table style={{ width: "100%", minWidth: 580, borderCollapse: "collapse", fontFamily: "var(--brand-font-body)", fontSize: "0.85rem" }}>
                 <thead>
                   <tr>
-                    <th style={{ textAlign: "left", padding: "14px 14px", borderBottom: "1px solid rgba(var(--brand-canvas-rgb),0.08)", color: "rgba(var(--brand-canvas-rgb),0.35)", fontWeight: 600, fontSize: "0.72rem", letterSpacing: "0.08em", textTransform: "uppercase" }}></th>
-                    {["shroomé", "Clevr", "RYZE", "MatchaKo", "Café"].map((b) => (
-                      <th key={b} style={{ textAlign: "center", padding: "14px 10px", borderBottom: "1px solid rgba(var(--brand-canvas-rgb),0.08)", color: b === "shroomé" ? "var(--brand-accent)" : "rgba(var(--brand-canvas-rgb),0.35)", fontWeight: 700, fontSize: "0.72rem", letterSpacing: "0.08em", textTransform: "uppercase" }}>{b}</th>
+                    <th style={{ textAlign: "left", padding: "14px 18px", borderBottom: "1px solid rgba(var(--brand-canvas-rgb),0.1)", color: "rgba(var(--brand-canvas-rgb),0.45)", fontWeight: 600, fontSize: "0.72rem", letterSpacing: "0.08em", textTransform: "uppercase" }}></th>
+                    {["shroomé", "Clevr", "RYZE", "MatchaKo", "Cafe"].map((b) => (
+                      <th key={b} style={{ textAlign: "center", padding: "14px 10px", borderBottom: "1px solid rgba(var(--brand-canvas-rgb),0.1)", color: b === "shroomé" ? "var(--brand-accent)" : "rgba(var(--brand-canvas-rgb),0.45)", fontWeight: 700, fontSize: "0.72rem", letterSpacing: "0.08em", textTransform: "uppercase" }}>{b}</th>
                     ))}
                   </tr>
                 </thead>
@@ -1258,15 +1070,15 @@ export default function Home() {
                   {[
                     { feature: "Ceremonial matcha", values: [true, false, false, true, true] },
                     { feature: "Collagen", values: [true, false, false, false, false] },
-                    { feature: "Mushrooms", values: [true, true, true, false, false] },
-                    { feature: "Ready to pour", values: [true, false, false, false, true] },
-                    { feature: "12+ servings", values: [true, false, true, true, false] },
+                    { feature: "Functional mushrooms", values: [true, true, true, false, false] },
+                    { feature: "Liquid — ready to pour", values: [true, false, false, false, true] },
+                    { feature: "Lives in your bag", values: [true, true, true, true, false] },
                   ].map((row) => (
                     <tr key={row.feature}>
-                      <td style={{ padding: "16px 14px", borderBottom: "1px solid rgba(var(--brand-canvas-rgb),0.06)", color: "var(--brand-canvas)", fontWeight: 600, fontSize: "0.85rem" }}>{row.feature}</td>
+                      <td style={{ padding: "16px 18px", borderBottom: "1px solid rgba(var(--brand-canvas-rgb),0.06)", color: "var(--brand-canvas)", fontWeight: 600, fontSize: "0.85rem" }}>{row.feature}</td>
                       {row.values.map((v, i) => (
                         <td key={i} style={{ textAlign: "center", padding: "16px 10px", borderBottom: "1px solid rgba(var(--brand-canvas-rgb),0.06)" }}>
-                          <span style={{ display: "inline-block", width: 34, height: 34, lineHeight: "34px", borderRadius: 4, fontSize: "1rem", fontWeight: 700, background: v ? "rgba(var(--brand-accent-rgb),0.2)" : "rgba(var(--brand-canvas-rgb),0.04)", color: v ? "var(--brand-accent)" : "rgba(var(--brand-canvas-rgb),0.15)" }}>
+                          <span style={{ display: "inline-block", width: 34, height: 34, lineHeight: "34px", borderRadius: "50%", fontSize: "1rem", fontWeight: 700, background: v ? "rgba(var(--brand-accent-rgb),0.25)" : "rgba(var(--brand-canvas-rgb),0.05)", color: v ? "var(--brand-accent)" : "rgba(var(--brand-canvas-rgb),0.2)" }}>
                             {v ? "✓" : "—"}
                           </span>
                         </td>
@@ -1280,68 +1092,68 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ════════════════════ HOW IT WORKS ════════════════════ */}
-      <section id="how" style={{ padding: "100px 24px", background: "var(--brand-ink)", position: "relative", overflow: "hidden" }}>
-        <div className="blob-a" style={{ position: "absolute", top: "10%", right: "3%", width: "18vw", height: "18vw", background: "var(--brand-flavor-strawberry)", opacity: 0.08, pointerEvents: "none" }} />
-        <div className="blob-c" style={{ position: "absolute", bottom: "5%", left: "5%", width: "14vw", height: "14vw", background: "var(--brand-flavor-functional)", opacity: 0.06, pointerEvents: "none" }} />
-        <div className="blob-b" style={{ position: "absolute", top: "5%", left: "8%", width: "12vw", height: "12vw", background: "var(--brand-flavor-functional)", opacity: 0.08, pointerEvents: "none" }} />
-        <div style={{ maxWidth: 900, margin: "0 auto", textAlign: "center" }}>
-          <div {...anim("how-head")}>
-            <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 600, fontSize: "0.68rem", letterSpacing: "0.25em", textTransform: "uppercase", color: "var(--brand-accent)", marginBottom: 16 }}>
-              How it works
+      {/* ════════════════════ OUR VIBE IS MATCHA-IN — LIFESTYLE ════════════════════ */}
+      <section style={{ padding: "90px 24px 100px", background: "var(--brand-accent)", position: "relative", overflow: "hidden" }}>
+        <div style={{ maxWidth: 1080, margin: "0 auto", position: "relative", zIndex: 1 }}>
+          <div {...anim("vibe-head")} style={{ ...anim("vibe-head").style, textAlign: "center", marginBottom: 44 }}>
+            <p style={{ ...tagStyle, fontSize: "0.66rem", color: "var(--brand-ink)", marginBottom: 14 }}>
+              @drinkshroome
             </p>
-            <h2 style={{ fontFamily: "var(--brand-font-display)", fontStyle: "italic", fontSize: "clamp(2rem, 4.5vw, 3rem)", color: "var(--brand-canvas)", lineHeight: 1.1, marginBottom: 64 }}>
-              Tear. Pour. <span style={{ color: "var(--brand-flavor-strawberry)" }}>Hit.</span>
+            <h2 style={{ fontFamily: "var(--brand-font-display)", fontWeight: 800, fontSize: "clamp(2rem, 4.6vw, 3.2rem)", color: "var(--brand-ink)", lineHeight: 1.05, letterSpacing: "-0.02em" }}>
+              Our vibe is matcha-in.
             </h2>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 40 }}>
+          <div {...anim("vibe-grid", 0.15)} style={{ ...anim("vibe-grid", 0.15).style, display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 18 }}>
             {[
-              { num: "01", title: "Tear", desc: "Rip open one sachet — that's your perfectly measured dose." },
-              { num: "02", title: "Pour", desc: "Over your milk of choice. Oat, almond, coconut, dairy. Hot or iced." },
-              { num: "03", title: "Hit", desc: "Stir once. 30 seconds to café-grade matcha latte. No blender, no whisk, no mess." },
-            ].map((step, i) => (
-              <div key={step.num} {...anim(`step-${i}`, i * 0.12)}>
-                <p style={{ fontFamily: "var(--brand-font-mono)", fontSize: "0.7rem", letterSpacing: "0.15em", color: "var(--brand-accent)", marginBottom: 14 }}>{step.num}</p>
-                <h3 style={{ fontFamily: "var(--brand-font-display)", fontStyle: "italic", fontSize: "1.6rem", color: "var(--brand-canvas)", marginBottom: 10 }}>{step.title}</h3>
-                <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.85rem", color: "rgba(var(--brand-canvas-rgb),0.45)", lineHeight: 1.65 }}>{step.desc}</p>
+              { src: "/brand/ig-matcha-in.jpg", alt: "Friends at a picnic — our vibe is matcha-in" },
+              { src: "/brand/ig-glow-skin.jpg", alt: "Glow and skin — smiling model in sunlight" },
+              { src: "/brand/ready-to-glow.jpg", alt: "Ready to glow — iced matcha close-up" },
+              { src: "/brand/cup-logo.jpg", alt: "Iced shroomé matcha latte in a branded cup" },
+            ].map((g, i) => (
+              <div key={g.src} className="wobble" style={{ transform: `rotate(${i % 2 === 0 ? -1.5 : 1.5}deg)` }}>
+                <Image
+                  src={g.src}
+                  alt={g.alt}
+                  width={500}
+                  height={625}
+                  loading="lazy"
+                  style={{ width: "100%", height: "auto", aspectRatio: "4 / 5", objectFit: "cover", borderRadius: 24, border: "3px solid var(--brand-ink)", display: "block", background: "var(--brand-canvas)" }}
+                />
               </div>
             ))}
           </div>
-        </div>
-      </section>
 
-      {/* ════════════════════ HANDS PHOTO ════════════════════ */}
-      <section style={{ padding: "60px 24px 0", background: "var(--brand-flavor-functional)", textAlign: "center", position: "relative", overflow: "hidden" }}>
-        {/* Subtle abstract blobs */}
-        <div className="blob-a" style={{ position: "absolute", top: "5%", left: "3%", width: "18vw", height: "18vw", background: "var(--brand-flavor-strawberry)", opacity: 0.3, pointerEvents: "none" }} />
-        <div className="blob-b" style={{ position: "absolute", top: "5%", right: "5%", width: "14vw", height: "14vw", background: "var(--brand-ink)", opacity: 0.06, pointerEvents: "none" }} />
-        <div className="blob-c" style={{ position: "absolute", bottom: "25%", right: "8%", width: "12vw", height: "12vw", background: "var(--brand-flavor-functional)", opacity: 0.15, pointerEvents: "none" }} />
-        <div className="blob-a" style={{ position: "absolute", bottom: "15%", left: "6%", width: "10vw", height: "10vw", background: "var(--brand-flavor-strawberry)", opacity: 0.1, pointerEvents: "none" }} />
-        <div {...anim("hands")} style={{ ...anim("hands").style, maxWidth: 600, margin: "0 auto", overflow: "hidden", borderRadius: "16px 16px 0 0", position: "relative", zIndex: 1 }}>
-          <Image src="/sachets-both.png" alt="Two shroomé sachets side by side — Vanilla and Strawberry matcha blends" width={1536} height={1024} loading="lazy" style={{ width: "100%", height: "auto", display: "block", marginBottom: "-12%" }} />
+          <div {...anim("vibe-cta", 0.25)} style={{ ...anim("vibe-cta", 0.25).style, textAlign: "center", marginTop: 36 }}>
+            <a
+              href="https://instagram.com/drinkshroome"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ display: "inline-block", background: "var(--brand-canvas)", border: "2px solid var(--brand-ink)", borderRadius: 999, padding: "12px 26px", fontFamily: "var(--brand-font-body)", fontWeight: 800, fontSize: "0.72rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--brand-ink)", textDecoration: "none" }}
+            >
+              Follow the flock →
+            </a>
+          </div>
         </div>
       </section>
 
       {/* ════════════════════ TESTIMONIALS ════════════════════ */}
-      <section style={{ padding: "80px 24px 100px", background: "var(--brand-flavor-strawberry)", position: "relative", overflow: "hidden" }}>
-        <div className="blob-b" style={{ position: "absolute", top: "10%", right: "5%", width: "18vw", height: "18vw", background: "var(--brand-flavor-functional)", opacity: 0.4, pointerEvents: "none" }} />
-        <div className="blob-a" style={{ position: "absolute", bottom: "10%", left: "3%", width: "15vw", height: "15vw", background: "var(--brand-accent)", opacity: 0.15, pointerEvents: "none" }} />
-        <div style={{ maxWidth: 900, margin: "0 auto", position: "relative", zIndex: 1 }}>
-          <div {...anim("test-head")} style={{ ...anim("test-head").style, textAlign: "center", marginBottom: 48 }}>
-            <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 600, fontSize: "0.68rem", letterSpacing: "0.25em", textTransform: "uppercase", color: "var(--brand-ink)", marginBottom: 16 }}>
-              Early testers
+      <section style={{ padding: "90px 24px", background: "var(--brand-canvas)", position: "relative", overflow: "hidden" }}>
+        <div style={{ maxWidth: 960, margin: "0 auto", position: "relative", zIndex: 1 }}>
+          <div {...anim("test-head")} style={{ ...anim("test-head").style, textAlign: "center", marginBottom: 44 }}>
+            <p style={{ ...tagStyle, fontSize: "0.66rem", color: "var(--brand-accent-deep)", marginBottom: 16 }}>
+              Drop 001 reviews
             </p>
-            <h2 style={{ fontFamily: "var(--brand-font-display)", fontStyle: "italic", fontSize: "clamp(1.8rem, 4vw, 2.6rem)", color: "var(--brand-ink)", lineHeight: 1.1 }}>
-              What people are saying.
+            <h2 style={{ fontFamily: "var(--brand-font-display)", fontWeight: 800, fontSize: "clamp(1.8rem, 4vw, 2.6rem)", color: "var(--brand-ink)", lineHeight: 1.1, letterSpacing: "-0.02em" }}>
+              The flock has spoken.
             </h2>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 24 }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 20 }}>
             {[
-              { quote: "I replaced my $7 oat milk latte with this. Tastes better, costs less, and I actually feel focused.", name: "Sarah M.", loc: "Austin, TX" },
-              { quote: "The strawberry one is insane. My kids think it's a treat. I know it's fuel.", name: "Mike R.", loc: "Brooklyn, NY" },
-              { quote: "Finally a matcha product that doesn't taste like grass. The vanilla is my daily non-negotiable.", name: "Jess L.", loc: "Portland, OR" },
+              { quote: "I replaced my $7 oat milk latte with this. Tastes better, costs less, and I actually feel focused.", name: "Sarah M.", loc: "Austin, TX", bg: "var(--brand-tint-soft)" },
+              { quote: "The strawberry one is insane. The pour is genuinely the prettiest thing in my kitchen.", name: "Mike R.", loc: "Brooklyn, NY", bg: "var(--brand-tint-blush)" },
+              { quote: "Finally a matcha that doesn't taste like grass. The vanilla is my daily non-negotiable.", name: "Jess L.", loc: "Portland, OR", bg: "var(--brand-flavor-functional)" },
             ].map((t, i) => (
               <div
                 key={t.name}
@@ -1350,200 +1162,91 @@ export default function Home() {
                 style={{
                   ...anim(`test-${i}`, i * 0.1).style,
                   padding: "28px 24px",
-                  background: "var(--brand-ink)",
-                  borderRadius: 8,
+                  background: t.bg,
+                  border: "2px solid var(--brand-ink)",
+                  borderRadius: 28,
                 }}
               >
-                <p style={{ fontFamily: "var(--brand-font-display)", fontStyle: "italic", fontSize: "1.05rem", color: "var(--brand-canvas)", lineHeight: 1.55, marginBottom: 20 }}>
+                <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 600, fontSize: "1rem", color: "var(--brand-ink)", lineHeight: 1.55, marginBottom: 20 }}>
                   &ldquo;{t.quote}&rdquo;
                 </p>
-                <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 700, fontSize: "0.75rem", color: "var(--brand-accent)" }}>{t.name}</p>
-                <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.68rem", color: "rgba(var(--brand-canvas-rgb),0.4)" }}>{t.loc} · Early tester</p>
+                <p style={{ ...tagStyle, fontSize: "0.68rem", color: "var(--brand-ink)" }}>{t.name}</p>
+                <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.68rem", color: "rgba(var(--brand-ink-rgb),0.55)" }}>{t.loc} · Drop 001</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ════════════════════ FINAL CTA ════════════════════ */}
+      {/* ════════════════════ FINAL CTA — SOLD OUT / NOTIFY ════════════════════ */}
       <section
         id="cta"
         style={{
-          padding: "100px 24px 60px",
-          background: "var(--brand-flavor-functional)",
+          padding: "100px 24px 90px",
+          background: "var(--brand-tint-soft)",
           color: "var(--brand-ink)",
           textAlign: "center",
           position: "relative",
           overflow: "hidden",
         }}
       >
-        {/* Cloud background overlay */}
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            backgroundImage: "url(/email-clouds-bg.jpg)",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            opacity: 0.35,
-            pointerEvents: "none",
-          }}
-        />
-        {/* Warm tint overlay to blend */}
-        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, rgba(var(--brand-flavor-functional-rgb),0.6) 0%, rgba(var(--brand-flavor-strawberry-rgb),0.3) 50%, rgba(var(--brand-flavor-functional-rgb),0.5) 100%)", pointerEvents: "none" }} />
-        <div className="blob-a" style={{ position: "absolute", top: "10%", right: "5%", width: "25vw", height: "25vw", background: "var(--brand-flavor-strawberry)", opacity: 0.3, pointerEvents: "none" }} />
+        <img src="/brand/pattern-flower.svg" alt="" aria-hidden className="flower-spin" style={{ position: "absolute", top: "-20%", right: "-10%", width: "30vw", minWidth: 260, opacity: 0.8, pointerEvents: "none" }} />
+        <img src="/brand/pattern-flower-vanilla.svg" alt="" aria-hidden style={{ position: "absolute", bottom: "-16%", left: "-8%", width: "20vw", minWidth: 180, opacity: 0.55, pointerEvents: "none" }} />
 
-        <div {...anim("cta-block")} style={{ ...anim("cta-block").style, maxWidth: 520, margin: "0 auto", position: "relative", zIndex: 1 }}>
-          <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 600, fontSize: "0.68rem", letterSpacing: "0.25em", textTransform: "uppercase", color: "var(--brand-ink)", marginBottom: 16 }}>
-            Early Access
+        <div {...anim("cta-block")} style={{ ...anim("cta-block").style, maxWidth: 560, margin: "0 auto", position: "relative", zIndex: 1 }}>
+          <Image src="/brand/symbol-sheep.png" width={72} height={80} alt="" aria-hidden style={{ width: 64, height: "auto", margin: "0 auto 18px", display: "block" }} />
+          <p style={{ ...tagStyle, fontSize: "0.66rem", color: "var(--brand-ink)", marginBottom: 14 }}>
+            Drop 001 · 500 boxes · gone in 9 days
           </p>
-          <h2 style={{ fontFamily: "var(--brand-font-display)", fontStyle: "italic", fontSize: "clamp(1.8rem, 4vw, 2.8rem)", lineHeight: 1.1, marginBottom: 14, color: "var(--brand-ink)" }}>
-            Get 20% off at launch.
+          <h2 style={{ fontFamily: "var(--brand-font-display)", fontWeight: 800, fontSize: "clamp(2rem, 4.6vw, 3rem)", lineHeight: 1.05, marginBottom: 14, color: "var(--brand-ink)", letterSpacing: "-0.02em" }}>
+            Sold out. Not gone.
           </h2>
-          <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.88rem", color: "rgba(var(--brand-ink-rgb),0.5)", lineHeight: 1.6, marginBottom: 24 }}>
-            Join the waitlist for 20% off + free shipping on your first box. Add your phone and your code upgrades from 20% to 30% — best code wins.
+          <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.92rem", color: "rgba(var(--brand-ink-rgb),0.7)", lineHeight: 1.65, marginBottom: 28 }}>
+            The restock list hears about Drop 002 before anyone else — with 20% off locked in,
+            and 30% if you add your number. When it&apos;s gone, it&apos;s gone.
           </p>
-          {step === "done" ? (
-            <div>
-              <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 700, fontSize: "1rem", color: "var(--brand-ink)", marginBottom: referralCode ? 16 : 0 }}>
-                ✓ You&apos;re on the list.
-              </p>
-              {referralCode && (
-                <div style={{ marginTop: 16, padding: "24px", background: "rgba(var(--brand-ink-rgb),0.08)", borderRadius: 12, textAlign: "left" }}>
-                  <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 700, fontSize: "0.78rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--brand-ink)", marginBottom: 8 }}>
-                    Refer friends → earn up to $15 credit
-                  </p>
-                  <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.75rem", color: "rgba(var(--brand-ink-rgb),0.5)", marginBottom: 14 }}>
-                    $5 credit at 1 friend, $10 at 3, $15 at 5 — applied at checkout on drop day. Share your link:
-                  </p>
-                  <div style={{ display: "flex", gap: 8, alignItems: "center", marginBottom: 14, flexWrap: "wrap" }}>
-                    <div style={{ flex: "1 1 200px", background: "rgba(255,255,255,0.6)", border: "2px solid var(--brand-ink)", padding: "10px 14px", fontFamily: "var(--brand-font-mono)", fontSize: "0.78rem", color: "var(--brand-ink)", minWidth: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
-                      drinkshroome.com?ref={referralCode}
-                    </div>
-                    <button
-                      onClick={copyReferralLink}
-                      style={{ padding: "10px 20px", border: "none", background: copied ? "var(--brand-ink)" : "var(--brand-accent)", color: copied ? "var(--brand-accent)" : "var(--brand-ink)", fontFamily: "var(--brand-font-body)", fontWeight: 800, fontSize: "0.7rem", letterSpacing: "0.08em", textTransform: "uppercase", cursor: "pointer", whiteSpace: "nowrap", transition: "all 0.2s" }}
-                    >
-                      {copied ? "Copied!" : "Copy"}
-                    </button>
-                  </div>
-                  <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 14 }}>
-                    {[
-                      { label: "Share on Instagram", platform: "instagram", bg: "var(--brand-flavor-functional)" },
-                      { label: "Share on TikTok", platform: "tiktok", bg: "var(--brand-flavor-strawberry)" },
-                      { label: "Text a friend", platform: "text", bg: "var(--brand-accent)" },
-                    ].map((s) => (
-                      <button
-                        key={s.platform}
-                        onClick={() => shareOnPlatform(s.platform)}
-                        style={{ padding: "8px 14px", border: "none", background: s.bg, color: "var(--brand-ink)", fontFamily: "var(--brand-font-body)", fontWeight: 700, fontSize: "0.65rem", letterSpacing: "0.06em", textTransform: "uppercase", cursor: "pointer", borderRadius: 2 }}
-                      >
-                        {s.label}
-                      </button>
-                    ))}
-                  </div>
-                  <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                    <div style={{ display: "flex", gap: 4 }}>
-                      {[0, 1, 2].map((i) => (
-                        <div key={i} style={{ width: 28, height: 28, borderRadius: "50%", border: "2px solid var(--brand-ink)", background: i < referralCount ? "var(--brand-accent)" : "transparent", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.65rem", fontWeight: 700, color: i < referralCount ? "var(--brand-ink)" : "rgba(var(--brand-ink-rgb),0.3)", fontFamily: "var(--brand-font-body)", transition: "all 0.3s" }}>
-                          {i < referralCount ? "✓" : ""}
-                        </div>
-                      ))}
-                    </div>
-                    <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.72rem", color: "rgba(var(--brand-ink-rgb),0.5)", fontWeight: 600 }}>
-                      {referralCount}/3 friends joined
-                    </p>
-                  </div>
-                </div>
-              )}
-            </div>
-          ) : step === "captcha" ? (
-            <div>
-              <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 600, fontSize: "0.88rem", color: "var(--brand-ink)", marginBottom: 14 }}>
-                Quick verification for {email}
-              </p>
-              {!captchaRef.current && <div ref={captchaRef} style={{ display: "flex", justifyContent: "center", marginBottom: 8 }} />}
-              {loading && (
-                <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.72rem", color: "rgba(var(--brand-ink-rgb),0.45)" }}>
-                  Submitting...
-                </p>
-              )}
-            </div>
-          ) : step === "phone" ? (
-            <div>
-              <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 600, fontSize: "0.88rem", color: "var(--brand-ink)", marginBottom: 14 }}>
-                ✓ 20% off + free shipping locked in! Add your number and your code upgrades from 20% to 30% — best code wins.
-              </p>
-              <form onSubmit={handlePhoneSubmit} style={{ display: "flex", gap: 8, flexWrap: "wrap", justifyContent: "center" }}>
-                <input
-                  type="tel"
-                  value={phone}
-                  onChange={(e) => setPhone(e.target.value)}
-                  placeholder="(555) 123-4567"
-                  style={{ flex: "1 1 240px", padding: "15px 20px", border: "2px solid var(--brand-ink)", background: "rgba(255,255,255,0.5)", color: "var(--brand-ink)", fontFamily: "var(--brand-font-body)", fontSize: "0.95rem", fontWeight: 500, minWidth: 0 }}
-                />
-                <button type="submit" disabled={loading} style={{ padding: "15px 28px", border: "none", background: "var(--brand-ink)", color: "var(--brand-accent)", fontFamily: "var(--brand-font-body)", fontWeight: 800, fontSize: "0.75rem", letterSpacing: "0.12em", textTransform: "uppercase", cursor: loading ? "wait" : "pointer", whiteSpace: "nowrap" }}>
-                  {loading ? "…" : "Add phone →"}
-                </button>
-              </form>
-              <button onClick={skipPhone} style={{ marginTop: 10, background: "transparent", border: "none", color: "rgba(var(--brand-ink-rgb),0.45)", fontFamily: "var(--brand-font-body)", fontSize: "0.72rem", cursor: "pointer", textDecoration: "underline" }}>
-                Skip
-              </button>
-              <p style={{ margin: "8px 0 0", fontSize: "0.6rem", color: "rgba(var(--brand-ink-rgb),0.35)", lineHeight: 1.4, maxWidth: 400 }}>
-                By providing your phone number, you agree to receive marketing texts from shroomé. Msg &amp; data rates may apply. Reply STOP to unsubscribe.
-              </p>
-            </div>
-          ) : (
-            <form onSubmit={handleEmailSubmit} style={{ display: "flex", gap: 8, flexWrap: "wrap", justifyContent: "center" }}>
-              <input
-                type="email"
-                required
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="your@email.com"
-                style={{ flex: "1 1 240px", padding: "15px 20px", border: "2px solid var(--brand-ink)", background: "rgba(255,255,255,0.5)", color: "var(--brand-ink)", fontFamily: "var(--brand-font-body)", fontSize: "0.95rem", fontWeight: 500, minWidth: 0 }}
-              />
-              <button type="submit" disabled={loading} style={{ padding: "15px 28px", border: "none", background: "var(--brand-ink)", color: "var(--brand-accent)", fontFamily: "var(--brand-font-body)", fontWeight: 800, fontSize: "0.75rem", letterSpacing: "0.12em", textTransform: "uppercase", cursor: loading ? "wait" : "pointer", whiteSpace: "nowrap" }}>
-                {loading ? "…" : "Get launch updates →"}
-              </button>
-            </form>
-          )}
-          {captchaError && step === "email" && (
-            <p role="alert" style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.72rem", color: "#B3261E", marginTop: 10, fontWeight: 600 }}>
-              {captchaError}
-            </p>
-          )}
+          {restockForm("cta")}
         </div>
+      </section>
 
-        <div style={{ marginTop: 80, paddingTop: 28, borderTop: "1px solid rgba(var(--brand-ink-rgb),0.08)", position: "relative", zIndex: 1 }}>
-          <div style={{ display: "flex", gap: 24, justifyContent: "center", marginBottom: 20 }}>
+      {/* ════════════════════ FOOTER ════════════════════ */}
+      <footer style={{ background: "var(--brand-ink)", color: "var(--brand-canvas)", padding: "70px 24px 40px", textAlign: "center", position: "relative", overflow: "hidden" }}>
+        <div style={{ maxWidth: 900, margin: "0 auto" }}>
+          <Image src="/brand/wordmark-cream.png" width={300} height={65} alt="shroomé" loading="lazy" style={{ width: 240, height: "auto", margin: "0 auto 18px" }} />
+          <p style={{ ...tagStyle, fontSize: "0.66rem", color: "var(--brand-accent)", marginBottom: 32 }}>
+            Pour. Swirl. Go.
+          </p>
+
+          <div style={{ display: "flex", gap: 24, justifyContent: "center", marginBottom: 26, flexWrap: "wrap" }}>
             {[
               { label: "TIKTOK", href: "https://tiktok.com/@drinkshroome" },
               { label: "INSTAGRAM", href: "https://instagram.com/drinkshroome" },
               { label: "YOUTUBE", href: "https://youtube.com/@drinkshroome" },
             ].map((s) => (
-              <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" style={{ fontFamily: "var(--brand-font-body)", fontWeight: 700, fontSize: "0.7rem", letterSpacing: "0.12em", color: "var(--brand-ink)", textDecoration: "none" }}>
+              <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" style={{ fontFamily: "var(--brand-font-body)", fontWeight: 700, fontSize: "0.7rem", letterSpacing: "0.12em", color: "var(--brand-canvas)", textDecoration: "none" }}>
                 {s.label}
               </a>
             ))}
           </div>
-          <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.68rem", color: "rgba(var(--brand-ink-rgb),0.3)", letterSpacing: "0.08em" }}>
-            © 2026 shroomé · hello@drinkshroome.com
+          <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.68rem", color: "rgba(var(--brand-canvas-rgb),0.55)", letterSpacing: "0.08em" }}>
+            © 2026 shroomé · ZSQUARED INC · hello@drinkshroome.com
           </p>
-          <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.62rem", color: "rgba(var(--brand-ink-rgb),0.2)", marginTop: 8 }}>
-            <a href="/privacy" style={{ color: "rgba(var(--brand-ink-rgb),0.3)", textDecoration: "underline" }}>Privacy Policy</a>
+          <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.62rem", color: "rgba(var(--brand-canvas-rgb),0.4)", marginTop: 10 }}>
+            <a href="/privacy" style={{ color: "rgba(var(--brand-canvas-rgb),0.55)", textDecoration: "underline" }}>Privacy Policy</a>
             {" · "}
-            <a href="/terms" style={{ color: "rgba(var(--brand-ink-rgb),0.3)", textDecoration: "underline" }}>Terms of Service</a>
+            <a href="/terms" style={{ color: "rgba(var(--brand-canvas-rgb),0.55)", textDecoration: "underline" }}>Terms of Service</a>
             {" · "}
-            <a href="/faq" style={{ color: "rgba(var(--brand-ink-rgb),0.3)", textDecoration: "underline" }}>FAQ</a>
+            <a href="/faq" style={{ color: "rgba(var(--brand-canvas-rgb),0.55)", textDecoration: "underline" }}>FAQ</a>
             {" · "}
-            <a href="/blog" style={{ color: "rgba(var(--brand-ink-rgb),0.3)", textDecoration: "underline" }}>Blog</a>
+            <a href="/blog" style={{ color: "rgba(var(--brand-canvas-rgb),0.55)", textDecoration: "underline" }}>Blog</a>
+            {" · "}
+            <a href="/recipes" style={{ color: "rgba(var(--brand-canvas-rgb),0.55)", textDecoration: "underline" }}>Recipes</a>
           </p>
-          <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.6rem", color: "rgba(var(--brand-ink-rgb),0.2)", marginTop: 6 }}>
+          <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.6rem", color: "rgba(var(--brand-canvas-rgb),0.35)", marginTop: 8 }}>
             @drinkshroome
           </p>
         </div>
-      </section>
+      </footer>
 
       {/* Exit-intent popup */}
       <ExitPopup />
