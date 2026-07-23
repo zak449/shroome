@@ -849,21 +849,58 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ════════════════════ GOOD ENERGY LOCKUP ════════════════════ */}
-      <section id="why" style={{ padding: "96px 24px 80px", background: "var(--brand-canvas)", textAlign: "center", position: "relative", overflow: "hidden" }}>
-        <div {...anim("lockup")} style={{ ...anim("lockup").style, maxWidth: 680, margin: "0 auto" }}>
-          <Image
-            src="/brand/lockup-good-energy.png"
-            alt="Ready to enjoy life with good energy."
-            width={840}
-            height={551}
-            style={{ width: "100%", maxWidth: 560, height: "auto" }}
-          />
-          <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.98rem", color: "rgba(var(--brand-ink-rgb),0.75)", lineHeight: 1.7, maxWidth: 520, margin: "28px auto 0" }}>
-            We&apos;re a different animal in this space — uniting taste with real benefits,
-            and lifestyle with science. Cafe-grade ceremonial matcha, functional mushrooms,
-            and collagen, already blended into a liquid you pour like creamer.
-          </p>
+      {/* ════════════════════ DIFFERENT ANIMAL — STATEMENT PANEL ════════════════════ */}
+      <section id="why" style={{ padding: "72px 24px", background: "var(--brand-canvas)" }}>
+        <div
+          {...anim("lockup")}
+          style={{
+            ...anim("lockup").style,
+            maxWidth: 1080,
+            margin: "0 auto",
+            background: "var(--brand-tint-soft)",
+            border: "3px solid var(--brand-ink)",
+            borderRadius: 32,
+            padding: "clamp(28px, 5vw, 56px)",
+            display: "flex",
+            alignItems: "center",
+            gap: "clamp(28px, 4vw, 56px)",
+            flexWrap: "wrap",
+            position: "relative",
+            overflow: "hidden",
+          }}
+        >
+          <img src="/brand/pattern-flower-brand.svg" alt="" aria-hidden style={{ position: "absolute", bottom: "-22%", right: "-8%", width: 260, opacity: 0.35, pointerEvents: "none" }} />
+          <div style={{ flex: "1 1 320px", minWidth: 260, position: "relative" }}>
+            <Image
+              src="/brand/lockup-good-energy.png"
+              alt="Ready to enjoy life with good energy."
+              width={840}
+              height={551}
+              loading="lazy"
+              style={{ width: "100%", maxWidth: 400, height: "auto", display: "block", margin: "0 auto" }}
+            />
+          </div>
+          <div style={{ flex: "1 1 340px", minWidth: 280, position: "relative" }}>
+            <p style={{ ...tagStyle, fontSize: "0.66rem", color: "var(--brand-accent-deep)", marginBottom: 14 }}>
+              A different animal
+            </p>
+            <p style={{ fontFamily: "var(--brand-font-display)", fontWeight: 800, fontSize: "clamp(1.3rem, 2.4vw, 1.7rem)", color: "var(--brand-ink)", lineHeight: 1.25, letterSpacing: "-0.01em", marginBottom: 22 }}>
+              Cafe-grade ceremonial matcha, functional mushrooms, and collagen —
+              already blended into a liquid you pour like creamer.
+            </p>
+            <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+              {[
+                "500 boxes. Gone in 9 days.",
+                "One 30-second pour. No whisk, no barista.",
+                "Energy, clarity, skin, immunity — one sachet.",
+              ].map((r) => (
+                <div key={r} style={{ display: "flex", alignItems: "center", gap: 12 }}>
+                  <span style={{ width: 10, height: 10, borderRadius: "50%", background: "var(--brand-accent)", border: "2px solid var(--brand-ink)", flexShrink: 0 }} />
+                  <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 600, fontSize: "0.9rem", color: "var(--brand-ink)" }}>{r}</p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
@@ -878,7 +915,6 @@ export default function Home() {
           textAlign: "center",
         }}
       >
-        <img src="/brand/pattern-flower-vanilla.svg" alt="" aria-hidden style={{ position: "absolute", top: "-8%", right: "-6%", width: "18vw", minWidth: 180, opacity: 0.5, pointerEvents: "none" }} />
         <div style={{ position: "relative", zIndex: 1, maxWidth: 1000, margin: "0 auto" }}>
           <div {...anim("flavor-head")}>
             <p style={{ ...tagStyle, fontSize: "0.66rem", color: "var(--brand-accent-deep)", marginBottom: 16 }}>
