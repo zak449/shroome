@@ -1225,19 +1225,32 @@ export default function Home() {
       <section
         id="cta"
         style={{
-          padding: "100px 24px 90px",
-          background: "var(--brand-tint-soft)",
+          padding: "110px 24px",
+          backgroundColor: "var(--brand-accent-deep)",
+          backgroundImage: "url(/brand/pattern-ripple.svg)",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
           color: "var(--brand-ink)",
           textAlign: "center",
           position: "relative",
           overflow: "hidden",
         }}
       >
-        <img src="/brand/pattern-flower-brand.svg" alt="" aria-hidden className="flower-spin" style={{ position: "absolute", top: "-20%", right: "-10%", width: "30vw", minWidth: 260, opacity: 0.8, pointerEvents: "none" }} />
-        <img src="/brand/pattern-flower-vanilla.svg" alt="" aria-hidden style={{ position: "absolute", bottom: "-16%", left: "-8%", width: "20vw", minWidth: 180, opacity: 0.55, pointerEvents: "none" }} />
-
-        <div {...anim("cta-block")} style={{ ...anim("cta-block").style, maxWidth: 560, margin: "0 auto", position: "relative", zIndex: 1 }}>
-          <Image src="/brand/symbol-sheep-solid.png" width={72} height={80} alt="" aria-hidden style={{ width: 64, height: "auto", margin: "0 auto 18px", display: "block" }} />
+        <div
+          {...anim("cta-block")}
+          style={{
+            ...anim("cta-block").style,
+            maxWidth: 600,
+            margin: "0 auto",
+            position: "relative",
+            zIndex: 1,
+            background: "var(--brand-canvas)",
+            border: "3px solid var(--brand-ink)",
+            borderRadius: 32,
+            padding: "clamp(28px, 5vw, 48px)",
+          }}
+        >
+          <Image src="/brand/symbol-sheep-solid.png" width={72} height={80} alt="" aria-hidden style={{ width: 60, height: "auto", margin: "0 auto 16px", display: "block" }} />
           <p style={{ ...tagStyle, fontSize: "0.66rem", color: "var(--brand-ink)", marginBottom: 14 }}>
             Drop 001 · 500 boxes · gone in 9 days
           </p>
