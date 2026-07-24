@@ -980,8 +980,8 @@ export default function Home() {
 
           <div className="flavor-cards-wrap" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 32 }}>
             {[
-              { src: "/sachet-vanilla.png", name: "Vanilla", note: "Warm · Smooth · Everyday", href: "/flavors/vanilla", bg: "var(--brand-flavor-functional)", me: "/brand/me-04.png", meStyle: { top: 14, left: 14, width: 74, transform: "rotate(-10deg)" }, alt: "shroomé Vanilla liquid ceremonial matcha latte sachet, sold out", stamp: "Poured out.", stampKicker: "Sold out · Day 9", stampBg: "var(--brand-ink)", stampColor: "var(--brand-canvas)", stampRotate: "rotate(-7deg)" },
-              { src: "/sachet-strawberry.png", name: "Strawberry", note: "Bright · Fruity · Loud", href: "/flavors/strawberry", bg: "var(--brand-tint-blush)", me: "/brand/me-02.png", meStyle: { top: 18, left: 16, width: 80, transform: "rotate(8deg)" }, alt: "shroomé Strawberry liquid ceremonial matcha latte sachet, sold out", stamp: "Gone. Loudly.", stampKicker: "Sold out · Day 9", stampBg: "var(--brand-flavor-strawberry)", stampColor: "var(--brand-ink)", stampRotate: "rotate(6deg)" },
+              { src: "/sachet-vanilla.png", name: "Vanilla", note: "Warm · Smooth · Everyday", href: "/flavors/vanilla", bg: "var(--brand-flavor-functional)", me: "/brand/me-04.png", meStyle: { top: 14, left: 14, width: 74, transform: "rotate(-10deg)" }, alt: "shroomé Vanilla liquid ceremonial matcha latte sachet, sold out", stamp: "Poured out.", stampKicker: "First run · gone in 9 days", stampBg: "var(--brand-ink)", stampColor: "var(--brand-canvas)", stampRotate: "rotate(-7deg)" },
+              { src: "/sachet-strawberry.png", name: "Strawberry", note: "Bright · Fruity · Loud", href: "/flavors/strawberry", bg: "var(--brand-tint-blush)", me: "/brand/me-02.png", meStyle: { top: 18, left: 16, width: 80, transform: "rotate(8deg)" }, alt: "shroomé Strawberry liquid ceremonial matcha latte sachet, sold out", stamp: "Gone. Loudly.", stampKicker: "First run · gone in 9 days", stampBg: "var(--brand-flavor-strawberry)", stampColor: "var(--brand-ink)", stampRotate: "rotate(6deg)" },
             ].map((f, i) => (
               <a key={f.name} href={f.href} {...anim(`flavor-${i}`, i * 0.12)} style={{ ...anim(`flavor-${i}`, i * 0.12).style, textDecoration: "none", color: "inherit" }}>
                 <div className="lift" style={{ background: f.bg, border: "3px solid var(--brand-ink)", borderRadius: 32, padding: "28px 16px 26px", position: "relative", overflow: "hidden" }}>
@@ -1002,7 +1002,7 @@ export default function Home() {
                       whiteSpace: "nowrap",
                     }}
                   >
-                    <p style={{ ...tagStyle, fontSize: "0.6rem", color: f.stampColor, opacity: 0.85, marginBottom: 3 }}>
+                    <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 800, fontSize: "0.6rem", letterSpacing: "0.14em", textTransform: "uppercase", color: f.stampColor, opacity: 0.85, marginBottom: 3 }}>
                       {f.stampKicker}
                     </p>
                     <p style={{ fontFamily: "var(--brand-font-display)", fontWeight: 800, fontSize: "clamp(1.3rem, 2.4vw, 1.7rem)", letterSpacing: "-0.01em", lineHeight: 1 }}>
@@ -1027,7 +1027,7 @@ export default function Home() {
                     style={{ width: "72%", maxWidth: 330, height: "auto", display: "block", margin: "0 auto", filter: "drop-shadow(0 22px 34px rgba(45,52,26,0.28))" }}
                   />
                   <h3 style={{ fontFamily: "var(--brand-font-display)", fontWeight: 800, fontSize: "1.7rem", margin: "22px 0 6px", color: "var(--brand-ink)" }}>{f.name}</h3>
-                  <p style={{ ...tagStyle, fontSize: "0.7rem", color: "rgba(var(--brand-ink-rgb),0.7)" }}>{f.note}</p>
+                  <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 700, fontSize: "0.72rem", letterSpacing: "0.16em", textTransform: "uppercase", color: "rgba(var(--brand-ink-rgb),0.7)" }}>{f.note}</p>
                   <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 800, fontSize: "0.72rem", letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--brand-ink)", marginTop: 14, textDecoration: "underline" }}>
                     See the flavor →
                   </p>
