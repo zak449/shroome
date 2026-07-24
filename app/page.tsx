@@ -1062,12 +1062,13 @@ export default function Home() {
               <a key={f.name} href={f.href} {...anim(`flavor-${i}`, i * 0.12)} style={{ ...anim(`flavor-${i}`, i * 0.12).style, textDecoration: "none", color: "inherit" }}>
                 <div className="lift" style={{ background: f.bg, border: "3px solid var(--brand-ink)", borderRadius: 32, padding: "28px 16px 26px", position: "relative", overflow: "hidden" }}>
                   <div
+                    className="sold-stamp"
                     style={{
                       position: "absolute",
-                      top: "46%",
-                      left: "50%",
-                      transform: `translate(-50%, -50%) ${f.stampRotate}`,
-                      zIndex: 2,
+                      top: 22,
+                      left: "54%",
+                      transform: `translate(-50%, 0) ${f.stampRotate}`,
+                      zIndex: 3,
                       background: f.stampBg,
                       color: f.stampColor,
                       border: "3px solid var(--brand-ink)",

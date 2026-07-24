@@ -112,10 +112,47 @@ whisper to doors-open. Members always hear each stage a full day (minimum) befor
 - Every marketing email carries the RFC 8058 headers (`unsubHeaders`) and the mé footer with unsubscribe.
 - SMS: GSM-7, quiet hours, brand-name prefix, canon per `Marketing/Email/Flows/engagement-capture-flows.md` §5.
 
-## Klaviyo build state
+## Klaviyo build state (pushed via API on 2026-07-24)
 
-Templates are pushed via API (see final report / template IDs in Klaviyo, prefix `shroome —`).
-**Flows themselves are UI-only in Klaviyo** (the flows API is read-only). Founder checklist to click
-together in the flow builder lives in the lifecycle report accompanying this doc; in short: create
-Flows 1, 2 and 4 with the triggers/timings in the tables above, attach the pushed templates to each
-email step, set quiet hours, and leave Flows 3 and 5 as drafts until their gates are true.
+**Templates** (editor type CODE, view at klaviyo.com/email-editor/{ID}/edit):
+
+| template | ID | maps to |
+|----------|----|---------|
+| shroome — flock welcome v2 | `YsFgxn` | Flow 1.1 (welcomeEmail) |
+| shroome — lore: the stir is the recipe v2 | `Vy44ng` | Flow 1.2 (sachetEmail) |
+| shroome — lore: the sealed envelope v1 | `YpewgG` | Flow 1.3 (ledgerEmail) |
+| shroome — lore: the redacted sheet v1 | `SbEihj` | Flow 2.1 (redactedEmail) |
+| shroome — lore: the first ballot v1 | `RwCfwb` | Flow 3.1 (ballotEmail); swap the CTA href for the live ballot URL before sending |
+
+**Segments** (created): `STTRhG` "shroome — the flock (waitlist members)" (member of Shroomé
+Waitlist list `TyUdnu`); `WRSTT7` "shroome — flock: sms consented (drop-day text)".
+
+**Existing account objects found:** lists Email List `Rh3MYC`, Text Messaging List `T5tFv7`
+(double opt-in), Shroomé Waitlist `TyUdnu` (single opt-in, the one `/api/waitlist` syncs to),
+Preview List `URTyZA`. Flows: "SMS Welcome Flow" (live, Added to List), "Email Welcome Series"
+(draft, Added to List), 3 unconfigured "Essential Flow Recommendation_" drafts. No templates or
+segments existed before this push.
+
+### founder checklist — what must be clicked together in the Klaviyo UI
+
+The flows API is read-only, so the flow builder steps are manual:
+
+1. Open the draft **"Email Welcome Series"** flow (trigger: Added to List). Set the trigger list to
+   **Shroomé Waitlist** (`TyUdnu`). Build three email steps: instant → template `YsFgxn` (subject:
+   "you're in the flock 🐑"), wait 2 days → `Vy44ng` (subject: "the stir is the recipe 🍵"), wait
+   3 days → `YpewgG` (subject: "mé sealed something in the ledger"). Set each message's preview
+   text from the FLOW 1 table. Turn smart sending ON. Set live.
+2. Create **"the archive (lore drips)"** flow: trigger Added to List (Shroomé Waitlist), time delay
+   12 days (so it lands after 1.3), email step → `SbEihj` (subject: "we blacked most of this out").
+   Add a flow filter "has not been in flow X" is unnecessary since the delay sequences it. Leave the
+   2.2 to 2.4 drips as placeholder notes; templates for them are the next build batch.
+3. Review the live **"SMS Welcome Flow"**: replace its message body with SMS 1 from
+   `Marketing/Email/Flows/engagement-capture-flows.md` §5 (the canon-corrected opt-in confirm with
+   full disclosure). Confirm quiet hours are on in Settings → Text messaging.
+4. Keep the ballot (`RwCfwb`) and any whisper-sequence sends as **campaigns**, created only when
+   their gates are true; target segment `STTRhG`, and for SMS beats segment `WRSTT7`.
+5. Archive or delete the three "Essential Flow Recommendation_" drafts to keep the account clean.
+6. Referral milestone flow (FLOW 4) needs a `referral_count` profile property that the app does not
+   currently sync (the repo computes referral counts in `/api/referral` on the fly). Either add a
+   property sync to `/api/waitlist`/a cron, or trigger milestones off the custom "Referral Landed"
+   event if/when one is emitted. Until then FLOW 4 stays on paper.
