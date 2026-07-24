@@ -1287,19 +1287,11 @@ export default function Home() {
           <div {...anim("arrival-img")} style={{ ...anim("arrival-img").style, flex: "1 1 420px", minWidth: 300, position: "relative" }}>
             <Image
               src="/brand/shipper-box.jpg"
-              alt="The shroomé kraft shipping box — Pour. Swirl. Go. — sealed with pinwheel pattern tape"
+              alt="The shroomé box on a doorstep — Pour. Swirl. Go."
               width={1600}
               height={900}
               loading="lazy"
               style={{ width: "100%", height: "auto", borderRadius: 24, border: "3px solid var(--brand-ink)", boxShadow: "0 20px 48px rgba(45,52,26,0.18)", display: "block" }}
-            />
-            <Image
-              src="/brand/box-stack.jpg"
-              alt="Stacked shroomé strawberry boxes"
-              width={520}
-              height={293}
-              loading="lazy"
-              style={{ position: "absolute", right: -18, bottom: -44, width: "44%", height: "auto", borderRadius: 16, border: "3px solid var(--brand-ink)", transform: "rotate(3deg)", boxShadow: "0 14px 30px rgba(45,52,26,0.25)" }}
             />
           </div>
           <div {...anim("arrival-copy", 0.12)} style={{ ...anim("arrival-copy", 0.12).style, flex: "1 1 380px", minWidth: 280 }}>
@@ -1310,16 +1302,17 @@ export default function Home() {
               Cafe energy.<br />Home address.
             </h2>
             <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.95rem", color: "rgba(var(--brand-ink-rgb),0.75)", lineHeight: 1.7, marginBottom: 22 }}>
-              The kraft box lands on your doorstep sealed in pinwheel tape, mé stamped on the
-              side, a month of matcha lattes inside. No line, no counter, no name spelled
-              wrong on a cup. Subscribers never even have to think about it — their boxes
-              are reserved out of every run before the public window opens.
+              Your cafe order — the exact one you&apos;d stand in line for — waiting at your
+              door. Tear a sachet, pour it over milk, swirl. That&apos;s it. No whisk, no
+              hand mixer, no green dust on the counter, no name spelled wrong on the cup.
+              It tastes like the good cafe made it, because the good stuff is already in
+              the pour.
             </p>
             <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
               {[
-                "Ships free, every box",
-                "Subscribers: allocation reserved every drop",
-                "Skip, pause, or swap flavors anytime",
+                "Barista-level latte in 30 seconds",
+                "No whisk, no clumps, no cleanup",
+                "Ships free — skip, pause, or swap flavors anytime",
               ].map((r) => (
                 <div key={r} style={{ display: "flex", alignItems: "center", gap: 12 }}>
                   <span style={{ width: 10, height: 10, borderRadius: "50%", background: "var(--brand-accent)", border: "2px solid var(--brand-ink)", flexShrink: 0 }} />

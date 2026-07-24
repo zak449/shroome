@@ -425,14 +425,14 @@ export default function WelcomePage() {
       {/* ── THE ARRIVAL ───────────────────────────── */}
       <section style={{ background: C.canvas, padding: "72px 24px", textAlign: "center" }}>
         <p style={{ fontFamily: F.mono, fontWeight: 700, fontSize: 11, letterSpacing: "0.16em", textTransform: "uppercase", color: C.accent, marginBottom: 14 }}>
-          What lands on your doorstep
+          Your cafe order, waiting at the door
         </p>
         <h2 style={{ fontFamily: F.heading, fontWeight: 800, fontSize: "clamp(26px, 4vw, 38px)", color: C.ink, letterSpacing: "-0.02em", marginBottom: 24 }}>
           Cafe energy. Home address.
         </h2>
         <img
           src="/brand/shipper-box.jpg"
-          alt="The shroomé kraft shipping box sealed with pinwheel pattern tape"
+          alt="The shroomé box on a doorstep"
           loading="lazy"
           style={{ width: "100%", maxWidth: 640, height: "auto", borderRadius: 24, border: "3px solid " + C.ink, boxShadow: "0 18px 44px rgba(45,52,26,0.18)", margin: "0 auto", display: "block" }}
         />
