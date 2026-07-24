@@ -173,7 +173,7 @@ export default function DropPage() {
         .dr-card{background:#fff;border:2px solid var(--brand-ink);border-radius:24px;overflow:hidden;position:relative;display:flex;flex-direction:column}
         .dr-card-img{position:relative;padding:30px 20px 16px;display:flex;justify-content:center;align-items:center;min-height:230px}
         .dr-card-img img{filter:drop-shadow(0 14px 22px rgba(45,52,26,0.3))}
-        .dr-soldout{position:absolute;top:16px;left:50%;transform:translateX(-50%) rotate(-6deg);background:var(--brand-ink);color:var(--brand-canvas);font-family:var(--brand-font-body);font-weight:800;font-size:0.82rem;letter-spacing:.16em;text-transform:uppercase;padding:8px 18px;z-index:2}
+        .dr-soldout{position:absolute;top:42%;left:50%;transform:translate(-50%,-50%) rotate(-6deg);background:var(--brand-ink);color:var(--brand-canvas);font-family:var(--brand-font-body);font-weight:800;font-size:1.05rem;letter-spacing:.14em;text-transform:uppercase;padding:12px 24px;border-radius:12px;box-shadow:0 10px 24px rgba(45,52,26,0.3);z-index:2}
         .dr-card-body{padding:8px 22px 24px;display:flex;flex-direction:column;flex:1}
         .dr-card-sku{font-family:var(--brand-font-mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(var(--brand-ink-rgb),0.35);margin:0 0 6px}
         .dr-card h3{font-family:var(--brand-font-display);font-weight:800;font-size:1.35rem;color:var(--brand-ink);margin:0 0 4px}

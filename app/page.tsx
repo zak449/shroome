@@ -943,28 +943,34 @@ export default function Home() {
 
           <div className="flavor-cards-wrap" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 32 }}>
             {[
-              { src: "/sachet-vanilla.png", name: "Vanilla", note: "Warm · Smooth · Everyday", href: "/flavors/vanilla", bg: "var(--brand-flavor-functional)", me: "/brand/me-04.png", meStyle: { top: 14, left: 14, width: 74, transform: "rotate(-10deg)" }, alt: "shroomé Vanilla liquid ceremonial matcha latte sachet", stamp: "Poured out · Day 9", stampBg: "var(--brand-ink)", stampColor: "var(--brand-canvas)", stampRotate: "rotate(6deg)" },
-              { src: "/sachet-strawberry.png", name: "Strawberry", note: "Bright · Fruity · Loud", href: "/flavors/strawberry", bg: "var(--brand-tint-blush)", me: "/brand/me-02.png", meStyle: { top: 18, left: 16, width: 80, transform: "rotate(8deg)" }, alt: "shroomé Strawberry liquid ceremonial matcha latte sachet", stamp: "Gone. Loudly.", stampBg: "var(--brand-flavor-strawberry)", stampColor: "var(--brand-ink)", stampRotate: "rotate(-5deg)" },
+              { src: "/sachet-vanilla.png", name: "Vanilla", note: "Warm · Smooth · Everyday", href: "/flavors/vanilla", bg: "var(--brand-flavor-functional)", me: "/brand/me-04.png", meStyle: { top: 14, left: 14, width: 74, transform: "rotate(-10deg)" }, alt: "shroomé Vanilla liquid ceremonial matcha latte sachet — sold out", stamp: "Poured out.", stampKicker: "Sold out · Day 9", stampBg: "var(--brand-ink)", stampColor: "var(--brand-canvas)", stampRotate: "rotate(-7deg)" },
+              { src: "/sachet-strawberry.png", name: "Strawberry", note: "Bright · Fruity · Loud", href: "/flavors/strawberry", bg: "var(--brand-tint-blush)", me: "/brand/me-02.png", meStyle: { top: 18, left: 16, width: 80, transform: "rotate(8deg)" }, alt: "shroomé Strawberry liquid ceremonial matcha latte sachet — sold out", stamp: "Gone. Loudly.", stampKicker: "Sold out · Day 9", stampBg: "var(--brand-flavor-strawberry)", stampColor: "var(--brand-ink)", stampRotate: "rotate(6deg)" },
             ].map((f, i) => (
               <a key={f.name} href={f.href} {...anim(`flavor-${i}`, i * 0.12)} style={{ ...anim(`flavor-${i}`, i * 0.12).style, textDecoration: "none", color: "inherit" }}>
                 <div className="lift" style={{ background: f.bg, border: "3px solid var(--brand-ink)", borderRadius: 32, padding: "28px 16px 26px", position: "relative", overflow: "hidden" }}>
                   <div
                     style={{
                       position: "absolute",
-                      top: 18,
-                      right: 18,
+                      top: "38%",
+                      left: "50%",
+                      transform: `translate(-50%, -50%) ${f.stampRotate}`,
                       zIndex: 2,
                       background: f.stampBg,
                       color: f.stampColor,
-                      border: "2px solid var(--brand-ink)",
-                      borderRadius: 999,
-                      padding: "8px 16px",
-                      transform: f.stampRotate,
-                      ...tagStyle,
-                      fontSize: "0.68rem",
+                      border: "3px solid var(--brand-ink)",
+                      borderRadius: 16,
+                      padding: "12px 26px 14px",
+                      textAlign: "center",
+                      boxShadow: "0 12px 28px rgba(45,52,26,0.28)",
+                      whiteSpace: "nowrap",
                     }}
                   >
-                    {f.stamp}
+                    <p style={{ ...tagStyle, fontSize: "0.6rem", color: f.stampColor, opacity: 0.85, marginBottom: 3 }}>
+                      {f.stampKicker}
+                    </p>
+                    <p style={{ fontFamily: "var(--brand-font-display)", fontWeight: 800, fontSize: "clamp(1.3rem, 2.4vw, 1.7rem)", letterSpacing: "-0.01em", lineHeight: 1 }}>
+                      {f.stamp}
+                    </p>
                   </div>
                   <Image
                     src={f.me}
