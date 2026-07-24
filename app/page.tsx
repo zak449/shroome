@@ -82,6 +82,7 @@ export default function Home() {
   const [referralCount, setReferralCount] = useState(0);
   const [copied, setCopied] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [gateBox, setGateBox] = useState<string | null>(null);
 
   // ── Analytics: section visibility tracking ──
   const sectionsSeen = useRef<Set<string>>(new Set());
@@ -964,13 +965,38 @@ export default function Home() {
             ))}
           </div>
 
-          <p {...anim("flavor-packs", 0.2)} style={{ ...anim("flavor-packs", 0.2).style, marginTop: 30, fontFamily: "var(--brand-font-body)", fontSize: "0.82rem", color: "rgba(var(--brand-ink-rgb),0.65)" }}>
-            Boxes of 6 · 12 · 24 · 48 — from $21. Subscriptions from $30.60 with reserved allocation
-            every drop + Flock-only gifts.{" "}
-            <a href="/drop" style={{ color: "var(--brand-ink)", fontWeight: 700, textDecoration: "underline" }}>
-              Build your box →
-            </a>
-          </p>
+          <div {...anim("flavor-packs", 0.2)} style={{ ...anim("flavor-packs", 0.2).style, marginTop: 44 }}>
+            <p style={{ ...tagStyle, fontSize: "0.7rem", color: "var(--brand-accent-deep)", marginBottom: 18 }}>
+              Pick your box · ships free
+            </p>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 16, maxWidth: 980, margin: "0 auto" }}>
+              {[
+                { n: "6 sachets", name: "First-Pour Kit", price: "$21", sub: "one-time only" },
+                { n: "12 sachets", name: "The Standard", price: "$36", sub: "$30.60 subscribed" },
+                { n: "24 sachets", name: "The Duo Stock", price: "$66", sub: "$54.12 subscribed" },
+                { n: "48 sachets", name: "Never Run Dry", price: "$126", sub: "$100.80 subscribed" },
+              ].map((b) => (
+                <div key={b.n} style={{ background: "#fff", border: "3px solid var(--brand-ink)", borderRadius: 24, padding: "22px 18px 20px", textAlign: "center" }}>
+                  <p style={{ ...tagStyle, fontSize: "0.66rem", color: "rgba(var(--brand-ink-rgb),0.65)" }}>{b.n}</p>
+                  <p style={{ fontFamily: "var(--brand-font-display)", fontWeight: 800, fontSize: "1.05rem", color: "var(--brand-ink)", margin: "6px 0 2px" }}>{b.name}</p>
+                  <p style={{ fontFamily: "var(--brand-font-mono)", fontWeight: 700, fontSize: "1.7rem", color: "var(--brand-ink)" }}>{b.price}</p>
+                  <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 600, fontSize: "0.72rem", color: "var(--brand-accent-deep)", marginBottom: 14 }}>{b.sub}</p>
+                  <button
+                    onClick={() => { setGateBox(`${b.name} (${b.n})`); window.gtag?.("event", "add_to_cart_gated", { item_name: b.name }); }}
+                    style={{ width: "100%", background: "var(--brand-accent)", color: "var(--brand-canvas)", border: "2px solid var(--brand-ink)", borderRadius: 999, padding: "12px 10px", fontFamily: "var(--brand-font-body)", fontWeight: 800, fontSize: "0.72rem", letterSpacing: "0.08em", textTransform: "uppercase", cursor: "pointer" }}
+                  >
+                    Get this box →
+                  </button>
+                </div>
+              ))}
+            </div>
+            <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.78rem", color: "rgba(var(--brand-ink-rgb),0.6)", marginTop: 16 }}>
+              Mix flavors in steps of 6 —{" "}
+              <a href="/drop" style={{ color: "var(--brand-ink)", fontWeight: 700, textDecoration: "underline" }}>
+                build your exact box →
+              </a>
+            </p>
+          </div>
         </div>
       </section>
 
@@ -1304,6 +1330,44 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* ════════════════════ FLOCK GATE — pre-launch add-to-cart ════════════════════ */}
+      {gateBox && (
+        <div
+          onClick={() => setGateBox(null)}
+          style={{ position: "fixed", inset: 0, zIndex: 9000, background: "rgba(45,52,26,0.55)", backdropFilter: "blur(6px)", display: "flex", alignItems: "center", justifyContent: "center", padding: 20 }}
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            role="dialog"
+            aria-modal="true"
+            style={{ background: "var(--brand-canvas)", border: "3px solid var(--brand-ink)", borderRadius: 28, padding: "clamp(26px, 5vw, 44px)", maxWidth: 480, width: "100%", textAlign: "center", position: "relative" }}
+          >
+            <button onClick={() => setGateBox(null)} aria-label="Close" style={{ position: "absolute", top: 14, right: 18, background: "none", border: "none", fontSize: "1.4rem", color: "rgba(var(--brand-ink-rgb),0.5)", cursor: "pointer" }}>×</button>
+            <Image src="/brand/symbol-sheep-solid.png" width={64} height={72} alt="" aria-hidden style={{ width: 56, height: "auto", margin: "0 auto 14px", display: "block" }} />
+            <p style={{ ...tagStyle, fontSize: "0.64rem", color: "var(--brand-accent-deep)", marginBottom: 10 }}>
+              {gateBox} · Drop 002
+            </p>
+            <h3 style={{ fontFamily: "var(--brand-font-display)", fontWeight: 800, fontSize: "1.6rem", color: "var(--brand-ink)", letterSpacing: "-0.01em", marginBottom: 12 }}>
+              Not live yet — but you&apos;re early.
+            </h3>
+            <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.9rem", color: "rgba(var(--brand-ink-rgb),0.75)", lineHeight: 1.65, marginBottom: 22 }}>
+              Drop 002 hasn&apos;t launched. The Flock shops it <strong>a full day before the
+              public link</strong> — join free and this box is basically yours before anyone
+              else can see it. Everyone&apos;s welcome in the Flock.
+            </p>
+            <button
+              onClick={() => { setGateBox(null); scrollTo("signup"); window.gtag?.("event", "select_promotion", { promotion_name: "flock_gate_join" }); }}
+              style={{ width: "100%", background: "var(--brand-accent)", color: "var(--brand-canvas)", border: "2px solid var(--brand-ink)", borderRadius: 999, padding: "16px 20px", fontFamily: "var(--brand-font-body)", fontWeight: 800, fontSize: "0.8rem", letterSpacing: "0.1em", textTransform: "uppercase", cursor: "pointer" }}
+            >
+              Join the Flock →
+            </button>
+            <button onClick={() => setGateBox(null)} style={{ marginTop: 12, background: "none", border: "none", fontFamily: "var(--brand-font-body)", fontSize: "0.72rem", color: "rgba(var(--brand-ink-rgb),0.5)", textDecoration: "underline", cursor: "pointer" }}>
+              I&apos;ll wait for the public link
+            </button>
+          </div>
+        </div>
+      )}
 
       {/* ════════════════════ FINAL CTA — SOLD OUT / NOTIFY ════════════════════ */}
       <section
