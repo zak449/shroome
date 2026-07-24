@@ -1064,7 +1064,7 @@ export default function Home() {
                   <div
                     style={{
                       position: "absolute",
-                      top: "38%",
+                      top: "54%",
                       left: "50%",
                       transform: `translate(-50%, -50%) ${f.stampRotate}`,
                       zIndex: 2,

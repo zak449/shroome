@@ -1,28 +1,51 @@
-// ─── shroome emails — premium beverage brand ────────────────────────────────
-// DESIGN PHILOSOPHY: One flowing canvas. Every section melts into the next.
-// No jarring color blocks. Smooth gradient transitions. Full-bleed images.
-// Deep accent-green text (accentDeep), never black. Lifestyle > catalog.
-// Inspired by: Blume, Italic, La Machine Cycling Club, Glossier
+// ─── shroomé emails — identity v2 (Bolden rebrand) ───────────────────────────
+// DESIGN SYSTEM (matches the site + packaging):
+//   • lavender (#E3D5F7 tintSoft) header field with the wordmark image
+//   • cream (#FEFFF8 canvas) body, ink (#2D341A) type
+//   • matcha (#7A881F accent) CTA buttons with cream text
+//   • pink (#FF6DC7) ONLY in strawberry flavor contexts
+//   • footer: mé the sheep + "mé, our sheep. keeps the ledger, never spills."
+// VOICE: lowercase-cool, warm, confident. "the first run / the next run",
+//   sold out = "poured out", speed = "the stir is the recipe". Real numbers
+//   only (500 boxes, 9 days). Community first, never discount-led.
+// EMAIL-SAFE: tables + inline styles, max-width 600, bulletproof buttons,
+//   alt text on every image, images never load-bearing for meaning.
 //
 // All brand values come from app/lib/brand.ts (the single source of truth).
 // Emails need LITERAL colors at send time, so we read the JS constants here
 // (never CSS variables) — the literals are interpolated when the HTML is built.
-import { BRAND, alpha } from "./brand";
+import { BRAND } from "./brand";
+import { DROP_001 } from "./drop-config";
 
 // Email-scoped shorthands (literal hex at send time).
 const EMAIL = {
   ink: BRAND.colors.ink,
   canvas: BRAND.colors.canvas,
   accent: BRAND.colors.accent,
-  accentDeep: BRAND.colors.accentDeep,
-  accentWarmSoft: BRAND.colors.accentWarmSoft,
+  accentContrast: BRAND.colors.accentContrast,
   flavorStrawberry: BRAND.colors.flavorStrawberry,
-  flavorFunctional: BRAND.colors.flavorFunctional,
-  tintSoft: BRAND.colors.tintSoft,
-  sachetsBoth: `${BRAND.siteUrl}/sachets-both.png`,
-  sachetVanilla: `${BRAND.siteUrl}/sachet-vanilla.png`,
+  flavorVanilla: BRAND.colors.flavorFunctional,
+  lavender: BRAND.colors.tintSoft,
   siteUrl: BRAND.siteUrl,
 };
+
+// Hosted brand assets (absolute URLs — email clients need them hosted).
+const ASSET = {
+  wordmark: `${EMAIL.siteUrl}/brand/wordmark.png`,
+  sheepSolid: `${EMAIL.siteUrl}/brand/symbol-sheep-solid.png`,
+  sheepDrink: `${EMAIL.siteUrl}/brand/sheep-drink.png`,
+  sachetVanilla: `${EMAIL.siteUrl}/sachet-vanilla.png`,
+  sachetStrawberry: `${EMAIL.siteUrl}/sachet-strawberry.png`,
+  badgeMatcha: `${EMAIL.siteUrl}/brand/badge-matcha.png`,
+  badgeCollagen: `${EMAIL.siteUrl}/brand/badge-collagen.png`,
+  badgeGlucans: `${EMAIL.siteUrl}/brand/badge-b-glucans.png`,
+  badgeReady: `${EMAIL.siteUrl}/brand/badge-ready-to-pour.png`,
+  heroPour: `${EMAIL.siteUrl}/brand/hero-pour.jpg`,
+  cupLogo: `${EMAIL.siteUrl}/brand/cup-logo.jpg`,
+  shipperBox: `${EMAIL.siteUrl}/brand/shipper-box.jpg`,
+  sachetSip: `${EMAIL.siteUrl}/brand/ig-sachet-sip.jpg`,
+  me02: `${EMAIL.siteUrl}/brand/me-02.png`,
+} as const;
 
 function unsub(email: string) {
   return `${EMAIL.siteUrl}/unsubscribe?email=${encodeURIComponent(email)}`;
@@ -39,8 +62,58 @@ export function unsubHeaders(email: string): Record<string, string> {
   };
 }
 
-const SERIF = BRAND.emailFonts.display;
 const SANS = BRAND.emailFonts.body;
+
+// ─── Shared building blocks ──────────────────────────────────────────────────
+
+/** Lavender header field with the hosted wordmark. */
+function header() {
+  return `
+    <tr><td align="center" style="padding:28px 24px 24px;background-color:${EMAIL.lavender};">
+      <a href="${EMAIL.siteUrl}" style="text-decoration:none;">
+        <img src="${ASSET.wordmark}" alt="shroomé" width="210" style="display:block;width:210px;max-width:60%;height:auto;border:0;" />
+      </a>
+    </td></tr>`;
+}
+
+/** Bulletproof matcha CTA button — cream text on #7A881F, table-wrapped. */
+function ctaButton(href: string, label: string) {
+  return `
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:0 auto;">
+      <tr><td align="center" bgcolor="${EMAIL.accent}" style="background-color:${EMAIL.accent};border-radius:999px;">
+        <a href="${href}" style="display:inline-block;padding:15px 40px;font-family:${SANS};font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:${EMAIL.accentContrast};text-decoration:none;border-radius:999px;">${label}</a>
+      </td></tr>
+    </table>`;
+}
+
+/** Footer: mé the sheep, ledger line, legal, unsubscribe. */
+function footer(email: string) {
+  return `
+    <tr><td align="center" style="padding:32px 24px 12px;background-color:${EMAIL.lavender};">
+      <img src="${ASSET.sheepSolid}" alt="mé the sheep, the shroomé mark" width="44" style="display:block;width:44px;height:auto;border:0;margin:0 auto 10px;" />
+      <p style="margin:0;font-family:${SANS};font-size:12px;color:${EMAIL.ink};opacity:0.75;">mé, our sheep. keeps the ledger, never spills.</p>
+    </td></tr>
+    <tr><td align="center" style="padding:8px 24px 32px;background-color:${EMAIL.lavender};">
+      <p style="margin:0 0 4px;font-family:${SANS};font-size:10px;color:${EMAIL.ink};opacity:0.4;">© ${new Date().getFullYear()} shroomé</p>
+      ${/* TODO: insert full street address before first commercial send — CAN-SPAM requires a valid physical postal address */ ""}
+      <p style="margin:0 0 8px;font-family:${SANS};font-size:10px;color:${EMAIL.ink};opacity:0.4;">SHROOMÉ · Z Squared Beverages LLC · Los Angeles, CA</p>
+      <a href="${unsub(email)}" style="font-family:${SANS};font-size:10px;color:${EMAIL.ink};opacity:0.5;text-decoration:underline;">unsubscribe</a>
+    </td></tr>`;
+}
+
+/** Social links row (on cream). */
+function socialRow() {
+  const link = (href: string, label: string) =>
+    `<td style="padding:0 12px;"><a href="${href}" style="font-family:${SANS};font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:${EMAIL.ink};opacity:0.5;text-decoration:none;">${label}</a></td>`;
+  return `
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:0 auto;">
+      <tr>
+        ${link("https://tiktok.com/@drinkshroome", "TikTok")}
+        ${link("https://instagram.com/drinkshroome", "Instagram")}
+        ${link("https://youtube.com/@drinkshroome", "YouTube")}
+      </tr>
+    </table>`;
+}
 
 function emailShell(content: string, email: string) {
   return `<!DOCTYPE html>
@@ -50,17 +123,13 @@ function emailShell(content: string, email: string) {
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>shroomé</title>
 </head>
-<body style="margin:0;padding:0;background-color:${EMAIL.tintSoft};font-family:${SANS};-webkit-font-smoothing:antialiased;">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:${EMAIL.tintSoft};">
+<body style="margin:0;padding:0;background-color:${EMAIL.lavender};font-family:${SANS};-webkit-font-smoothing:antialiased;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:${EMAIL.lavender};">
     <tr><td align="center" style="padding:0;">
-      <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;">
+      <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:600px;width:100%;">
+        ${header()}
         ${content}
-        <tr><td align="center" style="padding:20px 24px 32px;background-color:${EMAIL.tintSoft};">
-          <p style="margin:0 0 4px;font-size:10px;color:${EMAIL.ink};opacity:0.25;">\u00a9 ${new Date().getFullYear()} shroome</p>
-          ${/* TODO: insert full street address before first commercial send \u2014 CAN-SPAM requires a valid physical postal address */""}
-          <p style="margin:0 0 6px;font-size:10px;color:${EMAIL.ink};opacity:0.25;">SHROOM\u00c9 \u00b7 Z Squared Beverages LLC \u00b7 Los Angeles, CA</p>
-          <a href="${unsub(email)}" style="font-size:10px;color:${EMAIL.ink};opacity:0.3;text-decoration:underline;">unsubscribe</a>
-        </td></tr>
+        ${footer(email)}
       </table>
     </td></tr>
   </table>
@@ -68,266 +137,149 @@ function emailShell(content: string, email: string) {
 </html>`;
 }
 
+// ─── Welcome email (flock welcome) ───────────────────────────────────────────
+
 export function welcomeEmail(email: string, referralCode?: string) {
-  const subject = "you just made the list \ud83d\udc9a";
-  const heroImg = "https://www.drinkshroome.com/email-hero-cup.jpg";
-  const cloudsImg = "https://www.drinkshroome.com/email-clouds-bg.jpg";
-  const G = EMAIL.accentDeep; // deep accent-green shorthand
+  const subject = "you're in the flock 🐑";
   const html = emailShell(`
 
-    <!-- ═══ HERO — full-bleed lifestyle image, text below the cup ═══ -->
-    <tr><td style="padding:0;background-color:${EMAIL.ink};">
-      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:url('${heroImg}') center top / cover no-repeat ${EMAIL.ink};">
-        <tr><td style="padding:0;">
-          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:linear-gradient(180deg, ${alpha("ink",0.08)} 0%, ${alpha("ink",0.05)} 30%, ${alpha("ink",0.55)} 55%, ${alpha("ink",0.88)} 100%);">
-            <tr><td style="padding:16px 28px;">
-              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
-                <tr>
-                  <td style="font-size:22px;font-family:${SERIF};font-style:normal;color:#fff;font-weight:400;">shroom\u00e9</td>
-                  <td align="right"><span style="font-size:9px;letter-spacing:2px;text-transform:uppercase;color:${EMAIL.accent};font-weight:700;">PRE-LAUNCH</span></td>
-                </tr>
-              </table>
-            </td></tr>
-            <tr><td style="padding:300px 0 0;"></td></tr>
-            <tr><td style="padding:0 36px 8px;text-align:center;">
-              <p style="margin:0 0 10px;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:${EMAIL.accent};font-weight:700;">\u2726 YOU\u2019RE IN \u2726</p>
-              <h1 style="margin:0;font-size:42px;color:#fff;font-weight:400;line-height:1.05;font-family:${SERIF};">
-                Caf\u00e9 energy.<br/><span style="font-style:normal;color:${EMAIL.accent};">Home address.</span>
-              </h1>
-            </td></tr>
-            <tr><td style="padding:12px 48px 16px;text-align:center;">
-              <p style="margin:0;font-size:13px;color:rgba(255,255,255,0.8);line-height:1.6;">
-                The world\u2019s first liquid ceremonial matcha latte.<br/>2.5g matcha \u00b7 mushroom extracts \u00b7 collagen \u00b7 zero crash.
-              </p>
-            </td></tr>
-            <tr><td style="padding:0 36px 28px;text-align:center;">
-              <table role="presentation" cellpadding="0" cellspacing="0" style="margin:0 auto;">
-                <tr>
-                  <td style="background:${alpha("accent",0.15)};border-radius:20px;padding:5px 13px;border:1px solid ${alpha("accent",0.25)};"><span style="font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:${EMAIL.accent};">FIRST ACCESS</span></td>
-                  <td style="width:6px;"></td>
-                  <td style="background:${alpha("accent",0.15)};border-radius:20px;padding:5px 13px;border:1px solid ${alpha("accent",0.25)};"><span style="font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:${EMAIL.accent};">FREE SHIPPING</span></td>
-                  <td style="width:6px;"></td>
-                  <td style="background:${alpha("accent",0.15)};border-radius:20px;padding:5px 13px;border:1px solid ${alpha("accent",0.25)};"><span style="font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:${EMAIL.accent};">EARLY ACCESS</span></td>
-                </tr>
-              </table>
-            </td></tr>
-          </table>
+    <!-- hero: the pour -->
+    <tr><td style="padding:0;background-color:${EMAIL.canvas};">
+      <img src="${ASSET.heroPour}" alt="shroomé matcha pouring over ice in a tall glass" width="600" style="display:block;width:100%;max-width:600px;height:auto;border:0;" />
+    </td></tr>
+
+    <!-- headline + body -->
+    <tr><td align="center" style="padding:40px 40px 8px;background-color:${EMAIL.canvas};">
+      <p style="margin:0 0 10px;font-family:${SANS};font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:${EMAIL.accent};">welcome</p>
+      <h1 style="margin:0;font-family:${SANS};font-size:34px;font-weight:800;line-height:1.1;color:${EMAIL.ink};">you're in the flock.</h1>
+    </td></tr>
+    <tr><td align="center" style="padding:16px 48px 8px;background-color:${EMAIL.canvas};">
+      <p style="margin:0;font-family:${SANS};font-size:15px;line-height:1.7;color:${EMAIL.ink};">
+        good timing. the first run was ${DROP_001.boxes} boxes and it poured out in ${DROP_001.soldOutInDays} days.
+        the next run is already in motion, and as flock you shop it a full day before anyone else.
+      </p>
+    </td></tr>
+    <tr><td align="center" style="padding:12px 48px 32px;background-color:${EMAIL.canvas};">
+      <p style="margin:0;font-family:${SANS};font-size:15px;line-height:1.7;color:${EMAIL.ink};">
+        shroomé is liquid ceremonial matcha with lion's mane and collagen. no powder, no whisk, no clumps.
+        pour it over milk and stir. the stir is the recipe.
+      </p>
+    </td></tr>
+
+    <!-- the two flavors -->
+    <tr><td style="padding:0 32px;background-color:${EMAIL.canvas};">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td width="48%" align="center" valign="bottom" style="background-color:${EMAIL.flavorVanilla};border-radius:16px;padding:24px 12px 20px;">
+            <img src="${ASSET.sachetVanilla}" alt="shroomé vanilla sachet" width="150" style="display:block;width:150px;max-width:90%;height:auto;border:0;margin:0 auto 12px;" />
+            <p style="margin:0;font-family:${SANS};font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:${EMAIL.ink};">vanilla</p>
+          </td>
+          <td width="4%" style="font-size:0;line-height:0;">&nbsp;</td>
+          <td width="48%" align="center" valign="bottom" style="background-color:${EMAIL.flavorStrawberry};border-radius:16px;padding:24px 12px 20px;">
+            <img src="${ASSET.sachetStrawberry}" alt="shroomé strawberry sachet" width="150" style="display:block;width:150px;max-width:90%;height:auto;border:0;margin:0 auto 12px;" />
+            <p style="margin:0;font-family:${SANS};font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:${EMAIL.canvas};">strawberry</p>
+          </td>
+        </tr>
+      </table>
+    </td></tr>
+    <tr><td align="center" style="padding:14px 48px 32px;background-color:${EMAIL.canvas};">
+      <p style="margin:0;font-family:${SANS};font-size:12px;line-height:1.6;color:${EMAIL.ink};opacity:0.65;">
+        two flavors, twelve sachets per box. ready the second you stir.
+      </p>
+    </td></tr>
+
+    <!-- badges: what's in every sachet -->
+    <tr><td align="center" style="padding:0 40px 8px;background-color:${EMAIL.canvas};">
+      <p style="margin:0 0 16px;font-family:${SANS};font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:${EMAIL.accent};">in every sachet</p>
+      <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:0 auto;">
+        <tr>
+          <td align="center" style="padding:0 10px;">
+            <img src="${ASSET.badgeMatcha}" alt="2.5g ceremonial matcha" width="88" style="display:block;width:88px;height:auto;border:0;" />
+          </td>
+          <td align="center" style="padding:0 10px;">
+            <img src="${ASSET.badgeGlucans}" alt="200mg mushroom extracts, 70%+ beta-glucans" width="88" style="display:block;width:88px;height:auto;border:0;" />
+          </td>
+          <td align="center" style="padding:0 10px;">
+            <img src="${ASSET.badgeCollagen}" alt="2g grass-fed collagen" width="88" style="display:block;width:88px;height:auto;border:0;" />
+          </td>
+        </tr>
+      </table>
+      <p style="margin:14px 0 0;font-family:${SANS};font-size:12px;line-height:1.6;color:${EMAIL.ink};opacity:0.65;">
+        2.5g ceremonial matcha · 200mg mushroom extracts at 70%+ beta-glucans · 2g collagen
+      </p>
+    </td></tr>
+
+    <!-- flock perks (ink card) -->
+    <tr><td style="padding:32px 32px 8px;background-color:${EMAIL.canvas};">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr><td style="background-color:${EMAIL.ink};border-radius:16px;padding:32px 32px 28px;">
+          <p style="margin:0 0 6px;font-family:${SANS};font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:${EMAIL.lavender};">the flock</p>
+          <p style="margin:0 0 18px;font-family:${SANS};font-size:22px;font-weight:800;color:${EMAIL.canvas};line-height:1.2;">what being in gets you</p>
+          <p style="margin:0 0 10px;font-family:${SANS};font-size:14px;line-height:1.6;color:${EMAIL.canvas};">✓ shop every run a full day early</p>
+          <p style="margin:0 0 10px;font-family:${SANS};font-size:14px;line-height:1.6;color:${EMAIL.canvas};">✓ vote on new flavors</p>
+          <p style="margin:0 0 10px;font-family:${SANS};font-size:14px;line-height:1.6;color:${EMAIL.canvas};">✓ member-only merch, never sold, only earned</p>
+          <p style="margin:0 0 10px;font-family:${SANS};font-size:14px;line-height:1.6;color:${EMAIL.canvas};">✓ free gifts with subscriptions</p>
+          <p style="margin:0;font-family:${SANS};font-size:14px;line-height:1.6;color:${EMAIL.canvas};">✓ the drop-day text, so you never miss a run</p>
         </td></tr>
       </table>
     </td></tr>
 
-    <!-- ═══ FLOW: hero → sachets (ink fades into flavor tint) ═══ -->
-    <tr><td style="padding:0;background:linear-gradient(180deg, ${EMAIL.ink} 0%, ${EMAIL.flavorFunctional} 100%);text-align:center;">
-      <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
-        <tr><td style="padding:36px 36px 6px;text-align:center;">
-          <p style="margin:0 0 4px;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.4);font-weight:600;">THE 30 SECONDS</p>
-          <p style="margin:0;font-size:30px;color:#fff;font-weight:400;font-family:${SERIF};font-style:normal;line-height:1.1;">
-            Tear. Pour. <span style="color:${EMAIL.accent};">Feel the shift.</span>
-          </p>
-        </td></tr>
-        <tr><td style="padding:20px 16px 0;text-align:center;">
-          <img src="${EMAIL.sachetsBoth}" alt="shroom\u00e9 sachets" width="460" style="display:inline-block;width:82%;max-width:460px;height:auto;" />
-        </td></tr>
-        <tr><td style="padding:16px 40px 32px;text-align:center;">
-          <p style="margin:0;font-size:12px;color:${G};line-height:1.7;opacity:0.7;">
-            Two flavors. Twelve per box. Pre-dissolved \u2014 no powder, no frother. Ready the second you stir.
-          </p>
-        </td></tr>
-      </table>
+    <!-- CTA -->
+    <tr><td align="center" style="padding:32px 40px 12px;background-color:${EMAIL.canvas};">
+      ${ctaButton(EMAIL.siteUrl, "see the next run →")}
+      <p style="margin:14px 0 0;font-family:${SANS};font-size:12px;line-height:1.6;color:${EMAIL.ink};opacity:0.55;">
+        your welcome code and free shipping are locked to this email.<br/>
+        reply with your number and SHROOME30 replaces it. best code wins.
+      </p>
     </td></tr>
 
-    <!-- ═══ REFERRAL SECTION — accent block ═══════════════════════ -->
     ${referralCode ? `
-    <tr><td style="padding:0;background-color:${EMAIL.accent};">
-      <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
-        <tr><td style="padding:36px 40px 12px;text-align:center;">
-          <p style="margin:0 0 6px;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:${EMAIL.ink};opacity:0.5;font-weight:600;">SHARE THE LOVE</p>
-          <p style="margin:0 0 16px;font-size:28px;color:${EMAIL.ink};font-weight:400;font-family:${SERIF};font-style:normal;line-height:1.1;">
-            Give your friends the same deal.
-          </p>
-          <p style="margin:0 0 20px;font-size:14px;color:${EMAIL.ink};line-height:1.6;opacity:0.7;">
-            Every friend who joins through your link = credit on your account:<br/><strong>$5 for your 1st &middot; $10 total at 3 &middot; $15 total at 5.</strong><br/>Real dollars, applied automatically at checkout on drop day.
-          </p>
-        </td></tr>
-        <tr><td style="padding:0 40px 16px;text-align:center;">
-          <table role="presentation" cellpadding="0" cellspacing="0" style="margin:0 auto;">
-            <tr><td style="background:${EMAIL.ink};border-radius:8px;padding:16px 32px;">
-              <p style="margin:0;font-size:11px;color:rgba(255,255,255,0.5);letter-spacing:1px;text-transform:uppercase;font-weight:600;">Your referral link</p>
-              <a href="https://www.drinkshroome.com?ref=${referralCode}" style="font-size:18px;font-weight:700;color:${EMAIL.accent};text-decoration:none;letter-spacing:0.5px;font-family:${SANS};">
-                drinkshroome.com?ref=${referralCode}
-              </a>
+    <!-- referral: the flock grows by word of mouth -->
+    <tr><td style="padding:28px 32px 8px;background-color:${EMAIL.canvas};">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr><td style="background-color:${EMAIL.lavender};border-radius:16px;padding:0;overflow:hidden;">
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+            <tr><td style="padding:0;border-radius:16px 16px 0 0;">
+              <img src="${ASSET.shipperBox}" alt="the shroomé shipper box, packed and ready" width="536" style="display:block;width:100%;height:auto;border:0;border-radius:16px 16px 0 0;" />
             </td></tr>
-          </table>
-        </td></tr>
-        <tr><td style="padding:12px 40px 8px;text-align:center;">
-          <a href="https://www.drinkshroome.com/refer" style="display:inline-block;background:${EMAIL.ink};color:${EMAIL.canvas};padding:14px 32px;font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;font-family:${SANS};">
-            Share &amp; track your referrals &rarr;
-          </a>
-        </td></tr>
-        <tr><td style="padding:8px 40px 32px;text-align:center;">
-          <p style="margin:0;font-size:12px;color:${EMAIL.ink};opacity:0.45;">
-            Credits cap at $15 &mdash; and our top referrer gets a hand-numbered box from case 001.
-          </p>
-        </td></tr>
-      </table>
-    </td></tr>
-    ` : ''}
-
-    <!-- ═══ FLOW: tint → ink (smooth transition into ingredients) ═══ -->
-    <tr><td style="padding:40px 40px 24px;background:linear-gradient(180deg, ${EMAIL.flavorFunctional} 0%, ${EMAIL.ink} 100%);text-align:center;">
-      <p style="margin:0 0 6px;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.5);font-weight:600;">WHAT\u2019S INSIDE</p>
-      <p style="margin:0;font-size:34px;color:#fff;font-weight:400;font-family:${SERIF};font-style:normal;line-height:1.1;">
-        Clean label. <span style="color:${EMAIL.accent};">Real doses.</span>
-      </p>
-    </td></tr>
-
-    <!-- Three stat cards — matching drinkshroome.com exactly -->
-    <tr><td style="padding:0 24px;background-color:${EMAIL.ink};">
-      <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
-        <!-- 2.5g matcha card -->
-        <tr><td style="padding:0 0 10px;">
-          <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
-            <tr><td style="background-color:rgba(255,255,255,0.06);border-radius:12px;padding:20px 24px;border:1px solid rgba(255,255,255,0.06);">
-              <p style="margin:0;">
-                <span style="font-size:36px;font-weight:300;color:${EMAIL.accent};font-family:${SERIF};font-style:normal;">2.5g</span>
-                <span style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-left:12px;"> CEREMONIAL MATCHA</span>
+            <tr><td align="center" style="padding:28px 32px 8px;">
+              <p style="margin:0 0 6px;font-family:${SANS};font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:${EMAIL.accent};">bring a friend</p>
+              <p style="margin:0 0 12px;font-family:${SANS};font-size:22px;font-weight:800;color:${EMAIL.ink};line-height:1.2;">the flock grows by word of mouth.</p>
+              <p style="margin:0 0 16px;font-family:${SANS};font-size:14px;line-height:1.7;color:${EMAIL.ink};">
+                every friend who joins through your link earns you real credit for the next run:
+                <strong>$5 for your first · $10 total at 3 · $15 total at 5.</strong>
+                applied automatically at checkout on drop day.
               </p>
-              <p style="margin:8px 0 0;font-size:13px;color:rgba(255,255,255,0.4);line-height:1.4;">First-harvest, shade-grown. 60mg caffeine. Not culinary grade \u2014 the real thing.</p>
             </td></tr>
-          </table>
-        </td></tr>
-        <!-- 200mg MUSHROOM EXTRACTS card -->
-        <tr><td style="padding:0 0 10px;">
-          <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
-            <tr><td style="background-color:rgba(255,255,255,0.06);border-radius:12px;padding:20px 24px;border:1px solid rgba(255,255,255,0.06);">
-              <p style="margin:0;">
-                <span style="font-size:36px;font-weight:300;color:${EMAIL.accent};font-family:${SERIF};font-style:normal;">200mg</span>
-                <span style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-left:12px;"> ORGANIC MUSHROOM EXTRACTS</span>
-              </p>
-              <p style="margin:8px 0 0;font-size:13px;color:rgba(255,255,255,0.4);line-height:1.4;">70%+ beta-glucan (1/3, 1/6) purity. Immune activation, sustained focus, no crash. Most brands: 15\u201330%.</p>
-            </td></tr>
-          </table>
-        </td></tr>
-        <!-- 2g COLLAGEN card -->
-        <tr><td style="padding:0 0 10px;">
-          <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
-            <tr><td style="background-color:rgba(255,255,255,0.06);border-radius:12px;padding:20px 24px;border:1px solid rgba(255,255,255,0.06);">
-              <p style="margin:0;">
-                <span style="font-size:36px;font-weight:300;color:${EMAIL.accent};font-family:${SERIF};font-style:normal;">2g</span>
-                <span style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-left:12px;"> GRASS-FED COLLAGEN</span>
-              </p>
-              <p style="margin:8px 0 0;font-size:13px;color:rgba(255,255,255,0.4);line-height:1.4;">Pre-dissolved bioavailable peptides for skin, hair, nails, and gut.</p>
-            </td></tr>
-          </table>
-        </td></tr>
-      </table>
-    </td></tr>
-
-    <!-- THE BIG HOOK — beta-glucan education -->
-    <tr><td style="padding:36px 40px 20px;background-color:${EMAIL.ink};text-align:center;">
-      <p style="margin:0 0 14px;font-size:32px;color:#fff;font-weight:400;font-family:${SERIF};font-style:normal;line-height:1.1;">
-        Other brands sell you<br/>mushroom powder.
-      </p>
-      <p style="margin:0;font-size:28px;color:${EMAIL.accent};font-weight:700;font-family:${SANS};line-height:1.15;">
-        We sell you what's inside it.
-      </p>
-    </td></tr>
-
-    <!-- ACCENT STAT CARD — 70%+ hero number -->
-    <tr><td style="padding:20px 36px;background-color:${EMAIL.ink};">
-      <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
-        <tr><td style="background-color:${EMAIL.accent};border-radius:16px;padding:32px 24px;text-align:center;">
-          <p style="margin:0;font-size:72px;font-weight:800;color:${EMAIL.ink};line-height:1;letter-spacing:-3px;">70%+</p>
-          <p style="margin:6px 0 0;font-size:13px;font-weight:700;color:${EMAIL.ink};letter-spacing:1.5px;text-transform:uppercase;">
-            BETA-GLUCAN (1/3, 1/6) CONCENTRATION
-          </p>
-          <p style="margin:8px 0 0;font-size:12px;color:${EMAIL.ink};opacity:0.6;">
-            The highest you can get. Most brands: 15\u201330%.
-          </p>
-        </td></tr>
-      </table>
-    </td></tr>
-
-    <!-- POINT BLANK BETA-GLUCAN FACTS -->
-    <tr><td style="padding:28px 40px 12px;background-color:${EMAIL.ink};">
-      <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
-        <tr>
-          <td style="padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
-            <p style="margin:0;font-size:16px;font-weight:700;color:#fff;">FDA GRAS designated.</p>
-            <p style="margin:4px 0 0;font-size:13px;color:rgba(255,255,255,0.4);">Not a random blend. Specific, bioactive, defensible.</p>
-          </td>
-        </tr>
-        <tr>
-          <td style="padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
-            <p style="margin:0;font-size:16px;font-weight:700;color:#fff;">Immune system on full blast.</p>
-            <p style="margin:4px 0 0;font-size:13px;color:rgba(255,255,255,0.4);">Activates macrophages &amp; natural killer cells.</p>
-          </td>
-        </tr>
-        <tr>
-          <td style="padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
-            <p style="margin:0;font-size:16px;font-weight:700;color:#fff;">Focus that lasts all day.</p>
-            <p style="margin:4px 0 0;font-size:13px;color:rgba(255,255,255,0.4);">Lion\u2019s mane beta-glucans + 60mg matcha caffeine + L-theanine.</p>
-          </td>
-        </tr>
-        <tr>
-          <td style="padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
-            <p style="margin:0;font-size:16px;font-weight:700;color:#fff;">No 2pm crash.</p>
-            <p style="margin:4px 0 0;font-size:13px;color:rgba(255,255,255,0.4);">Lion's mane beta-glucans back the caffeine with calm focus. Energy up, anxiety down.</p>
-          </td>
-        </tr>
-        <tr>
-          <td style="padding:16px 0;">
-            <p style="margin:0;font-size:16px;font-weight:700;color:#fff;">Better gut. Better skin.</p>
-            <p style="margin:4px 0 0;font-size:13px;color:rgba(255,255,255,0.4);">Prebiotic for your microbiome. Week two is when you feel it.</p>
-          </td>
-        </tr>
-      </table>
-    </td></tr>
-
-    <!-- ═══ FLOW: ink → clouds CTA (seamless transition) ═══ -->
-    <tr><td style="padding:0;background:linear-gradient(180deg, ${EMAIL.ink} 0%, ${EMAIL.flavorStrawberry} 100%);">
-      <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
-        <tr><td style="padding:36px 40px 0;text-align:center;">
-          <p style="margin:0;font-size:13px;color:rgba(255,255,255,0.2);font-style:normal;">
-            \u201cEvery competitor sells mushroom powder. We sell what\u2019s actually inside it.\u201d
-          </p>
-        </td></tr>
-        <tr><td style="padding:24px 0 0;"></td></tr>
-      </table>
-    </td></tr>
-
-    <tr><td style="padding:0;background-color:${EMAIL.flavorStrawberry};">
-      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:url('${cloudsImg}') center center / cover no-repeat ${EMAIL.flavorStrawberry};">
-        <tr><td style="padding:0;">
-          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:linear-gradient(180deg, ${alpha("flavorStrawberry",0.75)} 0%, ${alpha("flavorStrawberry",0.55)} 40%, ${alpha("flavorFunctional",0.7)} 100%);">
-            <tr><td style="padding:40px 40px 16px;text-align:center;">
-              <p style="margin:0 0 20px;font-size:34px;color:${G};font-weight:400;font-family:${SERIF};font-style:normal;line-height:1.1;">
-                This is what<br/>you\u2019re <span style="color:${EMAIL.accentWarmSoft};">getting.</span>
-              </p>
-              <table role="presentation" cellpadding="0" cellspacing="0" style="margin:0 auto;">
-                <tr><td style="background:${G};border-radius:50px;padding:14px 48px;">
-                  <a href="${EMAIL.siteUrl}" style="color:${EMAIL.accent};font-size:12px;font-weight:700;text-decoration:none;letter-spacing:2px;text-transform:uppercase;">
-                    EXPLORE SHROOM\u00c9 \u2192
-                  </a>
+            <tr><td align="center" style="padding:0 32px 16px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:0 auto;">
+                <tr><td align="center" bgcolor="${EMAIL.ink}" style="background-color:${EMAIL.ink};border-radius:12px;padding:14px 28px;">
+                  <p style="margin:0 0 2px;font-family:${SANS};font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:${EMAIL.lavender};">your link</p>
+                  <a href="${EMAIL.siteUrl}?ref=${referralCode}" style="font-family:${SANS};font-size:16px;font-weight:700;color:${EMAIL.canvas};text-decoration:none;">drinkshroome.com?ref=${referralCode}</a>
                 </td></tr>
               </table>
-              <p style="margin:12px 0 0;font-size:11px;color:${G};opacity:0.5;">
-                20% off + free shipping locked in.<br/>
-                reply with your number for SHROOME30 &mdash; it replaces your 20% code. best code wins.
-              </p>
             </td></tr>
-            <tr><td style="padding:24px 40px 36px;text-align:center;">
-              <table role="presentation" cellpadding="0" cellspacing="0" style="margin:0 auto;">
-                <tr>
-                  <td style="padding:0 14px;"><a href="https://tiktok.com/@drinkshroome" style="font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:${G};text-decoration:none;opacity:0.4;">TikTok</a></td>
-                  <td style="padding:0 14px;"><a href="https://instagram.com/drinkshroome" style="font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:${G};text-decoration:none;opacity:0.4;">Instagram</a></td>
-                  <td style="padding:0 14px;"><a href="https://youtube.com/@drinkshroome" style="font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:${G};text-decoration:none;opacity:0.4;">YouTube</a></td>
-                </tr>
-              </table>
+            <tr><td align="center" style="padding:4px 32px 12px;">
+              ${ctaButton(`${EMAIL.siteUrl}/refer`, "share &amp; track referrals →")}
+            </td></tr>
+            <tr><td align="center" style="padding:0 32px 28px;">
+              <p style="margin:0;font-family:${SANS};font-size:12px;line-height:1.6;color:${EMAIL.ink};opacity:0.6;">
+                credits cap at $15. our top referrer gets a hand-numbered box from the first run.
+              </p>
             </td></tr>
           </table>
         </td></tr>
       </table>
+    </td></tr>
+    ` : ""}
+
+    <!-- sign-off -->
+    <tr><td align="center" style="padding:28px 40px 32px;background-color:${EMAIL.canvas};">
+      <img src="${ASSET.sheepDrink}" alt="mé the sheep sipping a shroomé" width="90" style="display:block;width:90px;height:auto;border:0;margin:0 auto 12px;" />
+      <p style="margin:0 0 18px;font-family:${SANS};font-size:13px;line-height:1.6;color:${EMAIL.ink};opacity:0.7;">
+        glad you're here. mé already wrote you into the ledger.
+      </p>
+      ${socialRow()}
     </td></tr>
 
   `, email);
@@ -335,165 +287,289 @@ export function welcomeEmail(email: string, referralCode?: string) {
   return { subject, html };
 }
 
+// ─── Follow-up email (what's inside the sachet) ──────────────────────────────
+
 export function sachetEmail(email: string) {
-  const subject = "what\u2019s actually in it \ud83d\udc9a";
-  const heroImg = "https://www.drinkshroome.com/email-hero-cup.jpg";
-  const cloudsImg = "https://www.drinkshroome.com/email-clouds-bg.jpg";
+  const subject = "the stir is the recipe 🍵";
   const html = emailShell(`
 
-    <!-- ═══ HERO — clouds background with overlay ═══ -->
-    <tr><td style="padding:0;background-color:${EMAIL.flavorStrawberry};">
-      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:url('${cloudsImg}') center top / cover no-repeat ${EMAIL.flavorStrawberry};">
-        <tr><td style="padding:0;">
-          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:linear-gradient(180deg, ${alpha("flavorFunctional",0.8)} 0%, ${alpha("flavorStrawberry",0.7)} 50%, ${alpha("canvas",0.85)} 100%);">
-            <tr><td style="padding:20px 28px 0;">
-              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
-                <tr>
-                  <td style="font-size:22px;font-family:${SERIF};font-style:normal;color:${EMAIL.ink};font-weight:400;">shroom\u00e9</td>
-                  <td align="right"><span style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:${EMAIL.ink};font-weight:700;opacity:0.5;">EMAIL 2 OF 2</span></td>
-                </tr>
-              </table>
+    <!-- hero: sachet + sip -->
+    <tr><td style="padding:0;background-color:${EMAIL.canvas};">
+      <img src="${ASSET.sachetSip}" alt="pouring a shroomé sachet into a glass of iced milk" width="600" style="display:block;width:100%;max-width:600px;height:auto;border:0;" />
+    </td></tr>
+
+    <!-- headline + body -->
+    <tr><td align="center" style="padding:40px 40px 8px;background-color:${EMAIL.canvas};">
+      <p style="margin:0 0 10px;font-family:${SANS};font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:${EMAIL.accent};">inside the sachet</p>
+      <h1 style="margin:0;font-family:${SANS};font-size:34px;font-weight:800;line-height:1.1;color:${EMAIL.ink};">the stir is the recipe.</h1>
+    </td></tr>
+    <tr><td align="center" style="padding:16px 48px 28px;background-color:${EMAIL.canvas};">
+      <p style="margin:0;font-family:${SANS};font-size:15px;line-height:1.7;color:${EMAIL.ink};">
+        no powder, no frother, no 40-second whisk workout. the matcha is already made.
+        tear the sachet, pour it over milk, stir. ready the second you stir.
+        here's what's actually in it.
+      </p>
+    </td></tr>
+
+    <!-- ingredient cards (ink section) -->
+    <tr><td style="padding:0 32px;background-color:${EMAIL.canvas};">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr><td style="background-color:${EMAIL.ink};border-radius:16px;padding:28px 28px 24px;">
+
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+            <tr><td style="padding:0 0 14px;border-bottom:1px solid rgba(254,255,248,0.12);">
+              <p style="margin:0;font-family:${SANS};"><span style="font-size:30px;font-weight:800;color:${EMAIL.lavender};">2.5g</span>
+              <span style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:${EMAIL.canvas};">&nbsp; ceremonial matcha</span></p>
+              <p style="margin:6px 0 0;font-family:${SANS};font-size:13px;line-height:1.5;color:rgba(254,255,248,0.6);">first-harvest, shade-grown, 60mg caffeine. the real thing, not culinary grade.</p>
             </td></tr>
-            <tr><td style="padding:40px 36px 12px;text-align:center;">
-              <p style="margin:0 0 12px;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:${EMAIL.accentDeep};opacity:0.6;font-weight:700;">INSIDE THE SACHET</p>
-              <h1 style="margin:0;font-size:44px;color:${EMAIL.accentDeep};font-weight:400;line-height:1.05;font-family:${SERIF};">
-                Not all matcha is<br/>created <span style="color:${EMAIL.accentWarmSoft};font-style:normal;">equal.</span>
-              </h1>
+            <tr><td style="padding:14px 0;border-bottom:1px solid rgba(254,255,248,0.12);">
+              <p style="margin:0;font-family:${SANS};"><span style="font-size:30px;font-weight:800;color:${EMAIL.lavender};">200mg</span>
+              <span style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:${EMAIL.canvas};">&nbsp; mushroom extracts</span></p>
+              <p style="margin:6px 0 0;font-family:${SANS};font-size:13px;line-height:1.5;color:rgba(254,255,248,0.6);">fruiting-body extract at 70%+ beta-glucans (1,3 and 1,6). most brands sit at 15 to 30%.</p>
             </td></tr>
-            <tr><td style="padding:16px 48px 44px;text-align:center;">
-              <p style="margin:0;font-size:14px;color:${EMAIL.accentDeep};line-height:1.6;opacity:0.65;">
-                Here\u2019s what separates shroom\u00e9 from everything else on the shelf \u2014 and why the ingredients matter more than the label.
-              </p>
+            <tr><td style="padding:14px 0 0;">
+              <p style="margin:0;font-family:${SANS};"><span style="font-size:30px;font-weight:800;color:${EMAIL.lavender};">2g</span>
+              <span style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:${EMAIL.canvas};">&nbsp; grass-fed collagen</span></p>
+              <p style="margin:6px 0 0;font-family:${SANS};font-size:13px;line-height:1.5;color:rgba(254,255,248,0.6);">pre-dissolved bioavailable peptides for skin, hair, nails, and gut.</p>
             </td></tr>
           </table>
+
         </td></tr>
       </table>
     </td></tr>
 
-    <!-- ═══ FLOW: clouds hero → sachet on flavor tint → ink ═══ -->
-    <tr><td style="padding:0;background:linear-gradient(180deg, ${EMAIL.flavorStrawberry} 0%, ${EMAIL.flavorFunctional} 100%);">
-      <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
-        <tr><td style="padding:32px 20px 0;text-align:center;">
-          <img src="${EMAIL.sachetVanilla}" alt="shroom\u00e9 vanilla sachet" width="180" style="display:inline-block;width:180px;max-width:180px;height:auto;" />
-        </td></tr>
-        <tr><td style="padding:16px 40px 28px;text-align:center;">
-          <p style="margin:0;font-size:20px;color:${EMAIL.accentDeep};font-weight:400;font-family:${SERIF};font-style:normal;">
-            pour \u00b7 swirl \u00b7 <span style="color:${EMAIL.accentWarmSoft};">glow</span>
-          </p>
-          <p style="margin:8px 0 0;font-size:11px;color:${EMAIL.accentDeep};opacity:0.5;letter-spacing:1px;text-transform:uppercase;font-weight:600;">
-            ceremonial matcha \u00b7 collagen \u00b7 mushroom beta-glucans
-          </p>
-        </td></tr>
-      </table>
-    </td></tr>
-
-    <!-- ═══ FLOW: tint → ink (seamless) ═══ -->
-    <tr><td style="padding:40px 40px 20px;background:linear-gradient(180deg, ${EMAIL.flavorFunctional} 0%, ${EMAIL.ink} 100%);text-align:center;">
-      <p style="margin:0 0 6px;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:${EMAIL.flavorFunctional};font-weight:600;">THE DIFFERENCE</p>
-      <p style="margin:0 0 14px;font-size:34px;color:#fff;font-weight:400;font-family:${SERIF};font-style:normal;line-height:1.1;">
-        It\u2019s not the mushroom.
+    <!-- why it matters -->
+    <tr><td align="center" style="padding:32px 48px 8px;background-color:${EMAIL.canvas};">
+      <p style="margin:0 0 12px;font-family:${SANS};font-size:22px;font-weight:800;line-height:1.25;color:${EMAIL.ink};">
+        other brands sell mushroom powder.<br/>we sell what's inside it.
       </p>
-      <p style="margin:0;font-size:26px;color:${EMAIL.accent};font-weight:700;font-family:${SANS};line-height:1.15;">
-        It\u2019s the beta-glucan inside it.
+      <p style="margin:0;font-family:${SANS};font-size:14px;line-height:1.7;color:${EMAIL.ink};opacity:0.75;">
+        beta-glucans are the part of the mushroom your immune system actually recognizes.
+        ours are hot-water extracted from the fruiting body and third-party verified.
+        calm focus from lion's mane, steady energy from matcha, no 2pm crash.
       </p>
     </td></tr>
 
-    <!-- ═══ 70%+ STAT — accent card ═══ -->
-    <tr><td style="padding:24px 28px;background-color:${EMAIL.ink};">
-      <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
-        <tr><td style="background-color:${EMAIL.accent};border-radius:16px;padding:36px 24px;text-align:center;">
-          <p style="margin:0;font-size:80px;font-weight:800;color:${EMAIL.ink};line-height:1;letter-spacing:-3px;">70%+</p>
-          <p style="margin:8px 0 0;font-size:12px;font-weight:700;color:${EMAIL.ink};letter-spacing:1.5px;text-transform:uppercase;">
-            BETA-GLUCAN (1,3 AND 1,6) CONCENTRATION
-          </p>
-          <p style="margin:10px 0 0;font-size:13px;color:${EMAIL.ink};opacity:0.55;line-height:1.5;">
-            The highest commercially available. Most supplements: 15\u201330%.
-          </p>
-        </td></tr>
-      </table>
-    </td></tr>
-
-    <!-- ═══ VS COMPARISON — side by side ═══ -->
-    <tr><td style="padding:24px 28px 8px;background-color:${EMAIL.ink};">
-      <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+    <!-- badges row -->
+    <tr><td align="center" style="padding:24px 40px 8px;background-color:${EMAIL.canvas};">
+      <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:0 auto;">
         <tr>
-          <td width="48%" style="background:rgba(255,255,255,0.04);border-radius:12px;padding:20px 16px;text-align:center;vertical-align:top;border:1px solid rgba(255,255,255,0.06);">
-            <p style="margin:0 0 6px;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.3);font-weight:700;">THEM</p>
-            <p style="margin:0 0 8px;font-size:28px;font-weight:800;color:rgba(255,255,255,0.2);line-height:1;">15\u201330%</p>
-            <p style="margin:0;font-size:11px;color:rgba(255,255,255,0.25);line-height:1.4;">Mycelium on grain.<br/>Mostly rice starch.<br/>Untested.</p>
+          <td align="center" style="padding:0 8px;">
+            <img src="${ASSET.badgeMatcha}" alt="ceremonial matcha badge" width="80" style="display:block;width:80px;height:auto;border:0;" />
           </td>
-          <td width="4%"></td>
-          <td width="48%" style="background:${alpha("accent",0.08)};border-radius:12px;padding:20px 16px;text-align:center;vertical-align:top;border:1px solid ${alpha("accent",0.15)};">
-            <p style="margin:0 0 6px;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:${EMAIL.accent};font-weight:700;">SHROOM\u00c9</p>
-            <p style="margin:0 0 8px;font-size:28px;font-weight:800;color:${EMAIL.accent};line-height:1;">70%+</p>
-            <p style="margin:0;font-size:11px;color:rgba(255,255,255,0.5);line-height:1.4;">Fruiting body extract.<br/>Hot water extracted.<br/>Third-party verified.</p>
+          <td align="center" style="padding:0 8px;">
+            <img src="${ASSET.badgeGlucans}" alt="beta-glucans badge" width="80" style="display:block;width:80px;height:auto;border:0;" />
+          </td>
+          <td align="center" style="padding:0 8px;">
+            <img src="${ASSET.badgeCollagen}" alt="collagen badge" width="80" style="display:block;width:80px;height:auto;border:0;" />
+          </td>
+          <td align="center" style="padding:0 8px;">
+            <img src="${ASSET.badgeReady}" alt="ready to pour badge" width="80" style="display:block;width:80px;height:auto;border:0;" />
           </td>
         </tr>
       </table>
     </td></tr>
 
-    <!-- ═══ BENEFITS LIST ═══ -->
-    <tr><td style="padding:28px 36px 12px;background-color:${EMAIL.ink};">
-      <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
-        <tr><td style="padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
-          <p style="margin:0;font-size:16px;font-weight:700;color:#fff;">\u26a1 Immune system on full blast.</p>
-          <p style="margin:4px 0 0;font-size:13px;color:rgba(255,255,255,0.4);">Activates macrophages &amp; natural killer cells.</p>
-        </td></tr>
-        <tr><td style="padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
-          <p style="margin:0;font-size:16px;font-weight:700;color:#fff;">\ud83e\udde0 Focus that lasts all day.</p>
-          <p style="margin:4px 0 0;font-size:13px;color:rgba(255,255,255,0.4);">Lion\u2019s mane + 60mg matcha caffeine + L-theanine.</p>
-        </td></tr>
-        <tr><td style="padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
-          <p style="margin:0;font-size:16px;font-weight:700;color:#fff;">\u2728 Skin glow. Gut health.</p>
-          <p style="margin:4px 0 0;font-size:13px;color:rgba(255,255,255,0.4);">2g grass-fed collagen peptides + prebiotic beta-glucans.</p>
-        </td></tr>
-        <tr><td style="padding:16px 0;">
-          <p style="margin:0;font-size:16px;font-weight:700;color:#fff;">\ud83d\udc9a No crash. Zero anxiety.</p>
-          <p style="margin:4px 0 0;font-size:13px;color:rgba(255,255,255,0.4);">L-theanine + lion's mane keep it smooth. Energy up, jitters gone.</p>
+    <!-- the cup moment -->
+    <tr><td style="padding:28px 32px 0;background-color:${EMAIL.canvas};">
+      <img src="${ASSET.cupLogo}" alt="an iced shroomé matcha latte in a logo cup" width="536" style="display:block;width:100%;height:auto;border:0;border-radius:16px;" />
+    </td></tr>
+    <tr><td align="center" style="padding:16px 48px 8px;background-color:${EMAIL.canvas};">
+      <p style="margin:0;font-family:${SANS};font-size:13px;line-height:1.6;color:${EMAIL.ink};opacity:0.65;">
+        café counter taste, kitchen counter effort.
+      </p>
+    </td></tr>
+
+    <!-- CTA -->
+    <tr><td align="center" style="padding:28px 40px 12px;background-color:${EMAIL.canvas};">
+      ${ctaButton(EMAIL.siteUrl, "meet shroomé →")}
+      <p style="margin:14px 0 0;font-family:${SANS};font-size:12px;line-height:1.6;color:${EMAIL.ink};opacity:0.55;">
+        the first run was ${DROP_001.boxes} boxes and poured out in ${DROP_001.soldOutInDays} days.<br/>
+        the flock shops the next run a full day early. you're already in.
+      </p>
+    </td></tr>
+
+    <!-- sign-off -->
+    <tr><td align="center" style="padding:24px 40px 32px;background-color:${EMAIL.canvas};">
+      ${socialRow()}
+    </td></tr>
+
+  `, email);
+
+  return { subject, html };
+}
+
+// ─── Lore drip 1: the sealed envelope ────────────────────────────────────────
+// Waiting-period drama beat. mé the archivist has sealed an entry about the
+// next run in the ledger. Honesty rule: promises nothing but "members hear
+// first". No dates, no counts, no timers.
+
+export function ledgerEmail(email: string) {
+  const subject = "mé sealed something in the ledger";
+  const html = emailShell(`
+
+    <!-- the archivist -->
+    <tr><td align="center" style="padding:40px 40px 8px;background-color:${EMAIL.canvas};">
+      <img src="${ASSET.me02}" alt="mé the sheep, keeper of the shroomé ledger" width="120" style="display:block;width:120px;height:auto;border:0;margin:0 auto 16px;" />
+      <p style="margin:0 0 10px;font-family:${SANS};font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:${EMAIL.accent};">from the ledger</p>
+      <h1 style="margin:0;font-family:${SANS};font-size:32px;font-weight:800;line-height:1.15;color:${EMAIL.ink};">mé sealed an entry this week.</h1>
+    </td></tr>
+    <tr><td align="center" style="padding:16px 48px 28px;background-color:${EMAIL.canvas};">
+      <p style="margin:0;font-family:${SANS};font-size:15px;line-height:1.7;color:${EMAIL.ink};">
+        mé keeps the ledger. every box of the first run is written in it, all ${DROP_001.boxes},
+        and the day it poured out, day ${DROP_001.soldOutInDays}, is underlined twice.
+        this week a new entry went in. then the envelope got sealed.
+      </p>
+    </td></tr>
+
+    <!-- the sealed envelope -->
+    <tr><td align="center" style="padding:0 48px;background-color:${EMAIL.canvas};">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr><td align="center" style="background-color:${EMAIL.lavender};border:2px solid ${EMAIL.ink};border-radius:12px;padding:36px 28px;">
+          <img src="${ASSET.sheepSolid}" alt="wax seal pressed with the mé sheep mark" width="56" style="display:block;width:56px;height:auto;border:0;margin:0 auto 14px;" />
+          <p style="margin:0 0 6px;font-family:${SANS};font-size:12px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:${EMAIL.ink};">entry no. 002 · sealed</p>
+          <p style="margin:0;font-family:${SANS};font-size:13px;line-height:1.6;color:${EMAIL.ink};opacity:0.6;">contents: the next run.<br/>size: still secret.<br/>opens: when it opens.</p>
         </td></tr>
       </table>
     </td></tr>
 
-    <!-- ═══ FLOW: ink → lifestyle CTA (seamless with gradient bridge) ═══ -->
-    <tr><td style="padding:0;background:linear-gradient(180deg, ${EMAIL.ink} 0%, ${alpha("ink",0.85)} 100%);">
-      <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
-        <tr><td style="padding:28px 40px;text-align:center;">
-          <p style="margin:0;font-size:13px;color:rgba(255,255,255,0.2);font-style:normal;">
-            \u201cEvery competitor sells mushroom powder. We sell what\u2019s actually inside it.\u201d
-          </p>
+    <tr><td align="center" style="padding:28px 48px 8px;background-color:${EMAIL.canvas};">
+      <p style="margin:0;font-family:${SANS};font-size:15px;line-height:1.7;color:${EMAIL.ink};">
+        here's what we can say. the next run exists. it is not a maybe.
+        and when the envelope opens, the flock reads it a full day before the public does.
+        that's the whole system: no countdown theater, just the ledger and who hears first.
+      </p>
+    </td></tr>
+
+    <!-- CTA -->
+    <tr><td align="center" style="padding:28px 40px 32px;background-color:${EMAIL.canvas};">
+      ${ctaButton(`${EMAIL.siteUrl}/drop`, "read the ledger →")}
+      <p style="margin:14px 0 0;font-family:${SANS};font-size:12px;line-height:1.6;color:${EMAIL.ink};opacity:0.55;">
+        mé doesn't leak. but mé does hint.
+      </p>
+    </td></tr>
+
+  `, email);
+
+  return { subject, html };
+}
+
+// ─── Lore drip 2: the redacted production sheet ──────────────────────────────
+// Drama beat: a production-floor record with the good parts blacked out.
+// The redaction is real text bars (ink blocks), never a fake number.
+
+export function redactedEmail(email: string) {
+  const subject = "we blacked most of this out";
+  const redact = (width: number) =>
+    `<span style="display:inline-block;width:${width}px;max-width:60%;height:12px;background-color:${EMAIL.ink};border-radius:2px;vertical-align:middle;">&nbsp;</span>`;
+  const html = emailShell(`
+
+    <!-- archive photo: the first run -->
+    <tr><td style="padding:0;background-color:${EMAIL.canvas};">
+      <img src="${ASSET.shipperBox}" alt="a shroomé shipper box from the first run, from the archive" width="600" style="display:block;width:100%;max-width:600px;height:auto;border:0;" />
+    </td></tr>
+
+    <tr><td align="center" style="padding:36px 40px 8px;background-color:${EMAIL.canvas};">
+      <p style="margin:0 0 10px;font-family:${SANS};font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:${EMAIL.accent};">from the production floor</p>
+      <h1 style="margin:0;font-family:${SANS};font-size:32px;font-weight:800;line-height:1.15;color:${EMAIL.ink};">this sheet crossed mé's desk.</h1>
+    </td></tr>
+    <tr><td align="center" style="padding:16px 48px 24px;background-color:${EMAIL.canvas};">
+      <p style="margin:0;font-family:${SANS};font-size:15px;line-height:1.7;color:${EMAIL.ink};">
+        that photo above is the first run. archive material now.
+        the sheet below is not from the archive. it's current.
+        we're showing you exactly as much as the ledger allows.
+      </p>
+    </td></tr>
+
+    <!-- the redacted sheet -->
+    <tr><td style="padding:0 40px;background-color:${EMAIL.canvas};">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr><td style="background-color:${EMAIL.canvas};border:2px solid ${EMAIL.ink};border-radius:12px;padding:28px 28px 24px;">
+          <p style="margin:0 0 14px;font-family:${SANS};font-size:11px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:${EMAIL.ink};">production record · the next run</p>
+          <p style="margin:0 0 10px;font-family:${SANS};font-size:14px;line-height:1.9;color:${EMAIL.ink};">status: <strong>in motion</strong></p>
+          <p style="margin:0 0 10px;font-family:${SANS};font-size:14px;line-height:1.9;color:${EMAIL.ink};">run size: ${redact(120)}</p>
+          <p style="margin:0 0 10px;font-family:${SANS};font-size:14px;line-height:1.9;color:${EMAIL.ink};">new flavor candidate: ${redact(160)}</p>
+          <p style="margin:0 0 10px;font-family:${SANS};font-size:14px;line-height:1.9;color:${EMAIL.ink};">first pour goes to: <strong>the flock, a full day early</strong></p>
+          <p style="margin:0;font-family:${SANS};font-size:12px;line-height:1.6;color:${EMAIL.ink};opacity:0.5;">redactions by mé. appeals denied.</p>
         </td></tr>
       </table>
     </td></tr>
 
-    <tr><td style="padding:0;background-color:${EMAIL.ink};">
-      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:url('${heroImg}') center center / cover no-repeat ${EMAIL.ink};">
-        <tr><td style="padding:0;">
-          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:linear-gradient(180deg, ${alpha("ink",0.8)} 0%, ${alpha("ink",0.35)} 40%, ${alpha("flavorStrawberry",0.5)} 100%);">
-            <tr><td style="padding:48px 40px 16px;text-align:center;">
-              <p style="margin:0 0 20px;font-size:36px;color:#fff;font-weight:400;font-family:${SERIF};font-style:normal;line-height:1.1;">
-                The matcha is already made.<br/><span style="color:${EMAIL.accent};">Just pour.</span>
-              </p>
-              <table role="presentation" cellpadding="0" cellspacing="0" style="margin:0 auto;">
-                <tr><td style="background:${EMAIL.accent};border-radius:50px;padding:14px 48px;">
-                  <a href="${EMAIL.siteUrl}" style="color:${EMAIL.ink};font-size:12px;font-weight:700;text-decoration:none;letter-spacing:2px;text-transform:uppercase;">
-                    EXPLORE SHROOM\u00c9 \u2192
-                  </a>
-                </td></tr>
-              </table>
-              <p style="margin:12px 0 0;font-size:11px;color:rgba(255,255,255,0.55);">20% off + free shipping locked in.</p>
-            </td></tr>
-            <tr><td style="padding:20px 40px 40px;text-align:center;">
-              <table role="presentation" cellpadding="0" cellspacing="0" style="margin:0 auto;">
-                <tr>
-                  <td style="padding:0 14px;"><a href="https://tiktok.com/@drinkshroome" style="font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.35);text-decoration:none;">TikTok</a></td>
-                  <td style="padding:0 14px;"><a href="https://instagram.com/drinkshroome" style="font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.35);text-decoration:none;">Instagram</a></td>
-                  <td style="padding:0 14px;"><a href="https://youtube.com/@drinkshroome" style="font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.35);text-decoration:none;">YouTube</a></td>
-                </tr>
-              </table>
+    <tr><td align="center" style="padding:24px 48px 8px;background-color:${EMAIL.canvas};">
+      <p style="margin:0;font-family:${SANS};font-size:14px;line-height:1.7;color:${EMAIL.ink};opacity:0.8;">
+        the bars come off in order: flock first, then everyone.
+        nothing to do right now except be the kind of person who already knows.
+      </p>
+    </td></tr>
+
+    <!-- CTA -->
+    <tr><td align="center" style="padding:24px 40px 32px;background-color:${EMAIL.canvas};">
+      ${ctaButton(`${EMAIL.siteUrl}/drop`, "watch the ledger →")}
+    </td></tr>
+
+  `, email);
+
+  return { subject, html };
+}
+
+// ─── Lore drip 3: the first flavor ballot ────────────────────────────────────
+// The flock's founding perk made real: members vote on what gets made.
+// Pass the live ballot URL at send time; defaults to the drop ledger page.
+
+export function ballotEmail(email: string, voteUrl: string = `${EMAIL.siteUrl}/drop`) {
+  const subject = "the first ballot is open 🗳️";
+  const html = emailShell(`
+
+    <tr><td align="center" style="padding:40px 40px 8px;background-color:${EMAIL.canvas};">
+      <p style="margin:0 0 10px;font-family:${SANS};font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:${EMAIL.accent};">flock business</p>
+      <h1 style="margin:0;font-family:${SANS};font-size:32px;font-weight:800;line-height:1.15;color:${EMAIL.ink};">the first ballot is open.</h1>
+    </td></tr>
+    <tr><td align="center" style="padding:16px 48px 28px;background-color:${EMAIL.canvas};">
+      <p style="margin:0;font-family:${SANS};font-size:15px;line-height:1.7;color:${EMAIL.ink};">
+        we said the flock votes on new flavors. we meant it, and this is the first one.
+        somewhere on that redacted production sheet is a blank line.
+        your vote is what fills it in.
+      </p>
+    </td></tr>
+
+    <!-- the incumbents -->
+    <tr><td style="padding:0 32px;background-color:${EMAIL.canvas};">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td width="48%" align="center" valign="bottom" style="background-color:${EMAIL.flavorVanilla};border-radius:16px;padding:20px 12px 16px;">
+            <img src="${ASSET.sachetVanilla}" alt="shroomé vanilla sachet" width="120" style="display:block;width:120px;max-width:90%;height:auto;border:0;margin:0 auto 10px;" />
+            <p style="margin:0;font-family:${SANS};font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:${EMAIL.ink};">vanilla · incumbent</p>
+          </td>
+          <td width="4%" style="font-size:0;line-height:0;">&nbsp;</td>
+          <td width="48%" align="center" valign="bottom" style="background-color:${EMAIL.flavorStrawberry};border-radius:16px;padding:20px 12px 16px;">
+            <img src="${ASSET.sachetStrawberry}" alt="shroomé strawberry sachet" width="120" style="display:block;width:120px;max-width:90%;height:auto;border:0;margin:0 auto 10px;" />
+            <p style="margin:0;font-family:${SANS};font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:${EMAIL.canvas};">strawberry · incumbent</p>
+          </td>
+        </tr>
+        <tr><td colspan="3" style="padding:12px 0 0;">
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+            <tr><td align="center" style="background-color:${EMAIL.lavender};border:2px dashed ${EMAIL.ink};border-radius:16px;padding:28px 16px;">
+              <p style="margin:0 0 4px;font-family:${SANS};font-size:26px;font-weight:800;color:${EMAIL.ink};">?</p>
+              <p style="margin:0;font-family:${SANS};font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:${EMAIL.ink};opacity:0.7;">seat three · your call</p>
             </td></tr>
           </table>
         </td></tr>
       </table>
+    </td></tr>
+
+    <tr><td align="center" style="padding:24px 48px 8px;background-color:${EMAIL.canvas};">
+      <p style="margin:0;font-family:${SANS};font-size:14px;line-height:1.7;color:${EMAIL.ink};opacity:0.8;">
+        one vote per member. results get read into the ledger, and the winner goes to the production floor.
+        we'll tell the flock what won before we tell anyone else. obviously.
+      </p>
+    </td></tr>
+
+    <!-- CTA -->
+    <tr><td align="center" style="padding:28px 40px 32px;background-color:${EMAIL.canvas};">
+      ${ctaButton(voteUrl, "cast your vote →")}
+      <p style="margin:14px 0 0;font-family:${SANS};font-size:12px;line-height:1.6;color:${EMAIL.ink};opacity:0.55;">
+        mé counts the ballots. mé has never miscounted anything.
+      </p>
     </td></tr>
 
   `, email);

@@ -247,7 +247,7 @@ Merge tags are Klaviyo syntax. All body copy is final; layout blocks in [bracket
 > here's where you stand:
 > **→ your spot is safe.** #{{ person|lookup:'waitlist_position' }}, still yours.
 > **→ SHROOME20 is safe.** 20% + free shipping at launch, still locked to this email.
-> **→ DROP 002 is close.** closer than when you signed up, that's for sure.
+> **→ the next run is close.** closer than when you signed up, that's for sure.
 >
 > if you're still in, do literally one thing — click this and we'll keep your seat warm:
 >
@@ -274,16 +274,16 @@ Encoding: all messages below are **GSM-7 safe** (é is GSM-7; no emoji, no em-da
 **SMS 1 — opt-in confirm (the FIRST message — carries full disclosure)**
 Trigger: FLOW B, instant on SMS consent.
 
-> shroomé: hey, it's zak. you're locked in - 10-min early access to every drop + SHROOME30 at launch (replaces your 20% code, best code wins). msg freq varies. msg & data rates may apply. reply HELP for help, STOP to opt out.
+> shroomé: hey, it's zak. you're locked in - you shop every run a full day early + SHROOME30 at launch (replaces your 20% code, best code wins). msg freq varies. msg & data rates may apply. reply HELP for help, STOP to opt out.
 
-*223 chars · GSM-7 · 2 segments. Compliance: this is the required first-touch message — brand name, program description, frequency, rates, HELP, STOP all present. Do not trim the last two sentences.*
+*225 chars · GSM-7 · 2 segments. Compliance: this is the required first-touch message — brand name, program description, frequency, rates, HELP, STOP all present. Do not trim the last two sentences.*
 
 **SMS 2 — early-access alert (reusable template: any drop/restock)**
 Trigger: FLOW F / manual campaign, inside quiet hours.
 
-> shroomé: early access is LIVE. the next 10 minutes are yours before the doors open to everyone. [LINK] - your code SHROOME30 is loaded. move.
+> shroomé: your early window is open. the next run is yours a full day before the public doors. [LINK] - your code SHROOME30 is loaded. move.
 
-*141 chars (162 w/ 25-char link) · GSM-7 · 2 segments; drop "move." to fit 1 segment if cost matters. Compliance: recipient consented at opt-in; STOP language not required on every message but keep it on at least one message per month of sending.*
+*140 chars (161 w/ 25-char link) · GSM-7 · 2 segments; drop "move." to fit 1 segment if cost matters. Compliance: recipient consented at opt-in; STOP language not required on every message but keep it on at least one message per month of sending.*
 
 **SMS 3 — quiz nudge (Day 3, 11:00am local, only if quiz incomplete)**
 
@@ -300,22 +300,22 @@ Trigger: FLOW D, `referral_count` hits 1. Send within window; if fired at night,
 
 **SMS 5 — referral milestone 3 ($10)**
 
-> shroomé: 3 referrals. $10 credit locked in. you're 2 away from $15 + a shot at the case 001 hand-numbered box. keep going: [LINK]
+> shroomé: 3 referrals. $10 credit locked in. you're 2 away from $15 + a shot at the hand-numbered box from the first run. keep going: [LINK]
 
 *129 chars (150 w/ link) · GSM-7 · 1 segment.*
 
 **SMS 6 — referral milestone 5 ($15, cap)**
 
-> shroomé: 5 referrals. $15 credit secured - max tier. you're officially on the leaderboard for the case 001 box. we see you.
+> shroomé: 5 referrals. $15 credit secured - max tier. you're officially on the leaderboard for the first run's hand-numbered box. we see you.
 
 *123 chars · GSM-7 · 1 segment. This is the cap message — no link needed; do not promise further credits.*
 
 **SMS 7 — drop day, T-10 minutes**
 Trigger: FLOW F, scheduled. **Schedule the drop itself so T-10 lands ≥9:00am in the westernmost customer timezone** (e.g. doors 10:10am PT = T-10 at 10:00am PT / 1:00pm ET — safe everywhere in the US).
 
-> shroomé: doors open for you in 10 MINUTES. early-access link: [LINK]. SHROOME30 is loaded (replaces your 20% code - best code wins). it will sell out.
+> shroomé: your early window opens in 10 MINUTES. members link: [LINK]. SHROOME30 is loaded (replaces your 20% code - best code wins). the first run poured out in 9 days.
 
-*150 chars (171 w/ link) · GSM-7 · 2 segments — accepted; this is the money message. Smart sending OFF for this one send.*
+*169 chars (190 w/ link) · GSM-7 · 2 segments — accepted; this is the money message. Smart sending OFF for this one send.*
 
 **SMS 8 — birthday**
 Trigger: FLOW E, 9:00am profile local on `birthday`, yearly.
@@ -332,6 +332,6 @@ Trigger: FLOW E, 9:00am profile local on `birthday`, yearly.
 2. FLOW A + FLOW B + SMS 1 (these touch every new signup — highest leverage).
 3. Quiz (form + webhook + FLOW C), then FLOW D referral milestones.
 4. Birthday capture + FLOW E; step-5 pour list last (manual/IG-dependent).
-5. FLOW F stays in drafts until DROP 002 date is set; codes generated T-1 day per launch-roadmap (with corrected "replaces" copy).
+5. FLOW F stays in drafts until the next run's date is set; codes generated T-1 day per launch-roadmap (with corrected "replaces" copy).
 
 *Setup click-paths, quiz wiring, RCS registration, and the QA plan live in `Marketing/Email/klaviyo-setup-runbook.md`.*
