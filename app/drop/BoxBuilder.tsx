@@ -245,7 +245,7 @@ export default function BoxBuilder() {
           cursor: "not-allowed",
         }}
       >
-        Sold out — every combination
+        Sold out — down to the last sachet
       </button>
       <a
         href="#waitlist"
@@ -266,10 +266,10 @@ export default function BoxBuilder() {
           textDecoration: "none",
         }}
       >
-        Join the Flock — Drop 002 →
+        Get first dibs — Drop 002 →
       </a>
       <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.66rem", color: "rgba(var(--brand-ink-rgb),0.5)", textAlign: "center", marginTop: 10 }}>
-        your build is saved in spirit. the flock shops a full day before the link is public.
+        your build is saved in spirit. you&apos;ll be shopping it a full day before the link is public.
       </p>
     </div>
   );

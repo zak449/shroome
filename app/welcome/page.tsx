@@ -244,8 +244,9 @@ export default function WelcomePage() {
             fontWeight: 400,
           }}
         >
-          2.5g ceremonial matcha. Functional mushroom extracts. Collagen peptides.
-          One sachet, one 30-second pour. No crash.
+          Your cafe matcha order — the good one, with the lion&apos;s mane and the
+          collagen — already made, waiting in your fridge. Tear, pour over milk, go.
+          No crash, no line, no name spelled wrong on a cup.
         </p>
       </section>
 
@@ -274,7 +275,7 @@ export default function WelcomePage() {
           }}
         >
           {[
-            "70%+ Beta-Glucans",
+            "Real Lion's Mane",
             "Ceremonial Grade",
             "Grass-Fed Collagen",
             "Zero Crash",
@@ -302,9 +303,9 @@ export default function WelcomePage() {
           {(
             [
               {
-                label: "Real Mushrooms",
+                label: "Real Lion's Mane",
                 accent: C.flavorFunctional,
-                body: "200mg fruiting body extracts standardized to 70%+ beta-glucan concentration. Not mycelium-on-grain.",
+                body: "The kind that actually does something — clear-headed focus you can feel, zero mushroom taste.",
               },
               {
                 label: "Ceremonial Matcha",

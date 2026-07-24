@@ -29,7 +29,7 @@ const faqData = [
       },
       {
         q: "How many servings per box?",
-        a: `Each box contains <strong>12 single-serve sachets.</strong> Each sachet is one full matcha latte serving — pour over milk, swirl, go. Boxes ship in numbered drops: Drop 001 (500 boxes) sold out in 9 days, and the Drop 002 list gets the link before it's public.`,
+        a: `Each box contains <strong>12 single-serve sachets.</strong> Each sachet is one full matcha latte — pour over milk, swirl, go. A box is a couple weeks of cafe mornings without leaving the house.`,
       },
     ],
   },

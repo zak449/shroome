@@ -338,7 +338,7 @@ export default function Home() {
                 Welcome to the flock.
               </p>
               <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 600, fontSize: "0.8rem", color: "rgba(var(--brand-ink-rgb),0.65)" }}>
-                You&apos;re in the Flock — Drop 002 opens for you a full day before the public link.
+                You&apos;re in — Drop 002 opens for you a full day before the public link.
               </p>
             </div>
           </div>
@@ -348,7 +348,7 @@ export default function Home() {
                 Refer friends → earn up to $15 credit
               </p>
               <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.75rem", color: "rgba(var(--brand-ink-rgb),0.6)", marginBottom: 12 }}>
-                Bring the group chat into the Flock. $5 credit at 1 friend, $10 at 3, $15 at 5 — good on drop day. Share your link:
+                Bring the group chat. Matcha money lands on your account for every friend who joins — ready to spend on drop day. Share your link:
               </p>
               <div style={{ display: "flex", gap: 8, alignItems: "center", marginBottom: 12, flexWrap: "wrap" }}>
                 <div style={{ flex: "1 1 200px", background: "#fff", border: "2px solid var(--brand-ink)", borderRadius: 999, padding: "10px 16px", fontFamily: "var(--brand-font-mono)", fontSize: "0.75rem", color: "var(--brand-ink)", minWidth: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
@@ -412,7 +412,7 @@ export default function Home() {
       ) : step === "phone" ? (
         <div style={{ textAlign: "left" }}>
           <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 600, fontSize: "0.82rem", color: "var(--brand-ink)", marginBottom: 12 }}>
-            ✓ You&apos;re in. Add your number and the drop text lands the moment early access opens — first thing, before the email.
+            ✓ You&apos;re in. Add your number and the drop hits your phone the second your early window opens — you&apos;ll be pouring before the link is even public.
           </p>
           <form onSubmit={handlePhoneSubmit} style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
             <input
@@ -454,7 +454,7 @@ export default function Home() {
             </p>
           )}
           <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 600, fontSize: "0.78rem", color: "rgba(var(--brand-ink-rgb),0.7)", marginTop: 12 }}>
-            The Flock shops Drop 002 <strong>a full day before launch</strong> — plus free gifts with every subscription, Flock only. 100+ already in.
+            The Flock shops Drop 002 <strong>a full day before launch</strong> — plus members-only free gifts with every subscription. 100+ already in.
           </p>
         </div>
       )}
@@ -487,7 +487,7 @@ export default function Home() {
         }}
       >
         <p style={{ ...tagStyle, fontSize: "0.66rem", color: "var(--brand-tint-soft)", margin: 0 }}>
-          Drop 001 sold out in 9 days ✿ The Flock shops Drop 002 first
+          Drop 001 sold out in 9 days ✿ First dibs on Drop 002 is open
         </p>
       </div>
 
@@ -972,9 +972,9 @@ export default function Home() {
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 16, maxWidth: 980, margin: "0 auto" }}>
               {[
                 { n: "6 sachets", name: "First-Pour Kit", price: "$21", sub: "one-time only" },
-                { n: "12 sachets", name: "The Standard", price: "$36", sub: "$30.60 subscribed" },
-                { n: "24 sachets", name: "The Duo Stock", price: "$66", sub: "$54.12 subscribed" },
-                { n: "48 sachets", name: "Never Run Dry", price: "$126", sub: "$100.80 subscribed" },
+                { n: "12 sachets", name: "The Standard", price: "$36", sub: "less subscribed + a free gift" },
+                { n: "24 sachets", name: "The Duo Stock", price: "$66", sub: "less subscribed + a free gift" },
+                { n: "48 sachets", name: "Never Run Dry", price: "$126", sub: "less subscribed + a free gift" },
               ].map((b) => (
                 <div key={b.n} style={{ background: "#fff", border: "3px solid var(--brand-ink)", borderRadius: 24, padding: "22px 18px 20px", textAlign: "center" }}>
                   <p style={{ ...tagStyle, fontSize: "0.66rem", color: "rgba(var(--brand-ink-rgb),0.65)" }}>{b.n}</p>
@@ -1347,7 +1347,7 @@ export default function Home() {
             <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.9rem", color: "rgba(var(--brand-ink-rgb),0.75)", lineHeight: 1.65, marginBottom: 22 }}>
               Drop 002 hasn&apos;t launched. The Flock shops it <strong>a full day before the
               public link</strong> — join free and this box is basically yours before anyone
-              else can see it. Everyone&apos;s welcome in the Flock.
+              else can even see it. Everyone gets in. The early ones just pour first.
             </p>
             <button
               onClick={() => { setGateBox(null); scrollTo("signup"); window.gtag?.("event", "select_promotion", { promotion_name: "flock_gate_join" }); }}
@@ -1399,9 +1399,9 @@ export default function Home() {
             Sold out. Not gone.
           </h2>
           <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.92rem", color: "rgba(var(--brand-ink-rgb),0.7)", lineHeight: 1.65, marginBottom: 28 }}>
-            Drop 001 belongs to the founding 500. The Flock shops Drop 002
+            Drop 001 belongs to the founding 500. Drop 002 opens for members
             <strong> a full day before the public link</strong> — and unlocks free gifts with
-            every subscription, Flock only. Everyone&apos;s welcome. The Flock just pours first.
+            every subscription. Everyone&apos;s welcome. The Flock just pours first.
           </p>
           {restockForm("cta")}
         </div>

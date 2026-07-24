@@ -23,7 +23,7 @@ export const DROP_002 = {
   number: "002",
   /**
    * Allocation for drop 002 — null until ops confirms the production run.
-   * While null, pages render "allocation TBA" and never show a count.
+   * While null, pages render "size still secret" and never show a count.
    */
   boxes: null as number | null,
   /**
@@ -45,7 +45,7 @@ export const DROP2_RUN = DROP_002.boxes
 /** Ledger right-hand text for drop 002. */
 export const DROP2_LEDGER = DROP_002.boxes
   ? `limited run of ${DROP_002.boxes.toLocaleString("en-US")} boxes`
-  : "allocation TBA";
+  : "size still secret";
 
 /** Fallback line rendered while no confirmed drop 002 date exists. */
 export const DROP2_SOON_LINE =

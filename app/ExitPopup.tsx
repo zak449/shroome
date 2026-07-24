@@ -281,8 +281,8 @@ export default function ExitPopup() {
                 leaving before you&apos;re <em>in the Flock?</em>
               </h2>
               <p className="ep-sub">
-                Drop 001 — 500 boxes — sold out in 9 days. The Flock shops Drop 002 a full
-                day before the public link, with Flock-only gifts on subscriptions.
+                Drop 001 disappeared in 9 days — most people found out after it was gone.
+                Don&apos;t be most people. The Flock pours first, gifts included.
               </p>
               <form className="ep-form" onSubmit={handleEmailSubmit}>
                 <input
@@ -304,9 +304,9 @@ export default function ExitPopup() {
                 </p>
               )}
               <div className="ep-perks">
-                <span className="ep-perk">Day-early access</span>
+                <span className="ep-perk">Shop a day early</span>
                 <span className="ep-perk">Drop-day text</span>
-                <span className="ep-perk">Flock-only gifts</span>
+                <span className="ep-perk">Free member gifts</span>
               </div>
               <button className="ep-no-thanks" onClick={dismiss}>
                 No thanks, I&apos;ll miss the drop
@@ -329,7 +329,7 @@ export default function ExitPopup() {
               <div className="ep-emoji">📱</div>
               <h2 className="ep-success-title">you&apos;re in line!</h2>
               <p className="ep-sub">
-                Drop texts go out <strong style={{ color: "var(--brand-ink)", fontWeight: 700 }}>10 minutes before the email</strong>. Add your number and shop Drop 002 before the link is public.
+                The text hits your phone <strong style={{ color: "var(--brand-ink)", fontWeight: 700 }}>before anything else we send</strong>. Add your number and you&apos;ll be pouring while everyone else is still finding out.
               </p>
               <form className="ep-form" onSubmit={handlePhoneSubmit}>
                 <input
@@ -346,7 +346,7 @@ export default function ExitPopup() {
                 </button>
               </form>
               <div className="ep-perks">
-                <span className="ep-perk">10 min early</span>
+                <span className="ep-perk">First to know</span>
                 <span className="ep-perk">Drop-day text</span>
                 <span className="ep-perk">First in line</span>
               </div>
@@ -359,7 +359,7 @@ export default function ExitPopup() {
               <div className="ep-emoji">💚</div>
               <h2 className="ep-success-title">you&apos;re all set!</h2>
               <p className="ep-success-sub">
-                Watch your inbox for the Drop 002 link.{phone ? " The text lands 10 minutes before it." : ""} You&apos;re ahead of the line.
+                Watch your inbox for the Drop 002 link.{phone ? " The text gets to you first." : ""} You&apos;re ahead of the line.
               </p>
               <button className="ep-success-btn" onClick={dismiss}>
                 Back to browsing

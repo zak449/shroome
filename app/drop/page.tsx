@@ -14,14 +14,14 @@ import {
 export const metadata: Metadata = {
   title: "the drop — shroomé",
   description:
-    "shroomé ships in numbered, limited drops. drop 001 — 500 boxes — sold out. drop 002 is next: vanilla, strawberry, variety, and stock-up boxes of the liquid ceremonial matcha latte. join the waitlist for first access.",
+    "the liquid ceremonial matcha latte — vanilla or strawberry, poured over milk in 30 seconds. drop 001 is gone. join the flock and shop drop 002 a day before everyone else.",
   alternates: {
     canonical: "https://www.drinkshroome.com/drop",
   },
   openGraph: {
     title: "the drop — shroomé",
     description:
-      "numbered, limited drops of the liquid ceremonial matcha latte. drop 001 sold out. drop 002 is next — the waitlist gets first access.",
+      "drop 001 is gone. drop 002 is next — shop it a day before everyone else.",
     url: "https://www.drinkshroome.com/drop",
     siteName: "shroomé",
     type: "website",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "the drop — shroomé",
     description:
-      "numbered, limited drops of the liquid ceremonial matcha latte. drop 001 sold out. drop 002 is next — the waitlist gets first access.",
+      "drop 001 is gone. drop 002 is next — shop it a day before everyone else.",
   },
 };
 
@@ -142,39 +142,6 @@ const products = [
   },
 ];
 
-const subMatrix = {
-  cadences: ["every 2 weeks", "every 30 days", "every 60 days"],
-  rows: [
-    {
-      qty: "12 sachets",
-      base: "$36",
-      cells: [
-        { pct: "15%", price: "$30.60", per: "$2.55/serv" },
-        { pct: "12%", price: "$31.68", per: "$2.64/serv" },
-        { pct: "10%", price: "$32.40", per: "$2.70/serv" },
-      ],
-    },
-    {
-      qty: "24 sachets",
-      base: "$66",
-      cells: [
-        { pct: "18%", price: "$54.12", per: "$2.26/serv" },
-        { pct: "15%", price: "$56.10", per: "$2.34/serv" },
-        { pct: "12%", price: "$58.08", per: "$2.42/serv" },
-      ],
-    },
-    {
-      qty: "48 sachets",
-      base: "$126",
-      cells: [
-        { pct: "20%", price: "$100.80", per: "$2.10/serv" },
-        { pct: "20%", price: "$100.80", per: "$2.10/serv" },
-        { pct: "15%", price: "$107.10", per: "$2.23/serv" },
-      ],
-    },
-  ],
-};
-
 export default function DropPage() {
   return (
     <>
@@ -217,14 +184,6 @@ export default function DropPage() {
         .dr-per{font-family:var(--brand-font-mono);font-size:0.68rem;color:rgba(var(--brand-ink-rgb),0.5);margin:0 0 4px}
         .dr-sub-from{font-family:var(--brand-font-body);font-size:0.7rem;font-weight:600;color:var(--brand-ink);background:rgba(var(--brand-accent-rgb),0.35);display:inline-block;padding:4px 8px;margin:6px 0 14px}
         .dr-card-btn{margin-top:auto;display:block;text-align:center;background:var(--brand-ink);color:var(--brand-canvas);font-family:var(--brand-font-body);font-weight:800;font-size:0.7rem;letter-spacing:.1em;text-transform:uppercase;padding:14px 12px;border-radius:999px;text-decoration:none}
-
-        .dr-table-wrap{max-width:900px;margin:0 auto;overflow-x:auto}
-        .dr-table{width:100%;border-collapse:collapse;min-width:560px}
-        .dr-table th,.dr-table td{border:1px solid rgba(var(--brand-ink-rgb),0.15);padding:14px 16px;text-align:left}
-        .dr-table th{font-family:var(--brand-font-body);font-weight:700;font-size:0.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--brand-ink);background:rgba(var(--brand-flavor-functional-rgb),0.35)}
-        .dr-table td{font-family:var(--brand-font-mono);font-size:0.8rem;color:var(--brand-ink);background:var(--brand-canvas)}
-        .dr-cell-pct{font-weight:700;display:block}
-        .dr-cell-sub{font-size:0.68rem;color:rgba(var(--brand-ink-rgb),0.5);display:block;margin-top:2px}
 
         .dr-ledger{max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
         .dr-ledger-row{display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--brand-ink);color:var(--brand-canvas);padding:18px 22px;flex-wrap:wrap}
@@ -277,13 +236,14 @@ export default function DropPage() {
           }}
         />
         <div style={{ position: "relative", maxWidth: 760, margin: "0 auto" }}>
-          <p className="dr-eyebrow" style={{ color: "var(--brand-accent)" }}>numbered · limited · honest</p>
+          <p className="dr-eyebrow" style={{ color: "var(--brand-accent)" }}>when it&apos;s gone, it&apos;s gone</p>
           <h1 className="dr-h1">
             drop 001 — sold out in {DROP_001.soldOutInDays} days.
           </h1>
           <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.95rem", color: "rgba(var(--brand-canvas-rgb),0.7)", lineHeight: 1.7, maxWidth: 520, margin: "0 auto 32px" }}>
-            shroomé ships in numbered, limited drops — real production runs, published counts.
-            drop 002 is next: same sachet, same thirty-second pour. the waitlist gets the link first.
+            your cafe order, sachet form — and it only exists in drops. drop 001 came and
+            went in 9 days. drop 002 is next: same pour, same 30 seconds, and you can be
+            shopping it a full day before the link goes public.
           </p>
           <a
             href="#waitlist"
@@ -314,7 +274,7 @@ export default function DropPage() {
         <div style={{ maxWidth: 1120, margin: "0 auto 36px", textAlign: "center" }}>
           <h2 className="dr-h2">build your box.</h2>
           <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.88rem", color: "rgba(var(--brand-ink-rgb),0.65)", marginTop: 10 }}>
-            spec it now, pour it when drop 002 opens. every combination from drop 001 is gone.
+            dream it up now, pour it when drop 002 opens. drop 001 didn&apos;t leave a single box behind.
           </p>
         </div>
         <BoxBuilder />
@@ -325,7 +285,7 @@ export default function DropPage() {
         <div style={{ maxWidth: 1120, margin: "0 auto 36px", textAlign: "center" }}>
           <h2 className="dr-h2">the lineup.</h2>
           <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.88rem", color: "rgba(var(--brand-ink-rgb),0.6)", marginTop: 10 }}>
-            every box from drop 001 is gone. drop 002 brings them back — waitlist first.
+            drop 002 brings every box back — and you can be first in line without ever standing in one.
           </p>
         </div>
         <div className="dr-grid">
@@ -344,7 +304,7 @@ export default function DropPage() {
                 </div>
                 <span style={{ height: 12, display: "block" }} />
                 <a className="dr-card-btn" href="#waitlist">
-                  join the flock — drop 002
+                  first dibs on drop 002 →
                 </a>
               </div>
             </div>
@@ -357,10 +317,9 @@ export default function DropPage() {
         <div style={{ maxWidth: 720, margin: "0 auto", textAlign: "center" }}>
           <h2 className="dr-h2">subscribers never miss a drop.</h2>
           <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.92rem", color: "rgba(var(--brand-ink-rgb),0.7)", marginTop: 14, lineHeight: 1.7 }}>
-            every active subscription&apos;s boxes are reserved out of the production run before
-            the public window opens. one-time buyers refresh the page — subscribers get theirs
-            automatically at 10–20% off by size and cadence (priced live in the builder above) —
-            with flock-only free gifts in the box. skip, pause, or swap flavors anytime.
+            subscribers don&apos;t set alarms. your box is already yours before the drop even
+            opens — it just shows up, with a members-only gift tucked inside. skip, pause,
+            or swap flavors whenever. the only thing you have to do is pour.
           </p>
           <p style={{ fontFamily: "var(--brand-font-mono)", fontWeight: 700, fontSize: "0.68rem", letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--brand-canvas)", background: "var(--brand-accent)", display: "inline-block", padding: "8px 18px", borderRadius: 999, border: "2px solid var(--brand-ink)", marginTop: 20 }}>
             opens with drop 002
@@ -396,15 +355,15 @@ export default function DropPage() {
               drop 002
             </span>
             <span className="dr-ledger-detail">
-              {DROP_002.boxes ? `${DROP_002.boxes.toLocaleString("en-US")} boxes` : "allocation TBA"}
+              {DROP_002.boxes ? `${DROP_002.boxes.toLocaleString("en-US")} boxes` : "size still secret"}
             </span>
-            <span className="dr-ledger-detail">waitlist gets first access</span>
+            <span className="dr-ledger-detail">the flock hears first</span>
           </div>
         </div>
         <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.8rem", color: "rgba(var(--brand-ink-rgb),0.6)", textAlign: "center", maxWidth: 520, margin: "24px auto 0", lineHeight: 1.6 }}>
-          scarcity here is the boring kind: a drop&apos;s size equals the production run we actually
-          received — never an artificial cap, never a fake timer. when it&apos;s gone, it&apos;s gone
-          until the next run.
+          no fake timers, no phantom &quot;only 3 left.&quot; when a drop sells out it&apos;s
+          actually gone — and you actually wait, with us, for the next one. that&apos;s the
+          whole deal.
         </p>
       </section>
 
@@ -413,9 +372,9 @@ export default function DropPage() {
         <div style={{ maxWidth: 640, margin: "0 auto", textAlign: "center" }}>
           <h2 className="dr-h2" style={{ color: "var(--brand-canvas)", marginBottom: 16 }}>join the flock.</h2>
           <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.9rem", color: "rgba(var(--brand-canvas-rgb),0.7)", lineHeight: 1.7, margin: "0 auto 32px", maxWidth: 500 }}>
-            the flock shops drop 002 a full day before the public link — plus flock-only free
-            gifts with every subscription. 500 boxes went in 9 days last time. this run
-            won&apos;t wait either.
+            a full day before the public link exists, you&apos;ll already have the cart open —
+            plus free gifts with every subscription, members only. drop 001 went in 9 days.
+            this one won&apos;t wait either.
           </p>
           <div style={{ display: "flex", justifyContent: "center" }}>
             <DropAccessForm source="drop" dark buttonLabel="join the flock" microcopy="one text per drop. no spam, ever." />

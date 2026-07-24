@@ -566,8 +566,9 @@ export default function ReferPage() {
               <span className="accent-em">Earn matcha money.</span>
             </h1>
             <p className="ref-hero-sub">
-              Share shroom&eacute; with friends. They lock in 20% off + free shipping.
-              You earn fixed credits: $5 for your 1st friend, $10 total at 3, $15 total at 5.
+              Your group chat is already asking about the green drink. Send them your
+              link — they get the friend treatment on drop day, and there&apos;s matcha
+              money waiting on your account when they pour.
             </p>
             <button className="ref-hero-cta" onClick={scrollToForm}>
               Get Your Referral Link &darr;
@@ -593,10 +594,10 @@ export default function ReferPage() {
               <div className="ref-step">
                 <p className="ref-step-num">Step 02</p>
                 <div className="ref-step-icon">2</div>
-                <p className="ref-step-title">Friend locks in 20% off</p>
+                <p className="ref-step-title">Friend gets the plug-in price</p>
                 <p className="ref-step-desc">
-                  They join the list through your link and lock in
-                  20% off + free shipping at launch. They save, you earn.
+                  They join through your link and get looked after on drop day —
+                  the friend rate, shipping on us. You get the credit for the intro.
                 </p>
               </div>
               <div className="ref-step">
@@ -644,8 +645,8 @@ export default function ReferPage() {
           </div>
           <div className="ref-proof-divider" />
           <div className="ref-proof-stat">
-            <p className="ref-proof-num">$15</p>
-            <p className="ref-proof-label">Max credit &mdash; capped, no games</p>
+            <p className="ref-proof-num">Case 001</p>
+            <p className="ref-proof-label">What the top referrer takes home</p>
           </div>
           <div className="ref-proof-divider" />
           <div className="ref-proof-stat">

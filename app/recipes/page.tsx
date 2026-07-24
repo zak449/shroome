@@ -378,8 +378,8 @@ export default function RecipesPage() {
             <em>All under a minute.</em>
           </h1>
           <p className="rec-hero-sub">
-            shroomé was built for convenience. One sachet. Your milk. Done.
-            Here are <strong>nine recipes</strong> — every single one takes under 60 seconds. Because your morning shouldn't be a production.
+            One sachet, your milk, whatever&apos;s in the fridge.
+            Here are <strong>nine recipes</strong> — every single one takes under 60 seconds. Because your morning shouldn&apos;t be a production.
           </p>
         </div>
       </section>
@@ -431,7 +431,7 @@ export default function RecipesPage() {
 
       {/* ── CTA ── */}
       <section className="rec-cta">
-        <div className="rec-cta-tag">Made with One Sachet</div>
+        <div className="rec-cta-tag">Your Next Pour</div>
         <h2>
           Made with one shroom&eacute; sachet.
           <br />

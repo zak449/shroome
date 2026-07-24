@@ -8,7 +8,7 @@ import Breadcrumb from "../../Breadcrumb";
 export const metadata: Metadata = {
   title: "Strawberry — shroomé | Liquid Strawberry Matcha Latte",
   description:
-    "shroomé Strawberry — ceremonial matcha meets real freeze-dried strawberry, functional mushroom extracts, and grass-fed collagen peptides. One sachet, 30 seconds, zero compromise.",
+    "shroomé Strawberry — ceremonial matcha meets real freeze-dried strawberry, organic lion's mane, and grass-fed collagen peptides. One sachet, 30 seconds — tastes like summer, works like matcha.",
   keywords: [
     "strawberry matcha latte",
     "strawberry matcha",
@@ -60,7 +60,7 @@ const productSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "shroomé Strawberry Matcha Latte",
-  "description": "shroomé Strawberry — ceremonial matcha meets real freeze-dried strawberry, functional mushroom extracts standardized to 70%+ beta-glucan concentration, and grass-fed collagen peptides. One sachet, 30 seconds, zero compromise.",
+  "description": "shroomé Strawberry — ceremonial matcha meets real freeze-dried strawberry, organic lion's mane mushroom beta-glucans, and grass-fed collagen peptides. One sachet, 30 seconds — tastes like summer, works like matcha.",
   "brand": { "@type": "Brand", "name": "shroomé" },
   "manufacturer": { "@type": "Organization", "name": "ZSQUARED INC" },
   "category": "Functional Beverages",
@@ -430,9 +430,9 @@ export default function StrawberryFlavorPage() {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))", gap: 12 }}>
             {[
               { n: "6 sachets", d: "first-pour kit", p: "$21", sub: "one-time only" },
-              { n: "12 sachets", d: "the standard box", p: "$36", sub: "from $30.60 subscribed" },
-              { n: "24 sachets", d: "the duo stock", p: "$66", sub: "from $54.12 subscribed" },
-              { n: "48 sachets", d: "never run dry", p: "$126", sub: "from $100.80 subscribed" },
+              { n: "12 sachets", d: "the standard box", p: "$36", sub: "less subscribed + a free gift" },
+              { n: "24 sachets", d: "the duo stock", p: "$66", sub: "less subscribed + a free gift" },
+              { n: "48 sachets", d: "never run dry", p: "$126", sub: "less subscribed + a free gift" },
             ].map((b) => (
               <div key={b.n} style={{ background: "#fff", border: "2px solid var(--brand-ink)", borderRadius: 18, padding: "16px 14px", position: "relative" }}>
                 <p style={{ fontFamily: "var(--brand-font-mono)", fontWeight: 700, fontSize: "0.62rem", letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(var(--brand-ink-rgb),0.6)" }}>{b.n}</p>
@@ -444,7 +444,7 @@ export default function StrawberryFlavorPage() {
           </div>
           <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.72rem", color: "rgba(var(--brand-ink-rgb),0.55)", marginTop: 14 }}>
             All packs sold out with Drop 001.{" "}
-            <a href="/drop" style={{ color: "var(--brand-ink)", fontWeight: 700, textDecoration: "underline" }}>Spec your Drop 002 box →</a>
+            <a href="/drop" style={{ color: "var(--brand-ink)", fontWeight: 700, textDecoration: "underline" }}>Build your Drop 002 box →</a>
           </p>
         </div>
 
