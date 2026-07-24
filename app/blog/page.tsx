@@ -231,7 +231,7 @@ export default function BlogIndex() {
         <div className="blog-nav-links">
           <Link href="/#why">Why shroom&eacute;</Link>
           <Link href="/#ingredients">Ingredients</Link>
-          <Link href="/#how">How It Works</Link>
+          <Link href="/#how">The Ritual</Link>
           <Link href="/faq">FAQ</Link>
           <Link href="/blog" className="active">Blog</Link>
           <Link href="/recipes">Recipes</Link>
@@ -244,7 +244,7 @@ export default function BlogIndex() {
           links={[
             { label: "Why shroom\u00e9", href: "/#why" },
             { label: "Ingredients", href: "/#ingredients" },
-            { label: "How It Works", href: "/#how" },
+            { label: "The Ritual", href: "/#how" },
             { label: "FAQ", href: "/faq" },
             { label: "Blog", href: "/blog" },
             { label: "Recipes", href: "/recipes" },

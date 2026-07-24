@@ -169,7 +169,7 @@ export default function WelcomePage() {
           links={[
             { label: "Why shroom\u00e9", href: "/#why" },
             { label: "Ingredients", href: "/#ingredients" },
-            { label: "How It Works", href: "/#how" },
+            { label: "The Ritual", href: "/#how" },
             { label: "FAQ", href: "/faq" },
             { label: "Blog", href: "/blog" },
             { label: "Recipes", href: "/recipes" },
@@ -498,7 +498,7 @@ export default function WelcomePage() {
               marginBottom: 36,
             }}
           >
-            The list gets the Drop 002 link before it&rsquo;s public. No spam — just the flock.
+            The Flock gets the Drop 002 link before it&rsquo;s public. No spam — one email when it matters.
           </p>
 
           {status === "done" ? (
@@ -512,7 +512,10 @@ export default function WelcomePage() {
               }}
             >
               <img src="/brand/sheep-drink.png" alt="" aria-hidden style={{ width: 76, height: "auto", margin: "0 auto 14px", display: "block" }} />
-              You&rsquo;re in! Check your email.
+              Welcome to the flock. Drop 002 opens for you a full day early — watch your inbox.
+              <a href="/refer" style={{ display: "block", marginTop: 10, fontFamily: F.body, fontSize: 13, color: C.canvas, textDecoration: "underline", opacity: 0.75 }}>
+                Get your referral link →
+              </a>
             </div>
           ) : step === "captcha" ? (
             <div>

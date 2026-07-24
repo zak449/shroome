@@ -17,7 +17,7 @@ const faqData = [
       },
       {
         q: "What's the difference between shroomé and matcha powder?",
-        a: `Powder requires hot water, a frother, time, and cleanup. <strong>shroomé is a liquid ceremonial matcha latte.</strong> It's already blended, already emulsified, already perfect. Pour. Swirl. Go. Plus, shroomé stacks three benefits in one sachet: 2.5g ceremonial matcha, 2g grass-fed collagen, and real mushroom extracts.`,
+        a: `Powder requires hot water, a frother, time, and cleanup. <strong>shroomé is a liquid ceremonial matcha latte.</strong> It's already blended, already emulsified, already perfect. Pour. Swirl. Go. Plus, shroomé stacks three benefits in one sachet: 2.5g ceremonial matcha, 2g grass-fed collagen, and real lion's mane beta-glucans.`,
       },
       {
         q: "What flavors does shroomé come in?",
@@ -39,7 +39,7 @@ const faqData = [
     items: [
       {
         q: "What mushrooms are in shroomé?",
-        a: `shroomé contains organic mushroom extracts standardized to <strong>70%+ beta glucan 1/3 and 1/6 polysaccharides</strong> — the specific bioactive compounds responsible for immune modulation and sustained focus. Most mushroom products on the market use low-potency mycelium-on-grain with beta glucan levels under 30%. shroomé's 70%+ concentration is among the highest in the functional food space. These are not psychoactive or psychedelic — they're <strong>food-grade, clinically studied compounds.</strong>`,
+        a: `shroomé contains organic lion&apos;s mane extract standardized to <strong>70%+ beta glucan 1/3 and 1/6 polysaccharides</strong> — the specific bioactive compounds responsible for immune modulation and sustained focus. Most mushroom products on the market use low-potency mycelium-on-grain with beta glucan levels under 30%. shroomé's 70%+ concentration is among the highest in the functional food space. These are not psychoactive or psychedelic — they're <strong>food-grade, clinically studied compounds.</strong>`,
       },
       {
         q: "What's in the collagen and why is it included?",
@@ -88,6 +88,20 @@ const faqData = [
       {
         q: "Can I drink shroomé iced?",
         a: `Absolutely — shroomé was built for iced. Because it's already a liquid concentrate (not powder), it blends perfectly over ice with zero clumping. Pour over a full glass of ice, top with cold milk, done. <strong>No need to pre-dissolve in warm water</strong> like you would with powder matcha.`,
+      },
+    ],
+  },
+  {
+    category: "Drops & The Flock",
+    num: "05",
+    items: [
+      {
+        q: "When is Drop 002?",
+        a: `When it's ready — no fake timers, no phantom countdowns. Drop 001 was 500 boxes and poured out in 9 days. The Flock (free to join) hears the date first and shops <strong>a full day before the public link</strong>, with member-only merch and gifts on every subscription. The ledger never lies: when it's gone, it's gone.`,
+      },
+      {
+        q: "What is the Flock?",
+        a: `shroomé's membership — free, and everyone's welcome. Members shop every drop a full day before the public link, get <strong>member-only merch that's never sold, only earned,</strong> and free gifts with every subscription. It's not an email list. It's the room where the drop happens first.`,
       },
     ],
   },
@@ -391,7 +405,7 @@ export default function FAQ() {
         <div className="faq-nav-links">
           <a href="/#why">Why shroomé</a>
           <a href="/#ingredients">Ingredients</a>
-          <a href="/#how">How It Works</a>
+          <a href="/#how">The Ritual</a>
           <a href="/faq" className="active">FAQ</a>
           <a href="/blog">Blog</a>
           <a href="/recipes">Recipes</a>        </div>
@@ -401,7 +415,7 @@ export default function FAQ() {
           links={[
             { label: "Why shroom\u00e9", href: "/#why" },
             { label: "Ingredients", href: "/#ingredients" },
-            { label: "How It Works", href: "/#how" },
+            { label: "The Ritual", href: "/#how" },
             { label: "FAQ", href: "/faq" },
             { label: "Blog", href: "/blog" },
             { label: "Recipes", href: "/recipes" },
@@ -481,9 +495,9 @@ export default function FAQ() {
           <br />
           <em>The pour answers most of them.</em>
         </h2>
-        <p className="faq-cta-sub">Drop 001 sold out in 9 days. The list gets the link first. Pour. Swirl. Go.</p>
+        <p className="faq-cta-sub">Drop 001 poured out in 9 days. The Flock gets the Drop 002 link first. Pour. Swirl. Go.</p>
         <a href="/" className="faq-btn-cta">
-          Join the Drop 002 list &rarr;
+          Join the Flock &rarr;
         </a>
       </section>
 

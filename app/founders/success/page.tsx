@@ -50,20 +50,15 @@ export default function FoundersSuccess() {
           <span>Number Locked</span>
         </div>
 
-        <h1 className="fs-heading">You&apos;re a Founder.</h1>
+        <h1 className="fs-heading">You&apos;re in the First Pour.</h1>
         <p className="fs-sub">
-          Your box is numbered and reserved. You&apos;ll get a confirmation email shortly.
-          Your box ships on launch day — June 15, 2026.
+          Box numbered, name in the ledger. Confirmation email incoming.
         </p>
 
         <div className="fs-details">
           <div className="fs-detail">
-            <span className="fs-detail-label">Discount</span>
-            <span className="fs-detail-val">30% off locked</span>
-          </div>
-          <div className="fs-detail">
-            <span className="fs-detail-label">Ships</span>
-            <span className="fs-detail-val">June 15, 2026</span>
+            <span className="fs-detail-label">Run</span>
+            <span className="fs-detail-val">First Pour · Drop 001</span>
           </div>
           <div className="fs-detail">
             <span className="fs-detail-label">Shipping</span>

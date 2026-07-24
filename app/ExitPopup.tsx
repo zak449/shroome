@@ -332,7 +332,7 @@ export default function ExitPopup() {
           ) : step === "phone" ? (
             <>
               <img src="/brand/sheep-drink.png" alt="" aria-hidden style={{ width: 72, height: "auto", margin: "0 auto 12px", display: "block" }} />
-              <h2 className="ep-success-title">you&apos;re in line!</h2>
+              <h2 className="ep-success-title">the flock pours first — you&apos;re in.</h2>
               <p className="ep-sub">
                 The text hits your phone <strong style={{ color: "var(--brand-ink)", fontWeight: 700 }}>before anything else we send</strong>. Add your number and you&apos;ll be pouring while everyone else is still finding out.
               </p>
@@ -362,7 +362,7 @@ export default function ExitPopup() {
           ) : (
             <>
               <img src="/brand/sheep-drink.png" alt="" aria-hidden style={{ width: 72, height: "auto", margin: "0 auto 12px", display: "block" }} />
-              <h2 className="ep-success-title">you&apos;re all set!</h2>
+              <h2 className="ep-success-title">welcome to the flock.</h2>
               <p className="ep-success-sub">
                 Watch your inbox for the Drop 002 link.{phone ? " The text gets to you first." : ""} You&apos;re ahead of the line.
               </p>

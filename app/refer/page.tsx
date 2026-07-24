@@ -116,7 +116,7 @@ export default function ReferPage() {
   const referralLink = referralCode ? `https://www.drinkshroome.com?ref=${referralCode}` : "";
 
   const shareMsg = referralLink
-    ? `I just found the cleanest matcha ever \u2014 shroom\u00e9 is ceremonial matcha + mushrooms + collagen in one sachet. Use my link to lock in 20% off + free shipping at launch: ${referralLink}`
+    ? `I'm in the Flock \u2014 shroom\u00e9's the liquid ceremonial matcha latte (lion's mane + collagen, poured over milk in 30 seconds). Drop 001 poured out in 9 days. Join through my link and we both get looked after on drop day: ${referralLink}`
     : "";
 
   const copyLink = () => {
@@ -150,7 +150,7 @@ export default function ReferPage() {
         break;
       case "email":
         window.open(
-          `mailto:?subject=${encodeURIComponent("You need to try this matcha \u2014 20% off")}&body=${msg}`,
+          `mailto:?subject=${encodeURIComponent("You need to try this matcha \u2014 the Flock pours first")}&body=${msg}`,
           "_blank"
         );
         break;
@@ -536,7 +536,7 @@ export default function ReferPage() {
           <div className="ref-nav-links">
             <a href="/#why">Why shroom&eacute;</a>
             <a href="/#ingredients">Ingredients</a>
-            <a href="/#how">How It Works</a>
+            <a href="/#how">The Ritual</a>
             <a href="/faq">FAQ</a>
             <a href="/blog">Blog</a>
             <a href="/recipes">Recipes</a>
@@ -547,7 +547,7 @@ export default function ReferPage() {
             links={[
               { label: "Why shroom\u00e9", href: "/#why" },
               { label: "Ingredients", href: "/#ingredients" },
-              { label: "How It Works", href: "/#how" },
+              { label: "The Ritual", href: "/#how" },
               { label: "FAQ", href: "/faq" },
               { label: "Blog", href: "/blog" },
               { label: "Recipes", href: "/recipes" },

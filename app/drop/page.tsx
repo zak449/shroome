@@ -305,8 +305,8 @@ export default function DropPage() {
           {products.map((p) => (
             <div key={p.sku} className="dr-card">
               <div className="dr-card-img" style={{ background: p.accent }}>
-                <span className="dr-soldout">sold out</span>
-                <Image src={p.image} alt={`shroomé ${p.name} — sold out`} width={306} height={639} style={{ width: "auto", height: 200, maxWidth: "100%", objectFit: "contain" }} />
+                <span className="dr-soldout">poured out</span>
+                <Image src={p.image} alt={`shroomé ${p.name} — poured out with Drop 001`} width={306} height={639} style={{ width: "auto", height: 200, maxWidth: "100%", objectFit: "contain" }} />
               </div>
               <div className="dr-card-body">
                 <p className="dr-card-sku">{p.sku}</p>

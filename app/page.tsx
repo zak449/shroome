@@ -290,7 +290,7 @@ export default function Home() {
 
   // ── Referral helpers ──
   const referralLink = referralCode ? `https://www.drinkshroome.com?ref=${referralCode}` : "";
-  const referralMessage = "I just joined the shroomé restock list — the liquid ceremonial matcha latte with lion's mane + collagen. Pour it over milk and go. Use my link and we both get extra perks:";
+  const referralMessage = "I just joined the Flock — shroomé's the liquid ceremonial matcha latte with lion's mane + collagen. Pour it over milk and go. Drop 002 opens for us a day early — use my link and we both get extra perks:";
 
   const copyReferralLink = () => {
     if (!referralLink) return;
@@ -379,14 +379,14 @@ export default function Home() {
               </div>
               <div style={{ marginTop: 14, display: "flex", alignItems: "center", gap: 8 }}>
                 <div style={{ display: "flex", gap: 4 }}>
-                  {[0, 1, 2].map((i) => (
+                  {[0, 1, 2, 3, 4].map((i) => (
                     <div key={i} style={{ width: 28, height: 28, borderRadius: "50%", border: "2px solid var(--brand-ink)", background: i < referralCount ? "var(--brand-accent)" : "transparent", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.65rem", fontWeight: 700, color: i < referralCount ? "var(--brand-canvas)" : "var(--brand-ink)", fontFamily: "var(--brand-font-body)", transition: "all 0.3s" }}>
                       {i < referralCount ? "✓" : ""}
                     </div>
                   ))}
                 </div>
                 <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.72rem", color: "rgba(var(--brand-ink-rgb),0.6)", fontWeight: 600 }}>
-                  {referralCount}/3 friends joined
+                  {referralCount}/5 friends in — $15 is the cap
                 </p>
               </div>
               <a
@@ -1518,7 +1518,7 @@ export default function Home() {
             Drop 001 · 500 boxes · gone in 9 days
           </p>
           <h2 style={{ fontFamily: "var(--brand-font-display)", fontWeight: 800, fontSize: "clamp(2rem, 4.6vw, 3rem)", lineHeight: 1.05, marginBottom: 14, color: "var(--brand-ink)", letterSpacing: "-0.02em" }}>
-            Sold out. Not gone.
+            Poured out. Not gone.
           </h2>
           <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.92rem", color: "rgba(var(--brand-ink-rgb),0.7)", lineHeight: 1.65, marginBottom: 28 }}>
             Drop 001 belongs to the founding 500. Drop 002 opens for members
@@ -1534,8 +1534,11 @@ export default function Home() {
         <Image src="/brand/sheep-stack.png" alt="" aria-hidden width={90} height={226} loading="lazy" style={{ position: "absolute", right: "6%", bottom: 0, width: 74, height: "auto", opacity: 0.85, filter: "invert(1) brightness(1.8)" }} />
         <div style={{ maxWidth: 900, margin: "0 auto" }}>
           <Image src="/brand/wordmark-cream.png" width={300} height={65} alt="shroomé" loading="lazy" style={{ width: 240, height: "auto", margin: "0 auto 18px" }} />
-          <p style={{ ...tagStyle, fontSize: "0.66rem", color: "var(--brand-tint-soft)", marginBottom: 32 }}>
+          <p style={{ ...tagStyle, fontSize: "0.66rem", color: "var(--brand-tint-soft)", marginBottom: 10 }}>
             Pour. Swirl. Go.
+          </p>
+          <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.7rem", color: "rgba(var(--brand-canvas-rgb),0.55)", marginBottom: 32 }}>
+            mé — our sheep. Keeps the ledger, never spills.
           </p>
 
           <div style={{ display: "flex", gap: 24, justifyContent: "center", marginBottom: 26, flexWrap: "wrap" }}>

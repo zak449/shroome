@@ -281,13 +281,13 @@ export default function Privacy() {
         <p className="pp-updated">Last updated: March 18, 2026</p>
 
         <p>
-          ZSQUARED INC (&quot;shroomé,&quot; &quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) operates the website drinkshroome.com. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or sign up for our waitlist.
+          ZSQUARED INC (&quot;shroomé,&quot; &quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) operates the website drinkshroome.com. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or join the Flock, our membership list.
         </p>
 
         <h2>Information We Collect</h2>
         <p>We collect information you voluntarily provide, including:</p>
         <ul>
-          <li><strong>Email address</strong> — when you join our waitlist</li>
+          <li><strong>Email address</strong> — when you join the Flock</li>
           <li><strong>Phone number</strong> — when you opt in to SMS marketing (optional)</li>
           <li><strong>Usage data</strong> — pages visited, time on site, scroll depth, and interactions via Google Analytics</li>
           <li><strong>Device information</strong> — browser type, operating system, and screen size (collected automatically)</li>
@@ -295,7 +295,7 @@ export default function Privacy() {
 
         <h2>How We Use Your Information</h2>
         <ul>
-          <li>To send you waitlist updates, product launch announcements, and promotional offers via email</li>
+          <li>To send you drop announcements, member updates, and promotional offers via email</li>
           <li>To send you marketing text messages if you opt in to SMS</li>
           <li>To send you your exclusive discount code at launch</li>
           <li>To analyze website traffic and improve our site experience</li>
@@ -361,7 +361,7 @@ export default function Privacy() {
 
       {/* ═══ CTA ═══ */}
       <section className="pp-cta">
-        <div className="pp-cta-tag">Pre-Launch List</div>
+        <div className="pp-cta-tag">The Flock</div>
         <h2>
           Be first.
           <br />

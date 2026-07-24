@@ -160,7 +160,7 @@ export default function NotFound() {
           <div className="nf-nav-links">
             <a href="/#why">Why shroomé</a>
             <a href="/#ingredients">Ingredients</a>
-            <a href="/#how">How It Works</a>
+            <a href="/#how">The Ritual</a>
             <a href="/faq">FAQ</a>
             <a href="/blog">Blog</a>
             <a href="/recipes">Recipes</a>
@@ -171,7 +171,7 @@ export default function NotFound() {
             links={[
               { label: "Why shroom\u00e9", href: "/#why" },
               { label: "Ingredients", href: "/#ingredients" },
-              { label: "How It Works", href: "/#how" },
+              { label: "The Ritual", href: "/#how" },
               { label: "FAQ", href: "/faq" },
               { label: "Blog", href: "/blog" },
               { label: "Recipes", href: "/recipes" },
@@ -185,9 +185,9 @@ export default function NotFound() {
           <div className="nf-blob nf-blob-b" />
           <div className="nf-blob nf-blob-c" />
 
-          <div className="nf-tag">404 — Page Not Found</div>
+          <div className="nf-tag">404 — poured out · 0/0</div>
           <h1 className="nf-heading">Sheep happens.<br />This page doesn&apos;t exist.</h1>
-          <p className="nf-sub">This page wandered off from the flock. The recipes didn&apos;t.</p>
+          <p className="nf-sub">This page wandered off from the flock. The ledger has no record of it. The recipes, however, are all accounted for.</p>
 
           <div className="nf-links">
             <a href="/recipes" className="nf-link nf-link-primary">Browse Recipes &rarr;</a>

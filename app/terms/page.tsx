@@ -286,16 +286,16 @@ export default function Terms() {
 
         <h2>Use of Website</h2>
         <p>
-          Our website is currently in pre-launch mode and is used to collect waitlist signups for our upcoming product launch. By using this website, you agree to provide accurate information and to use the site only for lawful purposes.
+          Our website sells shroomé in numbered, limited drops and collects signups for our membership list (&quot;the Flock&quot;), which receives early drop access and member offers. By using this website, you agree to provide accurate information and to use the site only for lawful purposes.
         </p>
 
-        <h2>Waitlist &amp; Promotions</h2>
+        <h2>The Flock &amp; Promotions</h2>
         <ul>
-          <li>Joining the waitlist does not guarantee product availability or pricing</li>
-          <li>Promotional discount codes (20% off + free shipping) are subject to terms at the time of launch</li>
+          <li>Joining the Flock does not guarantee product availability or pricing</li>
+          <li>Promotional codes, credits, and member perks are subject to terms stated at the time of each drop</li>
           <li>Discount codes are non-transferable and may have expiration dates</li>
           <li>We reserve the right to modify or cancel promotions at any time</li>
-          <li>Discount codes do not stack. The 30% phone code replaces the base 20% waitlist code &mdash; the best single code wins</li>
+          <li>Discount codes do not stack &mdash; the best single code wins</li>
         </ul>
 
         <h2>SMS Terms</h2>
@@ -352,7 +352,7 @@ export default function Terms() {
 
       {/* ═══ CTA ═══ */}
       <section className="tos-cta">
-        <div className="tos-cta-tag">Pre-Launch List</div>
+        <div className="tos-cta-tag">The Flock</div>
         <h2>
           Be first.
           <br />

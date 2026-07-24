@@ -342,7 +342,7 @@ export default function RecipesPage() {
         <div className="rec-nav-links">
           <a href="/#why">Why shroomé</a>
           <a href="/#ingredients">Ingredients</a>
-          <a href="/#how">How It Works</a>
+          <a href="/#how">The Ritual</a>
           <a href="/faq">FAQ</a>
           <a href="/blog">Blog</a>
           <a href="/recipes" className="active">Recipes</a>
@@ -355,7 +355,7 @@ export default function RecipesPage() {
           links={[
             { label: "Why shroom\u00e9", href: "/#why" },
             { label: "Ingredients", href: "/#ingredients" },
-            { label: "How It Works", href: "/#how" },
+            { label: "The Ritual", href: "/#how" },
             { label: "FAQ", href: "/faq" },
             { label: "Blog", href: "/blog" },
             { label: "Recipes", href: "/recipes" },
@@ -438,10 +438,10 @@ export default function RecipesPage() {
           <em>Get yours.</em>
         </h2>
         <p className="rec-cta-sub">
-          Drop 001 sold out in 9 days &middot; 12 servings per box &middot; Pour. Swirl. Go.
+          Drop 001 poured out in 9 days &middot; 12 servings per box &middot; Pour. Swirl. Go.
         </p>
         <a href="/#signup" className="rec-btn-cta">
-          Join the Drop 002 list &rarr;
+          Join the Flock &rarr;
         </a>
       </section>
 
