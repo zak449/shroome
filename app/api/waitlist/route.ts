@@ -436,30 +436,31 @@ export async function POST(req: NextRequest) {
     }
 
     // ─── 2. Append to Google Sheets via Apps Script webhook ─────────────
+    const sheetsPayload = {
+      email,
+      phone: phone || "",
+      timestamp: new Date().toISOString(),
+      source: signupSource,
+      signup_source: signupSource,
+      discount: "20% off + free shipping",
+      // Codes never stack: SHROOME30 replaces the 20% code (best code wins)
+      discount_tier_upgrade: phone ? "YES" : "NO",
+      total_discount: phone ? "30% off + free shipping" : "20% off + free shipping",
+      referral_code: referralCode,
+      referred_by: referredBy || "",
+      name: extras.firstName || "",
+      city: extras.city || "",
+      tier: extras.tier || "",
+      saved_build: extras.savedBuild ? JSON.stringify(extras.savedBuild) : "",
+      optin: extras.optin === undefined ? "" : extras.optin ? "TRUE" : "FALSE",
+    };
     const sheetsWebhookUrl = process.env.GOOGLE_SHEETS_WEBHOOK_URL;
     if (sheetsWebhookUrl) {
       try {
         await fetch(sheetsWebhookUrl, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            email,
-            phone: phone || "",
-            timestamp: new Date().toISOString(),
-            source: signupSource,
-            signup_source: signupSource,
-            discount: "20% off + free shipping",
-            // Codes never stack: SHROOME30 replaces the 20% code (best code wins)
-            discount_tier_upgrade: phone ? "YES" : "NO",
-            total_discount: phone ? "30% off + free shipping" : "20% off + free shipping",
-            referral_code: referralCode,
-            referred_by: referredBy || "",
-            name: extras.firstName || "",
-            city: extras.city || "",
-            tier: extras.tier || "",
-            saved_build: extras.savedBuild ? JSON.stringify(extras.savedBuild) : "",
-            optin: extras.optin === undefined ? "" : extras.optin ? "TRUE" : "FALSE",
-          }),
+          body: JSON.stringify(sheetsPayload),
         });
       } catch (sheetErr) {
         console.error("Sheets webhook error:", sheetErr);

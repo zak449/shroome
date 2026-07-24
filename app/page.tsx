@@ -1060,6 +1060,33 @@ export default function Home() {
               { src: "/sachet-strawberry.png", name: "Strawberry", note: "Bright · Fruity · Loud", href: "/flavors/strawberry", bg: "var(--brand-tint-blush)", me: "/brand/me-02.png", meStyle: { top: 18, right: 16, width: 80, transform: "rotate(8deg)" }, alt: "shroomé Strawberry liquid ceremonial matcha latte sachet, sold out", stamp: "Gone. Loudly.", stampKicker: "First run · gone in 9 days", stampBg: "var(--brand-flavor-strawberry)", stampColor: "var(--brand-ink)", stampRotate: "rotate(5deg)" },
             ].map((f, i) => (
               <a key={f.name} href={f.href} {...anim(`flavor-${i}`, i * 0.12)} style={{ ...anim(`flavor-${i}`, i * 0.12).style, textDecoration: "none", color: "inherit", position: "relative", display: "block" }}>
+                {/* Sticker straddling the card's top-left corner — lives on the
+                    wrapper (the card clips overflow), like a label slapped on a box. */}
+                <div
+                  className="sold-stamp"
+                  style={{
+                    position: "absolute",
+                    top: -14,
+                    left: -10,
+                    transform: f.stampRotate,
+                    zIndex: 3,
+                    background: f.stampBg,
+                    color: f.stampColor,
+                    border: "3px solid var(--brand-ink)",
+                    borderRadius: 14,
+                    padding: "9px 18px 11px",
+                    textAlign: "left",
+                    boxShadow: "0 10px 24px rgba(45,52,26,0.26)",
+                    whiteSpace: "nowrap",
+                  }}
+                >
+                  <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 800, fontSize: "0.56rem", letterSpacing: "0.14em", textTransform: "uppercase", color: f.stampColor, opacity: 0.85, marginBottom: 2 }}>
+                    {f.stampKicker}
+                  </p>
+                  <p style={{ fontFamily: "var(--brand-font-display)", fontWeight: 800, fontSize: "1.15rem", letterSpacing: "-0.01em", lineHeight: 1 }}>
+                    {f.stamp}
+                  </p>
+                </div>
                 <div className="lift" style={{ background: f.bg, border: "3px solid var(--brand-ink)", borderRadius: 32, padding: "28px 16px 26px", position: "relative", overflow: "hidden" }}>
                   <Image
                     src={f.me}
@@ -1079,30 +1106,8 @@ export default function Home() {
                     loading="lazy"
                     style={{ width: "72%", maxWidth: 330, height: "auto", display: "block", margin: "0 auto", filter: "drop-shadow(0 22px 34px rgba(45,52,26,0.28))" }}
                   />
-                  <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 12, margin: "22px 0 6px", flexWrap: "wrap" }}>
-                    <h3 style={{ fontFamily: "var(--brand-font-display)", fontWeight: 800, fontSize: "1.7rem", margin: 0, color: "var(--brand-ink)" }}>{f.name}</h3>
-                    <span
-                      className="sold-stamp"
-                      style={{
-                        background: f.stampBg,
-                        color: f.stampColor,
-                        border: "2px solid var(--brand-ink)",
-                        borderRadius: 999,
-                        padding: "7px 14px",
-                        fontFamily: "var(--brand-font-body)",
-                        fontWeight: 800,
-                        fontSize: "0.68rem",
-                        letterSpacing: "0.08em",
-                        textTransform: "uppercase",
-                        whiteSpace: "nowrap",
-                        transform: f.stampRotate,
-                        display: "inline-block",
-                      }}
-                    >
-                      {f.stamp}
-                    </span>
-                  </div>
-                  <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 700, fontSize: "0.72rem", letterSpacing: "0.16em", textTransform: "uppercase", color: "rgba(var(--brand-ink-rgb),0.7)" }}>{f.note} · {f.stampKicker}</p>
+                  <h3 style={{ fontFamily: "var(--brand-font-display)", fontWeight: 800, fontSize: "1.7rem", margin: "22px 0 6px", color: "var(--brand-ink)" }}>{f.name}</h3>
+                  <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 700, fontSize: "0.72rem", letterSpacing: "0.16em", textTransform: "uppercase", color: "rgba(var(--brand-ink-rgb),0.7)" }}>{f.note}</p>
                   <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 800, fontSize: "0.72rem", letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--brand-ink)", marginTop: 14, textDecoration: "underline" }}>
                     See the flavor →
                   </p>
