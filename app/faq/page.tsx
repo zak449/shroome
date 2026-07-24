@@ -408,7 +408,9 @@ export default function FAQ() {
           <a href="/#how">Good Energy</a>
           <a href="/faq" className="active">FAQ</a>
           <a href="/blog">Blog</a>
-          <a href="/recipes">Recipes</a>        </div>
+          <a href="/recipes">Recipes</a>
+          <a href="/drop">Shop</a>
+        </div>
         <a href="/" className="faq-nav-cta">Join the Flock &rarr;</a>
         <MobileNav
           prefix="faq"
@@ -419,6 +421,7 @@ export default function FAQ() {
             { label: "FAQ", href: "/faq" },
             { label: "Blog", href: "/blog" },
             { label: "Recipes", href: "/recipes" },
+            { label: "Shop", href: "/drop" },
           ]}
         />
       </nav>
