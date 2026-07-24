@@ -423,7 +423,7 @@ export default async function BlogPost({
           <Link href="/recipes">Recipes</Link>
         </div>
         <Link href="/#signup" className="post-nav-cta">
-          Get first access &rarr;
+          Join the Flock &rarr;
         </Link>
         <MobileNav
           prefix="post"
@@ -548,7 +548,7 @@ export default async function BlogPost({
           collagen
         </p>
         <Link href="/#signup" className="post-btn-cta">
-          Get first access &rarr;
+          Join the Flock &rarr;
         </Link>
       </section>
 

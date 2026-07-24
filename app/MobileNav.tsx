@@ -89,7 +89,7 @@ export default function MobileNav({ links, prefix }: MobileNavProps) {
           className={`${prefix}-mobile-menu-cta`}
           onClick={() => setMenuOpen(false)}
         >
-          Get first access &rarr;
+          Join the Flock &rarr;
         </a>
       </div>
     </>

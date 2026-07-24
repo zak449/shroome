@@ -26,7 +26,7 @@ interface DropAccessFormProps {
 export default function DropAccessForm({
   source,
   dark = false,
-  buttonLabel = "get first access",
+  buttonLabel = "join the flock",
   microcopy,
 }: DropAccessFormProps) {
   const [email, setEmail] = useState("");

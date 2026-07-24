@@ -17,11 +17,11 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   title: "shroomé — Liquid Ceremonial Matcha Latte | Pour. Swirl. Go.",
-  description: "The liquid ceremonial matcha latte with lion's mane + collagen. Pour it over milk, go get charged. Drop 001 sold out in 9 days — the Drop 002 list gets the link first.",
+  description: "The liquid ceremonial matcha latte with lion's mane + collagen. Pour it over milk, go get charged. Drop 001 sold out in 9 days — join the Flock and shop Drop 002 a full day before launch.",
   keywords: ["ceremonial matcha latte", "functional mushrooms", "matcha latte", "beta-glucans", "mushroom extract", "collagen peptides", "ready to pour matcha", "matcha sachet", "coffee alternative", "L-theanine", "adaptogenic", "shroomé", "drinkshroome"],
   openGraph: {
     title: "shroomé — Pour. Swirl. Go.",
-    description: "Liquid ceremonial matcha latte with lion's mane + collagen. Drop 001 sold out in 9 days — get first access to Drop 002.",
+    description: "Liquid ceremonial matcha latte with lion's mane + collagen. Drop 001 sold out in 9 days — the Flock shops Drop 002 a day early.",
     type: "website",
     siteName: "shroomé",
     url: "https://www.drinkshroome.com",

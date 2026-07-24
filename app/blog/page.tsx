@@ -237,7 +237,7 @@ export default function BlogIndex() {
           <Link href="/recipes">Recipes</Link>
         </div>
         <Link href="/#signup" className="blog-nav-cta">
-          Get first access &rarr;
+          Join the Flock &rarr;
         </Link>
         <MobileNav
           prefix="blog"

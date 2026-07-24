@@ -252,7 +252,7 @@ export default function DropPage() {
           <a href="/faq">FAQ</a>
           <a href="/founders">First Pour</a>
         </div>
-        <a className="dr-nav-cta" href="#waitlist">Get first access &rarr;</a>
+        <a className="dr-nav-cta" href="#waitlist">Join the Flock &rarr;</a>
         <MobileNav
           prefix="dr"
           links={[
@@ -260,7 +260,7 @@ export default function DropPage() {
             { label: "Ingredients", href: "/#ingredients" },
             { label: "FAQ", href: "/faq" },
             { label: "First Pour", href: "/founders" },
-            { label: "Get first access", href: "#waitlist" },
+            { label: "Join the Flock", href: "#waitlist" },
           ]}
         />
       </nav>
@@ -300,7 +300,7 @@ export default function DropPage() {
               textDecoration: "none",
             }}
           >
-            get first access →
+            join the flock →
           </a>
           <p style={{ fontFamily: "var(--brand-font-mono)", fontSize: "0.68rem", color: "rgba(var(--brand-canvas-rgb),0.45)", marginTop: 14 }}>
             <span className="dr-dot" style={{ marginRight: 8, verticalAlign: "middle" }} aria-hidden="true" />
@@ -344,7 +344,7 @@ export default function DropPage() {
                 </div>
                 <span style={{ height: 12, display: "block" }} />
                 <a className="dr-card-btn" href="#waitlist">
-                  get first access — drop 002
+                  join the flock — drop 002
                 </a>
               </div>
             </div>
@@ -359,8 +359,8 @@ export default function DropPage() {
           <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.92rem", color: "rgba(var(--brand-ink-rgb),0.7)", marginTop: 14, lineHeight: 1.7 }}>
             every active subscription&apos;s boxes are reserved out of the production run before
             the public window opens. one-time buyers refresh the page — subscribers get theirs
-            automatically at 10–20% off by size and cadence (priced live in the builder above).
-            skip, pause, or swap flavors anytime.
+            automatically at 10–20% off by size and cadence (priced live in the builder above) —
+            with flock-only free gifts in the box. skip, pause, or swap flavors anytime.
           </p>
           <p style={{ fontFamily: "var(--brand-font-mono)", fontWeight: 700, fontSize: "0.68rem", letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--brand-canvas)", background: "var(--brand-accent)", display: "inline-block", padding: "8px 18px", borderRadius: 999, border: "2px solid var(--brand-ink)", marginTop: 20 }}>
             opens with drop 002
@@ -411,14 +411,14 @@ export default function DropPage() {
       {/* ── WAITLIST ── */}
       <section id="waitlist" style={{ background: "var(--brand-ink)", padding: "88px 24px" }}>
         <div style={{ maxWidth: 640, margin: "0 auto", textAlign: "center" }}>
-          <h2 className="dr-h2" style={{ color: "var(--brand-canvas)", marginBottom: 16 }}>get drop 002 first.</h2>
+          <h2 className="dr-h2" style={{ color: "var(--brand-canvas)", marginBottom: 16 }}>join the flock.</h2>
           <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.9rem", color: "rgba(var(--brand-canvas-rgb),0.7)", lineHeight: 1.7, margin: "0 auto 32px", maxWidth: 500 }}>
-            the list gets the drop 002 link before it&apos;s public. add your number and it hits
-            your texts 10 minutes before the email even sends. 500 boxes went in 9 days last
-            time — this run won&apos;t wait either.
+            the flock shops drop 002 a full day before the public link — plus flock-only free
+            gifts with every subscription. 500 boxes went in 9 days last time. this run
+            won&apos;t wait either.
           </p>
           <div style={{ display: "flex", justifyContent: "center" }}>
-            <DropAccessForm source="drop" dark buttonLabel="get first access" microcopy="one text per drop. no spam, ever." />
+            <DropAccessForm source="drop" dark buttonLabel="join the flock" microcopy="one text per drop. no spam, ever." />
           </div>
         </div>
       </section>

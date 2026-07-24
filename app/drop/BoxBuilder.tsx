@@ -266,10 +266,10 @@ export default function BoxBuilder() {
           textDecoration: "none",
         }}
       >
-        Get first access — Drop 002 →
+        Join the Flock — Drop 002 →
       </a>
       <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.66rem", color: "rgba(var(--brand-ink-rgb),0.5)", textAlign: "center", marginTop: 10 }}>
-        your build is saved in spirit. the list shops before the link is public.
+        your build is saved in spirit. the flock shops a full day before the link is public.
       </p>
     </div>
   );

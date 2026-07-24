@@ -348,7 +348,7 @@ export default function RecipesPage() {
           <a href="/recipes" className="active">Recipes</a>
         </div>
         <a href="/#signup" className="rec-nav-cta">
-          Get first access &rarr;
+          Join the Flock &rarr;
         </a>
         <MobileNav
           prefix="rec"

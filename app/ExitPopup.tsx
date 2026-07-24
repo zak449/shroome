@@ -278,11 +278,11 @@ export default function ExitPopup() {
             <>
               <img src="/brand/symbol-sheep-solid.png" alt="" aria-hidden style={{ width: 48, height: "auto", margin: "0 auto 14px", display: "block" }} />
               <h2 className="ep-title">
-                leaving before you&apos;re <em>on the list?</em>
+                leaving before you&apos;re <em>in the Flock?</em>
               </h2>
               <p className="ep-sub">
-                Drop 001 — 500 boxes — sold out in 9 days. The Drop 002 list gets the link
-                before it&apos;s public. After that, it&apos;s gone again.
+                Drop 001 — 500 boxes — sold out in 9 days. The Flock shops Drop 002 a full
+                day before the public link, with Flock-only gifts on subscriptions.
               </p>
               <form className="ep-form" onSubmit={handleEmailSubmit}>
                 <input
@@ -295,7 +295,7 @@ export default function ExitPopup() {
                   autoFocus
                 />
                 <button className="ep-btn" type="submit" disabled={status === "loading"}>
-                  {status === "loading" ? "..." : "Get first access"}
+                  {status === "loading" ? "..." : "Join the Flock"}
                 </button>
               </form>
               {status === "error" && (
@@ -304,9 +304,9 @@ export default function ExitPopup() {
                 </p>
               )}
               <div className="ep-perks">
-                <span className="ep-perk">First access</span>
+                <span className="ep-perk">Day-early access</span>
                 <span className="ep-perk">Drop-day text</span>
-                <span className="ep-perk">No spam</span>
+                <span className="ep-perk">Flock-only gifts</span>
               </div>
               <button className="ep-no-thanks" onClick={dismiss}>
                 No thanks, I&apos;ll miss the drop
@@ -316,7 +316,7 @@ export default function ExitPopup() {
             <>
               <img src="/brand/symbol-sheep-solid.png" alt="" aria-hidden style={{ width: 48, height: "auto", margin: "0 auto 14px", display: "block" }} />
               <h2 className="ep-title">one quick check&hellip;</h2>
-              <p className="ep-sub">Confirm you&apos;re human and your place in line is locked.</p>
+              <p className="ep-sub">Confirm you&apos;re human and your spot in the Flock is locked.</p>
               <div ref={captchaRef} style={{ display: "flex", justifyContent: "center", minHeight: 65 }} />
               {status === "loading" && (
                 <p style={{ fontSize: 12, marginTop: 8, fontFamily: "var(--brand-font-body)", color: "rgba(var(--brand-ink-rgb),0.5)" }}>

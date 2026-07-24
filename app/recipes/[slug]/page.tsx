@@ -484,7 +484,7 @@ export default async function RecipeDetailPage({
           <a href="/recipes">Recipes</a>
         </div>
         <a href="/#signup" className="rd-nav-cta">
-          Get first access &rarr;
+          Join the Flock &rarr;
         </a>
         <MobileNav
           prefix="rd"
@@ -601,7 +601,7 @@ export default async function RecipeDetailPage({
           12 servings per box · Pour. Swirl. Go.
         </p>
         <a href="/#signup" className="rd-btn-cta">
-          Get first access →
+          Join the Flock →
         </a>
       </section>
 

@@ -165,7 +165,7 @@ export default function NotFound() {
             <a href="/blog">Blog</a>
             <a href="/recipes">Recipes</a>
           </div>
-          <a href="/" className="nf-nav-cta">Get first access &rarr;</a>
+          <a href="/" className="nf-nav-cta">Join the Flock &rarr;</a>
           <MobileNav
             prefix="nf"
             links={[

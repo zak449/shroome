@@ -56,7 +56,7 @@ export default function FoundersPage() {
               <span>First Pour · 500 boxes</span>
               <span className="gone">Sold out</span>
             </div>
-            <a className="fp-cta" href="/drop#waitlist">Get first access — Drop 002 →</a>
+            <a className="fp-cta" href="/drop#waitlist">Join the Flock — Drop 002 →</a>
             <a className="fp-secondary" href="/">Back to the mothership</a>
           </div>
         </main>

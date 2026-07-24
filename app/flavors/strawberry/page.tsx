@@ -355,7 +355,7 @@ export default function StrawberryFlavorPage() {
             <a href="/recipes">Recipes</a>
           </div>
           <a href="/" className="sf-nav-cta">
-            Get first access &rarr;
+            Join the Flock &rarr;
           </a>
           <MobileNav
             prefix="sf"
@@ -408,7 +408,7 @@ export default function StrawberryFlavorPage() {
                 textDecoration: "none",
               }}
             >
-              Sold out &mdash; get first access to Drop 002 &rarr;
+              Sold out &mdash; join the Flock for Drop 002 &rarr;
             </a>
           </div>
         </section>

@@ -236,7 +236,7 @@ export default function Terms() {
           <a href="/faq">FAQ</a>
           <a href="/blog">Blog</a>
           <a href="/recipes">Recipes</a>        </div>
-        <a href="/" className="tos-nav-cta">Get first access &rarr;</a>
+        <a href="/" className="tos-nav-cta">Join the Flock &rarr;</a>
         <MobileNav
           prefix="tos"
           links={[
@@ -356,11 +356,11 @@ export default function Terms() {
         <h2>
           Be first.
           <br />
-          <em>Get first access.</em>
+          <em>Join the Flock.</em>
         </h2>
         <p className="tos-cta-sub">12 servings per box · Pour. Swirl. Go.</p>
         <a href="/" className="tos-btn-cta">
-          Get first access →
+          Join the Flock →
         </a>
       </section>
 

@@ -337,7 +337,7 @@ export default function Home() {
                 Welcome to the flock.
               </p>
               <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 600, fontSize: "0.8rem", color: "rgba(var(--brand-ink-rgb),0.65)" }}>
-                You&apos;re in line for Drop 002 — the link hits your inbox before it&apos;s public.
+                You&apos;re in the Flock — Drop 002 opens for you a full day before the public link.
               </p>
             </div>
           </div>
@@ -347,7 +347,7 @@ export default function Home() {
                 Refer friends → earn up to $15 credit
               </p>
               <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.75rem", color: "rgba(var(--brand-ink-rgb),0.6)", marginBottom: 12 }}>
-                Bring the group chat. $5 credit at 1 friend, $10 at 3, $15 at 5 — good on drop day. Share your link:
+                Bring the group chat into the Flock. $5 credit at 1 friend, $10 at 3, $15 at 5 — good on drop day. Share your link:
               </p>
               <div style={{ display: "flex", gap: 8, alignItems: "center", marginBottom: 12, flexWrap: "wrap" }}>
                 <div style={{ flex: "1 1 200px", background: "#fff", border: "2px solid var(--brand-ink)", borderRadius: 999, padding: "10px 16px", fontFamily: "var(--brand-font-mono)", fontSize: "0.75rem", color: "var(--brand-ink)", minWidth: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
@@ -411,7 +411,7 @@ export default function Home() {
       ) : step === "phone" ? (
         <div style={{ textAlign: "left" }}>
           <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 600, fontSize: "0.82rem", color: "var(--brand-ink)", marginBottom: 12 }}>
-            ✓ You&apos;re in line. Drop texts go out before the email — add your number and shop Drop 002 first.
+            ✓ You&apos;re in. Add your number and the drop text lands the moment early access opens — first thing, before the email.
           </p>
           <form onSubmit={handlePhoneSubmit} style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
             <input
@@ -444,7 +444,7 @@ export default function Home() {
               style={{ flex: "1 1 220px", padding: "15px 20px", border: "2px solid var(--brand-ink)", borderRadius: 999, background: "#fff", color: "var(--brand-ink)", fontFamily: "var(--brand-font-body)", fontSize: "0.95rem", fontWeight: 500, minWidth: 0 }}
             />
             <button type="submit" disabled={loading} style={{ padding: "15px 28px", border: "2px solid var(--brand-ink)", borderRadius: 999, background: "var(--brand-ink)", color: "var(--brand-canvas)", fontFamily: "var(--brand-font-body)", fontWeight: 800, fontSize: "0.75rem", letterSpacing: "0.1em", textTransform: "uppercase", cursor: loading ? "wait" : "pointer", whiteSpace: "nowrap" }}>
-              {loading ? "…" : "Get first access →"}
+              {loading ? "…" : "Join the Flock →"}
             </button>
           </form>
           {captchaError && (
@@ -452,11 +452,8 @@ export default function Home() {
               {captchaError}
             </p>
           )}
-          <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.72rem", color: "rgba(var(--brand-ink-rgb),0.55)", marginTop: 10 }}>
-            One email when Drop 002 goes live. The list shops before the link is public.
-          </p>
-          <p style={{ ...tagStyle, fontSize: "0.62rem", color: "rgba(var(--brand-ink-rgb),0.45)", marginTop: 8 }}>
-            Join 100+ already in line
+          <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 600, fontSize: "0.78rem", color: "rgba(var(--brand-ink-rgb),0.7)", marginTop: 12 }}>
+            The Flock shops Drop 002 <strong>a full day before launch</strong> — plus free gifts with every subscription, Flock only. 100+ already in.
           </p>
         </div>
       )}
@@ -489,7 +486,7 @@ export default function Home() {
         }}
       >
         <p style={{ ...tagStyle, fontSize: "0.66rem", color: "var(--brand-tint-soft)", margin: 0 }}>
-          Drop 001 sold out in 9 days ✿ The Drop 002 list is open
+          Drop 001 sold out in 9 days ✿ The Flock shops Drop 002 first
         </p>
       </div>
 
@@ -561,7 +558,7 @@ export default function Home() {
               cursor: "pointer",
             }}
           >
-            Get first access →
+            Join the Flock →
           </button>
         </div>
 
@@ -662,7 +659,7 @@ export default function Home() {
               cursor: "pointer",
             }}
           >
-            Get first access →
+            Join the Flock →
           </button>
         </div>
       </nav>
@@ -768,22 +765,8 @@ export default function Home() {
                 opacity: 0,
               }}
             >
-              The liquid ceremonial matcha latte with lion&apos;s mane + collagen.{" "}
-              <strong>Tear the sachet. Pour over milk. Go get charged.</strong>{" "}
-              No whisk. No barista. No crash.
-            </p>
-
-            <p
-              className="fade-up delay-350"
-              style={{
-                ...tagStyle,
-                fontSize: "0.7rem",
-                color: "var(--brand-accent-deep)",
-                marginBottom: 26,
-                opacity: 0,
-              }}
-            >
-              energy ✿ clarity ✿ skin ✿ immunity
+              Ceremonial matcha, lion&apos;s mane + collagen — <strong>poured over milk in 30
+              seconds.</strong> Drop 001 sold out in 9 days.
             </p>
 
             {/* Restock notify form */}
@@ -791,12 +774,7 @@ export default function Home() {
               {restockForm("hero")}
             </div>
 
-            {/* Sticker badges */}
-            <div className="fade-up delay-650" style={{ display: "flex", gap: 4, alignItems: "center", marginTop: 30, opacity: 0 }}>
-              <Image src="/brand/badge-collagen.png" width={124} height={101} alt="With grass-fed type 1 and type 3 collagen" style={{ width: 108, height: "auto", transform: "rotate(-3deg)" }} />
-              <Image src="/brand/badge-b-glucans.png" width={110} height={113} alt="Organic beta-glucans, lion's mane" style={{ width: 94, height: "auto", transform: "rotate(2deg)" }} />
-              <Image src="/brand/badge-matcha.png" width={140} height={85} alt="Organic ceremonial grade matcha" style={{ width: 124, height: "auto", transform: "rotate(-2deg)" }} />
-            </div>
+
           </div>
 
           {/* Right — hero pour photo */}
@@ -954,7 +932,7 @@ export default function Home() {
                       padding: "8px 16px",
                       transform: "rotate(6deg)",
                       ...tagStyle,
-                      fontSize: "0.6rem",
+                      fontSize: "0.68rem",
                     }}
                   >
                     Sold out
@@ -977,7 +955,7 @@ export default function Home() {
                     style={{ width: "72%", maxWidth: 330, height: "auto", display: "block", margin: "0 auto", filter: "drop-shadow(0 22px 34px rgba(45,52,26,0.28))" }}
                   />
                   <h3 style={{ fontFamily: "var(--brand-font-display)", fontWeight: 800, fontSize: "1.7rem", margin: "22px 0 6px", color: "var(--brand-ink)" }}>{f.name}</h3>
-                  <p style={{ ...tagStyle, fontSize: "0.62rem", color: "rgba(var(--brand-ink-rgb),0.65)" }}>{f.note}</p>
+                  <p style={{ ...tagStyle, fontSize: "0.7rem", color: "rgba(var(--brand-ink-rgb),0.7)" }}>{f.note}</p>
                   <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 800, fontSize: "0.72rem", letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--brand-ink)", marginTop: 14, textDecoration: "underline" }}>
                     See the flavor →
                   </p>
@@ -987,8 +965,8 @@ export default function Home() {
           </div>
 
           <p {...anim("flavor-packs", 0.2)} style={{ ...anim("flavor-packs", 0.2).style, marginTop: 30, fontFamily: "var(--brand-font-body)", fontSize: "0.82rem", color: "rgba(var(--brand-ink-rgb),0.65)" }}>
-            Boxes of 6 · 12 · 24 · 48 — from $21. Subscriptions from $30.60 with reserved
-            allocation every drop.{" "}
+            Boxes of 6 · 12 · 24 · 48 — from $21. Subscriptions from $30.60 with reserved allocation
+            every drop + Flock-only gifts.{" "}
             <a href="/drop" style={{ color: "var(--brand-ink)", fontWeight: 700, textDecoration: "underline" }}>
               Build your box →
             </a>
@@ -1109,8 +1087,8 @@ export default function Home() {
               { dose: "2g", label: "Grass-Fed Collagen" },
             ].map((s) => (
               <div key={s.label} style={{ background: "var(--brand-canvas)", border: "2px solid var(--brand-ink)", borderRadius: 20, padding: "20px 14px", textAlign: "center" }}>
-                <p style={{ fontFamily: "var(--brand-font-mono)", fontWeight: 700, fontSize: "1.7rem", color: "var(--brand-accent-deep)", lineHeight: 1.1 }}>{s.dose}</p>
-                <p style={{ ...tagStyle, fontSize: "0.58rem", color: "rgba(var(--brand-ink-rgb),0.7)", marginTop: 6 }}>{s.label}</p>
+                <p style={{ fontFamily: "var(--brand-font-mono)", fontWeight: 700, fontSize: "2rem", color: "var(--brand-accent-deep)", lineHeight: 1.1 }}>{s.dose}</p>
+                <p style={{ ...tagStyle, fontSize: "0.68rem", color: "rgba(var(--brand-ink-rgb),0.75)", marginTop: 8 }}>{s.label}</p>
               </div>
             ))}
           </div>
@@ -1133,14 +1111,19 @@ export default function Home() {
                   textAlign: "left",
                 }}
               >
-                <Image src={item.icon} alt="" aria-hidden width={64} height={64} loading="lazy" style={{ width: 52, height: 52, objectFit: "contain", marginBottom: 16, filter: "invert(1) brightness(1.6)" }} />
-                <p style={{ ...tagStyle, fontSize: "0.72rem", color: "var(--brand-tint-soft)", marginBottom: 12 }}>{item.name}</p>
+                <Image src={item.icon} alt="" aria-hidden width={64} height={64} loading="lazy" style={{ width: 72, height: 72, objectFit: "contain", marginBottom: 16, filter: "invert(1) brightness(1.6)" }} />
+                <p style={{ ...tagStyle, fontSize: "0.8rem", color: "var(--brand-tint-soft)", marginBottom: 12 }}>{item.name}</p>
                 <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.85rem", color: "rgba(var(--brand-canvas-rgb),0.72)", lineHeight: 1.6 }}>{item.detail}</p>
               </div>
             ))}
           </div>
 
-          <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.72rem", color: "rgba(var(--brand-ink-rgb),0.55)", textAlign: "center", marginTop: 26, lineHeight: 1.6 }}>
+          <div {...anim("badge-row", 0.2)} style={{ ...anim("badge-row", 0.2).style, display: "flex", justifyContent: "center", alignItems: "center", gap: 28, flexWrap: "wrap", marginTop: 40 }}>
+            <Image src="/brand/badge-matcha.png" width={280} height={170} alt="Organic ceremonial grade matcha" loading="lazy" style={{ width: 220, height: "auto", transform: "rotate(-2deg)" }} />
+            <Image src="/brand/badge-b-glucans.png" width={200} height={205} alt="Organic beta-glucans, lion's mane" loading="lazy" style={{ width: 168, height: "auto", transform: "rotate(2deg)" }} />
+            <Image src="/brand/badge-collagen.png" width={230} height={188} alt="With grass-fed type 1 and type 3 collagen" loading="lazy" style={{ width: 196, height: "auto", transform: "rotate(-2deg)" }} />
+          </div>
+          <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.78rem", color: "rgba(var(--brand-ink-rgb),0.6)", textAlign: "center", marginTop: 26, lineHeight: 1.6 }}>
             Ingredients: Ceremonial Grade Matcha (organic), Lion&apos;s Mane Mushroom Extract, Reishi Mushroom Extract,
             Cordyceps Mushroom Extract, Collagen Peptides (Hydrolyzed), Natural Flavor.
           </p>
@@ -1201,10 +1184,10 @@ export default function Home() {
       <section
         aria-label="The pour"
         style={{
-          height: "min(52vw, 420px)",
-          backgroundImage: "url(/brand/ready-to-glow.jpg)",
+          height: "min(46vw, 380px)",
+          backgroundImage: "url(/brand/cup-logo.jpg)",
           backgroundSize: "cover",
-          backgroundPosition: "center 42%",
+          backgroundPosition: "center 58%",
           position: "relative",
           display: "flex",
           alignItems: "center",
@@ -1238,7 +1221,7 @@ export default function Home() {
             </h2>
           </div>
 
-          <div {...anim("vibe-grid", 0.15)} style={{ ...anim("vibe-grid", 0.15).style, display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 18 }}>
+          <div {...anim("vibe-grid", 0.15)} style={{ ...anim("vibe-grid", 0.15).style, display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 22, maxWidth: 1080, margin: "0 auto" }}>
             {[
               { src: "/brand/ig-matcha-in.jpg", alt: "Friends at a picnic — our vibe is matcha-in" },
               { src: "/brand/ig-glow-skin.jpg", alt: "Glow and skin — smiling model in sunlight" },
@@ -1247,7 +1230,7 @@ export default function Home() {
               { src: "/brand/ig-good-energy.jpg", alt: "Ready to enjoy life with good energy — cozy moment" },
               { src: "/brand/cup-logo.jpg", alt: "Iced shroomé matcha latte in a branded cup" },
             ].map((g, i) => (
-              <div key={g.src} className="wobble" style={{ transform: `rotate(${i % 2 === 0 ? -1.5 : 1.5}deg)` }}>
+              <div key={g.src} className="wobble">
                 <Image
                   src={g.src}
                   alt={g.alt}
@@ -1360,8 +1343,9 @@ export default function Home() {
             Sold out. Not gone.
           </h2>
           <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.92rem", color: "rgba(var(--brand-ink-rgb),0.7)", lineHeight: 1.65, marginBottom: 28 }}>
-            500 boxes went in 9 days last time. The list gets the Drop 002 link before it&apos;s
-            public — and when it&apos;s gone, it&apos;s gone.
+            Drop 001 belongs to the founding 500. The Flock shops Drop 002
+            <strong> a full day before the public link</strong> — and unlocks free gifts with
+            every subscription, Flock only. Everyone&apos;s welcome. The Flock just pours first.
           </p>
           {restockForm("cta")}
         </div>

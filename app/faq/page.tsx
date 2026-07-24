@@ -395,7 +395,7 @@ export default function FAQ() {
           <a href="/faq" className="active">FAQ</a>
           <a href="/blog">Blog</a>
           <a href="/recipes">Recipes</a>        </div>
-        <a href="/" className="faq-nav-cta">Get first access &rarr;</a>
+        <a href="/" className="faq-nav-cta">Join the Flock &rarr;</a>
         <MobileNav
           prefix="faq"
           links={[

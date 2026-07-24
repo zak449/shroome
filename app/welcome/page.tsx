@@ -162,7 +162,7 @@ export default function WelcomePage() {
             transition: "opacity .2s",
           }}
         >
-          Get first access &rarr;
+          Join the Flock &rarr;
         </a>
         <MobileNav
           prefix="wel"
@@ -557,7 +557,7 @@ export default function WelcomePage() {
                   letterSpacing: "0.01em",
                 }}
               >
-                {status === "loading" ? "Joining..." : "Get first access →"}
+                {status === "loading" ? "Joining..." : "Join the Flock →"}
               </button>
             </form>
           )}
