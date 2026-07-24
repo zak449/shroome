@@ -286,7 +286,7 @@ export default function ExitPopup() {
                 leaving before you&apos;re <em>in the Flock?</em>
               </h2>
               <p className="ep-sub">
-                Drop 001 disappeared in 9 days — most people found out after it was gone.
+                The first run disappeared in 9 days. Most people found out after it was gone.
                 Don&apos;t be most people. The Flock pours first, gifts included.
               </p>
               <form className="ep-form" onSubmit={handleEmailSubmit}>
@@ -364,7 +364,7 @@ export default function ExitPopup() {
               <img src="/brand/sheep-drink.png" alt="" aria-hidden style={{ width: 72, height: "auto", margin: "0 auto 12px", display: "block" }} />
               <h2 className="ep-success-title">welcome to the flock.</h2>
               <p className="ep-success-sub">
-                Watch your inbox for the Drop 002 link.{phone ? " The text gets to you first." : ""} You&apos;re ahead of the line.
+                Watch your inbox for the next run&apos;s link.{phone ? " The text gets to you first." : ""} You&apos;re ahead of the line.
               </p>
               <button className="ep-success-btn" onClick={dismiss}>
                 Back to browsing

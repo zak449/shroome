@@ -14,14 +14,14 @@ import {
 export const metadata: Metadata = {
   title: "the drop — shroomé",
   description:
-    "the liquid ceremonial matcha latte — vanilla or strawberry. pour it over milk; the stir is the recipe. drop 001 is gone. join the flock and shop drop 002 a day before everyone else.",
+    "the liquid ceremonial matcha latte — vanilla or strawberry. pour it over milk; the stir is the recipe. the first run is gone. join the flock and shop the next one a day before everyone else.",
   alternates: {
     canonical: "https://www.drinkshroome.com/drop",
   },
   openGraph: {
     title: "the drop — shroomé",
     description:
-      "drop 001 is gone. drop 002 is next — shop it a day before everyone else.",
+      "the first run is gone. the next one is coming. shop it a day before everyone else.",
     url: "https://www.drinkshroome.com/drop",
     siteName: "shroomé",
     type: "website",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "the drop — shroomé",
     description:
-      "drop 001 is gone. drop 002 is next — shop it a day before everyone else.",
+      "the first run is gone. the next one is coming. shop it a day before everyone else.",
   },
 };
 
@@ -190,9 +190,6 @@ export default function DropPage() {
         .dr-ledger-num{font-family:var(--brand-font-body);font-weight:700;font-size:0.85rem;letter-spacing:.12em;text-transform:uppercase;display:inline-flex;align-items:center;gap:10px}
         .dr-ledger-detail{font-family:var(--brand-font-mono);font-size:0.78rem;color:rgba(var(--brand-canvas-rgb),0.75)}
         .dr-ledger-stamp{font-family:var(--brand-font-body);font-weight:800;font-size:0.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--brand-ink);background:var(--brand-tint-soft);padding:4px 10px;transform:rotate(-2deg)}
-        .dr-dot{width:8px;height:8px;border-radius:50%;background:var(--brand-accent);display:inline-block;animation:drPulse 1.8s ease-in-out infinite}
-        @keyframes drPulse{0%,100%{box-shadow:0 0 0 0 rgba(var(--brand-accent-rgb),0.6)}50%{box-shadow:0 0 0 6px rgba(var(--brand-accent-rgb),0)}}
-        @media(prefers-reduced-motion:reduce){.dr-dot{animation:none}}
 
         .dr-footer{background:var(--brand-flavor-functional);padding:40px 5%;text-align:center}
         .dr-footer a{font-family:var(--brand-font-body);font-size:11px;color:var(--brand-ink);opacity:.5;text-decoration:none;margin:0 8px}
@@ -251,12 +248,13 @@ export default function DropPage() {
         <div style={{ position: "relative", maxWidth: 760, margin: "0 auto" }}>
           <p className="dr-eyebrow" style={{ color: "var(--brand-accent)" }}>when it&apos;s gone, it&apos;s gone</p>
           <h1 className="dr-h1">
-            drop 001 — poured out in {DROP_001.soldOutInDays} days.
+            the first run poured out in {DROP_001.soldOutInDays} days.
           </h1>
           <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.95rem", color: "rgba(var(--brand-canvas-rgb),0.7)", lineHeight: 1.7, maxWidth: 520, margin: "0 auto 32px" }}>
-            your cafe order, sachet form — and it only exists in drops. drop 001 came and
-            went in 9 days. drop 002 is next: same pour, same swirl, ready the second you stir —
-            and you can be shopping it a full day before the link goes public.
+            your cafe order, sachet form. we keep making it, and you keep buying it
+            faster than we can pour. the first run went in 9 days. the next one is
+            coming: same pour, same swirl, ready the second you stir. members shop it
+            a full day before the link goes public.
           </p>
           <a
             href="#waitlist"
@@ -276,8 +274,7 @@ export default function DropPage() {
             join the flock →
           </a>
           <p style={{ fontFamily: "var(--brand-font-mono)", fontSize: "0.68rem", color: "rgba(var(--brand-canvas-rgb),0.45)", marginTop: 14 }}>
-            <span className="dr-dot" style={{ marginRight: 8, verticalAlign: "middle" }} aria-hidden="true" />
-            drop 002 — {DROP_002.openDate ? "date confirmed" : DROP2_SOON_LINE}
+            {DROP_002.openDate ? "next run: date confirmed" : DROP2_SOON_LINE}
           </p>
         </div>
       </section>
@@ -287,7 +284,7 @@ export default function DropPage() {
         <div style={{ maxWidth: 1120, margin: "0 auto 36px", textAlign: "center" }}>
           <h2 className="dr-h2">build your box.</h2>
           <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.88rem", color: "rgba(var(--brand-ink-rgb),0.65)", marginTop: 10 }}>
-            dream it up now, pour it when drop 002 opens. drop 001 didn&apos;t leave a single box behind.
+            dream it up now, save it, pour it when the next production goes live. the first run didn&apos;t leave a single box behind.
           </p>
         </div>
         <BoxBuilder />
@@ -298,7 +295,7 @@ export default function DropPage() {
         <div style={{ maxWidth: 1120, margin: "0 auto 36px", textAlign: "center" }}>
           <h2 className="dr-h2">the lineup.</h2>
           <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.88rem", color: "rgba(var(--brand-ink-rgb),0.6)", marginTop: 10 }}>
-            drop 002 brings every box back — and you can be first in line without ever standing in one.
+            the next run brings every box back. you can be first in line without ever standing in one.
           </p>
         </div>
         <div className="dr-grid">
@@ -306,7 +303,7 @@ export default function DropPage() {
             <div key={p.sku} className="dr-card">
               <div className="dr-card-img" style={{ background: p.accent }}>
                 <span className="dr-soldout">poured out</span>
-                <Image src={p.image} alt={`shroomé ${p.name} — poured out with Drop 001`} width={306} height={639} style={{ width: "auto", height: 200, maxWidth: "100%", objectFit: "contain" }} />
+                <Image src={p.image} alt={`shroomé ${p.name} — poured out with the first run`} width={306} height={639} style={{ width: "auto", height: 200, maxWidth: "100%", objectFit: "contain" }} />
               </div>
               <div className="dr-card-body">
                 <p className="dr-card-sku">{p.sku}</p>
@@ -317,7 +314,7 @@ export default function DropPage() {
                 </div>
                 <span style={{ height: 12, display: "block" }} />
                 <a className="dr-card-btn" href="#waitlist">
-                  first dibs on drop 002 →
+                  first dibs on the next run →
                 </a>
               </div>
             </div>
@@ -330,12 +327,12 @@ export default function DropPage() {
         <div style={{ maxWidth: 720, margin: "0 auto", textAlign: "center" }}>
           <h2 className="dr-h2">subscribers never miss a drop.</h2>
           <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.92rem", color: "rgba(var(--brand-ink-rgb),0.7)", marginTop: 14, lineHeight: 1.7 }}>
-            subscribers don&apos;t set alarms. your box is already yours before the drop even
-            opens — it just shows up, with a members-only gift tucked inside. skip, pause,
-            or swap flavors whenever. the only thing you have to do is pour.
+            subscribers don&apos;t set alarms. your box is already yours before the drop
+            even opens. it just shows up, with a members-only gift tucked inside. skip,
+            pause, or swap flavors whenever. the only thing you have to do is pour.
           </p>
           <p style={{ fontFamily: "var(--brand-font-mono)", fontWeight: 700, fontSize: "0.68rem", letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--brand-canvas)", background: "var(--brand-accent)", display: "inline-block", padding: "8px 18px", borderRadius: 999, border: "2px solid var(--brand-ink)", marginTop: 20 }}>
-            opens with drop 002
+            opens with the next run
           </p>
           <Image
             src="/brand/shipper-box.jpg"
@@ -357,19 +354,16 @@ export default function DropPage() {
           <h2 className="dr-h2">the ledger.</h2>
         </div>
         <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.85rem", color: "rgba(var(--brand-ink-rgb),0.6)", textAlign: "center", margin: "-18px 0 28px" }}>
-          every drop ends. that&apos;s what makes it a drop.
+          we keep making it. you keep pouring it out.
         </p>
         <div className="dr-ledger">
           <div className="dr-ledger-row">
-            <span className="dr-ledger-num">drop 001</span>
-            <span className="dr-ledger-detail"><s>{X1_BOXES} boxes</s> · poured out · day 9</span>
+            <span className="dr-ledger-num">first run</span>
+            <span className="dr-ledger-detail"><s>{X1_BOXES} boxes</s> · gone in 9 days</span>
             <span className="dr-ledger-stamp">poured out</span>
           </div>
           <div className="dr-ledger-row" style={{ position: "relative" }}>
-            <span className="dr-ledger-num">
-              <span className="dr-dot" aria-hidden="true" />
-              drop 002
-            </span>
+            <span className="dr-ledger-num">next run</span>
             <span className="dr-ledger-detail">
               {DROP_002.boxes ? `${DROP_002.boxes.toLocaleString("en-US")} boxes` : "size still secret"}
             </span>
@@ -384,27 +378,53 @@ export default function DropPage() {
               style={{ position: "absolute", right: 18, top: -30, width: 60, height: "auto" }}
             />
           </div>
-          <div className="dr-ledger-row" style={{ opacity: 0.45 }}>
-            <span className="dr-ledger-num">drop 003</span>
-            <span className="dr-ledger-detail">not even a rumor yet</span>
-            <span />
-          </div>
         </div>
         <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.8rem", color: "rgba(var(--brand-ink-rgb),0.6)", textAlign: "center", maxWidth: 520, margin: "24px auto 0", lineHeight: 1.6 }}>
-          no fake timers, no phantom &quot;only 3 left.&quot; when a drop sells out it&apos;s
-          actually gone — and you actually wait, with us, for the next one. that&apos;s the
-          whole deal.
+          no fake timers, no phantom &quot;only 3 left.&quot; when a run pours out it&apos;s
+          gone until the next production. no games, no pressure. we keep making it, and
+          the flock always pours first.
         </p>
       </section>
 
       {/* ── WAITLIST ── */}
-      <section id="waitlist" style={{ background: "var(--brand-ink)", padding: "88px 24px" }}>
-        <div style={{ maxWidth: 640, margin: "0 auto", textAlign: "center" }}>
+      <section id="waitlist" style={{ background: "var(--brand-ink)", padding: "88px 24px", position: "relative", overflow: "hidden" }}>
+        <div
+          aria-hidden="true"
+          style={{
+            position: "absolute",
+            inset: 0,
+            backgroundImage: "url(/brand/pattern-ripple.svg)",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            opacity: 0.16,
+            pointerEvents: "none",
+          }}
+        />
+        <Image
+          src="/sachets-both.png"
+          alt=""
+          aria-hidden
+          width={300}
+          height={314}
+          loading="lazy"
+          style={{ position: "absolute", right: "4%", bottom: -30, width: "clamp(150px, 16vw, 230px)", height: "auto", transform: "rotate(6deg)", filter: "drop-shadow(0 18px 34px rgba(0,0,0,0.4))", pointerEvents: "none" }}
+        />
+        <Image
+          src="/brand/sheep-drink.png"
+          alt=""
+          aria-hidden
+          width={110}
+          height={130}
+          loading="lazy"
+          style={{ position: "absolute", left: "5%", bottom: 26, width: "clamp(64px, 7vw, 96px)", height: "auto", transform: "rotate(-6deg)", filter: "invert(1) brightness(1.9)", opacity: 0.9, pointerEvents: "none" }}
+        />
+        <div style={{ maxWidth: 640, margin: "0 auto", textAlign: "center", position: "relative" }}>
           <h2 className="dr-h2" style={{ color: "var(--brand-canvas)", marginBottom: 16 }}>join the flock.</h2>
           <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.9rem", color: "rgba(var(--brand-canvas-rgb),0.7)", lineHeight: 1.7, margin: "0 auto 32px", maxWidth: 500 }}>
-            a full day before the public link exists, you&apos;ll already have the cart open —
-            plus member-only merch and free gifts with every subscription. drop 001 went in
-            9 days. this one won&apos;t wait either.
+            a full day before the public link exists, you&apos;ll already have the cart
+            open. members vote on new flavors, get member-only merch, and free gifts
+            with every subscription. the first run went in 9 days. this one won&apos;t
+            wait either.
           </p>
           <div style={{ display: "flex", justifyContent: "center" }}>
             <DropAccessForm source="drop" dark buttonLabel="join the flock" microcopy="one text per drop. no spam, ever." />

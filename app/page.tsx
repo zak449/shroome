@@ -6,7 +6,7 @@ const productSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "shroomé Liquid Ceremonial Matcha Latte",
-  "description": "The liquid ceremonial matcha latte — 2.5g ceremonial-grade matcha, 200mg organic mushroom extracts (organic lion's mane beta-glucans), and 2g grass-fed collagen in a sachet. Tear, pour over milk, go. No blender, no whisk, no mess.",
+  "description": "The liquid ceremonial matcha latte: 2.5g ceremonial-grade matcha, 200mg organic lion's mane beta-glucans, and 2g grass-fed collagen in a sachet. Tear, pour over milk, go. No blender, no whisk, no mess.",
   "brand": { "@type": "Brand", "name": "shroomé" },
   "manufacturer": { "@type": "Organization", "name": "ZSQUARED INC" },
   "category": "Functional Beverages",
@@ -290,7 +290,7 @@ export default function Home() {
 
   // ── Referral helpers ──
   const referralLink = referralCode ? `https://www.drinkshroome.com?ref=${referralCode}` : "";
-  const referralMessage = "I just joined the Flock — shroomé's the liquid ceremonial matcha latte with lion's mane + collagen. Pour it over milk and go. Drop 002 opens for us a day early — use my link and we both get extra perks:";
+  const referralMessage = "I just joined the Flock. shroomé's the liquid ceremonial matcha latte with lion's mane + collagen: pour it over milk and go. The next run opens for us a day early. Use my link and we both get extra perks:";
 
   const copyReferralLink = () => {
     if (!referralLink) return;
@@ -339,7 +339,7 @@ export default function Home() {
                 Welcome to the flock.
               </p>
               <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 600, fontSize: "0.8rem", color: "rgba(var(--brand-ink-rgb),0.65)" }}>
-                You&apos;re in — Drop 002 opens for you a full day before the public link.
+                You&apos;re in. The next run opens for you a full day before the public link.
               </p>
             </div>
           </div>
@@ -349,7 +349,7 @@ export default function Home() {
                 Refer friends → earn up to $15 credit
               </p>
               <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.75rem", color: "rgba(var(--brand-ink-rgb),0.6)", marginBottom: 12 }}>
-                Bring the group chat. Matcha money lands on your account for every friend who joins — ready to spend on drop day. Share your link:
+                Bring the group chat. Matcha money lands on your account for every friend who joins, ready to spend on drop day. Share your link:
               </p>
               <div style={{ display: "flex", gap: 8, alignItems: "center", marginBottom: 12, flexWrap: "wrap" }}>
                 <div style={{ flex: "1 1 200px", background: "#fff", border: "2px solid var(--brand-ink)", borderRadius: 999, padding: "10px 16px", fontFamily: "var(--brand-font-mono)", fontSize: "0.75rem", color: "var(--brand-ink)", minWidth: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
@@ -386,7 +386,7 @@ export default function Home() {
                   ))}
                 </div>
                 <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.72rem", color: "rgba(var(--brand-ink-rgb),0.6)", fontWeight: 600 }}>
-                  {referralCount}/5 friends in — $15 is the cap
+                  {referralCount}/5 friends in · $15 is the cap
                 </p>
               </div>
               <a
@@ -413,7 +413,7 @@ export default function Home() {
       ) : step === "phone" ? (
         <div style={{ textAlign: "left" }}>
           <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 600, fontSize: "0.82rem", color: "var(--brand-ink)", marginBottom: 12 }}>
-            ✓ You&apos;re in. Add your number and the drop hits your phone the second your early window opens — you&apos;ll be pouring before the link is even public.
+            ✓ You&apos;re in. Add your number and the drop hits your phone the second your early window opens. You&apos;ll be pouring before the link is even public.
           </p>
           <form onSubmit={handlePhoneSubmit} style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
             <input
@@ -456,7 +456,7 @@ export default function Home() {
           )}
           {variant !== "flock" && (
             <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 600, fontSize: "0.78rem", color: "rgba(var(--brand-ink-rgb),0.7)", marginTop: 12 }}>
-              The Flock shops Drop 002 <strong>a full day before launch</strong> — plus member-only merch and free gifts with every subscription. 100+ already in.
+              The Flock shops every run <strong>a full day before launch</strong>, votes on new flavors, and gets member-only merch. 100+ already in.
             </p>
           )}
         </div>
@@ -493,7 +493,7 @@ export default function Home() {
           onClick={() => { setFlockOpen(true); window.gtag?.("event", "select_promotion", { promotion_name: "announcement_bar_flock" }); }}
           style={{ ...tagStyle, fontSize: "0.66rem", color: "var(--brand-tint-soft)", margin: 0, background: "none", border: "none", cursor: "pointer", padding: 0 }}
         >
-          Drop 001 poured out in 9 days ✿ The Flock shops Drop 002 a day early — <span style={{ textDecoration: "underline", textUnderlineOffset: 3 }}>join free</span>
+          The first run poured out in 9 days ✿ The Flock shops the next one a day early ✿ <span style={{ textDecoration: "underline", textUnderlineOffset: 3 }}>join free</span>
         </button>
       </div>
 
@@ -737,7 +737,7 @@ export default function Home() {
                 opacity: 0,
               }}
             >
-              Drop 001 poured out — the whole run in 9 days
+              The first run poured out in 9 days
             </p>
 
             <h1
@@ -772,7 +772,7 @@ export default function Home() {
                 opacity: 0,
               }}
             >
-              The latte&apos;s already in the sachet — ceremonial matcha, lion&apos;s mane +
+              The latte&apos;s already in the sachet: ceremonial matcha, lion&apos;s mane,
               collagen. Pour it over milk; <strong>the stir is the recipe.</strong> No whisk,
               no wait.
             </p>
@@ -851,7 +851,7 @@ export default function Home() {
                 }}
               >
                 <p style={{ ...tagStyle, fontSize: "0.66rem", color: "var(--brand-canvas)" }}>
-                  Drop 001 · Poured out
+                  First run · Poured out
                 </p>
                 <p style={{ ...tagStyle, fontSize: "0.56rem", color: "var(--brand-tint-soft)", borderTop: "1px solid rgba(254,255,248,0.25)", paddingTop: 4, marginTop: 4 }}>
                   500 boxes · 9 days
@@ -905,7 +905,7 @@ export default function Home() {
               {[
                 "500 boxes. Gone in 9 days.",
                 "One pour, one stir, done. No whisk, no barista.",
-                "Energy, clarity, skin, immunity — one sachet.",
+                "Energy, clarity, skin, immunity. One sachet.",
               ].map((r) => (
                 <div key={r} style={{ display: "flex", alignItems: "center", gap: 12 }}>
                   <span style={{ width: 10, height: 10, borderRadius: "50%", background: "var(--brand-accent)", border: "2px solid var(--brand-ink)", flexShrink: 0 }} />
@@ -943,8 +943,8 @@ export default function Home() {
 
           <div className="flavor-cards-wrap" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 32 }}>
             {[
-              { src: "/sachet-vanilla.png", name: "Vanilla", note: "Warm · Smooth · Everyday", href: "/flavors/vanilla", bg: "var(--brand-flavor-functional)", me: "/brand/me-04.png", meStyle: { top: 14, left: 14, width: 74, transform: "rotate(-10deg)" }, alt: "shroomé Vanilla liquid ceremonial matcha latte sachet — sold out", stamp: "Poured out.", stampKicker: "Sold out · Day 9", stampBg: "var(--brand-ink)", stampColor: "var(--brand-canvas)", stampRotate: "rotate(-7deg)" },
-              { src: "/sachet-strawberry.png", name: "Strawberry", note: "Bright · Fruity · Loud", href: "/flavors/strawberry", bg: "var(--brand-tint-blush)", me: "/brand/me-02.png", meStyle: { top: 18, left: 16, width: 80, transform: "rotate(8deg)" }, alt: "shroomé Strawberry liquid ceremonial matcha latte sachet — sold out", stamp: "Gone. Loudly.", stampKicker: "Sold out · Day 9", stampBg: "var(--brand-flavor-strawberry)", stampColor: "var(--brand-ink)", stampRotate: "rotate(6deg)" },
+              { src: "/sachet-vanilla.png", name: "Vanilla", note: "Warm · Smooth · Everyday", href: "/flavors/vanilla", bg: "var(--brand-flavor-functional)", me: "/brand/me-04.png", meStyle: { top: 14, left: 14, width: 74, transform: "rotate(-10deg)" }, alt: "shroomé Vanilla liquid ceremonial matcha latte sachet, sold out", stamp: "Poured out.", stampKicker: "Sold out · Day 9", stampBg: "var(--brand-ink)", stampColor: "var(--brand-canvas)", stampRotate: "rotate(-7deg)" },
+              { src: "/sachet-strawberry.png", name: "Strawberry", note: "Bright · Fruity · Loud", href: "/flavors/strawberry", bg: "var(--brand-tint-blush)", me: "/brand/me-02.png", meStyle: { top: 18, left: 16, width: 80, transform: "rotate(8deg)" }, alt: "shroomé Strawberry liquid ceremonial matcha latte sachet, sold out", stamp: "Gone. Loudly.", stampKicker: "Sold out · Day 9", stampBg: "var(--brand-flavor-strawberry)", stampColor: "var(--brand-ink)", stampRotate: "rotate(6deg)" },
             ].map((f, i) => (
               <a key={f.name} href={f.href} {...anim(`flavor-${i}`, i * 0.12)} style={{ ...anim(`flavor-${i}`, i * 0.12).style, textDecoration: "none", color: "inherit" }}>
                 <div className="lift" style={{ background: f.bg, border: "3px solid var(--brand-ink)", borderRadius: 32, padding: "28px 16px 26px", position: "relative", overflow: "hidden" }}>
@@ -1039,7 +1039,7 @@ export default function Home() {
         <div style={{ maxWidth: 960, margin: "0 auto", position: "relative", zIndex: 1 }}>
           <div {...anim("test-head")} style={{ ...anim("test-head").style, textAlign: "center", marginBottom: 44 }}>
             <p style={{ ...tagStyle, fontSize: "0.66rem", color: "var(--brand-accent-deep)", marginBottom: 16 }}>
-              Drop 001 reviews
+              First run reviews
             </p>
             <h2 style={{ fontFamily: "var(--brand-font-display)", fontWeight: 800, fontSize: "clamp(1.8rem, 4vw, 2.6rem)", color: "var(--brand-ink)", lineHeight: 1.1, letterSpacing: "-0.02em" }}>
               The flock has spoken.
@@ -1072,7 +1072,7 @@ export default function Home() {
                   <Image src={t.face} alt="" aria-hidden width={44} height={44} loading="lazy" style={{ width: 44, height: 44, borderRadius: "50%", objectFit: "contain", background: "var(--brand-canvas)", padding: 4, border: "2px solid var(--brand-ink)" }} />
                   <div>
                     <p style={{ ...tagStyle, fontSize: "0.68rem", color: "var(--brand-ink)" }}>{t.name}</p>
-                    <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.68rem", color: "rgba(var(--brand-ink-rgb),0.55)" }}>{t.loc} · Drop 001</p>
+                    <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.68rem", color: "rgba(var(--brand-ink-rgb),0.55)" }}>{t.loc} · First run</p>
                   </div>
                 </div>
               </div>
@@ -1106,7 +1106,7 @@ export default function Home() {
             {[
               { img: "/brand/sheep-sachet.png", num: "1. Tear", desc: "Rip open one sachet. That's your perfectly measured dose." },
               { img: "/brand/sheep-swirl.png", num: "2. Pour", desc: "Over your milk of choice. Oat, almond, coconut, dairy. Hot or iced." },
-              { img: "/brand/sheep-drink.png", num: "3. Go", desc: "Stir once. That's the recipe — cafe-grade matcha latte, done. No blender, no whisk, no mess." },
+              { img: "/brand/sheep-drink.png", num: "3. Go", desc: "Stir once. That's the recipe. Cafe-grade matcha latte, done. No blender, no whisk, no mess." },
             ].map((s, i) => (
               <div key={s.num} {...anim(`step-${i}`, 0.2 + i * 0.12)}>
                 <Image src={s.img} alt="" aria-hidden width={140} height={140} loading="lazy" style={{ width: 96, height: 96, objectFit: "contain", margin: "0 auto 18px", display: "block" }} />
@@ -1133,7 +1133,7 @@ export default function Home() {
               Clean label. Real doses.
             </h2>
             <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.92rem", color: "rgba(var(--brand-ink-rgb),0.65)", marginTop: 12 }}>
-              No fairy dusting. No mystery blends. Just the stack — at doses that actually do something.
+              No fairy dusting. No mystery blends. Just the stack, at doses that actually do something.
             </p>
           </div>
 
@@ -1156,7 +1156,7 @@ export default function Home() {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 20 }}>
             {[
               { icon: "/brand/icon-whisk.png", name: "Ceremonial Matcha", detail: "First-harvest, shade-grown, stone-ground in Japan. Vivid jade, zero bitterness. If your matcha doesn\u2019t glow, it\u2019s not the real thing." },
-              { icon: "/brand/icon-mushrooms.png", name: "Lion\u2019s Mane Mushroom", detail: "Organic lion\u2019s mane beta-glucans — clarity and immunity without your latte tasting like the forest floor. Brain fog? Sheep happens — this fixes it." },
+              { icon: "/brand/icon-mushrooms.png", name: "Lion\u2019s Mane Mushroom", detail: "Organic lion\u2019s mane beta-glucans: clarity and immunity without your latte tasting like the forest floor. Brain fog? Sheep happens. This fixes it." },
               { icon: "/brand/icon-molecule.png", name: "Grass-Fed Collagen", detail: "Type 1 & 3, pre-dissolved into the liquid. Silky in the glass, glowy after. Your skincare routine drinks with us now." },
             ].map((item, i) => (
               <div
@@ -1217,7 +1217,7 @@ export default function Home() {
                     { feature: "Ceremonial matcha", values: [true, false, false, true, true] },
                     { feature: "Collagen", values: [true, false, false, false, false] },
                     { feature: "Lion\u2019s mane β-glucans", values: [true, true, true, false, false] },
-                    { feature: "Liquid — ready the second you stir", values: [true, false, false, false, true] },
+                    { feature: "Liquid: ready the second you stir", values: [true, false, false, false, true] },
                     { feature: "Lives in your bag", values: [true, true, true, true, false] },
                   ].map((row) => (
                     <tr key={row.feature}>
@@ -1240,7 +1240,7 @@ export default function Home() {
       </section>
 
       {/* ════════════════════ THE POUR — POURED OUT MOMENT ════════════════════ */}
-      <section aria-label="The pour that poured out Drop 001" style={{ position: "relative" }}>
+      <section aria-label="The pour that poured out the first run" style={{ position: "relative" }}>
         <style>{`
           @keyframes pourTicker { to { transform: translateX(-50%); } }
           .pour-ticker-track { display: flex; width: max-content; animation: pourTicker 36s linear infinite; }
@@ -1275,7 +1275,7 @@ export default function Home() {
                 This pour cleared 500 boxes in 9 days.
               </h2>
               <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.9rem", color: "rgba(var(--brand-ink-rgb),0.75)", lineHeight: 1.65, marginBottom: 20 }}>
-                The prettiest pour on your FYP — and the reason Drop 001 is history.
+                The prettiest pour on your FYP, and the reason the first run is history.
                 Next run, it happens in your kitchen.
               </p>
               <a
@@ -1294,11 +1294,11 @@ export default function Home() {
           <div className="pour-ticker-track">
             {[0, 1].map((k) => (
               <p key={k} style={{ ...tagStyle, fontSize: "0.68rem", color: "var(--brand-canvas)", whiteSpace: "nowrap", paddingRight: 8 }}>
-                drop 001: poured out <span style={{ color: "var(--brand-tint-soft)" }}>✿</span> 500 boxes{" "}
+                the first run poured out <span style={{ color: "var(--brand-tint-soft)" }}>✿</span> 500 boxes{" "}
                 <span style={{ color: "var(--brand-tint-soft)" }}>✿</span> 9 days{" "}
-                <span style={{ color: "var(--brand-tint-soft)" }}>✿</span> the ledger never lies{" "}
+                <span style={{ color: "var(--brand-tint-soft)" }}>✿</span> we keep making it{" "}
                 <span style={{ color: "var(--brand-tint-soft)" }}>✿</span> the flock pours first{" "}
-                <span style={{ color: "var(--brand-tint-soft)" }}>✿</span> drop 002 loading{" "}
+                <span style={{ color: "var(--brand-tint-soft)" }}>✿</span> next run loading{" "}
                 <span style={{ color: "var(--brand-tint-soft)" }}>✿</span>{" "}
               </p>
             ))}
@@ -1320,11 +1320,11 @@ export default function Home() {
 
           <div {...anim("vibe-grid", 0.15)} style={{ ...anim("vibe-grid", 0.15).style, display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 22, maxWidth: 1080, margin: "0 auto" }}>
             {[
-              { src: "/brand/ig-matcha-in.jpg", alt: "Friends at a picnic — our vibe is matcha-in" },
-              { src: "/brand/ig-glow-skin.jpg", alt: "Glow and skin — smiling model in sunlight" },
-              { src: "/brand/model-cloud.jpg", alt: "Soft life — resting on the mé cloud" },
-              { src: "/brand/ig-iced-close.jpg", alt: "Iced matcha with the mé sheep — pour creative" },
-              { src: "/brand/ig-good-energy.jpg", alt: "Ready to enjoy life with good energy — cozy moment" },
+              { src: "/brand/ig-matcha-in.jpg", alt: "Friends at a picnic, our vibe is matcha-in" },
+              { src: "/brand/ig-glow-skin.jpg", alt: "Glow and skin, smiling model in sunlight" },
+              { src: "/brand/model-cloud.jpg", alt: "Soft life, resting on the mé cloud" },
+              { src: "/brand/ig-iced-close.jpg", alt: "Iced matcha with the mé sheep pour creative" },
+              { src: "/brand/ig-good-energy.jpg", alt: "Ready to enjoy life with good energy, cozy moment" },
               { src: "/brand/ig-mushroom-hat.jpg", alt: "Hammock daydream with the mé sheep cloud" },
             ].map((g, i) => (
               <div key={g.src} className="wobble">
@@ -1359,7 +1359,7 @@ export default function Home() {
           <div {...anim("arrival-img")} style={{ ...anim("arrival-img").style, flex: "1 1 420px", minWidth: 300, position: "relative" }}>
             <Image
               src="/brand/ig-sachet-sip.jpg"
-              alt="Sipping an iced shroomé matcha at home — strawberry sachet in hand"
+              alt="Sipping an iced shroomé matcha at home, strawberry sachet in hand"
               width={1000}
               height={1250}
               loading="lazy"
@@ -1383,7 +1383,7 @@ export default function Home() {
               Cafe energy.<br />Home address.
             </h2>
             <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.95rem", color: "rgba(var(--brand-ink-rgb),0.75)", lineHeight: 1.7, marginBottom: 22 }}>
-              Your cafe order — the exact one you&apos;d stand in line for — waiting at your
+              Your cafe order, the exact one you&apos;d stand in line for, waiting at your
               door. Tear a sachet, pour it over milk, swirl. That&apos;s it. No whisk, no
               hand mixer, no green dust on the counter, no name spelled wrong on the cup.
               It tastes like the good cafe made it, because the good stuff is already in
@@ -1393,7 +1393,7 @@ export default function Home() {
               {[
                 "Barista-level latte, ready the second you stir",
                 "No whisk, no clumps, no cleanup",
-                "Ships free — skip, pause, or swap flavors anytime",
+                "Ships free. Skip, pause, or swap flavors anytime",
               ].map((r) => (
                 <div key={r} style={{ display: "flex", alignItems: "center", gap: 12 }}>
                   <span style={{ width: 10, height: 10, borderRadius: "50%", background: "var(--brand-accent)", border: "2px solid var(--brand-ink)", flexShrink: 0 }} />
@@ -1421,14 +1421,14 @@ export default function Home() {
             <button onClick={() => setGateBox(null)} aria-label="Close" style={{ position: "absolute", top: 14, right: 18, background: "none", border: "none", fontSize: "1.4rem", color: "rgba(var(--brand-ink-rgb),0.5)", cursor: "pointer", zIndex: 1 }}>×</button>
             <Image src="/brand/symbol-sheep-solid.png" width={64} height={72} alt="" aria-hidden style={{ width: 56, height: "auto", margin: "0 auto 14px", display: "block" }} />
             <p style={{ ...tagStyle, fontSize: "0.64rem", color: "var(--brand-accent-deep)", marginBottom: 10 }}>
-              {gateBox} · Drop 002
+              {gateBox} · the next run
             </p>
             <h3 style={{ fontFamily: "var(--brand-font-display)", fontWeight: 800, fontSize: "1.6rem", color: "var(--brand-ink)", letterSpacing: "-0.01em", marginBottom: 12 }}>
-              Not live yet — but you&apos;re early.
+              Not live yet. But you&apos;re early.
             </h3>
             <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.9rem", color: "rgba(var(--brand-ink-rgb),0.75)", lineHeight: 1.65, marginBottom: 22 }}>
-              Drop 002 hasn&apos;t launched. The Flock shops it <strong>a full day before the
-              public link</strong> — join free and this box is basically yours before anyone
+              The next run hasn&apos;t gone live. The Flock shops it <strong>a full day before
+              the public link</strong>. Join free and this box is basically yours before anyone
               else can even see it. Everyone gets in. The early ones just pour first.
             </p>
             <button
@@ -1468,13 +1468,14 @@ export default function Home() {
                 The Flock
               </h3>
               <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.88rem", color: "rgba(var(--brand-ink-rgb),0.75)", lineHeight: 1.6, marginBottom: 20 }}>
-                Not an email list — the room where the drop happens first.
+                Not an email list. The room where the drop happens first.
               </p>
               <div style={{ display: "flex", flexDirection: "column", gap: 12, marginBottom: 24 }}>
                 {[
-                  { t: "Shop every drop a full day early", d: "Your link goes live before the public one exists." },
+                  { t: "Shop every run a full day early", d: "Your link goes live before the public one exists." },
+                  { t: "Vote on new flavors", d: "Members pick what we pour next." },
                   { t: "Member-only merch", d: "Never sold, only earned. Flock hands only." },
-                  { t: "Gifts with every subscription", d: "Plus the drop-day text — first to know, always." },
+                  { t: "Gifts with every subscription", d: "Plus the drop-day text. First to know, always." },
                 ].map((b) => (
                   <div key={b.t} style={{ display: "flex", gap: 12, alignItems: "flex-start", background: "rgba(var(--brand-canvas-rgb),0.8)", border: "2px solid var(--brand-ink)", borderRadius: 18, padding: "14px 16px" }}>
                     <span style={{ width: 12, height: 12, borderRadius: "50%", background: "var(--brand-accent)", border: "2px solid var(--brand-ink)", flexShrink: 0, marginTop: 3 }} />
@@ -1487,7 +1488,7 @@ export default function Home() {
               </div>
               {restockForm("flock")}
               <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.68rem", color: "rgba(var(--brand-ink-rgb),0.55)", marginTop: 14, textAlign: "center" }}>
-                100+ in already. Drop 001 poured out in 9 days — the Flock pours first next time.
+                100+ in already. The first run poured out in 9 days. The Flock pours first next time.
               </p>
             </div>
           </div>
@@ -1525,15 +1526,15 @@ export default function Home() {
         >
           <Image src="/brand/symbol-sheep-solid.png" width={72} height={80} alt="" aria-hidden style={{ width: 60, height: "auto", margin: "0 auto 16px", display: "block" }} />
           <p style={{ ...tagStyle, fontSize: "0.66rem", color: "var(--brand-ink)", marginBottom: 14 }}>
-            Drop 001 · 500 boxes · gone in 9 days
+            First run · 500 boxes · gone in 9 days
           </p>
           <h2 style={{ fontFamily: "var(--brand-font-display)", fontWeight: 800, fontSize: "clamp(2rem, 4.6vw, 3rem)", lineHeight: 1.05, marginBottom: 14, color: "var(--brand-ink)", letterSpacing: "-0.02em" }}>
             Poured out. Not gone.
           </h2>
           <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.92rem", color: "rgba(var(--brand-ink-rgb),0.7)", lineHeight: 1.65, marginBottom: 28 }}>
-            Drop 001 belongs to the founding 500. Drop 002 opens for members
-            <strong> a full day before the public link</strong> — with member-only merch and
-            free gifts on every subscription. Everyone&apos;s welcome. The Flock just pours first.
+            The first run belongs to the founding 500. The next one opens for members
+            <strong> a full day before the public link</strong>, with flavor votes, member-only
+            merch, and free gifts on subscriptions. Everyone&apos;s welcome. The Flock just pours first.
           </p>
           {restockForm("cta")}
         </div>
@@ -1548,7 +1549,7 @@ export default function Home() {
             Pour. Swirl. Go.
           </p>
           <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.7rem", color: "rgba(var(--brand-canvas-rgb),0.55)", marginBottom: 32 }}>
-            mé — our sheep. Keeps the ledger, never spills.
+            mé, our sheep. Keeps the ledger, never spills.
           </p>
 
           <div style={{ display: "flex", gap: 24, justifyContent: "center", marginBottom: 26, flexWrap: "wrap" }}>

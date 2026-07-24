@@ -49,6 +49,7 @@ export default function BoxBuilder() {
   const [size, setSize] = useState<Size>(12);
   const [vanilla, setVanilla] = useState(6);
   const [cadence, setCadence] = useState<Cadence>("once");
+  const [saved, setSaved] = useState(false);
 
   const strawberry = size - vanilla;
 
@@ -66,6 +67,18 @@ export default function BoxBuilder() {
   const base = ONE_TIME[size];
   const pct = cadence === "once" || size === 6 ? 0 : SUB_PCT[size as Exclude<Size, 6>][cadence as Exclude<Cadence, "once">];
   const price = +(base * (1 - pct / 100)).toFixed(2);
+
+  const saveBuild = () => {
+    try {
+      localStorage.setItem(
+        "shroome_saved_build",
+        JSON.stringify({ size, vanilla, strawberry: size - vanilla, cadence, price, savedAt: Date.now() })
+      );
+    } catch {}
+    setSaved(true);
+    window.gtag?.("event", "save_build", { box_size: size, cadence, value: price });
+    document.getElementById("waitlist")?.scrollIntoView({ behavior: "smooth" });
+  };
 
   const label = (style: React.CSSProperties = {}): React.CSSProperties => ({
     fontFamily: "var(--brand-font-mono)",
@@ -91,7 +104,7 @@ export default function BoxBuilder() {
       }}
     >
       <Image
-        src="/brand/me-01.png"
+        src="/brand/me-01-solid.png"
         alt=""
         aria-hidden
         width={100}
@@ -116,7 +129,7 @@ export default function BoxBuilder() {
           textTransform: "uppercase",
         }}
       >
-        Drop 001 · poured out
+        First run · poured out
       </div>
 
       {/* ── Size ── */}
@@ -226,36 +239,12 @@ export default function BoxBuilder() {
         </div>
       </div>
 
-      {/* ── Locked purchase ── */}
+      {/* ── Save the build → join the Flock ── */}
       <button
-        disabled
+        onClick={saveBuild}
         style={{
           width: "100%",
           marginTop: 18,
-          padding: "16px 20px",
-          borderRadius: 999,
-          border: "2px solid rgba(var(--brand-ink-rgb),0.25)",
-          background: "rgba(var(--brand-ink-rgb),0.06)",
-          color: "rgba(var(--brand-ink-rgb),0.45)",
-          fontFamily: "var(--brand-font-body)",
-          fontWeight: 800,
-          fontSize: "0.78rem",
-          letterSpacing: "0.1em",
-          textTransform: "uppercase",
-          cursor: "not-allowed",
-        }}
-      >
-        Poured out — every last sachet
-      </button>
-      <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.66rem", color: "rgba(var(--brand-ink-rgb),0.55)", textAlign: "center", marginTop: 8 }}>
-        your build isn&apos;t dead — it&apos;s early.
-      </p>
-      <a
-        href="#waitlist"
-        style={{
-          display: "block",
-          textAlign: "center",
-          marginTop: 10,
           padding: "16px 20px",
           borderRadius: 999,
           border: "2px solid var(--brand-ink)",
@@ -266,13 +255,13 @@ export default function BoxBuilder() {
           fontSize: "0.78rem",
           letterSpacing: "0.1em",
           textTransform: "uppercase",
-          textDecoration: "none",
+          cursor: "pointer",
         }}
       >
-        Get first dibs — Drop 002 →
-      </a>
-      <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.66rem", color: "rgba(var(--brand-ink-rgb),0.5)", textAlign: "center", marginTop: 10 }}>
-        your build is saved in spirit. you&apos;ll be shopping it a full day before the link is public.
+        {saved ? "Box saved ✓ Join the Flock below" : "Save my box · Join the Flock →"}
+      </button>
+      <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.66rem", color: "rgba(var(--brand-ink-rgb),0.55)", textAlign: "center", marginTop: 10 }}>
+        we&apos;ll hold your build. when the next production goes live, members shop it a full day before the public link.
       </p>
     </div>
   );
