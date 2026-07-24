@@ -113,7 +113,7 @@ export default function WelcomePage() {
 
   return (
     <div style={{ background: C.canvas, color: C.ink, minHeight: "100vh" }}>
-      <style>{`@media(max-width:768px){.wel-nav-cta{display:none !important}}`}</style>
+      <style>{`@media(max-width:768px){.wel-nav-cta{display:none !important}.wel-nav-shop{display:none !important}}`}</style>
       {/* ── NAV ────────────────────────────────────── */}
       <nav
         style={{
@@ -147,6 +147,22 @@ export default function WelcomePage() {
           <img src="/brand/wordmark.png" alt="shroomé" style={{ height: 22, width: "auto" }} />
         </a>
         <a
+          href="/drop"
+          className="wel-nav-shop"
+          style={{
+            fontFamily: F.body,
+            fontSize: 14,
+            fontWeight: 600,
+            color: C.ink,
+            textDecoration: "none",
+            letterSpacing: "0.01em",
+            marginLeft: "auto",
+            marginRight: 18,
+          }}
+        >
+          Shop
+        </a>
+        <a
           href="#signup"
           className="wel-nav-cta"
           style={{
@@ -173,6 +189,7 @@ export default function WelcomePage() {
             { label: "FAQ", href: "/faq" },
             { label: "Blog", href: "/blog" },
             { label: "Recipes", href: "/recipes" },
+            { label: "Shop", href: "/drop" },
           ]}
         />
       </nav>

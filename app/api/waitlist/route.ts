@@ -375,7 +375,7 @@ export async function POST(req: NextRequest) {
     const extras: ProfileExtras = {
       firstName: cleanText(rawName, 60),
       city: cleanText(rawCity, 80),
-      tier: rawTier === "deep" || rawTier === "light" ? rawTier : undefined,
+      tier: rawTier === "deep" || rawTier === "light" || rawTier === "cart" ? rawTier : undefined,
       savedBuild: cleanSavedBuild(rawSavedBuild),
     };
 
