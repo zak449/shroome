@@ -7,6 +7,8 @@ export const metadata: Metadata = {
   description:
     "~60mg caffeine + matcha's natural l-theanine for calm, steady energy. a liquid ceremonial matcha latte. the first run sold out — get access to the next run.",
   robots: { index: false, follow: false },
+  // Prevent inheriting the root layout's canonical ("/") on this noindex LP.
+  alternates: { canonical: null },
   openGraph: {
     title: "shroomé — break up with the crash, not with caffeine",
     description:

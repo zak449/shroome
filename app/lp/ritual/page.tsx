@@ -7,6 +7,8 @@ export const metadata: Metadata = {
   description:
     "liquid ceremonial matcha latte. no whisk, no powder — just pour, swirl, glow. the first run sold out. get access to the next run before it goes.",
   robots: { index: false, follow: false },
+  // Prevent inheriting the root layout's canonical ("/") on this noindex LP.
+  alternates: { canonical: null },
   openGraph: {
     title: "shroomé — the next run is coming. the prettiest 30 seconds of your morning",
     description:

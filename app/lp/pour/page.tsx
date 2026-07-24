@@ -7,6 +7,8 @@ export const metadata: Metadata = {
   description:
     "pour. swirl. go. the liquid ceremonial matcha latte — no whisk, no blender, no line. the first run sold out. get drop access before the next run goes.",
   robots: { index: false, follow: false },
+  // Prevent inheriting the root layout's canonical ("/") on this noindex LP.
+  alternates: { canonical: null },
   openGraph: {
     title: "shroomé — a café matcha latte. the stir is the recipe. the next run won't wait.",
     description:

@@ -7,6 +7,8 @@ export const metadata: Metadata = {
   description:
     "200mg mushroom extracts (organic lion's mane beta-glucans) at ≥70% beta-glucans, third-party tested. ceremonial matcha with l-theanine for sustained focus. the first run sold out — get access to the next run.",
   robots: { index: false, follow: false },
+  // Prevent inheriting the root layout's canonical ("/") on this noindex LP.
+  alternates: { canonical: null },
   openGraph: {
     title: "shroomé — read the label. that's the pitch. (the next run)",
     description:

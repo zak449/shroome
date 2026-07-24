@@ -159,7 +159,7 @@ export default function DropPage() {
         <div className="dr-nav-links">
           <a href="/#why">Why shroomé</a>
           <a href="/#flavors">Flavors</a>
-          <a href="/#how">The Ritual</a>
+          <a href="/#how">Good Energy</a>
           <a href="/faq">FAQ</a>
           <a href="/recipes">Recipes</a>
           <a href="/drop" aria-current="page">Shop</a>
@@ -171,7 +171,7 @@ export default function DropPage() {
           links={[
             { label: "Why shroomé", href: "/#why" },
             { label: "Flavors", href: "/#flavors" },
-            { label: "The Ritual", href: "/#how" },
+            { label: "Good Energy", href: "/#how" },
             { label: "FAQ", href: "/faq" },
             { label: "Recipes", href: "/recipes" },
             { label: "Shop", href: "/drop" },

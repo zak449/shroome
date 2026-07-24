@@ -28,6 +28,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.drinkshroome.com/founders",
   },
+  // Layout-level noindex so /founders/checkout and /founders/success are
+  // covered as well (page-level robots on /founders does not cascade).
+  robots: { index: false },
 };
 
 export default function FoundersLayout({ children }: { children: React.ReactNode }) {

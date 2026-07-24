@@ -7,6 +7,8 @@ export const metadata: Metadata = {
   description:
     "2g grass-fed collagen + ceremonial matcha in one ready-to-pour sachet. supports skin health. tastes like a treat. the first run sold out — get access to the next run.",
   robots: { index: false, follow: false },
+  // Prevent inheriting the root layout's canonical ("/") on this noindex LP.
+  alternates: { canonical: null },
   openGraph: {
     title: "shroomé — the next run: your matcha latte is now a beauty step",
     description:
