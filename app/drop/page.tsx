@@ -134,6 +134,11 @@ export default function DropPage() {
         .dr-join-sheep{position:absolute;left:5%;bottom:26px;width:clamp(64px,7vw,96px);height:auto;transform:rotate(-6deg);filter:invert(1) brightness(1.9);opacity:0.9;pointer-events:none}
         @media(max-width:900px){.dr-join-sachets{width:110px;right:-24px;bottom:-40px;opacity:0.55}.dr-join-sheep{display:none}}
         .dr-ledger-row{display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--brand-ink);color:var(--brand-canvas);padding:18px 22px;flex-wrap:wrap}
+        a.dr-ledger-row{text-decoration:none;cursor:pointer;transition:background .2s,transform .2s}
+        a.dr-ledger-row:hover{background:rgba(45,52,26,0.88);transform:translateY(-2px)}
+        a.dr-ledger-row:hover .dr-ledger-num{text-decoration:underline;text-underline-offset:4px}
+        .dr-ledger-cta{display:inline-block;background:var(--brand-accent);color:var(--brand-canvas);font-family:var(--brand-font-body);font-weight:800;font-size:0.74rem;letter-spacing:0.1em;text-transform:uppercase;padding:14px 30px;border:2px solid var(--brand-ink);border-radius:999px;text-decoration:none;transition:transform .15s}
+        .dr-ledger-cta:hover{transform:scale(1.04)}
         .dr-ledger-num{font-family:var(--brand-font-body);font-weight:700;font-size:0.85rem;letter-spacing:.12em;text-transform:uppercase;display:inline-flex;align-items:center;gap:10px}
         .dr-ledger-detail{font-family:var(--brand-font-mono);font-size:0.78rem;color:rgba(var(--brand-canvas-rgb),0.75)}
         .dr-ledger-stamp{font-family:var(--brand-font-body);font-weight:800;font-size:0.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--brand-ink);background:var(--brand-tint-soft);padding:4px 10px;transform:rotate(-2deg)}
@@ -299,19 +304,22 @@ export default function DropPage() {
             <span className="dr-ledger-detail"><s>{X1_BOXES} boxes</s> · gone in 9 days</span>
             <span className="dr-ledger-stamp">poured out</span>
           </div>
-          <div className="dr-ledger-row">
+          <a className="dr-ledger-row" href="#join" aria-label="Next run: hear about it first, join the flock">
             <span className="dr-ledger-num">next run</span>
             <span className="dr-ledger-detail">
               {DROP_002.boxes ? `${DROP_002.boxes.toLocaleString("en-US")} boxes` : "size still secret"}
             </span>
-            <span className="dr-ledger-detail">the flock hears first</span>
-          </div>
+            <span className="dr-ledger-detail">the flock hears first →</span>
+          </a>
         </div>
         <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.8rem", color: "rgba(var(--brand-ink-rgb),0.6)", textAlign: "center", maxWidth: 520, margin: "24px auto 0", lineHeight: 1.6 }}>
           no fake timers, no phantom &quot;only 3 left.&quot; when a run pours out it&apos;s
           gone until the next run. no games, no pressure. we keep making it, and
           the flock always pours first.
         </p>
+        <div style={{ textAlign: "center", marginTop: 26 }}>
+          <a className="dr-ledger-cta" href="#join">hear about the next run first →</a>
+        </div>
       </section>
 
       {/* ── WAITLIST ── */}

@@ -97,6 +97,9 @@ export default function BoxBuilder({ joinHref = "#join" }: BoxBuilderProps) {
   const [strawberry, setStrawberry] = useState(6);
   const [cadence, setCadence] = useState<Cadence>("once");
   const [carted, setCarted] = useState(false);
+  /** Dual-path save step: "cart" saves the build (primary), "light" is the
+   *  lighter "just notify me when it restocks" path (email only). */
+  const [saveMode, setSaveMode] = useState<"cart" | "light">("cart");
   const reserveRef = useRef<HTMLDivElement>(null);
 
   const total = vanilla + strawberry;
@@ -372,19 +375,40 @@ export default function BoxBuilder({ joinHref = "#join" }: BoxBuilderProps) {
 
       {carted ? (
         <div ref={reserveRef} style={{ marginTop: 18, borderTop: "2px solid rgba(var(--brand-ink-rgb),0.12)", paddingTop: 18 }}>
-          <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 800, fontSize: "0.85rem", color: ink, marginBottom: 4 }}>
-            in your cart. now save it.
-          </p>
-          <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.72rem", color: "rgba(var(--brand-ink-rgb),0.6)", marginBottom: 14 }}>
-            drop your email (first name if you feel like it) and we&apos;ll hold this
-            exact build for the next run, then send your link the moment it goes live.
-          </p>
+          {saveMode === "cart" ? (
+            <>
+              <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 800, fontSize: "0.85rem", color: ink, marginBottom: 4 }}>
+                in your cart. now save it.
+              </p>
+              <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.72rem", color: "rgba(var(--brand-ink-rgb),0.6)", marginBottom: 14 }}>
+                drop your email (first name if you feel like it) and we&apos;ll hold this
+                exact build for the next run. members order before the next run goes
+                live and get member-only merch.
+              </p>
+            </>
+          ) : (
+            <>
+              <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 800, fontSize: "0.85rem", color: ink, marginBottom: 4 }}>
+                no cart, just the heads up.
+              </p>
+              <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.72rem", color: "rgba(var(--brand-ink-rgb),0.6)", marginBottom: 14 }}>
+                email only. we&apos;ll ping you the moment the next run restocks, and
+                that&apos;s it.
+              </p>
+            </>
+          )}
           <DropAccessForm
-            source="drop-builder"
-            tier="cart"
+            source={saveMode === "cart" ? "drop-builder" : "drop-builder-notify"}
+            tier={saveMode}
             upsellHref={joinHref}
-            buttonLabel="save my cart"
-            microcopy="no charge until the next run opens and you check out."
+            buttonLabel={saveMode === "cart" ? "save my cart" : "notify me"}
+            microcopy={saveMode === "cart" ? "no charge until the next run opens and you check out." : undefined}
+            optinCheckbox
+            secondaryAction={
+              saveMode === "cart"
+                ? { label: "just notify me when it restocks →", onClick: () => { setSaveMode("light"); window.gtag?.("event", "select_promotion", { promotion_name: "builder_notify_only" }); } }
+                : { label: "actually, save my cart →", onClick: () => setSaveMode("cart") }
+            }
           />
         </div>
       ) : (

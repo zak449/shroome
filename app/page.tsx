@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect, useRef, useCallback } from "react";
 import Image from "next/image";
+import BoxBuilder from "./drop/BoxBuilder";
 
 const productSchema = {
   "@context": "https://schema.org",
@@ -84,7 +85,6 @@ export default function Home() {
   const [referralCount, setReferralCount] = useState(0);
   const [copied, setCopied] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [gateBox, setGateBox] = useState<string | null>(null);
   const [flockOpen, setFlockOpen] = useState(false);
 
   // ── Analytics: section visibility tracking ──
@@ -197,7 +197,7 @@ export default function Home() {
       const res = await fetch("/api/waitlist", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, turnstileToken: token, ref: referredBy }),
+        body: JSON.stringify({ email, turnstileToken: token, ref: referredBy, tier: flockOpen ? "deep" : "light" }),
       });
       const data = await res.json();
       if (data.closed) {
@@ -269,7 +269,7 @@ export default function Home() {
       await fetch("/api/waitlist", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, phone, ref: referredBy }),
+        body: JSON.stringify({ email, phone, ref: referredBy, tier: "deep" }),
       });
     } catch {}
     setLoading(false);
@@ -1056,36 +1056,11 @@ export default function Home() {
 
           <div className="flavor-cards-wrap" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 32 }}>
             {[
-              { src: "/sachet-vanilla.png", name: "Vanilla", note: "Warm · Smooth · Everyday", href: "/flavors/vanilla", bg: "var(--brand-flavor-functional)", me: "/brand/me-04.png", meStyle: { top: 14, left: 14, width: 74, transform: "rotate(-10deg)" }, alt: "shroomé Vanilla liquid ceremonial matcha latte sachet, sold out", stamp: "Poured out.", stampKicker: "First run · gone in 9 days", stampBg: "var(--brand-ink)", stampColor: "var(--brand-canvas)", stampRotate: "rotate(-7deg)" },
-              { src: "/sachet-strawberry.png", name: "Strawberry", note: "Bright · Fruity · Loud", href: "/flavors/strawberry", bg: "var(--brand-tint-blush)", me: "/brand/me-02.png", meStyle: { top: 18, left: 16, width: 80, transform: "rotate(8deg)" }, alt: "shroomé Strawberry liquid ceremonial matcha latte sachet, sold out", stamp: "Gone. Loudly.", stampKicker: "First run · gone in 9 days", stampBg: "var(--brand-flavor-strawberry)", stampColor: "var(--brand-ink)", stampRotate: "rotate(6deg)" },
+              { src: "/sachet-vanilla.png", name: "Vanilla", note: "Warm · Smooth · Everyday", href: "/flavors/vanilla", bg: "var(--brand-flavor-functional)", me: "/brand/me-04.png", meStyle: { top: 14, right: 14, width: 74, transform: "rotate(10deg)" }, alt: "shroomé Vanilla liquid ceremonial matcha latte sachet, sold out", stamp: "Poured out.", stampKicker: "First run · gone in 9 days", stampBg: "var(--brand-ink)", stampColor: "var(--brand-canvas)", stampRotate: "rotate(-6deg)" },
+              { src: "/sachet-strawberry.png", name: "Strawberry", note: "Bright · Fruity · Loud", href: "/flavors/strawberry", bg: "var(--brand-tint-blush)", me: "/brand/me-02.png", meStyle: { top: 18, right: 16, width: 80, transform: "rotate(8deg)" }, alt: "shroomé Strawberry liquid ceremonial matcha latte sachet, sold out", stamp: "Gone. Loudly.", stampKicker: "First run · gone in 9 days", stampBg: "var(--brand-flavor-strawberry)", stampColor: "var(--brand-ink)", stampRotate: "rotate(5deg)" },
             ].map((f, i) => (
-              <a key={f.name} href={f.href} {...anim(`flavor-${i}`, i * 0.12)} style={{ ...anim(`flavor-${i}`, i * 0.12).style, textDecoration: "none", color: "inherit" }}>
+              <a key={f.name} href={f.href} {...anim(`flavor-${i}`, i * 0.12)} style={{ ...anim(`flavor-${i}`, i * 0.12).style, textDecoration: "none", color: "inherit", position: "relative", display: "block" }}>
                 <div className="lift" style={{ background: f.bg, border: "3px solid var(--brand-ink)", borderRadius: 32, padding: "28px 16px 26px", position: "relative", overflow: "hidden" }}>
-                  <div
-                    className="sold-stamp"
-                    style={{
-                      position: "absolute",
-                      top: 22,
-                      left: "55%",
-                      transform: `translate(-50%, 0) ${f.stampRotate}`,
-                      zIndex: 3,
-                      background: f.stampBg,
-                      color: f.stampColor,
-                      border: "3px solid var(--brand-ink)",
-                      borderRadius: 16,
-                      padding: "12px 26px 14px",
-                      textAlign: "center",
-                      boxShadow: "0 12px 28px rgba(45,52,26,0.28)",
-                      whiteSpace: "nowrap",
-                    }}
-                  >
-                    <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 800, fontSize: "0.6rem", letterSpacing: "0.14em", textTransform: "uppercase", color: f.stampColor, opacity: 0.85, marginBottom: 3 }}>
-                      {f.stampKicker}
-                    </p>
-                    <p style={{ fontFamily: "var(--brand-font-display)", fontWeight: 800, fontSize: "clamp(1.3rem, 2.4vw, 1.7rem)", letterSpacing: "-0.01em", lineHeight: 1 }}>
-                      {f.stamp}
-                    </p>
-                  </div>
                   <Image
                     src={f.me}
                     alt=""
@@ -1104,8 +1079,30 @@ export default function Home() {
                     loading="lazy"
                     style={{ width: "72%", maxWidth: 330, height: "auto", display: "block", margin: "0 auto", filter: "drop-shadow(0 22px 34px rgba(45,52,26,0.28))" }}
                   />
-                  <h3 style={{ fontFamily: "var(--brand-font-display)", fontWeight: 800, fontSize: "1.7rem", margin: "22px 0 6px", color: "var(--brand-ink)" }}>{f.name}</h3>
-                  <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 700, fontSize: "0.72rem", letterSpacing: "0.16em", textTransform: "uppercase", color: "rgba(var(--brand-ink-rgb),0.7)" }}>{f.note}</p>
+                  <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 12, margin: "22px 0 6px", flexWrap: "wrap" }}>
+                    <h3 style={{ fontFamily: "var(--brand-font-display)", fontWeight: 800, fontSize: "1.7rem", margin: 0, color: "var(--brand-ink)" }}>{f.name}</h3>
+                    <span
+                      className="sold-stamp"
+                      style={{
+                        background: f.stampBg,
+                        color: f.stampColor,
+                        border: "2px solid var(--brand-ink)",
+                        borderRadius: 999,
+                        padding: "7px 14px",
+                        fontFamily: "var(--brand-font-body)",
+                        fontWeight: 800,
+                        fontSize: "0.68rem",
+                        letterSpacing: "0.08em",
+                        textTransform: "uppercase",
+                        whiteSpace: "nowrap",
+                        transform: f.stampRotate,
+                        display: "inline-block",
+                      }}
+                    >
+                      {f.stamp}
+                    </span>
+                  </div>
+                  <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 700, fontSize: "0.72rem", letterSpacing: "0.16em", textTransform: "uppercase", color: "rgba(var(--brand-ink-rgb),0.7)" }}>{f.note} · {f.stampKicker}</p>
                   <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 800, fontSize: "0.72rem", letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--brand-ink)", marginTop: 14, textDecoration: "underline" }}>
                     See the flavor →
                   </p>
@@ -1115,36 +1112,13 @@ export default function Home() {
           </div>
 
           <div {...anim("flavor-packs", 0.2)} style={{ ...anim("flavor-packs", 0.2).style, marginTop: 44 }}>
-            <p style={{ ...tagStyle, fontSize: "0.7rem", color: "var(--brand-accent-deep)", marginBottom: 18 }}>
-              Pick your box · ships free
+            <p style={{ ...tagStyle, fontSize: "0.7rem", color: "var(--brand-accent-deep)", marginBottom: 4 }}>
+              Build your box · ships free
             </p>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 16, maxWidth: 980, margin: "0 auto" }}>
-              {[
-                { n: "6 sachets", name: "First-Pour Kit", price: "$21", sub: "one-time only" },
-                { n: "12 sachets", name: "The Standard", price: "$36", sub: "less when you subscribe · free gift inside" },
-                { n: "24 sachets", name: "The Duo Stock", price: "$66", sub: "less when you subscribe · free gift inside" },
-                { n: "48 sachets", name: "Never Run Dry", price: "$126", sub: "less when you subscribe · free gift inside" },
-              ].map((b) => (
-                <div key={b.n} style={{ background: "#fff", border: "3px solid var(--brand-ink)", borderRadius: 24, padding: "22px 18px 20px", textAlign: "center" }}>
-                  <p style={{ ...tagStyle, fontSize: "0.66rem", color: "rgba(var(--brand-ink-rgb),0.65)" }}>{b.n}</p>
-                  <p style={{ fontFamily: "var(--brand-font-display)", fontWeight: 800, fontSize: "1.05rem", color: "var(--brand-ink)", margin: "6px 0 2px" }}>{b.name}</p>
-                  <p style={{ fontFamily: "var(--brand-font-mono)", fontWeight: 700, fontSize: "1.7rem", color: "var(--brand-ink)" }}>{b.price}</p>
-                  <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 600, fontSize: "0.72rem", color: "var(--brand-accent-deep)", marginBottom: 14 }}>{b.sub}</p>
-                  <button
-                    onClick={() => { setGateBox(`${b.name} (${b.n})`); window.gtag?.("event", "add_to_cart_gated", { item_name: b.name }); }}
-                    style={{ width: "100%", background: "var(--brand-accent)", color: "var(--brand-canvas)", border: "2px solid var(--brand-ink)", borderRadius: 999, padding: "12px 10px", fontFamily: "var(--brand-font-body)", fontWeight: 800, fontSize: "0.72rem", letterSpacing: "0.08em", textTransform: "uppercase", cursor: "pointer" }}
-                  >
-                    Get this box →
-                  </button>
-                </div>
-              ))}
-            </div>
-            <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.78rem", color: "rgba(var(--brand-ink-rgb),0.6)", marginTop: 16 }}>
-              Mix flavors in steps of 6:{" "}
-              <a href="/drop" style={{ color: "var(--brand-ink)", fontWeight: 700, textDecoration: "underline" }}>
-                build your exact box →
-              </a>
+            <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.82rem", color: "rgba(var(--brand-ink-rgb),0.6)" }}>
+              mix flavors in steps of 6, add it to your cart, pour it when the next run goes live.
             </p>
+            <BoxBuilder joinHref="/drop#join" />
           </div>
         </div>
       </section>
@@ -1430,45 +1404,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* ════════════════════ FLOCK GATE — pre-launch add-to-cart ════════════════════ */}
-      {gateBox && (
-        <div
-          onClick={() => setGateBox(null)}
-          style={{ position: "fixed", inset: 0, zIndex: 9000, background: "rgba(45,52,26,0.55)", backdropFilter: "blur(6px)", display: "flex", alignItems: "center", justifyContent: "center", padding: 20 }}
-        >
-          <div
-            onClick={(e) => e.stopPropagation()}
-            role="dialog"
-            aria-modal="true"
-            style={{ background: "var(--brand-canvas)", border: "3px solid var(--brand-ink)", borderRadius: 28, padding: "clamp(26px, 5vw, 44px)", maxWidth: 480, width: "100%", textAlign: "center", position: "relative", overflow: "hidden" }}
-          >
-            <div aria-hidden style={{ position: "absolute", inset: 0, backgroundImage: "url(/brand/pattern-tile.png)", backgroundSize: 200, opacity: 0.07, pointerEvents: "none" }} />
-            <button onClick={() => setGateBox(null)} aria-label="Close" style={{ position: "absolute", top: 14, right: 18, background: "none", border: "none", fontSize: "1.4rem", color: "rgba(var(--brand-ink-rgb),0.5)", cursor: "pointer", zIndex: 1 }}>×</button>
-            <Image src="/brand/symbol-sheep-solid.png" width={64} height={72} alt="" aria-hidden style={{ width: 56, height: "auto", margin: "0 auto 14px", display: "block" }} />
-            <p style={{ ...tagStyle, fontSize: "0.64rem", color: "var(--brand-accent-deep)", marginBottom: 10 }}>
-              {gateBox} · the next run
-            </p>
-            <h3 style={{ fontFamily: "var(--brand-font-display)", fontWeight: 800, fontSize: "1.6rem", color: "var(--brand-ink)", letterSpacing: "-0.01em", marginBottom: 12 }}>
-              Not live yet. But you&apos;re early.
-            </h3>
-            <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.9rem", color: "rgba(var(--brand-ink-rgb),0.75)", lineHeight: 1.65, marginBottom: 22 }}>
-              The next run hasn&apos;t gone live. The Flock shops it <strong>a full day before
-              the public link</strong>. Join free and this box is basically yours before anyone
-              else can even see it. Everyone gets in. The early ones just pour first.
-            </p>
-            <button
-              onClick={() => { setGateBox(null); scrollTo("signup"); window.gtag?.("event", "select_promotion", { promotion_name: "flock_gate_join" }); }}
-              style={{ width: "100%", background: "var(--brand-accent)", color: "var(--brand-canvas)", border: "2px solid var(--brand-ink)", borderRadius: 999, padding: "16px 20px", fontFamily: "var(--brand-font-body)", fontWeight: 800, fontSize: "0.8rem", letterSpacing: "0.1em", textTransform: "uppercase", cursor: "pointer" }}
-            >
-              Join the Flock →
-            </button>
-            <button onClick={() => setGateBox(null)} style={{ marginTop: 12, background: "none", border: "none", fontFamily: "var(--brand-font-body)", fontSize: "0.72rem", color: "rgba(var(--brand-ink-rgb),0.5)", textDecoration: "underline", cursor: "pointer" }}>
-              I&apos;ll wait for the public link
-            </button>
-          </div>
-        </div>
-      )}
 
       {/* ════════════════════ FLOCK MEMBERSHIP — THE CLUBHOUSE ════════════════════ */}
       {flockOpen && (

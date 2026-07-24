@@ -111,6 +111,9 @@ interface ProfileExtras {
   city?: string;
   tier?: string;
   savedBuild?: ReturnType<typeof cleanSavedBuild>;
+  /** Explicit marketing opt-in checkbox (true/false). undefined = form predates
+   *  the checkbox / didn't render it — never coerce, absence is its own signal. */
+  optin?: boolean;
 }
 
 function klaviyoHeaders(apiKey: string) {
@@ -181,8 +184,10 @@ async function syncToKlaviyo(
       ...(referralCode ? { referral_code: referralCode } : {}),
       ...(referredBy ? { referred_by: referredBy } : {}),
       ...(extras.tier ? { signup_tier: extras.tier } : {}),
+      ...(extras.firstName ? { name: extras.firstName } : {}),
       ...(extras.city ? { city: extras.city } : {}),
       ...(extras.savedBuild ? { saved_build: extras.savedBuild } : {}),
+      ...(extras.optin !== undefined ? { optin: extras.optin } : {}),
     },
   });
 
@@ -360,6 +365,7 @@ export async function POST(req: NextRequest) {
       city: rawCity,
       tier: rawTier,
       savedBuild: rawSavedBuild,
+      optin: rawOptin,
     } = await req.json();
 
     if (!email || !email.includes("@")) {
@@ -377,6 +383,7 @@ export async function POST(req: NextRequest) {
       city: cleanText(rawCity, 80),
       tier: rawTier === "deep" || rawTier === "light" || rawTier === "cart" ? rawTier : undefined,
       savedBuild: cleanSavedBuild(rawSavedBuild),
+      optin: typeof rawOptin === "boolean" ? rawOptin : undefined,
     };
 
     // Normalize phone; invalid phones are dropped (logged) — the signup continues
@@ -451,6 +458,7 @@ export async function POST(req: NextRequest) {
             city: extras.city || "",
             tier: extras.tier || "",
             saved_build: extras.savedBuild ? JSON.stringify(extras.savedBuild) : "",
+            optin: extras.optin === undefined ? "" : extras.optin ? "TRUE" : "FALSE",
           }),
         });
       } catch (sheetErr) {

@@ -33,6 +33,17 @@ interface DropAccessFormProps {
   buttonLabel?: string;
   /** Microcopy under the email field. */
   microcopy?: string;
+  /**
+   * Explicit marketing opt-in checkbox (checked by default). When rendered,
+   * every waitlist POST from this form carries `optin: true/false`.
+   */
+  optinCheckbox?: boolean;
+  /**
+   * Optional secondary action rendered under the email form (only on the
+   * email step) — used by BoxBuilder's dual-path save step to switch between
+   * "save my cart" and "just notify me".
+   */
+  secondaryAction?: { label: string; onClick: () => void };
 }
 
 /** Saved BoxBuilder cart, attached to signups so the CRM knows the build. */
@@ -52,9 +63,12 @@ export default function DropAccessForm({
   upsellHref = "/drop#join",
   buttonLabel,
   microcopy,
+  optinCheckbox = false,
+  secondaryAction,
 }: DropAccessFormProps) {
   const label = buttonLabel ?? (tier === "deep" ? "join the flock" : "find out first");
   const [email, setEmail] = useState("");
+  const [optin, setOptin] = useState(true);
   const [phone, setPhone] = useState("");
   const [firstName, setFirstName] = useState("");
   const [city, setCity] = useState("");
@@ -92,7 +106,7 @@ export default function DropAccessForm({
         const res = await fetch("/api/waitlist", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ email, turnstileToken: token, ref: referredBy, source, tier, name: firstName.trim() || undefined, savedBuild: getSavedBuild() }),
+          body: JSON.stringify({ email, turnstileToken: token, ref: referredBy, source, tier, name: firstName.trim() || undefined, savedBuild: getSavedBuild(), ...(optinCheckbox ? { optin } : {}) }),
         });
         const data = await res.json();
         if (data.closed) {
@@ -124,7 +138,7 @@ export default function DropAccessForm({
         lp_segment: source,
       });
     },
-    [email, firstName, referredBy, source, tier]
+    [email, firstName, referredBy, source, tier, optinCheckbox, optin]
   );
 
   // ── Load Turnstile script + render widget on captcha step ──
@@ -170,7 +184,7 @@ export default function DropAccessForm({
       await fetch("/api/waitlist", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, phone, ref: referredBy, source, tier, savedBuild: getSavedBuild() }),
+        body: JSON.stringify({ email, phone, ref: referredBy, source, tier, savedBuild: getSavedBuild(), ...(optinCheckbox ? { optin } : {}) }),
       });
     } catch {}
     setLoading(false);
@@ -205,7 +219,7 @@ export default function DropAccessForm({
       await fetch("/api/waitlist", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, name: firstName, city, ref: referredBy, source, tier }),
+        body: JSON.stringify({ email, name: firstName, city, ref: referredBy, source, tier, ...(optinCheckbox ? { optin } : {}) }),
       });
     } catch {}
     setLoading(false);
@@ -510,9 +524,56 @@ export default function DropAccessForm({
           {loading ? "…" : `${label} →`}
         </button>
       </form>
+      {optinCheckbox && (
+        <label
+          style={{
+            display: "flex",
+            alignItems: "flex-start",
+            gap: 9,
+            marginTop: 12,
+            cursor: "pointer",
+            fontFamily: "var(--brand-font-body)",
+            fontSize: "0.74rem",
+            fontWeight: 600,
+            color: faint,
+            lineHeight: 1.5,
+            maxWidth: 400,
+          }}
+        >
+          <input
+            type="checkbox"
+            checked={optin}
+            onChange={(e) => setOptin(e.target.checked)}
+            style={{ width: 16, height: 16, marginTop: 2, accentColor: "var(--brand-accent)", cursor: "pointer", flexShrink: 0 }}
+          />
+          <span>keep me posted on flavor votes, merch, and the lore</span>
+        </label>
+      )}
       {captchaError && (
         <p role="alert" style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.72rem", color: "#B3261E", marginTop: 10, fontWeight: 600 }}>
           {captchaError}
+        </p>
+      )}
+      {secondaryAction && (
+        <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.74rem", color: fainter, marginTop: 12 }}>
+          <button
+            type="button"
+            onClick={secondaryAction.onClick}
+            style={{
+              background: "none",
+              border: "none",
+              padding: 0,
+              color: faint,
+              fontFamily: "var(--brand-font-body)",
+              fontWeight: 700,
+              fontSize: "0.74rem",
+              textDecoration: "underline",
+              textUnderlineOffset: 3,
+              cursor: "pointer",
+            }}
+          >
+            {secondaryAction.label}
+          </button>
         </p>
       )}
       {microcopy && (
@@ -520,7 +581,7 @@ export default function DropAccessForm({
           {microcopy}
         </p>
       )}
-      {tier === "light" && (
+      {tier === "light" && !secondaryAction && (
         <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.7rem", color: fainter, marginTop: 8 }}>
           email only, just the date. want more?{" "}
           <a href={upsellHref} style={{ color: faint, fontWeight: 700, textDecoration: "underline", textUnderlineOffset: 3 }}>
