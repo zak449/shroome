@@ -25,7 +25,7 @@ const productSchema = {
     { "@type": "PropertyValue", "name": "Organic Mushroom Extracts", "value": "200mg (organic lion's mane beta-glucans)" },
     { "@type": "PropertyValue", "name": "Grass-Fed Collagen", "value": "2g per sachet" },
     { "@type": "PropertyValue", "name": "Servings Per Box", "value": "12" },
-    { "@type": "PropertyValue", "name": "Prep Time", "value": "30 seconds" }
+    { "@type": "PropertyValue", "name": "Prep Time", "value": "One stir" }
   ],
   "offers": {
     "@type": "Offer",
@@ -489,9 +489,12 @@ export default function Home() {
           zIndex: 100,
         }}
       >
-        <p style={{ ...tagStyle, fontSize: "0.66rem", color: "var(--brand-tint-soft)", margin: 0 }}>
-          Drop 001 sold out in 9 days ✿ First dibs on Drop 002 is open
-        </p>
+        <button
+          onClick={() => { setFlockOpen(true); window.gtag?.("event", "select_promotion", { promotion_name: "announcement_bar_flock" }); }}
+          style={{ ...tagStyle, fontSize: "0.66rem", color: "var(--brand-tint-soft)", margin: 0, background: "none", border: "none", cursor: "pointer", padding: 0 }}
+        >
+          Drop 001 poured out in 9 days ✿ The Flock shops Drop 002 a day early — <span style={{ textDecoration: "underline", textUnderlineOffset: 3 }}>join free</span>
+        </button>
       </div>
 
       {/* ════════════════════ STICKY NAV ════════════════════ */}
@@ -734,7 +737,7 @@ export default function Home() {
                 opacity: 0,
               }}
             >
-              Drop 001 poured out — 500/500
+              Drop 001 poured out — the whole run in 9 days
             </p>
 
             <h1
@@ -769,8 +772,9 @@ export default function Home() {
                 opacity: 0,
               }}
             >
-              Ceremonial matcha, lion&apos;s mane + collagen — <strong>poured over milk in 30
-              seconds.</strong> Drop 001 poured out in 9 days.
+              The latte&apos;s already in the sachet — ceremonial matcha, lion&apos;s mane +
+              collagen. Pour it over milk; <strong>the stir is the recipe.</strong> No whisk,
+              no wait.
             </p>
 
             {/* Restock notify form */}
@@ -847,10 +851,10 @@ export default function Home() {
                 }}
               >
                 <p style={{ ...tagStyle, fontSize: "0.66rem", color: "var(--brand-canvas)" }}>
-                  Drop 001 · 500/500
+                  Drop 001 · Poured out
                 </p>
                 <p style={{ ...tagStyle, fontSize: "0.56rem", color: "var(--brand-tint-soft)", borderTop: "1px solid rgba(254,255,248,0.25)", paddingTop: 4, marginTop: 4 }}>
-                  Poured out in 9 days
+                  500 boxes · 9 days
                 </p>
               </div>
             </div>
@@ -900,7 +904,7 @@ export default function Home() {
             <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
               {[
                 "500 boxes. Gone in 9 days.",
-                "One 30-second pour. No whisk, no barista.",
+                "One pour, one stir, done. No whisk, no barista.",
                 "Energy, clarity, skin, immunity — one sachet.",
               ].map((r) => (
                 <div key={r} style={{ display: "flex", alignItems: "center", gap: 12 }}>
@@ -1096,7 +1100,7 @@ export default function Home() {
             {[
               { img: "/brand/sheep-sachet.png", num: "1. Tear", desc: "Rip open one sachet. That's your perfectly measured dose." },
               { img: "/brand/sheep-swirl.png", num: "2. Pour", desc: "Over your milk of choice. Oat, almond, coconut, dairy. Hot or iced." },
-              { img: "/brand/sheep-drink.png", num: "3. Go", desc: "Stir once. 30 seconds to cafe-grade matcha latte. No blender, no whisk, no mess." },
+              { img: "/brand/sheep-drink.png", num: "3. Go", desc: "Stir once. That's the recipe — cafe-grade matcha latte, done. No blender, no whisk, no mess." },
             ].map((s, i) => (
               <div key={s.num} {...anim(`step-${i}`, 0.2 + i * 0.12)}>
                 <Image src={s.img} alt="" aria-hidden width={140} height={140} loading="lazy" style={{ width: 96, height: 96, objectFit: "contain", margin: "0 auto 18px", display: "block" }} />
@@ -1207,7 +1211,7 @@ export default function Home() {
                     { feature: "Ceremonial matcha", values: [true, false, false, true, true] },
                     { feature: "Collagen", values: [true, false, false, false, false] },
                     { feature: "Lion\u2019s mane β-glucans", values: [true, true, true, false, false] },
-                    { feature: "Liquid — pours in 30 seconds", values: [true, false, false, false, true] },
+                    { feature: "Liquid — ready the second you stir", values: [true, false, false, false, true] },
                     { feature: "Lives in your bag", values: [true, true, true, true, false] },
                   ].map((row) => (
                     <tr key={row.feature}>
@@ -1284,11 +1288,11 @@ export default function Home() {
           <div className="pour-ticker-track">
             {[0, 1].map((k) => (
               <p key={k} style={{ ...tagStyle, fontSize: "0.68rem", color: "var(--brand-canvas)", whiteSpace: "nowrap", paddingRight: 8 }}>
-                drop 001: poured out <span style={{ color: "var(--brand-tint-soft)" }}>✿</span> 500/500 boxes{" "}
+                drop 001: poured out <span style={{ color: "var(--brand-tint-soft)" }}>✿</span> 500 boxes{" "}
                 <span style={{ color: "var(--brand-tint-soft)" }}>✿</span> 9 days{" "}
-                <span style={{ color: "var(--brand-tint-soft)" }}>✿</span> zero left{" "}
                 <span style={{ color: "var(--brand-tint-soft)" }}>✿</span> the ledger never lies{" "}
                 <span style={{ color: "var(--brand-tint-soft)" }}>✿</span> the flock pours first{" "}
+                <span style={{ color: "var(--brand-tint-soft)" }}>✿</span> drop 002 loading{" "}
                 <span style={{ color: "var(--brand-tint-soft)" }}>✿</span>{" "}
               </p>
             ))}
@@ -1381,7 +1385,7 @@ export default function Home() {
             </p>
             <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
               {[
-                "Barista-level latte in 30 seconds",
+                "Barista-level latte, ready the second you stir",
                 "No whisk, no clumps, no cleanup",
                 "Ships free — skip, pause, or swap flavors anytime",
               ].map((r) => (

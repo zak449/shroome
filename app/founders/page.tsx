@@ -57,7 +57,7 @@ export default function FoundersPage() {
             <div className="fp-plaque">
               <Image src="/brand/symbol-sheep-solid.png" width={40} height={44} alt="" aria-hidden style={{ width: 36, height: "auto", margin: "0 auto 12px", display: "block" }} />
               <p className="l1">The First Pour · Drop 001</p>
-              <p className="l2">500/500 boxes · Poured out · 9 days</p>
+              <p className="l2">500 boxes · Poured out in 9 days</p>
               <p className="l3">If you know, you poured</p>
             </div>
             <a className="fp-cta" href="/drop#waitlist">Join the Flock — Drop 002 →</a>

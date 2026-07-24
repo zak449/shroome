@@ -15,7 +15,7 @@ const BADGES = [
 export const metadata: Metadata = {
   title: "Strawberry — shroomé | Liquid Strawberry Matcha Latte",
   description:
-    "shroomé Strawberry — ceremonial matcha meets real freeze-dried strawberry, organic lion's mane, and grass-fed collagen peptides. One sachet, 30 seconds — tastes like summer, works like matcha.",
+    "shroomé Strawberry — ceremonial matcha meets real freeze-dried strawberry, organic lion's mane, and grass-fed collagen peptides. One sachet, one stir — tastes like summer, works like matcha.",
   keywords: [
     "strawberry matcha latte",
     "strawberry matcha",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Strawberry — shroomé | Liquid Strawberry Matcha Latte",
     description:
-      "Ceremonial matcha meets real freeze-dried strawberry, functional mushroom extracts, and grass-fed collagen. One sachet, 30 seconds.",
+      "Ceremonial matcha meets real freeze-dried strawberry, organic lion's mane, and grass-fed collagen. One sachet, one stir.",
     url: "https://www.drinkshroome.com/flavors/strawberry",
     siteName: "shroomé",
     type: "website",
@@ -67,7 +67,7 @@ const productSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "shroomé Strawberry Matcha Latte",
-  "description": "shroomé Strawberry — ceremonial matcha meets real freeze-dried strawberry, organic lion's mane mushroom beta-glucans, and grass-fed collagen peptides. One sachet, 30 seconds — tastes like summer, works like matcha.",
+  "description": "shroomé Strawberry — ceremonial matcha meets real freeze-dried strawberry, organic lion's mane mushroom beta-glucans, and grass-fed collagen peptides. One sachet, one stir — tastes like summer, works like matcha.",
   "brand": { "@type": "Brand", "name": "shroomé" },
   "manufacturer": { "@type": "Organization", "name": "ZSQUARED INC" },
   "category": "Functional Beverages",
@@ -390,7 +390,7 @@ export default function StrawberryFlavorPage() {
               height={639}
               priority
             />
-            <div className="sf-hero-tag">Flavor Profile &middot; Drop 001 poured out &middot; 500/500</div>
+            <div className="sf-hero-tag">Flavor Profile &middot; Drop 001 poured out</div>
             <h1>Strawberry</h1>
             <p className="sf-hero-desc">
               Fruity, bright, and naturally sweet. Real freeze-dried strawberry

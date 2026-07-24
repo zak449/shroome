@@ -116,7 +116,7 @@ export default function ReferPage() {
   const referralLink = referralCode ? `https://www.drinkshroome.com?ref=${referralCode}` : "";
 
   const shareMsg = referralLink
-    ? `I'm in the Flock \u2014 shroom\u00e9's the liquid ceremonial matcha latte (lion's mane + collagen, poured over milk in 30 seconds). Drop 001 poured out in 9 days. Join through my link and we both get looked after on drop day: ${referralLink}`
+    ? `I'm in the Flock \u2014 shroom\u00e9's the liquid ceremonial matcha latte (lion's mane + collagen — pour it over milk, the stir is the recipe). Drop 001 poured out in 9 days. Join through my link and we both get looked after on drop day: ${referralLink}`
     : "";
 
   const copyLink = () => {

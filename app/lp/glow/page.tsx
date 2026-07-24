@@ -91,7 +91,7 @@ const config: LPConfig = {
     },
     {
       q: "it's sold out — how do drops work?",
-      a: `we produce in numbered, limited runs. drop 001 (${X1_BOXES} boxes) sold out; drop 002 is ${DROP2_RUN}. access members get the link at open, the text list gets it 10 minutes early. real runs, real dates — we don't do fake countdowns.`,
+      a: `we make full production runs and release them as drops. drop 001 (${X1_BOXES} boxes) poured out in 9 days; drop 002 is next. access members get the link at open, the text list hears first. real runs, real dates — we don't do fake countdowns.`,
     },
   ],
   final: {

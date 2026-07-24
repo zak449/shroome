@@ -130,7 +130,7 @@ export function welcomeEmail(email: string, referralCode?: string) {
         </td></tr>
         <tr><td style="padding:16px 40px 32px;text-align:center;">
           <p style="margin:0;font-size:12px;color:${G};line-height:1.7;opacity:0.7;">
-            Two flavors. Twelve per box. Pre-dissolved \u2014 no powder, no frother. 30 seconds to caf\u00e9-grade matcha.
+            Two flavors. Twelve per box. Pre-dissolved \u2014 no powder, no frother. Ready the second you stir.
           </p>
         </td></tr>
       </table>

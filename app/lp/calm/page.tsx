@@ -96,7 +96,7 @@ const config: LPConfig = {
   ],
   final: {
     header: "your last crash is behind you. drop 002 is ahead.",
-    body: "drop 001 sold out. drop 002 is limited — get access now, the text list shops 10 minutes before the link is public — with an upgraded welcome code.",
+    body: "drop 001 poured out in 9 days. drop 002 is one full production run — when it pours out, it pours out. get access now — the text list hears first, with an upgraded welcome code.",
     microcopy: "one text per drop. two emails a week max. all signal.",
   },
 };

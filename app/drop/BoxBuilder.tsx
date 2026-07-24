@@ -116,7 +116,7 @@ export default function BoxBuilder() {
           textTransform: "uppercase",
         }}
       >
-        Drop 001 · 500/500 poured
+        Drop 001 · poured out
       </div>
 
       {/* ── Size ── */}

@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "shroomé — The Matcha Latte That Replaced Our Coffee",
     description:
-      "2.5g ceremonial matcha + functional mushroom extracts + collagen peptides. One sachet, one 30-second pour, no crash. Pour. Swirl. Go.",
+      "2.5g ceremonial matcha + lion's mane beta-glucans + collagen peptides. One sachet, one stir, done — no crash. Pour. Swirl. Go.",
     type: "website",
     url: "https://www.drinkshroome.com/welcome",
     siteName: "shroomé",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "shroomé — The Matcha Latte That Replaced Our Coffee",
     description:
-      "2.5g ceremonial matcha + functional mushroom extracts + collagen. One sachet, one 30-second pour, no crash. Join the Drop 002 list.",
+      "2.5g ceremonial matcha + lion's mane beta-glucans + collagen. One sachet, one stir, done — no crash. The Flock shops Drop 002 first.",
   },
 };
 

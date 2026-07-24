@@ -14,7 +14,7 @@ import {
 export const metadata: Metadata = {
   title: "the drop — shroomé",
   description:
-    "the liquid ceremonial matcha latte — vanilla or strawberry, poured over milk in 30 seconds. drop 001 is gone. join the flock and shop drop 002 a day before everyone else.",
+    "the liquid ceremonial matcha latte — vanilla or strawberry. pour it over milk; the stir is the recipe. drop 001 is gone. join the flock and shop drop 002 a day before everyone else.",
   alternates: {
     canonical: "https://www.drinkshroome.com/drop",
   },
@@ -255,8 +255,8 @@ export default function DropPage() {
           </h1>
           <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.95rem", color: "rgba(var(--brand-canvas-rgb),0.7)", lineHeight: 1.7, maxWidth: 520, margin: "0 auto 32px" }}>
             your cafe order, sachet form — and it only exists in drops. drop 001 came and
-            went in 9 days. drop 002 is next: same pour, same 30 seconds, and you can be
-            shopping it a full day before the link goes public.
+            went in 9 days. drop 002 is next: same pour, same swirl, ready the second you stir —
+            and you can be shopping it a full day before the link goes public.
           </p>
           <a
             href="#waitlist"
@@ -362,7 +362,7 @@ export default function DropPage() {
         <div className="dr-ledger">
           <div className="dr-ledger-row">
             <span className="dr-ledger-num">drop 001</span>
-            <span className="dr-ledger-detail"><s>{X1_BOXES} boxes</s> · 500/500 · day 9</span>
+            <span className="dr-ledger-detail"><s>{X1_BOXES} boxes</s> · poured out · day 9</span>
             <span className="dr-ledger-stamp">poured out</span>
           </div>
           <div className="dr-ledger-row" style={{ position: "relative" }}>

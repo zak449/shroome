@@ -361,7 +361,7 @@ export default function LPShell({ config }: { config: LPConfig }) {
             <DropAccessForm
               source={source}
               dark={hero.dark}
-              microcopy="drop 001 sold out. drop 002 is a limited run."
+              microcopy="drop 001 poured out in 9 days. drop 002 is one full production run — when it pours out, it pours out."
             />
             <div style={{ marginTop: 28 }}>
               <DropLedger stampColor={config.stampColor} light={config.ledgerLight} />

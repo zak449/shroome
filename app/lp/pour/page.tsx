@@ -3,12 +3,12 @@ import LPShell, { type LPConfig } from "../LPShell";
 import { X1_BOXES, DROP2_RUN } from "../../lib/drop-config";
 
 export const metadata: Metadata = {
-  title: "shroomé — a café matcha latte in 30 seconds. drop 002 is limited.",
+  title: "shroomé — a café matcha latte. the stir is the recipe. drop 002 won't wait.",
   description:
     "pour. swirl. go. the liquid ceremonial matcha latte — no whisk, no blender, no line. drop 001 sold out. get drop access before 002 goes.",
   robots: { index: false, follow: false },
   openGraph: {
-    title: "shroomé — a café matcha latte in 30 seconds. drop 002 is limited.",
+    title: "shroomé — a café matcha latte. the stir is the recipe. drop 002 won't wait.",
     description:
       "pour. swirl. go. the liquid ceremonial matcha latte — no whisk, no blender, no line. drop 001 sold out. get drop access before 002 goes.",
     siteName: "shroomé",
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "shroomé — a café matcha latte in 30 seconds. drop 002 is limited.",
+    title: "shroomé — a café matcha latte. the stir is the recipe. drop 002 won't wait.",
     description:
       "pour. swirl. go. the liquid ceremonial matcha latte — no whisk, no blender, no line. drop 001 sold out. get drop access before 002 goes.",
   },
@@ -76,7 +76,7 @@ const config: LPConfig = {
   },
   faqs: [
     {
-      q: "is it really 30 seconds?",
+      q: "is it really just a stir?",
       a: "tear, pour, swirl — yes. the concentrate is liquid, so there's nothing to dissolve, froth, or rinse. our engineers timed it while holding a coffee in the other hand.",
     },
     {
@@ -89,7 +89,7 @@ const config: LPConfig = {
     },
     {
       q: "how do drops work?",
-      a: `we produce in numbered, limited runs. drop 001 (${X1_BOXES} boxes) sold out; drop 002 is ${DROP2_RUN}. drop access gets you the link at open — the text list gets it 10 minutes early, with an upgraded welcome code. real runs, real dates, no fake timers.`,
+      a: `we make full production runs and release them as drops. drop 001 (${X1_BOXES} boxes) poured out in 9 days; drop 002 is next. drop access gets you the link at open — the text list hears first, with an upgraded welcome code. real runs, real dates, no fake timers.`,
     },
   ],
   final: {

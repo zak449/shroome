@@ -14,7 +14,7 @@ const BADGES = [
 export const metadata: Metadata = {
   title: "Vanilla — shroomé | Liquid Vanilla Matcha Latte",
   description:
-    "shroomé Vanilla — ceremonial matcha meets real vanilla bean extract, organic lion's mane, and grass-fed collagen peptides. One sachet, 30 seconds — your cafe order, at home.",
+    "shroomé Vanilla — ceremonial matcha meets real vanilla bean extract, organic lion's mane, and grass-fed collagen peptides. One sachet, one stir — your cafe order, at home.",
   keywords: [
     "vanilla matcha latte",
     "vanilla matcha",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Vanilla — shroomé | Liquid Vanilla Matcha Latte",
     description:
-      "Ceremonial matcha meets real vanilla bean extract, functional mushroom extracts, and grass-fed collagen. One sachet, 30 seconds.",
+      "Ceremonial matcha meets real vanilla bean extract, organic lion's mane, and grass-fed collagen. One sachet, one stir.",
     url: "https://www.drinkshroome.com/flavors/vanilla",
     siteName: "shroomé",
     type: "website",
@@ -66,7 +66,7 @@ const productSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "shroomé Vanilla Matcha Latte",
-  "description": "shroomé Vanilla — ceremonial matcha meets real vanilla bean extract, organic lion's mane mushroom beta-glucans, and grass-fed collagen peptides. One sachet, 30 seconds — your cafe order, at home.",
+  "description": "shroomé Vanilla — ceremonial matcha meets real vanilla bean extract, organic lion's mane mushroom beta-glucans, and grass-fed collagen peptides. One sachet, one stir — your cafe order, at home.",
   "brand": { "@type": "Brand", "name": "shroomé" },
   "manufacturer": { "@type": "Organization", "name": "ZSQUARED INC" },
   "category": "Functional Beverages",
@@ -384,12 +384,12 @@ export default function VanillaFlavorPage() {
               height={639}
               priority
             />
-            <div className="vf-hero-tag">Flavor Profile &middot; Drop 001 poured out &middot; 500/500</div>
+            <div className="vf-hero-tag">Flavor Profile &middot; Drop 001 poured out</div>
             <h1>Vanilla</h1>
             <p className="vf-hero-desc">
               Smooth, naturally sweet, and impossibly creamy. Real vanilla bean
               extract meets ceremonial matcha for a latte that tastes like it
-              came from your favorite caf&eacute; &mdash; but pours in 30 seconds flat.
+              came from your favorite caf&eacute; &mdash; but it&apos;s ready the second you stir.
             </p>
             <a
               href="/#signup"

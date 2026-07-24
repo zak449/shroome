@@ -28,7 +28,7 @@ const config: LPConfig = {
     eyebrow: "FRUITING BODY · ≥70% BETA-GLUCANS · DOSES ON THE LABEL",
     headlineLines: ["we'd rather show you", "the label than the ad."],
     subheadline:
-      "200mg of organic mushroom extracts — organic lion's mane beta-glucans — real fruiting body, hot-water extracted, standardized to ≥70% beta-glucans and third-party tested. plus 2.5g of ceremonial matcha whose caffeine + naturally occurring l-theanine support sustained focus. every dose disclosed. nothing proprietary. pour it in thirty seconds and get to work.",
+      "200mg of organic mushroom extracts — organic lion's mane beta-glucans — real fruiting body, hot-water extracted, standardized to ≥70% beta-glucans and third-party tested. plus 2.5g of ceremonial matcha whose caffeine + naturally occurring l-theanine support sustained focus. every dose disclosed. nothing proprietary. pour it, stir it, get to work.",
     background: "var(--brand-ink)",
     dark: true,
     dataCallouts: ["200mg", "≥70%", "2.5g"],
@@ -50,7 +50,7 @@ const config: LPConfig = {
         body: "matcha's ~60mg of caffeine arrives alongside naturally occurring l-theanine — the combination people stack on purpose, already stacked by the leaf. it supports sustained focus with a smooth curve instead of a spike, so your deep-work block doesn't end at the crash.",
       },
       {
-        title: "thirty seconds, zero friction",
+        title: "one stir, zero friction",
         body: "flow states die in prep time. tear the sachet, pour into milk, one swirl — your entire pre-work setup now takes less time than opening your task manager. same input, same dose, every single morning.",
       },
     ],

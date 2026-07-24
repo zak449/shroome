@@ -25,7 +25,7 @@ const faqData = [
       },
       {
         q: "Does shroomé taste like mushrooms?",
-        a: `Not even a little. shroomé uses <strong>beta glucan 1/3 and 1/6 polysaccharides</strong> — the specific bioactive compounds extracted from mushroom cell walls — not raw mushroom powder. At <strong>70%+ beta glucan concentration</strong> (which is extremely high for the category), these compounds are tasteless when formulated into the liquid matrix. What you actually taste is smooth, naturally sweet ceremonial matcha with the silky mouthfeel of collagen. Most people say it tastes better than the $7 matcha latte from their local café — and it takes <strong>a 30-second pour instead of 15 minutes.</strong>`,
+        a: `Not even a little. shroomé uses <strong>beta glucan 1/3 and 1/6 polysaccharides</strong> — the specific bioactive compounds extracted from mushroom cell walls — not raw mushroom powder. At <strong>70%+ beta glucan concentration</strong> (which is extremely high for the category), these compounds are tasteless when formulated into the liquid matrix. What you actually taste is smooth, naturally sweet ceremonial matcha with the silky mouthfeel of collagen. Most people say it tastes better than the $7 matcha latte from their local café — and it takes <strong>one stir instead of 15 minutes.</strong>`,
       },
       {
         q: "How many servings per box?",
@@ -79,7 +79,7 @@ const faqData = [
     items: [
       {
         q: "How do I make a shroomé matcha latte?",
-        a: `Fill your glass with ice (or warm your mug), add 6–8 oz of your milk of choice, then <strong>tear open the sachet and pour shroomé in last.</strong> Give it a swirl with your hand, a straw, or a spoon — no frother, no whisk, no mess. A full café-quality matcha latte in one 30-second pour.`,
+        a: `Fill your glass with ice (or warm your mug), add 6–8 oz of your milk of choice, then <strong>tear open the sachet and pour shroomé in last.</strong> Give it a swirl with your hand, a straw, or a spoon — no frother, no whisk, no mess. A full café-quality matcha latte — ready the second you stir.`,
       },
       {
         q: "Can I pour shroomé over oat milk?",
