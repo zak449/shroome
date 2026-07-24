@@ -205,6 +205,26 @@ body {
   }
 }
 
+/* ── Flavor-card sold-out stamp: compact on narrow cards ──
+   Below 1024px the flavor cards can drop to ~340px wide (two-column
+   tablet grid and phones), so the stamp tightens up and shifts right
+   to clear the mé mascot in the top-left corner. */
+@media (max-width: 1023px) {
+  .sold-stamp {
+    left: 57% !important;
+    top: 18px !important;
+    padding: 9px 16px 11px !important;
+    border-radius: 14px !important;
+  }
+  .sold-stamp p:first-child {
+    font-size: 0.5rem !important;
+    letter-spacing: 0.1em !important;
+  }
+  .flavor-me {
+    width: 56px !important;
+  }
+}
+
 /* ── Print-friendly styles ── */
 @media print {
   @page {

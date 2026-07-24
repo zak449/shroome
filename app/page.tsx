@@ -1066,7 +1066,7 @@ export default function Home() {
                     style={{
                       position: "absolute",
                       top: 22,
-                      left: "54%",
+                      left: "55%",
                       transform: `translate(-50%, 0) ${f.stampRotate}`,
                       zIndex: 3,
                       background: f.stampBg,
@@ -1093,6 +1093,7 @@ export default function Home() {
                     width={120}
                     height={120}
                     loading="lazy"
+                    className="flavor-me"
                     style={{ position: "absolute", height: "auto", zIndex: 2, ...f.meStyle } as React.CSSProperties}
                   />
                   <Image
