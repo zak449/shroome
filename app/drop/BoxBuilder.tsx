@@ -169,7 +169,7 @@ export default function BoxBuilder() {
     <div
       style={{
         maxWidth: 560,
-        margin: "0 auto",
+        margin: "34px auto 0",
         background: "#fff",
         border: "3px solid var(--brand-ink)",
         borderRadius: 28,
@@ -178,13 +178,23 @@ export default function BoxBuilder() {
         textAlign: "left",
       }}
     >
+      <style>{`
+        @keyframes meDive {
+          0%, 100% { transform: translateY(0) rotate(0deg); }
+          45%      { transform: translateY(-10px) rotate(-4deg); }
+          60%      { transform: translateY(2px) rotate(1.5deg); }
+        }
+        .me-dive { animation: meDive 4.5s ease-in-out infinite; transform-origin: 50% 90%; }
+        @media (prefers-reduced-motion: reduce) { .me-dive { animation: none; } }
+      `}</style>
       <Image
         src="/brand/me-01-solid.png"
         alt=""
         aria-hidden
         width={100}
         height={86}
-        style={{ position: "absolute", top: -46, left: 26, width: 88, height: "auto" }}
+        className="me-dive"
+        style={{ position: "absolute", top: -34, left: 26, width: 76, height: "auto" }}
       />
       {/* sold-out stamp */}
       <div
