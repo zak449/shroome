@@ -272,7 +272,7 @@ export function welcomeEmail(email: string, referralCode?: string) {
         <tr>
           <td style="padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
             <p style="margin:0;font-size:16px;font-weight:700;color:#fff;">No 2pm crash.</p>
-            <p style="margin:4px 0 0;font-size:13px;color:rgba(255,255,255,0.4);">Reishi beta-glucans regulate cortisol. Energy up, anxiety down.</p>
+            <p style="margin:4px 0 0;font-size:13px;color:rgba(255,255,255,0.4);">Lion's mane beta-glucans back the caffeine with calm focus. Energy up, anxiety down.</p>
           </td>
         </tr>
         <tr>
@@ -449,7 +449,7 @@ export function sachetEmail(email: string) {
         </td></tr>
         <tr><td style="padding:16px 0;">
           <p style="margin:0;font-size:16px;font-weight:700;color:#fff;">\ud83d\udc9a No crash. Zero anxiety.</p>
-          <p style="margin:4px 0 0;font-size:13px;color:rgba(255,255,255,0.4);">Reishi regulates cortisol. Energy up, jitters gone.</p>
+          <p style="margin:4px 0 0;font-size:13px;color:rgba(255,255,255,0.4);">L-theanine + lion's mane keep it smooth. Energy up, jitters gone.</p>
         </td></tr>
       </table>
     </td></tr>

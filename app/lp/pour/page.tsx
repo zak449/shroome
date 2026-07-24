@@ -58,7 +58,7 @@ const config: LPConfig = {
     stats: [
       { stat: "2.5g", label: "ceremonial matcha — first harvest, shade-grown" },
       { stat: "2g", label: "grass-fed collagen peptides" },
-      { stat: "200mg", label: "mushroom extracts — lion's mane, reishi, cordyceps — ≥70% beta-glucans" },
+      { stat: "200mg", label: "mushroom extracts — organic lion's mane beta-glucans — ≥70% beta-glucans" },
       { stat: "~60mg", label: "caffeine — supports healthy energy levels, no 2pm cliff" },
     ],
     footnote:

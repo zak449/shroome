@@ -5,12 +5,12 @@ import { X1_BOXES, DROP2_RUN } from "../../lib/drop-config";
 export const metadata: Metadata = {
   title: "shroomé — read the label. that's the pitch. (drop 002)",
   description:
-    "200mg mushroom extracts (lion's mane, reishi, cordyceps) at ≥70% beta-glucans, third-party tested. ceremonial matcha with l-theanine for sustained focus. drop 001 sold out — get access to drop 002.",
+    "200mg mushroom extracts (organic lion's mane beta-glucans) at ≥70% beta-glucans, third-party tested. ceremonial matcha with l-theanine for sustained focus. drop 001 sold out — get access to drop 002.",
   robots: { index: false, follow: false },
   openGraph: {
     title: "shroomé — read the label. that's the pitch. (drop 002)",
     description:
-      "200mg mushroom extracts (lion's mane, reishi, cordyceps) at ≥70% beta-glucans, third-party tested. ceremonial matcha with l-theanine for sustained focus. drop 001 sold out — get access to drop 002.",
+      "200mg mushroom extracts (organic lion's mane beta-glucans) at ≥70% beta-glucans, third-party tested. ceremonial matcha with l-theanine for sustained focus. drop 001 sold out — get access to drop 002.",
     siteName: "shroomé",
     type: "website",
   },
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "shroomé — read the label. that's the pitch. (drop 002)",
     description:
-      "200mg mushroom extracts (lion's mane, reishi, cordyceps) at ≥70% beta-glucans, third-party tested. ceremonial matcha with l-theanine for sustained focus. drop 001 sold out — get access to drop 002.",
+      "200mg mushroom extracts (organic lion's mane beta-glucans) at ≥70% beta-glucans, third-party tested. ceremonial matcha with l-theanine for sustained focus. drop 001 sold out — get access to drop 002.",
   },
 };
 
@@ -28,7 +28,7 @@ const config: LPConfig = {
     eyebrow: "FRUITING BODY · ≥70% BETA-GLUCANS · DOSES ON THE LABEL",
     headlineLines: ["we'd rather show you", "the label than the ad."],
     subheadline:
-      "200mg of organic mushroom extracts — lion's mane, reishi, cordyceps — real fruiting body, hot-water extracted, standardized to ≥70% beta-glucans and third-party tested. plus 2.5g of ceremonial matcha whose caffeine + naturally occurring l-theanine support sustained focus. every dose disclosed. nothing proprietary. pour it in thirty seconds and get to work.",
+      "200mg of organic mushroom extracts — organic lion's mane beta-glucans — real fruiting body, hot-water extracted, standardized to ≥70% beta-glucans and third-party tested. plus 2.5g of ceremonial matcha whose caffeine + naturally occurring l-theanine support sustained focus. every dose disclosed. nothing proprietary. pour it in thirty seconds and get to work.",
     background: "var(--brand-ink)",
     dark: true,
     dataCallouts: ["200mg", "≥70%", "2.5g"],
@@ -59,7 +59,7 @@ const config: LPConfig = {
     header: "the spec sheet",
     bg: "var(--brand-flavor-functional)",
     stats: [
-      { stat: "200mg", label: "mushroom extracts — lion's mane, reishi, cordyceps — hot-water extracted" },
+      { stat: "200mg", label: "mushroom extracts — organic lion's mane beta-glucans — hot-water extracted" },
       { stat: "≥70%", label: "beta-glucan content — third-party verified (typical market range: 15–30%)" },
       { stat: "2.5g", label: "ceremonial matcha — first harvest, shade-grown, ~60mg caffeine + natural l-theanine" },
       { stat: "2g", label: "grass-fed collagen peptides — disclosed like everything else" },

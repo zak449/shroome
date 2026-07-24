@@ -30,7 +30,7 @@ export const blogPosts: BlogPost[] = [
 
 <p><strong>LOS ANGELES, March 22, 2026</strong> — <a href="https://www.drinkshroome.com">shroom&eacute;</a>, the ceremonial matcha + functional mushroom + collagen brand, today launched a collection of 9 original recipes designed to show that great matcha drinks don't require a barista, a bamboo whisk, or more than 30 seconds of your morning. The full collection is now live at <a href="/recipes">drinkshroome.com/recipes</a>.</p>
 
-<p>Each recipe is built around shroom&eacute;'s single-serve sachets, which combine ceremonial-grade Japanese matcha, lion's mane and reishi mushroom extracts (standardized to 70%+ beta-glucan content), grass-fed bovine collagen peptides, and L-theanine. The format is tear, pour, done — no measuring, no equipment, no cleanup.</p>
+<p>Each recipe is built around shroom&eacute;'s single-serve sachets, which combine ceremonial-grade Japanese matcha, lion's mane and mushroom extracts (standardized to 70%+ beta-glucan content), grass-fed bovine collagen peptides, and L-theanine. The format is tear, pour, done — no measuring, no equipment, no cleanup.</p>
 
 <h2>The 9 Recipes</h2>
 

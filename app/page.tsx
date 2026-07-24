@@ -6,7 +6,7 @@ const productSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "shroomé Liquid Ceremonial Matcha Latte",
-  "description": "The liquid ceremonial matcha latte — 2.5g ceremonial-grade matcha, 200mg organic mushroom extracts (lion's mane, reishi, cordyceps), and 2g grass-fed collagen in a sachet. Tear, pour over milk, go. No blender, no whisk, no mess.",
+  "description": "The liquid ceremonial matcha latte — 2.5g ceremonial-grade matcha, 200mg organic mushroom extracts (organic lion's mane beta-glucans), and 2g grass-fed collagen in a sachet. Tear, pour over milk, go. No blender, no whisk, no mess.",
   "brand": { "@type": "Brand", "name": "shroomé" },
   "manufacturer": { "@type": "Organization", "name": "ZSQUARED INC" },
   "category": "Functional Beverages",
@@ -22,7 +22,7 @@ const productSchema = {
   "additionalProperty": [
     { "@type": "PropertyValue", "name": "Caffeine Content", "value": "60mg per sachet" },
     { "@type": "PropertyValue", "name": "Ceremonial Matcha", "value": "2.5g per sachet" },
-    { "@type": "PropertyValue", "name": "Organic Mushroom Extracts", "value": "200mg (lion's mane, reishi, cordyceps)" },
+    { "@type": "PropertyValue", "name": "Organic Mushroom Extracts", "value": "200mg (organic lion's mane beta-glucans)" },
     { "@type": "PropertyValue", "name": "Grass-Fed Collagen", "value": "2g per sachet" },
     { "@type": "PropertyValue", "name": "Servings Per Box", "value": "12" },
     { "@type": "PropertyValue", "name": "Prep Time", "value": "30 seconds" }
@@ -1083,7 +1083,7 @@ export default function Home() {
             {[
               { dose: "60mg", label: "Caffeine" },
               { dose: "2.5g", label: "Ceremonial Matcha" },
-              { dose: "200mg", label: "Organic Mushroom Extracts" },
+              { dose: "200mg", label: "Lion\u2019s Mane β-Glucans" },
               { dose: "2g", label: "Grass-Fed Collagen" },
             ].map((s) => (
               <div key={s.label} style={{ background: "var(--brand-canvas)", border: "2px solid var(--brand-ink)", borderRadius: 20, padding: "20px 14px", textAlign: "center" }}>
@@ -1096,7 +1096,7 @@ export default function Home() {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 20 }}>
             {[
               { icon: "/brand/icon-whisk.png", name: "Ceremonial Matcha", detail: "First-harvest, shade-grown, stone-ground in Japan. Vivid jade, zero bitterness. If your matcha doesn\u2019t glow, it\u2019s not the real thing." },
-              { icon: "/brand/icon-mushrooms.png", name: "Functional Mushrooms", detail: "Lion\u2019s mane, reishi, cordyceps. Clarity and immunity without your latte tasting like the forest floor. Brain fog? Sheep happens — this fixes it." },
+              { icon: "/brand/icon-mushrooms.png", name: "Lion\u2019s Mane Mushroom", detail: "Organic lion\u2019s mane beta-glucans — clarity and immunity without your latte tasting like the forest floor. Brain fog? Sheep happens — this fixes it." },
               { icon: "/brand/icon-molecule.png", name: "Grass-Fed Collagen", detail: "Type 1 & 3, pre-dissolved into the liquid. Silky in the glass, glowy after. Your skincare routine drinks with us now." },
             ].map((item, i) => (
               <div
@@ -1124,8 +1124,7 @@ export default function Home() {
             <Image src="/brand/badge-collagen.png" width={230} height={188} alt="With grass-fed type 1 and type 3 collagen" loading="lazy" style={{ width: 196, height: "auto", transform: "rotate(-2deg)" }} />
           </div>
           <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.78rem", color: "rgba(var(--brand-ink-rgb),0.6)", textAlign: "center", marginTop: 26, lineHeight: 1.6 }}>
-            Ingredients: Ceremonial Grade Matcha (organic), Lion&apos;s Mane Mushroom Extract, Reishi Mushroom Extract,
-            Cordyceps Mushroom Extract, Collagen Peptides (Hydrolyzed), Natural Flavor.
+            Ingredients: Ceremonial Grade Matcha (organic), Lion&apos;s Mane Mushroom Beta Glucans (Organic), Grass-Fed Collagen Peptides, Natural Flavor.
           </p>
         </div>
       </section>
@@ -1157,7 +1156,7 @@ export default function Home() {
                   {[
                     { feature: "Ceremonial matcha", values: [true, false, false, true, true] },
                     { feature: "Collagen", values: [true, false, false, false, false] },
-                    { feature: "Functional mushrooms", values: [true, true, true, false, false] },
+                    { feature: "Lion\u2019s mane β-glucans", values: [true, true, true, false, false] },
                     { feature: "Liquid — pours in 30 seconds", values: [true, false, false, false, true] },
                     { feature: "Lives in your bag", values: [true, true, true, true, false] },
                   ].map((row) => (

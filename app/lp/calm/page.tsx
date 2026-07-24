@@ -60,7 +60,7 @@ const config: LPConfig = {
     stats: [
       { stat: "~60mg", label: "caffeine — about half an espresso shot" },
       { stat: "2.5g", label: "ceremonial matcha — naturally occurring l-theanine, supports sustained focus" },
-      { stat: "200mg", label: "mushroom extracts (lion's mane, reishi, cordyceps) — ≥70% beta-glucans" },
+      { stat: "200mg", label: "mushroom extracts (organic lion's mane beta-glucans) — ≥70% beta-glucans" },
       { stat: "2g", label: "grass-fed collagen peptides — along for the ride" },
     ],
     footnote:

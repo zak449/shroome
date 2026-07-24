@@ -59,7 +59,7 @@ const config: LPConfig = {
     stats: [
       { stat: "2g", label: "grass-fed collagen peptides — hydrolyzed, low molecular weight, types I & III" },
       { stat: "2.5g", label: "ceremonial matcha — antioxidant support, naturally occurring l-theanine" },
-      { stat: "200mg", label: "mushroom extracts (lion's mane, reishi, cordyceps) — ≥70% beta-glucans, third-party tested" },
+      { stat: "200mg", label: "mushroom extracts (organic lion's mane beta-glucans) — ≥70% beta-glucans, third-party tested" },
       { stat: "0g", label: "added sugar. zero artificial sweeteners, colors, or proprietary blends" },
     ],
     footnote:
@@ -87,7 +87,7 @@ const config: LPConfig = {
     },
     {
       q: "is it clean?",
-      a: "grass-fed, pasture-raised bovine collagen, organic mushroom extracts (lion's mane, reishi, cordyceps), ceremonial matcha. no added sugar, no artificial sweeteners, no dyes, no proprietary blends. every dose is on the label.",
+      a: "grass-fed, pasture-raised bovine collagen, organic mushroom extracts (organic lion's mane beta-glucans), ceremonial matcha. no added sugar, no artificial sweeteners, no dyes, no proprietary blends. every dose is on the label.",
     },
     {
       q: "it's sold out — how do drops work?",

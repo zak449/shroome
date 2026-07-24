@@ -18,8 +18,7 @@ export const metadata: Metadata = {
     "matcha powder",
     "mushroom coffee",
     "lion's mane",
-    "reishi",
-    "shroomé",
+        "shroomé",
     "drinkshroome",
   ],
   alternates: {
