@@ -37,7 +37,7 @@ export default function FoundersPage() {
             <Image src="/brand/wordmark.png" width={118} height={25} alt="shroomé" priority style={{ height: 24, width: "auto" }} />
           </a>
           <a href="/drop" style={{ fontFamily: "var(--brand-font-body)", fontWeight: 800, fontSize: "0.7rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--brand-canvas)", textDecoration: "none", background: "var(--brand-accent)", border: "2px solid var(--brand-ink)", borderRadius: 999, padding: "10px 20px" }}>
-            The Drop →
+            Shop →
           </a>
         </nav>
 

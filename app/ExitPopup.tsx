@@ -4,8 +4,7 @@ import { useState, useEffect, useRef, useCallback } from "react";
 export default function ExitPopup() {
   const [show, setShow] = useState(false);
   const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
-  const [step, setStep] = useState<"email" | "captcha" | "phone" | "done">("email");
+  const [step, setStep] = useState<"email" | "captcha" | "done">("email");
   const [status, setStatus] = useState<"idle" | "loading" | "error">("idle");
   const [dismissed, setDismissed] = useState(false);
   const captchaRef = useRef<HTMLDivElement>(null);
@@ -72,14 +71,15 @@ export default function ExitPopup() {
       const res = await fetch("/api/waitlist", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, turnstileToken: token }),
+        body: JSON.stringify({ email, turnstileToken: token, source: "exit_popup", tier: "light" }),
       });
       if (res.ok) {
-        setStep("phone");
+        // LIGHT tier: email only. The deep membership move lives at /drop#join.
+        setStep("done");
         setStatus("idle");
         sessionStorage.setItem("shroome_exit_popup_converted", "1");
         window.gtag?.("event", "sign_up", {
-          method: "waitlist",
+          method: "waitlist_email_only",
           event_category: "engagement",
           event_label: "exit_popup",
         });
@@ -131,30 +131,6 @@ export default function ExitPopup() {
       document.head.appendChild(script);
     }
   }, [step, onTurnstileSuccess]);
-
-  const handlePhoneSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!phone.trim() || status === "loading") return;
-    setStatus("loading");
-    try {
-      await fetch("/api/waitlist", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, phone }),
-      });
-      window.gtag?.("event", "sign_up", {
-        method: "waitlist_phone",
-        event_category: "engagement",
-        event_label: "exit_popup_phone",
-      });
-    } catch {}
-    setStatus("idle");
-    setStep("done");
-  };
-
-  const skipPhone = () => {
-    setStep("done");
-  };
 
   if (!show) return null;
 
@@ -283,11 +259,12 @@ export default function ExitPopup() {
                 style={{ width: 130, height: 130, objectFit: "cover", borderRadius: "50%", border: "3px solid var(--brand-ink)", margin: "0 auto 16px", display: "block" }}
               />
               <h2 className="ep-title">
-                leaving before you&apos;re <em>in the Flock?</em>
+                leaving before the <em>next run?</em>
               </h2>
               <p className="ep-sub">
-                The first run disappeared in 9 days. Most people found out after it was gone.
-                Don&apos;t be most people. The Flock pours first, gifts included.
+                The first run disappeared in 9 days. Most people found out after it was
+                gone. Don&apos;t be most people. Email only: find out the moment the
+                next run goes live.
               </p>
               <form className="ep-form" onSubmit={handleEmailSubmit}>
                 <input
@@ -300,7 +277,7 @@ export default function ExitPopup() {
                   autoFocus
                 />
                 <button className="ep-btn" type="submit" disabled={status === "loading"}>
-                  {status === "loading" ? "..." : "Join the Flock"}
+                  {status === "loading" ? "..." : "Find out first"}
                 </button>
               </form>
               {status === "error" && (
@@ -309,9 +286,9 @@ export default function ExitPopup() {
                 </p>
               )}
               <div className="ep-perks">
-                <span className="ep-perk">Shop a day early</span>
-                <span className="ep-perk">Member-only merch</span>
-                <span className="ep-perk">Drop-day text</span>
+                <span className="ep-perk">First to know</span>
+                <span className="ep-perk">20% off code</span>
+                <span className="ep-perk">No spam, ever</span>
               </div>
               <button className="ep-no-thanks" onClick={dismiss}>
                 No thanks, I&apos;ll wait for the public link
@@ -329,44 +306,19 @@ export default function ExitPopup() {
                 </p>
               )}
             </>
-          ) : step === "phone" ? (
-            <>
-              <img src="/brand/sheep-drink.png" alt="" aria-hidden style={{ width: 72, height: "auto", margin: "0 auto 12px", display: "block" }} />
-              <h2 className="ep-success-title">the flock pours first. you&apos;re in.</h2>
-              <p className="ep-sub">
-                The text hits your phone <strong style={{ color: "var(--brand-ink)", fontWeight: 700 }}>before anything else we send</strong>. Add your number and you&apos;ll be pouring while everyone else is still finding out.
-              </p>
-              <form className="ep-form" onSubmit={handlePhoneSubmit}>
-                <input
-                  className="ep-input"
-                  type="tel"
-                  placeholder="(555) 123-4567"
-                  value={phone}
-                  onChange={(e) => setPhone(e.target.value)}
-                  required
-                  autoFocus
-                />
-                <button className="ep-btn" type="submit" disabled={status === "loading"}>
-                  {status === "loading" ? "..." : "Text me first"}
-                </button>
-              </form>
-              <div className="ep-perks">
-                <span className="ep-perk">First to know</span>
-                <span className="ep-perk">Drop-day text</span>
-                <span className="ep-perk">First in line</span>
-              </div>
-              <button className="ep-no-thanks" onClick={skipPhone}>
-                No thanks, I&apos;ll refresh the page like everyone else
-              </button>
-            </>
           ) : (
             <>
               <img src="/brand/sheep-drink.png" alt="" aria-hidden style={{ width: 72, height: "auto", margin: "0 auto 12px", display: "block" }} />
-              <h2 className="ep-success-title">welcome to the flock.</h2>
+              <h2 className="ep-success-title">you&apos;re on the list.</h2>
               <p className="ep-success-sub">
-                Watch your inbox for the next run&apos;s link.{phone ? " The text gets to you first." : ""} You&apos;re ahead of the line.
+                Watch your inbox: we&apos;ll email you the moment the next run goes live.
+                Want more? The Flock shops a day early, votes on flavors, and gets
+                member-only merch.
               </p>
-              <button className="ep-success-btn" onClick={dismiss}>
+              <a className="ep-success-btn" href="/drop#join" style={{ display: "inline-block", textDecoration: "none" }} onClick={dismiss}>
+                Join the Flock →
+              </a>
+              <button className="ep-no-thanks" onClick={dismiss}>
                 Back to browsing
               </button>
             </>

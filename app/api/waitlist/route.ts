@@ -82,6 +82,37 @@ function normalizePhone(raw: unknown): string | undefined {
   return undefined;
 }
 
+// ─── Optional profile fields (deep-tier capture) ─────────────────────────────
+function cleanText(raw: unknown, max = 80): string | undefined {
+  if (typeof raw !== "string") return undefined;
+  const t = raw.trim();
+  return t ? t.slice(0, max) : undefined;
+}
+
+/** Saved BoxBuilder cart: allowlisted, bounded copy of the client payload. */
+function cleanSavedBuild(raw: unknown):
+  | { size?: number; vanilla?: number; strawberry?: number; cadence?: string; price?: number }
+  | undefined {
+  if (!raw || typeof raw !== "object") return undefined;
+  const b = raw as Record<string, unknown>;
+  const num = (v: unknown) => (typeof v === "number" && Number.isFinite(v) ? v : undefined);
+  const out = {
+    size: num(b.size),
+    vanilla: num(b.vanilla),
+    strawberry: num(b.strawberry),
+    cadence: cleanText(b.cadence, 20),
+    price: num(b.price),
+  };
+  return Object.values(out).some((v) => v !== undefined) ? out : undefined;
+}
+
+interface ProfileExtras {
+  firstName?: string;
+  city?: string;
+  tier?: string;
+  savedBuild?: ReturnType<typeof cleanSavedBuild>;
+}
+
 function klaviyoHeaders(apiKey: string) {
   return {
     Authorization: `Klaviyo-API-Key ${apiKey}`,
@@ -128,7 +159,8 @@ async function syncToKlaviyo(
   phoneE164?: string,
   referralCode?: string,
   referredBy?: string,
-  source = "drinkshroome.com"
+  source = "drinkshroome.com",
+  extras: ProfileExtras = {}
 ) {
   const apiKey = process.env.KLAVIYO_API_KEY;
   if (!apiKey) return;
@@ -140,12 +172,17 @@ async function syncToKlaviyo(
   const profileAttributes = (includePhone: boolean) => ({
     email,
     ...(includePhone && phoneE164 ? { phone_number: phoneE164 } : {}),
+    ...(extras.firstName ? { first_name: extras.firstName } : {}),
+    ...(extras.city ? { location: { city: extras.city } } : {}),
     properties: {
       source,
       signup_source: source,
       signup_date: new Date().toISOString(),
       ...(referralCode ? { referral_code: referralCode } : {}),
       ...(referredBy ? { referred_by: referredBy } : {}),
+      ...(extras.tier ? { signup_tier: extras.tier } : {}),
+      ...(extras.city ? { city: extras.city } : {}),
+      ...(extras.savedBuild ? { saved_build: extras.savedBuild } : {}),
     },
   });
 
@@ -313,7 +350,17 @@ export async function POST(req: NextRequest) {
   if (!resend) console.error("Waitlist: RESEND_API_KEY missing — welcome/admin emails skipped.");
 
   try {
-    const { email, phone: rawPhone, turnstileToken, ref, source } = await req.json();
+    const {
+      email,
+      phone: rawPhone,
+      turnstileToken,
+      ref,
+      source,
+      name: rawName,
+      city: rawCity,
+      tier: rawTier,
+      savedBuild: rawSavedBuild,
+    } = await req.json();
 
     if (!email || !email.includes("@")) {
       return NextResponse.json({ error: "Invalid email" }, { status: 400 });
@@ -322,6 +369,15 @@ export async function POST(req: NextRequest) {
     // Optional source passthrough (defaults to drinkshroome.com)
     const signupSource =
       typeof source === "string" && source.trim() ? source.trim().slice(0, 100) : "drinkshroome.com";
+
+    // Optional deep-tier profile fields — all sanitized, all optional, and
+    // never allowed to block the signup.
+    const extras: ProfileExtras = {
+      firstName: cleanText(rawName, 60),
+      city: cleanText(rawCity, 80),
+      tier: rawTier === "deep" || rawTier === "light" ? rawTier : undefined,
+      savedBuild: cleanSavedBuild(rawSavedBuild),
+    };
 
     // Normalize phone; invalid phones are dropped (logged) — the signup continues
     const phone = normalizePhone(rawPhone);
@@ -367,7 +423,7 @@ export async function POST(req: NextRequest) {
 
     // ─── 1. Sync to Klaviyo ─────────────────────────────────────────────
     try {
-      await syncToKlaviyo(email, phone, referralCode, referredBy, signupSource);
+      await syncToKlaviyo(email, phone, referralCode, referredBy, signupSource, extras);
     } catch (klaviyoErr) {
       console.error("Klaviyo error:", klaviyoErr);
     }
@@ -391,6 +447,10 @@ export async function POST(req: NextRequest) {
             total_discount: phone ? "30% off + free shipping" : "20% off + free shipping",
             referral_code: referralCode,
             referred_by: referredBy || "",
+            name: extras.firstName || "",
+            city: extras.city || "",
+            tier: extras.tier || "",
+            saved_build: extras.savedBuild ? JSON.stringify(extras.savedBuild) : "",
           }),
         });
       } catch (sheetErr) {

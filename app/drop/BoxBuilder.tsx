@@ -1,19 +1,25 @@
 "use client";
 // ─────────────────────────────────────────────────────────────────────────────
 // BOX BUILDER — sold-out configurator for /drop.
-// Lets visitors spec their Drop 002 box (size → flavor mix in 6s → cadence)
-// and see the real price, but purchase stays locked: every combination is
-// sold out, and the only live action is joining the Drop 002 list.
+// Visitors spec their next-run box with independent per-flavor steppers
+// (steps of 6; valid box sizes 6/12/24/48 priced from the total) plus a
+// cadence, then "Add to cart", which saves the build and reveals an email
+// capture that reserves the cart for the next run. Purchase stays locked:
+// every combination is sold out until the next run opens.
 // Pricing source of truth: 05 — Subscription Plans (SKUMaster-approved).
 // ─────────────────────────────────────────────────────────────────────────────
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import DropAccessForm from "../lp/DropAccessForm";
 
 const SIZES = [6, 12, 24, 48] as const;
 type Size = (typeof SIZES)[number];
 
-/** One-time box prices. */
+/** One-time box prices per size tier. */
 const ONE_TIME: Record<Size, number> = { 6: 21, 12: 36, 24: 66, 48: 126 };
+
+const MAX_TOTAL = 48;
+const STEP = 6;
 
 /** Subscription % off one-time, by size then cadence. 6-pack is one-time only. */
 const CADENCES = [
@@ -46,38 +52,63 @@ const pill: React.CSSProperties = {
 };
 
 export default function BoxBuilder() {
-  const [size, setSize] = useState<Size>(12);
   const [vanilla, setVanilla] = useState(6);
+  const [strawberry, setStrawberry] = useState(6);
   const [cadence, setCadence] = useState<Cadence>("once");
-  const [saved, setSaved] = useState(false);
+  const [carted, setCarted] = useState(false);
+  const reserveRef = useRef<HTMLDivElement>(null);
 
-  const strawberry = size - vanilla;
+  const total = vanilla + strawberry;
+  const validSize = (SIZES as readonly number[]).includes(total);
+  const size = (validSize ? total : 12) as Size;
 
-  const pickSize = (s: Size) => {
-    setSize(s);
-    setVanilla(Math.min(Math.max(Math.round(s / 12) * 6, 0), s));
-    if (s === 6) setCadence("once");
-  };
+  // The first-pour kit (6) is one-time only.
+  useEffect(() => {
+    if (total === 6 && cadence !== "once") setCadence("once");
+  }, [total, cadence]);
 
-  const step = (dir: 1 | -1) => {
-    const next = vanilla + dir * 6;
-    if (next >= 0 && next <= size) setVanilla(next);
+  const stepFlavor = (which: "vanilla" | "strawberry", dir: 1 | -1) => {
+    const setter = which === "vanilla" ? setVanilla : setStrawberry;
+    const current = which === "vanilla" ? vanilla : strawberry;
+    const next = current + dir * STEP;
+    if (next < 0) return;
+    if (dir === 1 && total + STEP > MAX_TOTAL) return;
+    setter(next);
   };
 
   const base = ONE_TIME[size];
-  const pct = cadence === "once" || size === 6 ? 0 : SUB_PCT[size as Exclude<Size, 6>][cadence as Exclude<Cadence, "once">];
+  const pct =
+    cadence === "once" || size === 6
+      ? 0
+      : SUB_PCT[size as Exclude<Size, 6>][cadence as Exclude<Cadence, "once">];
   const price = +(base * (1 - pct / 100)).toFixed(2);
 
-  const saveBuild = () => {
+  /** Next valid size above the current total, for the nudge message. */
+  const nextValid = SIZES.find((s) => s > total);
+  const nudge = !validSize
+    ? total === 0
+      ? "add some sachets. boxes pour in 6, 12, 24, or 48."
+      : nextValid
+        ? `boxes pour in 6, 12, 24, or 48 sachets. add ${nextValid - total} more to make a ${nextValid}-box.`
+        : "boxes top out at 48 sachets. take a few out."
+    : null;
+
+  const addToCart = () => {
+    if (!validSize) return;
     try {
       localStorage.setItem(
         "shroome_saved_build",
-        JSON.stringify({ size, vanilla, strawberry: size - vanilla, cadence, price, savedAt: Date.now() })
+        JSON.stringify({ size: total, vanilla, strawberry, cadence, price, savedAt: Date.now() })
       );
     } catch {}
-    setSaved(true);
-    window.gtag?.("event", "save_build", { box_size: size, cadence, value: price });
-    document.getElementById("join")?.scrollIntoView({ behavior: "smooth" });
+    setCarted(true);
+    window.gtag?.("event", "add_to_cart", {
+      currency: "USD",
+      value: price,
+      items: [{ item_name: "next_run_box", item_variant: `${vanilla}v-${strawberry}s`, quantity: 1 }],
+    });
+    window.gtag?.("event", "save_build", { box_size: total, cadence, value: price });
+    setTimeout(() => reserveRef.current?.scrollIntoView({ behavior: "smooth", block: "center" }), 60);
   };
 
   const label = (style: React.CSSProperties = {}): React.CSSProperties => ({
@@ -88,6 +119,13 @@ export default function BoxBuilder() {
     textTransform: "uppercase",
     color: "rgba(var(--brand-ink-rgb),0.6)",
     ...style,
+  });
+
+  const stepperBtn = (disabled: boolean): React.CSSProperties => ({
+    ...pill,
+    padding: "6px 13px",
+    opacity: disabled ? 0.3 : 1,
+    cursor: disabled ? "not-allowed" : "pointer",
   });
 
   return (
@@ -132,61 +170,64 @@ export default function BoxBuilder() {
         First run · poured out
       </div>
 
-      {/* ── Size ── */}
-      <p style={label({ marginBottom: 10 })}>1 · Box size</p>
-      <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 24 }}>
-        {SIZES.map((s) => (
-          <button
-            key={s}
-            onClick={() => pickSize(s)}
-            aria-pressed={size === s}
-            style={{
-              ...pill,
-              flex: "1 1 90px",
-              textAlign: "center",
-              background: size === s ? "var(--brand-ink)" : "var(--brand-canvas)",
-              color: size === s ? "var(--brand-canvas)" : ink,
-            }}
-          >
-            {s} sachets
-            {s === 6 && <span style={{ display: "block", fontWeight: 500, fontSize: "0.6rem", opacity: 0.7 }}>first-pour kit</span>}
-          </button>
-        ))}
-      </div>
-
-      {/* ── Flavor mix ── */}
-      <p style={label({ marginBottom: 10 })}>2 · Flavor mix · steps of 6</p>
-      <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 8 }}>
+      {/* ── Flavor quantities ── */}
+      <p style={label({ marginBottom: 4, marginTop: 8 })}>1 · Your flavors · steps of 6</p>
+      <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.68rem", color: "rgba(var(--brand-ink-rgb),0.5)", marginBottom: 14 }}>
+        mix any way you like. boxes come in 6, 12, 24, or 48 sachets total.
+      </p>
+      <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 12 }}>
         <Image src="/sachet-vanilla.png" alt="Vanilla sachet" width={34} height={74} style={{ width: 30, height: "auto" }} />
-        <div style={{ flex: 1 }}>
+        <div style={{ flex: 1, minWidth: 0 }}>
           <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 700, fontSize: "0.85rem", color: ink }}>Vanilla</p>
           <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.68rem", color: "rgba(var(--brand-ink-rgb),0.55)" }}>warm · smooth</p>
         </div>
         <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-          <button aria-label="less vanilla" onClick={() => step(-1)} disabled={vanilla === 0} style={{ ...pill, padding: "6px 13px", opacity: vanilla === 0 ? 0.3 : 1 }}>−</button>
+          <button aria-label="less vanilla" onClick={() => stepFlavor("vanilla", -1)} disabled={vanilla === 0} style={stepperBtn(vanilla === 0)}>−</button>
           <span style={{ fontFamily: "var(--brand-font-mono)", fontWeight: 700, fontSize: "1rem", color: ink, minWidth: 26, textAlign: "center" }}>{vanilla}</span>
-          <button aria-label="more vanilla" onClick={() => step(1)} disabled={vanilla === size} style={{ ...pill, padding: "6px 12px", opacity: vanilla === size ? 0.3 : 1 }}>+</button>
+          <button aria-label="more vanilla" onClick={() => stepFlavor("vanilla", 1)} disabled={total + STEP > MAX_TOTAL} style={stepperBtn(total + STEP > MAX_TOTAL)}>+</button>
         </div>
       </div>
       <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 10 }}>
         <Image src="/sachet-strawberry.png" alt="Strawberry sachet" width={34} height={74} style={{ width: 30, height: "auto" }} />
-        <div style={{ flex: 1 }}>
+        <div style={{ flex: 1, minWidth: 0 }}>
           <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 700, fontSize: "0.85rem", color: ink }}>Strawberry</p>
           <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.68rem", color: "rgba(var(--brand-ink-rgb),0.55)" }}>bright · loud</p>
         </div>
-        <span style={{ fontFamily: "var(--brand-font-mono)", fontWeight: 700, fontSize: "1rem", color: ink, padding: "0 12px" }}>{strawberry}</span>
+        <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+          <button aria-label="less strawberry" onClick={() => stepFlavor("strawberry", -1)} disabled={strawberry === 0} style={stepperBtn(strawberry === 0)}>−</button>
+          <span style={{ fontFamily: "var(--brand-font-mono)", fontWeight: 700, fontSize: "1rem", color: ink, minWidth: 26, textAlign: "center" }}>{strawberry}</span>
+          <button aria-label="more strawberry" onClick={() => stepFlavor("strawberry", 1)} disabled={total + STEP > MAX_TOTAL} style={stepperBtn(total + STEP > MAX_TOTAL)}>+</button>
+        </div>
       </div>
       {/* mix bar */}
-      <div aria-hidden style={{ display: "flex", height: 10, borderRadius: 999, overflow: "hidden", border: "2px solid var(--brand-ink)", marginBottom: 24 }}>
-        <div style={{ width: `${(vanilla / size) * 100}%`, background: "var(--brand-flavor-functional)", transition: "width 0.25s" }} />
-        <div style={{ flex: 1, background: "var(--brand-flavor-strawberry)", transition: "width 0.25s" }} />
+      <div aria-hidden style={{ display: "flex", height: 10, borderRadius: 999, overflow: "hidden", border: "2px solid var(--brand-ink)", marginBottom: 8, background: "rgba(var(--brand-ink-rgb),0.08)" }}>
+        {total > 0 && (
+          <>
+            <div style={{ width: `${(vanilla / total) * 100}%`, background: "var(--brand-flavor-functional)", transition: "width 0.25s" }} />
+            <div style={{ flex: 1, background: "var(--brand-flavor-strawberry)", transition: "width 0.25s" }} />
+          </>
+        )}
       </div>
+      <p
+        role={nudge ? "status" : undefined}
+        style={{
+          fontFamily: "var(--brand-font-mono)",
+          fontWeight: 700,
+          fontSize: "0.62rem",
+          letterSpacing: "0.1em",
+          textTransform: "uppercase",
+          color: nudge ? "var(--brand-accent-deep)" : "rgba(var(--brand-ink-rgb),0.55)",
+          marginBottom: 22,
+        }}
+      >
+        {nudge ?? `${total} sachets · ${total === 6 ? "first-pour kit" : `${total}-box`}`}
+      </p>
 
       {/* ── Frequency ── */}
-      <p style={label({ marginBottom: 10 })}>3 · Frequency</p>
+      <p style={label({ marginBottom: 10 })}>2 · Frequency</p>
       <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 6 }}>
         {CADENCES.map((c) => {
-          const disabled = size === 6 && c.key !== "once";
+          const disabled = total === 6 && c.key !== "once";
           const active = cadence === c.key;
           return (
             <button
@@ -210,7 +251,7 @@ export default function BoxBuilder() {
           );
         })}
       </div>
-      {size === 6 && (
+      {total === 6 && (
         <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.66rem", color: "rgba(var(--brand-ink-rgb),0.5)", marginBottom: 0 }}>
           the first-pour kit is one-time only.
         </p>
@@ -219,19 +260,25 @@ export default function BoxBuilder() {
       {/* ── Price ── */}
       <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", gap: 12, borderTop: "2px solid rgba(var(--brand-ink-rgb),0.12)", marginTop: 20, paddingTop: 18, flexWrap: "wrap" }}>
         <div>
-          <p style={label()}>Your box</p>
+          <p style={label()}>Your cart</p>
           <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 600, fontSize: "0.78rem", color: "rgba(var(--brand-ink-rgb),0.7)", marginTop: 4 }}>
-            {vanilla > 0 && `${vanilla} vanilla`}
-            {vanilla > 0 && strawberry > 0 && " + "}
-            {strawberry > 0 && `${strawberry} strawberry`}
-            {cadence !== "once" ? ` · ${CADENCES.find((c) => c.key === cadence)!.label.toLowerCase()}` : " · one-time"}
+            {validSize ? (
+              <>
+                {vanilla > 0 && `${vanilla} vanilla`}
+                {vanilla > 0 && strawberry > 0 && " + "}
+                {strawberry > 0 && `${strawberry} strawberry`}
+                {cadence !== "once" ? ` · ${CADENCES.find((c) => c.key === cadence)!.label.toLowerCase()}` : " · one-time"}
+              </>
+            ) : (
+              "pick a box size to see your price"
+            )}
           </p>
         </div>
         <div style={{ textAlign: "right" }}>
-          <p style={{ fontFamily: "var(--brand-font-mono)", fontWeight: 700, fontSize: "1.9rem", color: ink, lineHeight: 1 }}>
-            ${price % 1 === 0 ? price : price.toFixed(2)}
+          <p style={{ fontFamily: "var(--brand-font-mono)", fontWeight: 700, fontSize: "1.9rem", color: validSize ? ink : "rgba(var(--brand-ink-rgb),0.3)", lineHeight: 1 }}>
+            {validSize ? `$${price % 1 === 0 ? price : price.toFixed(2)}` : "$ ·"}
           </p>
-          {pct > 0 && (
+          {validSize && pct > 0 && (
             <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.68rem", color: "var(--brand-accent-deep)", fontWeight: 700 }}>
               <s style={{ color: "rgba(var(--brand-ink-rgb),0.4)", fontWeight: 500 }}>${base}</s>{" "}subscriber price
             </p>
@@ -239,30 +286,50 @@ export default function BoxBuilder() {
         </div>
       </div>
 
-      {/* ── Save the build → join the Flock ── */}
+      {/* ── Add to cart → reserve it for the next run ── */}
       <button
-        onClick={saveBuild}
+        onClick={addToCart}
+        disabled={!validSize}
         style={{
           width: "100%",
           marginTop: 18,
           padding: "16px 20px",
           borderRadius: 999,
           border: "2px solid var(--brand-ink)",
-          background: "var(--brand-accent)",
-          color: "var(--brand-canvas)",
+          background: validSize ? "var(--brand-accent)" : "rgba(var(--brand-ink-rgb),0.12)",
+          color: validSize ? "var(--brand-canvas)" : "rgba(var(--brand-ink-rgb),0.4)",
           fontFamily: "var(--brand-font-body)",
           fontWeight: 800,
           fontSize: "0.78rem",
           letterSpacing: "0.1em",
           textTransform: "uppercase",
-          cursor: "pointer",
+          cursor: validSize ? "pointer" : "not-allowed",
         }}
       >
-        {saved ? "Box saved ✓ Join the Flock below" : "Save my box · Join the Flock →"}
+        {carted ? "In your cart ✓" : "Add to cart →"}
       </button>
-      <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.66rem", color: "rgba(var(--brand-ink-rgb),0.55)", textAlign: "center", marginTop: 10 }}>
-        we&apos;ll hold your build. when the next production goes live, members shop it a full day before the public link.
-      </p>
+
+      {carted ? (
+        <div ref={reserveRef} style={{ marginTop: 18, borderTop: "2px solid rgba(var(--brand-ink-rgb),0.12)", paddingTop: 18 }}>
+          <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 800, fontSize: "0.85rem", color: ink, marginBottom: 4 }}>
+            cart saved. now reserve it.
+          </p>
+          <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.72rem", color: "rgba(var(--brand-ink-rgb),0.6)", marginBottom: 14 }}>
+            drop your email and we&apos;ll hold this exact cart for the next run, then
+            send your link the moment it goes live.
+          </p>
+          <DropAccessForm
+            source="drop-builder"
+            upsellHref="#join"
+            buttonLabel="reserve my cart"
+            microcopy="no charge until the next run opens and you check out."
+          />
+        </div>
+      ) : (
+        <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.66rem", color: "rgba(var(--brand-ink-rgb),0.55)", textAlign: "center", marginTop: 10 }}>
+          we&apos;ll hold your cart. when the next run goes live, members shop it a full day before the public link.
+        </p>
+      )}
     </div>
   );
 }

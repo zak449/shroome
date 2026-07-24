@@ -68,7 +68,9 @@ const tagStyle: React.CSSProperties = {
 export default function Home() {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const [step, setStep] = useState<"email" | "captcha" | "phone" | "done">("email");
+  const [firstName, setFirstName] = useState("");
+  const [city, setCity] = useState("");
+  const [step, setStep] = useState<"email" | "captcha" | "phone" | "city" | "done">("email");
   const [loading, setLoading] = useState(false);
   const [captchaError, setCaptchaError] = useState("");
   const captchaRef = useRef<HTMLDivElement>(null);
@@ -180,9 +182,12 @@ export default function Home() {
     if (!email.trim() || loading) return;
     window.gtag?.("event", "begin_checkout", { items: [{ item_name: "restock_signup" }] });
     setStep("captcha");
-    // The Turnstile widget mounts in the hero form — bring it into view when
-    // the submit came from the bottom CTA.
-    setTimeout(() => document.getElementById("signup")?.scrollIntoView({ behavior: "smooth", block: "center" }), 50);
+    // The Turnstile widget mounts in the hero form (or in the Flock modal when
+    // it is open) — bring the hero into view when the submit came from the
+    // bottom CTA.
+    if (!flockOpen) {
+      setTimeout(() => document.getElementById("signup")?.scrollIntoView({ behavior: "smooth", block: "center" }), 50);
+    }
   };
 
   const onTurnstileSuccess = useCallback(async (token: string) => {
@@ -213,14 +218,16 @@ export default function Home() {
       }
     } catch {}
     setLoading(false);
-    setStep("phone");
+    // Two tiers: the Flock modal is the DEEP membership flow (phone + profile);
+    // inline forms are LIGHT (email only) and finish here with an upsell.
+    setStep(flockOpen ? "phone" : "done");
     window.gtag?.('event', 'sign_up', {
-      method: 'waitlist',
+      method: flockOpen ? 'waitlist' : 'waitlist_email_only',
       event_category: 'engagement',
       event_label: 'homepage',
     });
     window.gtag?.('event', 'generate_lead', { currency: 'USD', value: 5.00 });
-  }, [email, referredBy]);
+  }, [email, referredBy, flockOpen]);
 
   // Load Turnstile script and render widget when captcha step is active
   useEffect(() => {
@@ -266,13 +273,33 @@ export default function Home() {
       });
     } catch {}
     setLoading(false);
-    setStep("done");
+    setStep("city");
     window.gtag?.('event', 'sign_up', { method: 'waitlist_phone', event_category: 'engagement', event_label: 'homepage' });
   };
 
   const skipPhone = () => {
-    setStep("done");
+    setStep("city");
     window.gtag?.('event', 'sign_up', { method: 'waitlist_email_only', event_category: 'engagement', event_label: 'homepage' });
+  };
+
+  const handleCitySubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (loading) return;
+    if (!firstName.trim() && !city.trim()) {
+      setStep("done");
+      return;
+    }
+    setLoading(true);
+    try {
+      await fetch("/api/waitlist", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, name: firstName, city, ref: referredBy, tier: "deep" }),
+      });
+    } catch {}
+    setLoading(false);
+    setStep("done");
+    window.gtag?.('event', 'sign_up', { method: 'waitlist_profile', event_category: 'engagement', event_label: 'homepage' });
   };
 
   const anim = (id: string, delay = 0) => ({
@@ -343,6 +370,18 @@ export default function Home() {
               </p>
             </div>
           </div>
+          {!phone.trim() && variant !== "flock" && (
+            <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.76rem", color: "rgba(var(--brand-ink-rgb),0.65)", marginTop: 12 }}>
+              Want more than the date?{" "}
+              <button
+                onClick={() => { setStep("phone"); setFlockOpen(true); window.gtag?.("event", "select_promotion", { promotion_name: "light_done_flock_upsell" }); }}
+                style={{ background: "none", border: "none", padding: 0, color: "var(--brand-ink)", fontFamily: "var(--brand-font-body)", fontWeight: 800, fontSize: "0.76rem", textDecoration: "underline", textUnderlineOffset: 3, cursor: "pointer" }}
+              >
+                Join the Flock →
+              </button>{" "}
+              Shop a day early, vote on flavors, member-only merch.
+            </p>
+          )}
           {referralCode && (
             <div style={{ marginTop: 16, padding: "20px", background: "rgba(var(--brand-canvas-rgb),0.75)", border: "2px solid var(--brand-ink)", borderRadius: 20 }}>
               <p style={{ ...tagStyle, fontSize: "0.72rem", color: "var(--brand-ink)", marginBottom: 8 }}>
@@ -403,7 +442,7 @@ export default function Home() {
           <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 600, fontSize: "0.82rem", color: "var(--brand-ink)", marginBottom: 14 }}>
             Quick verification for {email}
           </p>
-          <div ref={variant === "hero" ? captchaRef : undefined} style={{ marginBottom: 8, display: "flex", justifyContent: variant === "cta" ? "center" : "flex-start" }} />
+          <div ref={(flockOpen ? variant === "flock" : variant === "hero") ? captchaRef : undefined} style={{ marginBottom: 8, display: "flex", justifyContent: variant === "cta" ? "center" : "flex-start" }} />
           {loading && (
             <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.72rem", color: "rgba(var(--brand-ink-rgb),0.5)" }}>
               Submitting...
@@ -434,6 +473,36 @@ export default function Home() {
             By providing your phone number, you agree to receive marketing texts from shroomé. Msg &amp; data rates may apply. Reply STOP to unsubscribe.
           </p>
         </div>
+      ) : step === "city" ? (
+        <div style={{ textAlign: "left" }}>
+          <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 600, fontSize: "0.82rem", color: "var(--brand-ink)", marginBottom: 12 }}>
+            ✓ You&apos;re in the Flock. One last thing, totally optional: tell us who&apos;s pouring and where, so your box (and future pop-ups) land close to home.
+          </p>
+          <form onSubmit={handleCitySubmit} style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+            <input
+              type="text"
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
+              placeholder="First name (optional)"
+              autoComplete="given-name"
+              style={{ flex: "1 1 160px", padding: "15px 20px", border: "2px solid var(--brand-ink)", borderRadius: 999, background: "#fff", color: "var(--brand-ink)", fontFamily: "var(--brand-font-body)", fontSize: "0.95rem", fontWeight: 500, minWidth: 0 }}
+            />
+            <input
+              type="text"
+              value={city}
+              onChange={(e) => setCity(e.target.value)}
+              placeholder="City (optional)"
+              autoComplete="address-level2"
+              style={{ flex: "1 1 160px", padding: "15px 20px", border: "2px solid var(--brand-ink)", borderRadius: 999, background: "#fff", color: "var(--brand-ink)", fontFamily: "var(--brand-font-body)", fontSize: "0.95rem", fontWeight: 500, minWidth: 0 }}
+            />
+            <button type="submit" disabled={loading} style={{ padding: "15px 28px", border: "2px solid var(--brand-ink)", borderRadius: 999, background: "var(--brand-ink)", color: "var(--brand-canvas)", fontFamily: "var(--brand-font-body)", fontWeight: 800, fontSize: "0.75rem", letterSpacing: "0.1em", textTransform: "uppercase", cursor: loading ? "wait" : "pointer", whiteSpace: "nowrap" }}>
+              {loading ? "…" : "Done →"}
+            </button>
+          </form>
+          <button onClick={() => setStep("done")} style={{ marginTop: 10, background: "transparent", border: "none", color: "rgba(var(--brand-ink-rgb),0.5)", fontFamily: "var(--brand-font-body)", fontSize: "0.72rem", cursor: "pointer", textDecoration: "underline" }}>
+            Skip
+          </button>
+        </div>
       ) : (
         <div>
           <form onSubmit={handleEmailSubmit} style={{ display: "flex", gap: 8, flexWrap: "wrap", justifyContent: variant === "cta" ? "center" : "flex-start" }}>
@@ -446,7 +515,7 @@ export default function Home() {
               style={{ flex: "1 1 220px", padding: "15px 20px", border: "2px solid var(--brand-ink)", borderRadius: 999, background: "#fff", color: "var(--brand-ink)", fontFamily: "var(--brand-font-body)", fontSize: "0.95rem", fontWeight: 500, minWidth: 0 }}
             />
             <button type="submit" disabled={loading} style={{ padding: "15px 28px", border: "2px solid var(--brand-ink)", borderRadius: 999, background: "var(--brand-ink)", color: "var(--brand-canvas)", fontFamily: "var(--brand-font-body)", fontWeight: 800, fontSize: "0.75rem", letterSpacing: "0.1em", textTransform: "uppercase", cursor: loading ? "wait" : "pointer", whiteSpace: "nowrap" }}>
-              {loading ? "…" : "Join the Flock →"}
+              {loading ? "…" : variant === "flock" ? "Join the Flock →" : "Find out first →"}
             </button>
           </form>
           {captchaError && (
@@ -456,7 +525,14 @@ export default function Home() {
           )}
           {variant !== "flock" && (
             <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 600, fontSize: "0.78rem", color: "rgba(var(--brand-ink-rgb),0.7)", marginTop: 12 }}>
-              The Flock shops every run <strong>a full day before launch</strong>, votes on new flavors, and gets member-only merch. 100+ already in.
+              Email only: find out when the next run goes live. Want more?{" "}
+              <button
+                onClick={() => { setFlockOpen(true); window.gtag?.("event", "select_promotion", { promotion_name: "inline_form_flock_upsell" }); }}
+                style={{ background: "none", border: "none", padding: 0, color: "var(--brand-ink)", fontFamily: "var(--brand-font-body)", fontWeight: 800, fontSize: "0.78rem", textDecoration: "underline", textUnderlineOffset: 3, cursor: "pointer" }}
+              >
+                Join the Flock →
+              </button>{" "}
+              Early access a full day before launch, flavor votes, member-only merch. 100+ already in.
             </p>
           )}
         </div>
@@ -526,7 +602,7 @@ export default function Home() {
             { label: "The Ritual", id: "how" },
             { label: "FAQ", id: "faq", href: "/faq" },
             { label: "Recipes", id: "recipes", href: "/recipes" },
-            { label: "The Drop", id: "drop", href: "/drop" },
+            { label: "Shop", id: "drop", href: "/drop" },
           ].map((l) => (
             <button
               key={l.id}
@@ -613,7 +689,7 @@ export default function Home() {
             { label: "The Ritual", id: "how" },
             { label: "FAQ", id: "faq", href: "/faq" },
             { label: "Recipes", id: "recipes", href: "/recipes" },
-            { label: "The Drop", id: "drop", href: "/drop" },
+            { label: "Shop", id: "drop", href: "/drop" },
           ].map((l) => (
             <button
               key={l.id}

@@ -17,21 +17,46 @@ interface DropAccessFormProps {
   source: string;
   /** Render on a dark (ink) background. */
   dark?: boolean;
-  /** Button label — defaults to the drop CTA. */
+  /**
+   * Capture tier.
+   * "light" (default): email only — find out when the next run goes live —
+   * with an upsell link to the deep flow.
+   * "deep": the Flock membership move — email, then phone, then an optional
+   * name + city step, sold with community benefits.
+   */
+  tier?: "light" | "deep";
+  /** Where the light tier's "join the Flock" upsell points. */
+  upsellHref?: string;
+  /** Button label — defaults per tier. */
   buttonLabel?: string;
   /** Microcopy under the email field. */
   microcopy?: string;
 }
 
+/** Saved BoxBuilder cart, attached to signups so the CRM knows the build. */
+function getSavedBuild(): unknown {
+  try {
+    const raw = localStorage.getItem("shroome_saved_build");
+    return raw ? JSON.parse(raw) : undefined;
+  } catch {
+    return undefined;
+  }
+}
+
 export default function DropAccessForm({
   source,
   dark = false,
-  buttonLabel = "join the flock",
+  tier = "light",
+  upsellHref = "/drop#join",
+  buttonLabel,
   microcopy,
 }: DropAccessFormProps) {
+  const label = buttonLabel ?? (tier === "deep" ? "join the flock" : "find out first");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const [step, setStep] = useState<"email" | "captcha" | "phone" | "done">("email");
+  const [firstName, setFirstName] = useState("");
+  const [city, setCity] = useState("");
+  const [step, setStep] = useState<"email" | "captcha" | "phone" | "city" | "done">("email");
   const [loading, setLoading] = useState(false);
   const [captchaError, setCaptchaError] = useState("");
   const [referredBy, setReferredBy] = useState<string | null>(null);
@@ -65,7 +90,7 @@ export default function DropAccessForm({
         const res = await fetch("/api/waitlist", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ email, turnstileToken: token, ref: referredBy, source }),
+          body: JSON.stringify({ email, turnstileToken: token, ref: referredBy, source, tier, savedBuild: getSavedBuild() }),
         });
         const data = await res.json();
         if (data.closed) {
@@ -76,16 +101,17 @@ export default function DropAccessForm({
         if (!res.ok) {
           // e.g. CAPTCHA rejected server-side — back to the email step so a
           // resubmit renders a fresh widget (and a fresh token).
-          setCaptchaError(data.error || "verification failed — please try again.");
+          setCaptchaError(data.error || "verification failed. please try again.");
           setStep("email");
           setLoading(false);
           return;
         }
       } catch {}
       setLoading(false);
-      setStep("phone");
+      // Light tier stops at email; deep continues into the membership steps.
+      setStep(tier === "deep" ? "phone" : "done");
       window.gtag?.("event", "sign_up", {
-        method: "waitlist",
+        method: tier === "deep" ? "waitlist" : "waitlist_email_only",
         event_category: "engagement",
         event_label: source,
         lp_segment: source,
@@ -96,7 +122,7 @@ export default function DropAccessForm({
         lp_segment: source,
       });
     },
-    [email, referredBy, source]
+    [email, referredBy, source, tier]
   );
 
   // ── Load Turnstile script + render widget on captcha step ──
@@ -117,7 +143,7 @@ export default function DropAccessForm({
         // Never submit an empty token (the API fails closed) — return to the
         // email step; resubmitting renders a fresh widget with a fresh token.
         "error-callback": () => {
-          setCaptchaError("verification failed — please try again.");
+          setCaptchaError("verification failed. please try again.");
           setStep("email");
         },
         theme: dark ? "dark" : "light",
@@ -142,11 +168,11 @@ export default function DropAccessForm({
       await fetch("/api/waitlist", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, phone, ref: referredBy, source }),
+        body: JSON.stringify({ email, phone, ref: referredBy, source, tier, savedBuild: getSavedBuild() }),
       });
     } catch {}
     setLoading(false);
-    setStep("done");
+    setStep("city");
     window.gtag?.("event", "sign_up", {
       method: "waitlist_phone",
       event_category: "engagement",
@@ -156,9 +182,34 @@ export default function DropAccessForm({
   };
 
   const skipPhone = () => {
-    setStep("done");
+    setStep("city");
     window.gtag?.("event", "sign_up", {
       method: "waitlist_email_only",
+      event_category: "engagement",
+      event_label: source,
+      lp_segment: source,
+    });
+  };
+
+  const handleCitySubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (loading) return;
+    if (!firstName.trim() && !city.trim()) {
+      setStep("done");
+      return;
+    }
+    setLoading(true);
+    try {
+      await fetch("/api/waitlist", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, name: firstName, city, ref: referredBy, source, tier }),
+      });
+    } catch {}
+    setLoading(false);
+    setStep("done");
+    window.gtag?.("event", "sign_up", {
+      method: "waitlist_profile",
       event_category: "engagement",
       event_label: source,
       lp_segment: source,
@@ -169,15 +220,36 @@ export default function DropAccessForm({
   const faint = dark ? "rgba(var(--brand-canvas-rgb),0.6)" : "rgba(var(--brand-ink-rgb),0.6)";
   const fainter = dark ? "rgba(var(--brand-canvas-rgb),0.4)" : "rgba(var(--brand-ink-rgb),0.4)";
 
+  const inputStyle: React.CSSProperties = {
+    width: "100%",
+    padding: "16px 20px",
+    border: "2px solid var(--brand-ink)",
+    background: "#fff",
+    color: "var(--brand-ink)",
+    fontFamily: "var(--brand-font-body)",
+    fontSize: "0.95rem",
+    fontWeight: 500,
+    marginBottom: 10,
+  };
+
   if (step === "done") {
     return (
       <div style={{ maxWidth: 440 }}>
         <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 700, fontSize: "1rem", color: strong, margin: 0 }}>
-          ✓ you&apos;re in. drop access locked — 20% off + free shipping.
+          ✓ you&apos;re in. drop access locked: 20% off + free shipping.
         </p>
         <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.78rem", color: faint, marginTop: 8 }}>
           we&apos;ll send the next run&apos;s link the moment it&apos;s live.
         </p>
+        {tier === "light" && (
+          <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.75rem", color: faint, marginTop: 12 }}>
+            want more than the date?{" "}
+            <a href={upsellHref} style={{ color: strong, fontWeight: 700, textDecoration: "underline", textUnderlineOffset: 3 }}>
+              join the Flock →
+            </a>{" "}
+            shop a day early, vote on flavors, member-only merch.
+          </p>
+        )}
       </div>
     );
   }
@@ -198,6 +270,77 @@ export default function DropAccessForm({
     );
   }
 
+  if (step === "city") {
+    return (
+      <div style={{ maxWidth: 440 }}>
+        <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 700, fontSize: "0.85rem", color: strong, marginBottom: 4 }}>
+          ✓ you&apos;re in the Flock.
+        </p>
+        <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 600, fontSize: "0.82rem", color: faint, marginBottom: 12 }}>
+          one last thing, totally optional: tell us who&apos;s pouring and where, so
+          your box (and future pop-ups) land close to home.
+        </p>
+        <form onSubmit={handleCitySubmit}>
+          <input
+            type="text"
+            value={firstName}
+            onChange={(e) => setFirstName(e.target.value)}
+            placeholder="first name (optional)"
+            aria-label="First name"
+            autoComplete="given-name"
+            style={inputStyle}
+          />
+          <input
+            type="text"
+            value={city}
+            onChange={(e) => setCity(e.target.value)}
+            placeholder="city (optional)"
+            aria-label="City"
+            autoComplete="address-level2"
+            style={inputStyle}
+          />
+          <div style={{ display: "flex", gap: 10, alignItems: "center" }}>
+            <button
+              type="submit"
+              disabled={loading}
+              style={{
+                padding: "16px 32px",
+                border: "none",
+                background: "var(--brand-accent)",
+                color: "var(--brand-canvas)",
+                fontFamily: "var(--brand-font-body)",
+                fontWeight: 800,
+                fontSize: "0.78rem",
+                letterSpacing: "0.1em",
+                textTransform: "uppercase",
+                cursor: loading ? "wait" : "pointer",
+              }}
+            >
+              {loading ? "…" : "done →"}
+            </button>
+            <button
+              type="button"
+              onClick={() => setStep("done")}
+              style={{
+                padding: "16px 12px",
+                border: "none",
+                background: "transparent",
+                color: fainter,
+                fontFamily: "var(--brand-font-body)",
+                fontWeight: 600,
+                fontSize: "0.72rem",
+                cursor: "pointer",
+                textDecoration: "underline",
+              }}
+            >
+              skip
+            </button>
+          </div>
+        </form>
+      </div>
+    );
+  }
+
   if (step === "phone") {
     return (
       <div style={{ maxWidth: 440 }}>
@@ -205,7 +348,7 @@ export default function DropAccessForm({
           ✓ drop access locked in.
         </p>
         <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 600, fontSize: "0.82rem", color: faint, marginBottom: 12 }}>
-          the text list gets the drop link 10 minutes before everyone else — with an upgraded welcome code.
+          the text list gets the drop link 10 minutes before everyone else, with an upgraded welcome code.
         </p>
         <form onSubmit={handlePhoneSubmit}>
           <input
@@ -214,17 +357,7 @@ export default function DropAccessForm({
             onChange={(e) => setPhone(e.target.value)}
             placeholder="(555) 123-4567"
             aria-label="Phone number"
-            style={{
-              width: "100%",
-              padding: "16px 20px",
-              border: "2px solid var(--brand-ink)",
-              background: "#fff",
-              color: "var(--brand-ink)",
-              fontFamily: "var(--brand-font-body)",
-              fontSize: "0.95rem",
-              fontWeight: 500,
-              marginBottom: 10,
-            }}
+            style={inputStyle}
           />
           <div style={{ display: "flex", gap: 10, alignItems: "center" }}>
             <button
@@ -265,7 +398,7 @@ export default function DropAccessForm({
           </div>
         </form>
         <p style={{ margin: "8px 0 0", fontSize: "0.6rem", color: fainter, lineHeight: 1.4, maxWidth: 400, fontFamily: "var(--brand-font-body)" }}>
-          by providing your phone number, you agree to receive marketing texts from shroomé — one text per drop. msg &amp; data rates may apply. reply STOP to opt out.
+          by providing your phone number, you agree to receive marketing texts from shroomé. one text per drop. msg &amp; data rates may apply. reply STOP to opt out.
         </p>
       </div>
     );
@@ -310,7 +443,7 @@ export default function DropAccessForm({
             whiteSpace: "nowrap",
           }}
         >
-          {loading ? "…" : `${buttonLabel} →`}
+          {loading ? "…" : `${label} →`}
         </button>
       </form>
       {captchaError && (
@@ -321,6 +454,14 @@ export default function DropAccessForm({
       {microcopy && (
         <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.72rem", color: faint, marginTop: 10 }}>
           {microcopy}
+        </p>
+      )}
+      {tier === "light" && (
+        <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.7rem", color: fainter, marginTop: 8 }}>
+          email only, just the date. want more?{" "}
+          <a href={upsellHref} style={{ color: faint, fontWeight: 700, textDecoration: "underline", textUnderlineOffset: 3 }}>
+            join the Flock →
+          </a>
         </p>
       )}
     </div>

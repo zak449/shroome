@@ -10,9 +10,11 @@ interface NavLink {
 interface MobileNavProps {
   links: NavLink[];
   prefix: string;
+  /** Where the "Join the Flock" CTA points — defaults to the homepage signup. */
+  ctaHref?: string;
 }
 
-export default function MobileNav({ links, prefix }: MobileNavProps) {
+export default function MobileNav({ links, prefix, ctaHref = "/#signup" }: MobileNavProps) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
@@ -85,7 +87,7 @@ export default function MobileNav({ links, prefix }: MobileNavProps) {
           </a>
         ))}
         <a
-          href="/#signup"
+          href={ctaHref}
           className={`${prefix}-mobile-menu-cta`}
           onClick={() => setMenuOpen(false)}
         >

@@ -12,14 +12,14 @@ import {
 } from "../lib/drop-config";
 
 export const metadata: Metadata = {
-  title: "the drop — shroomé",
+  title: "shop — shroomé | the next run",
   description:
-    "the liquid ceremonial matcha latte — vanilla or strawberry. pour it over milk; the stir is the recipe. the first run is gone. join the flock and shop the next one a day before everyone else.",
+    "the liquid ceremonial matcha latte, vanilla or strawberry. pour it over milk; the stir is the recipe. the first run is gone. join the flock and shop the next one a day before everyone else.",
   alternates: {
     canonical: "https://www.drinkshroome.com/drop",
   },
   openGraph: {
-    title: "the drop — shroomé",
+    title: "shop — shroomé | the next run",
     description:
       "the first run is gone. the next one is coming. shop it a day before everyone else.",
     url: "https://www.drinkshroome.com/drop",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "the drop — shroomé",
+    title: "shop — shroomé | the next run",
     description:
       "the first run is gone. the next one is coming. shop it a day before everyone else.",
   },
@@ -110,21 +110,29 @@ export default function DropPage() {
       />
 
       <style>{`
-        .dr-nav{position:sticky;top:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 5%;height:60px;background:rgba(var(--brand-canvas-rgb),0.88);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(var(--brand-ink-rgb),0.06)}
-        .dr-nav-logo{display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--brand-ink)}
-        .dr-nav-logo span{display:none}
-        .dr-nav-links{display:flex;gap:8px}
-        @media(max-width:768px){.dr-nav-links{display:none !important}.dr-nav-cta{display:none !important}}
-        .dr-nav-links a{font-family:var(--brand-font-body);font-size:11.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--brand-ink);opacity:.7;text-decoration:none;padding:6px 10px;transition:opacity .2s}
-        .dr-nav-links a:hover{opacity:1}
-        .dr-nav-cta{font-family:var(--brand-font-body);font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;background:var(--brand-accent);color:var(--brand-canvas);border:2px solid var(--brand-ink);padding:10px 22px;border-radius:999px;text-decoration:none;transition:transform .15s}
-        .dr-nav-cta:hover{transform:scale(1.03)}
+        .dr-announce{background:var(--brand-ink);padding:11px 16px;text-align:center;position:relative;z-index:100}
+        .dr-announce a{font-family:var(--brand-font-mono);font-weight:700;letter-spacing:0.16em;text-transform:uppercase;font-size:0.66rem;color:var(--brand-tint-soft);text-decoration:none}
+        .dr-nav{position:sticky;top:0;z-index:99;display:flex;align-items:center;justify-content:space-between;padding:14px 32px;background:rgba(var(--brand-canvas-rgb),0.88);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(var(--brand-ink-rgb),0.1)}
+        .dr-nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--brand-ink)}
+        .dr-nav-links{display:flex;align-items:center;gap:28px}
+        @media(max-width:768px){.dr-nav{padding:12px 16px}.dr-nav-links{display:none !important}}
+        .dr-nav-links a{font-family:var(--brand-font-body);font-size:0.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--brand-ink);text-decoration:none;transition:color .2s}
+        .dr-nav-links a:hover{color:var(--brand-accent-deep)}
+        .dr-nav-links a[aria-current="page"]{text-decoration:underline;text-underline-offset:5px;text-decoration-thickness:2px}
+        .dr-nav-cta{font-family:var(--brand-font-body);font-size:0.68rem !important;font-weight:800;letter-spacing:.1em;text-transform:uppercase;background:var(--brand-accent);color:var(--brand-canvas) !important;border:2px solid var(--brand-ink);padding:10px 22px;border-radius:999px;text-decoration:none;white-space:nowrap;transition:transform .15s}
+        .dr-nav-cta:hover{transform:scale(1.03);color:var(--brand-canvas) !important}
 
         .dr-h1{font-family:var(--brand-font-display);letter-spacing:-0.02em;font-weight:800;font-size:clamp(2.4rem,6vw,4rem);line-height:1.05;margin:0 0 18px;color:var(--brand-canvas)}
         .dr-h2{font-family:var(--brand-font-display);letter-spacing:-0.02em;font-weight:800;font-size:clamp(1.7rem,4vw,2.5rem);line-height:1.15;margin:0;color:var(--brand-ink)}
         .dr-eyebrow{font-family:var(--brand-font-mono);font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;margin:0 0 18px}
 
-        .dr-ledger{max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
+        .dr-ledger{max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:12px;position:relative}
+        .dr-ledger-mascot{position:absolute;right:-14px;top:-52px;width:64px;height:auto;transform:rotate(4deg)}
+        @media(max-width:820px){.dr-ledger{margin-top:46px}.dr-ledger-mascot{right:8px;top:-40px;width:50px}}
+
+        .dr-join-sachets{position:absolute;right:4%;bottom:-30px;width:clamp(150px,16vw,230px);height:auto;transform:rotate(6deg);filter:drop-shadow(0 18px 34px rgba(0,0,0,0.4));pointer-events:none}
+        .dr-join-sheep{position:absolute;left:5%;bottom:26px;width:clamp(64px,7vw,96px);height:auto;transform:rotate(-6deg);filter:invert(1) brightness(1.9);opacity:0.9;pointer-events:none}
+        @media(max-width:900px){.dr-join-sachets{width:110px;right:-24px;bottom:-40px;opacity:0.55}.dr-join-sheep{display:none}}
         .dr-ledger-row{display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--brand-ink);color:var(--brand-canvas);padding:18px 22px;flex-wrap:wrap}
         .dr-ledger-num{font-family:var(--brand-font-body);font-weight:700;font-size:0.85rem;letter-spacing:.12em;text-transform:uppercase;display:inline-flex;align-items:center;gap:10px}
         .dr-ledger-detail{font-family:var(--brand-font-mono);font-size:0.78rem;color:rgba(var(--brand-canvas-rgb),0.75)}
@@ -135,27 +143,38 @@ export default function DropPage() {
         .dr-footer a:hover{opacity:1}
       `}</style>
 
-      {/* ── NAV ── */}
+      {/* ── ANNOUNCEMENT BAR (matches homepage) ── */}
+      <div className="dr-announce">
+        <a href="#join">
+          The first run poured out in {DROP_001.soldOutInDays} days ✿ The Flock shops the next one a day early ✿ <span style={{ textDecoration: "underline", textUnderlineOffset: 3 }}>join free</span>
+        </a>
+      </div>
+
+      {/* ── NAV (matches homepage height, logo, and link typography) ── */}
       <nav className="dr-nav" aria-label="Main navigation">
         <a href="/" className="dr-nav-logo">
-          <Image src="/brand/symbol-sheep-solid.png" alt="mé the shroomé sheep" width={32} height={32} priority />
-          <Image src="/brand/wordmark.png" alt="shroomé" width={110} height={24} priority style={{ width: 110, height: "auto" }} />
+          <Image src="/brand/symbol-sheep-solid.png" alt="mé the shroomé sheep" width={34} height={34} priority style={{ height: 34, width: "auto" }} />
+          <Image src="/brand/wordmark.png" alt="shroomé" width={128} height={28} priority style={{ height: 26, width: "auto" }} />
         </a>
         <div className="dr-nav-links">
           <a href="/#why">Why shroomé</a>
-          <a href="/#ingredients">Ingredients</a>
+          <a href="/#flavors">Flavors</a>
+          <a href="/#how">The Ritual</a>
           <a href="/faq">FAQ</a>
-          <a href="/founders">First Pour</a>
+          <a href="/recipes">Recipes</a>
+          <a href="/drop" aria-current="page">Shop</a>
+          <a className="dr-nav-cta" href="#join">Join the Flock &rarr;</a>
         </div>
-        <a className="dr-nav-cta" href="#join">Join the Flock &rarr;</a>
         <MobileNav
           prefix="dr"
+          ctaHref="#join"
           links={[
             { label: "Why shroomé", href: "/#why" },
-            { label: "Ingredients", href: "/#ingredients" },
+            { label: "Flavors", href: "/#flavors" },
+            { label: "The Ritual", href: "/#how" },
             { label: "FAQ", href: "/faq" },
-            { label: "First Pour", href: "/founders" },
-            { label: "Join the Flock", href: "#join" },
+            { label: "Recipes", href: "/recipes" },
+            { label: "Shop", href: "/drop" },
           ]}
         />
       </nav>
@@ -185,15 +204,15 @@ export default function DropPage() {
           }}
         />
         <div style={{ position: "relative", maxWidth: 760, margin: "0 auto" }}>
-          <p className="dr-eyebrow" style={{ color: "var(--brand-accent)" }}>when it&apos;s gone, it&apos;s gone</p>
+          <p className="dr-eyebrow" style={{ color: "var(--brand-tint-soft)" }}>when it&apos;s gone, it&apos;s gone</p>
           <h1 className="dr-h1">
             the first run poured out in {DROP_001.soldOutInDays} days.
           </h1>
           <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.95rem", color: "rgba(var(--brand-canvas-rgb),0.7)", lineHeight: 1.7, maxWidth: 520, margin: "0 auto 32px" }}>
-            your cafe order, sachet form. we keep making it, and you keep buying it
-            faster than we can pour. the first run went in 9 days. the next one is
-            coming: same pour, same swirl, ready the second you stir. members shop it
-            a full day before the link goes public.
+            your cafe order, sachet form. we keep making it, and you keep pouring it
+            out faster than we can make it. the next run is coming: same pour, same
+            swirl, ready the second you stir. members shop it a full day before the
+            link goes public.
           </p>
           <a
             href="#join"
@@ -207,6 +226,8 @@ export default function DropPage() {
               letterSpacing: "0.1em",
               textTransform: "uppercase",
               padding: "16px 36px",
+              border: "2px solid var(--brand-canvas)",
+              borderRadius: 999,
               textDecoration: "none",
             }}
           >
@@ -223,14 +244,14 @@ export default function DropPage() {
         <div style={{ maxWidth: 1120, margin: "0 auto 36px", textAlign: "center" }}>
           <h2 className="dr-h2">build your box.</h2>
           <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.88rem", color: "rgba(var(--brand-ink-rgb),0.65)", marginTop: 10 }}>
-            dream it up now, save it, pour it when the next production goes live. the first run didn&apos;t leave a single box behind.
+            dream it up now, add it to your cart, pour it when the next run goes live. the first run didn&apos;t leave a single box behind.
           </p>
         </div>
         <BoxBuilder />
       </section>
 
       {/* ── SUBSCRIBERS SKIP THE LINE ── */}
-      <section style={{ background: "var(--brand-tint-soft)", padding: "72px 24px" }}>
+      <section style={{ background: "var(--brand-canvas)", padding: "72px 24px" }}>
         <div style={{ maxWidth: 720, margin: "0 auto", textAlign: "center" }}>
           <h2 className="dr-h2">subscribers never miss a drop.</h2>
           <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.92rem", color: "rgba(var(--brand-ink-rgb),0.7)", marginTop: 14, lineHeight: 1.7 }}>
@@ -256,7 +277,7 @@ export default function DropPage() {
       </section>
 
       {/* ── DROP LEDGER ── */}
-      <section style={{ background: "var(--brand-canvas)", padding: "80px 24px" }}>
+      <section style={{ background: "var(--brand-tint-soft)", padding: "80px 24px" }}>
         <div style={{ textAlign: "center", marginBottom: 32 }}>
           <h2 className="dr-h2">the ledger.</h2>
         </div>
@@ -264,31 +285,31 @@ export default function DropPage() {
           we keep making it. you keep pouring it out.
         </p>
         <div className="dr-ledger">
+          <Image
+            src="/brand/me-05.png"
+            alt=""
+            aria-hidden
+            width={72}
+            height={64}
+            loading="lazy"
+            className="dr-ledger-mascot"
+          />
           <div className="dr-ledger-row">
             <span className="dr-ledger-num">first run</span>
             <span className="dr-ledger-detail"><s>{X1_BOXES} boxes</s> · gone in 9 days</span>
             <span className="dr-ledger-stamp">poured out</span>
           </div>
-          <div className="dr-ledger-row" style={{ position: "relative" }}>
+          <div className="dr-ledger-row">
             <span className="dr-ledger-num">next run</span>
             <span className="dr-ledger-detail">
               {DROP_002.boxes ? `${DROP_002.boxes.toLocaleString("en-US")} boxes` : "size still secret"}
             </span>
             <span className="dr-ledger-detail">the flock hears first</span>
-            <Image
-              src="/brand/me-05.png"
-              alt=""
-              aria-hidden
-              width={72}
-              height={64}
-              loading="lazy"
-              style={{ position: "absolute", right: 18, top: -30, width: 60, height: "auto" }}
-            />
           </div>
         </div>
         <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.8rem", color: "rgba(var(--brand-ink-rgb),0.6)", textAlign: "center", maxWidth: 520, margin: "24px auto 0", lineHeight: 1.6 }}>
           no fake timers, no phantom &quot;only 3 left.&quot; when a run pours out it&apos;s
-          gone until the next production. no games, no pressure. we keep making it, and
+          gone until the next run. no games, no pressure. we keep making it, and
           the flock always pours first.
         </p>
       </section>
@@ -314,7 +335,7 @@ export default function DropPage() {
           width={300}
           height={314}
           loading="lazy"
-          style={{ position: "absolute", right: "4%", bottom: -30, width: "clamp(150px, 16vw, 230px)", height: "auto", transform: "rotate(6deg)", filter: "drop-shadow(0 18px 34px rgba(0,0,0,0.4))", pointerEvents: "none" }}
+          className="dr-join-sachets"
         />
         <Image
           src="/brand/sheep-drink.png"
@@ -323,18 +344,26 @@ export default function DropPage() {
           width={110}
           height={130}
           loading="lazy"
-          style={{ position: "absolute", left: "5%", bottom: 26, width: "clamp(64px, 7vw, 96px)", height: "auto", transform: "rotate(-6deg)", filter: "invert(1) brightness(1.9)", opacity: 0.9, pointerEvents: "none" }}
+          className="dr-join-sheep"
         />
         <div style={{ maxWidth: 640, margin: "0 auto", textAlign: "center", position: "relative" }}>
+          <p className="dr-eyebrow" style={{ color: "var(--brand-tint-soft)", marginBottom: 12 }}>shroomé membership · free · everyone&apos;s welcome</p>
           <h2 className="dr-h2" style={{ color: "var(--brand-canvas)", marginBottom: 16 }}>join the flock.</h2>
-          <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.9rem", color: "rgba(var(--brand-canvas-rgb),0.7)", lineHeight: 1.7, margin: "0 auto 32px", maxWidth: 500 }}>
+          <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.9rem", color: "rgba(var(--brand-canvas-rgb),0.7)", lineHeight: 1.7, margin: "0 auto 28px", maxWidth: 500 }}>
             a full day before the public link exists, you&apos;ll already have the cart
-            open. members vote on new flavors, get member-only merch, and free gifts
-            with every subscription. the first run went in 9 days. this one won&apos;t
-            wait either.
+            open. members vote on what we pour next, get member-only merch, and free
+            gifts with every subscription. the first run went in 9 days. this one
+            won&apos;t wait either.
           </p>
+          <div style={{ display: "flex", justifyContent: "center", gap: 10, flexWrap: "wrap", margin: "0 auto 30px" }}>
+            {["shop a day early", "flavor votes", "member-only merch", "drop-day text"].map((perk) => (
+              <span key={perk} style={{ fontFamily: "var(--brand-font-mono)", fontWeight: 700, fontSize: "0.6rem", letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(var(--brand-canvas-rgb),0.8)", border: "1px solid rgba(var(--brand-canvas-rgb),0.3)", borderRadius: 999, padding: "7px 14px" }}>
+                {perk}
+              </span>
+            ))}
+          </div>
           <div style={{ display: "flex", justifyContent: "center" }}>
-            <DropAccessForm source="drop" dark buttonLabel="join the flock" microcopy="one text per drop. no spam, ever." />
+            <DropAccessForm source="drop" dark tier="deep" buttonLabel="join the flock" microcopy="one text per drop. no spam, ever." />
           </div>
         </div>
       </section>
