@@ -23,8 +23,10 @@ interface DropAccessFormProps {
    * with an upsell link to the deep flow.
    * "deep": the Flock membership move — email, then phone, then an optional
    * name + city step, sold with community benefits.
+   * "cart": the BoxBuilder save. Email (required) + first name (optional,
+   * single field), then a warm Flock upsell on the success state.
    */
-  tier?: "light" | "deep";
+  tier?: "light" | "deep" | "cart";
   /** Where the light tier's "join the Flock" upsell points. */
   upsellHref?: string;
   /** Button label — defaults per tier. */
@@ -90,7 +92,7 @@ export default function DropAccessForm({
         const res = await fetch("/api/waitlist", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ email, turnstileToken: token, ref: referredBy, source, tier, savedBuild: getSavedBuild() }),
+          body: JSON.stringify({ email, turnstileToken: token, ref: referredBy, source, tier, name: firstName.trim() || undefined, savedBuild: getSavedBuild() }),
         });
         const data = await res.json();
         if (data.closed) {
@@ -122,7 +124,7 @@ export default function DropAccessForm({
         lp_segment: source,
       });
     },
-    [email, referredBy, source, tier]
+    [email, firstName, referredBy, source, tier]
   );
 
   // ── Load Turnstile script + render widget on captcha step ──
@@ -231,6 +233,48 @@ export default function DropAccessForm({
     fontWeight: 500,
     marginBottom: 10,
   };
+
+  if (step === "done" && tier === "cart") {
+    // Beat 3: cart is saved, warm hand-off into the Flock.
+    return (
+      <div style={{ maxWidth: 440 }}>
+        <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 800, fontSize: "1rem", color: strong, margin: 0 }}>
+          ✓ cart saved. it&apos;s waiting for the next run.
+        </p>
+        <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.78rem", color: faint, marginTop: 8 }}>
+          we&apos;ll send your link the moment the run opens, cart intact.
+        </p>
+        <div style={{ marginTop: 16, border: "2px solid var(--brand-ink)", borderRadius: 18, padding: "16px 18px", background: "rgba(var(--brand-accent-rgb),0.08)" }}>
+          <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.8rem", lineHeight: 1.6, color: strong, margin: 0 }}>
+            your cart&apos;s safe. want it a day before everyone else? that&apos;s a Flock thing.
+          </p>
+          <a
+            href={upsellHref}
+            style={{
+              display: "inline-block",
+              marginTop: 12,
+              padding: "13px 24px",
+              borderRadius: 999,
+              border: "2px solid var(--brand-ink)",
+              background: "var(--brand-accent)",
+              color: "var(--brand-canvas)",
+              fontFamily: "var(--brand-font-body)",
+              fontWeight: 800,
+              fontSize: "0.72rem",
+              letterSpacing: "0.1em",
+              textTransform: "uppercase",
+              textDecoration: "none",
+            }}
+          >
+            join the Flock →
+          </a>
+          <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.68rem", color: fainter, marginTop: 10, marginBottom: 0 }}>
+            shop a day early, vote on flavors, member-only merch. or just keep the cart, that&apos;s fine too.
+          </p>
+        </div>
+      </div>
+    );
+  }
 
   if (step === "done") {
     return (
@@ -407,6 +451,26 @@ export default function DropAccessForm({
   return (
     <div style={{ maxWidth: 440 }}>
       <form onSubmit={handleEmailSubmit} style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
+        {tier === "cart" && (
+          <input
+            type="text"
+            value={firstName}
+            onChange={(e) => setFirstName(e.target.value)}
+            placeholder="first name (optional)"
+            aria-label="First name"
+            autoComplete="given-name"
+            style={{
+              flex: "1 1 100%",
+              padding: "16px 20px",
+              border: "2px solid var(--brand-ink)",
+              background: "#fff",
+              color: "var(--brand-ink)",
+              fontFamily: "var(--brand-font-body)",
+              fontSize: "0.95rem",
+              fontWeight: 500,
+            }}
+          />
+        )}
         <input
           type="email"
           required

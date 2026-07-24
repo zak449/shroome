@@ -83,7 +83,16 @@ const pill: React.CSSProperties = {
   transition: "all 0.15s",
 };
 
-export default function BoxBuilder() {
+interface BoxBuilderProps {
+  /**
+   * Where the post-save Flock upsell CTA points. On /drop the deep membership
+   * form lives at #join on the same page; embeds elsewhere (e.g. flavor
+   * pages, which have no #join) should pass "/drop#join".
+   */
+  joinHref?: string;
+}
+
+export default function BoxBuilder({ joinHref = "#join" }: BoxBuilderProps) {
   const [vanilla, setVanilla] = useState(6);
   const [strawberry, setStrawberry] = useState(6);
   const [cadence, setCadence] = useState<Cadence>("once");
@@ -364,16 +373,17 @@ export default function BoxBuilder() {
       {carted ? (
         <div ref={reserveRef} style={{ marginTop: 18, borderTop: "2px solid rgba(var(--brand-ink-rgb),0.12)", paddingTop: 18 }}>
           <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 800, fontSize: "0.85rem", color: ink, marginBottom: 4 }}>
-            cart saved. now reserve it.
+            in your cart. now save it.
           </p>
           <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.72rem", color: "rgba(var(--brand-ink-rgb),0.6)", marginBottom: 14 }}>
-            drop your email and we&apos;ll hold this exact cart for the next run, then
-            send your link the moment it goes live.
+            drop your email (first name if you feel like it) and we&apos;ll hold this
+            exact build for the next run, then send your link the moment it goes live.
           </p>
           <DropAccessForm
             source="drop-builder"
-            upsellHref="#join"
-            buttonLabel="reserve my cart"
+            tier="cart"
+            upsellHref={joinHref}
+            buttonLabel="save my cart"
             microcopy="no charge until the next run opens and you check out."
           />
         </div>

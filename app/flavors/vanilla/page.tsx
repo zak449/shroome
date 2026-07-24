@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import MobileNav from "../../MobileNav";
 import Breadcrumb from "../../Breadcrumb";
+import BoxBuilder from "@/app/drop/BoxBuilder";
 
 const BADGES = [
   { src: "/brand/badge-matcha.png", alt: "Organic ceremonial grade matcha" },
@@ -456,6 +457,17 @@ export default function VanillaFlavorPage() {
           </div>
 
         </div>
+
+        {/* ── BUILD YOUR BOX (lavender band) ── */}
+        <section style={{ background: "var(--brand-tint-soft)", padding: "56px 6% 64px", borderTop: "1px solid rgba(var(--brand-ink-rgb),0.06)", borderBottom: "1px solid rgba(var(--brand-ink-rgb),0.06)" }}>
+          <div style={{ maxWidth: 720, margin: "0 auto" }}>
+            <h2 className="vf-label">build your box.</h2>
+            <p style={{ fontFamily: "var(--brand-font-body)", fontSize: 14, lineHeight: 1.7, color: "rgba(var(--brand-ink-rgb),0.65)", margin: "0 auto" }}>
+              mix both flavors, pick your rhythm, save your cart for the next run.
+            </p>
+            <BoxBuilder joinHref="/drop#join" />
+          </div>
+        </section>
 
         {/* ── KEY INGREDIENTS ── */}
         <div className="vf-ingredients">
