@@ -792,7 +792,7 @@ export default function Home() {
                   width={220}
                   height={220}
                   priority
-                  style={{ width: "clamp(84px, 9vw, 112px)", height: "auto", transform: `rotate(${b.rot})`, filter: "drop-shadow(0 6px 12px rgba(45,52,26,0.14))" }}
+                  style={{ width: "clamp(120px, 13vw, 158px)", height: "auto", transform: `rotate(${b.rot})`, filter: "drop-shadow(0 6px 12px rgba(45,52,26,0.14))" }}
                 />
               ))}
             </div>

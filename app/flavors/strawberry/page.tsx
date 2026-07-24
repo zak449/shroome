@@ -455,7 +455,7 @@ export default function StrawberryFlavorPage() {
           </p>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 16, margin: "26px 0 0", flexWrap: "wrap" }}>
             {BADGES.map((b, i) => (
-              <Image key={b.src} src={b.src} alt={b.alt} width={200} height={200} loading="lazy" style={{ width: "clamp(76px, 8vw, 100px)", height: "auto", transform: `rotate(${i % 2 ? 5 : -5}deg)`, filter: "drop-shadow(0 6px 12px rgba(45,52,26,0.14))" }} />
+              <Image key={b.src} src={b.src} alt={b.alt} width={200} height={200} loading="lazy" style={{ width: "clamp(108px, 11vw, 136px)", height: "auto", transform: `rotate(${i % 2 ? 5 : -5}deg)`, filter: "drop-shadow(0 6px 12px rgba(45,52,26,0.14))" }} />
             ))}
           </div>
 
