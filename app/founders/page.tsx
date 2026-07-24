@@ -20,9 +20,11 @@ export default function FoundersPage() {
         .fp-eyebrow{font-family:var(--brand-font-mono);font-weight:700;font-size:0.66rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--brand-ink);margin-bottom:18px}
         .fp-h1{font-family:var(--brand-font-display);font-weight:800;letter-spacing:-0.02em;font-size:clamp(2.4rem,6vw,3.6rem);line-height:1.03;color:var(--brand-ink);margin:0 0 18px}
         .fp-sub{font-family:var(--brand-font-body);font-size:1rem;line-height:1.7;color:rgba(var(--brand-ink-rgb),0.75);margin:0 auto 30px;max-width:460px}
-        .fp-ledger{display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--brand-ink);color:var(--brand-canvas);border-radius:999px;padding:14px 24px;margin:0 auto 30px;max-width:440px;flex-wrap:wrap}
-        .fp-ledger span{font-family:var(--brand-font-mono);font-weight:700;font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase}
-        .fp-ledger .gone{background:var(--brand-tint-soft);color:var(--brand-ink);padding:4px 12px;border-radius:999px;transform:rotate(-2deg)}
+        .fp-plaque{position:relative;background:var(--brand-canvas);border:3px solid var(--brand-ink);border-radius:20px;max-width:440px;margin:0 auto 34px;padding:26px 24px 0;transform:rotate(-1deg);box-shadow:0 14px 34px rgba(45,52,26,0.16);overflow:hidden}
+        .fp-plaque p{font-family:var(--brand-font-mono);font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--brand-ink);margin:0}
+        .fp-plaque .l1{font-size:0.72rem;padding-bottom:12px}
+        .fp-plaque .l2{font-size:0.66rem;border-top:1px solid rgba(var(--brand-ink-rgb),0.2);padding:12px 0}
+        .fp-plaque .l3{font-size:0.62rem;background:var(--brand-tint-soft);margin:0 -24px;padding:12px 24px}
         .fp-cta{display:inline-block;background:var(--brand-accent);border:2px solid var(--brand-ink);border-radius:999px;padding:16px 32px;font-family:var(--brand-font-body);font-weight:800;font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--brand-canvas);text-decoration:none}
         .fp-secondary{display:block;margin-top:16px;font-family:var(--brand-font-body);font-size:0.75rem;color:rgba(var(--brand-ink-rgb),0.6);text-decoration:underline}
         .fp-flower{position:absolute;pointer-events:none}
@@ -52,9 +54,11 @@ export default function FoundersPage() {
               list, gone in 9 days. If you were in it, you know. If you weren&apos;t,
               Drop 002 is your shot.
             </p>
-            <div className="fp-ledger">
-              <span>First Pour · 500 boxes</span>
-              <span className="gone">Sold out</span>
+            <div className="fp-plaque">
+              <Image src="/brand/symbol-sheep-solid.png" width={40} height={44} alt="" aria-hidden style={{ width: 36, height: "auto", margin: "0 auto 12px", display: "block" }} />
+              <p className="l1">The First Pour · Drop 001</p>
+              <p className="l2">500/500 boxes · Poured out · 9 days</p>
+              <p className="l3">If you know, you poured</p>
             </div>
             <a className="fp-cta" href="/drop#waitlist">Join the Flock — Drop 002 →</a>
             <a className="fp-secondary" href="/">Back to the mothership</a>

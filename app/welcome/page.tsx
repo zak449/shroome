@@ -248,6 +248,19 @@ export default function WelcomePage() {
           collagen — already made, waiting in your fridge. Tear, pour over milk, go.
           No crash, no line, no name spelled wrong on a cup.
         </p>
+        <div style={{ position: "relative", maxWidth: 380, margin: "40px auto 0" }}>
+          <img
+            src="/brand/hero-pour.jpg"
+            alt="shroomé sachet pouring vivid green matcha over milk in a bubble glass"
+            style={{ width: "100%", height: "auto", borderRadius: 28, border: "3px solid " + C.ink, boxShadow: "0 22px 52px rgba(45,52,26,0.22)", transform: "rotate(1.5deg)", display: "block" }}
+          />
+          <img
+            src="/brand/badge-ready-to-pour.png"
+            alt=""
+            aria-hidden
+            style={{ position: "absolute", top: -26, left: -22, width: 96, height: "auto", transform: "rotate(-10deg)", filter: "drop-shadow(0 8px 16px rgba(45,52,26,0.2))" }}
+          />
+        </div>
       </section>
 
       {/* ── SOCIAL PROOF STRIP ─────────────────────── */}
@@ -445,13 +458,22 @@ export default function WelcomePage() {
         style={{
           background: C.ink,
           padding: "80px 24px",
+          position: "relative",
+          overflow: "hidden",
         }}
       >
+        <img
+          src="/brand/wordmark-scatter.png"
+          alt=""
+          aria-hidden
+          style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", opacity: 0.08, pointerEvents: "none" }}
+        />
         <div
           style={{
             maxWidth: 520,
             margin: "0 auto",
             textAlign: "center",
+            position: "relative",
           }}
         >
           <h2
@@ -466,7 +488,7 @@ export default function WelcomePage() {
               letterSpacing: "-0.02em",
             }}
           >
-            Drop 001 sold out in 9 days. Don&rsquo;t sleep on 002.
+            Drop 001 poured out in 9 days. Don&rsquo;t sleep on 002.
           </h2>
           <p
             style={{
@@ -489,6 +511,7 @@ export default function WelcomePage() {
                 padding: "16px 0",
               }}
             >
+              <img src="/brand/sheep-drink.png" alt="" aria-hidden style={{ width: 76, height: "auto", margin: "0 auto 14px", display: "block" }} />
               You&rsquo;re in! Check your email.
             </div>
           ) : step === "captcha" ? (

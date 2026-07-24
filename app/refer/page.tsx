@@ -18,10 +18,10 @@ declare global {
 // CFO ruling 2026-07-14: referral rewards are FIXED credits — $5 / $10 / $15
 // at 1 / 3 / 5 referrals (hard cap), plus the case-001 leaderboard prize.
 const tiers = [
-  { count: "1", label: "friend", reward: "$5 credit on your account", color: "var(--brand-accent)" },
-  { count: "3", label: "friends", reward: "$10 total credit", color: "var(--brand-accent)" },
-  { count: "5", label: "friends", reward: "$15 total credit — that’s the cap", color: "var(--brand-tint-soft)" },
-  { count: "#1", label: "top ref", reward: "Case 001 — our top referrer takes home a hand-numbered box from the very first case", color: "var(--brand-flavor-functional)" },
+  { count: "1", label: "friend", reward: "$5 credit on your account", color: "var(--brand-accent)", me: "/brand/me-03.png" },
+  { count: "3", label: "friends", reward: "$10 total credit", color: "var(--brand-accent)", me: "/brand/me-05.png" },
+  { count: "5", label: "friends", reward: "$15 total credit — that’s the cap", color: "var(--brand-tint-soft)", me: "/brand/me-07.png" },
+  { count: "#1", label: "top ref", reward: "Case 001 — our top referrer takes home a hand-numbered box from the very first case", color: "var(--brand-flavor-functional)", me: "/brand/sheep-drink.png" },
 ];
 
 const faqs = [
@@ -627,8 +627,9 @@ export default function ReferPage() {
                   <span className="ref-tier-badge-num">{tier.count}</span>
                   {tier.label}
                 </div>
-                <div className="ref-tier-content">
-                  <p className="ref-tier-reward">{tier.reward}</p>
+                <div className="ref-tier-content" style={{ display: "flex", alignItems: "center", gap: 14 }}>
+                  <img src={tier.me} alt="" aria-hidden style={{ width: i === 3 ? 52 : 44, height: "auto", flexShrink: 0, transform: `rotate(${i % 2 ? 6 : -6}deg)` }} />
+                  <p className="ref-tier-reward" style={{ flex: 1 }}>{tier.reward}</p>
                 </div>
               </div>
             ))}

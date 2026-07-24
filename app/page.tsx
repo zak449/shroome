@@ -731,7 +731,7 @@ export default function Home() {
                 opacity: 0,
               }}
             >
-              Drop 001 sold out — restock soon
+              Drop 001 poured out — 500/500
             </p>
 
             <h1
@@ -767,7 +767,7 @@ export default function Home() {
               }}
             >
               Ceremonial matcha, lion&apos;s mane + collagen — <strong>poured over milk in 30
-              seconds.</strong> Drop 001 sold out in 9 days.
+              seconds.</strong> Drop 001 poured out in 9 days.
             </p>
 
             {/* Restock notify form */}
@@ -775,7 +775,24 @@ export default function Home() {
               {restockForm("hero")}
             </div>
 
-
+            {/* Ingredient badge stickers */}
+            <div className="fade-up delay-650" style={{ display: "flex", alignItems: "center", gap: 18, marginTop: 30, flexWrap: "wrap", opacity: 0 }}>
+              {[
+                { src: "/brand/badge-matcha.png", alt: "Organic ceremonial grade matcha", rot: "-6deg" },
+                { src: "/brand/badge-b-glucans.png", alt: "Organic beta-glucans, lion's mane", rot: "4deg" },
+                { src: "/brand/badge-collagen.png", alt: "With grass-fed type 1 and type 3 collagen", rot: "-3deg" },
+              ].map((b) => (
+                <Image
+                  key={b.src}
+                  src={b.src}
+                  alt={b.alt}
+                  width={220}
+                  height={220}
+                  priority
+                  style={{ width: "clamp(84px, 9vw, 112px)", height: "auto", transform: `rotate(${b.rot})`, filter: "drop-shadow(0 6px 12px rgba(45,52,26,0.14))" }}
+                />
+              ))}
+            </div>
           </div>
 
           {/* Right — hero pour photo */}
@@ -820,15 +837,18 @@ export default function Home() {
                   bottom: 26,
                   right: -18,
                   background: "var(--brand-ink)",
-                  color: "var(--brand-canvas)",
-                  borderRadius: 999,
+                  borderRadius: 18,
                   padding: "12px 20px",
                   transform: "rotate(3deg)",
-                  ...tagStyle,
-                  fontSize: "0.66rem",
+                  textAlign: "center",
                 }}
               >
-                Sold out — again
+                <p style={{ ...tagStyle, fontSize: "0.66rem", color: "var(--brand-canvas)" }}>
+                  Drop 001 · 500/500
+                </p>
+                <p style={{ ...tagStyle, fontSize: "0.56rem", color: "var(--brand-tint-soft)", borderTop: "1px solid rgba(254,255,248,0.25)", paddingTop: 4, marginTop: 4 }}>
+                  Poured out in 9 days
+                </p>
               </div>
             </div>
           </div>
@@ -910,14 +930,14 @@ export default function Home() {
               Pick your pour.
             </h2>
             <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.92rem", color: "rgba(var(--brand-ink-rgb),0.65)", marginBottom: 48 }}>
-              Both sold out in 9 days. Restock list gets them first.
+              Both poured out in 9 days. The Flock pours first next time.
             </p>
           </div>
 
           <div className="flavor-cards-wrap" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 32 }}>
             {[
-              { src: "/sachet-vanilla.png", name: "Vanilla", note: "Warm · Smooth · Everyday", href: "/flavors/vanilla", bg: "var(--brand-flavor-functional)", me: "/brand/me-04.png", meStyle: { top: 14, left: 14, width: 74, transform: "rotate(-10deg)" }, alt: "shroomé Vanilla liquid ceremonial matcha latte sachet" },
-              { src: "/sachet-strawberry.png", name: "Strawberry", note: "Bright · Fruity · Loud", href: "/flavors/strawberry", bg: "var(--brand-tint-blush)", me: "/brand/me-02.png", meStyle: { top: 18, left: 16, width: 80, transform: "rotate(8deg)" }, alt: "shroomé Strawberry liquid ceremonial matcha latte sachet" },
+              { src: "/sachet-vanilla.png", name: "Vanilla", note: "Warm · Smooth · Everyday", href: "/flavors/vanilla", bg: "var(--brand-flavor-functional)", me: "/brand/me-04.png", meStyle: { top: 14, left: 14, width: 74, transform: "rotate(-10deg)" }, alt: "shroomé Vanilla liquid ceremonial matcha latte sachet", stamp: "Poured out · Day 9", stampBg: "var(--brand-ink)", stampColor: "var(--brand-canvas)", stampRotate: "rotate(6deg)" },
+              { src: "/sachet-strawberry.png", name: "Strawberry", note: "Bright · Fruity · Loud", href: "/flavors/strawberry", bg: "var(--brand-tint-blush)", me: "/brand/me-02.png", meStyle: { top: 18, left: 16, width: 80, transform: "rotate(8deg)" }, alt: "shroomé Strawberry liquid ceremonial matcha latte sachet", stamp: "Gone. Loudly.", stampBg: "var(--brand-flavor-strawberry)", stampColor: "var(--brand-ink)", stampRotate: "rotate(-5deg)" },
             ].map((f, i) => (
               <a key={f.name} href={f.href} {...anim(`flavor-${i}`, i * 0.12)} style={{ ...anim(`flavor-${i}`, i * 0.12).style, textDecoration: "none", color: "inherit" }}>
                 <div className="lift" style={{ background: f.bg, border: "3px solid var(--brand-ink)", borderRadius: 32, padding: "28px 16px 26px", position: "relative", overflow: "hidden" }}>
@@ -927,16 +947,17 @@ export default function Home() {
                       top: 18,
                       right: 18,
                       zIndex: 2,
-                      background: "var(--brand-ink)",
-                      color: "var(--brand-canvas)",
+                      background: f.stampBg,
+                      color: f.stampColor,
+                      border: "2px solid var(--brand-ink)",
                       borderRadius: 999,
                       padding: "8px 16px",
-                      transform: "rotate(6deg)",
+                      transform: f.stampRotate,
                       ...tagStyle,
                       fontSize: "0.68rem",
                     }}
                   >
-                    Sold out
+                    {f.stamp}
                   </div>
                   <Image
                     src={f.me}
@@ -1014,9 +1035,9 @@ export default function Home() {
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 20 }}>
             {[
-              { quote: "I replaced my $7 oat milk latte with this. Tastes better, costs less, and I actually feel focused.", name: "Sarah M.", loc: "Austin, TX", bg: "var(--brand-tint-soft)", face: "/brand/model-cloud.jpg" },
-              { quote: "The strawberry one is insane. The pour is genuinely the prettiest thing in my kitchen.", name: "Mike R.", loc: "Brooklyn, NY", bg: "var(--brand-canvas)", face: "/brand/ig-scallop-model.jpg" },
-              { quote: "Finally a matcha that doesn't taste like grass. The vanilla is my daily non-negotiable.", name: "Jess L.", loc: "Portland, OR", bg: "var(--brand-flavor-functional)", face: "/brand/ig-lavender-face.jpg" },
+              { quote: "I replaced my $7 oat milk latte with this. Tastes better, costs less, and I actually feel focused.", name: "Sarah M.", loc: "Austin, TX", bg: "var(--brand-tint-soft)", face: "/brand/me-02.png" },
+              { quote: "The strawberry one is insane. The pour is genuinely the prettiest thing in my kitchen.", name: "Mike R.", loc: "Brooklyn, NY", bg: "var(--brand-canvas)", face: "/brand/me-04.png" },
+              { quote: "Finally a matcha that doesn't taste like grass. The vanilla is my daily non-negotiable.", name: "Jess L.", loc: "Portland, OR", bg: "var(--brand-flavor-functional)", face: "/brand/me-06.png" },
             ].map((t, i) => (
               <div
                 key={t.name}
@@ -1035,7 +1056,7 @@ export default function Home() {
                   &ldquo;{t.quote}&rdquo;
                 </p>
                 <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-                  <Image src={t.face} alt="" aria-hidden width={44} height={44} loading="lazy" style={{ width: 44, height: 44, borderRadius: "50%", objectFit: "cover", border: "2px solid var(--brand-ink)" }} />
+                  <Image src={t.face} alt="" aria-hidden width={44} height={44} loading="lazy" style={{ width: 44, height: 44, borderRadius: "50%", objectFit: "contain", background: "var(--brand-canvas)", padding: 4, border: "2px solid var(--brand-ink)" }} />
                   <div>
                     <p style={{ ...tagStyle, fontSize: "0.68rem", color: "var(--brand-ink)" }}>{t.name}</p>
                     <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.68rem", color: "rgba(var(--brand-ink-rgb),0.55)" }}>{t.loc} · Drop 001</p>
@@ -1205,33 +1226,71 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ════════════════════ THE POUR — EDITORIAL BAND ════════════════════ */}
-      <section
-        aria-label="The pour"
-        style={{
-          height: "min(46vw, 380px)",
-          backgroundImage: "url(/brand/cup-logo.jpg)",
-          backgroundSize: "cover",
-          backgroundPosition: "center 58%",
-          position: "relative",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        <p
+      {/* ════════════════════ THE POUR — POURED OUT MOMENT ════════════════════ */}
+      <section aria-label="The pour that poured out Drop 001" style={{ position: "relative" }}>
+        <style>{`
+          @keyframes pourTicker { to { transform: translateX(-50%); } }
+          .pour-ticker-track { display: flex; width: max-content; animation: pourTicker 36s linear infinite; }
+          @media (prefers-reduced-motion: reduce) { .pour-ticker-track { animation: none; } }
+        `}</style>
+        <div
           style={{
-            background: "rgba(254,255,248,0.92)",
-            border: "2px solid var(--brand-ink)",
-            borderRadius: 999,
-            padding: "12px 26px",
-            ...tagStyle,
-            fontSize: "0.7rem",
-            color: "var(--brand-ink)",
+            minHeight: "min(64vw, 520px)",
+            backgroundImage: "url(/brand/cup-logo.jpg)",
+            backgroundSize: "cover",
+            backgroundPosition: "center 42%",
+            display: "flex",
+            alignItems: "center",
+            padding: "56px 0",
           }}
         >
-          the prettiest pour on your fyp ✿ @drinkshroome
-        </p>
+          <div style={{ maxWidth: 1080, width: "100%", margin: "0 auto", padding: "0 24px" }}>
+            <div
+              style={{
+                maxWidth: 430,
+                background: "rgba(254,255,248,0.94)",
+                border: "3px solid var(--brand-ink)",
+                borderRadius: 28,
+                padding: "clamp(24px, 3.5vw, 36px)",
+                transform: "rotate(-1deg)",
+              }}
+            >
+              <p style={{ ...tagStyle, fontSize: "0.64rem", color: "var(--brand-accent-deep)", marginBottom: 12 }}>
+                The cup that did the numbers
+              </p>
+              <h2 style={{ fontFamily: "var(--brand-font-display)", fontWeight: 800, fontSize: "clamp(1.7rem, 3.6vw, 2.4rem)", color: "var(--brand-ink)", lineHeight: 1.08, letterSpacing: "-0.02em", marginBottom: 12 }}>
+                This pour cleared 500 boxes in 9 days.
+              </h2>
+              <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.9rem", color: "rgba(var(--brand-ink-rgb),0.75)", lineHeight: 1.65, marginBottom: 20 }}>
+                The prettiest pour on your FYP — and the reason Drop 001 is history.
+                Next run, it happens in your kitchen.
+              </p>
+              <a
+                href="https://instagram.com/drinkshroome"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ display: "inline-block", background: "var(--brand-accent)", color: "var(--brand-canvas)", border: "2px solid var(--brand-ink)", borderRadius: 999, padding: "13px 24px", fontFamily: "var(--brand-font-body)", fontWeight: 800, fontSize: "0.72rem", letterSpacing: "0.1em", textTransform: "uppercase", textDecoration: "none" }}
+              >
+                Follow @drinkshroome →
+              </a>
+            </div>
+          </div>
+        </div>
+        {/* POURED OUT ticker strip */}
+        <div aria-hidden style={{ background: "var(--brand-ink)", overflow: "hidden", padding: "12px 0" }}>
+          <div className="pour-ticker-track">
+            {[0, 1].map((k) => (
+              <p key={k} style={{ ...tagStyle, fontSize: "0.68rem", color: "var(--brand-canvas)", whiteSpace: "nowrap", paddingRight: 8 }}>
+                drop 001: poured out <span style={{ color: "var(--brand-tint-soft)" }}>✿</span> 500/500 boxes{" "}
+                <span style={{ color: "var(--brand-tint-soft)" }}>✿</span> 9 days{" "}
+                <span style={{ color: "var(--brand-tint-soft)" }}>✿</span> zero left{" "}
+                <span style={{ color: "var(--brand-tint-soft)" }}>✿</span> the ledger never lies{" "}
+                <span style={{ color: "var(--brand-tint-soft)" }}>✿</span> the flock pours first{" "}
+                <span style={{ color: "var(--brand-tint-soft)" }}>✿</span>{" "}
+              </p>
+            ))}
+          </div>
+        </div>
       </section>
 
       {/* ════════════════════ OUR VIBE IS MATCHA-IN — LIFESTYLE ════════════════════ */}
@@ -1250,10 +1309,10 @@ export default function Home() {
             {[
               { src: "/brand/ig-matcha-in.jpg", alt: "Friends at a picnic — our vibe is matcha-in" },
               { src: "/brand/ig-glow-skin.jpg", alt: "Glow and skin — smiling model in sunlight" },
-              { src: "/brand/ig-sachet-sip.jpg", alt: "Sipping an iced shroomé matcha, sachet in hand" },
+              { src: "/brand/model-cloud.jpg", alt: "Soft life — resting on the mé cloud" },
               { src: "/brand/ig-iced-close.jpg", alt: "Iced matcha with the mé sheep — pour creative" },
               { src: "/brand/ig-good-energy.jpg", alt: "Ready to enjoy life with good energy — cozy moment" },
-              { src: "/brand/cup-logo.jpg", alt: "Iced shroomé matcha latte in a branded cup" },
+              { src: "/brand/ig-mushroom-hat.jpg", alt: "Hammock daydream with the mé sheep cloud" },
             ].map((g, i) => (
               <div key={g.src} className="wobble">
                 <Image
@@ -1286,12 +1345,21 @@ export default function Home() {
         <div style={{ maxWidth: 1080, margin: "0 auto", display: "flex", alignItems: "center", gap: "clamp(28px, 4vw, 60px)", flexWrap: "wrap" }}>
           <div {...anim("arrival-img")} style={{ ...anim("arrival-img").style, flex: "1 1 420px", minWidth: 300, position: "relative" }}>
             <Image
-              src="/brand/shipper-box.jpg"
-              alt="The shroomé box on a doorstep — Pour. Swirl. Go."
-              width={1600}
-              height={900}
+              src="/brand/ig-sachet-sip.jpg"
+              alt="Sipping an iced shroomé matcha at home — strawberry sachet in hand"
+              width={1000}
+              height={1250}
               loading="lazy"
-              style={{ width: "100%", height: "auto", borderRadius: 24, border: "3px solid var(--brand-ink)", boxShadow: "0 20px 48px rgba(45,52,26,0.18)", display: "block" }}
+              style={{ width: "100%", height: "auto", aspectRatio: "4 / 4.6", objectFit: "cover", borderRadius: 24, border: "3px solid var(--brand-ink)", boxShadow: "0 20px 48px rgba(45,52,26,0.18)", display: "block" }}
+            />
+            <Image
+              src="/brand/badge-ready-to-pour.png"
+              alt=""
+              aria-hidden
+              width={160}
+              height={160}
+              loading="lazy"
+              style={{ position: "absolute", top: -28, right: -20, width: "clamp(90px, 12vw, 130px)", height: "auto", transform: "rotate(10deg)", filter: "drop-shadow(0 8px 16px rgba(45,52,26,0.2))" }}
             />
           </div>
           <div {...anim("arrival-copy", 0.12)} style={{ ...anim("arrival-copy", 0.12).style, flex: "1 1 380px", minWidth: 280 }}>
@@ -1334,9 +1402,10 @@ export default function Home() {
             onClick={(e) => e.stopPropagation()}
             role="dialog"
             aria-modal="true"
-            style={{ background: "var(--brand-canvas)", border: "3px solid var(--brand-ink)", borderRadius: 28, padding: "clamp(26px, 5vw, 44px)", maxWidth: 480, width: "100%", textAlign: "center", position: "relative" }}
+            style={{ background: "var(--brand-canvas)", border: "3px solid var(--brand-ink)", borderRadius: 28, padding: "clamp(26px, 5vw, 44px)", maxWidth: 480, width: "100%", textAlign: "center", position: "relative", overflow: "hidden" }}
           >
-            <button onClick={() => setGateBox(null)} aria-label="Close" style={{ position: "absolute", top: 14, right: 18, background: "none", border: "none", fontSize: "1.4rem", color: "rgba(var(--brand-ink-rgb),0.5)", cursor: "pointer" }}>×</button>
+            <div aria-hidden style={{ position: "absolute", inset: 0, backgroundImage: "url(/brand/pattern-tile.png)", backgroundSize: 200, opacity: 0.07, pointerEvents: "none" }} />
+            <button onClick={() => setGateBox(null)} aria-label="Close" style={{ position: "absolute", top: 14, right: 18, background: "none", border: "none", fontSize: "1.4rem", color: "rgba(var(--brand-ink-rgb),0.5)", cursor: "pointer", zIndex: 1 }}>×</button>
             <Image src="/brand/symbol-sheep-solid.png" width={64} height={72} alt="" aria-hidden style={{ width: 56, height: "auto", margin: "0 auto 14px", display: "block" }} />
             <p style={{ ...tagStyle, fontSize: "0.64rem", color: "var(--brand-accent-deep)", marginBottom: 10 }}>
               {gateBox} · Drop 002

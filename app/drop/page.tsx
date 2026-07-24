@@ -226,19 +226,32 @@ export default function DropPage() {
 
       {/* ── HERO ── */}
       <section style={{ background: "var(--brand-ink)", padding: "88px 24px", textAlign: "center", position: "relative", overflow: "hidden" }}>
+        {/* the vault shot — drop 001's boxes, stacked like the archive they are */}
         <div
           aria-hidden="true"
           style={{
             position: "absolute",
-            inset: "-30%",
-            background: "radial-gradient(ellipse 50% 40% at 50% 45%, rgba(var(--brand-flavor-functional-rgb),0.22) 0%, transparent 70%)",
+            inset: 0,
+            backgroundImage: "url(/brand/box-stack.jpg)",
+            backgroundSize: "cover",
+            backgroundPosition: "center 60%",
+            opacity: 0.28,
+            pointerEvents: "none",
+          }}
+        />
+        <div
+          aria-hidden="true"
+          style={{
+            position: "absolute",
+            inset: 0,
+            background: "linear-gradient(180deg, rgba(45,52,26,0.55) 0%, rgba(45,52,26,0.2) 45%, rgba(45,52,26,0.75) 100%)",
             pointerEvents: "none",
           }}
         />
         <div style={{ position: "relative", maxWidth: 760, margin: "0 auto" }}>
           <p className="dr-eyebrow" style={{ color: "var(--brand-accent)" }}>when it&apos;s gone, it&apos;s gone</p>
           <h1 className="dr-h1">
-            drop 001 — sold out in {DROP_001.soldOutInDays} days.
+            drop 001 — poured out in {DROP_001.soldOutInDays} days.
           </h1>
           <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.95rem", color: "rgba(var(--brand-canvas-rgb),0.7)", lineHeight: 1.7, maxWidth: 520, margin: "0 auto 32px" }}>
             your cafe order, sachet form — and it only exists in drops. drop 001 came and
@@ -343,13 +356,16 @@ export default function DropPage() {
         <div style={{ textAlign: "center", marginBottom: 32 }}>
           <h2 className="dr-h2">the ledger.</h2>
         </div>
+        <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.85rem", color: "rgba(var(--brand-ink-rgb),0.6)", textAlign: "center", margin: "-18px 0 28px" }}>
+          every drop ends. that&apos;s what makes it a drop.
+        </p>
         <div className="dr-ledger">
           <div className="dr-ledger-row">
             <span className="dr-ledger-num">drop 001</span>
-            <span className="dr-ledger-detail"><s>{X1_BOXES} boxes</s></span>
-            <span className="dr-ledger-stamp">sold out</span>
+            <span className="dr-ledger-detail"><s>{X1_BOXES} boxes</s> · 500/500 · day 9</span>
+            <span className="dr-ledger-stamp">poured out</span>
           </div>
-          <div className="dr-ledger-row">
+          <div className="dr-ledger-row" style={{ position: "relative" }}>
             <span className="dr-ledger-num">
               <span className="dr-dot" aria-hidden="true" />
               drop 002
@@ -358,6 +374,20 @@ export default function DropPage() {
               {DROP_002.boxes ? `${DROP_002.boxes.toLocaleString("en-US")} boxes` : "size still secret"}
             </span>
             <span className="dr-ledger-detail">the flock hears first</span>
+            <Image
+              src="/brand/me-05.png"
+              alt=""
+              aria-hidden
+              width={72}
+              height={64}
+              loading="lazy"
+              style={{ position: "absolute", right: 18, top: -30, width: 60, height: "auto" }}
+            />
+          </div>
+          <div className="dr-ledger-row" style={{ opacity: 0.45 }}>
+            <span className="dr-ledger-num">drop 003</span>
+            <span className="dr-ledger-detail">not even a rumor yet</span>
+            <span />
           </div>
         </div>
         <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.8rem", color: "rgba(var(--brand-ink-rgb),0.6)", textAlign: "center", maxWidth: 520, margin: "24px auto 0", lineHeight: 1.6 }}>

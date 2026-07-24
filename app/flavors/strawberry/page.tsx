@@ -5,6 +5,13 @@ import Image from "next/image";
 import MobileNav from "../../MobileNav";
 import Breadcrumb from "../../Breadcrumb";
 
+const BADGES = [
+  { src: "/brand/badge-matcha.png", alt: "Organic ceremonial grade matcha" },
+  { src: "/brand/badge-b-glucans.png", alt: "Organic beta-glucans, lion's mane" },
+  { src: "/brand/badge-collagen.png", alt: "With grass-fed type 1 and type 3 collagen" },
+  { src: "/brand/badge-ready-to-pour.png", alt: "Ready to pour" },
+];
+
 export const metadata: Metadata = {
   title: "Strawberry — shroomé | Liquid Strawberry Matcha Latte",
   description:
@@ -383,7 +390,7 @@ export default function StrawberryFlavorPage() {
               height={639}
               priority
             />
-            <div className="sf-hero-tag">Flavor Profile &middot; Drop 001 sold out</div>
+            <div className="sf-hero-tag">Flavor Profile &middot; Drop 001 poured out &middot; 500/500</div>
             <h1>Strawberry</h1>
             <p className="sf-hero-desc">
               Fruity, bright, and naturally sweet. Real freeze-dried strawberry
@@ -408,7 +415,7 @@ export default function StrawberryFlavorPage() {
                 textDecoration: "none",
               }}
             >
-              Sold out &mdash; join the Flock for Drop 002 &rarr;
+              Missed it? The Flock pours first &mdash; Drop 002 &rarr;
             </a>
           </div>
         </section>
@@ -443,9 +450,15 @@ export default function StrawberryFlavorPage() {
             ))}
           </div>
           <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.72rem", color: "rgba(var(--brand-ink-rgb),0.55)", marginTop: 14 }}>
-            All packs sold out with Drop 001.{" "}
+            Every pack poured out with Drop 001.{" "}
             <a href="/drop" style={{ color: "var(--brand-ink)", fontWeight: 700, textDecoration: "underline" }}>Build your Drop 002 box →</a>
           </p>
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 16, margin: "26px 0 0", flexWrap: "wrap" }}>
+            {BADGES.map((b, i) => (
+              <Image key={b.src} src={b.src} alt={b.alt} width={200} height={200} loading="lazy" style={{ width: "clamp(76px, 8vw, 100px)", height: "auto", transform: `rotate(${i % 2 ? 5 : -5}deg)`, filter: "drop-shadow(0 6px 12px rgba(45,52,26,0.14))" }} />
+            ))}
+          </div>
+
         </div>
 
         {/* ── KEY INGREDIENTS ── */}

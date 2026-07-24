@@ -28,7 +28,7 @@ export const DROP_002 = {
   boxes: null as number | null,
   /**
    * Confirmed open date (ISO string) — null until ops confirms.
-   * While null, pages render "next drop: soon. the access list gets the
+   * While null, pages render "next drop: soon. the flock hears the
    * date first." instead of a countdown. NEVER set a placeholder date.
    */
   openDate: null as string | null,
@@ -49,7 +49,7 @@ export const DROP2_LEDGER = DROP_002.boxes
 
 /** Fallback line rendered while no confirmed drop 002 date exists. */
 export const DROP2_SOON_LINE =
-  "next drop: soon. the access list gets the date first.";
+  "next drop: soon. the flock hears the date first.";
 
 /**
  * Access-list momentum copy — same source of truth as the homepage hero

@@ -116,7 +116,7 @@ export default function BoxBuilder() {
           textTransform: "uppercase",
         }}
       >
-        Drop 001 · Sold out
+        Drop 001 · 500/500 poured
       </div>
 
       {/* ── Size ── */}
@@ -245,8 +245,11 @@ export default function BoxBuilder() {
           cursor: "not-allowed",
         }}
       >
-        Sold out — down to the last sachet
+        Poured out — every last sachet
       </button>
+      <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.66rem", color: "rgba(var(--brand-ink-rgb),0.55)", textAlign: "center", marginTop: 8 }}>
+        your build isn&apos;t dead — it&apos;s early.
+      </p>
       <a
         href="#waitlist"
         style={{

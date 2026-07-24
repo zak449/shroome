@@ -276,7 +276,12 @@ export default function ExitPopup() {
 
           {step === "email" ? (
             <>
-              <img src="/brand/symbol-sheep-solid.png" alt="" aria-hidden style={{ width: 48, height: "auto", margin: "0 auto 14px", display: "block" }} />
+              <img
+                src="/brand/ready-to-glow.jpg"
+                alt=""
+                aria-hidden
+                style={{ width: 130, height: 130, objectFit: "cover", borderRadius: "50%", border: "3px solid var(--brand-ink)", margin: "0 auto 16px", display: "block" }}
+              />
               <h2 className="ep-title">
                 leaving before you&apos;re <em>in the Flock?</em>
               </h2>
@@ -326,7 +331,7 @@ export default function ExitPopup() {
             </>
           ) : step === "phone" ? (
             <>
-              <div className="ep-emoji">📱</div>
+              <img src="/brand/sheep-drink.png" alt="" aria-hidden style={{ width: 72, height: "auto", margin: "0 auto 12px", display: "block" }} />
               <h2 className="ep-success-title">you&apos;re in line!</h2>
               <p className="ep-sub">
                 The text hits your phone <strong style={{ color: "var(--brand-ink)", fontWeight: 700 }}>before anything else we send</strong>. Add your number and you&apos;ll be pouring while everyone else is still finding out.
@@ -356,7 +361,7 @@ export default function ExitPopup() {
             </>
           ) : (
             <>
-              <div className="ep-emoji">💚</div>
+              <img src="/brand/sheep-drink.png" alt="" aria-hidden style={{ width: 72, height: "auto", margin: "0 auto 12px", display: "block" }} />
               <h2 className="ep-success-title">you&apos;re all set!</h2>
               <p className="ep-success-sub">
                 Watch your inbox for the Drop 002 link.{phone ? " The text gets to you first." : ""} You&apos;re ahead of the line.
