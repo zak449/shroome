@@ -5,12 +5,12 @@ import { X1_BOXES, DROP2_RUN } from "../../lib/drop-config";
 export const metadata: Metadata = {
   title: "shroomé — break up with the crash, not with caffeine",
   description:
-    "~60mg caffeine + matcha's natural l-theanine for calm, steady energy. a liquid ceremonial matcha latte. drop 001 sold out — get access to drop 002.",
+    "~60mg caffeine + matcha's natural l-theanine for calm, steady energy. a liquid ceremonial matcha latte. the first run sold out — get access to the next run.",
   robots: { index: false, follow: false },
   openGraph: {
     title: "shroomé — break up with the crash, not with caffeine",
     description:
-      "~60mg caffeine + matcha's natural l-theanine for calm, steady energy. a liquid ceremonial matcha latte. drop 001 sold out — get access to drop 002.",
+      "~60mg caffeine + matcha's natural l-theanine for calm, steady energy. a liquid ceremonial matcha latte. the first run sold out — get access to the next run.",
     siteName: "shroomé",
     type: "website",
   },
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "shroomé — break up with the crash, not with caffeine",
     description:
-      "~60mg caffeine + matcha's natural l-theanine for calm, steady energy. a liquid ceremonial matcha latte. drop 001 sold out — get access to drop 002.",
+      "~60mg caffeine + matcha's natural l-theanine for calm, steady energy. a liquid ceremonial matcha latte. the first run sold out — get access to the next run.",
   },
 };
 
@@ -67,8 +67,8 @@ const config: LPConfig = {
       "no added sugar, no artificial anything, no proprietary blends. every dose printed on the sachet.",
   },
   proof: {
-    header: "drop 001 didn't survive the access list.",
-    body: `we're not going to show you a fake wall of five-star reviews — we're pre-launch and drop 001 (${X1_BOXES} boxes) already sold out. what we can show you: a fully disclosed label, third-party testing, and the line forming for drop 002.`,
+    header: "the first run didn't survive the access list.",
+    body: `we're not going to show you a fake wall of five-star reviews — we're pre-launch and the first run (${X1_BOXES} boxes) already sold out. what we can show you: a fully disclosed label, third-party testing, and the line forming for the next run.`,
     counterLabel: "people holding drop access",
     badges: [
       "third-party tested for beta-glucan content",
@@ -91,12 +91,12 @@ const config: LPConfig = {
     },
     {
       q: "when can i buy it?",
-      a: `drop 001 sold out. drop 002 is ${DROP2_RUN} — drop-access members get the link at open, and the text list gets it 10 minutes early. real runs, real dates, nothing manufactured.`,
+      a: `the first run sold out. the next run is ${DROP2_RUN} — drop-access members get the link at open, and the text list gets it 10 minutes early. real runs, real dates, nothing manufactured.`,
     },
   ],
   final: {
-    header: "your last crash is behind you. drop 002 is ahead.",
-    body: "drop 001 poured out in 9 days. drop 002 is one full production run — when it pours out, it pours out. get access now — the text list hears first, with an upgraded welcome code.",
+    header: "your last crash is behind you. the next run is ahead.",
+    body: "the first run poured out in 9 days. the next run is one full production run — when it pours out, it pours out. get access now — the text list hears first, with an upgraded welcome code.",
     microcopy: "one text per drop. two emails a week max. all signal.",
   },
 };

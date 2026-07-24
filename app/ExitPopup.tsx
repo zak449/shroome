@@ -314,7 +314,7 @@ export default function ExitPopup() {
                 <span className="ep-perk">Drop-day text</span>
               </div>
               <button className="ep-no-thanks" onClick={dismiss}>
-                No thanks, I&apos;ll miss the drop
+                No thanks, I&apos;ll wait for the public link
               </button>
             </>
           ) : step === "captcha" ? (
@@ -332,7 +332,7 @@ export default function ExitPopup() {
           ) : step === "phone" ? (
             <>
               <img src="/brand/sheep-drink.png" alt="" aria-hidden style={{ width: 72, height: "auto", margin: "0 auto 12px", display: "block" }} />
-              <h2 className="ep-success-title">the flock pours first — you&apos;re in.</h2>
+              <h2 className="ep-success-title">the flock pours first. you&apos;re in.</h2>
               <p className="ep-sub">
                 The text hits your phone <strong style={{ color: "var(--brand-ink)", fontWeight: 700 }}>before anything else we send</strong>. Add your number and you&apos;ll be pouring while everyone else is still finding out.
               </p>

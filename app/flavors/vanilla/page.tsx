@@ -384,12 +384,12 @@ export default function VanillaFlavorPage() {
               height={639}
               priority
             />
-            <div className="vf-hero-tag">Flavor Profile &middot; Drop 001 poured out</div>
+            <div className="vf-hero-tag">Flavor Profile &middot; First run poured out</div>
             <h1>Vanilla</h1>
             <p className="vf-hero-desc">
               Smooth, naturally sweet, and impossibly creamy. Real vanilla bean
               extract meets ceremonial matcha for a latte that tastes like it
-              came from your favorite caf&eacute; &mdash; but it&apos;s ready the second you stir.
+              came from your favorite caf&eacute;. But it&apos;s ready the second you stir.
             </p>
             <a
               href="/#signup"
@@ -409,7 +409,7 @@ export default function VanillaFlavorPage() {
                 textDecoration: "none",
               }}
             >
-              Missed it? The Flock pours first &mdash; Drop 002 &rarr;
+              Missed it? The Flock pours the next run first &rarr;
             </a>
           </div>
         </section>
@@ -444,8 +444,8 @@ export default function VanillaFlavorPage() {
             ))}
           </div>
           <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.72rem", color: "rgba(var(--brand-ink-rgb),0.55)", marginTop: 14 }}>
-            Every pack poured out with Drop 001.{" "}
-            <a href="/drop" style={{ color: "var(--brand-ink)", fontWeight: 700, textDecoration: "underline" }}>Build your Drop 002 box →</a>
+            Every pack poured out with the first run.{" "}
+            <a href="/drop" style={{ color: "var(--brand-ink)", fontWeight: 700, textDecoration: "underline" }}>Build your next-run box →</a>
           </p>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 16, margin: "26px 0 0", flexWrap: "wrap" }}>
             {BADGES.map((b, i) => (

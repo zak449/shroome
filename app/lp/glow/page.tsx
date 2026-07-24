@@ -3,22 +3,22 @@ import LPShell, { type LPConfig } from "../LPShell";
 import { X1_BOXES, DROP2_RUN } from "../../lib/drop-config";
 
 export const metadata: Metadata = {
-  title: "shroomé — drop 002: your matcha latte is now a beauty step",
+  title: "shroomé — the next run: your matcha latte is now a beauty step",
   description:
-    "2g grass-fed collagen + ceremonial matcha in one ready-to-pour sachet. supports skin health. tastes like a treat. drop 001 sold out — get access to drop 002.",
+    "2g grass-fed collagen + ceremonial matcha in one ready-to-pour sachet. supports skin health. tastes like a treat. the first run sold out — get access to the next run.",
   robots: { index: false, follow: false },
   openGraph: {
-    title: "shroomé — drop 002: your matcha latte is now a beauty step",
+    title: "shroomé — the next run: your matcha latte is now a beauty step",
     description:
-      "2g grass-fed collagen + ceremonial matcha in one ready-to-pour sachet. supports skin health. tastes like a treat. drop 001 sold out — get access to drop 002.",
+      "2g grass-fed collagen + ceremonial matcha in one ready-to-pour sachet. supports skin health. tastes like a treat. the first run sold out — get access to the next run.",
     siteName: "shroomé",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "shroomé — drop 002: your matcha latte is now a beauty step",
+    title: "shroomé — the next run: your matcha latte is now a beauty step",
     description:
-      "2g grass-fed collagen + ceremonial matcha in one ready-to-pour sachet. supports skin health. tastes like a treat. drop 001 sold out — get access to drop 002.",
+      "2g grass-fed collagen + ceremonial matcha in one ready-to-pour sachet. supports skin health. tastes like a treat. the first run sold out — get access to the next run.",
   },
 };
 
@@ -66,8 +66,8 @@ const config: LPConfig = {
       "grass-fed, pasture-raised bovine collagen. no soy, no dairy. every dose printed on the sachet.",
   },
   proof: {
-    header: "drop 001 sold out before we could brag.",
-    body: `${X1_BOXES} boxes went to the access list and disappeared. we don't have a wall of reviews yet — we have a label we'll put next to anyone's, and a line already forming for drop 002.`,
+    header: "the first run sold out before we could brag.",
+    body: `${X1_BOXES} boxes went to the access list and disappeared. we don't have a wall of reviews yet — we have a label we'll put next to anyone's, and a line already forming for the next run.`,
     counterLabel: "people holding drop access",
     badges: [
       "third-party tested",
@@ -91,12 +91,12 @@ const config: LPConfig = {
     },
     {
       q: "it's sold out — how do drops work?",
-      a: `we make full production runs and release them as drops. drop 001 (${X1_BOXES} boxes) poured out in 9 days; drop 002 is next. access members get the link at open, the text list hears first. real runs, real dates — we don't do fake countdowns.`,
+      a: `we make full production runs and release them as drops. the first run (${X1_BOXES} boxes) poured out in 9 days; the next run is next. access members get the link at open, the text list hears first. real runs, real dates — we don't do fake countdowns.`,
     },
   ],
   final: {
-    header: "glow is a habit. drop 002 is the start.",
-    body: `drop 001 sold out. drop 002 is ${DROP2_RUN} — get access now, the text list shops 10 minutes before the link is public — with an upgraded welcome code.`,
+    header: "glow is a habit. the next run is the start.",
+    body: `the first run sold out. the next run is ${DROP2_RUN} — get access now, the text list shops 10 minutes before the link is public — with an upgraded welcome code.`,
     microcopy: "one text per drop. we'd rather show up rarely and matter.",
   },
 };

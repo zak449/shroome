@@ -3,22 +3,22 @@ import LPShell, { type LPConfig } from "../LPShell";
 import { X1_BOXES, DROP2_RUN } from "../../lib/drop-config";
 
 export const metadata: Metadata = {
-  title: "shroomé — a café matcha latte. the stir is the recipe. drop 002 won't wait.",
+  title: "shroomé — a café matcha latte. the stir is the recipe. the next run won't wait.",
   description:
-    "pour. swirl. go. the liquid ceremonial matcha latte — no whisk, no blender, no line. drop 001 sold out. get drop access before 002 goes.",
+    "pour. swirl. go. the liquid ceremonial matcha latte — no whisk, no blender, no line. the first run sold out. get drop access before the next run goes.",
   robots: { index: false, follow: false },
   openGraph: {
-    title: "shroomé — a café matcha latte. the stir is the recipe. drop 002 won't wait.",
+    title: "shroomé — a café matcha latte. the stir is the recipe. the next run won't wait.",
     description:
-      "pour. swirl. go. the liquid ceremonial matcha latte — no whisk, no blender, no line. drop 001 sold out. get drop access before 002 goes.",
+      "pour. swirl. go. the liquid ceremonial matcha latte — no whisk, no blender, no line. the first run sold out. get drop access before the next run goes.",
     siteName: "shroomé",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "shroomé — a café matcha latte. the stir is the recipe. drop 002 won't wait.",
+    title: "shroomé — a café matcha latte. the stir is the recipe. the next run won't wait.",
     description:
-      "pour. swirl. go. the liquid ceremonial matcha latte — no whisk, no blender, no line. drop 001 sold out. get drop access before 002 goes.",
+      "pour. swirl. go. the liquid ceremonial matcha latte — no whisk, no blender, no line. the first run sold out. get drop access before the next run goes.",
   },
 };
 
@@ -65,8 +65,8 @@ const config: LPConfig = {
       "no added sugar, no artificial sweeteners, no proprietary blends. every dose printed on the sachet. 1 fl oz (30ml) per sachet.",
   },
   proof: {
-    header: "drop 001 moved faster than you do.",
-    body: `we made ${X1_BOXES} boxes for drop 001. the access list cleared them before the site ever opened to the public. no review wall yet — just a sold-out ledger, a fully disclosed label, and drop 002 on the way.`,
+    header: "the first run moved faster than you do.",
+    body: `we made ${X1_BOXES} boxes for the first run. the access list cleared them before the site ever opened to the public. no review wall yet — just a sold-out ledger, a fully disclosed label, and the next run on the way.`,
     counterLabel: "people holding drop access",
     badges: [
       "third-party tested for beta-glucan content",
@@ -89,12 +89,12 @@ const config: LPConfig = {
     },
     {
       q: "how do drops work?",
-      a: `we make full production runs and release them as drops. drop 001 (${X1_BOXES} boxes) poured out in 9 days; drop 002 is next. drop access gets you the link at open — the text list hears first, with an upgraded welcome code. real runs, real dates, no fake timers.`,
+      a: `we make full production runs and release them as drops. the first run (${X1_BOXES} boxes) poured out in 9 days; the next run is next. drop access gets you the link at open — the text list hears first, with an upgraded welcome code. real runs, real dates, no fake timers.`,
     },
   ],
   final: {
     header: "you have thirty seconds. that's all this takes.",
-    body: `drop 001 sold out. drop 002 is ${DROP2_RUN} — get access now, the text list shops 10 minutes before the link is public — with an upgraded welcome code.`,
+    body: `the first run sold out. the next run is ${DROP2_RUN} — get access now, the text list shops 10 minutes before the link is public — with an upgraded welcome code.`,
     microcopy: "one text per drop. that's the entire notification load — promise.",
   },
 };

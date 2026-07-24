@@ -97,51 +97,6 @@ const strawberrySchema = {
   offers: sharedOffer,
 };
 
-// ── Storefront data (source of truth: Product/SKU Catalog) ──
-
-const products = [
-  {
-    sku: "SHR-VAN-12",
-    name: "vanilla — 12 box",
-    desc: "warm, floral, latte-like. 12 sachets.",
-    price: "$36",
-    accent: "var(--brand-flavor-functional)",
-    image: "/sachet-vanilla.png",
-  },
-  {
-    sku: "SHR-STR-12",
-    name: "strawberry — 12 box",
-    desc: "bright, fruity, smoothie-like. 12 sachets.",
-    price: "$36",
-    accent: "var(--brand-flavor-strawberry)",
-    image: "/sachet-strawberry.png",
-  },
-  {
-    sku: "SHR-VAR-24",
-    name: "variety — 24 box",
-    desc: "12 vanilla + 12 strawberry. the duo bundle.",
-    price: "$66",
-    accent: "var(--brand-tint-soft)",
-    image: "/sachets-both.png",
-  },
-  {
-    sku: "SHR-VAR-48",
-    name: "48 stock-up",
-    desc: "24 vanilla + 24 strawberry. never run dry.",
-    price: "$126",
-    accent: "var(--brand-tint-soft)",
-    image: "/sachets-both.png",
-  },
-  {
-    sku: "SHR-TRY-6",
-    name: "first-pour trial — 6",
-    desc: "3 vanilla + 3 strawberry. the low-risk taste test.",
-    price: "$21",
-    accent: "var(--brand-flavor-functional)",
-    image: "/sachets-both.png",
-  },
-];
-
 export default function DropPage() {
   return (
     <>
@@ -169,22 +124,6 @@ export default function DropPage() {
         .dr-h2{font-family:var(--brand-font-display);letter-spacing:-0.02em;font-weight:800;font-size:clamp(1.7rem,4vw,2.5rem);line-height:1.15;margin:0;color:var(--brand-ink)}
         .dr-eyebrow{font-family:var(--brand-font-mono);font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;margin:0 0 18px}
 
-        .dr-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;max-width:1120px;margin:0 auto}
-        .dr-card{background:#fff;border:2px solid var(--brand-ink);border-radius:24px;overflow:hidden;position:relative;display:flex;flex-direction:column}
-        .dr-card-img{position:relative;padding:30px 20px 16px;display:flex;justify-content:center;align-items:center;min-height:230px}
-        .dr-card-img img{filter:drop-shadow(0 14px 22px rgba(45,52,26,0.3))}
-        .dr-soldout{position:absolute;top:42%;left:50%;transform:translate(-50%,-50%) rotate(-6deg);background:var(--brand-ink);color:var(--brand-canvas);font-family:var(--brand-font-body);font-weight:800;font-size:1.05rem;letter-spacing:.14em;text-transform:uppercase;padding:12px 24px;border-radius:12px;box-shadow:0 10px 24px rgba(45,52,26,0.3);z-index:2}
-        .dr-card-body{padding:8px 22px 24px;display:flex;flex-direction:column;flex:1}
-        .dr-card-sku{font-family:var(--brand-font-mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(var(--brand-ink-rgb),0.35);margin:0 0 6px}
-        .dr-card h3{font-family:var(--brand-font-display);font-weight:800;font-size:1.35rem;color:var(--brand-ink);margin:0 0 4px}
-        .dr-card-desc{font-family:var(--brand-font-body);font-size:0.78rem;color:rgba(var(--brand-ink-rgb),0.55);line-height:1.5;margin:0 0 14px}
-        .dr-price-row{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;margin:0 0 2px}
-        .dr-price{font-family:var(--brand-font-mono);font-size:1.4rem;font-weight:500;color:var(--brand-ink)}
-        .dr-compare{font-family:var(--brand-font-mono);font-size:0.9rem;color:rgba(var(--brand-ink-rgb),0.35);text-decoration:line-through}
-        .dr-per{font-family:var(--brand-font-mono);font-size:0.68rem;color:rgba(var(--brand-ink-rgb),0.5);margin:0 0 4px}
-        .dr-sub-from{font-family:var(--brand-font-body);font-size:0.7rem;font-weight:600;color:var(--brand-ink);background:rgba(var(--brand-accent-rgb),0.35);display:inline-block;padding:4px 8px;margin:6px 0 14px}
-        .dr-card-btn{margin-top:auto;display:block;text-align:center;background:var(--brand-ink);color:var(--brand-canvas);font-family:var(--brand-font-body);font-weight:800;font-size:0.7rem;letter-spacing:.1em;text-transform:uppercase;padding:14px 12px;border-radius:999px;text-decoration:none}
-
         .dr-ledger{max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
         .dr-ledger-row{display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--brand-ink);color:var(--brand-canvas);padding:18px 22px;flex-wrap:wrap}
         .dr-ledger-num{font-family:var(--brand-font-body);font-weight:700;font-size:0.85rem;letter-spacing:.12em;text-transform:uppercase;display:inline-flex;align-items:center;gap:10px}
@@ -208,7 +147,7 @@ export default function DropPage() {
           <a href="/faq">FAQ</a>
           <a href="/founders">First Pour</a>
         </div>
-        <a className="dr-nav-cta" href="#waitlist">Join the Flock &rarr;</a>
+        <a className="dr-nav-cta" href="#join">Join the Flock &rarr;</a>
         <MobileNav
           prefix="dr"
           links={[
@@ -216,7 +155,7 @@ export default function DropPage() {
             { label: "Ingredients", href: "/#ingredients" },
             { label: "FAQ", href: "/faq" },
             { label: "First Pour", href: "/founders" },
-            { label: "Join the Flock", href: "#waitlist" },
+            { label: "Join the Flock", href: "#join" },
           ]}
         />
       </nav>
@@ -257,7 +196,7 @@ export default function DropPage() {
             a full day before the link goes public.
           </p>
           <a
-            href="#waitlist"
+            href="#join"
             style={{
               display: "inline-block",
               background: "var(--brand-accent)",
@@ -288,38 +227,6 @@ export default function DropPage() {
           </p>
         </div>
         <BoxBuilder />
-      </section>
-
-      {/* ── PRODUCT GRID ── */}
-      <section style={{ background: "var(--brand-canvas)", padding: "80px 24px" }}>
-        <div style={{ maxWidth: 1120, margin: "0 auto 36px", textAlign: "center" }}>
-          <h2 className="dr-h2">the lineup.</h2>
-          <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.88rem", color: "rgba(var(--brand-ink-rgb),0.6)", marginTop: 10 }}>
-            the next run brings every box back. you can be first in line without ever standing in one.
-          </p>
-        </div>
-        <div className="dr-grid">
-          {products.map((p) => (
-            <div key={p.sku} className="dr-card">
-              <div className="dr-card-img" style={{ background: p.accent }}>
-                <span className="dr-soldout">poured out</span>
-                <Image src={p.image} alt={`shroomé ${p.name} — poured out with the first run`} width={306} height={639} style={{ width: "auto", height: 200, maxWidth: "100%", objectFit: "contain" }} />
-              </div>
-              <div className="dr-card-body">
-                <p className="dr-card-sku">{p.sku}</p>
-                <h3>{p.name}</h3>
-                <p className="dr-card-desc">{p.desc}</p>
-                <div className="dr-price-row">
-                  <span className="dr-price">{p.price}</span>
-                </div>
-                <span style={{ height: 12, display: "block" }} />
-                <a className="dr-card-btn" href="#waitlist">
-                  first dibs on the next run →
-                </a>
-              </div>
-            </div>
-          ))}
-        </div>
       </section>
 
       {/* ── SUBSCRIBERS SKIP THE LINE ── */}
@@ -387,7 +294,7 @@ export default function DropPage() {
       </section>
 
       {/* ── WAITLIST ── */}
-      <section id="waitlist" style={{ background: "var(--brand-ink)", padding: "88px 24px", position: "relative", overflow: "hidden" }}>
+      <section id="join" style={{ background: "var(--brand-ink)", padding: "88px 24px", position: "relative", overflow: "hidden" }}>
         <div
           aria-hidden="true"
           style={{

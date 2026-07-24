@@ -96,8 +96,8 @@ const faqData = [
     num: "05",
     items: [
       {
-        q: "When is Drop 002?",
-        a: `When it's ready — no fake timers, no phantom countdowns. Drop 001 was 500 boxes and poured out in 9 days. The Flock (free to join) hears the date first and shops <strong>a full day before the public link</strong>, with member-only merch and gifts on every subscription. The ledger never lies: when it's gone, it's gone.`,
+        q: "When is the next run?",
+        a: `When it's ready — no fake timers, no phantom countdowns. The first run was 500 boxes and poured out in 9 days. The Flock (free to join) hears the date first and shops <strong>a full day before the public link</strong>, with member-only merch and gifts on every subscription. The ledger never lies: when it's gone, it's gone.`,
       },
       {
         q: "What is the Flock?",
@@ -489,14 +489,15 @@ export default function FAQ() {
 
       {/* ═══ CTA ═══ */}
       <section className="faq-cta">
-        <div className="faq-cta-tag">Drop 002 Is Coming</div>
+        <img src="/brand/sheep-drink.png" alt="" aria-hidden style={{ width: 72, height: "auto", margin: "0 auto 14px", display: "block" }} />
+        <div className="faq-cta-tag">The next run is coming</div>
         <h2>
           Still have questions?
           <br />
           <em>The pour answers most of them.</em>
         </h2>
-        <p className="faq-cta-sub">Drop 001 poured out in 9 days. The Flock gets the Drop 002 link first. Pour. Swirl. Go.</p>
-        <a href="/" className="faq-btn-cta">
+        <p className="faq-cta-sub">The first run poured out in 9 days. The Flock gets the next link first. Pour. Swirl. Go.</p>
+        <a href="/#signup" className="faq-btn-cta">
           Join the Flock &rarr;
         </a>
       </section>

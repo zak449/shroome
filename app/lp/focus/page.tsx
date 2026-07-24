@@ -3,22 +3,22 @@ import LPShell, { type LPConfig } from "../LPShell";
 import { X1_BOXES, DROP2_RUN } from "../../lib/drop-config";
 
 export const metadata: Metadata = {
-  title: "shroomé — read the label. that's the pitch. (drop 002)",
+  title: "shroomé — read the label. that's the pitch. (the next run)",
   description:
-    "200mg mushroom extracts (organic lion's mane beta-glucans) at ≥70% beta-glucans, third-party tested. ceremonial matcha with l-theanine for sustained focus. drop 001 sold out — get access to drop 002.",
+    "200mg mushroom extracts (organic lion's mane beta-glucans) at ≥70% beta-glucans, third-party tested. ceremonial matcha with l-theanine for sustained focus. the first run sold out — get access to the next run.",
   robots: { index: false, follow: false },
   openGraph: {
-    title: "shroomé — read the label. that's the pitch. (drop 002)",
+    title: "shroomé — read the label. that's the pitch. (the next run)",
     description:
-      "200mg mushroom extracts (organic lion's mane beta-glucans) at ≥70% beta-glucans, third-party tested. ceremonial matcha with l-theanine for sustained focus. drop 001 sold out — get access to drop 002.",
+      "200mg mushroom extracts (organic lion's mane beta-glucans) at ≥70% beta-glucans, third-party tested. ceremonial matcha with l-theanine for sustained focus. the first run sold out — get access to the next run.",
     siteName: "shroomé",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "shroomé — read the label. that's the pitch. (drop 002)",
+    title: "shroomé — read the label. that's the pitch. (the next run)",
     description:
-      "200mg mushroom extracts (organic lion's mane beta-glucans) at ≥70% beta-glucans, third-party tested. ceremonial matcha with l-theanine for sustained focus. drop 001 sold out — get access to drop 002.",
+      "200mg mushroom extracts (organic lion's mane beta-glucans) at ≥70% beta-glucans, third-party tested. ceremonial matcha with l-theanine for sustained focus. the first run sold out — get access to the next run.",
   },
 };
 
@@ -69,8 +69,8 @@ const config: LPConfig = {
   },
   proof: {
     header: "proof, in order of what actually matters.",
-    body: `we're pre-launch, so we won't perform a review wall for you. here's what we have instead: third-party test results, a label with no hiding places, and a drop 001 (${X1_BOXES} boxes) that sold out to the access list before the site ever said “buy.”`,
-    counterLabel: "people in the queue for drop 002",
+    body: `we're pre-launch, so we won't perform a review wall for you. here's what we have instead: third-party test results, a label with no hiding places, and a first run (${X1_BOXES} boxes) that sold out to the access list before the site ever said “buy.”`,
+    counterLabel: "people in the queue for the next run",
     badges: [
       "third-party tested — beta-glucan content",
       "heavy-metals screened (As, Pb, Cd, Hg)",
@@ -93,12 +93,12 @@ const config: LPConfig = {
     },
     {
       q: "it's sold out. what's the move?",
-      a: `we ship in numbered, limited drops — real production runs, published counts. drop 001 (${X1_BOXES} boxes) is gone; drop 002 is ${DROP2_RUN}. get drop access and you're in at open; add your number and the link hits your texts 10 minutes before the public. 20% off and free shipping locked in.`,
+      a: `we ship in numbered, limited drops — real production runs, published counts. the first run (${X1_BOXES} boxes) is gone; the next run is ${DROP2_RUN}. get drop access and you're in at open; add your number and the link hits your texts 10 minutes before the public. 20% off and free shipping locked in.`,
     },
   ],
   final: {
     header: "the label already convinced you. the drop won't wait.",
-    body: `drop 001 sold out. drop 002 is ${DROP2_RUN} — get access now, the text list shops 10 minutes before the link is public — with an upgraded welcome code.`,
+    body: `the first run sold out. the next run is ${DROP2_RUN} — get access now, the text list shops 10 minutes before the link is public — with an upgraded welcome code.`,
     microcopy: "one text per drop. we email like we label — only when there's something worth reading.",
   },
 };

@@ -318,16 +318,19 @@ export default function WelcomePage() {
               {
                 label: "Real Lion's Mane",
                 accent: C.flavorFunctional,
+                badge: "/brand/badge-b-glucans.png",
                 body: "The kind that actually does something — clear-headed focus you can feel, zero mushroom taste.",
               },
               {
                 label: "Ceremonial Matcha",
                 accent: C.accent,
+                badge: "/brand/badge-matcha.png",
                 body: "First-harvest, shade-grown 21+ days, stone-ground. ~60mg caffeine + natural L-theanine.",
               },
               {
                 label: "Collagen Peptides",
                 accent: C.flavorFunctional,
+                badge: "/brand/badge-collagen.png",
                 body: "2g grass-fed bovine, hydrolyzed for absorption. Types I & III for skin, joints, gut.",
               },
             ] as const
@@ -341,6 +344,13 @@ export default function WelcomePage() {
                 border: `1px solid ${C.ink}08`,
               }}
             >
+              <img
+                src={card.badge}
+                alt=""
+                aria-hidden
+                loading="lazy"
+                style={{ width: 90, height: "auto", display: "block", margin: "0 auto 18px" }}
+              />
               <span
                 style={{
                   fontFamily: F.mono,
@@ -403,12 +413,19 @@ export default function WelcomePage() {
         >
           {(
             [
-              { num: "1", text: "Pour" },
-              { num: "2", text: "Swirl" },
-              { num: "3", text: "Go" },
+              { num: "1", text: "Pour", img: "/brand/sheep-sachet.png" },
+              { num: "2", text: "Swirl", img: "/brand/sheep-swirl.png" },
+              { num: "3", text: "Go", img: "/brand/sheep-drink.png" },
             ] as const
           ).map((s) => (
             <div key={s.num} style={{ minWidth: 120 }}>
+              <img
+                src={s.img}
+                alt=""
+                aria-hidden
+                loading="lazy"
+                style={{ width: 64, height: 64, objectFit: "contain", display: "block", margin: "0 auto 14px" }}
+              />
               <div
                 style={{
                   fontFamily: F.heading,
@@ -488,7 +505,7 @@ export default function WelcomePage() {
               letterSpacing: "-0.02em",
             }}
           >
-            Drop 001 poured out in 9 days. Don&rsquo;t sleep on 002.
+            The first run poured out in 9 days.
           </h2>
           <p
             style={{
@@ -498,7 +515,7 @@ export default function WelcomePage() {
               marginBottom: 36,
             }}
           >
-            The Flock gets the Drop 002 link before it&rsquo;s public. No spam — one email when it matters.
+            The Flock gets the next run&rsquo;s link before it&rsquo;s public. No spam, one email when it matters.
           </p>
 
           {status === "done" ? (
@@ -512,7 +529,7 @@ export default function WelcomePage() {
               }}
             >
               <img src="/brand/sheep-drink.png" alt="" aria-hidden style={{ width: 76, height: "auto", margin: "0 auto 14px", display: "block" }} />
-              Welcome to the flock. Drop 002 opens for you a full day early — watch your inbox.
+              Welcome to the flock. The next run opens for you a full day early. Watch your inbox.
               <a href="/refer" style={{ display: "block", marginTop: 10, fontFamily: F.body, fontSize: 13, color: C.canvas, textDecoration: "underline", opacity: 0.75 }}>
                 Get your referral link →
               </a>

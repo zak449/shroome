@@ -26,7 +26,7 @@ export const recipes: Recipe[] = [
     heroImage: "/recipes/hero/hero-iced-matcha-latte.jpg",
     imageAlt: "Classic Iced Matcha Latte — layered green matcha floating over oat milk with ice in a tall glass",
     description:
-      "The Flock's most-poured recipe — the one that cleared Drop 001. One shroomé sachet, oat milk, ice — done in 30 seconds flat.",
+      "The Flock's most-poured recipe — the one that cleared the first run. One shroomé sachet, oat milk, ice — done in 30 seconds flat.",
     prepTime: "PT15S",
     prepLabel: "30 sec",
     totalTime: "PT1M",

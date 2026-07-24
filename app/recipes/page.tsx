@@ -438,7 +438,7 @@ export default function RecipesPage() {
           <em>Get yours.</em>
         </h2>
         <p className="rec-cta-sub">
-          Drop 001 poured out in 9 days &middot; 12 servings per box &middot; Pour. Swirl. Go.
+          The first run poured out in 9 days &middot; 12 servings per box &middot; Pour. Swirl. Go.
         </p>
         <a href="/#signup" className="rec-btn-cta">
           Join the Flock &rarr;

@@ -74,8 +74,8 @@ function UnsubscribeFlow() {
               we&apos;ll miss you 💚
             </h1>
             <p style={{ fontSize: 15, opacity: 0.6, margin: "0 0 32px", lineHeight: 1.6 }}>
-              sure you want to leave the flock? unsubscribing means no Drop 002
-              link when it goes out — the list gets it before anyone else.
+              sure you want to leave the flock? unsubscribing means no next-run
+              link, no early window. the flock gets those.
             </p>
 
             {email && (

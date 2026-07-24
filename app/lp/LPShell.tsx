@@ -108,7 +108,7 @@ function DropLedger({ stampColor, light }: { stampColor: string; light?: boolean
     <div style={{ display: "flex", flexDirection: "column", gap: 10, maxWidth: 520, width: "100%" }}>
       {/* drop 001 */}
       <div className="lp-ledger-card" style={{ background: cardBg, color: cardText }}>
-        <span className="lp-ledger-label">drop 001</span>
+        <span className="lp-ledger-label">first run</span>
         <span style={{ display: "flex", alignItems: "center", gap: 12, flexWrap: "wrap" }}>
           <s style={{ fontFamily: "var(--brand-font-mono)", fontSize: "0.8rem", color: cardFaint }}>
             {X1_BOXES} boxes
@@ -122,7 +122,7 @@ function DropLedger({ stampColor, light }: { stampColor: string; light?: boolean
       <div className="lp-ledger-card" style={{ background: cardBg, color: cardText }}>
         <span className="lp-ledger-label">
           <span className="lp-pulse-dot" aria-hidden="true" />
-          drop 002
+          next run
         </span>
         <span style={{ fontFamily: "var(--brand-font-mono)", fontSize: "0.8rem" }}>
           {DROP_002.openDate && countdown
@@ -361,7 +361,7 @@ export default function LPShell({ config }: { config: LPConfig }) {
             <DropAccessForm
               source={source}
               dark={hero.dark}
-              microcopy="drop 001 poured out in 9 days. drop 002 is one full production run — when it pours out, it pours out."
+              microcopy="the first run poured out in 9 days. the next run is one full production run — when it pours out, it pours out."
             />
             <div style={{ marginTop: 28 }}>
               <DropLedger stampColor={config.stampColor} light={config.ledgerLight} />

@@ -77,7 +77,7 @@ export default function BoxBuilder() {
     } catch {}
     setSaved(true);
     window.gtag?.("event", "save_build", { box_size: size, cadence, value: price });
-    document.getElementById("waitlist")?.scrollIntoView({ behavior: "smooth" });
+    document.getElementById("join")?.scrollIntoView({ behavior: "smooth" });
   };
 
   const label = (style: React.CSSProperties = {}): React.CSSProperties => ({

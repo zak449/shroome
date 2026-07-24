@@ -527,17 +527,17 @@ export default async function BlogPost({
         <div className="post-editorial-cta-inner">
           <h3>Ready to try the cleanest matcha?</h3>
           <p>
-            Drop 001 sold out in 9 days. Ceremonial matcha, mushroom extracts, and collagen — in one pour. The list gets the Drop 002 link first.
+            The first run sold out in 9 days. Ceremonial matcha, mushroom extracts, and collagen in one pour. The Flock gets the next link first.
           </p>
           <Link href="/#signup" className="post-editorial-link">
-            Join the Drop 002 list &rarr;
+            Join the Flock &rarr;
           </Link>
         </div>
       </div>
 
       {/* CTA */}
       <section className="post-cta">
-        <div className="post-cta-tag">Drop 002 Is Coming</div>
+        <div className="post-cta-tag">The next run is coming</div>
         <h2>
           Try shroom&eacute; for yourself.
           <br />

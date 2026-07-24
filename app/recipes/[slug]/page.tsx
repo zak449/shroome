@@ -591,11 +591,11 @@ export default async function RecipeDetailPage({
 
       {/* ── CTA ── */}
       <section className="rd-cta">
-        <div className="rd-cta-tag">Drop 002 Is Coming</div>
+        <div className="rd-cta-tag">The next run is coming</div>
         <h2>
           Pour one for yourself?
           <br />
-          <em>Get in line for Drop 002.</em>
+          <em>Get in line for the next run.</em>
         </h2>
         <p className="rd-cta-sub">
           12 servings per box · Pour. Swirl. Go.

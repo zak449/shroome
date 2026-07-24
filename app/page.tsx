@@ -862,6 +862,43 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ════════════════════ THE RITUAL — POUR. SWIRL. GO. ════════════════════ */}
+      <section id="how" style={{ padding: "100px 24px", background: "var(--brand-accent-deep)", position: "relative", overflow: "hidden" }}>
+        <div style={{ maxWidth: 980, margin: "0 auto", textAlign: "center" }}>
+          <div {...anim("how-head")}>
+            <p style={{ ...tagStyle, fontSize: "0.66rem", color: "var(--brand-canvas)", opacity: 0.85, marginBottom: 16 }}>
+              Making your shroomé
+            </p>
+            <h2 style={{ fontFamily: "var(--brand-font-display)", fontWeight: 800, fontSize: "clamp(2.2rem, 5vw, 3.6rem)", color: "var(--brand-canvas)", lineHeight: 1.05, marginBottom: 56, letterSpacing: "-0.02em" }}>
+              Pour. Swirl. Go.
+            </h2>
+          </div>
+
+          <div {...anim("how-card", 0.15)} style={{ ...anim("how-card", 0.15).style, background: "var(--brand-canvas)", border: "3px solid var(--brand-ink)", borderRadius: 36, padding: "48px 32px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 36, position: "relative" }}>
+            <Image
+              src="/brand/lockup-circle.png"
+              alt="Ready to enjoy life with good energy"
+              width={140}
+              height={140}
+              loading="lazy"
+              className="flower-spin"
+              style={{ position: "absolute", top: -54, right: 28, width: 116, height: 116, zIndex: 2 }}
+            />
+            {[
+              { img: "/brand/sheep-sachet.png", num: "1. Tear", desc: "Rip open one sachet. That's your perfectly measured dose." },
+              { img: "/brand/sheep-swirl.png", num: "2. Pour", desc: "Over your milk of choice. Oat, almond, coconut, dairy. Hot or iced." },
+              { img: "/brand/sheep-drink.png", num: "3. Go", desc: "Stir once. That's the recipe. Cafe-grade matcha latte, done. No blender, no whisk, no mess." },
+            ].map((s, i) => (
+              <div key={s.num} {...anim(`step-${i}`, 0.2 + i * 0.12)}>
+                <Image src={s.img} alt="" aria-hidden width={140} height={140} loading="lazy" style={{ width: 96, height: 96, objectFit: "contain", margin: "0 auto 18px", display: "block" }} />
+                <h3 style={{ ...tagStyle, fontSize: "0.9rem", color: "var(--brand-accent-deep)", marginBottom: 10 }}>{s.num}</h3>
+                <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.88rem", color: "rgba(var(--brand-ink-rgb),0.75)", lineHeight: 1.65, maxWidth: 260, margin: "0 auto" }}>{s.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ════════════════════ DIFFERENT ANIMAL — STATEMENT PANEL ════════════════════ */}
       <section id="why" style={{ padding: "72px 24px", background: "var(--brand-canvas)" }}>
         <div
@@ -898,12 +935,12 @@ export default function Home() {
               A different animal
             </p>
             <p style={{ fontFamily: "var(--brand-font-display)", fontWeight: 800, fontSize: "clamp(1.3rem, 2.4vw, 1.7rem)", color: "var(--brand-ink)", lineHeight: 1.25, letterSpacing: "-0.01em", marginBottom: 22 }}>
-              Cafe-grade ceremonial matcha, functional mushrooms, and collagen —
+              Cafe-grade ceremonial matcha, functional mushrooms, and collagen,
               already blended into a liquid you pour like creamer.
             </p>
             <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
               {[
-                "500 boxes. Gone in 9 days.",
+                "Vote on the next flavor. Members pick what we pour.",
                 "One pour, one stir, done. No whisk, no barista.",
                 "Energy, clarity, skin, immunity. One sachet.",
               ].map((r) => (
@@ -1006,9 +1043,9 @@ export default function Home() {
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 16, maxWidth: 980, margin: "0 auto" }}>
               {[
                 { n: "6 sachets", name: "First-Pour Kit", price: "$21", sub: "one-time only" },
-                { n: "12 sachets", name: "The Standard", price: "$36", sub: "less subscribed + a free gift" },
-                { n: "24 sachets", name: "The Duo Stock", price: "$66", sub: "less subscribed + a free gift" },
-                { n: "48 sachets", name: "Never Run Dry", price: "$126", sub: "less subscribed + a free gift" },
+                { n: "12 sachets", name: "The Standard", price: "$36", sub: "less when you subscribe · free gift inside" },
+                { n: "24 sachets", name: "The Duo Stock", price: "$66", sub: "less when you subscribe · free gift inside" },
+                { n: "48 sachets", name: "Never Run Dry", price: "$126", sub: "less when you subscribe · free gift inside" },
               ].map((b) => (
                 <div key={b.n} style={{ background: "#fff", border: "3px solid var(--brand-ink)", borderRadius: 24, padding: "22px 18px 20px", textAlign: "center" }}>
                   <p style={{ ...tagStyle, fontSize: "0.66rem", color: "rgba(var(--brand-ink-rgb),0.65)" }}>{b.n}</p>
@@ -1025,11 +1062,123 @@ export default function Home() {
               ))}
             </div>
             <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.78rem", color: "rgba(var(--brand-ink-rgb),0.6)", marginTop: 16 }}>
-              Mix flavors in steps of 6 —{" "}
+              Mix flavors in steps of 6:{" "}
               <a href="/drop" style={{ color: "var(--brand-ink)", fontWeight: 700, textDecoration: "underline" }}>
                 build your exact box →
               </a>
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ════════════════════ THE POUR — POURED OUT MOMENT ════════════════════ */}
+      <section aria-label="The pour that poured out the first run" style={{ position: "relative" }}>
+        <style>{`
+          @keyframes pourTicker { to { transform: translateX(-50%); } }
+          .pour-ticker-track { display: flex; width: max-content; animation: pourTicker 36s linear infinite; }
+          @media (prefers-reduced-motion: reduce) { .pour-ticker-track { animation: none; } }
+        `}</style>
+        <div
+          style={{
+            minHeight: "min(64vw, 520px)",
+            backgroundImage: "url(/brand/cup-logo.jpg)",
+            backgroundSize: "cover",
+            backgroundPosition: "center 42%",
+            display: "flex",
+            alignItems: "center",
+            padding: "56px 0",
+          }}
+        >
+          <div style={{ maxWidth: 1080, width: "100%", margin: "0 auto", padding: "0 24px" }}>
+            <div
+              style={{
+                maxWidth: 430,
+                background: "rgba(254,255,248,0.94)",
+                border: "3px solid var(--brand-ink)",
+                borderRadius: 28,
+                padding: "clamp(24px, 3.5vw, 36px)",
+                transform: "rotate(-1deg)",
+              }}
+            >
+              <p style={{ ...tagStyle, fontSize: "0.64rem", color: "var(--brand-accent-deep)", marginBottom: 12 }}>
+                The cup that did the numbers
+              </p>
+              <h2 style={{ fontFamily: "var(--brand-font-display)", fontWeight: 800, fontSize: "clamp(1.7rem, 3.6vw, 2.4rem)", color: "var(--brand-ink)", lineHeight: 1.08, letterSpacing: "-0.02em", marginBottom: 12 }}>
+                This pour cleared 500 boxes in 9 days.
+              </h2>
+              <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.9rem", color: "rgba(var(--brand-ink-rgb),0.75)", lineHeight: 1.65, marginBottom: 20 }}>
+                The prettiest pour on your FYP, and the reason the first run is history.
+                Next run, it happens in your kitchen.
+              </p>
+              <button
+                onClick={() => scrollTo("signup")}
+                style={{ display: "inline-block", background: "var(--brand-accent)", color: "var(--brand-canvas)", border: "2px solid var(--brand-ink)", borderRadius: 999, padding: "13px 24px", fontFamily: "var(--brand-font-body)", fontWeight: 800, fontSize: "0.72rem", letterSpacing: "0.1em", textTransform: "uppercase", cursor: "pointer" }}
+              >
+                Join the Flock →
+              </button>
+            </div>
+          </div>
+        </div>
+        {/* POURED OUT ticker strip */}
+        <div aria-hidden style={{ background: "var(--brand-ink)", overflow: "hidden", padding: "12px 0" }}>
+          <div className="pour-ticker-track">
+            {[0, 1].map((k) => (
+              <p key={k} style={{ ...tagStyle, fontSize: "0.68rem", color: "var(--brand-canvas)", whiteSpace: "nowrap", paddingRight: 8 }}>
+                the first run poured out <span style={{ color: "var(--brand-tint-soft)" }}>✿</span> 500 boxes{" "}
+                <span style={{ color: "var(--brand-tint-soft)" }}>✿</span> 9 days{" "}
+                <span style={{ color: "var(--brand-tint-soft)" }}>✿</span> we keep making it{" "}
+                <span style={{ color: "var(--brand-tint-soft)" }}>✿</span> the flock pours first{" "}
+                <span style={{ color: "var(--brand-tint-soft)" }}>✿</span> next run loading{" "}
+                <span style={{ color: "var(--brand-tint-soft)" }}>✿</span>{" "}
+              </p>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ════════════════════ OUR VIBE IS MATCHA-IN — LIFESTYLE ════════════════════ */}
+      <section style={{ padding: "90px 24px 100px", background: "var(--brand-ink)", position: "relative", overflow: "hidden" }}>
+        <div style={{ maxWidth: 1080, margin: "0 auto", position: "relative", zIndex: 1 }}>
+          <div {...anim("vibe-head")} style={{ ...anim("vibe-head").style, textAlign: "center", marginBottom: 44 }}>
+            <p style={{ ...tagStyle, fontSize: "0.66rem", color: "var(--brand-tint-soft)", marginBottom: 14 }}>
+              @drinkshroome
+            </p>
+            <h2 style={{ fontFamily: "var(--brand-font-display)", fontWeight: 800, fontSize: "clamp(2rem, 4.6vw, 3.2rem)", color: "var(--brand-canvas)", lineHeight: 1.05, letterSpacing: "-0.02em" }}>
+              Our vibe is matcha-in.
+            </h2>
+          </div>
+
+          <div {...anim("vibe-grid", 0.15)} style={{ ...anim("vibe-grid", 0.15).style, display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 22, maxWidth: 1080, margin: "0 auto" }}>
+            {[
+              { src: "/brand/ig-matcha-in.jpg", alt: "Friends at a picnic, our vibe is matcha-in" },
+              { src: "/brand/ig-glow-skin.jpg", alt: "Glow and skin, smiling model in sunlight" },
+              { src: "/brand/model-cloud.jpg", alt: "Soft life, resting on the mé cloud" },
+              { src: "/brand/ig-iced-close.jpg", alt: "Iced matcha with the mé sheep pour creative" },
+              { src: "/brand/ig-good-energy.jpg", alt: "Ready to enjoy life with good energy, cozy moment" },
+              { src: "/brand/ig-mushroom-hat.jpg", alt: "Hammock daydream with the mé sheep cloud" },
+            ].map((g, i) => (
+              <div key={g.src} className="wobble">
+                <Image
+                  src={g.src}
+                  alt={g.alt}
+                  width={500}
+                  height={625}
+                  loading="lazy"
+                  style={{ width: "100%", height: "auto", aspectRatio: "4 / 5", objectFit: "cover", borderRadius: 24, border: "3px solid rgba(var(--brand-canvas-rgb),0.25)", display: "block", background: "var(--brand-canvas)" }}
+                />
+              </div>
+            ))}
+          </div>
+
+          <div {...anim("vibe-cta", 0.25)} style={{ ...anim("vibe-cta", 0.25).style, textAlign: "center", marginTop: 36 }}>
+            <a
+              href="https://instagram.com/drinkshroome"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ fontFamily: "var(--brand-font-body)", fontWeight: 700, fontSize: "0.72rem", color: "var(--brand-tint-soft)", textDecoration: "underline" }}
+            >
+              @drinkshroome →
+            </a>
           </div>
         </div>
       </section>
@@ -1075,43 +1224,6 @@ export default function Home() {
                     <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.68rem", color: "rgba(var(--brand-ink-rgb),0.55)" }}>{t.loc} · First run</p>
                   </div>
                 </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ════════════════════ THE RITUAL — POUR. SWIRL. GO. ════════════════════ */}
-      <section id="how" style={{ padding: "100px 24px", background: "var(--brand-accent-deep)", position: "relative", overflow: "hidden" }}>
-        <div style={{ maxWidth: 980, margin: "0 auto", textAlign: "center" }}>
-          <div {...anim("how-head")}>
-            <p style={{ ...tagStyle, fontSize: "0.66rem", color: "var(--brand-canvas)", opacity: 0.85, marginBottom: 16 }}>
-              Making your shroomé
-            </p>
-            <h2 style={{ fontFamily: "var(--brand-font-display)", fontWeight: 800, fontSize: "clamp(2.2rem, 5vw, 3.6rem)", color: "var(--brand-canvas)", lineHeight: 1.05, marginBottom: 56, letterSpacing: "-0.02em" }}>
-              Pour. Swirl. Go.
-            </h2>
-          </div>
-
-          <div {...anim("how-card", 0.15)} style={{ ...anim("how-card", 0.15).style, background: "var(--brand-canvas)", border: "3px solid var(--brand-ink)", borderRadius: 36, padding: "48px 32px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 36, position: "relative" }}>
-            <Image
-              src="/brand/lockup-circle.png"
-              alt="Ready to enjoy life with good energy"
-              width={140}
-              height={140}
-              loading="lazy"
-              className="flower-spin"
-              style={{ position: "absolute", top: -54, right: 28, width: 116, height: 116, zIndex: 2 }}
-            />
-            {[
-              { img: "/brand/sheep-sachet.png", num: "1. Tear", desc: "Rip open one sachet. That's your perfectly measured dose." },
-              { img: "/brand/sheep-swirl.png", num: "2. Pour", desc: "Over your milk of choice. Oat, almond, coconut, dairy. Hot or iced." },
-              { img: "/brand/sheep-drink.png", num: "3. Go", desc: "Stir once. That's the recipe. Cafe-grade matcha latte, done. No blender, no whisk, no mess." },
-            ].map((s, i) => (
-              <div key={s.num} {...anim(`step-${i}`, 0.2 + i * 0.12)}>
-                <Image src={s.img} alt="" aria-hidden width={140} height={140} loading="lazy" style={{ width: 96, height: 96, objectFit: "contain", margin: "0 auto 18px", display: "block" }} />
-                <h3 style={{ ...tagStyle, fontSize: "0.9rem", color: "var(--brand-accent-deep)", marginBottom: 10 }}>{s.num}</h3>
-                <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.88rem", color: "rgba(var(--brand-ink-rgb),0.75)", lineHeight: 1.65, maxWidth: 260, margin: "0 auto" }}>{s.desc}</p>
               </div>
             ))}
           </div>
@@ -1186,170 +1298,6 @@ export default function Home() {
           <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.78rem", color: "rgba(var(--brand-ink-rgb),0.6)", textAlign: "center", marginTop: 26, lineHeight: 1.6 }}>
             Ingredients: Ceremonial Grade Matcha (organic), Lion&apos;s Mane Mushroom Beta Glucans (Organic), Grass-Fed Collagen Peptides, Natural Flavor.
           </p>
-        </div>
-      </section>
-
-      {/* ════════════════════ COMPARISON TABLE ════════════════════ */}
-      <section style={{ padding: "90px 24px", background: "var(--brand-canvas)", color: "var(--brand-ink)", position: "relative", overflow: "hidden" }}>
-        <div style={{ maxWidth: 800, margin: "0 auto", position: "relative", zIndex: 1 }}>
-          <div {...anim("comp-head")} style={{ ...anim("comp-head").style, textAlign: "center", marginBottom: 44 }}>
-            <p style={{ ...tagStyle, fontSize: "0.66rem", color: "var(--brand-accent-deep)", marginBottom: 16 }}>
-              How we compare
-            </p>
-            <h2 style={{ fontFamily: "var(--brand-font-display)", fontWeight: 800, fontSize: "clamp(1.8rem, 4vw, 2.6rem)", lineHeight: 1.1, color: "var(--brand-ink)", letterSpacing: "-0.02em" }}>
-              Not all matcha is created equal.
-            </h2>
-          </div>
-
-          <div {...anim("comp-table", 0.15)} style={{ ...anim("comp-table", 0.15).style, background: "var(--brand-ink)", borderRadius: 28, padding: "8px 0", boxShadow: "0 4px 30px rgba(45,52,26,0.25)", overflow: "hidden" }}>
-            <div style={{ overflowX: "auto", WebkitOverflowScrolling: "touch" }}>
-              <table style={{ width: "100%", minWidth: 580, borderCollapse: "collapse", fontFamily: "var(--brand-font-body)", fontSize: "0.85rem" }}>
-                <thead>
-                  <tr>
-                    <th style={{ textAlign: "left", padding: "14px 18px", borderBottom: "1px solid rgba(var(--brand-canvas-rgb),0.1)", color: "rgba(var(--brand-canvas-rgb),0.45)", fontWeight: 600, fontSize: "0.72rem", letterSpacing: "0.08em", textTransform: "uppercase" }}></th>
-                    {["shroomé", "Clevr", "RYZE", "MatchaKo", "Cafe"].map((b) => (
-                      <th key={b} style={{ textAlign: "center", padding: "14px 10px", borderBottom: "1px solid rgba(var(--brand-canvas-rgb),0.1)", color: b === "shroomé" ? "var(--brand-tint-soft)" : "rgba(var(--brand-canvas-rgb),0.45)", fontWeight: 700, fontSize: "0.72rem", letterSpacing: "0.08em", textTransform: "uppercase" }}>{b}</th>
-                    ))}
-                  </tr>
-                </thead>
-                <tbody>
-                  {[
-                    { feature: "Ceremonial matcha", values: [true, false, false, true, true] },
-                    { feature: "Collagen", values: [true, false, false, false, false] },
-                    { feature: "Lion\u2019s mane β-glucans", values: [true, true, true, false, false] },
-                    { feature: "Liquid: ready the second you stir", values: [true, false, false, false, true] },
-                    { feature: "Lives in your bag", values: [true, true, true, true, false] },
-                  ].map((row) => (
-                    <tr key={row.feature}>
-                      <td style={{ padding: "16px 18px", borderBottom: "1px solid rgba(var(--brand-canvas-rgb),0.06)", color: "var(--brand-canvas)", fontWeight: 600, fontSize: "0.85rem" }}>{row.feature}</td>
-                      {row.values.map((v, i) => (
-                        <td key={i} style={{ textAlign: "center", padding: "16px 10px", borderBottom: "1px solid rgba(var(--brand-canvas-rgb),0.06)" }}>
-                          <span style={{ display: "inline-block", width: 34, height: 34, lineHeight: "34px", borderRadius: "50%", fontSize: "1rem", fontWeight: 700, background: v ? "rgba(var(--brand-tint-soft-rgb, 227,213,247),0.2)" : "rgba(var(--brand-canvas-rgb),0.05)", color: v ? "var(--brand-tint-soft)" : "rgba(var(--brand-canvas-rgb),0.2)" }}>
-                            {v ? "✓" : "—"}
-                          </span>
-                        </td>
-                      ))}
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      {/* ════════════════════ THE POUR — POURED OUT MOMENT ════════════════════ */}
-      <section aria-label="The pour that poured out the first run" style={{ position: "relative" }}>
-        <style>{`
-          @keyframes pourTicker { to { transform: translateX(-50%); } }
-          .pour-ticker-track { display: flex; width: max-content; animation: pourTicker 36s linear infinite; }
-          @media (prefers-reduced-motion: reduce) { .pour-ticker-track { animation: none; } }
-        `}</style>
-        <div
-          style={{
-            minHeight: "min(64vw, 520px)",
-            backgroundImage: "url(/brand/cup-logo.jpg)",
-            backgroundSize: "cover",
-            backgroundPosition: "center 42%",
-            display: "flex",
-            alignItems: "center",
-            padding: "56px 0",
-          }}
-        >
-          <div style={{ maxWidth: 1080, width: "100%", margin: "0 auto", padding: "0 24px" }}>
-            <div
-              style={{
-                maxWidth: 430,
-                background: "rgba(254,255,248,0.94)",
-                border: "3px solid var(--brand-ink)",
-                borderRadius: 28,
-                padding: "clamp(24px, 3.5vw, 36px)",
-                transform: "rotate(-1deg)",
-              }}
-            >
-              <p style={{ ...tagStyle, fontSize: "0.64rem", color: "var(--brand-accent-deep)", marginBottom: 12 }}>
-                The cup that did the numbers
-              </p>
-              <h2 style={{ fontFamily: "var(--brand-font-display)", fontWeight: 800, fontSize: "clamp(1.7rem, 3.6vw, 2.4rem)", color: "var(--brand-ink)", lineHeight: 1.08, letterSpacing: "-0.02em", marginBottom: 12 }}>
-                This pour cleared 500 boxes in 9 days.
-              </h2>
-              <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.9rem", color: "rgba(var(--brand-ink-rgb),0.75)", lineHeight: 1.65, marginBottom: 20 }}>
-                The prettiest pour on your FYP, and the reason the first run is history.
-                Next run, it happens in your kitchen.
-              </p>
-              <a
-                href="https://instagram.com/drinkshroome"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ display: "inline-block", background: "var(--brand-accent)", color: "var(--brand-canvas)", border: "2px solid var(--brand-ink)", borderRadius: 999, padding: "13px 24px", fontFamily: "var(--brand-font-body)", fontWeight: 800, fontSize: "0.72rem", letterSpacing: "0.1em", textTransform: "uppercase", textDecoration: "none" }}
-              >
-                Follow @drinkshroome →
-              </a>
-            </div>
-          </div>
-        </div>
-        {/* POURED OUT ticker strip */}
-        <div aria-hidden style={{ background: "var(--brand-ink)", overflow: "hidden", padding: "12px 0" }}>
-          <div className="pour-ticker-track">
-            {[0, 1].map((k) => (
-              <p key={k} style={{ ...tagStyle, fontSize: "0.68rem", color: "var(--brand-canvas)", whiteSpace: "nowrap", paddingRight: 8 }}>
-                the first run poured out <span style={{ color: "var(--brand-tint-soft)" }}>✿</span> 500 boxes{" "}
-                <span style={{ color: "var(--brand-tint-soft)" }}>✿</span> 9 days{" "}
-                <span style={{ color: "var(--brand-tint-soft)" }}>✿</span> we keep making it{" "}
-                <span style={{ color: "var(--brand-tint-soft)" }}>✿</span> the flock pours first{" "}
-                <span style={{ color: "var(--brand-tint-soft)" }}>✿</span> next run loading{" "}
-                <span style={{ color: "var(--brand-tint-soft)" }}>✿</span>{" "}
-              </p>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ════════════════════ OUR VIBE IS MATCHA-IN — LIFESTYLE ════════════════════ */}
-      <section style={{ padding: "90px 24px 100px", background: "var(--brand-ink)", position: "relative", overflow: "hidden" }}>
-        <div style={{ maxWidth: 1080, margin: "0 auto", position: "relative", zIndex: 1 }}>
-          <div {...anim("vibe-head")} style={{ ...anim("vibe-head").style, textAlign: "center", marginBottom: 44 }}>
-            <p style={{ ...tagStyle, fontSize: "0.66rem", color: "var(--brand-tint-soft)", marginBottom: 14 }}>
-              @drinkshroome
-            </p>
-            <h2 style={{ fontFamily: "var(--brand-font-display)", fontWeight: 800, fontSize: "clamp(2rem, 4.6vw, 3.2rem)", color: "var(--brand-canvas)", lineHeight: 1.05, letterSpacing: "-0.02em" }}>
-              Our vibe is matcha-in.
-            </h2>
-          </div>
-
-          <div {...anim("vibe-grid", 0.15)} style={{ ...anim("vibe-grid", 0.15).style, display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 22, maxWidth: 1080, margin: "0 auto" }}>
-            {[
-              { src: "/brand/ig-matcha-in.jpg", alt: "Friends at a picnic, our vibe is matcha-in" },
-              { src: "/brand/ig-glow-skin.jpg", alt: "Glow and skin, smiling model in sunlight" },
-              { src: "/brand/model-cloud.jpg", alt: "Soft life, resting on the mé cloud" },
-              { src: "/brand/ig-iced-close.jpg", alt: "Iced matcha with the mé sheep pour creative" },
-              { src: "/brand/ig-good-energy.jpg", alt: "Ready to enjoy life with good energy, cozy moment" },
-              { src: "/brand/ig-mushroom-hat.jpg", alt: "Hammock daydream with the mé sheep cloud" },
-            ].map((g, i) => (
-              <div key={g.src} className="wobble">
-                <Image
-                  src={g.src}
-                  alt={g.alt}
-                  width={500}
-                  height={625}
-                  loading="lazy"
-                  style={{ width: "100%", height: "auto", aspectRatio: "4 / 5", objectFit: "cover", borderRadius: 24, border: "3px solid rgba(var(--brand-canvas-rgb),0.25)", display: "block", background: "var(--brand-canvas)" }}
-                />
-              </div>
-            ))}
-          </div>
-
-          <div {...anim("vibe-cta", 0.25)} style={{ ...anim("vibe-cta", 0.25).style, textAlign: "center", marginTop: 36 }}>
-            <a
-              href="https://instagram.com/drinkshroome"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ display: "inline-block", background: "var(--brand-tint-soft)", border: "2px solid var(--brand-tint-soft)", borderRadius: 999, padding: "12px 26px", fontFamily: "var(--brand-font-body)", fontWeight: 800, fontSize: "0.72rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--brand-ink)", textDecoration: "none" }}
-            >
-              Follow the flock →
-            </a>
-          </div>
         </div>
       </section>
 

@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "shroomé — The Matcha Latte That Replaced Our Coffee",
   description:
-    "2.5g ceremonial matcha, functional mushroom extracts (70%+ beta-glucans), and grass-fed collagen peptides in one sachet. The coffee alternative that actually works. Drop 001 sold out — join the Drop 002 list for first access.",
+    "2.5g ceremonial matcha, functional mushroom extracts (70%+ beta-glucans), and grass-fed collagen peptides in one sachet. The coffee alternative that actually works. The first run sold out. Join the Flock for first access to the next run.",
   keywords: [
     "matcha latte",
     "coffee alternative",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "shroomé — The Matcha Latte That Replaced Our Coffee",
     description:
-      "2.5g ceremonial matcha + lion's mane beta-glucans + collagen. One sachet, one stir, done — no crash. The Flock shops Drop 002 first.",
+      "2.5g ceremonial matcha + lion's mane beta-glucans + collagen. One sachet, one stir, done — no crash. The Flock shops the next run first.",
   },
 };
 

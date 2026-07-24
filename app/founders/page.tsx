@@ -4,7 +4,7 @@ import Image from "next/image";
 export const metadata: Metadata = {
   title: "First Pour — closed | shroomé",
   description:
-    "The First Pour — the founding 500 boxes of shroomé — is gone. Drop 002 is next. The list gets the link before it's public.",
+    "The First Pour — the founding 500 boxes of shroomé — is gone. The next run is coming. The Flock gets the link first.",
   alternates: { canonical: "https://www.drinkshroome.com/founders" },
   robots: { index: false },
 };
@@ -52,15 +52,15 @@ export default function FoundersPage() {
             <p className="fp-sub">
               The First Pour was the founding run of shroomé — 500 boxes, first names on the
               list, gone in 9 days. If you were in it, you know. If you weren&apos;t,
-              Drop 002 is your shot.
+              the next run is your shot.
             </p>
             <div className="fp-plaque">
               <Image src="/brand/symbol-sheep-solid.png" width={40} height={44} alt="" aria-hidden style={{ width: 36, height: "auto", margin: "0 auto 12px", display: "block" }} />
-              <p className="l1">The First Pour · Drop 001</p>
+              <p className="l1">The First Pour · The founding run</p>
               <p className="l2">500 boxes · Poured out in 9 days</p>
               <p className="l3">If you know, you poured</p>
             </div>
-            <a className="fp-cta" href="/drop#waitlist">Join the Flock — Drop 002 →</a>
+            <a className="fp-cta" href="/drop#join">Join the Flock for the next run →</a>
             <a className="fp-secondary" href="/">Back to the mothership</a>
           </div>
         </main>

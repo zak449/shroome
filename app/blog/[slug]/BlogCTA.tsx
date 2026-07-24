@@ -209,7 +209,7 @@ export default function BlogCTA() {
               marginBottom: 14,
             }}
           >
-            Don&rsquo;t miss out
+            The next run is coming
           </p>
 
           <h3
@@ -239,8 +239,8 @@ export default function BlogCTA() {
               marginRight: "auto",
             }}
           >
-            Drop 001 — 500 boxes — sold out in 9 days. Join the Drop 002 list
-            and get the link before it&rsquo;s public.
+            The next run is coming. The Flock pours first. The first run sold
+            out in 9 days, and the Flock gets the next link before it&rsquo;s public.
           </p>
 
           {inlineStatus === "success" ? (
@@ -330,7 +330,7 @@ export default function BlogCTA() {
                   whiteSpace: "nowrap" as const,
                 }}
               >
-                {inlineStatus === "loading" ? "Joining..." : "Join the Drop 002 list →"}
+                {inlineStatus === "loading" ? "Joining..." : "Join the Flock →"}
               </button>
             </form>
           )}
@@ -413,7 +413,7 @@ export default function BlogCTA() {
                 whiteSpace: "nowrap" as const,
               }}
             >
-              Drop 002 is coming &mdash; the list gets the link first
+              The next run is coming. The Flock pours first.
             </p>
 
             <form

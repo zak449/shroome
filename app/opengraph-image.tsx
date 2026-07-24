@@ -111,7 +111,7 @@ export default async function Image() {
                 transform: "rotate(-2deg)",
               }}
             >
-              Drop 001 poured out in 9 days
+              The first run poured out in 9 days
             </p>
           </div>
         </div>

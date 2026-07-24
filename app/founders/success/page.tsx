@@ -58,7 +58,7 @@ export default function FoundersSuccess() {
         <div className="fs-details">
           <div className="fs-detail">
             <span className="fs-detail-label">Run</span>
-            <span className="fs-detail-val">First Pour · Drop 001</span>
+            <span className="fs-detail-val">First Pour · The founding run</span>
           </div>
           <div className="fs-detail">
             <span className="fs-detail-label">Shipping</span>

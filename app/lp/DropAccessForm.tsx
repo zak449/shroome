@@ -176,7 +176,7 @@ export default function DropAccessForm({
           ✓ you&apos;re in. drop access locked — 20% off + free shipping.
         </p>
         <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.78rem", color: faint, marginTop: 8 }}>
-          we&apos;ll send the drop 002 link the moment it&apos;s live.
+          we&apos;ll send the next run&apos;s link the moment it&apos;s live.
         </p>
       </div>
     );

@@ -116,7 +116,7 @@ export default function ReferPage() {
   const referralLink = referralCode ? `https://www.drinkshroome.com?ref=${referralCode}` : "";
 
   const shareMsg = referralLink
-    ? `I'm in the Flock \u2014 shroom\u00e9's the liquid ceremonial matcha latte (lion's mane + collagen — pour it over milk, the stir is the recipe). Drop 001 poured out in 9 days. Join through my link and we both get looked after on drop day: ${referralLink}`
+    ? `I'm in the Flock. shroom\u00e9 is the liquid ceremonial matcha latte (lion's mane + collagen: pour it over milk, the stir is the recipe). The first run poured out in 9 days. Join through my link and we both get looked after on drop day: ${referralLink}`
     : "";
 
   const copyLink = () => {
@@ -580,7 +580,7 @@ export default function ReferPage() {
         <section className="ref-how">
           <div className="ref-how-inner">
             <h2 className="ref-how-title">how it works</h2>
-            <p className="ref-how-sub">Three steps. Zero friction. Fixed credits &mdash; no games.</p>
+            <p className="ref-how-sub">Three steps. Zero friction. Fixed credits. No games.</p>
             <div className="ref-steps">
               <div className="ref-step">
                 <p className="ref-step-num">Step 01</p>
@@ -616,7 +616,7 @@ export default function ReferPage() {
         {/* ═══ 3. REWARD TIERS ═══ */}
         <section className="ref-tiers">
           <h2 className="ref-tiers-title">the credit ladder</h2>
-          <p className="ref-tiers-sub">Fixed credits at 1, 3, and 5 friends &mdash; plus one prize money can&apos;t buy.</p>
+          <p className="ref-tiers-sub">Fixed credits at 1, 3, and 5 friends. Plus one prize money can&apos;t buy.</p>
           <div className="ref-tier-ladder">
             {tiers.map((tier, i) => (
               <div
@@ -642,7 +642,7 @@ export default function ReferPage() {
         <section className="ref-proof">
           <div className="ref-proof-stat">
             <p className="ref-proof-num">{ACCESS_LIST_COUNT}</p>
-            <p className="ref-proof-label">On the access list &mdash; growing daily</p>
+            <p className="ref-proof-label">On the access list. Growing daily</p>
           </div>
           <div className="ref-proof-divider" />
           <div className="ref-proof-stat">
@@ -697,7 +697,7 @@ export default function ReferPage() {
             ) : (
               <div className="ref-panel">
                 <h2 className="ref-panel-title">you&apos;re in. now share it.</h2>
-                <p className="ref-panel-sub">$5 for your 1st friend, $10 total at 3, $15 total at 5 &mdash; plus a shot at case 001.</p>
+                <p className="ref-panel-sub">$5 for your 1st friend, $10 total at 3, $15 total at 5. Plus a shot at case 001.</p>
 
                 {referralCode && (
                   <>
@@ -711,7 +711,7 @@ export default function ReferPage() {
 
                     {/* Pre-written message */}
                     <div className="ref-msg-box">
-                      <p className="ref-msg-label">Pre-written message &mdash; copy &amp; paste</p>
+                      <p className="ref-msg-label">Pre-written message. Copy &amp; paste</p>
                       <p>{shareMsg}</p>
                     </div>
 
@@ -750,7 +750,7 @@ export default function ReferPage() {
                       </div>
                     ) : (
                       <p style={{ marginTop: 24, fontSize: 13, color: "rgba(var(--brand-ink-rgb),0.5)", fontWeight: 600 }}>
-                        Every signup through your link is recorded &mdash; we&apos;ll confirm your
+                        Every signup through your link is recorded. We&apos;ll confirm your
                         referral total (and your credit) before drop day.
                       </p>
                     )}
@@ -779,7 +779,7 @@ export default function ReferPage() {
           <div className="ref-final-inner">
             <h2 className="ref-final-title">start referring. get your link.</h2>
             <p className="ref-final-sub">
-              Fixed credits up to $15, applied automatically at checkout &mdash; and the top
+              Fixed credits up to $15, applied automatically at checkout. The top
               referrer takes home a hand-numbered box from case 001.
             </p>
             <button className="ref-final-btn" onClick={scrollToForm}>
