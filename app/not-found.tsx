@@ -164,6 +164,7 @@ export default function NotFound() {
             <a href="/faq">FAQ</a>
             <a href="/blog">Blog</a>
             <a href="/recipes">Recipes</a>
+            <a href="/drop">Shop</a>
           </div>
           <a href="/" className="nf-nav-cta">Join the Flock &rarr;</a>
           <MobileNav
@@ -175,6 +176,7 @@ export default function NotFound() {
               { label: "FAQ", href: "/faq" },
               { label: "Blog", href: "/blog" },
               { label: "Recipes", href: "/recipes" },
+              { label: "Shop", href: "/drop" },
             ]}
           />
         </nav>

@@ -14,6 +14,7 @@ const navLinks = [
   { label: "FAQ", href: "/faq" },
   { label: "Blog", href: "/blog" },
   { label: "Recipes", href: "/recipes" },
+  { label: "Shop", href: "/drop" },
 ];
 
 export default function Contact() {

@@ -421,6 +421,7 @@ export default async function BlogPost({
           <Link href="/faq">FAQ</Link>
           <Link href="/blog" className="active">Blog</Link>
           <Link href="/recipes">Recipes</Link>
+          <Link href="/drop">Shop</Link>
         </div>
         <Link href="/#signup" className="post-nav-cta">
           Join the Flock &rarr;
@@ -434,6 +435,7 @@ export default async function BlogPost({
             { label: "FAQ", href: "/faq" },
             { label: "Blog", href: "/blog" },
             { label: "Recipes", href: "/recipes" },
+            { label: "Shop", href: "/drop" },
           ]}
         />
       </nav>

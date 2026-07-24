@@ -346,6 +346,7 @@ export default function RecipesPage() {
           <a href="/faq">FAQ</a>
           <a href="/blog">Blog</a>
           <a href="/recipes" className="active">Recipes</a>
+          <a href="/drop">Shop</a>
         </div>
         <a href="/#signup" className="rec-nav-cta">
           Join the Flock &rarr;
@@ -359,6 +360,7 @@ export default function RecipesPage() {
             { label: "FAQ", href: "/faq" },
             { label: "Blog", href: "/blog" },
             { label: "Recipes", href: "/recipes" },
+            { label: "Shop", href: "/drop" },
           ]}
         />
       </nav>

@@ -360,6 +360,7 @@ export default function StrawberryFlavorPage() {
             <a href="/faq">FAQ</a>
             <a href="/blog">Blog</a>
             <a href="/recipes">Recipes</a>
+            <a href="/drop">Shop</a>
           </div>
           <a href="/" className="sf-nav-cta">
             Join the Flock &rarr;
@@ -373,6 +374,7 @@ export default function StrawberryFlavorPage() {
               { label: "FAQ", href: "/faq" },
               { label: "Blog", href: "/blog" },
               { label: "Recipes", href: "/recipes" },
+              { label: "Shop", href: "/drop" },
             ]}
           />
         </nav>

@@ -235,7 +235,9 @@ export default function Privacy() {
           <a href="/#how">How It Works</a>
           <a href="/faq">FAQ</a>
           <a href="/blog">Blog</a>
-          <a href="/recipes">Recipes</a>        </div>
+          <a href="/recipes">Recipes</a>
+          <a href="/drop">Shop</a>
+        </div>
         <a href="/" className="pp-nav-cta">Join the Flock &rarr;</a>
         <MobileNav
           prefix="pp"
@@ -246,6 +248,7 @@ export default function Privacy() {
             { label: "FAQ", href: "/faq" },
             { label: "Blog", href: "/blog" },
             { label: "Recipes", href: "/recipes" },
+            { label: "Shop", href: "/drop" },
           ]}
         />
       </nav>

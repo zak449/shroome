@@ -235,6 +235,7 @@ export default function BlogIndex() {
           <Link href="/faq">FAQ</Link>
           <Link href="/blog" className="active">Blog</Link>
           <Link href="/recipes">Recipes</Link>
+          <Link href="/drop">Shop</Link>
         </div>
         <Link href="/#signup" className="blog-nav-cta">
           Join the Flock &rarr;
@@ -248,6 +249,7 @@ export default function BlogIndex() {
             { label: "FAQ", href: "/faq" },
             { label: "Blog", href: "/blog" },
             { label: "Recipes", href: "/recipes" },
+            { label: "Shop", href: "/drop" },
           ]}
         />
       </nav>
