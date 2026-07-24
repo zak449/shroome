@@ -83,6 +83,7 @@ export default function Home() {
   const [copied, setCopied] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [gateBox, setGateBox] = useState<string | null>(null);
+  const [flockOpen, setFlockOpen] = useState(false);
 
   // ── Analytics: section visibility tracking ──
   const sectionsSeen = useRef<Set<string>>(new Set());
@@ -327,7 +328,7 @@ export default function Home() {
   };
 
   // ── Shared restock form (hero + final CTA) ──
-  const restockForm = (variant: "hero" | "cta") => (
+  const restockForm = (variant: "hero" | "cta" | "flock") => (
     <div style={{ textAlign: variant === "cta" ? "center" : "left" }}>
       {step === "done" ? (
         <div style={{ textAlign: "left" }}>
@@ -453,9 +454,11 @@ export default function Home() {
               {captchaError}
             </p>
           )}
-          <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 600, fontSize: "0.78rem", color: "rgba(var(--brand-ink-rgb),0.7)", marginTop: 12 }}>
-            The Flock shops Drop 002 <strong>a full day before launch</strong> — plus members-only free gifts with every subscription. 100+ already in.
-          </p>
+          {variant !== "flock" && (
+            <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 600, fontSize: "0.78rem", color: "rgba(var(--brand-ink-rgb),0.7)", marginTop: 12 }}>
+              The Flock shops Drop 002 <strong>a full day before launch</strong> — plus member-only merch and free gifts with every subscription. 100+ already in.
+            </p>
+          )}
         </div>
       )}
     </div>
@@ -543,7 +546,7 @@ export default function Home() {
             </button>
           ))}
           <button
-            onClick={() => { scrollTo("cta"); window.gtag?.("event", "select_promotion", { promotion_name: "nav_cta_drop002" }); }}
+            onClick={() => { setFlockOpen(true); window.gtag?.("event", "select_promotion", { promotion_name: "nav_flock_membership" }); }}
             className="nav-cta-btn"
             style={{
               background: "var(--brand-accent)",
@@ -641,8 +644,8 @@ export default function Home() {
           <button
             onClick={() => {
               setMenuOpen(false);
-              scrollTo("cta");
-              window.gtag?.("event", "select_promotion", { promotion_name: "mobile_nav_cta_drop002" });
+              setFlockOpen(true);
+              window.gtag?.("event", "select_promotion", { promotion_name: "mobile_nav_flock_membership" });
             }}
             style={{
               background: "var(--brand-accent)",
@@ -1431,6 +1434,56 @@ export default function Home() {
         </div>
       )}
 
+      {/* ════════════════════ FLOCK MEMBERSHIP — THE CLUBHOUSE ════════════════════ */}
+      {flockOpen && (
+        <div
+          onClick={() => setFlockOpen(false)}
+          style={{ position: "fixed", inset: 0, zIndex: 9000, background: "rgba(45,52,26,0.55)", backdropFilter: "blur(6px)", display: "flex", alignItems: "center", justifyContent: "center", padding: 20, overflowY: "auto" }}
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            role="dialog"
+            aria-modal="true"
+            aria-label="The Flock membership"
+            style={{ background: "var(--brand-tint-soft)", border: "3px solid var(--brand-ink)", borderRadius: 28, padding: "clamp(26px, 5vw, 44px)", maxWidth: 520, width: "100%", position: "relative", overflow: "hidden", margin: "auto" }}
+          >
+            <div aria-hidden style={{ position: "absolute", inset: 0, backgroundImage: "url(/brand/pattern-tile.png)", backgroundSize: 220, opacity: 0.08, pointerEvents: "none" }} />
+            <button onClick={() => setFlockOpen(false)} aria-label="Close" style={{ position: "absolute", top: 14, right: 18, background: "none", border: "none", fontSize: "1.4rem", color: "rgba(var(--brand-ink-rgb),0.5)", cursor: "pointer", zIndex: 1 }}>×</button>
+            <div style={{ position: "relative" }}>
+              <Image src="/brand/symbol-sheep-solid.png" width={64} height={72} alt="" aria-hidden style={{ width: 52, height: "auto", marginBottom: 12, display: "block" }} />
+              <p style={{ ...tagStyle, fontSize: "0.62rem", color: "var(--brand-accent-deep)", marginBottom: 8 }}>
+                shroomé membership · free · everyone&apos;s welcome
+              </p>
+              <h3 style={{ fontFamily: "var(--brand-font-display)", fontWeight: 800, fontSize: "clamp(1.7rem, 4vw, 2.2rem)", color: "var(--brand-ink)", letterSpacing: "-0.02em", lineHeight: 1.05, marginBottom: 10 }}>
+                The Flock
+              </h3>
+              <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.88rem", color: "rgba(var(--brand-ink-rgb),0.75)", lineHeight: 1.6, marginBottom: 20 }}>
+                Not an email list — the room where the drop happens first.
+              </p>
+              <div style={{ display: "flex", flexDirection: "column", gap: 12, marginBottom: 24 }}>
+                {[
+                  { t: "Shop every drop a full day early", d: "Your link goes live before the public one exists." },
+                  { t: "Member-only merch", d: "Never sold, only earned. Flock hands only." },
+                  { t: "Gifts with every subscription", d: "Plus the drop-day text — first to know, always." },
+                ].map((b) => (
+                  <div key={b.t} style={{ display: "flex", gap: 12, alignItems: "flex-start", background: "rgba(var(--brand-canvas-rgb),0.8)", border: "2px solid var(--brand-ink)", borderRadius: 18, padding: "14px 16px" }}>
+                    <span style={{ width: 12, height: 12, borderRadius: "50%", background: "var(--brand-accent)", border: "2px solid var(--brand-ink)", flexShrink: 0, marginTop: 3 }} />
+                    <div>
+                      <p style={{ fontFamily: "var(--brand-font-body)", fontWeight: 800, fontSize: "0.86rem", color: "var(--brand-ink)" }}>{b.t}</p>
+                      <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.74rem", color: "rgba(var(--brand-ink-rgb),0.6)", lineHeight: 1.5 }}>{b.d}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              {restockForm("flock")}
+              <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.68rem", color: "rgba(var(--brand-ink-rgb),0.55)", marginTop: 14, textAlign: "center" }}>
+                100+ in already. Drop 001 poured out in 9 days — the Flock pours first next time.
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* ════════════════════ FINAL CTA — SOLD OUT / NOTIFY ════════════════════ */}
       <section
         id="cta"
@@ -1469,8 +1522,8 @@ export default function Home() {
           </h2>
           <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.92rem", color: "rgba(var(--brand-ink-rgb),0.7)", lineHeight: 1.65, marginBottom: 28 }}>
             Drop 001 belongs to the founding 500. Drop 002 opens for members
-            <strong> a full day before the public link</strong> — and unlocks free gifts with
-            every subscription. Everyone&apos;s welcome. The Flock just pours first.
+            <strong> a full day before the public link</strong> — with member-only merch and
+            free gifts on every subscription. Everyone&apos;s welcome. The Flock just pours first.
           </p>
           {restockForm("cta")}
         </div>

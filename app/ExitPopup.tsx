@@ -310,8 +310,8 @@ export default function ExitPopup() {
               )}
               <div className="ep-perks">
                 <span className="ep-perk">Shop a day early</span>
+                <span className="ep-perk">Member-only merch</span>
                 <span className="ep-perk">Drop-day text</span>
-                <span className="ep-perk">Free member gifts</span>
               </div>
               <button className="ep-no-thanks" onClick={dismiss}>
                 No thanks, I&apos;ll miss the drop

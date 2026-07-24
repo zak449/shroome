@@ -403,8 +403,8 @@ export default function DropPage() {
           <h2 className="dr-h2" style={{ color: "var(--brand-canvas)", marginBottom: 16 }}>join the flock.</h2>
           <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.9rem", color: "rgba(var(--brand-canvas-rgb),0.7)", lineHeight: 1.7, margin: "0 auto 32px", maxWidth: 500 }}>
             a full day before the public link exists, you&apos;ll already have the cart open —
-            plus free gifts with every subscription, members only. drop 001 went in 9 days.
-            this one won&apos;t wait either.
+            plus member-only merch and free gifts with every subscription. drop 001 went in
+            9 days. this one won&apos;t wait either.
           </p>
           <div style={{ display: "flex", justifyContent: "center" }}>
             <DropAccessForm source="drop" dark buttonLabel="join the flock" microcopy="one text per drop. no spam, ever." />
