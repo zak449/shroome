@@ -1,11 +1,13 @@
 "use client";
 // ─────────────────────────────────────────────────────────────────────────────
 // BOX BUILDER — sold-out configurator for /drop.
-// Visitors spec their next-run box with independent per-flavor steppers
-// (steps of 6; valid box sizes 6/12/24/48 priced from the total) plus a
-// cadence, then "Add to cart", which saves the build and reveals an email
-// capture that reserves the cart for the next run. Purchase stays locked:
-// every combination is sold out until the next run opens.
+// Visitors spec their next-run build with independent per-flavor steppers
+// (steps of 6, any total from 6 to 96) plus a cadence, then "Add to cart",
+// which saves the build and reveals an email capture that reserves the cart
+// for the next run. Purchase stays locked: every combination is sold out
+// until the next run opens.
+// Totals above 48 ship as a combination of real box tiers (6/12/24/48) and
+// are priced as the cheapest combination of those tiers.
 // Pricing source of truth: 05 — Subscription Plans (SKUMaster-approved).
 // ─────────────────────────────────────────────────────────────────────────────
 import { useEffect, useRef, useState } from "react";
@@ -18,7 +20,7 @@ type Size = (typeof SIZES)[number];
 /** One-time box prices per size tier. */
 const ONE_TIME: Record<Size, number> = { 6: 21, 12: 36, 24: 66, 48: 126 };
 
-const MAX_TOTAL = 48;
+const MAX_TOTAL = 96;
 const STEP = 6;
 
 /** Subscription % off one-time, by size then cadence. 6-pack is one-time only. */
@@ -35,6 +37,36 @@ const SUB_PCT: Record<Exclude<Size, 6>, Record<Exclude<Cadence, "once">, number>
   24: { "2w": 18, "30d": 15, "60d": 12 },
   48: { "2w": 20, "30d": 20, "60d": 15 },
 };
+
+/**
+ * Cheapest way to ship `total` sachets as a combination of real box tiers.
+ * Largest-first greedy is provably optimal here: every tier is double the
+ * previous one (6 → 12 → 24 → 48) and two of a tier always cost more than
+ * one of the next tier up ($42>$36, $72>$66, $132>$126).
+ * Returns the tiers largest-first (e.g. 60 → [48, 12]) or null for 0.
+ */
+function comboFor(total: number): Size[] | null {
+  if (total < STEP || total > MAX_TOTAL || total % STEP !== 0) return null;
+  const boxes: Size[] = [];
+  let left = total;
+  for (const s of [...SIZES].reverse()) {
+    while (left >= s) {
+      boxes.push(s);
+      left -= s;
+    }
+  }
+  return left === 0 ? boxes : null;
+}
+
+/** "a 48 + a 12", "two 48s", "a 48 + a 24 + a 6" — for the cart summary. */
+function comboLabel(boxes: Size[]): string {
+  const counts = new Map<Size, number>();
+  for (const b of boxes) counts.set(b, (counts.get(b) ?? 0) + 1);
+  const words = ["", "a", "two", "three", "four"];
+  return [...counts.entries()]
+    .map(([s, n]) => `${words[n] ?? n} ${s}${n > 1 ? "s" : ""}`)
+    .join(" + ");
+}
 
 const ink = "var(--brand-ink)";
 const pill: React.CSSProperties = {
@@ -59,8 +91,13 @@ export default function BoxBuilder() {
   const reserveRef = useRef<HTMLDivElement>(null);
 
   const total = vanilla + strawberry;
-  const validSize = (SIZES as readonly number[]).includes(total);
-  const size = (validSize ? total : 12) as Size;
+  const combo = comboFor(total);
+  const validSize = combo !== null;
+  /** Largest tier in the combo. Subscription assumption: the discount % of
+   *  the largest box in the combo applies to the whole combo price
+   *  (e.g. 60 = 48+12 uses the 48's SUB_PCT on $162). A 6-only build stays
+   *  one-time. */
+  const largest: Size = combo?.[0] ?? 12;
 
   // The first-pour kit (6) is one-time only.
   useEffect(() => {
@@ -72,25 +109,25 @@ export default function BoxBuilder() {
     const current = which === "vanilla" ? vanilla : strawberry;
     const next = current + dir * STEP;
     if (next < 0) return;
+    // Cap the combined total, not the single stepper: adding is fine as long
+    // as the new total stays within MAX_TOTAL.
     if (dir === 1 && total + STEP > MAX_TOTAL) return;
     setter(next);
   };
 
-  const base = ONE_TIME[size];
+  const base = combo ? combo.reduce((sum, s) => sum + ONE_TIME[s], 0) : 0;
   const pct =
-    cadence === "once" || size === 6
+    cadence === "once" || largest === 6 || !combo
       ? 0
-      : SUB_PCT[size as Exclude<Size, 6>][cadence as Exclude<Cadence, "once">];
+      : SUB_PCT[largest as Exclude<Size, 6>][cadence as Exclude<Cadence, "once">];
   const price = +(base * (1 - pct / 100)).toFixed(2);
 
-  /** Next valid size above the current total, for the nudge message. */
-  const nextValid = SIZES.find((s) => s > total);
   const nudge = !validSize
     ? total === 0
-      ? "add some sachets. boxes pour in 6, 12, 24, or 48."
-      : nextValid
-        ? `boxes pour in 6, 12, 24, or 48 sachets. add ${nextValid - total} more to make a ${nextValid}-box.`
-        : "boxes top out at 48 sachets. take a few out."
+      ? "add some sachets. builds pour in steps of 6, up to 96."
+      : total > MAX_TOTAL
+        ? "builds top out at 96 sachets. take a few out."
+        : `builds pour in steps of 6. add ${STEP - (total % STEP)} more sachets.`
     : null;
 
   const addToCart = () => {
@@ -98,7 +135,7 @@ export default function BoxBuilder() {
     try {
       localStorage.setItem(
         "shroome_saved_build",
-        JSON.stringify({ size: total, vanilla, strawberry, cadence, price, savedAt: Date.now() })
+        JSON.stringify({ size: total, combo, vanilla, strawberry, cadence, price, savedAt: Date.now() })
       );
     } catch {}
     setCarted(true);
@@ -173,7 +210,7 @@ export default function BoxBuilder() {
       {/* ── Flavor quantities ── */}
       <p style={label({ marginBottom: 4, marginTop: 8 })}>1 · Your flavors · steps of 6</p>
       <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.68rem", color: "rgba(var(--brand-ink-rgb),0.5)", marginBottom: 14 }}>
-        mix any way you like. boxes come in 6, 12, 24, or 48 sachets total.
+        mix any way you like, up to 96 sachets. bigger builds ship as a combo of boxes.
       </p>
       <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 12 }}>
         <Image src="/sachet-vanilla.png" alt="Vanilla sachet" width={34} height={74} style={{ width: 30, height: "auto" }} />
@@ -220,7 +257,7 @@ export default function BoxBuilder() {
           marginBottom: 22,
         }}
       >
-        {nudge ?? `${total} sachets · ${total === 6 ? "first-pour kit" : `${total}-box`}`}
+        {nudge ?? `${total} sachets · ${total === 6 ? "first-pour kit" : `${total}-sachet build`}`}
       </p>
 
       {/* ── Frequency ── */}
@@ -273,6 +310,11 @@ export default function BoxBuilder() {
               "pick a box size to see your price"
             )}
           </p>
+          {combo && combo.length > 1 && (
+            <p style={{ fontFamily: "var(--brand-font-mono)", fontWeight: 700, fontSize: "0.6rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "rgba(var(--brand-ink-rgb),0.55)", marginTop: 4 }}>
+              ships as {comboLabel(combo)}
+            </p>
+          )}
         </div>
         <div style={{ textAlign: "right" }}>
           <p style={{ fontFamily: "var(--brand-font-mono)", fontWeight: 700, fontSize: "1.9rem", color: validSize ? ink : "rgba(var(--brand-ink-rgb),0.3)", lineHeight: 1 }}>
@@ -326,8 +368,8 @@ export default function BoxBuilder() {
           />
         </div>
       ) : (
-        <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.66rem", color: "rgba(var(--brand-ink-rgb),0.55)", textAlign: "center", marginTop: 10 }}>
-          we&apos;ll hold your cart. when the next run goes live, members shop it a full day before the public link.
+        <p style={{ fontFamily: "var(--brand-font-body)", fontSize: "0.78rem", lineHeight: 1.6, color: "rgba(var(--brand-ink-rgb),0.75)", textAlign: "center", marginTop: 16 }}>
+          We&apos;ll hold your cart. Members shop the next run a full day early.
         </p>
       )}
     </div>

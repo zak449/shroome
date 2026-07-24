@@ -599,7 +599,7 @@ export default function Home() {
           {[
             { label: "Why shroomé", id: "why" },
             { label: "Flavors", id: "flavors" },
-            { label: "The Ritual", id: "how" },
+            { label: "Good Energy", id: "how" },
             { label: "FAQ", id: "faq", href: "/faq" },
             { label: "Recipes", id: "recipes", href: "/recipes" },
             { label: "Shop", id: "drop", href: "/drop" },
@@ -686,7 +686,7 @@ export default function Home() {
           {[
             { label: "Why shroomé", id: "why" },
             { label: "Flavors", id: "flavors" },
-            { label: "The Ritual", id: "how" },
+            { label: "Good Energy", id: "how" },
             { label: "FAQ", id: "faq", href: "/faq" },
             { label: "Recipes", id: "recipes", href: "/recipes" },
             { label: "Shop", id: "drop", href: "/drop" },

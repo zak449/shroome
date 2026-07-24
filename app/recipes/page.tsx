@@ -342,7 +342,7 @@ export default function RecipesPage() {
         <div className="rec-nav-links">
           <a href="/#why">Why shroomé</a>
           <a href="/#ingredients">Ingredients</a>
-          <a href="/#how">The Ritual</a>
+          <a href="/#how">Good Energy</a>
           <a href="/faq">FAQ</a>
           <a href="/blog">Blog</a>
           <a href="/recipes" className="active">Recipes</a>
@@ -355,7 +355,7 @@ export default function RecipesPage() {
           links={[
             { label: "Why shroom\u00e9", href: "/#why" },
             { label: "Ingredients", href: "/#ingredients" },
-            { label: "The Ritual", href: "/#how" },
+            { label: "Good Energy", href: "/#how" },
             { label: "FAQ", href: "/faq" },
             { label: "Blog", href: "/blog" },
             { label: "Recipes", href: "/recipes" },

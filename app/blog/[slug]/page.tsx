@@ -417,7 +417,7 @@ export default async function BlogPost({
         <div className="post-nav-links">
           <Link href="/#why">Why shroom&eacute;</Link>
           <Link href="/#ingredients">Ingredients</Link>
-          <Link href="/#how">The Ritual</Link>
+          <Link href="/#how">Good Energy</Link>
           <Link href="/faq">FAQ</Link>
           <Link href="/blog" className="active">Blog</Link>
           <Link href="/recipes">Recipes</Link>
@@ -430,7 +430,7 @@ export default async function BlogPost({
           links={[
             { label: "Why shroom\u00e9", href: "/#why" },
             { label: "Ingredients", href: "/#ingredients" },
-            { label: "The Ritual", href: "/#how" },
+            { label: "Good Energy", href: "/#how" },
             { label: "FAQ", href: "/faq" },
             { label: "Blog", href: "/blog" },
             { label: "Recipes", href: "/recipes" },

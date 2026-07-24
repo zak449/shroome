@@ -169,7 +169,7 @@ export default function WelcomePage() {
           links={[
             { label: "Why shroom\u00e9", href: "/#why" },
             { label: "Ingredients", href: "/#ingredients" },
-            { label: "The Ritual", href: "/#how" },
+            { label: "Good Energy", href: "/#how" },
             { label: "FAQ", href: "/faq" },
             { label: "Blog", href: "/blog" },
             { label: "Recipes", href: "/recipes" },
