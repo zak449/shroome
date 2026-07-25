@@ -9,8 +9,9 @@
 //     welcome   → lavender induction: composed member-card hero art
 //     dispatch 001 (sachet)  → cream editorial: specimen art + asymmetric rows
 //     dispatch 002 (ledger)  → ink-dominant: sealed-envelope drama on ink
-//     dispatch 003 (redacted)→ document aesthetic: paper record, courier type,
-//                              real redaction bars, rotated FLOCK EYES ONLY stamp
+//     dispatch 003 (redacted)→ the production update: warm, plain-spoken
+//                              status note on a paper card, exactly one
+//                              playful redaction bar (the flavor line)
 //     dispatch 004 (ballot)  → election poster: split-field candidates + VS
 //   Composite hero art lives in public/email/*.png (generated from brand
 //   assets + the brand TTFs, so display type is authentic even though email
@@ -27,8 +28,8 @@
 //   Every lifecycle email after welcome is a numbered dispatch from mé's
 //   ledger. Each dispatch: cold open → one revealed detail → one withheld
 //   detail → a next-dispatch tease. Recurring bits: mé's ledger sign-off
-//   line, the redaction bars (paid off in dispatch 004 — the flavor bar was
-//   covering a blank the flock fills in), the ballot as cliffhanger election.
+//   line, the single flavor-line redaction bar (paid off in dispatch 004:
+//   it was covering a blank the flock fills in), the cliffhanger election.
 // VOICE: lowercase-cool, warm, confident. "the first run / the next run",
 //   sold out = "poured out", speed = "the stir is the recipe". Real numbers
 //   only (500 boxes, 9 days). HONESTY RULE ABSOLUTE: never a fake count,
@@ -618,7 +619,7 @@ export function ledgerEmail(email: string) {
 
     <!-- open loop: dispatch 003 -->
     ${nextDispatch(
-      `dispatch 003: a production sheet crosses mé's desk, most of it blacked out. one bar comes off. two stay. one of the two is not what you think.`
+      `dispatch 003: the production update. where the next run actually stands, told straight, with exactly one line kept under the bar.`
     )}
 
     <!-- sign-off ritual -->
@@ -633,83 +634,76 @@ export function ledgerEmail(email: string) {
   return { subject, html };
 }
 
-// ─── Dispatch 003: the redacted production sheet — document aesthetic ────────
-// Drama beat: a production-floor record with the good parts blacked out.
-// Courier type, paper card on lavender, real ink bars (never a fake number),
-// rotated FLOCK EYES ONLY stamp. Revealed: status is in motion (that bar
-// came off). Withheld: run size + the flavor line. The flavor bar is the
-// series' long con — dispatch 004 reveals it was covering a blank.
+// ─── Dispatch 003: the production update — warm status note, paper card ──────
+// Plain-spoken beat: a straightforward status note from the team about the
+// next run, readable on first skim. Everything stated straight: recipes
+// locked, materials moving, the flock hears the date first. EXACTLY ONE
+// playful withheld detail: the flavor line, under a single ink bar (the
+// series' long con: dispatch 004 reveals it was covering a blank the flock
+// fills in). Paper-card aesthetic kept, shipper-box photo as the hero.
 
 export function redactedEmail(email: string) {
-  const subject = "dispatch 003: one bar came off the sheet";
-  const previewText = "most of it stays blacked out. two bars left. one of them is hiding nothing at all.";
-  const docLine = (label: string, value: string) =>
-    `<p style="margin:0 0 12px;font-family:${MONO};font-size:14px;line-height:1.9;color:${EMAIL.ink};">${label} ${value}</p>`;
+  const subject = "dispatch 003: the production update";
+  const previewText = "recipes locked. materials moving. the flock hears the date first. one line stays covered.";
+  const updateLine = (label: string, value: string, last = false) =>
+    `<tr><td style="padding:${last ? "14px 0 0" : "14px 0"};${last ? "" : `border-bottom:1px solid rgba(45,52,26,0.15);`}">
+      <p style="margin:0 0 3px;font-family:${MONO};font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:${EMAIL.accent};">${label}</p>
+      <p style="margin:0;font-family:${SANS};font-size:15px;line-height:1.6;color:${EMAIL.ink};">${value}</p>
+    </td></tr>`;
   const html = emailShell(`
 
-    ${masthead("cream", "✿ &nbsp;dispatch 003&nbsp; · &nbsp;from the production floor&nbsp; · &nbsp;flock eyes only&nbsp; ✿")}
+    ${masthead("cream", "✿ &nbsp;dispatch 003&nbsp; · &nbsp;the production update&nbsp; · &nbsp;the flock reads it first&nbsp; ✿")}
 
-    <!-- cold open on lavender -->
-    <tr><td align="center" style="padding:44px 40px 0;background-color:${EMAIL.lavender};">
-      ${eyebrow("dispatch 003 · from the production floor", EMAIL.ink)}
-      ${headline("we blacked most<br/>of this out.", 38)}
+    <!-- hero: the shipper box, packed -->
+    <tr><td style="padding:0;background-color:${EMAIL.canvas};">
+      <img src="${ASSET.shipperBox}" alt="a shroomé shipper box, packed and ready to go out" width="600" style="display:block;width:100%;max-width:600px;height:auto;border:0;" />
     </td></tr>
-    <tr><td align="center" style="padding:22px 56px 34px;background-color:${EMAIL.lavender};">
+
+    <!-- cold open: the plain headline -->
+    <tr><td align="center" style="padding:44px 40px 0;background-color:${EMAIL.canvas};">
+      ${eyebrow("dispatch 003 · the production update")}
+      ${headline("the next run<br/>is in motion.", 40)}
+    </td></tr>
+    <tr><td align="center" style="padding:22px 60px 36px;background-color:${EMAIL.canvas};">
       ${para(
-        `a production sheet crossed mé's desk this week. current, not archive. it reaches the flock with exactly one bar lifted, and mé is not taking questions.`
+        `a quick status note from the team, no riddles this time. you wait for these emails, so here is exactly where the next run stands, in plain words.`
       )}
     </td></tr>
 
-    <!-- the document (paper card on lavender) -->
-    <tr><td style="padding:0 40px 44px;background-color:${EMAIL.lavender};">
+    <!-- the update (paper card on lavender) -->
+    <tr><td style="padding:36px 40px 44px;background-color:${EMAIL.lavender};">
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
-        <tr><td style="background-color:${EMAIL.canvas};border:2px solid ${EMAIL.ink};border-radius:6px;padding:0 30px 24px;">
-          <img src="${ASSET.stampFlockOnly}" alt="rubber stamp: flock eyes only" width="200" style="display:block;width:200px;max-width:56%;height:auto;border:0;margin:-8px 0 0 auto;" />
-          <p style="margin:-20px 0 18px;font-family:${MONO};font-size:13px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:${EMAIL.ink};">production record<br/>re: the next run</p>
-          ${docLine("status:", `<strong>in motion</strong> <span style="font-family:${SANS};font-size:10px;font-weight:800;letter-spacing:0.16em;text-transform:uppercase;color:${EMAIL.accent};">&nbsp;· bar lifted</span>`)}
-          ${docLine("run size:", redact(120))}
-          ${docLine("flavor line:", redact(160))}
-          ${docLine("first pour goes to:", `<strong>the flock, a full day early</strong>`)}
-          <p style="margin:18px 0 0;font-family:${MONO};font-size:12px;line-height:1.6;color:${EMAIL.ink};opacity:0.55;">redactions by mé. appeals denied.</p>
+        <tr><td style="background-color:${EMAIL.canvas};border:2px solid ${EMAIL.ink};border-radius:6px;padding:26px 30px 22px;">
+          <p style="margin:0 0 6px;font-family:${MONO};font-size:13px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:${EMAIL.ink};">the production update<br/>re: the next run</p>
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+            ${updateLine("recipes", `<strong>locked.</strong> same sachets, same real numbers. nothing watered down.`)}
+            ${updateLine("materials", `<strong>on the move.</strong> matcha, sachets, and boxes are making their way to the production floor.`)}
+            ${updateLine("run date", `<strong>set once everything lands.</strong> the flock hears it first, a full day before the public.`)}
+            ${updateLine("flavor line", `${redact(150)}<br/><span style="font-size:13px;opacity:0.7;">the one detail we're keeping under the bar. it comes off in dispatch 004.</span>`, true)}
+          </table>
+          <p style="margin:18px 0 0;font-family:${MONO};font-size:12px;line-height:1.6;color:${EMAIL.ink};opacity:0.55;">one redaction. mé wouldn't allow more suspense than that.</p>
         </td></tr>
       </table>
     </td></tr>
 
-    <!-- exhibit a: archive photo strip -->
-    <tr><td style="padding:36px 32px 0;background-color:${EMAIL.canvas};">
-      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
-        <tr>
-          <td width="55%" valign="middle" style="padding:0;">
-            <img src="${ASSET.shipperBox}" alt="a shroomé shipper box from the first run" width="295" style="display:block;width:100%;height:auto;border:0;border-radius:16px;" />
-          </td>
-          <td width="6%" style="font-size:0;line-height:0;">&nbsp;</td>
-          <td width="39%" valign="middle" style="padding:0;">
-            ${eyebrow("exhibit a", EMAIL.accent, 10)}
-            <p style="margin:0 0 10px;font-family:${DISPLAY};font-size:22px;font-weight:800;letter-spacing:-0.02em;line-height:1.15;color:${EMAIL.ink};">the first run.</p>
-            ${para(`${DROP_001.boxes} boxes, poured out in ${DROP_001.soldOutInDays} days. archive material now.`, { size: 13, opacity: 0.75 })}
-          </td>
-        </tr>
-      </table>
-    </td></tr>
-
-    <tr><td align="center" style="padding:32px 60px 0;background-color:${EMAIL.canvas};">
+    <tr><td align="center" style="padding:36px 60px 0;background-color:${EMAIL.canvas};">
       ${para(
-        `the bars come off in order, flock first, then everyone. and a note for the careful readers: one of those two bars is not covering a secret. it's covering something better. nothing to do tonight except be the kind of person who already knows.`
+        `that's the whole update. no countdown theater, no invented dates. the first run was ${DROP_001.boxes} boxes and poured out in ${DROP_001.soldOutInDays} days, so this one is being built carefully, and when the date is real you will read it before anyone else does.`
       )}
     </td></tr>
 
     <!-- CTA -->
     <tr><td align="center" style="padding:28px 40px 0;background-color:${EMAIL.canvas};">
-      ${ctaButton(`${EMAIL.siteUrl}/drop`, "watch the ledger →")}
+      ${ctaButton(`${EMAIL.siteUrl}/drop`, "follow the run →")}
     </td></tr>
 
     <!-- open loop: dispatch 004 -->
     ${nextDispatch(
-      `dispatch 004: the flavor line. the bar comes off and there is nothing under it. that's the point. the flock writes that line.`
+      `dispatch 004: the flavor bar comes off, and what's under it isn't a flavor. it's a ballot. the flock writes that line.`
     )}
 
     <!-- sign-off ritual -->
-    ${ledgerLine("two redactions standing. appeals denied.")}
+    ${ledgerLine("entry 003: recipes locked, materials moving. one line covered, for now.")}
 
     <tr><td align="center" style="padding:20px 40px 32px;background-color:${EMAIL.canvas};">
       ${socialRow()}
