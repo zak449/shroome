@@ -2,38 +2,37 @@
 // DESIGN SYSTEM (matches the site + packaging):
 //   • lavender (#E3D5F7 tintSoft), cream (#FEFFF8 canvas), ink (#2D341A),
 //     matcha (#7A881F) CTAs. pink (#FF6DC7) ONLY in strawberry flavor contexts.
-//   • footer: mé the sheep + "mé, our sheep. keeps the ledger, never spills."
+//   • footer: mé the sheep + "we only email when it matters. no spam, ever."
 //
 // ART DIRECTION — five distinct pieces, one brand:
 //   Each template is its own editorial page, not a re-skin of one layout:
-//     welcome   → lavender induction: composed member-card hero art
-//     dispatch 001 (sachet)  → cream editorial: specimen art + asymmetric rows
-//     dispatch 002 (ledger)  → ink-dominant: sealed-envelope drama on ink
-//     dispatch 003 (redacted)→ the production update: warm, plain-spoken
-//                              status note on a paper card, exactly one
-//                              playful redaction bar (the flavor line)
-//     dispatch 004 (ballot)  → election poster: split-field candidates + VS
+//     welcome            → lavender welcome: composed member-card hero art
+//     how to pour it     → cream editorial: specimen art + asymmetric rows
+//     what we're making  → ink-dominant: sealed-envelope hero on ink
+//     the heads-up       → warm, plain-spoken status note on a paper card
+//     the flavor vote    → election poster: split-field candidates + VS
 //   Composite hero art lives in public/email/*.png (generated from brand
 //   assets + the brand TTFs, so display type is authentic even though email
 //   clients can't load web fonts). Alt text carries the meaning everywhere.
 //
 // TYPE SYSTEM (email-safe, hierarchy does the work):
-//   • headlines: 800 weight, 34–42px, letter-spacing -0.02em, line-height 1.05
+//   • headlines: 800 weight, 34-42px, letter-spacing -0.02em, line-height 1.05
 //   • eyebrows: 11px / 800 / 0.16em tracking / uppercase
 //   • body: 16px/1.7 on a ~480px measure inside the 600 shell
-//   • ticker strips: thin ink bands with ✿ separators, one per dispatch masthead
-//   • stamps: ink-block cells (cream uppercase, tracked) for ledger beats
+//   • ticker strips: thin ink bands with ✿ separators, one per masthead
+//   • stamps: ink-block cells (cream uppercase, tracked) for the receipt beat
 //
-// MESSAGING — the archive dispatch engine:
-//   Every lifecycle email after welcome is a numbered dispatch from mé's
-//   ledger. Each dispatch: cold open → one revealed detail → one withheld
-//   detail → a next-dispatch tease. Recurring bits: mé's ledger sign-off
-//   line, the single flavor-line redaction bar (paid off in dispatch 004:
-//   it was covering a blank the flock fills in), the cliffhanger election.
-// VOICE: lowercase-cool, warm, confident. "the first run / the next run",
-//   sold out = "poured out", speed = "the stir is the recipe". Real numbers
-//   only (500 boxes, 9 days). HONESTY RULE ABSOLUTE: never a fake count,
-//   date, timer, or member number. Community first, never discount-led.
+// MESSAGING — per Marketing/messaging-dna.md (the canon):
+//   Every email is a short personal note from zak, the founder. Information
+//   first, charm second. At most ONE playful wink per email (mé may appear
+//   as a cute beat, never as mythology). The five phrases, used verbatim:
+//     "you hear it first." / "we only email when it matters. no spam, ever."
+//     "the first run poured out in 9 days." / "the stir is the recipe."
+//     "never sold, only earned."
+// VOICE: lowercase, personal, direct, warm. "the first run / the next run",
+//   sold out = "poured out". Real numbers only (500 boxes, 9 days).
+//   HONESTY RULE ABSOLUTE: never a fake count, date, timer, or member
+//   number. No lore-speak, no dispatch numbering, no riddles, no em-dashes.
 // EMAIL-SAFE: tables + inline styles, max-width 600, bulletproof buttons,
 //   alt text on every image, images never load-bearing for meaning, no
 //   third-party (Klaviyo) branding — footer is ours: unsubscribe + address.
@@ -99,7 +98,7 @@ export function unsubHeaders(email: string): Record<string, string> {
 
 const SANS = BRAND.emailFonts.body;
 const DISPLAY = BRAND.emailFonts.display;
-/** Document/typewriter stack for the redacted production-record aesthetic. */
+/** Document/typewriter stack for the status-note paper-card aesthetic. */
 const MONO = "'Courier New',Courier,monospace";
 
 // ─── Shared building blocks ──────────────────────────────────────────────────
@@ -126,7 +125,7 @@ function para(text: string, opts: { size?: number; opacity?: number; margin?: st
   return `<p style="margin:${margin};font-family:${SANS};font-size:${size}px;line-height:1.7;color:${color};${opacity < 1 ? `opacity:${opacity};` : ""}">${text}</p>`;
 }
 
-/** Ticker strip — thin ink band, ✿-separated, one line, per-dispatch masthead. */
+/** Ticker strip — thin ink band, ✿-separated, one line, per-email masthead. */
 function ticker(line: string, bg: string = EMAIL.ink, fg: string = EMAIL.canvas) {
   return `
     <tr><td align="center" bgcolor="${bg}" style="background-color:${bg};padding:9px 10px;">
@@ -141,7 +140,7 @@ function stampCell(label: string) {
   </td>`;
 }
 
-/** Two stamps side by side — the POURED OUT ledger beat. */
+/** Two stamps side by side — the POURED OUT receipt beat. */
 function stampRow(a: string, b: string) {
   return `
     <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:0 auto;">
@@ -153,31 +152,31 @@ function stampRow(a: string, b: string) {
     </table>`;
 }
 
-/** Redaction bar — real ink, never a fake number underneath. */
-function redact(width: number) {
+/** Ink bar — a design element for "not decided yet" values. Always labeled honestly. */
+function inkBar(width: number) {
   return `<span style="display:inline-block;width:${width}px;max-width:60%;height:14px;background-color:${EMAIL.ink};border-radius:2px;vertical-align:middle;">&nbsp;</span>`;
 }
 
-/** The serialized tease — every dispatch ends by planting the next one. */
-function nextDispatch(text: string) {
+/** "Next from us" card — tells her exactly what the next email is, and that we'll be quiet otherwise. */
+function nextUp(text: string) {
   return `
     <tr><td style="padding:36px 32px 0;background-color:${EMAIL.canvas};">
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr><td style="background-color:${EMAIL.ink};border-radius:14px;padding:26px 32px 24px;">
-          ${eyebrow("next dispatch", EMAIL.lavender, 8)}
+          ${eyebrow("next from us", EMAIL.lavender, 8)}
           <p style="margin:0;font-family:${DISPLAY};font-size:17px;font-weight:700;line-height:1.5;color:${EMAIL.canvas};">${text}</p>
         </td></tr>
       </table>
     </td></tr>`;
 }
 
-/** mé's recurring sign-off ritual — the ledger line that closes every email. */
-function ledgerLine(line: string) {
+/** The ps — a short personal closing line from zak (or one cute mé beat). */
+function psNote(line: string) {
   return `
     <tr><td align="center" style="padding:30px 60px 8px;background-color:${EMAIL.canvas};">
       <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:0 auto;">
         <tr><td align="center" style="border-top:2px solid ${EMAIL.ink};padding:18px 8px 0;">
-          ${eyebrow("mé's ledger", EMAIL.accent, 8)}
+          ${eyebrow("ps", EMAIL.accent, 8)}
           <p style="margin:0;font-family:${SANS};font-size:14px;line-height:1.6;color:${EMAIL.ink};opacity:0.8;">${line}</p>
         </td></tr>
       </table>
@@ -195,8 +194,8 @@ function ctaButton(href: string, label: string) {
 }
 
 /**
- * Masthead variants — each dispatch gets its own composed header
- * (sheep symbol / wordmark / dispatch ticker) so no two emails open alike.
+ * Masthead variants — each email gets its own composed header
+ * (sheep symbol / wordmark / ticker) so no two emails open alike.
  */
 function masthead(variant: "lavender" | "cream" | "ink", tickerLine?: string, tickerBg?: string, tickerFg?: string) {
   const bg = variant === "ink" ? EMAIL.ink : variant === "cream" ? EMAIL.canvas : EMAIL.lavender;
@@ -210,12 +209,12 @@ function masthead(variant: "lavender" | "cream" | "ink", tickerLine?: string, ti
     ${tickerLine ? ticker(tickerLine, tickerBg, tickerFg) : ""}`;
 }
 
-/** Footer: mé the sheep, ledger line, legal, unsubscribe. Ours — no ESP branding. */
+/** Footer: mé the sheep, the no-spam promise, legal, unsubscribe. Ours — no ESP branding. */
 function footer(email: string) {
   return `
     <tr><td align="center" style="padding:32px 24px 12px;background-color:${EMAIL.lavender};">
       <img src="${ASSET.sheepSolid}" alt="mé the sheep, the shroomé mark" width="44" style="display:block;width:44px;height:auto;border:0;margin:0 auto 10px;" />
-      <p style="margin:0;font-family:${SANS};font-size:12px;color:${EMAIL.ink};opacity:0.75;">mé, our sheep. keeps the ledger, never spills.</p>
+      <p style="margin:0;font-family:${SANS};font-size:12px;color:${EMAIL.ink};opacity:0.75;">we only email when it matters. no spam, ever.</p>
     </td></tr>
     <tr><td align="center" style="padding:8px 24px 32px;background-color:${EMAIL.lavender};">
       <p style="margin:0 0 4px;font-family:${SANS};font-size:10px;color:${EMAIL.ink};opacity:0.4;">© ${new Date().getFullYear()} shroomé</p>
@@ -261,32 +260,33 @@ function emailShell(content: string, email: string, previewText = "") {
 </html>`;
 }
 
-// ─── Welcome email (flock induction) — lavender induction card ───────────────
-// Joining is an induction, not a signup confirmation. "you're in the room
-// now" energy, real numbers only (no fake member numbers), and the email
-// ends by opening the first loop: dispatch 001 is coming, flock reads first.
+// ─── Welcome email — thank you, and the promise ──────────────────────────────
+// A personal thank-you from zak. The founder's brief, made literal: we worked
+// hard on this, it poured out, you clearly want the next one, so you come
+// first. Early access before go-live + member-only limited merch + the
+// no-spam promise. One wink: mé saw your name come in.
 
 export function welcomeEmail(email: string, referralCode?: string) {
-  const subject = "your name is in the ledger now 🐑";
+  const subject = "thank you. you're in. 🐑";
   const previewText =
-    "written in ink, page one. and the first dispatch from the archive is already being drafted.";
+    "the first run poured out in 9 days. the next one, you shop first. and we will not spam you.";
   const html = emailShell(`
 
-    ${masthead("lavender", "✿ &nbsp;flock induction&nbsp; · &nbsp;member of record&nbsp; ✿")}
+    ${masthead("lavender", "✿ &nbsp;welcome to the flock&nbsp; · &nbsp;you hear it first&nbsp; ✿")}
 
     <!-- hero: the member card (composed art, lavender-seamless) -->
     <tr><td style="padding:0;background-color:${EMAIL.lavender};">
-      <img src="${ASSET.heroInduction}" alt="a shroomé member-of-record card: run 001, 500 boxes, poured out on day 9. admitted immediately, privileges standing. stamped: inducted." width="600" style="display:block;width:100%;max-width:600px;height:auto;border:0;" />
+      <img src="${ASSET.heroInduction}" alt="your shroomé member card: the first run, 500 boxes, poured out on day 9. you're in." width="600" style="display:block;width:100%;max-width:600px;height:auto;border:0;" />
     </td></tr>
 
-    <!-- induction headline -->
+    <!-- the thank-you -->
     <tr><td align="center" style="padding:44px 40px 0;background-color:${EMAIL.canvas};">
       ${eyebrow("welcome to the flock")}
-      ${headline("you're in the<br/>room now.", 42)}
+      ${headline("thank you.<br/>really.", 42)}
     </td></tr>
     <tr><td align="center" style="padding:22px 60px 28px;background-color:${EMAIL.canvas};">
       ${para(
-        `that wasn't a newsletter signup. mé opened the ledger, wrote your name in ink, and closed it again. no tiers, no waiting room. you're flock, effective immediately, and the flock hears everything first.`
+        `hey, it's zak. i make shroomé. we worked so hard on the first run, and it poured out faster than we ever expected. if you're signing up after that, you really want the next one. so here's my promise: you come first.`
       )}
     </td></tr>
 
@@ -296,7 +296,7 @@ export function welcomeEmail(email: string, referralCode?: string) {
     </td></tr>
     <tr><td align="center" style="padding:20px 60px 8px;background-color:${EMAIL.canvas};">
       ${para(
-        `that's the whole history so far. ${DROP_001.boxes} boxes, gone in ${DROP_001.soldOutInDays} days, every one of them written into the ledger. the next run is already in motion, and you'll shop it a full day before the public even hears about it.`
+        `that's our whole story so far. ${DROP_001.boxes} boxes, gone in ${DROP_001.soldOutInDays} days. we're already making more, and you'll shop the next run a full day before anyone else. you hear it first.`
       )}
     </td></tr>
     <tr><td align="center" style="padding:14px 60px 36px;background-color:${EMAIL.canvas};">
@@ -346,17 +346,17 @@ export function welcomeEmail(email: string, referralCode?: string) {
       </p>
     </td></tr>
 
-    <!-- standing privileges (ink card) -->
+    <!-- the promise (ink card) -->
     <tr><td style="padding:36px 32px 8px;background-color:${EMAIL.canvas};">
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr><td style="background-color:${EMAIL.ink};border-radius:16px;padding:34px 34px 30px;">
-          ${eyebrow("standing privileges", EMAIL.lavender, 10)}
-          <p style="margin:0 0 20px;font-family:${DISPLAY};font-size:26px;font-weight:800;letter-spacing:-0.02em;color:${EMAIL.canvas};line-height:1.1;">what the room gets you</p>
-          <p style="margin:0 0 10px;font-family:${SANS};font-size:15px;line-height:1.7;color:${EMAIL.canvas};">✓ every run, a full day before the public</p>
-          <p style="margin:0 0 10px;font-family:${SANS};font-size:15px;line-height:1.7;color:${EMAIL.canvas};">✓ a vote on what gets made next</p>
-          <p style="margin:0 0 10px;font-family:${SANS};font-size:15px;line-height:1.7;color:${EMAIL.canvas};">✓ merch that is never sold, only earned</p>
-          <p style="margin:0 0 10px;font-family:${SANS};font-size:15px;line-height:1.7;color:${EMAIL.canvas};">✓ free gifts with subscriptions</p>
-          <p style="margin:0;font-family:${SANS};font-size:15px;line-height:1.7;color:${EMAIL.canvas};">✓ the drop-day text. you will not hear it secondhand.</p>
+          ${eyebrow("our promise to you", EMAIL.lavender, 10)}
+          <p style="margin:0 0 20px;font-family:${DISPLAY};font-size:26px;font-weight:800;letter-spacing:-0.02em;color:${EMAIL.canvas};line-height:1.1;">what being here means</p>
+          <p style="margin:0 0 10px;font-family:${SANS};font-size:15px;line-height:1.7;color:${EMAIL.canvas};">✓ early access. you shop every run a full day before go-live.</p>
+          <p style="margin:0 0 10px;font-family:${SANS};font-size:15px;line-height:1.7;color:${EMAIL.canvas};">✓ member-only limited-edition merch. never sold, only earned.</p>
+          <p style="margin:0 0 10px;font-family:${SANS};font-size:15px;line-height:1.7;color:${EMAIL.canvas};">✓ a real vote on what we make next.</p>
+          <p style="margin:0 0 10px;font-family:${SANS};font-size:15px;line-height:1.7;color:${EMAIL.canvas};">✓ the drop-day text, so you hear it first, not secondhand.</p>
+          <p style="margin:0;font-family:${SANS};font-size:15px;line-height:1.7;color:${EMAIL.canvas};">✓ and we only email when it matters. no spam, ever.</p>
         </td></tr>
       </table>
     </td></tr>
@@ -415,13 +415,13 @@ export function welcomeEmail(email: string, referralCode?: string) {
       <img src="${ASSET.lockupGoodEnergy}" alt="ready to enjoy life with good energy." width="400" style="display:block;width:400px;max-width:100%;height:auto;border:0;margin:0 auto;" />
     </td></tr>
 
-    <!-- open loop: dispatch 001 -->
-    ${nextDispatch(
-      `dispatch 001 lands in a few days: what's actually inside the sachet, gram by gram. one line will be blacked out. the flock reads it first.`
+    <!-- what's next -->
+    ${nextUp(
+      `next from us: how to pour it. the whole ritual in one short email, plus exactly what's in the sachet, gram by gram. after that, we quiet down until there's real news.`
     )}
 
-    <!-- sign-off ritual -->
-    ${ledgerLine("tonight's entry: one new name. ink still drying.")}
+    <!-- ps -->
+    ${psNote("mé, our sheep, saw your name come in. she's thrilled. (she's a sheep, but still.)")}
 
     <tr><td align="center" style="padding:20px 40px 32px;background-color:${EMAIL.canvas};">
       <img src="${ASSET.sheepDrink}" alt="mé the sheep sipping a shroomé" width="90" style="display:block;width:90px;height:auto;border:0;margin:0 auto 14px;" />
@@ -433,33 +433,31 @@ export function welcomeEmail(email: string, referralCode?: string) {
   return { subject, html };
 }
 
-// ─── Dispatch 001: what's inside the sachet — cream editorial ────────────────
-// Day-7 follow-up. Cold open: the cut-open sachet on mé's desk. Revealed:
-// the three real numbers. Withheld: line four (the next run's page, still
-// being written). Tease: dispatch 002, the sealed envelope. Layout: cream
-// editorial with specimen art and asymmetric photo/text rows, left-aligned.
+// ─── How to pour it — the useful product email (cream editorial) ─────────────
+// Day-2 follow-up. Pure usefulness: the ritual in three steps and exactly
+// what's inside every sachet, stated plainly. One wink: mé taste-tests.
 
 export function sachetEmail(email: string) {
-  const subject = "dispatch 001: we cut a sachet open";
-  const previewText = "three numbers made it out. line four didn't. the flock reads this before anyone.";
+  const subject = "how to pour it 🍵";
+  const previewText = "no powder, no whisk. tear, pour over milk, stir. here's exactly what's inside.";
   const html = emailShell(`
 
-    ${masthead("cream", "✿ &nbsp;dispatch 001&nbsp; · &nbsp;from the archive&nbsp; · &nbsp;the flock reads it first&nbsp; ✿")}
+    ${masthead("cream", "✿ &nbsp;the pour guide&nbsp; · &nbsp;from our kitchen to yours&nbsp; ✿")}
 
-    <!-- cold open (left-aligned, editorial) -->
+    <!-- open (left-aligned, editorial) -->
     <tr><td style="padding:44px 48px 0;background-color:${EMAIL.canvas};">
-      ${eyebrow("dispatch 001 · from the archive")}
-      ${headline("we cut one open.", 40)}
+      ${eyebrow("the pour guide")}
+      ${headline("the whole ritual<br/>is a stir.", 40)}
     </td></tr>
     <tr><td style="padding:20px 48px 30px;background-color:${EMAIL.canvas};">
       ${para(
-        `every run, a few sachets never ship. they go to mé's desk, get cut open, weighed, and written into the ledger. this is that page, copied out for the flock. three lines cleared for release. one didn't.`
+        `hey, it's zak. before your first box (or your next one), here's how to pour it and exactly what's inside every sachet. no secrets, just the good stuff, weighed out.`
       )}
     </td></tr>
 
     <!-- hero: the specimen (cream-seamless composed art) -->
     <tr><td style="padding:0;background-color:${EMAIL.canvas};">
-      <img src="${ASSET.heroSpecimen}" alt="exhibit: one shroomé sachet, cut open and weighed. 2.5g ceremonial matcha, 200mg mushroom extracts at 70%+ beta-glucans, 2g grass-fed collagen." width="600" style="display:block;width:100%;max-width:600px;height:auto;border:0;" />
+      <img src="${ASSET.heroSpecimen}" alt="one shroomé sachet, opened and weighed: 2.5g ceremonial matcha, 200mg mushroom extracts at 70%+ beta-glucans, 2g grass-fed collagen." width="600" style="display:block;width:100%;max-width:600px;height:auto;border:0;" />
     </td></tr>
 
     <!-- asymmetric editorial row: photo left, text right -->
@@ -473,7 +471,7 @@ export function sachetEmail(email: string) {
           <td width="48%" valign="middle" style="padding:0;">
             ${eyebrow("the ritual", EMAIL.accent, 10)}
             <p style="margin:0 0 12px;font-family:${DISPLAY};font-size:26px;font-weight:800;letter-spacing:-0.02em;line-height:1.1;color:${EMAIL.ink};">the stir is<br/>the recipe.</p>
-            ${para(`no powder, no frother, no 40-second whisk workout. the matcha is already liquid. tear, pour over milk, stir.`, { size: 14 })}
+            ${para(`no powder, no frother, no 40-second whisk workout. the matcha is already liquid. tear, pour over milk, stir. hot or iced, oat or dairy, it just works.`, { size: 14 })}
           </td>
         </tr>
       </table>
@@ -484,7 +482,7 @@ export function sachetEmail(email: string) {
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
           <td width="48%" valign="middle" style="padding:0;">
-            ${eyebrow("the difference", EMAIL.accent, 10)}
+            ${eyebrow("why it's different", EMAIL.accent, 10)}
             <p style="margin:0 0 12px;font-family:${DISPLAY};font-size:26px;font-weight:800;letter-spacing:-0.02em;line-height:1.1;color:${EMAIL.ink};">we sell what's inside the mushroom.</p>
             ${para(`beta-glucans are the part your immune system actually recognizes. ours are hot-water extracted from the fruiting body and third-party verified. calm focus from lion's mane, steady energy from matcha, no 2pm crash.`, { size: 14 })}
           </td>
@@ -496,11 +494,11 @@ export function sachetEmail(email: string) {
       </table>
     </td></tr>
 
-    <!-- the ledger page (ink spec sheet, incl. the withheld line) -->
+    <!-- the spec sheet (ink card): every sachet, weighed out -->
     <tr><td style="padding:36px 32px 0;background-color:${EMAIL.canvas};">
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr><td style="background-color:${EMAIL.ink};border-radius:16px;padding:30px 30px 26px;">
-          ${eyebrow("weighed &amp; verified · ledger copy", EMAIL.lavender, 16)}
+          ${eyebrow("every sachet, weighed out", EMAIL.lavender, 16)}
           <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
             <tr><td style="padding:0 0 16px;border-bottom:1px solid rgba(254,255,248,0.12);">
               <p style="margin:0;font-family:${DISPLAY};"><span style="font-size:34px;font-weight:800;letter-spacing:-0.02em;color:${EMAIL.lavender};">2.5g</span>
@@ -518,8 +516,8 @@ export function sachetEmail(email: string) {
               <p style="margin:6px 0 0;font-family:${SANS};font-size:14px;line-height:1.6;color:rgba(254,255,248,0.65);">pre-dissolved bioavailable peptides for skin, hair, nails, and gut.</p>
             </td></tr>
             <tr><td style="padding:16px 0 0;">
-              <p style="margin:0;font-family:${SANS};font-size:12px;font-weight:800;letter-spacing:0.16em;text-transform:uppercase;color:${EMAIL.canvas};">line four &nbsp;<span style="background-color:${EMAIL.lavender};border-radius:2px;color:${EMAIL.lavender};">redacted.</span></p>
-              <p style="margin:6px 0 0;font-family:${SANS};font-size:14px;line-height:1.6;color:rgba(254,255,248,0.65);">the next run's page. mé is still writing it. not cleared for this dispatch.</p>
+              <p style="margin:0;font-family:${SANS};font-size:12px;font-weight:800;letter-spacing:0.16em;text-transform:uppercase;color:${EMAIL.canvas};">and that's it.</p>
+              <p style="margin:6px 0 0;font-family:${SANS};font-size:14px;line-height:1.6;color:rgba(254,255,248,0.65);">nothing artificial, nothing you'd need to google. what's on this card is what's in the cup.</p>
             </td></tr>
           </table>
         </td></tr>
@@ -539,17 +537,17 @@ export function sachetEmail(email: string) {
       ${ctaButton(EMAIL.siteUrl, "meet shroomé →")}
       <p style="margin:16px 0 0;font-family:${SANS};font-size:13px;line-height:1.6;color:${EMAIL.ink};opacity:0.55;">
         the first run was ${DROP_001.boxes} boxes and poured out in ${DROP_001.soldOutInDays} days.<br/>
-        the flock shops the next run a full day early. you're already in.
+        the next run, you shop a full day early. you're already in.
       </p>
     </td></tr>
 
-    <!-- open loop: dispatch 002 -->
-    ${nextDispatch(
-      `dispatch 002: mé seals an envelope about the next run. we can show you the envelope. we cannot show you the entry. the flock sees it first.`
+    <!-- what's next -->
+    ${nextUp(
+      `next from us: what we're making right now. a real status update on the next run, sent only when there's something true to say.`
     )}
 
-    <!-- sign-off ritual -->
-    ${ledgerLine("today's entry: sachet contents verified. everything else stays sealed.")}
+    <!-- ps -->
+    ${psNote("mé taste-tests every batch. she is extremely thorough about it.")}
 
     <tr><td align="center" style="padding:20px 40px 32px;background-color:${EMAIL.canvas};">
       ${socialRow()}
@@ -560,44 +558,44 @@ export function sachetEmail(email: string) {
   return { subject, html };
 }
 
-// ─── Dispatch 002: the sealed envelope — ink-dominant drama ──────────────────
-// Waiting-period beat. Cold open on ink: two kinds of ledger pages.
-// Revealed: the next run exists, it is not a maybe. Withheld: size + date
-// (sealed). Honesty rule: promises nothing but "flock hears first". No
-// dates, no counts, no timers. Tease: dispatch 003, the redacted sheet.
+// ─── What we're making — honest status on ink ────────────────────────────────
+// Waiting-period note. The next run is real and in motion; no date or count
+// yet, and we say so instead of inventing one. The promise: you hear it
+// first, a full day before the public. One wink: mé is sworn to secrecy.
 
 export function ledgerEmail(email: string) {
-  const subject = "dispatch 002: mé sealed something this week";
-  const previewText = "entry 002 is about the next run. here's the envelope. the entry stays shut.";
+  const subject = "what we're making right now";
+  const previewText = "the next run is real and in motion. no date yet, and we won't invent one. you hear it first.";
   const html = emailShell(`
 
-    ${masthead("ink", "✿ &nbsp;dispatch 002&nbsp; · &nbsp;from the ledger&nbsp; · &nbsp;seal unbroken&nbsp; ✿", EMAIL.lavender, EMAIL.ink)}
+    ${masthead("ink", "✿ &nbsp;what we're making&nbsp; · &nbsp;you hear it first&nbsp; ✿", EMAIL.lavender, EMAIL.ink)}
 
     <!-- hero: the sealed envelope (ink-seamless composed art) -->
     <tr><td style="padding:0;background-color:${EMAIL.ink};">
-      <img src="${ASSET.heroEnvelope}" alt="a sealed cream envelope on mé's ink-green desk, stamped with the shroomé circle seal. entry no. 002, the next run. sealed. opens when it opens." width="600" style="display:block;width:100%;max-width:600px;height:auto;border:0;" />
+      <img src="${ASSET.heroEnvelope}" alt="a sealed cream envelope stamped with the shroomé seal, resting on a deep green desk. the next run's details, not announced yet." width="600" style="display:block;width:100%;max-width:600px;height:auto;border:0;" />
     </td></tr>
 
-    <!-- cold open, cream on ink -->
+    <!-- open, cream on ink -->
     <tr><td align="center" style="padding:40px 40px 0;background-color:${EMAIL.ink};">
-      ${eyebrow("dispatch 002 · from the ledger", EMAIL.lavender)}
-      ${headline("this week, a page<br/>got sealed.", 38, EMAIL.canvas)}
+      ${eyebrow("a note from zak", EMAIL.lavender)}
+      ${headline("the next run<br/>is happening.", 38, EMAIL.canvas)}
     </td></tr>
     <tr><td align="center" style="padding:22px 56px 40px;background-color:${EMAIL.ink};">
       ${para(
-        `the ledger has two kinds of pages. open pages, which the flock reads first, and sealed pages, which nobody reads until mé breaks the wax. the first run filled ${DROP_001.boxes} open lines, and day ${DROP_001.soldOutInDays}, the day it poured out, is underlined twice. this week a new entry went in. then it moved to the sealed side.`,
+        `quick note, because you signed up to actually know things. the next run is not a maybe. it's in motion right now. the first run was ${DROP_001.boxes} boxes and poured out in ${DROP_001.soldOutInDays} days, so we're making this one properly, and that takes a minute.`,
         { color: "rgba(254,255,248,0.85)" }
       )}
     </td></tr>
 
-    <!-- revealed vs withheld (lavender card on ink) -->
+    <!-- what we know / what we don't (lavender card on ink) -->
     <tr><td style="padding:0 32px 44px;background-color:${EMAIL.ink};">
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr><td style="background-color:${EMAIL.lavender};border-radius:16px;padding:30px 34px 26px;">
-          ${eyebrow("cleared for the flock", EMAIL.accent, 10)}
-          <p style="margin:0 0 18px;font-family:${DISPLAY};font-size:24px;font-weight:800;letter-spacing:-0.02em;line-height:1.15;color:${EMAIL.ink};">the next run exists.<br/>it is not a maybe. it is in motion.</p>
-          ${eyebrow("still under the wax", EMAIL.accent, 10)}
-          <p style="margin:0;font-family:${SANS};font-size:15px;line-height:1.9;color:${EMAIL.ink};">size: ${redact(110)}<br/>date: ${redact(90)}<br/>opens: when it opens.</p>
+          ${eyebrow("what we know", EMAIL.accent, 10)}
+          <p style="margin:0 0 18px;font-family:${DISPLAY};font-size:24px;font-weight:800;letter-spacing:-0.02em;line-height:1.15;color:${EMAIL.ink};">it's real. it's in motion.<br/>and you shop it first.</p>
+          ${eyebrow("what we don't know yet", EMAIL.accent, 10)}
+          <p style="margin:0 0 10px;font-family:${SANS};font-size:15px;line-height:1.9;color:${EMAIL.ink};">size: ${inkBar(110)}<br/>date: ${inkBar(90)}</p>
+          <p style="margin:0;font-family:${SANS};font-size:13px;line-height:1.6;color:${EMAIL.ink};opacity:0.7;">not a tease. we genuinely don't have final numbers, and we'd rather tell you nothing than guess. the moment they're real, they're yours.</p>
         </td></tr>
       </table>
     </td></tr>
@@ -605,25 +603,25 @@ export function ledgerEmail(email: string) {
     <!-- the system, on cream -->
     <tr><td align="center" style="padding:40px 60px 0;background-color:${EMAIL.canvas};">
       ${para(
-        `no countdown theater. no invented dates. just the ledger, the wax, and the standing rule: <strong>when the seal breaks, the flock reads the entry a full day before the public does.</strong> that's the whole system.`
+        `no countdown theater, no invented dates. when the date is real you get one email and one text, <strong>a full day before the public</strong>. that's the whole system, and it's the reason we barely email you in between.`
       )}
     </td></tr>
 
     <!-- CTA -->
     <tr><td align="center" style="padding:30px 40px 0;background-color:${EMAIL.canvas};">
-      ${ctaButton(`${EMAIL.siteUrl}/drop`, "watch the ledger →")}
+      ${ctaButton(`${EMAIL.siteUrl}/drop`, "watch the next run →")}
       <p style="margin:16px 0 0;font-family:${SANS};font-size:13px;line-height:1.6;color:${EMAIL.ink};opacity:0.55;">
-        mé doesn't leak. but mé does hint.
+        mé has seen the production notes. she's sworn to secrecy. (she's very good at it.)
       </p>
     </td></tr>
 
-    <!-- open loop: dispatch 003 -->
-    ${nextDispatch(
-      `dispatch 003: the production update. where the next run actually stands, told straight, with exactly one line kept under the bar.`
+    <!-- what's next -->
+    ${nextUp(
+      `next from us: a proper heads-up the moment anything changes. that's it. we only email when it matters.`
     )}
 
-    <!-- sign-off ritual -->
-    ${ledgerLine("entry 002: sealed. wax unbroken. the flock reads it first.")}
+    <!-- ps -->
+    ${psNote("thank you for waiting with us. it genuinely means a lot. zak")}
 
     <tr><td align="center" style="padding:20px 40px 32px;background-color:${EMAIL.canvas};">
       ${socialRow()}
@@ -634,17 +632,14 @@ export function ledgerEmail(email: string) {
   return { subject, html };
 }
 
-// ─── Dispatch 003: the production update — warm status note, paper card ──────
-// Plain-spoken beat: a straightforward status note from the team about the
-// next run, readable on first skim. Everything stated straight: recipes
-// locked, materials moving, the flock hears the date first. EXACTLY ONE
-// playful withheld detail: the flavor line, under a single ink bar (the
-// series' long con: dispatch 004 reveals it was covering a blank the flock
-// fills in). Paper-card aesthetic kept, shipper-box photo as the hero.
+// ─── The heads-up — plain production update on a paper card ──────────────────
+// A straightforward status note from the team about the next run, readable
+// on first skim: recipes locked, materials moving, you hear the date first.
+// One wink: a single covered line on the flavor row, saved for the vote.
 
 export function redactedEmail(email: string) {
-  const subject = "dispatch 003: the production update";
-  const previewText = "recipes locked. materials moving. the flock hears the date first. one line stays covered.";
+  const subject = "a quick heads-up";
+  const previewText = "recipes locked. materials moving. when the date is real, you hear it first.";
   const updateLine = (label: string, value: string, last = false) =>
     `<tr><td style="padding:${last ? "14px 0 0" : "14px 0"};${last ? "" : `border-bottom:1px solid rgba(45,52,26,0.15);`}">
       <p style="margin:0 0 3px;font-family:${MONO};font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:${EMAIL.accent};">${label}</p>
@@ -652,21 +647,21 @@ export function redactedEmail(email: string) {
     </td></tr>`;
   const html = emailShell(`
 
-    ${masthead("cream", "✿ &nbsp;dispatch 003&nbsp; · &nbsp;the production update&nbsp; · &nbsp;the flock reads it first&nbsp; ✿")}
+    ${masthead("cream", "✿ &nbsp;the heads-up&nbsp; · &nbsp;real news only&nbsp; ✿")}
 
     <!-- hero: the shipper box, packed -->
     <tr><td style="padding:0;background-color:${EMAIL.canvas};">
       <img src="${ASSET.shipperBox}" alt="a shroomé shipper box, packed and ready to go out" width="600" style="display:block;width:100%;max-width:600px;height:auto;border:0;" />
     </td></tr>
 
-    <!-- cold open: the plain headline -->
+    <!-- the plain headline -->
     <tr><td align="center" style="padding:44px 40px 0;background-color:${EMAIL.canvas};">
-      ${eyebrow("dispatch 003 · the production update")}
-      ${headline("the next run<br/>is in motion.", 40)}
+      ${eyebrow("the heads-up")}
+      ${headline("here's where<br/>things stand.", 40)}
     </td></tr>
     <tr><td align="center" style="padding:22px 60px 36px;background-color:${EMAIL.canvas};">
       ${para(
-        `a quick status note from the team, no riddles this time. you wait for these emails, so here is exactly where the next run stands, in plain words.`
+        `it's zak. you signed up to actually know things, so here's the next run's status, plain and honest, straight from our production notes.`
       )}
     </td></tr>
 
@@ -674,21 +669,21 @@ export function redactedEmail(email: string) {
     <tr><td style="padding:36px 40px 44px;background-color:${EMAIL.lavender};">
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr><td style="background-color:${EMAIL.canvas};border:2px solid ${EMAIL.ink};border-radius:6px;padding:26px 30px 22px;">
-          <p style="margin:0 0 6px;font-family:${MONO};font-size:13px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:${EMAIL.ink};">the production update<br/>re: the next run</p>
+          <p style="margin:0 0 6px;font-family:${MONO};font-size:13px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:${EMAIL.ink};">status update<br/>re: the next run</p>
           <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
             ${updateLine("recipes", `<strong>locked.</strong> same sachets, same real numbers. nothing watered down.`)}
             ${updateLine("materials", `<strong>on the move.</strong> matcha, sachets, and boxes are making their way to the production floor.`)}
-            ${updateLine("run date", `<strong>set once everything lands.</strong> the flock hears it first, a full day before the public.`)}
-            ${updateLine("flavor line", `${redact(150)}<br/><span style="font-size:13px;opacity:0.7;">the one detail we're keeping under the bar. it comes off in dispatch 004.</span>`, true)}
+            ${updateLine("run date", `<strong>set the moment everything lands.</strong> you hear it first, a full day before the public.`)}
+            ${updateLine("flavor three", `${inkBar(150)}<br/><span style="font-size:13px;opacity:0.7;">the one line we're covering, because it isn't ours to write. the flavor vote is next, and it's your call.</span>`, true)}
           </table>
-          <p style="margin:18px 0 0;font-family:${MONO};font-size:12px;line-height:1.6;color:${EMAIL.ink};opacity:0.55;">one redaction. mé wouldn't allow more suspense than that.</p>
+          <p style="margin:18px 0 0;font-family:${MONO};font-size:12px;line-height:1.6;color:${EMAIL.ink};opacity:0.55;">one covered line. mé insisted we save you the surprise.</p>
         </td></tr>
       </table>
     </td></tr>
 
     <tr><td align="center" style="padding:36px 60px 0;background-color:${EMAIL.canvas};">
       ${para(
-        `that's the whole update. no countdown theater, no invented dates. the first run was ${DROP_001.boxes} boxes and poured out in ${DROP_001.soldOutInDays} days, so this one is being built carefully, and when the date is real you will read it before anyone else does.`
+        `that's the whole update. the first run was ${DROP_001.boxes} boxes and poured out in ${DROP_001.soldOutInDays} days, so we're building this one carefully. no countdowns, no invented dates. when it's real, you'll read it before anyone else.`
       )}
     </td></tr>
 
@@ -697,13 +692,13 @@ export function redactedEmail(email: string) {
       ${ctaButton(`${EMAIL.siteUrl}/drop`, "follow the run →")}
     </td></tr>
 
-    <!-- open loop: dispatch 004 -->
-    ${nextDispatch(
-      `dispatch 004: the flavor bar comes off, and what's under it isn't a flavor. it's a ballot. the flock writes that line.`
+    <!-- what's next -->
+    ${nextUp(
+      `next from us: the flavor vote. vanilla and strawberry are staying. flavor three is your call.`
     )}
 
-    <!-- sign-off ritual -->
-    ${ledgerLine("entry 003: recipes locked, materials moving. one line covered, for now.")}
+    <!-- ps -->
+    ${psNote("thank you for being patient with a small team. we're going as fast as good allows. zak")}
 
     <tr><td align="center" style="padding:20px 40px 32px;background-color:${EMAIL.canvas};">
       ${socialRow()}
@@ -714,48 +709,48 @@ export function redactedEmail(email: string) {
   return { subject, html };
 }
 
-// ─── Dispatch 004: the first flavor ballot — election poster ─────────────────
-// The payoff of the redaction bit: the flavor bar was covering a blank line,
-// because that line belongs to the flock. The founding perk made real —
-// members vote on what gets made, framed as a cliffhanger election.
-// Pass the live ballot URL at send time; defaults to the drop ledger page.
+// ─── The flavor vote — the membership perk made real (election poster) ───────
+// The promise from the welcome email, kept: members vote on what we make
+// next. Vanilla and strawberry stay; flavor three is the member's call.
+// One wink: mé counts the votes. Pass the live ballot URL at send time;
+// defaults to the drop page.
 
 export function ballotEmail(email: string, voteUrl: string = `${EMAIL.siteUrl}/drop`) {
-  const subject = "dispatch 004: the bar was hiding a blank";
-  const previewText = "the flavor line was never a secret. it's unwritten. the first ballot decides who writes it.";
+  const subject = "flavor three is your call 🗳️";
+  const previewText = "vanilla and strawberry are staying. you pick what joins them. one vote per member.";
   const html = emailShell(`
 
-    ${masthead("lavender", "✿ &nbsp;dispatch 004&nbsp; · &nbsp;flock business&nbsp; · &nbsp;polls open&nbsp; ✿")}
+    ${masthead("lavender", "✿ &nbsp;the flavor vote&nbsp; · &nbsp;polls open&nbsp; ✿")}
 
     <!-- hero: the election poster (composed art) -->
     <tr><td style="padding:0;background-color:${EMAIL.canvas};">
-      <img src="${ASSET.heroBallot}" alt="ballot no. 001: vanilla versus strawberry. one vote per member. the flock decides." width="600" style="display:block;width:100%;max-width:600px;height:auto;border:0;" />
+      <img src="${ASSET.heroBallot}" alt="the first shroomé flavor vote: vanilla and strawberry on the poster, one open spot. one vote per member." width="600" style="display:block;width:100%;max-width:600px;height:auto;border:0;" />
     </td></tr>
 
-    <!-- cold open: the reveal -->
+    <!-- the ask, stated straight -->
     <tr><td align="center" style="padding:40px 40px 0;background-color:${EMAIL.canvas};">
-      ${eyebrow("dispatch 004 · flock business")}
-      ${headline("the flavor line was<br/>blank all along.", 38)}
+      ${eyebrow("the flavor vote")}
+      ${headline("we're making a third<br/>flavor. you pick it.", 38)}
     </td></tr>
     <tr><td align="center" style="padding:22px 60px 28px;background-color:${EMAIL.canvas};">
       ${para(
-        `the redaction on the flavor line comes off today. under it: nothing. not a secret, a blank. the production sheet has one line nobody at shroomé is allowed to write, because it belongs to the flock. the first ballot is open, and it fills that line in.`
+        `hey, it's zak. when you joined we promised you a real vote on what we make next. this is it. vanilla and strawberry are staying. the third flavor goes on the next production sheet, and that line is yours to write.`
       )}
     </td></tr>
 
-    <!-- the empty seat -->
+    <!-- the open spot -->
     <tr><td style="padding:0 32px;background-color:${EMAIL.canvas};">
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr><td align="center" style="background-color:${EMAIL.lavender};border:2px dashed ${EMAIL.ink};border-radius:16px;padding:30px 16px 26px;">
           <p style="margin:0 0 6px;font-family:${DISPLAY};font-size:44px;font-weight:800;letter-spacing:-0.02em;line-height:1;color:${EMAIL.ink};">?</p>
-          <p style="margin:0;font-family:${SANS};font-size:11px;font-weight:800;letter-spacing:0.16em;text-transform:uppercase;color:${EMAIL.ink};opacity:0.7;">seat three · your call</p>
+          <p style="margin:0;font-family:${SANS};font-size:11px;font-weight:800;letter-spacing:0.16em;text-transform:uppercase;color:${EMAIL.ink};opacity:0.7;">flavor three · your call</p>
         </td></tr>
       </table>
     </td></tr>
 
     <tr><td align="center" style="padding:26px 60px 0;background-color:${EMAIL.canvas};">
       ${para(
-        `one vote per member. the count is read into the ledger, the winner goes to the production floor, and the flock hears the result before anyone else does. obviously. polls do not stay open forever, and mé will not be doing recounts.`
+        `one vote per member. we count them, tell you the winner before anyone else, and send it straight to the production floor. no committee, no focus group. just you.`
       )}
     </td></tr>
 
@@ -764,13 +759,13 @@ export function ballotEmail(email: string, voteUrl: string = `${EMAIL.siteUrl}/d
       ${ctaButton(voteUrl, "cast your vote →")}
     </td></tr>
 
-    <!-- open loop: the count -->
-    ${nextDispatch(
-      `next dispatch: the count. one flavor takes seat three, the ledger gets a new open page, and the flock hears the winner first.`
+    <!-- what's next -->
+    ${nextUp(
+      `next from us: the result, sent to you first. then quiet again until there's real news. we only email when it matters.`
     )}
 
-    <!-- sign-off ritual -->
-    ${ledgerLine("ballot no. 001: open. mé counts alone. mé has never miscounted anything.")}
+    <!-- ps -->
+    ${psNote("mé counts the votes herself. she has never miscounted anything.")}
 
     <tr><td align="center" style="padding:20px 40px 32px;background-color:${EMAIL.canvas};">
       ${socialRow()}
