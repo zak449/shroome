@@ -37,6 +37,7 @@
 - [ ] **Set up Meta Pixel** for Facebook/Instagram retargeting
 - [ ] **Set up TikTok Pixel** for TikTok retargeting and future TikTok Shop
 - [ ] **Complete Klaviyo RCS registration** — blue branded SMS on Android
+- [ ] **Upgrade Klaviyo to paid plan & remove "Powered by Klaviyo" badge** — badge is free-tier watermark, not removable via API or template HTML; after upgrading: Settings → Account → Branding → toggle off Klaviyo branding (upgrade needed before real sends anyway — free tier caps at 500 contacts)
 
 ---
 
