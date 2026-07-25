@@ -14,14 +14,17 @@ no inflated counts, no "almost gone" that isn't literally true. "size still secr
 answer until ops confirms the next run's size (`app/lib/drop-config.ts` is the single source of truth;
 if `DROP_002.boxes` is null, no email may state a count).
 
-**Voice:** lowercase-cool, warm, confident. "the first run / the next run" (never Drop 001/002 in
-customer copy). Sold out = "poured out". Speed = "the stir is the recipe" / "ready the second you stir".
-No " — " em-dash constructions. Community first; discounts exist but never lead.
+**Voice (canon: `Marketing/messaging-dna.md`):** every email is a short personal note from zak,
+the founder. lowercase, warm, direct, passionate. "the first run / the next run" (never Drop
+001/002 in customer copy). Sold out = "poured out". Speed = "the stir is the recipe" / "ready
+the second you stir". No em-dashes, no lore-speak, no dispatch numbering, no riddles. The five
+verbatim phrases: "you hear it first." / "we only email when it matters. no spam, ever." /
+"the first run poured out in 9 days." / "the stir is the recipe." / "never sold, only earned."
+Community first; discounts exist but never lead.
 
-**The narrator:** mé, our sheep. keeps the ledger, never spills. mé is the archivist who knows
-everything about the next run and reveals it one sealed page at a time. Every suspense beat is
-framed as a ledger event: an entry gets sealed, a sheet gets redacted, a ballot gets counted,
-an envelope gets opened.
+**The mascot:** mé, our sheep, appears as ONE cute beat per email at most (she taste-tests,
+she counts votes, she's thrilled). She is a character we love, not a mythology the reader
+must decode. No ledger/archive/sealed-page framing anywhere.
 
 Repo implementations live in `app/lib/emails.ts` (preview at `/api/preview-email?type=welcome|sachet|ledger|redacted|ballot`).
 SMS copy canon lives in `Marketing/Email/Flows/engagement-capture-flows.md` §5.
@@ -34,9 +37,9 @@ Trigger: joins the list (Klaviyo list `waitlist` / metric "Waitlist Signup"). Ex
 
 | # | timing | subject | preview | body concept | asset | CTA |
 |---|--------|---------|---------|--------------|-------|-----|
-| 1.1 | instant | you're in the flock 🐑 | the first run poured out in 9 days. you'll hear about the next one first. | welcome: the first run was 500 boxes, poured out in 9 days; flock perks; the stir is the recipe; referral block if code exists | hero-pour.jpg, sachet-vanilla.png, sachet-strawberry.png, badge-*.png, sheep-drink.png | see the next run → (site) |
-| 1.2 | +2 days | the stir is the recipe 🍵 | no powder, no whisk. here's what's actually in the sachet. | product lore: 2.5g matcha, 200mg extracts at 70%+ beta-glucans, 2g collagen; other brands sell powder, we sell what's inside it | ig-sachet-sip.jpg, badge-*.png, cup-logo.jpg | meet shroomé → (site) |
-| 1.3 | +5 days | mé sealed something in the ledger | entry no. 002 went in this week. then the envelope got sealed. | **drama beat: the sealed envelope.** the next run exists, it is not a maybe; size still secret; flock reads it a day before the public | me-02.png, symbol-sheep-solid.png (wax seal) | read the ledger → (/drop) |
+| 1.1 | instant | thank you. you're in. 🐑 | the first run poured out in 9 days. the next one, you shop first. and we will not spam you. | thank-you note from zak: we worked hard on the first run (500 boxes, poured out in 9 days); the promise: early access before go-live, member-only merch (never sold, only earned), no spam ever; referral block if code exists | hero-induction.png, sachet-vanilla.png, sachet-strawberry.png, badge-*.png, sheep-drink.png | see the next run → (site) |
+| 1.2 | +2 days | how to pour it 🍵 | no powder, no whisk. tear, pour over milk, stir. here's exactly what's inside. | the useful email: the ritual (the stir is the recipe) + every sachet weighed out: 2.5g matcha, 200mg extracts at 70%+ beta-glucans, 2g collagen; wink: mé taste-tests every batch | hero-specimen.png, ig-sachet-sip.jpg, cup-logo.jpg | meet shroomé → (site) |
+| 1.3 | +5 days | what we're making right now | the next run is real and in motion. no date yet, and we won't invent one. you hear it first. | honest status note: the next run is real and in motion; size and date genuinely unknown, we say so instead of guessing; you hear it first, a full day before the public; wink: mé sworn to secrecy | hero-envelope.png, symbol-sheep-solid.png | watch the next run → (/drop) |
 
 Implemented: `welcomeEmail`, `sachetEmail`, `ledgerEmail` in `app/lib/emails.ts`.
 
@@ -48,7 +51,7 @@ because each drip removes exactly one redaction bar while adding a new sealed it
 
 | # | timing | subject | preview | body concept | asset | CTA |
 |---|--------|---------|---------|--------------|-------|-----|
-| 2.1 | +7d after 1.3 | we blacked most of this out | a production sheet crossed mé's desk. appeals denied. | **drama beat: the redacted production photo/sheet.** status: in motion; run size: ████; new flavor candidate: ████; first pour goes to the flock | shipper-box.jpg (archive photo), text redaction bars | watch the ledger → (/drop) |
+| 2.1 | +7d after 1.3 | a quick heads-up | recipes locked. materials moving. when the date is real, you hear it first. | plain production update on a paper card: recipes locked, materials on the move, date set the moment everything lands; ONE covered line (flavor three) saved for the vote, honestly labeled | shipper-box.jpg, paper status card | follow the run → (/drop) |
 | 2.2 | +8d | the first run, autopsied | 500 boxes. 9 days. here's what we learned from the pour-out. | honest retro lore: what the first run taught us (real numbers, real lessons), why the next run is built differently | box-stack.jpg, me-01.png | read the ledger → (/drop) |
 | 2.3 | +8d | mé's field notes, page one | our sheep keeps notes on everything. we photographed a page. | lore: the world of mé (the ledger, the flock, why a sheep); soft perk reminder that members hear first | me-03.png … me-07.png rotation, pattern assets | join the conversation → (IG) |
 | 2.4 | +9d | merch you cannot buy | never sold. only earned. mé is already embroidering. | **merch tease:** member-only merch exists, it is earned (referrals, votes, drop-day participation), photos cropped tight | ig-mushroom-hat.jpg (cropped), lockup-good-energy.png | see how it's earned → (/refer) |
@@ -63,7 +66,7 @@ evergreen flow: one open, one close, results read into the ledger.
 
 | # | timing | subject | preview | body concept | asset | CTA |
 |---|--------|---------|---------|--------------|-------|-----|
-| 3.1 | ballot open | the first ballot is open 🗳️ | seat three is empty. your vote fills the blank line on the production sheet. | **drama beat: the first flavor ballot.** vanilla and strawberry are incumbents; seat three is the flock's call; one vote per member | sachet-vanilla.png, sachet-strawberry.png, dashed "?" card | cast your vote → (ballot URL) |
+| 3.1 | ballot open | flavor three is your call 🗳️ | vanilla and strawberry are staying. you pick what joins them. one vote per member. | the membership perk made real: we're making a third flavor and members pick it; one vote per member, winner announced to members first, straight to the production floor; wink: mé counts the votes | hero-ballot.png, dashed "?" card | cast your vote → (ballot URL) |
 | 3.2 | +3 days, non-voters only | ballots close soon (real ones) | mé counts at the deadline. mé has never miscounted anything. | nudge with the real close date only once it is set | me-04.png | cast your vote → |
 | 3.3 | after count | the ledger records your winner | read into the ledger before anyone else hears it. | results to members first, always; winner feeds FLOW 2's next redaction reveal | winner sachet render or lavender card | see the tally → |
 
@@ -109,7 +112,10 @@ whisper to doors-open. Members always hear each stage a full day (minimum) befor
 
 - No send may state a count, date, or timer that is not in `app/lib/drop-config.ts` or confirmed by ops in writing.
 - Discount codes (SHROOME20/30, referral credits) may appear only below the fold, never in subjects or previews.
-- Every marketing email carries the RFC 8058 headers (`unsubHeaders`) and the mé footer with unsubscribe.
+- Every marketing email carries the RFC 8058 headers (`unsubHeaders`) and the no-spam footer
+  ("we only email when it matters. no spam, ever.") with a working unsubscribe link. In Klaviyo
+  templates the unsubscribe must be `<a href="{% unsubscribe_link %}">unsubscribe</a>` (never a
+  bare `{% unsubscribe %}` with arguments; that renders as raw text).
 - SMS: GSM-7, quiet hours, brand-name prefix, canon per `Marketing/Email/Flows/engagement-capture-flows.md` §5.
 
 ## Klaviyo build state (pushed via API on 2026-07-24)
@@ -118,11 +124,11 @@ whisper to doors-open. Members always hear each stage a full day (minimum) befor
 
 | template | ID | maps to |
 |----------|----|---------|
-| shroome — flock welcome v2 | `YsFgxn` | Flow 1.1 (welcomeEmail) |
-| shroome — lore: the stir is the recipe v2 | `Vy44ng` | Flow 1.2 (sachetEmail) |
-| shroome — lore: the sealed envelope v1 | `YpewgG` | Flow 1.3 (ledgerEmail) |
-| shroome — lore: the redacted sheet v1 | `SbEihj` | Flow 2.1 (redactedEmail) |
-| shroome — lore: the first ballot v1 | `RwCfwb` | Flow 3.1 (ballotEmail); swap the CTA href for the live ballot URL before sending |
+| shroome welcome v4 | `YsFgxn` | Flow 1.1 (welcomeEmail) |
+| shroome how to pour it v4 | `Vy44ng` | Flow 1.2 (sachetEmail) |
+| shroome what we're making v4 | `YpewgG` | Flow 1.3 (ledgerEmail) |
+| shroome the heads-up v4 | `SbEihj` | Flow 2.1 (redactedEmail) |
+| shroome the flavor vote v4 | `RwCfwb` | Flow 3.1 (ballotEmail); swap the CTA href for the live ballot URL before sending |
 
 **Segments** (created): `STTRhG` "shroome — the flock (waitlist members)" (member of Shroomé
 Waitlist list `TyUdnu`); `WRSTT7` "shroome — flock: sms consented (drop-day text)".
@@ -139,11 +145,11 @@ The flows API is read-only, so the flow builder steps are manual:
 
 1. Open the draft **"Email Welcome Series"** flow (trigger: Added to List). Set the trigger list to
    **Shroomé Waitlist** (`TyUdnu`). Build three email steps: instant → template `YsFgxn` (subject:
-   "you're in the flock 🐑"), wait 2 days → `Vy44ng` (subject: "the stir is the recipe 🍵"), wait
-   3 days → `YpewgG` (subject: "mé sealed something in the ledger"). Set each message's preview
+   "thank you. you're in. 🐑"), wait 2 days → `Vy44ng` (subject: "how to pour it 🍵"), wait
+   3 days → `YpewgG` (subject: "what we're making right now"). Set each message's preview
    text from the FLOW 1 table. Turn smart sending ON. Set live.
 2. Create **"the archive (lore drips)"** flow: trigger Added to List (Shroomé Waitlist), time delay
-   12 days (so it lands after 1.3), email step → `SbEihj` (subject: "we blacked most of this out").
+   12 days (so it lands after 1.3), email step → `SbEihj` (subject: "a quick heads-up").
    Add a flow filter "has not been in flow X" is unnecessary since the delay sequences it. Leave the
    2.2 to 2.4 drips as placeholder notes; templates for them are the next build batch.
 3. Review the live **"SMS Welcome Flow"**: replace its message body with SMS 1 from

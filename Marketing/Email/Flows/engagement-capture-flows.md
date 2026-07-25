@@ -263,6 +263,8 @@ Merge tags are Klaviyo syntax. All body copy is final; layout blocks in [bracket
 
 Encoding: all messages below are **GSM-7 safe** (é is GSM-7; no emoji, no em-dashes, straight apostrophes only — emoji would flip the message to UCS-2 and cut segments from 160 to 70 chars). Counts assume a 25-char branded short link replacing `[LINK]`.
 
+Voice: same as email (canon: `Marketing/messaging-dna.md`) — a short personal text from zak. Direct, warm, no lore-speak, no riddles. Reuse the five phrases verbatim where they fit ("you hear it first.", "the first run poured out in 9 days.", "the stir is the recipe.", "never sold, only earned.").
+
 **Global TCPA/CTIA compliance (applies to every message):**
 - **Consent:** web form disclosure at capture (exists at `app/page.tsx:929`) must state: marketing texts, autodialed/automated, consent not a condition of purchase, msg frequency varies, msg & data rates may apply, STOP/HELP. Store `sms_consent_at` + disclosure text on the profile.
 - **Quiet hours: send window 9:00am–8:00pm PROFILE LOCAL TIME.** Enforce in Klaviyo (Settings → Text messaging → quiet hours). Never override — even for drop day, schedule drops inside the window.
@@ -281,9 +283,9 @@ Trigger: FLOW B, instant on SMS consent.
 **SMS 2 — early-access alert (reusable template: any drop/restock)**
 Trigger: FLOW F / manual campaign, inside quiet hours.
 
-> shroomé: your early window is open. the next run is yours a full day before the public doors. [LINK] - your code SHROOME30 is loaded. move.
+> shroomé: your early window is open. you hear it first, a full day before the public. [LINK] - your code SHROOME30 is loaded. see you there.
 
-*140 chars (161 w/ 25-char link) · GSM-7 · 2 segments; drop "move." to fit 1 segment if cost matters. Compliance: recipient consented at opt-in; STOP language not required on every message but keep it on at least one message per month of sending.*
+*140 chars (161 w/ 25-char link) · GSM-7 · 2 segments; drop "see you there." to fit 1 segment if cost matters. Compliance: recipient consented at opt-in; STOP language not required on every message but keep it on at least one message per month of sending.*
 
 **SMS 3 — quiz nudge (Day 3, 11:00am local, only if quiz incomplete)**
 

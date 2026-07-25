@@ -417,7 +417,7 @@ export function welcomeEmail(email: string, referralCode?: string) {
 
     <!-- what's next -->
     ${nextUp(
-      `next from us: how to pour it. the whole ritual in one short email, plus exactly what's in the sachet, gram by gram. after that, we quiet down until there's real news.`
+      `how to pour it. the whole ritual in one short email, plus exactly what's in the sachet, gram by gram. after that, we quiet down until there's real news.`
     )}
 
     <!-- ps -->
@@ -543,7 +543,7 @@ export function sachetEmail(email: string) {
 
     <!-- what's next -->
     ${nextUp(
-      `next from us: what we're making right now. a real status update on the next run, sent only when there's something true to say.`
+      `what we're making right now. a real status update on the next run, sent only when there's something true to say.`
     )}
 
     <!-- ps -->
@@ -617,7 +617,7 @@ export function ledgerEmail(email: string) {
 
     <!-- what's next -->
     ${nextUp(
-      `next from us: a proper heads-up the moment anything changes. that's it. we only email when it matters.`
+      `a proper heads-up the moment anything changes. that's it. we only email when it matters.`
     )}
 
     <!-- ps -->
@@ -694,7 +694,7 @@ export function redactedEmail(email: string) {
 
     <!-- what's next -->
     ${nextUp(
-      `next from us: the flavor vote. vanilla and strawberry are staying. flavor three is your call.`
+      `the flavor vote. vanilla and strawberry are staying. flavor three is your call.`
     )}
 
     <!-- ps -->
@@ -761,7 +761,7 @@ export function ballotEmail(email: string, voteUrl: string = `${EMAIL.siteUrl}/d
 
     <!-- what's next -->
     ${nextUp(
-      `next from us: the result, sent to you first. then quiet again until there's real news. we only email when it matters.`
+      `the vote result, sent to you first. then quiet again until there's real news. we only email when it matters.`
     )}
 
     <!-- ps -->
